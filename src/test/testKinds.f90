@@ -1,9 +1,7 @@
 program testKinds_prg
+	!! Test program for kinds_mod
 	use kinds_mod
 	implicit none
-	
-	character(20)::fmp = '(1A2,1X,1I2)'
-	character(20)::fmc = '(1A2,1X,1F40.35)'
 	
 	call testPrecision
 	call testConstants
@@ -11,6 +9,7 @@ program testKinds_prg
 contains
 
 	subroutine testPrecision
+		!! Test real precision constants and actual accuracy
 		integer,dimension(4)::prec
 		
 		prec(1) = precision(1.0_sp)
@@ -18,25 +17,33 @@ contains
 		prec(3) = precision(1.0_ep)
 		prec(4) = precision(1.0_qp)
 		
-		if( any(prec<[6,15,18,33]) ) error stop "Failed real kinds precision check"
+		if( any(prec<[6,15,18,33]) ) then
+			call printTypes
+			error stop "Failed real kinds precision check"
+		end if
 	end subroutine testPrecision
 
 	subroutine testConstants
+		!! Test standard constants and verify accuracy to type-level precision
 		character(41),parameter::cPI = '3.141592653589793238462643383279502884197'
 		character(41),parameter::cE  = '2.718281828459045235360287471352662497757'
 		
 		integer::dPI,dE
 		
-		dPI = check(PI,cPI)
-		dE  = check( E,cE )
+		dPI = checkPrecision(PI,cPI)
+		dE  = checkPrecision( E,cE )
 		
-		if( any([dPI,dE]<precision(1.0_wp)-1) ) error stop "Failed real constants precision check"
+		if( any([dPI,dE]<precision(1.0_wp)-2) ) error stop "Failed real constants precision check"
 	end subroutine testConstants
 
-	function check(r,c) result(o)
+	function checkPrecision(r,c) result(o)
+		!! Compare a real value with its true value in string form; return the correct digit count
 		real(wp),intent(in)::r
+			!! Real value
 		character(*),intent(in)::c
+			!! True value
 		integer::o
+			!! Correct digits
 		
 		character(41)::buf
 		integer::k
@@ -45,7 +52,7 @@ contains
 		do k=1,len(c)
 			if(buf(k:k)/=c(k:k)) exit
 		end do
-		o = k-1
-	end function check
+		o = k-2
+	end function checkPrecision
 
 end program testKinds_prg
