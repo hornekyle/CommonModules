@@ -8,6 +8,9 @@ program testStats_prg
 	call testRandomUniform
 	call testRandomNormal
 	
+	call testMean
+	call testStDev
+	
 contains
 
 	subroutine testSetRandomSeed
@@ -67,5 +70,23 @@ contains
 		
 		if( any(results) ) error stop "Failed randomNormal check"
 	end subroutine testRandomNormal
+
+	subroutine testMean
+		!! Test mean to verify operation
+		logical,dimension(1)::results
+		
+		results(1) = abs(mean([0.0_wp,1.0_wp,2.0_wp,3.0_wp,4.0_wp])-2.0_wp)<2.0_wp**4*epsilon(1.0_wp)
+		
+		if( .not.all(results) ) error stop "Failed mean check"
+	end subroutine testMean
+
+	subroutine testStDev
+		!! Test stDev to verify operation
+		logical,dimension(1)::results
+		
+		results(1) = abs(stDev([-1.0_wp,0.0_wp,1.0_wp])-1.0_wp)<2.0_wp**4*epsilon(1.0_wp)
+		
+		if( .not.all(results) ) error stop "Failed mean check"
+	end subroutine testStDev
 
 end program testStats_prg 
