@@ -40,6 +40,8 @@ module array_mod
 	public::meshGridX
 	public::meshGridY
 	
+	public::linearInterp
+	
 contains
 
 	!====================!
@@ -73,7 +75,7 @@ contains
 		b = [minval(x),maxval(x)]
 	end function mixval_3
 
-	function span_1(x) result(o)
+	function span_1(x) result(o)!! x values of data
 		!! Return (hi-low) for an array
 		real(wp),dimension(:),intent(in)::x
 			!! Array of which to find the range
@@ -202,7 +204,7 @@ contains
 		real(wp)::o
 			!! y(x=r) via linear interpolation
 		
-		integer,dimension(3)::rng
+		integer,dimension(2)::rng
 		real(wp)::phi
 		
 		rng = getRange(r,x)
@@ -219,22 +221,28 @@ contains
 				!! Position of desired value
 			real(wp),dimension(:),intent(in)::x
 				!! x values of data
-			integer,dimension(3)::o
+			integer,dimension(2)::o
 				!! Indexes of x values that bracket r
 			
+			integer::N
 			integer::L,M,H
 			integer::MN
-			logical::found
-			integer::k
 			
-			L = 1
-			H = size(x)
+			N = size(x)
+			
+			if(r<x(2)) then
+				o = [1,2]
+				return
+			else if(r>x(N-1)) then
+				o = [N-1,N]
+				return
+			end if
+			
+			L = 2
+			H = N-1
 			M = (L+H)/2+1
-			found = .false.
-			k = 0
 			
-			do while(.not.found)
-				k = k+1
+			do
 				if(x(M)<=r) then
 					L = M
 				else
@@ -242,11 +250,10 @@ contains
 				end if
 				MN = (L+H)/2+1
 				if(MN==M) then
-					o = [M,M+1,k]
+					o = [M,M+1]
 					return
-				else 
-					M = MN
 				end if
+				M = MN
 			end do
 		end function getRange
 		

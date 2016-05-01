@@ -10,6 +10,8 @@ program testArray_prg
 	call testLinspace
 	call testMeshGrid
 	
+	call testLinearInterp
+	
 contains
 
 	subroutine testMixval
@@ -107,5 +109,27 @@ contains
 		
 		if( .not.all(results) ) error stop "Failed linspace check"
 	end subroutine testMeshGrid
+
+	subroutine testLinearInterp
+		!! Test linearInterp to verify operation
+		logical,dimension(1)::results
+		
+		real(wp),dimension(:),allocatable::x1,x2,y
+		integer::N,k
+		
+		N = 100
+		
+		x1 = linspace(0.0_wp,5.0_wp,N)
+		x2 = linspace(0.0_wp,5.0_wp,N/4)
+		
+		allocate(y(N))
+		do k=1,N
+			y(k) = linearInterp(x1(k),x2,2.0_wp*x2)
+		end do
+		
+		results(1) = norm2(y-2.0_wp*x1)<1.0E-10_wp
+		
+		if( .not.all(results) ) error stop "Failed linearInterp check"
+	end subroutine testLinearInterp
 
 end program testArray_prg
