@@ -3,6 +3,7 @@ program testArray_prg
 	use array_mod
 	implicit none
 	
+	call testMixval
 	call testLinspace
 	call testMeshGrid
 	
@@ -50,5 +51,23 @@ contains
 		
 		if( .not.all(results) ) error stop "Failed linspace check"
 	end subroutine testMeshGrid
+
+	subroutine testMixval
+		!! Test mixval to verify operation
+		logical,dimension(1)::results
+		
+		integer,parameter::N = 10
+		real(wp),dimension(N)::x
+		real(wp),dimension(2)::test,true
+		
+		call random_number(x)
+		
+		test = mixval(x)
+		true = [minval(x),maxval(x)]
+		
+		results(1) = all(test==true)
+		
+		if( .not.all(results) ) error stop "Failed mixval check"
+	end subroutine testMixval
 
 end program testArray_prg
