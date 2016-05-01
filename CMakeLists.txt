@@ -121,8 +121,7 @@ set(plplotlib_src
 	"src/kinds.f90"
 	"src/plplotlib/plplotlib.f90"
 	"src/text.f90"
-	"src/time.f90"
-	)
+	"src/time.f90")
 
 add_executable(logo_prg ${plplotlib_src} "src/plplotlib/logo.f90")
 target_link_libraries(logo_prg ${PLPLOT_LIBRARIES})
