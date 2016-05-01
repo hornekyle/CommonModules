@@ -28,6 +28,10 @@ find_library(LAPACK_LIBRARY lapack "/usr/lib")
 find_library(UMFPACK_LIBRARY umfpack "/usr/lib")
 include_directories(${NETCDF_INCLUDE})
 
+find_library(FFTW3_LIBRARY fftw3 "/usr/lib")
+find_path(FFTW3_INCLUDE "fftw3.f03" "/usr/include")
+include_directories(${FFTW3_INCLUDE})
+
 #=========================#
 #= Create Symlink Target =#
 #=========================#
@@ -74,6 +78,15 @@ set(testStats_src
 add_executable(testStats ${testStats_src})
 add_test(testStats testStats)
 
+set(testFourier_src
+	"src/kinds.f90"
+	"src/fftw3.f90"
+	"src/fourier.f90"
+	"src/test/testFourier.f90")
+add_executable(testFourier ${testFourier_src})
+target_link_libraries(testFourier ${FFTW3_LIBRARY})
+add_test(testFourier testFourier)
+
 set(testText_src
 	"src/kinds.f90"
 	"src/text.f90"
@@ -84,6 +97,7 @@ add_test(testText testText)
 
 # add_dependencies(testStats symlink)
 # target_link_libraries(main "gomp")
+# target_link_libraries(main ${FFTW3_LIBRARY})
 # target_link_libraries(main ${NETCDF_LIBRARY})
 # target_link_libraries(main ${LAPACK_LIBRARY})
 # target_link_libraries(main ${UMFPACK_LIBRARY})
