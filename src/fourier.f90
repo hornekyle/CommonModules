@@ -9,13 +9,19 @@ module fourier_mod
 	interface FFT
 		!! Compute the FFT of a dataset
 		module procedure FFT_r1
+		module procedure FFT_r2
+		
 		module procedure FFT_c1
+		module procedure FFT_c2
 	end interface
 	
 	interface iFFT
 		!! Compute the inverse FFT of a dataset
 		module procedure iFFT_r1
+		module procedure iFFT_r2
+		
 		module procedure iFFT_c1
+		module procedure iFFT_c2
 	end interface
 	
 	public::FFT_freq
