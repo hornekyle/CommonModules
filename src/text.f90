@@ -5,6 +5,10 @@ module text_mod
 	use time_mod
 	implicit none
 	
+	!==============!
+	!= Parameters =!
+	!==============!
+	
 	integer,parameter::stdin  = INPUT_UNIT
 	integer,parameter::stdout = OUTPUT_UNIT
 	integer,parameter::stderr = ERROR_UNIT

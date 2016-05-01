@@ -78,6 +78,13 @@ set(testStats_src
 add_executable(testStats ${testStats_src})
 add_test(testStats testStats)
 
+set(testArray_src
+	"src/array.f90"
+	"src/kinds.f90"
+	"src/test/testArray.f90")
+add_executable(testArray ${testArray_src})
+add_test(testArray testArray)
+
 set(testFourier_src
 	"src/kinds.f90"
 	"src/fftw3.f90"

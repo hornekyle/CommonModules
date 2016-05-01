@@ -4,6 +4,10 @@ module stats_mod
 	implicit none
 	private
 	
+	!==============!
+	!= Interfaces =!
+	!==============!
+	
 	interface randomUniform
 		!! Return sample(s) \(x\) from a uniform distribution such that \(x\in[-1,1]\)
 		module procedure randomUniform_s
@@ -16,6 +20,10 @@ module stats_mod
 		module procedure randomNormal_a1
 	end interface
 	
+	!===========!
+	!= Exports =!
+	!===========!
+	
 	public::setRandomSeed
 	
 	public::randomUniform
@@ -25,6 +33,10 @@ module stats_mod
 	public::stDev
 	
 contains
+
+	!========================!
+	!= Probability Routines =!
+	!========================!
 
 	subroutine setRandomSeed(S)
 		!! Set the pseudo-random number generator seed
@@ -92,6 +104,10 @@ contains
 			o(k) = randomNormal_s()
 		end do
 	end function randomNormal_a1
+
+	!================================!
+	!= Population Property Routines =!
+	!================================!
 
 	function mean(d) result(o)
 		!! Compute the mean of an input array

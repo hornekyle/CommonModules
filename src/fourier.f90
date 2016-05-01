@@ -6,6 +6,10 @@ module fourier_mod
 	implicit none
 	private
 	
+	!==============!
+	!= Interfaces =!
+	!==============!
+	
 	interface FFT
 		!! Compute the FFT of a dataset
 		module procedure FFT_r1
@@ -23,6 +27,10 @@ module fourier_mod
 		module procedure iFFT_c1
 		module procedure iFFT_c2
 	end interface
+	
+	!===========!
+	!= Exports =!
+	!===========!
 	
 	public::FFT_freq
 	public::FFT
