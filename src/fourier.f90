@@ -18,7 +18,7 @@ module fourier_mod
 		module procedure iFFT_c1
 	end interface
 	
-	public::tFFT
+	public::FFT_freq
 	public::FFT
 	public::iFFT
 	
@@ -28,7 +28,7 @@ contains
 	!= Utilities =!
 	!=============!
 
-	function tFFT(t) result(f)
+	function FFT_freq(t) result(f)
 		!! Compute the frequencies from time for an FFT
 		real(wp),dimension(:),intent(in)::t
 			!! Sample times of input signal to FFT
@@ -44,7 +44,7 @@ contains
 		do k=1,N
 			f(k) = real(k-1,wp)/( t(N)-t(1) )
 		end do
-	end function tFFT
+	end function FFT_freq
 
 	!=================!
 	!= 1D Transforms =!
@@ -67,7 +67,7 @@ contains
 		call fftw_execute_dft(plan,in,out)
 		call fftw_destroy_plan(plan)
 		
-		o = abs(out)
+		o = abs(out)/sqrt(real(N,wp))
 	end function FFT_r1
 
 	function FFT_c1(u) result(o)
@@ -87,7 +87,7 @@ contains
 		call fftw_execute_dft(plan,in,out)
 		call fftw_destroy_plan(plan)
 		
-		o = out
+		o = out/sqrt(real(N,wp))
 	end function FFT_c1
 
 	!=================!
@@ -112,7 +112,7 @@ contains
 		call fftw_execute_dft(plan,in,out)
 		call fftw_destroy_plan(plan)
 		
-		o = abs(out)
+		o = abs(out)/sqrt(real(N*M,wp))
 	end function FFT_r2
 
 	function FFT_c2(u) result(o)
@@ -133,7 +133,7 @@ contains
 		call fftw_execute_dft(plan,in,out)
 		call fftw_destroy_plan(plan)
 		
-		o = out
+		o = out/sqrt(real(N*M,wp))
 	end function FFT_c2
 
 	!=========================!
@@ -157,7 +157,7 @@ contains
 		call fftw_execute_dft(plan,in,out)
 		call fftw_destroy_plan(plan)
 		
-		o = abs(out)
+		o = abs(out)/sqrt(real(N,wp))
 	end function iFFT_r1
 
 	function iFFT_c1(u) result(o)
@@ -177,7 +177,7 @@ contains
 		call fftw_execute_dft(plan,in,out)
 		call fftw_destroy_plan(plan)
 		
-		o = out
+		o = out/sqrt(real(N,wp))
 	end function iFFT_c1
 
 	!=========================!
@@ -191,7 +191,7 @@ contains
 		integer(c_int),parameter::d = 2
 		complex(c_double_complex),dimension(:,:),allocatable::in,out
 		integer(c_int)::N,M
-		type(c_ptr)::plhttp://www.pornhub.com/pornstar/brooke-wylde?page=2an
+		type(c_ptr)::plan
 		
 		N = size(u,1)
 		M = size(u,2)
@@ -202,7 +202,7 @@ contains
 		call fftw_execute_dft(plan,in,out)
 		call fftw_destroy_plan(plan)
 		
-		o = abs(out)
+		o = abs(out)/sqrt(real(N*M,wp))
 	end function iFFT_r2
 
 	function iFFT_c2(u) result(o)
@@ -223,7 +223,7 @@ contains
 		call fftw_execute_dft(plan,in,out)
 		call fftw_destroy_plan(plan)
 		
-		o = out
+		o = out/sqrt(real(N*M,wp))
 	end function iFFT_c2
 
 end module fourier_mod
