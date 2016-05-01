@@ -1,8 +1,5 @@
 module fourier_mod
 	!! Module for simplified access to the FFTW3 library
-	!! @todo
-	!! Add 2d transforms  
-	!! Add 2d inverse transforms  
 	use kinds_mod
 	use iso_c_binding
 	use fftw3_mod
@@ -49,14 +46,15 @@ contains
 		end do
 	end function tFFT
 
-	!==============!
-	!= Transforms =!
-	!==============!
+	!=================!
+	!= 1D Transforms =!
+	!=================!
 
 	function FFT_r1(u) result(o)
 		real(wp),dimension(:),intent(in)::u
 		real(wp),dimension(:),allocatable::o
 		
+		integer(c_int),parameter::d = 1
 		complex(c_double_complex),dimension(:),allocatable::in,out
 		integer(c_int)::N
 		type(c_ptr)::plan
@@ -65,7 +63,7 @@ contains
 		allocate(in(N),out(N),o(N))
 		
 		in = u
-		plan = fftw_plan_dft_1d(N,in,out,FFTW_FORWARD,FFTW_ESTIMATE)
+		plan = fftw_plan_dft(d,[N],in,out,FFTW_FORWARD,FFTW_ESTIMATE)
 		call fftw_execute_dft(plan,in,out)
 		call fftw_destroy_plan(plan)
 		
@@ -76,6 +74,7 @@ contains
 		complex(wp),dimension(:),intent(in)::u
 		complex(wp),dimension(:),allocatable::o
 		
+		integer(c_int),parameter::d = 1
 		complex(c_double_complex),dimension(:),allocatable::in,out
 		integer(c_int)::N
 		type(c_ptr)::plan
@@ -84,21 +83,68 @@ contains
 		allocate(in(N),out(N),o(N))
 		
 		in = u
-		plan = fftw_plan_dft_1d(N,in,out,FFTW_FORWARD,FFTW_ESTIMATE)
+		plan = fftw_plan_dft(d,[N],in,out,FFTW_FORWARD,FFTW_ESTIMATE)
 		call fftw_execute_dft(plan,in,out)
 		call fftw_destroy_plan(plan)
 		
 		o = out
 	end function FFT_c1
 
-	!======================!
-	!= Inverse Transforms =!
-	!======================!
+	!=================!
+	!= 2D Transforms =!
+	!=================!
+
+	function FFT_r2(u) result(o)
+		real(wp),dimension(:,:),intent(in)::u
+		real(wp),dimension(:,:),allocatable::o
+		
+		integer(c_int),parameter::d = 2
+		complex(c_double_complex),dimension(:,:),allocatable::in,out
+		integer(c_int)::N,M
+		type(c_ptr)::plan
+		
+		N = size(u,1)
+		M = size(u,2)
+		allocate(in(N,M),out(N,M),o(N,M))
+		
+		in = u
+		plan = fftw_plan_dft(d,[N,M],in,out,FFTW_FORWARD,FFTW_ESTIMATE)
+		call fftw_execute_dft(plan,in,out)
+		call fftw_destroy_plan(plan)
+		
+		o = abs(out)
+	end function FFT_r2
+
+	function FFT_c2(u) result(o)
+		complex(wp),dimension(:,:),intent(in)::u
+		complex(wp),dimension(:,:),allocatable::o
+		
+		integer(c_int),parameter::d = 2
+		complex(c_double_complex),dimension(:,:),allocatable::in,out
+		integer(c_int)::N,M
+		type(c_ptr)::plan
+		
+		N = size(u,1)
+		M = size(u,2)
+		allocate(in(N,M),out(N,M),o(N,M))
+		
+		in = u
+		plan = fftw_plan_dft(d,[N,M],in,out,FFTW_FORWARD,FFTW_ESTIMATE)
+		call fftw_execute_dft(plan,in,out)
+		call fftw_destroy_plan(plan)
+		
+		o = out
+	end function FFT_c2
+
+	!=========================!
+	!= 1D Inverse Transforms =!
+	!=========================!
 
 	function iFFT_r1(u) result(o)
 		real(wp),dimension(:),intent(in)::u
 		real(wp),dimension(:),allocatable::o
 		
+		integer(c_int),parameter::d = 1
 		complex(c_double_complex),dimension(:),allocatable::in,out
 		integer(c_int)::N
 		type(c_ptr)::plan
@@ -107,7 +153,7 @@ contains
 		allocate(in(N),out(N),o(N))
 		
 		in = u
-		plan = fftw_plan_dft_1d(N,in,out,FFTW_BACKWARD,FFTW_ESTIMATE)
+		plan = fftw_plan_dft(d,[N],in,out,FFTW_BACKWARD,FFTW_ESTIMATE)
 		call fftw_execute_dft(plan,in,out)
 		call fftw_destroy_plan(plan)
 		
@@ -118,6 +164,7 @@ contains
 		complex(wp),dimension(:),intent(in)::u
 		complex(wp),dimension(:),allocatable::o
 		
+		integer(c_int),parameter::d = 1
 		complex(c_double_complex),dimension(:),allocatable::in,out
 		integer(c_int)::N
 		type(c_ptr)::plan
@@ -126,11 +173,57 @@ contains
 		allocate(in(N),out(N),o(N))
 		
 		in = u
-		plan = fftw_plan_dft_1d(N,in,out,FFTW_BACKWARD,FFTW_ESTIMATE)
+		plan = fftw_plan_dft(d,[N],in,out,FFTW_BACKWARD,FFTW_ESTIMATE)
 		call fftw_execute_dft(plan,in,out)
 		call fftw_destroy_plan(plan)
 		
 		o = out
 	end function iFFT_c1
+
+	!=========================!
+	!= 2D Inverse Transforms =!
+	!=========================!
+
+	function iFFT_r2(u) result(o)
+		real(wp),dimension(:,:),intent(in)::u
+		real(wp),dimension(:,:),allocatable::o
+		
+		integer(c_int),parameter::d = 2
+		complex(c_double_complex),dimension(:,:),allocatable::in,out
+		integer(c_int)::N,M
+		type(c_ptr)::plhttp://www.pornhub.com/pornstar/brooke-wylde?page=2an
+		
+		N = size(u,1)
+		M = size(u,2)
+		allocate(in(N,M),out(N,M),o(N,M))
+		
+		in = u
+		plan = fftw_plan_dft(d,[N,M],in,out,FFTW_BACKWARD,FFTW_ESTIMATE)
+		call fftw_execute_dft(plan,in,out)
+		call fftw_destroy_plan(plan)
+		
+		o = abs(out)
+	end function iFFT_r2
+
+	function iFFT_c2(u) result(o)
+		complex(wp),dimension(:,:),intent(in)::u
+		complex(wp),dimension(:,:),allocatable::o
+		
+		integer(c_int),parameter::d = 2
+		complex(c_double_complex),dimension(:,:),allocatable::in,out
+		integer(c_int)::N,M
+		type(c_ptr)::plan
+		
+		N = size(u,1)
+		M = size(u,2)
+		allocate(in(N,M),out(N,M),o(N,M))
+		
+		in = u
+		plan = fftw_plan_dft(d,[N,M],in,out,FFTW_BACKWARD,FFTW_ESTIMATE)
+		call fftw_execute_dft(plan,in,out)
+		call fftw_destroy_plan(plan)
+		
+		o = out
+	end function iFFT_c2
 
 end module fourier_mod
