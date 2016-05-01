@@ -1,5 +1,6 @@
 project: CommonModules
 project_dir: ./src
+page_dir: ./pages
 source: true
 exclude: fftw3.f90
 display: public

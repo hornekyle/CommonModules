@@ -4,6 +4,7 @@ module text_mod
 	use kinds_mod
 	use time_mod
 	implicit none
+	private
 	
 	!==============!
 	!= Parameters =!
@@ -18,6 +19,32 @@ module text_mod
 	
 	character(:),parameter::fmtLong = '(1A128)'
 	character(:),parameter::fmtShort = '(1A32)'
+	
+	!===========!
+	!= Exports =!
+	!===========!
+	
+	public::stdin
+	public::stdout
+	public::stderr
+	
+	public::strLong
+	public::strShort
+	
+	public::fmtLong
+	public::fmtShort
+	
+	public::startsWith
+	public::endsWith
+	
+	public::intToChar
+	public::realToChar
+	public::realToTime
+	
+	public::colorize
+	public::colorMap
+	
+	public::showProgress
 	
 contains
 

@@ -110,8 +110,20 @@ set(testConfig_src
 	"src/test/testConfig.f90")
 add_executable(testConfig ${testConfig_src})
 add_test(testConfig testConfig)
+add_dependencies(testConfig symlink)
 
-# add_dependencies(testStats symlink)
+set(examplePlplotlib_src
+	"src/array.f90"
+	"src/kinds.f90"
+	"src/plplotlib.f90"
+	"src/text.f90"
+	"src/time.f90"
+	"src/example/examplePlplotlib.f90")
+add_executable(examplePlplotlib ${examplePlplotlib_src})
+target_link_libraries(examplePlplotlib ${PLPLOT_LIBRARIES})
+add_dependencies(examplePlplotlib symlink)
+
+
 # target_link_libraries(main "gomp")
 # target_link_libraries(main ${FFTW3_LIBRARY})
 # target_link_libraries(main ${NETCDF_LIBRARY})

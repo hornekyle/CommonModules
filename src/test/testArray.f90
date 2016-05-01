@@ -1,4 +1,5 @@
 program testArray_prg
+	!! Test program for array_mod
 	use kinds_mod
 	use array_mod
 	implicit none
