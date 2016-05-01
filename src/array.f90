@@ -185,4 +185,71 @@ contains
 		forall(i=1:Nx,j=1:Ny) o(i,j) = y(j)
 	end function meshGridY
 
+	!========================!
+	!= Linear Interpolation =!
+	!========================!
+
+	function linearInterp(r,x,y) result(o)
+		!! Linear interpolation of y(x) at x=r
+		!!
+		!! Arrays x and y must be sorted
+		real(wp),intent(in)::r
+			!! Position of desired value!! x values of data
+		real(wp),dimension(:),intent(in)::x
+			!! x values of data
+		real(wp),dimension(size(x)),intent(in)::y
+			!! y values of data
+		real(wp)::o
+			!! y(x=r) via linear interpolation
+		
+		integer,dimension(3)::rng
+		real(wp)::phi
+		
+		rng = getRange(r,x)
+		phi = (r-x(rng(1)))/(x(rng(2))-x(rng(1)))
+		o = y(rng(1))+phi*(y(rng(2))-y(rng(1)))
+		
+	contains
+		
+		function getRange(r,x) result(o)
+			!! Find the locations in x that bracket r
+			!!
+			!! Use a quicksearch to find data
+			real(wp),intent(in)::r
+				!! Position of desired value
+			real(wp),dimension(:),intent(in)::x
+				!! x values of data
+			integer,dimension(3)::o
+				!! Indexes of x values that bracket r
+			
+			integer::L,M,H
+			integer::MN
+			logical::found
+			integer::k
+			
+			L = 1
+			H = size(x)
+			M = (L+H)/2+1
+			found = .false.
+			k = 0
+			
+			do while(.not.found)
+				k = k+1
+				if(x(M)<=r) then
+					L = M
+				else
+					H = M
+				end if
+				MN = (L+H)/2+1
+				if(MN==M) then
+					o = [M,M+1,k]
+					return
+				else 
+					M = MN
+				end if
+			end do
+		end function getRange
+		
+	end function linearInterp
+
 end module array_mod
