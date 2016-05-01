@@ -102,6 +102,15 @@ set(testText_src
 add_executable(testText ${testText_src})
 add_test(testText testText)
 
+set(testConfig_src
+	"src/config.f90"
+	"src/kinds.f90"
+	"src/text.f90"
+	"src/time.f90"
+	"src/test/testConfig.f90")
+add_executable(testConfig ${testConfig_src})
+add_test(testConfig testConfig)
+
 # add_dependencies(testStats symlink)
 # target_link_libraries(main "gomp")
 # target_link_libraries(main ${FFTW3_LIBRARY})
