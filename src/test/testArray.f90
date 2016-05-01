@@ -4,10 +4,66 @@ program testArray_prg
 	implicit none
 	
 	call testMixval
+	call testSpan
+	call testFlatten
+	
 	call testLinspace
 	call testMeshGrid
 	
 contains
+
+	subroutine testMixval
+		!! Test mixval to verify operation
+		logical,dimension(1)::results
+		
+		integer,parameter::N = 10
+		real(wp),dimension(N)::x
+		real(wp),dimension(2)::test,true
+		
+		call random_number(x)
+		
+		test = mixval(x)
+		true = [minval(x),maxval(x)]
+		
+		results(1) = all(test==true)
+		
+		if( .not.all(results) ) error stop "Failed mixval check"
+	end subroutine testMixval
+
+	subroutine testSpan
+		!! Test mixval to verify operation
+		logical,dimension(1)::results
+		
+		integer,parameter::N = 10
+		real(wp),dimension(N)::x
+		real(wp)::test,true
+		
+		call random_number(x)
+		
+		test = span(x)
+		true = maxval(x)-minval(x)
+		
+		results(1) = test==true
+		
+		if( .not.all(results) ) error stop "Failed span check"
+	end subroutine testSpan
+
+	subroutine testFlatten
+		!! Test mixval to verify operation
+		logical,dimension(1)::results
+		
+		integer,parameter::N = 3
+		integer,parameter::M = 4
+		real(wp),dimension(N,M)::x
+		real(wp),dimension(N*M)::y
+		
+		call random_number(x)
+		y = flatten(x)
+		
+		results(1) = all( abs(y-reshape(x,[N*M]))<2.0_wp**4*epsilon(1.0_wp) )
+		
+		if( .not.all(results) ) error stop "Failed flatten check"
+	end subroutine testFlatten
 
 	subroutine testLinspace
 		!! Test linspace to verify operation
@@ -51,23 +107,5 @@ contains
 		
 		if( .not.all(results) ) error stop "Failed linspace check"
 	end subroutine testMeshGrid
-
-	subroutine testMixval
-		!! Test mixval to verify operation
-		logical,dimension(1)::results
-		
-		integer,parameter::N = 10
-		real(wp),dimension(N)::x
-		real(wp),dimension(2)::test,true
-		
-		call random_number(x)
-		
-		test = mixval(x)
-		true = [minval(x),maxval(x)]
-		
-		results(1) = all(test==true)
-		
-		if( .not.all(results) ) error stop "Failed mixval check"
-	end subroutine testMixval
 
 end program testArray_prg
