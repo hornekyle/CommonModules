@@ -1,7 +1,7 @@
-title: Module Usage
+title: PlPlotLib Module Usage
 
-Module Usage
-------------
+PlPlotLib Module Usage
+----------------------
 
 Plotting using PlPLotLib involves several basic steps that must be taken
 for the process to succeed. For a single line plot, the steps taken are
@@ -22,7 +22,7 @@ the creation of a legend to distinguish between plots.
 *Example*
 ~~~
 :::fortran
-{!src/basic.f90!}
+{!src/plplotlib/basic.f90!}
 ~~~
 
 ![basic-1.svg](|media|/basic-1.svg)

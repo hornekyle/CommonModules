@@ -1,14 +1,15 @@
 project: CommonModules
-project_dir: ./src
-page_dir: ./pages
-source: true
-exclude: fftw3.f90
-display: public
-graph: true
-output_dir: ./doc
+summary: Common modules for using in other programs
 author: Kyle Horne
 email: kyle.horne@gmail.com
-summary: Common modules for using in other programs
+project_dir: ./src
+exclude: fftw3.f90
+output_dir: ./doc
+page_dir: ./pages
+media_dir: ./examples
+source: true
+display: public
+graph: true
 
 This project contains numerous modules for use in other projects with the specific intent of speeding up development of new simulations.
 The various routines and types are grouped according to task or data type, depending on the module.

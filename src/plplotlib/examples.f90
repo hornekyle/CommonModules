@@ -1,11 +1,11 @@
 program examples_prg
 	!! A collection of example plots
 	use kinds_mod
-	use plplotlib_mod
 	use array_mod
+	use plplotlib_mod
 	implicit none
 	
-	call setup(device='svgqt',fileName='./results/example-%n.svg',figSize=[320,240],transparent=.true.)
+	call setup(device='svgqt',fileName='examples/example-%n.svg',figSize=[320,240],transparent=.true.)
 	
 	call doPlot()
 	call doScatter()

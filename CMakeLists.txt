@@ -112,17 +112,35 @@ add_executable(testConfig ${testConfig_src})
 add_test(testConfig testConfig)
 add_dependencies(testConfig symlink)
 
-set(examplePlplotlib_src
+#============================#
+#= Create PlPlotLib Targets =#
+#============================#
+
+set(plplotlib_src
 	"src/array.f90"
 	"src/kinds.f90"
-	"src/plplotlib.f90"
+	"src/plplotlib/plplotlib.f90"
 	"src/text.f90"
 	"src/time.f90"
-	"src/example/examplePlplotlib.f90")
-add_executable(examplePlplotlib ${examplePlplotlib_src})
-target_link_libraries(examplePlplotlib ${PLPLOT_LIBRARIES})
-add_dependencies(examplePlplotlib symlink)
+	)
 
+add_executable(logo_prg ${plplotlib_src} "src/plplotlib/logo.f90")
+target_link_libraries(logo_prg ${PLPLOT_LIBRARIES})
+
+add_executable(basic_prg ${plplotlib_src} "src/plplotlib/basic.f90")
+target_link_libraries(basic_prg ${PLPLOT_LIBRARIES})
+add_custom_command(TARGET basic_prg PRE_BUILD
+	COMMAND ${CMAKE_COMMAND} -E make_directory "${CMAKE_BINARY_DIR}/examples"
+	WORKING_DIRECTORY "${CMAKE_BINARY_DIR}")
+
+add_executable(animate_prg ${plplotlib_src} "src/plplotlib/animate.f90")
+target_link_libraries(animate_prg ${PLPLOT_LIBRARIES})
+
+add_executable(examples_prg ${plplotlib_src} "src/plplotlib/examples.f90")
+target_link_libraries(examples_prg ${PLPLOT_LIBRARIES})
+add_custom_command(TARGET examples_prg PRE_BUILD
+	COMMAND ${CMAKE_COMMAND} -E make_directory "${CMAKE_BINARY_DIR}/examples"
+	WORKING_DIRECTORY "${CMAKE_BINARY_DIR}")
 
 # target_link_libraries(main "gomp")
 # target_link_libraries(main ${FFTW3_LIBRARY})
