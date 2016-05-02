@@ -12,6 +12,7 @@ program logo_prg
 contains
 
 	subroutine makeLogo
+		!! Create data and plot for logo
 		real(wp),dimension(:),allocatable::x,y1,y2,y3
 		
 		x  = linspace(0.0_wp,1.0_wp,100)

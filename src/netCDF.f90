@@ -1,26 +1,29 @@
 module netCDF_mod
+	!! Module to simplify reading and writing grid data to files
 	use kinds_mod
 	use netcdf
 	implicit none
 	private
 	
-	interface read_step
-		module procedure read_step_1d
-		module procedure read_step_2d
-		module procedure read_step_3d
+	interface readStep
+		!! Read a variable for a timestep from a file
+		module procedure readStep_1d
+		module procedure readStep_2d
+		module procedure readStep_3d
 	end interface
 	
-	interface write_step
-		module procedure write_step_1d
-		module procedure write_step_2d
-		module procedure write_step_3d
+	interface writeStep
+		!! Write a variable for a timestep to a file
+		module procedure writeStep_1d
+		module procedure writeStep_2d
+		module procedure writeStep_3d
 	end interface
 	
-	public::read_grid
-	public::read_step
+	public::readGrid
+	public::readStep
 	
-	public::write_grid
-	public::write_step
+	public::writeGrid
+	public::writeStep
 	
 contains
 
@@ -28,10 +31,20 @@ contains
 	!= Input Routines =!
 	!==================!
 
-	subroutine read_grid(fn,vars,x,y,z,t)
+	subroutine readGrid(fn,vars,x,y,z,t)
+		!! Read a grid from a file
 		character(*),intent(in)::fn
-		character(*),dimension(:),allocatable::vars
-		real(wp),dimension(:),allocatable::x,y,z,t
+			!! Filename
+		character(*),dimension(:),allocatable,intent(inout)::vars
+			!! List of variable names
+		real(dp),dimension(:),allocatable,intent(inout)::x
+			!! Grid data from file; allocated if present
+		real(dp),dimension(:),allocatable,intent(inout)::y
+			!! Grid data from file; allocated if present
+		real(dp),dimension(:),allocatable,intent(inout)::z
+			!! Grid data from file; allocated if present
+		real(dp),dimension(:),allocatable,intent(inout)::t
+			!! Grid data from file; allocated if present
 		
 		integer::f_id
 		integer::Nd,Nv,Na,ud_id,fmtn,d_len
@@ -78,13 +91,18 @@ contains
 		end do
 		
 		ier = nf90_close(f_id)
-	end subroutine read_grid
+	end subroutine readGrid
 
-	subroutine read_step_1d(fn,vn,v,ts)
+	subroutine readStep_1d(fn,vn,v,ts)
+		!! Read a variable step from a file
 		character(*),intent(in)::fn
+			!! Filename
 		character(*),intent(in)::vn
-		real(wp),dimension(:)::v
+			!! Variable name
+		real(dp),dimension(:),intent(out)::v
+			!! Variable to fill with data from file
 		integer,intent(in),optional::ts
+			!! Timestep
 		
 		integer::f_id
 		integer::Nd,Nv,Na,ud_id,fmtn,v_id
@@ -104,13 +122,18 @@ contains
 		end if
 		
 		ier = nf90_close(f_id)
-	end subroutine read_step_1d
+	end subroutine readStep_1d
 
-	subroutine read_step_2d(fn,vn,v,ts)
+	subroutine readStep_2d(fn,vn,v,ts)
+		!! Read a variable step from a file
 		character(*),intent(in)::fn
+			!! Filename
 		character(*),intent(in)::vn
-		real(wp),dimension(:,:)::v
+			!! Variable name
+		real(dp),dimension(:,:),intent(out)::v
+			!! Variable to fill with data from file
 		integer,intent(in),optional::ts
+			!! Timestep
 		
 		integer::f_id
 		integer::Nd,Nv,Na,ud_id,fmtn,v_id
@@ -130,13 +153,18 @@ contains
 		end if
 		
 		ier = nf90_close(f_id)
-	end subroutine read_step_2d
+	end subroutine readStep_2d
 
-	subroutine read_step_3d(fn,vn,v,ts)
+	subroutine readStep_3d(fn,vn,v,ts)
+		!! Read a variable step from a file
 		character(*),intent(in)::fn
+			!! Filename
 		character(*),intent(in)::vn
-		real(wp),dimension(:,:,:)::v
+			!! Variable name
+		real(dp),dimension(:,:,:),intent(out)::v
+			!! Variable to fill with data from file
 		integer,intent(in),optional::ts
+			!! Timestep
 		
 		integer::f_id
 		integer::Nd,Nv,Na,ud_id,fmtn,v_id
@@ -156,18 +184,24 @@ contains
 		end if
 		
 		ier = nf90_close(f_id)
-	end subroutine read_step_3d
+	end subroutine readStep_3d
 
 	!===================!
 	!= Output Routines =!
 	!===================!
 
-	subroutine write_grid(fn,vars,x,y,z)
+	subroutine writeGrid(fn,vars,x,y,z)
+		!! Write a grid to a file
 		character(*),intent(in)::fn
+			!! Filename
 		character(*),dimension(:),intent(in)::vars
+			!! Variable names
 		real(dp),dimension(:),intent(in),optional::x
+			!! Grid data
 		real(dp),dimension(:),intent(in),optional::y
+			!! Grid data
 		real(dp),dimension(:),intent(in),optional::z
+			!! Grid data
 		
 		character(100)::p
 		integer::c
@@ -216,14 +250,20 @@ contains
 		if(present(z)) ier = nf90_put_var(f_id,z_id,z)
 		
 		ier = nf90_close(f_id)
-	end subroutine write_grid
+	end subroutine writeGrid
 
-	subroutine write_step_1d(fn,t,ts,vn,v)
+	subroutine writeStep_1d(fn,t,ts,vn,v)
+		!! Write a variable at a timestep
 		character(*),intent(in)::fn
+			!! Filename
 		real(dp),intent(in)::t
+			!! Time
 		integer,intent(in)::ts
+			!! Timestep
 		character(*),intent(in)::vn
+			!! Variable name
 		real(dp),dimension(:),intent(in)::v
+			!! Variable
 		
 		integer::f_id,t_id,v_id
 		integer::ier
@@ -237,14 +277,20 @@ contains
 		ier = nf90_put_var(f_id,v_id,v,[1,ts])
 		
 		ier = nf90_close(f_id)
-	end subroutine write_step_1d
+	end subroutine writeStep_1d
 
-	subroutine write_step_2d(fn,t,ts,vn,v)
+	subroutine writeStep_2d(fn,t,ts,vn,v)
+		!! Write a variable at a timestep
 		character(*),intent(in)::fn
+			!! Filename
 		real(dp),intent(in)::t
+			!! Time
 		integer,intent(in)::ts
+			!! Timestep
 		character(*),intent(in)::vn
+			!! Variable name
 		real(dp),dimension(:,:),intent(in)::v
+			!! Variable
 		
 		integer::f_id,t_id,v_id
 		integer::ier
@@ -258,14 +304,20 @@ contains
 		ier = nf90_put_var(f_id,v_id,v,[1,1,ts])
 		
 		ier = nf90_close(f_id)
-	end subroutine write_step_2d
+	end subroutine writeStep_2d
 
-	subroutine write_step_3d(fn,t,ts,vn,v)
+	subroutine writeStep_3d(fn,t,ts,vn,v)
+		!! Write a variable at a timestep
 		character(*),intent(in)::fn
+			!! Filename
 		real(dp),intent(in)::t
+			!! Time
 		integer,intent(in)::ts
+			!! Timestep
 		character(*),intent(in)::vn
+			!! Variable name
 		real(dp),dimension(:,:,:),intent(in)::v
+			!! Variable
 		
 		integer::f_id,t_id,v_id
 		integer::ier
@@ -279,6 +331,6 @@ contains
 		ier = nf90_put_var(f_id,v_id,v,[1,1,1,ts])
 		
 		ier = nf90_close(f_id)
-	end subroutine write_step_3d
+	end subroutine writeStep_3d
 
 end module netCDF_mod

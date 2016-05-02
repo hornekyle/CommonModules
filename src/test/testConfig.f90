@@ -12,9 +12,14 @@ contains
 
 	subroutine testNewConfig
 		!! Verify the operation of newConfig
+		logical,dimension(1)::results
 		type(config_t)::cfg
 		
 		cfg = newConfig('./config/testConfig.cfg')
+		
+		results(1) = allocated(cfg%pairs)
+		
+		if( .not.all(results) ) error stop "Failed newConfig check"
 	end subroutine testNewConfig
 
 end program testConfig_prg

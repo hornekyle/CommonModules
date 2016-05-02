@@ -29,6 +29,7 @@ program animate_prg
 contains
 
 	pure function f(x,t) result(o)
+		!! Function for plot
 		real(wp),intent(in)::x,t
 		real(wp)::o
 
