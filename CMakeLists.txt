@@ -49,6 +49,7 @@ set(testKinds_src
 	"src/kinds.f90"
 	"src/test/testKinds.f90")
 add_executable(testKinds ${testKinds_src})
+set_target_properties(testKinds PROPERTIES RUNTIME_OUTPUT_DIRECTORY "tests")
 add_test(testKinds "tests/testKinds")
 
 set(testTime_src
@@ -56,6 +57,7 @@ set(testTime_src
 	"src/time.f90"
 	"src/test/testTime.f90")
 add_executable(testTime ${testTime_src})
+set_target_properties(testTime PROPERTIES RUNTIME_OUTPUT_DIRECTORY "tests")
 add_test(testTime "tests/testTime")
 
 set(testStats_src
@@ -63,6 +65,7 @@ set(testStats_src
 	"src/stats.f90"
 	"src/test/testStats.f90")
 add_executable(testStats ${testStats_src})
+set_target_properties(testStats PROPERTIES RUNTIME_OUTPUT_DIRECTORY "tests")
 add_test(testStats "tests/testStats")
 
 set(testArray_src
@@ -70,7 +73,16 @@ set(testArray_src
 	"src/kinds.f90"
 	"src/test/testArray.f90")
 add_executable(testArray ${testArray_src})
+set_target_properties(testArray PROPERTIES RUNTIME_OUTPUT_DIRECTORY "tests")
 add_test(testArray "tests/testArray")
+
+set(testMatIO_src
+	"src/kinds.f90"
+	"src/matIO.f90"
+	"src/test/testMatIO.f90")
+add_executable(testMatIO ${testMatIO_src})
+set_target_properties(testMatIO PROPERTIES RUNTIME_OUTPUT_DIRECTORY "tests")
+add_test(testMatIO "tests/testMatIO")
 
 set(testNetCDF_src
 	"src/array.f90"
@@ -79,6 +91,7 @@ set(testNetCDF_src
 	"src/test/testNetCDF.f90")
 add_executable(testNetCDF ${testNetCDF_src})
 target_link_libraries(testNetCDF ${NETCDF_LIBRARY})
+set_target_properties(testNetCDF PROPERTIES RUNTIME_OUTPUT_DIRECTORY "tests")
 add_test(testNetCDF "tests/testNetCDF")
 
 set(testFourier_src
@@ -88,6 +101,7 @@ set(testFourier_src
 	"src/test/testFourier.f90")
 add_executable(testFourier ${testFourier_src})
 target_link_libraries(testFourier ${FFTW3_LIBRARY})
+set_target_properties(testFourier PROPERTIES RUNTIME_OUTPUT_DIRECTORY "tests")
 add_test(testFourier "tests/testFourier")
 
 set(testText_src
@@ -96,6 +110,7 @@ set(testText_src
 	"src/time.f90"
 	"src/test/testText.f90")
 add_executable(testText ${testText_src})
+set_target_properties(testText PROPERTIES RUNTIME_OUTPUT_DIRECTORY "tests")
 add_test(testText "tests/testText")
 
 set(testConfig_src
@@ -106,11 +121,8 @@ set(testConfig_src
 	"src/test/testConfig.f90")
 add_executable(testConfig ${testConfig_src})
 add_test(testConfig "tests/testConfig")
+set_target_properties(testConfig PROPERTIES RUNTIME_OUTPUT_DIRECTORY "tests")
 add_dependencies(testConfig symlink)
-
-set_target_properties(testKinds testTime testStats testArray testNetCDF testFourier testText testConfig
-	PROPERTIES
-	RUNTIME_OUTPUT_DIRECTORY "tests")
 
 #============================#
 #= Create PlPlotLib Targets =#
@@ -162,7 +174,6 @@ add_custom_target(ford
 	COMMAND ${CMAKE_COMMAND} -E copy_directory "${CMAKE_SOURCE_DIR}/src" "${CMAKE_BINARY_DIR}/src"
 	COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_SOURCE_DIR}/project.md" "${CMAKE_BINARY_DIR}"
 	COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_SOURCE_DIR}/README.md" "${CMAKE_BINARY_DIR}"
-	COMMAND "plplotlib/logo_prg"
 	COMMAND "plplotlib/basic_prg"
 	COMMAND "plplotlib/examples_prg"
 	COMMAND ${FORD_EXECUTABLE} "project.md"
