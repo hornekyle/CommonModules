@@ -2,7 +2,12 @@ module matio_mod
 	!! Module to write MATLAB's mat file (version 4 only)
 	use iso_c_binding
 	implicit none
-
+	private
+	
+	!==============!
+	!= Interfaces =!
+	!==============!
+	
 	interface v2m
 		!! Convert a vector into a matrix
 		module procedure v2m_i2
@@ -12,7 +17,7 @@ module matio_mod
 		module procedure v2m_z4
 		module procedure v2m_z8
 	end interface
-
+	
 	interface writeMat
 		!! Write a matrix into a file
 		module procedure writeMat_i2
@@ -22,7 +27,13 @@ module matio_mod
 		module procedure writeMat_z4
 		module procedure writeMat_z8
 	end interface
-
+	
+	!===========!
+	!= Exports =!
+	!===========!
+	
+	public::v2m
+	public::writeMat
 contains
 
 	function v2m_i2(v) result(o)

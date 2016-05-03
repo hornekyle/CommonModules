@@ -4,6 +4,8 @@ program testMatIO_prg
 	use matIO_mod
 	implicit none
 	
+	call testWriteMat
+	
 contains
 
 	subroutine testWriteMat
@@ -16,7 +18,7 @@ contains
 		
 		forall(i=1:N,j=1:M) A(i,j) = real(i+j,wp)
 		
-		call writeMat('data.mat','A',A)
+		call writeMat('data.mat','A',A,.true.)
 	end subroutine testWriteMat
 
 end program testMatIO_prg
