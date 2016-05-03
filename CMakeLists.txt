@@ -91,6 +91,14 @@ add_executable(testMesh ${testMesh_src})
 set_target_properties(testMesh PROPERTIES RUNTIME_OUTPUT_DIRECTORY "tests")
 add_test(testMesh "tests/testMesh")
 
+set(testAutoDiff_src
+	"src/autoDiff.f90"
+	"src/kinds.f90"
+	"src/test/testAutoDiff.f90")
+add_executable(testAutoDiff ${testAutoDiff_src})
+set_target_properties(testAutoDiff PROPERTIES RUNTIME_OUTPUT_DIRECTORY "tests")
+add_test(testAutoDiff "tests/testAutoDiff")
+
 set(testNetCDF_src
 	"src/array.f90"
 	"src/kinds.f90"
