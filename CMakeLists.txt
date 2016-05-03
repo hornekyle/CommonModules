@@ -37,8 +37,7 @@ include_directories(${FFTW3_INCLUDE})
 #=========================#
 
 add_custom_target(symlink
-	COMMAND ${CMAKE_COMMAND} -E create_symlink "${CMAKE_SOURCE_DIR}/results" "${CMAKE_BINARY_DIR}/results"
-	COMMAND ${CMAKE_COMMAND} -E create_symlink "${CMAKE_SOURCE_DIR}/config" "${CMAKE_BINARY_DIR}/config"
+	COMMAND ${CMAKE_COMMAND} -E create_symlink "${CMAKE_SOURCE_DIR}/input" "${CMAKE_BINARY_DIR}/input"
 	WORKING_DIRECTORY "${CMAKE_BINARY_DIR}")
 
 #=======================#
@@ -83,6 +82,14 @@ set(testMatIO_src
 add_executable(testMatIO ${testMatIO_src})
 set_target_properties(testMatIO PROPERTIES RUNTIME_OUTPUT_DIRECTORY "tests")
 add_test(testMatIO "tests/testMatIO")
+
+set(testMesh_src
+	"src/kinds.f90"
+	"src/mesh.f90"
+	"src/test/testMesh.f90")
+add_executable(testMesh ${testMesh_src})
+set_target_properties(testMesh PROPERTIES RUNTIME_OUTPUT_DIRECTORY "tests")
+add_test(testMesh "tests/testMesh")
 
 set(testNetCDF_src
 	"src/array.f90"

@@ -1,27 +1,41 @@
 module config_mod
 	!! Module for reading variables from config files
 	!! @todo
-	!! Make code fault tolerant
+	!! Make code fault tolerant  
+	!! Check type of pair when accessing
+	!! Cange pair_t%s to allocatable
 	use kinds_mod
 	use text_mod
 	implicit none
 	private
-
+	
+	integer,parameter::PT_LOGICAL = 0
+	integer,parameter::PT_INTEGER = 1
+	integer,parameter::PT_REAL    = 2
+	integer,parameter::PT_COMPLEX = 3
+	integer,parameter::PT_VECTOR  = 4
+	integer,parameter::PT_MATRIX  = 5
+	integer,parameter::PT_STRING  = 6
+	
+	!=========!
+	!= Types =!
+	!=========!
+	
 	type::pair_t
 		!! Type to store a single key-value pair and the data's type
 		character(100)::key
 		
 		integer::pType
 		
-		logical::l = .false.                      ! 0
-		integer::i = 0                            ! 1
-		real(wp)::r = 0.0_wp                      ! 2
-		complex(wp)::c = 0.0_wp                   ! 3
-		real(wp),dimension(:),allocatable::v      ! 4
-		real(wp),dimension(:,:),allocatable::m    ! 5
-		character(strShort)::s = ' '              ! 6
+		logical::l = .false.
+		integer::i = 0
+		real(wp)::r = 0.0_wp
+		complex(wp)::c = 0.0_wp
+		real(wp),dimension(:),allocatable::v
+		real(wp),dimension(:,:),allocatable::m
+		character(strShort)::s = ' '
 	end type
-
+	
 	type::config_t
 		!! Type to store a set of pairs and access their data
 		character(strLong)::fn
@@ -46,6 +60,10 @@ module config_mod
 		procedure,private::findKey
 		procedure,private::sortKeys
 	end type
+	
+	!===========!
+	!= Exports =!
+	!===========!
 	
 	public::config_t
 	public::newConfig
@@ -174,21 +192,21 @@ contains
 		N = len(v)
 
 		if(v(1:1)=='[' .and. v(N:N)==']' .and. verify(v,' +-.E0123456789[,]')==0) then
-			t = 4
+			t = PT_VECTOR
 		else if(v(1:1)=='(' .and. v(N:N)==')' .and. verify(v,' +-.E0123456789(,)')==0) then
-			t = 3
+			t = PT_COMPLEX
 		else if(v(1:1)=='''' .and. v(N:N)=='''') then
-			t = 6
+			t = PT_STRING
 		else if(v(1:1)=='"' .and. v(N:N)=='"') then
-			t = 6
+			t = PT_STRING
 		else if(verify(v,' +-0123456789')==0) then
-			t = 1
+			t = PT_INTEGER
 		else if(verify(v,' +-.E0123456789')==0) then
-			t = 2
+			t = PT_REAL
 		else if(verify(v,' MATRIXmatrix0123456789(,)')==0) then
-			t = 5
+			t = PT_MATRIX
 		else if(verify(v,' .TRUEtrueFALSEfalse')==0) then
-			t = 0
+			t = PT_LOGICAL
 		else
 			t = -1
 		end if
@@ -227,7 +245,7 @@ contains
 			write(iou,'(1A)',advance='no') trim(self%pairs(k)%key)//' = '
 			select case(self%pairs(k)%ptype)
 			case(0)
-				if(self%pairs(k)%l) then
+				if(self%pairs(k)%l) then              ! 6
 					write(iou,*) 'TRUE'
 				else
 					write(iou,*) 'FALSE'
@@ -341,7 +359,7 @@ contains
 		L = 1
 		M = size(self%pairs)/2+1
 		H = size(self%pairs)
-		found = .false.
+		found = .false.              ! 6
 		
 		idx = 0
 		do while(.not.found)
