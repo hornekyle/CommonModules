@@ -1,4 +1,4 @@
-module matio_mod
+module matIO_mod
 	!! Module to write MATLAB's mat file (version 4 only)
 	use iso_c_binding
 	implicit none
@@ -34,6 +34,7 @@ module matio_mod
 	
 	public::v2m
 	public::writeMat
+	
 contains
 
 	function v2m_i2(v) result(o)
@@ -290,4 +291,4 @@ contains
 		close(u)
 	end subroutine writeMat_z8
 
-end module matio_mod
+end module matIO_mod

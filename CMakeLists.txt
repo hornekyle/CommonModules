@@ -99,6 +99,15 @@ add_executable(testAutoDiff ${testAutoDiff_src})
 set_target_properties(testAutoDiff PROPERTIES RUNTIME_OUTPUT_DIRECTORY "tests")
 add_test(testAutoDiff "tests/testAutoDiff")
 
+set(testVtkIO_src
+	"src/array.f90"
+	"src/kinds.f90"
+	"src/vtkIO.f90"
+	"src/test/testVtkIO.f90")
+add_executable(testVtkIO ${testVtkIO_src})
+set_target_properties(testVtkIO PROPERTIES RUNTIME_OUTPUT_DIRECTORY "tests")
+add_test(testVtkIO "tests/testVtkIO")
+
 set(testNetCDF_src
 	"src/array.f90"
 	"src/kinds.f90"

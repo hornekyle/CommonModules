@@ -18,4 +18,3 @@ contains
 	end subroutine testReadGmsh
 
 end program testMesh_prg
- 
