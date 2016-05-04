@@ -1,4 +1,4 @@
-title: PlPlotLib Module Usage
+title: PlPlotLib Instructions
 
 PlPlotLib Module Usage
 ----------------------

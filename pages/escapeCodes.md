@@ -1,4 +1,4 @@
-title: Escape Codes
+title: PlPlotLib Escape Codes
 
 Character Escape Codes
 ----------------------

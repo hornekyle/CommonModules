@@ -14,7 +14,7 @@ contains
 		real(wp)::t0,t1
 		
 		t0 = cpuTime()
-		call sleep(1)
+		call wait(0.1_wp)
 		t1 = cpuTime()
 		
 		if( t1-t0>0.01_wp ) error stop "Failed cpuTime check"
@@ -25,10 +25,10 @@ contains
 		real(wp)::t0,t1
 		
 		t0 = wallTime()
-		call sleep(1)
+		call wait(0.1_wp)
 		t1 = wallTime()
 		
-		if( t1-t0<1.0_wp ) error stop "Failed wallTime check"
+		if( t1-t0<0.1_wp ) error stop "Failed wallTime check"
 	end subroutine testWallTime 
 
 end program testTime_prg

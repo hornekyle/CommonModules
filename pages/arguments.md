@@ -1,4 +1,4 @@
-title: Common Arguments
+title: PlPlotLib Common Arguments
 
 Common Arguments
 ----------------
