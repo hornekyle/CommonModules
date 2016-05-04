@@ -15,5 +15,8 @@ This project contains numerous modules for use in other projects with the specif
 The various routines and types are grouped according to task or data type, depending on the module.
 
 @todo
-Clean up the documentation of interfaces and their implementations
+[ ] Clean up the documentation of interfaces and their implementations  
+[ ] Add rigorous tests for new modules  
+[ ] Add tdma to array_mod  
+[ ] Add arg to kinds_mod
 
