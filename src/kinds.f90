@@ -38,6 +38,7 @@ module kinds_mod
 	public::PI,E
 	
 	public::printTypes
+	public::arg
 	
 contains
 
@@ -49,6 +50,14 @@ contains
 		write(*,*) 'qp: ',qp
 		write(*,*) 'wp: ',wp
 	end subroutine printTypes
+
+	elemental function arg(z) result(v)
+		!! Compute the argument of a complex number
+		complex(wp),intent(in)::z
+		real(wp)::v
+		
+		v = atan2(aimag(z),real(z))
+	end function arg
 
 end module kinds_mod
  
