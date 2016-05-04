@@ -1,5 +1,7 @@
 program testArray_prg
 	!! Test program for array_mod
+	!! @todo
+	!! Write test for TDMA
 	use kinds_mod
 	use array_mod
 	implicit none

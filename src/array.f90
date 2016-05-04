@@ -39,6 +39,7 @@ module array_mod
 	public::linspace
 	public::meshGridX
 	public::meshGridY
+	public::TDMA
 	
 	public::linearInterp
 	
@@ -186,6 +187,45 @@ contains
 		
 		forall(i=1:Nx,j=1:Ny) o(i,j) = y(j)
 	end function meshGridY
+
+	function TDMA(A,b) result(x)
+		!! Solve a tridiagonal linear algebra problem \( [A]\{x\}=\{b\} \)
+		real(wp),dimension(:,:),intent(in)::A
+			!! Coefficient matrix with the diagonals in columns \( [A] \)
+		real(wp),dimension(:),intent(in)::b
+			!! Right-hand-side of the system \( \{b\} \)
+		real(wp),dimension(:),allocatable::x
+			!! Problem solution \( \{x\} \)
+		
+		real(wp),dimension(:,:),allocatable::W
+		real(wp)::r
+		integer::N,k
+		
+		N = size(A)
+		
+		W(:,-1) =  A(:,1)
+		W(:, 0) =  A(:,2)
+		W(:,+1) = -A(:,3)
+		x       = b
+		
+		do k=2,N
+			r = W(k,-1)/W(k-1,0)
+			W(k,-1:0) = W(k,-1:0)-r*W(k-1,0:1)
+			x(k) = x(k)-r*x(k-1)
+		end do
+		
+		do k=N-1,1,-1
+			r = W(k,1)/W(k+1,0)
+			W(k,0:1) = W(k,0:1)-r*W(k+1,-1:0)
+			x(k) = x(k)-r*x(k+1)
+		end do
+		
+		do k=1,N
+			r = 1.0_wp/W(k,0)
+			W(k,:) = r*W(k,:)
+			x(k) = r*x(k)  
+		end do
+	end function TDMA
 
 	!========================!
 	!= Linear Interpolation =!
