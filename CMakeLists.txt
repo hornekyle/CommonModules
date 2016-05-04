@@ -99,6 +99,14 @@ add_executable(testAutoDiff ${testAutoDiff_src})
 set_target_properties(testAutoDiff PROPERTIES RUNTIME_OUTPUT_DIRECTORY "tests")
 add_test(testAutoDiff "tests/testAutoDiff")
 
+set(testTensor_src
+	"src/kinds.f90"
+	"src/tensor.f90"
+	"src/test/testTensor.f90")
+add_executable(testTensor ${testTensor_src})
+set_target_properties(testTensor PROPERTIES RUNTIME_OUTPUT_DIRECTORY "tests")
+add_test(testTensor "tests/testTensor")
+
 set(testIterate_src
 	"src/iterate.f90"
 	"src/kinds.f90"
