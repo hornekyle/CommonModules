@@ -32,6 +32,10 @@ module eval_mod
 	integer,parameter::T_ABS  = 105
 	integer,parameter::T_SIN  = 106
 	integer,parameter::T_COS  = 107
+	integer,parameter::T_TAN  = 108
+	integer,parameter::T_ASIN = 109
+	integer,parameter::T_ACOS = 110
+	integer,parameter::T_ATAN = 111
 	
 	type::token_t
 		integer::t = T_NONE
@@ -118,6 +122,14 @@ contains
 				stk(sk) = sin(stk(sk))
 			case(T_COS)
 				stk(sk) = cos(stk(sk))
+			case(T_TAN)
+				stk(sk) = tan(stk(sk))
+			case(T_ASIN)
+				stk(sk) = asin(stk(sk))
+			case(T_ACOS)
+				stk(sk) = acos(stk(sk))
+			case(T_ATAN)
+				stk(sk) = atan(stk(sk))
 			end select
 		end do
 		
@@ -267,6 +279,14 @@ contains
 			o%t = T_SIN
 		else if(str=='cos') then
 			o%t = T_COS
+		else if(str=='tan') then
+			o%t = T_TAN
+		else if(str=='asin') then
+			o%t = T_ASIN
+		else if(str=='acos') then
+			o%t = T_ACOS
+		else if(str=='atan') then
+			o%t = T_ATAN
 		else if(str=='sqrt') then
 			o%t = T_SQRT
 		else

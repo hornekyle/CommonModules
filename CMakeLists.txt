@@ -46,7 +46,7 @@ add_custom_target(symlink
 
 set(testKinds_src
 	"src/kinds.f90"
-	"test/testKinds.f90")
+	"src/test/testKinds.f90")
 add_executable(testKinds ${testKinds_src})
 set_target_properties(testKinds PROPERTIES RUNTIME_OUTPUT_DIRECTORY "tests")
 add_test(testKinds "tests/testKinds")
@@ -54,7 +54,7 @@ add_test(testKinds "tests/testKinds")
 set(testTime_src
 	"src/kinds.f90"
 	"src/time.f90"
-	"test/testTime.f90")
+	"src/test/testTime.f90")
 add_executable(testTime ${testTime_src})
 set_target_properties(testTime PROPERTIES RUNTIME_OUTPUT_DIRECTORY "tests")
 add_test(testTime "tests/testTime")
@@ -62,7 +62,7 @@ add_test(testTime "tests/testTime")
 set(testStats_src
 	"src/kinds.f90"
 	"src/stats.f90"
-	"test/testStats.f90")
+	"src/test/testStats.f90")
 add_executable(testStats ${testStats_src})
 set_target_properties(testStats PROPERTIES RUNTIME_OUTPUT_DIRECTORY "tests")
 add_test(testStats "tests/testStats")
@@ -70,7 +70,7 @@ add_test(testStats "tests/testStats")
 set(testArray_src
 	"src/array.f90"
 	"src/kinds.f90"
-	"test/testArray.f90")
+	"src/test/testArray.f90")
 add_executable(testArray ${testArray_src})
 set_target_properties(testArray PROPERTIES RUNTIME_OUTPUT_DIRECTORY "tests")
 add_test(testArray "tests/testArray")
@@ -78,7 +78,7 @@ add_test(testArray "tests/testArray")
 set(testMatIO_src
 	"src/kinds.f90"
 	"src/matIO.f90"
-	"test/testMatIO.f90")
+	"src/test/testMatIO.f90")
 add_executable(testMatIO ${testMatIO_src})
 set_target_properties(testMatIO PROPERTIES RUNTIME_OUTPUT_DIRECTORY "tests")
 add_test(testMatIO "tests/testMatIO")
@@ -86,7 +86,7 @@ add_test(testMatIO "tests/testMatIO")
 set(testMesh_src
 	"src/kinds.f90"
 	"src/mesh.f90"
-	"test/testMesh.f90")
+	"src/test/testMesh.f90")
 add_executable(testMesh ${testMesh_src})
 set_target_properties(testMesh PROPERTIES RUNTIME_OUTPUT_DIRECTORY "tests")
 add_test(testMesh "tests/testMesh")
@@ -94,7 +94,7 @@ add_test(testMesh "tests/testMesh")
 set(testAutoDiff_src
 	"src/autoDiff.f90"
 	"src/kinds.f90"
-	"test/testAutoDiff.f90")
+	"src/test/testAutoDiff.f90")
 add_executable(testAutoDiff ${testAutoDiff_src})
 set_target_properties(testAutoDiff PROPERTIES RUNTIME_OUTPUT_DIRECTORY "tests")
 add_test(testAutoDiff "tests/testAutoDiff")
@@ -102,7 +102,7 @@ add_test(testAutoDiff "tests/testAutoDiff")
 set(testTensor_src
 	"src/kinds.f90"
 	"src/tensor.f90"
-	"test/testTensor.f90")
+	"src/test/testTensor.f90")
 add_executable(testTensor ${testTensor_src})
 set_target_properties(testTensor PROPERTIES RUNTIME_OUTPUT_DIRECTORY "tests")
 add_test(testTensor "tests/testTensor")
@@ -112,7 +112,7 @@ set(testIterate_src
 	"src/kinds.f90"
 	"src/text.f90"
 	"src/time.f90"
-	"test/testIterate.f90")
+	"src/test/testIterate.f90")
 add_executable(testIterate ${testIterate_src})
 set_target_properties(testIterate PROPERTIES RUNTIME_OUTPUT_DIRECTORY "tests")
 add_test(testIterate "tests/testIterate")
@@ -121,7 +121,7 @@ set(testVtkIO_src
 	"src/array.f90"
 	"src/kinds.f90"
 	"src/vtkIO.f90"
-	"test/testVtkIO.f90")
+	"src/test/testVtkIO.f90")
 add_executable(testVtkIO ${testVtkIO_src})
 set_target_properties(testVtkIO PROPERTIES RUNTIME_OUTPUT_DIRECTORY "tests")
 add_test(testVtkIO "tests/testVtkIO")
@@ -130,7 +130,7 @@ set(testNetCDF_src
 	"src/array.f90"
 	"src/kinds.f90"
 	"src/netCDF.f90"
-	"test/testNetCDF.f90")
+	"src/test/testNetCDF.f90")
 add_executable(testNetCDF ${testNetCDF_src})
 target_link_libraries(testNetCDF ${NETCDF_LIBRARY})
 set_target_properties(testNetCDF PROPERTIES RUNTIME_OUTPUT_DIRECTORY "tests")
@@ -140,7 +140,7 @@ set(testFourier_src
 	"src/kinds.f90"
 	"src/fftw3.f90"
 	"src/fourier.f90"
-	"test/testFourier.f90")
+	"src/test/testFourier.f90")
 add_executable(testFourier ${testFourier_src})
 target_link_libraries(testFourier ${FFTW3_LIBRARY})
 set_target_properties(testFourier PROPERTIES RUNTIME_OUTPUT_DIRECTORY "tests")
@@ -150,7 +150,7 @@ set(testText_src
 	"src/kinds.f90"
 	"src/text.f90"
 	"src/time.f90"
-	"test/testText.f90")
+	"src/test/testText.f90")
 add_executable(testText ${testText_src})
 set_target_properties(testText PROPERTIES RUNTIME_OUTPUT_DIRECTORY "tests")
 add_test(testText "tests/testText")
@@ -160,7 +160,7 @@ set(testConfig_src
 	"src/kinds.f90"
 	"src/text.f90"
 	"src/time.f90"
-	"test/testConfig.f90")
+	"src/test/testConfig.f90")
 add_executable(testConfig ${testConfig_src})
 add_test(testConfig "tests/testConfig")
 set_target_properties(testConfig PROPERTIES RUNTIME_OUTPUT_DIRECTORY "tests")
@@ -173,7 +173,7 @@ set(testEval_src
 	"src/plplotlib/plplotlib.f90"
 	"src/text.f90"
 	"src/time.f90"
-	"test/testEval.f90")
+	"src/test/testEval.f90")
 add_executable(testEval ${testEval_src})
 target_link_libraries(testEval ${PLPLOT_LIBRARIES})
 add_test(testEval "tests/testEval")
