@@ -25,17 +25,18 @@ module eval_mod
 	integer,parameter::T_POW  = 205
 	
 	integer,parameter::T_FUNCTION = 100
-	integer,parameter::T_NEG  = 101
-	integer,parameter::T_SQRT = 102
-	integer,parameter::T_EXP  = 103
-	integer,parameter::T_LOG  = 104
-	integer,parameter::T_ABS  = 105
-	integer,parameter::T_SIN  = 106
-	integer,parameter::T_COS  = 107
-	integer,parameter::T_TAN  = 108
-	integer,parameter::T_ASIN = 109
-	integer,parameter::T_ACOS = 110
-	integer,parameter::T_ATAN = 111
+	integer,parameter::T_NEG   = 101
+	integer,parameter::T_SQRT  = 102
+	integer,parameter::T_EXP   = 103
+	integer,parameter::T_LOG   = 104
+	integer,parameter::T_ABS   = 105
+	integer,parameter::T_SIN   = 106
+	integer,parameter::T_COS   = 107
+	integer,parameter::T_TAN   = 108
+	integer,parameter::T_ASIN  = 109
+	integer,parameter::T_ACOS  = 110
+	integer,parameter::T_ATAN  = 111
+	integer,parameter::T_LOG10 = 112
 	
 	type::token_t
 		integer::t = T_NONE
@@ -130,6 +131,8 @@ contains
 				stk(sk) = acos(stk(sk))
 			case(T_ATAN)
 				stk(sk) = atan(stk(sk))
+			case(T_LOG10)
+				stk(sk) = log10(stk(sk))
 			end select
 		end do
 		
@@ -269,6 +272,8 @@ contains
 		else if(verify(str,' .+-0123456789E')==0) then
 			o%t = T_REAL
 			read(str,*) o%a
+		else if(str=='sqrt') then
+			o%t = T_SQRT
 		else if(str=='exp') then
 			o%t = T_EXP
 		else if(str=='log') then
@@ -287,8 +292,8 @@ contains
 			o%t = T_ACOS
 		else if(str=='atan') then
 			o%t = T_ATAN
-		else if(str=='sqrt') then
-			o%t = T_SQRT
+		else if(str=='log10') then
+			o%t = T_LOG10
 		else
 			o%t = T_VAR
 		end if

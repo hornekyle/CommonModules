@@ -29,9 +29,9 @@ contains
 		call doFunction('f(x) = cos(x)',[0.0_wp,2.0_wp*PI])
 		call doFunction('f(x) = acos(cos(x))',[0.0_wp,2.0_wp*PI])
 		
-		call doFunction('f(x) = 2*(x+1)',[0.0_wp,2.0_wp*PI])
-		call doFunction('f(x) = (x+1)*(x-1)',[0.0_wp,2.0_wp*PI])
-		call doFunction('f(x) = (x+1)/(x^2+1)',[0.0_wp,2.0_wp*PI])
+		call doFunction('f(x) = 2*(x+1)/3',[0.0_wp,2.0_wp*PI])
+		call doFunction('f(x) = (x+1)*(x-1)/6',[0.0_wp,2.0_wp*PI])
+		call doFunction('f(x) = 4*(x+1)/(x^2+1)',[0.0_wp,2.0_wp*PI])
 		
 		call show()
 	end subroutine testFunction
@@ -61,7 +61,7 @@ contains
 		
 		call figure()
 		call subplot(1,1,1,aspect=span(y)/span(x))
-		call xylim(mixval(x),mixval(y))
+		call xylim(mixval(x),mixval(y)+0.05_wp*[-1.0_wp,1.0_wp*span(y)])
 		call plot(x,y,lineColor='r',lineWidth=2.0_wp)
 		call ticks()
 		call labels('x','y',s)
