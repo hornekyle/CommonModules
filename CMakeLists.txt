@@ -166,6 +166,19 @@ add_test(testConfig "tests/testConfig")
 set_target_properties(testConfig PROPERTIES RUNTIME_OUTPUT_DIRECTORY "tests")
 add_dependencies(testConfig symlink)
 
+set(testEval_src
+	"src/array.f90"
+	"src/eval.f90"
+	"src/kinds.f90"
+	"src/plplotlib/plplotlib.f90"
+	"src/text.f90"
+	"src/time.f90"
+	"src/test/testEval.f90")
+add_executable(testEval ${testEval_src})
+target_link_libraries(testEval ${PLPLOT_LIBRARIES})
+add_test(testEval "tests/testEval")
+set_target_properties(testEval PROPERTIES RUNTIME_OUTPUT_DIRECTORY "tests")
+
 #============================#
 #= Create PlPlotLib Targets =#
 #============================#

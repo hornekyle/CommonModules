@@ -34,6 +34,8 @@ module text_mod
 	public::fmtLong
 	public::fmtShort
 	
+	public::removeSpaces
+	
 	public::startsWith
 	public::endsWith
 	
@@ -47,6 +49,30 @@ module text_mod
 	public::showProgress
 	
 contains
+
+	function removeSpaces(s) result(o)
+		!! Remove all spaces from a string
+		character(*),intent(in)::s
+			!! String to remove spaces from
+		character(:),allocatable::o
+			!! String without spaces
+		
+		integer::sc,i,k
+		
+		sc = 0
+		do k=1,len(s)
+			if( s(k:k)==' ' ) sc = sc+1
+		end do
+		
+		o = repeat(' ',len(s)-sc)
+		i = 1
+		do k=1,len(s)
+			if( s(k:k)/=' ' ) then
+				o(i:i) = s(k:k)
+				i = i+1
+			end if
+		end do
+	end function removeSpaces
 
 	function startsWith(text,str) result(o)
 		!! Test if text starts with str

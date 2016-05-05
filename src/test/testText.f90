@@ -4,6 +4,8 @@ program testText_prg
 	use text_mod
 	implicit none
 	
+	call testRemoveSpaces
+	
 	call testStartsWith
 	call testEndsWith
 	
@@ -15,6 +17,18 @@ program testText_prg
 	call testColorMap
 	
 contains
+
+	subroutine testRemoveSpaces
+		!! Test removeSpaces to verify operation
+		!! @todo
+		!! Make me a test with stop conditions
+		character(:),allocatable::s1,s2
+		
+		s1 = 'This Is A Test'
+		s2 = removeSpaces(s1)
+		
+		write(*,*) '|'//s2//'|'
+	end subroutine testRemoveSpaces
 
 	subroutine testStartsWith
 		!! Test startsWith to verify operation
