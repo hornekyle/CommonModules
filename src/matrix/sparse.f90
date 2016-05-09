@@ -1,5 +1,6 @@
 module sparse_mod
 	use kinds_mod
+	use array_mod
 	implicit none
 	
 	type::spvec_t
@@ -17,9 +18,17 @@ module sparse_mod
 		type(spvec_t),dimension(:),allocatable::rows
 	end type
 	
+	interface operator(+)
+		module procedure add_vv
+	end interface
+	
 	interface operator(*)
 		module procedure mul_rv
 		module procedure mul_vr
+	end interface
+	
+	interface operator(.o.)
+		module procedure dot_vv
 	end interface
 	
 contains
@@ -54,13 +63,7 @@ contains
 		integer,intent(in)::i
 		real(wp)::o
 		
-		integer::k
-		
-		o = 0.0_wp
-		do k=1,size(self%i)
-			if(self%i(k)/=i) cycle
-			o = self%v(k)
-		end do
+		o = sum(self%v,self%i==i)
 	end function get_v
 
 	subroutine set_v(self,i,v)
@@ -105,6 +108,22 @@ contains
 		end if
 	end subroutine add_v
 
+	function add_vv(u,v) result(o)
+		type(spvec_t),intent(in)::u
+		type(spvec_t),intent(in)::v
+		type(spvec_t)::o
+		
+		integer::i,k
+		
+		o%i = deDup([u%i,v%i])
+		allocate(o%v(size(o%i)))
+		
+		do k=1,size(o%i)
+			i = o%i(k)
+			o%v(k) = u%get(i)+v%get(i)
+		end do
+	end function add_vv
+
 	function mul_rv(r,v) result(o)
 		real(wp),intent(in)::r
 		type(spvec_t),intent(in)::v
@@ -122,5 +141,19 @@ contains
 		o%i = v%i
 		o%v = r*v%v
 	end function mul_vr
+
+	function dot_vv(u,v) result(o)
+		type(spvec_t),intent(in)::u
+		type(spvec_t),intent(in)::v
+		real(wp)::o
+		
+		integer::i,k
+		
+		o = 0.0_wp
+		do k=1,size(u%i)
+			i = u%i(k)
+			o = o+u%v(k)*v%get(i)
+		end do
+	end function dot_vv
 
 end module sparse_mod

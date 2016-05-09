@@ -108,6 +108,7 @@ set_target_properties(testTensor PROPERTIES RUNTIME_OUTPUT_DIRECTORY "tests")
 add_test(testTensor "tests/testTensor")
 
 set(testSparse_src
+	"src/array.f90"
 	"src/kinds.f90"
 	"src/matrix/sparse.f90"
 	"src/test/testSparse.f90")
