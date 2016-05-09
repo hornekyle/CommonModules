@@ -36,6 +36,8 @@ module array_mod
 	public::span
 	public::flatten
 	
+	public::deDup
+	
 	public::linspace
 	public::meshGridX
 	public::meshGridY
@@ -129,6 +131,26 @@ contains
 		
 		o = reshape(A,[size(A)])
 	end function flatten_3
+
+	function deDup(l) result(o)
+		!! Remove duplicates from a list of positive integers
+		integer,dimension(:),intent(in)::l
+			!! List for de-duplication
+		integer,dimension(:),allocatable::o
+			!! List without duplicates
+		
+		integer,dimension(:),allocatable::b
+		integer::T,k
+		
+		b = l
+		do k=1,size(b)
+			T = b(k)
+			where(b==T) b = -1
+			b(k) = T
+		end do
+		
+		o = pack(b,b>0)
+	end function deDup
 
 	!=================!
 	!= Grid Routines =!

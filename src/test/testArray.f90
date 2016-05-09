@@ -70,6 +70,15 @@ contains
 		if( .not.all(results) ) error stop "Failed flatten check"
 	end subroutine testFlatten
 
+	subroutine testDeDup
+		!! Test deDup to verify operation
+		logical,dimension(1)::results
+		
+		results(1) = all( deDup([1,1,2,3,2,4])==[1,2,3,4] )
+		
+		if( .not.all(results) ) error stop "Failed deDup check"
+	end subroutine testDeDup
+
 	subroutine testLinspace
 		!! Test linspace to verify operation
 		logical,dimension(1)::results

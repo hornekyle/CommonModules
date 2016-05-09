@@ -107,6 +107,14 @@ add_executable(testTensor ${testTensor_src})
 set_target_properties(testTensor PROPERTIES RUNTIME_OUTPUT_DIRECTORY "tests")
 add_test(testTensor "tests/testTensor")
 
+set(testSparse_src
+	"src/kinds.f90"
+	"src/matrix/sparse.f90"
+	"src/test/testSparse.f90")
+add_executable(testSparse ${testSparse_src})
+set_target_properties(testSparse PROPERTIES RUNTIME_OUTPUT_DIRECTORY "tests")
+add_test(testSparse "tests/testSparse")
+
 set(testIterate_src
 	"src/iterate.f90"
 	"src/kinds.f90"
