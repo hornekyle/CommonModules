@@ -2,6 +2,11 @@ module sparse_mod
 	use kinds_mod
 	use array_mod
 	implicit none
+	private
+	
+	!=========!
+	!= Types =!
+	!=========!
 	
 	type::spvec_t
 		integer,dimension(:),allocatable::i
@@ -21,7 +26,15 @@ module sparse_mod
 		procedure::get => get_m
 		procedure::set => set_m
 		procedure::add => add_m
+		procedure::expand
+		procedure::getDiagonal
+		procedure::toDense => toDense_m
+		procedure::toText => toText_m
 	end type
+	
+	!==============!
+	!= Interfaces =!
+	!==============!
 	
 	interface operator(+)
 		module procedure add_uv
@@ -43,26 +56,52 @@ module sparse_mod
 		module procedure dot_mu
 		module procedure dot_vm
 		module procedure dot_mv
+		
+		module procedure dot_mm
 	end interface
 	
 	interface matmul
 		module procedure dot_mu
 		module procedure dot_mv
+		module procedure dot_mm
 	end interface
 	
 	interface sum
 		module procedure sum_v
 	end interface
 	
-! 	interface minval
-! 		module procedure minval_v
-! 		module procedure minval_m
-! 	end interface
+	interface minval
+		module procedure minval_v
+		module procedure minval_m
+	end interface
 	
-! 	interface maxval
-! 		module procedure maxval_v
-! 		module procedure maxval_m
-! 	end interface
+	interface maxval
+		module procedure maxval_v
+		module procedure maxval_m
+	end interface
+	
+	interface transpose
+		module procedure transpose_m
+	end interface
+	
+	!===========!
+	!= Exports =!
+	!===========!
+	
+	public::spvec_t
+	public::sparse_t
+	
+	public::newSpvec
+	public::newSparse
+	
+	public::operator(+)
+	public::operator(*)
+	public::operator(.o.)
+	public::matmul
+	public::sum
+	public::minval
+	public::maxval
+	public::transpose
 	
 contains
 
@@ -276,6 +315,20 @@ contains
 		end do
 	end function sum_v
 
+	function minval_v(v) result(o)
+		type(spvec_t),intent(in)::v
+		real(wp)::o
+		
+		o = minval(v%v)
+	end function minval_v
+
+	function maxval_v(v) result(o)
+		type(spvec_t),intent(in)::v
+		real(wp)::o
+		
+		o = maxval(v%v)
+	end function maxval_v
+
 	!========================!
 	!= Methods for sparse_t =!
 	!========================!
@@ -306,6 +359,66 @@ contains
 		
 		call self%rows(i)%add(j,v)
 	end subroutine add_m
+
+	subroutine expand(self,r,c,A)
+		class(sparse_t),intent(inout)::self
+		integer,dimension(:),intent(in)::r,c
+		real(wp),dimension(size(r),size(c)),intent(in)::A
+		
+		integer::i,j,k,l
+		
+		do k=1,size(r)
+			i = r(k)
+			if(i>self%N) cycle
+			do l=1,size(c)
+				j = c(l)
+				if(j>self%M) cycle
+				
+				call self%add(i,j,A(k,l))
+			end do
+		end do
+	end subroutine expand
+
+	function getDiagonal(self) result(o)
+		class(sparse_t),intent(in)::self
+		real(wp),dimension(:),allocatable::o
+		
+		integer::i
+		
+		allocate(o(self%N))
+		do i=1,self%N
+			o(i) = self%get(i,i)
+		end do
+	end function getDiagonal
+
+	function toDense_m(self) result(o)
+		class(sparse_t),intent(in)::self
+		real(wp),dimension(:,:),allocatable::o
+		
+		integer::i
+		
+		allocate(o(self%N,self%M))
+		
+		do i=1,self%N
+			o(i,1:self%M) = self%rows(i)%toDense(self%M)
+		end do
+	end function toDense_m
+
+	subroutine toText_m(self,iou)
+		class(sparse_t),intent(in)::self
+		integer,intent(in)::iou
+		
+		integer::i,j,k
+		real(wp)::v
+		
+		do i=1,self%N
+			do k=1,size(self%rows(i)%i)
+				j = self%rows(i)%i(k)
+				v = self%rows(i)%v(k)
+				write(iou,*) i,j,v
+			end do
+		end do
+	end subroutine toText_m
 
 	!==========================!
 	!= Overloads for sparse_t =!
@@ -382,5 +495,41 @@ contains
 			o%rows(i) = A%rows(i).o.B
 		end do
 	end function dot_mm
+
+	function minval_m(A) result(o)
+		type(sparse_t),intent(in)::A
+		real(wp)::o
+		
+		integer::i
+		
+		o = minval([( minval(A%rows(i)%v) , i=1,A%N )])
+	end function minval_m
+
+	function maxval_m(A) result(o)
+		type(sparse_t),intent(in)::A
+		real(wp)::o
+		
+		integer::i
+		
+		o = maxval([( maxval(A%rows(i)%v) , i=1,A%N )])
+	end function maxval_m
+
+	function transpose_m(A) result(o)
+		type(sparse_t),intent(in)::A
+		type(sparse_t)::o
+		
+		integer::i,j,k
+		real(wp)::v
+		
+		o = newSparse(A%M,A%N)
+		
+		do i=1,A%N
+			do k=1,size(A%rows(i)%i)
+				j = A%rows(i)%i(k)
+				v = A%rows(i)%v(k)
+				call o%set(j,i,v)
+			end do
+		end do
+	end function transpose_m
 
 end module sparse_mod
