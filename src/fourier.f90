@@ -281,12 +281,12 @@ contains
 			end do
 		end do
 		
-		output = real(buf,wp)/sqrt(real(size(input),wp))
+		output = abs(buf)/sqrt(real(size(input),wp))
 	end function DFT_r1
 
 	function DFT_c1(input) result(output)
 		complex(wp),dimension(0:),intent(in)::input
-		real(wp),dimension(:),allocatable::output
+		complex(wp),dimension(:),allocatable::output
 		
 		complex(wp),dimension(:),allocatable::buf
 		integer::n,k
@@ -339,7 +339,7 @@ contains
 		end do
 		end do
 		
-		output = real(buf,wp)/sqrt(real(BN(1)*BN(2),wp))
+		output = abs(buf)/sqrt(real(BN(1)*BN(2),wp))
 	end function DFT_r2
 
 	function DFT_c2(input) result(output)
@@ -397,7 +397,7 @@ contains
 			end do
 		end do
 		
-		output = real(buf,wp)/sqrt(real(size(input),wp))
+		output = abs(buf)/sqrt(real(size(input),wp))
 	end function iDFT_r1
 
 	function iDFT_c1(input) result(output)

@@ -152,11 +152,12 @@ contains
 		logical::doAppend
 		integer::k
 		
-		doAppend = .false.
+		doAppend = .true.
 		
 		do k=1,size(self%i)
 			if(self%i(k)/=i) cycle
 			self%v(k) = v
+			doAppend = .false.
 		end do
 		
 		if(doAppend) then
@@ -173,11 +174,12 @@ contains
 		logical::doAppend
 		integer::k
 		
-		doAppend = .false.
+		doAppend = .true.
 		
 		do k=1,size(self%i)
 			if(self%i(k)/=i) cycle
 			self%v(k) = self%v(k)+v
+			doAppend = .false.
 		end do
 		
 		if(doAppend) then
@@ -194,6 +196,7 @@ contains
 		integer::i,k
 		
 		allocate(o(N))
+		o = 0.0_wp
 		do k=1,size(self%i)
 			i = self%i(k)
 			o(i) = self%v(k)
@@ -398,7 +401,7 @@ contains
 		integer::i
 		
 		allocate(o(self%N,self%M))
-		
+		o = 0.0_wp
 		do i=1,self%N
 			o(i,1:self%M) = self%rows(i)%toDense(self%M)
 		end do
