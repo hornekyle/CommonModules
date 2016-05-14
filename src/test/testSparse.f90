@@ -1,12 +1,14 @@
 program testSparse_prg
 	use kinds_mod
 	use sparse_mod
+	use solver_mod
 	use array_mod
+	use plplotlib_mod
 	implicit none
 	
 ! 	call testNewSparse
 ! 	call testSpvec
-	call testJacobi
+	call testSolvers
 	
 contains
 
@@ -40,24 +42,24 @@ contains
 		write(*,*) r%v
 	end subroutine testSpvec
 
-	subroutine testJacobi
+	subroutine testSolvers
 		real(wp),parameter::Tl  = 0.0_wp
 		real(wp),parameter::Tr  = 1.0_wp
 		real(wp),parameter::k   = 1.0_wp
 		real(wp),parameter::q0  = 10.0_wp
 		real(wp),parameter::tol = 1.0E-8_wp
 		
-		real(wp)::Ap,Ae,Aw,dx,rss
+		real(wp)::Ap,Ae,Aw,dx
 		type(sparse_t)::A
-		real(wp),dimension(:),allocatable::x,T,q,D,r
-		real(wp),dimension(:,:),allocatable::Ad
+		real(wp),dimension(:),allocatable::x,Tj,Tg,q
 		integer::N,i
 		
-		N = 20
-		x = linspace(0.0_wp,1.0_wp,N)
-		T = [( 0.0_wp , i=1,N )]
-		q = [( q0     , i=1,N )]
-		A = newSparse(N,N)
+		N  = 50
+		x  = linspace(0.0_wp,1.0_wp,N)
+		Tj = [( 0.0_wp , i=1,N )]
+		Tg = [( 0.0_wp , i=1,N )]
+		q  = [( q0     , i=1,N )]
+		A  = newSparse(N,N)
 		
 		dx = x(2)-x(1)
 		
@@ -76,17 +78,18 @@ contains
 		call A%set(i,i,1.0_wp)
 		q(i) = Tr
 		
-		Ad = A%toDense()
-		D  = A%getDiagonal()
+		Tj = jacobi(A,q)
+		Tg = gaussSeidel(A,q)
 		
-		do i=1,10000
-			r = q-matmul(A,T)
-			T = T+r/D
-			rss = sqrt(sum(r**2))
-			write(*,*) i,rss
-			if(rss<tol) exit
-		end do
-		write(*,'(*(F6.3))') T
-	end subroutine testJacobi
+		call setup()
+		call figure()
+		call subplot(1,1,1)
+		call xylim(mixval(x),mixval(Tj)+[0.0_wp,0.05_wp]*span(Tj))
+		call plot(x,Tj,lineStyle='',markStyle='x',markColor='r')
+		call plot(x,Tg,lineStyle='',markStyle='o',markColor='b')
+		call ticks()
+		call labels('Position #fix#fn','Temperature #fiT#fn','1D Heat Conduction with Generation')
+		call show()
+	end subroutine testSolvers
 
 end program testSparse_prg

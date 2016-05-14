@@ -110,11 +110,16 @@ add_test(testTensor "tests/testTensor")
 set(testSparse_src
 	"src/array.f90"
 	"src/kinds.f90"
+	"src/text.f90"
+	"src/time.f90"
+	"src/plplotlib/plplotlib.f90"
+	"src/matrix/solver.f90"
 	"src/matrix/sparse.f90"
 	"src/test/testSparse.f90")
 add_executable(testSparse ${testSparse_src})
 set_target_properties(testSparse PROPERTIES RUNTIME_OUTPUT_DIRECTORY "tests")
 add_test(testSparse "tests/testSparse")
+target_link_libraries(testSparse ${PLPLOT_LIBRARIES})
 
 set(testIterate_src
 	"src/iterate.f90"
