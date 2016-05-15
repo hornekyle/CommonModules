@@ -51,21 +51,34 @@ contains
 		
 		real(wp)::Ap,Ae,Aw,dx
 		type(sparse_t)::A
-		real(wp),dimension(:),allocatable::x,Tj,Tg,q
+		real(wp),dimension(:),allocatable::x,q
+		real(wp),dimension(:),allocatable::T1,T2
 		integer::N,i
 		
-		N  = 50
-		x  = linspace(0.0_wp,1.0_wp,N)
-		Tj = [( 0.0_wp , i=1,N )]
-		Tg = [( 0.0_wp , i=1,N )]
+		N  = 100
+		allocate(x(0:N+1))
+		x  = linspace(0.0_wp,1.0_wp,N+2)
 		q  = [( q0     , i=1,N )]
 		A  = newSparse(N,N)
+		
+		allocate(T1(0:N+1))
+		allocate(T2(0:N+1))
+		
+		T1(0)   = Tl
+		T1(N+1) = Tr
+		
+		T2(0)   = Tl
+		T2(N+1) = Tr
 		
 		dx = x(2)-x(1)
 		
 		i = 1
-		call A%set(i,i,1.0_wp)
-		q(i) = Tl
+		Ae = k/dx**2
+		Aw = k/dx**2
+		Ap = Ae+Aw
+		call A%set(i,i  , Ap)
+		call A%set(i,i+1,-Ae)
+		q(i) = q(i)+Aw*Tl
 		do i=2,N-1
 			Ae = k/dx**2
 			Aw = k/dx**2
@@ -75,18 +88,22 @@ contains
 			call A%set(i,i+1,-Ae)
 		end do
 		i = N
-		call A%set(i,i,1.0_wp)
-		q(i) = Tr
+		Ae = k/dx**2
+		Aw = k/dx**2
+		Ap = Ae+Aw
+		call A%set(i,i-1,-Aw)
+		call A%set(i,i  , Ap)
+		q(i) = q(i)+Ae*Tr
 		
-		Tj = jacobi(A,q)
-		Tg = gaussSeidel(A,q)
+		T1(1:N) = biConjugateGradientStabilized(A,q)
+		T2(1:N) = conjugateGradient(A,q)
 		
 		call setup()
 		call figure()
 		call subplot(1,1,1)
-		call xylim(mixval(x),mixval(Tj)+[0.0_wp,0.05_wp]*span(Tj))
-		call plot(x,Tj,lineStyle='',markStyle='x',markColor='r')
-		call plot(x,Tg,lineStyle='',markStyle='o',markColor='b')
+		call xylim(mixval(x),mixval(T1)+[0.0_wp,0.05_wp]*span(T1))
+		call plot(x,T1,lineStyle='',markStyle='x',markColor='r')
+		call plot(x,T2,lineStyle='',markStyle='o',markColor='b')
 		call ticks()
 		call labels('Position #fix#fn','Temperature #fiT#fn','1D Heat Conduction with Generation')
 		call show()

@@ -243,7 +243,6 @@ contains
 		if(present(ml)) mld = ml
 		
 		if(p<=0.0_wp) then
-!~ 			write(stdout,'(1A)') ''
 			po = p
 			tStart = wallTime()
 		else if(p-po<=0.01 .and. p<1.0_wp) then
