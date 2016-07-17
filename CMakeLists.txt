@@ -8,8 +8,14 @@ enable_testing()
 #= Set Default Flags =#
 #=====================#
 
+if(CMAKE_FORTRAN_COMPILER_VERSION VERSION_GREATER 5.0)
+	set(WTABS "-Wno-tabs")
+else(CMAKE_FORTRAN_COMPILER_VERSION VERSION_GREATER 5.0)
+	set(WTABS "-Wtabs")
+endif(CMAKE_FORTRAN_COMPILER_VERSION VERSION_GREATER 5.0)
+
 set(CMAKE_Fortran_FLAGS "")
-set(CMAKE_Fortran_FLAGS_DEBUG "-g2 -Wall -Wno-maybe-uninitialized -Wtabs -fcheck=all -ffpe-trap=invalid,zero,overflow -fbacktrace -finit-real=snan")
+set(CMAKE_Fortran_FLAGS_DEBUG "-g2 -Wall ${WTABS} -fcheck=all -ffpe-trap=invalid,zero,overflow -fbacktrace -finit-real=snan")
 set(CMAKE_Fortran_FLAGS_RELEASE "-O3 -mtune=native -march=native")
 
 #===============================#
