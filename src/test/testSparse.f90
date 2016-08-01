@@ -98,7 +98,7 @@ contains
 		T1(1:N) = biConjugateGradientStabilized(A,q)
 		T2(1:N) = conjugateGradient(A,q)
 		
-		call setup()
+		call setup(device='svg',fileName='testsSparse-%n.svg',figSize=[400,300])
 		call figure()
 		call subplot(1,1,1)
 		call xylim(mixval(x),mixval(T1)+[0.0_wp,0.05_wp]*span(T1))

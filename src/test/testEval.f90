@@ -12,7 +12,7 @@ contains
 
 	subroutine testFunction
 		!! Verify operation of newFunction and eval
-		call setup()
+		call setup(device='svg',fileName='testsEval-%n.svg',figSize=[400,300])
 		
 		call doFunction('f(x) = x+1',[-2.0_wp,2.0_wp])
 		call doFunction('f(x) = x-1',[-2.0_wp,2.0_wp])
