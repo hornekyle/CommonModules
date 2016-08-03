@@ -1,7 +1,7 @@
 module tensor_mod
 	!! Module for working with tensors
 	!! @note
-	!! Array sized must be specific (either 2 or 3) for this to work!
+	!! Array size must be specific (either 2 or 3) for this to work!
 	use kinds_mod
 	implicit none
 	private
