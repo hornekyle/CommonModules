@@ -4,6 +4,20 @@ set(PROJECT "CommonModules")
 project(${PROJECT})
 enable_testing()
 
+#=======================#
+#= One-time Operations =#
+#=======================#
+
+find_program(EXECUTABLE_FORD "ford")
+find_program(EXECUTABLE_GMSH "gmsh")
+
+file(MAKE_DIRECTORY "${CMAKE_BINARY_DIR}/media")
+file(MAKE_DIRECTORY "${CMAKE_BINARY_DIR}/testing")
+
+file(MAKE_DIRECTORY "${CMAKE_BINARY_DIR}/modules")
+set(CMAKE_Fortran_MODULE_DIRECTORY "${CMAKE_BINARY_DIR}/modules")
+include_directories("${CMAKE_BINARY_DIR}/modules")
+
 #=====================#
 #= Set Default Flags =#
 #=====================#
@@ -62,16 +76,6 @@ finder(NETCDF "netcdff" "netcdf.mod")
 finder(FFTW3 "fftw3" "fftw3.f03")
 finder(LAPACK "lapack")
 finder(UMFPACK "umfpack")
-
-#=======================#
-#= One-time Operations =#
-#=======================#
-
-find_program(EXECUTABLE_FORD "ford")
-find_program(EXECUTABLE_GMSH "gmsh")
-
-file(MAKE_DIRECTORY "${CMAKE_BINARY_DIR}/media")
-file(MAKE_DIRECTORY "${CMAKE_BINARY_DIR}/testing")
 
 #=========================#
 #= Create Symlink Target =#
