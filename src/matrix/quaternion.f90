@@ -1,13 +1,15 @@
 module quaternion_mod
 	!! Module for working with quaternions
+	!! @todo
+	!! Add documentation
 	use kinds_mod
 	use tensor_mod
 	implicit none
 	private
 	
 	type::quat_t
-		real(wp)::r
-		real(wp),dimension(3)::v
+		real(wp)::r = 0.0_wp
+		real(wp),dimension(3)::v = 0.0_wp
 	end type
 	
 	interface norm2
@@ -59,6 +61,10 @@ module quaternion_mod
 	end interface
 	
 	public::quat_t
+	
+	public::scaler
+	public::vector
+	
 	public::norm2
 	public::conjg
 	public::inv
@@ -70,6 +76,7 @@ module quaternion_mod
 	public::operator(+)
 	public::operator(-)
 	public::operator(*)
+	public::operator(/)
 	
 contains
 
@@ -77,14 +84,28 @@ contains
 	!= Basic Routines =!
 	!==================!
 
-	function norm2_q(q) result(o)
+	elemental function scaler(q) result(o)
+		type(quat_t),intent(in)::q
+		real(wp)::o
+		
+		o = q%r
+	end function scaler
+
+	function vector(q) result(o)
+		type(quat_t),intent(in)::q
+		real(wp),dimension(3)::o
+		
+		o = q%v
+	end function vector
+
+	elemental function norm2_q(q) result(o)
 		type(quat_t),intent(in)::q
 		real(wp)::o
 		
 		o = sqrt(q%r**2+sum(q%v**2))
 	end function norm2_q
 
-	function conjg_q(q) result(o)
+	elemental function conjg_q(q) result(o)
 		type(quat_t),intent(in)::q
 		type(quat_t)::o
 		
@@ -92,7 +113,7 @@ contains
 		o%v = -q%v
 	end function conjg_q
 
-	function inv(q) result(o)
+	elemental function inv(q) result(o)
 		type(quat_t),intent(in)::q
 		type(quat_t)::o
 		
@@ -103,7 +124,7 @@ contains
 	!= Standard Function Routines =!
 	!==============================!
 
-	function exp_q(q) result(o)
+	elemental function exp_q(q) result(o)
 		type(quat_t),intent(in)::q
 		type(quat_t)::o
 		
@@ -115,7 +136,7 @@ contains
 		o%v = exp(q%r)*( q%v/vm*sin(vm) )
 	end function exp_q
 
-	function log_q(q) result(o)
+	elemental function log_q(q) result(o)
 		type(quat_t),intent(in)::q
 		type(quat_t)::o
 		
@@ -128,7 +149,7 @@ contains
 		o%v = q%v/vm*acos(q%r/qm)
 	end function log_q
 
-	function log10_q(q) result(o)
+	elemental function log10_q(q) result(o)
 		type(quat_t),intent(in)::q
 		type(quat_t)::o
 		
@@ -139,7 +160,7 @@ contains
 	!= Add Routines =!
 	!================!
 
-	function add_rq(r,q) result(o)
+	elemental function add_rq(r,q) result(o)
 		real(wp),intent(in)::r
 		type(quat_t),intent(in)::q
 		type(quat_t)::o
@@ -148,7 +169,7 @@ contains
 		o%v = q%v
 	end function add_rq
 
-	function add_qr(q,r) result(o)
+	elemental function add_qr(q,r) result(o)
 		type(quat_t),intent(in)::q
 		real(wp),intent(in)::r
 		type(quat_t)::o
@@ -157,7 +178,7 @@ contains
 		o%v = q%v
 	end function add_qr
 
-	function add_vq(v,q) result(o)
+	pure function add_vq(v,q) result(o)
 		real(wp),dimension(3),intent(in)::v
 		type(quat_t),intent(in)::q
 		type(quat_t)::o
@@ -166,7 +187,7 @@ contains
 		o%v = v+q%v
 	end function add_vq
 
-	function add_qv(q,v) result(o)
+	pure function add_qv(q,v) result(o)
 		type(quat_t),intent(in)::q
 		real(wp),dimension(3),intent(in)::v
 		type(quat_t)::o
@@ -175,7 +196,7 @@ contains
 		o%v = q%v+v
 	end function add_qv
 
-	function add_qq(u,v) result(o)
+	elemental function add_qq(u,v) result(o)
 		type(quat_t),intent(in)::u
 		type(quat_t),intent(in)::v
 		type(quat_t)::o
@@ -188,7 +209,7 @@ contains
 	!= Subtract Routines =!
 	!=====================!
 
-	function sub_rq(r,q) result(o)
+	elemental function sub_rq(r,q) result(o)
 		real(wp),intent(in)::r
 		type(quat_t),intent(in)::q
 		type(quat_t)::o
@@ -197,7 +218,7 @@ contains
 		o%v = -q%v
 	end function sub_rq
 
-	function sub_qr(q,r) result(o)
+	elemental function sub_qr(q,r) result(o)
 		type(quat_t),intent(in)::q
 		real(wp),intent(in)::r
 		type(quat_t)::o
@@ -206,7 +227,7 @@ contains
 		o%v = q%v
 	end function sub_qr
 
-	function sub_vq(v,q) result(o)
+	pure function sub_vq(v,q) result(o)
 		real(wp),dimension(3),intent(in)::v
 		type(quat_t),intent(in)::q
 		type(quat_t)::o
@@ -215,7 +236,7 @@ contains
 		o%v = v-q%v
 	end function sub_vq
 
-	function sub_qv(q,v) result(o)
+	pure function sub_qv(q,v) result(o)
 		type(quat_t),intent(in)::q
 		real(wp),dimension(3),intent(in)::v
 		type(quat_t)::o
@@ -224,7 +245,7 @@ contains
 		o%v = q%v-v
 	end function sub_qv
 
-	function sub_qq(u,v) result(o)
+	elemental function sub_qq(u,v) result(o)
 		type(quat_t),intent(in)::u
 		type(quat_t),intent(in)::v
 		type(quat_t)::o
@@ -237,7 +258,7 @@ contains
 	!= Multiplication Routines =!
 	!===========================!
 
-	function mul_rq(u,v) result(o)
+	elemental function mul_rq(u,v) result(o)
 		real(wp),intent(in)::u
 		type(quat_t),intent(in)::v
 		type(quat_t)::o
@@ -246,7 +267,7 @@ contains
 		o%v = u*v%v
 	end function mul_rq
 
-	function mul_qr(u,v) result(o)
+	elemental function mul_qr(u,v) result(o)
 		type(quat_t),intent(in)::u
 		real(wp),intent(in)::v
 		type(quat_t)::o
@@ -255,38 +276,38 @@ contains
 		o%v = u%v*v
 	end function mul_qr
 
-	function mul_vq(u,v) result(o)
+	pure function mul_vq(u,v) result(o)
 		real(wp),dimension(3),intent(in)::u
 		type(quat_t),intent(in)::v
 		type(quat_t)::o
 		
-		o%r = -u.o.v%v
-		o%v = u*v%r+u.x.v%v
+		o%r = -(u.o.v%v)
+		o%v = u*v%r+(u.x.v%v)
 	end function mul_vq
 
-	function mul_qv(u,v) result(o)
+	pure function mul_qv(u,v) result(o)
 		type(quat_t),intent(in)::u
 		real(wp),dimension(3),intent(in)::v
 		type(quat_t)::o
 		
-		o%r = -u%v.o.v
-		o%v = u%r*v+u%v.x.v
+		o%r = -(u%v.o.v)
+		o%v = u%r*v+(u%v.x.v)
 	end function mul_qv
 
-	function mul_qq(u,v) result(o)
+	elemental function mul_qq(u,v) result(o)
 		type(quat_t),intent(in)::u
 		type(quat_t),intent(in)::v
 		type(quat_t)::o
 		
-		o%r = u%r*v%r-u%v.o.v%v
-		o%v = u%r*v%v+u%v*v%r+u%v.x.v%v
+		o%r = u%r*v%r-(u%v.o.v%v)
+		o%v = u%r*v%v+u%v*v%r+(u%v.x.v%v)
 	end function mul_qq
 
 	!=====================!
 	!= Division Routines =!
 	!=====================!
 
-	function div_qr(q,r) result(o)
+	elemental function div_qr(q,r) result(o)
 		type(quat_t),intent(in)::q
 		real(wp),intent(in)::r
 		type(quat_t)::o

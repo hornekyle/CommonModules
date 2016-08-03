@@ -54,7 +54,7 @@ contains
 	!= Dot Routines =!
 	!================!
 
-	function dot_vv(u,v) result(o)
+	pure function dot_vv(u,v) result(o)
 		!! Dot product of two vectors
 		real(wp),dimension(3),intent(in)::u
 			!! First vector
@@ -66,7 +66,7 @@ contains
 		o = sum(u*v)
 	end function dot_vv
 
-	function dot_vT(u,T) result(o)
+	pure function dot_vT(u,T) result(o)
 		!! Dot product (left) of a vector and a tensor
 		real(wp),dimension(3),intent(in)::u
 			!! Vector
@@ -78,7 +78,7 @@ contains
 		o = matmul(u,T)
 	end function dot_vT
 
-	function dot_Tv(T,v) result(o)
+	pure function dot_Tv(T,v) result(o)
 		!! Dot product (right) of a tensor and a vector
 		real(wp),dimension(3,3),intent(in)::T
 			!! Tensor
@@ -90,7 +90,7 @@ contains
 		o = matmul(T,v)
 	end function dot_Tv
 
-	function dot_TT(U,V) result(o)
+	pure function dot_TT(U,V) result(o)
 		!! Dot product of two tensors
 		real(wp),dimension(3,3),intent(in)::U
 			!! First tensor
@@ -106,7 +106,7 @@ contains
 	!= Cross Routines =!
 	!==================!
 
-	function cross_vv2(u,v) result(o)
+	pure function cross_vv2(u,v) result(o)
 		!! Cross product of two 2D vectors
 		real(wp),dimension(2),intent(in)::u
 			!! First vector
@@ -118,7 +118,7 @@ contains
 		o = u(1)*v(2)-u(2)*v(1)
 	end function cross_vv2
 
-	function cross_vv(u,v) result(o)
+	pure function cross_vv(u,v) result(o)
 		!! Cross product of two vectors
 		real(wp),dimension(3),intent(in)::u
 			!! First vector
@@ -134,7 +134,7 @@ contains
 	!= Dyadic Routines =!
 	!===================!
 
-	function dyadic_vv(u,v) result(o)
+	pure function dyadic_vv(u,v) result(o)
 		!! Dyadic (tensor) product of two vectors
 		real(wp),dimension(3),intent(in)::u
 			!! First vector
@@ -152,7 +152,7 @@ contains
 	!= Double Dot Routines =!
 	!=======================!
 
-	function ddot_TT(U,V) result(o)
+	pure function ddot_TT(U,V) result(o)
 		!! Double dot product of two tensors
 		real(wp),dimension(3,3),intent(in)::U
 			!! Fisrt tensor
