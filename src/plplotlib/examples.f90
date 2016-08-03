@@ -5,7 +5,7 @@ program examples_prg
 	use plplotlib_mod
 	implicit none
 	
-	call setup(device='svg',fileName='examples/example-%n.svg',figSize=[320,240],transparent=.true.)
+	call setup(device='svg',fileName='media/example-%n.svg',figSize=[320,240],transparent=.true.)
 	
 	call doPlot()
 	call doScatter()

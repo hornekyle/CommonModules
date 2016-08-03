@@ -12,7 +12,7 @@ program basic_prg
 	x = linspace(-2.0_wp,2.0_wp,101)
 	y = x**2-1.0_wp
 	
-	call setup(device='svg',fileName='examples/basic-%n.svg',figSize=[400,300])
+	call setup(device='svg',fileName='media/basic-%n.svg',figSize=[400,300])
 	call figure()
 	call subplot(1,1,1)
 	call xylim(mixval(x),mixval(y))

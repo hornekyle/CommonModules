@@ -63,19 +63,26 @@ finder(FFTW3 "fftw3" "fftw3.f03")
 finder(LAPACK "lapack")
 finder(UMFPACK "umfpack")
 
+#=======================#
+#= One-time Operations =#
+#=======================#
+
+find_program(EXECUTABLE_FORD "ford")
+find_program(EXECUTABLE_GMSH "gmsh")
+
+file(MAKE_DIRECTORY "${CMAKE_BINARY_DIR}/media")
+file(MAKE_DIRECTORY "${CMAKE_BINARY_DIR}/testing")
+
 #=========================#
 #= Create Symlink Target =#
 #=========================#
 
-add_custom_target(symlink
-	COMMAND ${CMAKE_COMMAND} -E create_symlink "${CMAKE_SOURCE_DIR}/input" "${CMAKE_BINARY_DIR}/input"
+add_custom_target(symlinks
+	COMMAND ${CMAKE_COMMAND} -E create_symlink "${CMAKE_SOURCE_DIR}/input" "${CMAKE_BINARY_DIR}/testing/input"
+	COMMAND ${CMAKE_COMMAND} -E create_symlink "${CMAKE_SOURCE_DIR}/src"   "${CMAKE_BINARY_DIR}/src"
+	COMMAND ${CMAKE_COMMAND} -E create_symlink "${CMAKE_SOURCE_DIR}/pages" "${CMAKE_BINARY_DIR}/pages"
+	COMMAND ${CMAKE_COMMAND} -E create_symlink "${CMAKE_SOURCE_DIR}/project.md" "${CMAKE_BINARY_DIR}/project.md"
 	WORKING_DIRECTORY "${CMAKE_BINARY_DIR}")
-
-#=============#
-#= Find Gmsh =#
-#=============#
-
-find_program(EXECUTABLE_GMSH "gmsh")
 
 #=========================#
 #= Create Library Target =#
@@ -110,7 +117,7 @@ if(PLPLOT_FOUND)
 	set(modules_src ${modules_src} "src/plplotlib/plplotlib.f90")
 endif(PLPLOT_FOUND)
 
-add_library(modulesLib STATIC ${modules_src})
+add_library(modulesLib SHARED ${modules_src})
 
 if(FFTW3_FOUND)
 	target_link_libraries(modulesLib ${FFTW3_LIBRARY})
@@ -133,7 +140,9 @@ function(addTest name)
 	add_executable(${name} "src/test/${name}.f90")
 	target_link_libraries(${name} modulesLib)
 	set_target_properties(${name} PROPERTIES RUNTIME_OUTPUT_DIRECTORY "tests")
-	add_test(${name} "tests/${name}")
+	
+	add_test(${name} "${CMAKE_BINARY_DIR}/tests/${name}" )
+	set_tests_properties(${name} PROPERTIES WORKING_DIRECTORY "${CMAKE_BINARY_DIR}/testing")
 endfunction(addTest)
 
 addTest("testKinds")
@@ -148,7 +157,7 @@ addTest("testVtkIO")
 addTest("testText")
 
 addTest("testConfig")
-add_dependencies(testConfig symlink)
+add_dependencies(testConfig symlinks)
 
 if(FFTW3_FOUND)
 	addTest("testFourier")
@@ -170,6 +179,7 @@ endif(PLPLOT_FOUND)
 
 if(EXECUTABLE_GMSH)
 	addTest("testMesh")
+	add_dependencies(testMesh symlinks)
 endif(EXECUTABLE_GMSH)
 
 #============================#
@@ -182,9 +192,6 @@ if(PLPLOT_FOUND)
 		target_link_libraries(${name} modulesLib)
 		target_link_libraries(${name} ${PLPLOT_LIBRARIES})
 		set_target_properties(${name} PROPERTIES RUNTIME_OUTPUT_DIRECTORY "plplotlib")
-		add_custom_command(TARGET ${name} PRE_BUILD
-			COMMAND ${CMAKE_COMMAND} -E make_directory "${CMAKE_BINARY_DIR}/examples"
-			WORKING_DIRECTORY "${CMAKE_BINARY_DIR}")
 	endfunction(addExample)
 	
 	addExample("logo")
@@ -197,15 +204,11 @@ endif(PLPLOT_FOUND)
 #= Create FORD Target =#
 #======================#
 
-find_program(EXECUTABLE_FORD "doc")
 add_custom_target(doc
-	COMMAND ${CMAKE_COMMAND} -E create_symlink "${CMAKE_SOURCE_DIR}/pages" "${CMAKE_BINARY_DIR}/pages"
-	COMMAND ${CMAKE_COMMAND} -E create_symlink "${CMAKE_SOURCE_DIR}/src" "${CMAKE_BINARY_DIR}/src"
-	COMMAND ${CMAKE_COMMAND} -E create_symlink "${CMAKE_SOURCE_DIR}/project.md" "${CMAKE_BINARY_DIR}/project.md"
-	COMMAND ${CMAKE_COMMAND} -E create_symlink "${CMAKE_SOURCE_DIR}/README.md" "${CMAKE_BINARY_DIR}/README.md"
-	COMMAND "plplotlib/basic"
-	COMMAND "plplotlib/examples"
-	COMMAND ${FORD_EXECUTABLE} "project.md"
+	COMMAND basic
+	COMMAND examples
+	COMMAND ${EXECUTABLE_FORD} "${CMAKE_BINARY_DIR}/project.md"
+	DEPENDS basic examples symlinks
 	WORKING_DIRECTORY "${CMAKE_BINARY_DIR}")
 add_dependencies(doc logo basic examples)
 
