@@ -101,6 +101,7 @@ set(modules_src
 	"src/IO/mesh.f90"
 	"src/IO/text.f90"
 	"src/IO/vtkIO.f90"
+	"src/matrix/quaternion.f90"
 	"src/matrix/solver.f90"
 	"src/matrix/sparse.f90"
 	"src/matrix/tensor.f90")
@@ -145,18 +146,19 @@ function(addTest name)
 	set_tests_properties(${name} PROPERTIES WORKING_DIRECTORY "${CMAKE_BINARY_DIR}/testing")
 endfunction(addTest)
 
-addTest("testKinds")
-addTest("testTime")
-addTest("testStats")
 addTest("testArray")
-addTest("testMatIO")
 addTest("testAutoDiff")
-addTest("testTensor")
-addTest("testIterate")
-addTest("testVtkIO")
-addTest("testText")
-
 addTest("testConfig")
+addTest("testIterate")
+addTest("testKinds")
+addTest("testMatIO")
+addTest("testQuaternion")
+addTest("testStats")
+addTest("testTensor")
+addTest("testText")
+addTest("testTime")
+addTest("testVtkIO")
+
 add_dependencies(testConfig symlinks)
 
 if(FFTW3_FOUND)
