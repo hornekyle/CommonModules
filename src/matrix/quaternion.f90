@@ -85,28 +85,36 @@ contains
 	!==================!
 
 	elemental function scaler(q) result(o)
+		!! Return the scalar part of the quaternion
 		type(quat_t),intent(in)::q
+			!! The quaternion of interest
 		real(wp)::o
 		
 		o = q%r
 	end function scaler
 
 	function vector(q) result(o)
+		!! Return the vector part of the quaternion
 		type(quat_t),intent(in)::q
+			!! The quaternion of interest
 		real(wp),dimension(3)::o
 		
 		o = q%v
 	end function vector
 
 	elemental function norm2_q(q) result(o)
+		!! Return the magnitude of the quaternion
 		type(quat_t),intent(in)::q
+			!! The quaternion of interest
 		real(wp)::o
 		
 		o = sqrt(q%r**2+sum(q%v**2))
 	end function norm2_q
 
 	elemental function conjg_q(q) result(o)
+		!! Return the conjugate of the quaternion
 		type(quat_t),intent(in)::q
+			!! The quaternion of interest
 		type(quat_t)::o
 		
 		o%r =  q%r
@@ -114,7 +122,9 @@ contains
 	end function conjg_q
 
 	elemental function inv(q) result(o)
+		!! Return the inverse of the quaternion
 		type(quat_t),intent(in)::q
+			!! The quaternion of interest
 		type(quat_t)::o
 		
 		o = conjg(q)/norm2(q)**2
@@ -125,7 +135,9 @@ contains
 	!==============================!
 
 	elemental function exp_q(q) result(o)
+		!! Take the exponent of a quaternion
 		type(quat_t),intent(in)::q
+			!! The quaternion of interest
 		type(quat_t)::o
 		
 		real(wp)::vm
@@ -137,7 +149,9 @@ contains
 	end function exp_q
 
 	elemental function log_q(q) result(o)
+		!! Take the natural log of a quaternion
 		type(quat_t),intent(in)::q
+			!! The quaternion of interest
 		type(quat_t)::o
 		
 		real(wp)::vm,qm
@@ -150,7 +164,9 @@ contains
 	end function log_q
 
 	elemental function log10_q(q) result(o)
+		!! Take the log10 of a quaternion
 		type(quat_t),intent(in)::q
+			!! The quaternion of interest
 		type(quat_t)::o
 		
 		o = log(q)/log(10.0_wp)
