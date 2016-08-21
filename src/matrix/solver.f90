@@ -25,8 +25,8 @@ contains
 		real(wp),dimension(:),allocatable::D,r
 		integer::lmaxIts
 		real(wp)::ltol
-		real(wp)::rss0,rss,progress
-		integer::N,k
+		real(wp)::rss0,rss
+		integer::k
 		
 		lmaxIts = 1000000
 		ltol    = 1.0E-6_wp
@@ -34,7 +34,6 @@ contains
 		if(present(maxIts)) lmaxIts = maxIts
 		if(present(tol   )) ltol    = tol
 		
-		N = A%N
 		D = A%getDiagonal()
 		x = b/D
 		if(present(x0)) x = x0
@@ -49,14 +48,7 @@ contains
 			x = x+r/D
 			rss = sqrt(sum(r**2))
 			
-			select case(SO_TYPE)
-			case(SO_QUIET)
-			case(SO_SIMPLE)
-				write(*,*) k,rss/rss0
-			case(SO_FANCY)
-				progress = log( rss/rss0 )/log(ltol)
-				call showProgress('Jacobi Solver',progress)
-			end select
+			call solverProgress(k,rss/rss0,ltol,'Jacobi Solver')
 			
 			if(rss/rss0<ltol) exit
 		end do
@@ -74,8 +66,8 @@ contains
 		real(wp),dimension(:),allocatable::D,r
 		integer::lmaxIts
 		real(wp)::ltol
-		real(wp)::rss0,rss,progress
-		integer::N,i,k
+		real(wp)::rss0,rss
+		integer::i,k
 		
 		lmaxIts = 1000000
 		ltol    = 1.0E-6_wp
@@ -83,7 +75,6 @@ contains
 		if(present(maxIts)) lmaxIts = maxIts
 		if(present(tol   )) ltol    = tol
 		
-		N = A%N
 		D = A%getDiagonal()
 		x = b/D
 		if(present(x0)) x = x0
@@ -94,20 +85,13 @@ contains
 		if(SO_TYPE==SO_FANCY) call showProgress('Gauss-Seidel Solver',0.0_wp)
 		
 		do k=1,lmaxIts
-			do i=1,N
+			do i=1,A%N
 				r(i) = b(i)-(A%rows(i).o.x)
 				x(i) = x(i)+r(i)/D(i)
 			end do
 			rss = sqrt(sum(r**2))
 			
-			select case(SO_TYPE)
-			case(SO_QUIET)
-			case(SO_SIMPLE)
-				write(*,*) k,rss/rss0
-			case(SO_FANCY)
-				progress = log( rss/rss0 )/log(ltol)
-				call showProgress('Gauss-Seidel Solver',progress)
-			end select
+			call solverProgress(k,rss/rss0,ltol,'Gauss-Seidel Solver')
 			
 			if(rss/rss0<ltol) exit
 		end do
@@ -125,8 +109,8 @@ contains
 		real(wp),dimension(:),allocatable::D,r
 		integer::lmaxIts
 		real(wp)::ltol
-		real(wp)::rss0,rss,progress
-		integer::N,i,k
+		real(wp)::rss0,rss
+		integer::i,k
 		
 		lmaxIts = 1000000
 		ltol    = 1.0E-6_wp
@@ -134,7 +118,6 @@ contains
 		if(present(maxIts)) lmaxIts = maxIts
 		if(present(tol   )) ltol    = tol
 		
-		N = A%N
 		D = A%getDiagonal()
 		x = b/D
 		if(present(x0)) x = x0
@@ -145,24 +128,17 @@ contains
 		if(SO_TYPE==SO_FANCY) call showProgress('Gauss-Seidel (Sym) Solver',0.0_wp)
 		
 		do k=1,lmaxIts
-			do i=1,N,1
+			do i=1,A%N,1
 				r(i) = b(i)-(A%rows(i).o.x)
 				x(i) = x(i)+r(i)/D(i)
 			end do
-			do i=N,1,-1
+			do i=A%N,1,-1
 				r(i) = b(i)-(A%rows(i).o.x)
 				x(i) = x(i)+r(i)/D(i)
 			end do
 			rss = sqrt(sum(r**2))
 			
-			select case(SO_TYPE)
-			case(SO_QUIET)
-			case(SO_SIMPLE)
-				write(*,*) k,rss/rss0
-			case(SO_FANCY)
-				progress = log( rss/rss0 )/log(ltol)
-				call showProgress('Gauss-Seidel (Sym) Solver',progress)
-			end select
+			call solverProgress(k,rss/rss0,ltol,'Gauss-Seidel (Sym) Solver')
 			
 			if(rss/rss0<ltol) exit
 		end do
@@ -181,8 +157,8 @@ contains
 		real(wp),dimension(:),allocatable::D,r
 		integer::lmaxIts
 		real(wp)::ltol
-		real(wp)::rss0,rss,progress
-		integer::N,i,k
+		real(wp)::rss0,rss
+		integer::i,k
 		
 		lmaxIts = 1000000
 		ltol    = 1.0E-6_wp
@@ -190,7 +166,6 @@ contains
 		if(present(maxIts)) lmaxIts = maxIts
 		if(present(tol   )) ltol    = tol
 		
-		N = A%N
 		D = A%getDiagonal()
 		x = b/D
 		if(present(x0)) x = x0
@@ -201,20 +176,13 @@ contains
 		if(SO_TYPE==SO_FANCY) call showProgress('SOR Solver',0.0_wp)
 		
 		do k=1,lmaxIts
-			do i=1,N
+			do i=1,A%N
 				r(i) = b(i)-(A%rows(i).o.x)
 				x(i) = x(i)+w*r(i)/D(i)
 			end do
 			rss = sqrt(sum(r**2))
 			
-			select case(SO_TYPE)
-			case(SO_QUIET)
-			case(SO_SIMPLE)
-				write(*,*) k,rss/rss0
-			case(SO_FANCY)
-				progress = log( rss/rss0 )/log(ltol)
-				call showProgress('SOR Solver',progress)
-			end select
+			call solverProgress(k,rss/rss0,ltol,'SOR Solver')
 			
 			if(rss/rss0<ltol) exit
 		end do
@@ -233,8 +201,8 @@ contains
 		real(wp),dimension(:),allocatable::D,r
 		integer::lmaxIts
 		real(wp)::ltol
-		real(wp)::rss0,rss,progress
-		integer::N,i,k
+		real(wp)::rss0,rss
+		integer::i,k
 		
 		lmaxIts = 1000000
 		ltol    = 1.0E-6_wp
@@ -242,7 +210,6 @@ contains
 		if(present(maxIts)) lmaxIts = maxIts
 		if(present(tol   )) ltol    = tol
 		
-		N = A%N
 		D = A%getDiagonal()
 		x = b/D
 		if(present(x0)) x = x0
@@ -253,24 +220,17 @@ contains
 		if(SO_TYPE==SO_FANCY) call showProgress('SOR (Sym) Solver',0.0_wp)
 		
 		do k=1,lmaxIts
-			do i=1,N,1
+			do i=1,A%N,1
 				r(i) = b(i)-(A%rows(i).o.x)
 				x(i) = x(i)+w*r(i)/D(i)
 			end do
-			do i=N,1,-1
+			do i=A%N,1,-1
 				r(i) = b(i)-(A%rows(i).o.x)
 				x(i) = x(i)+w*r(i)/D(i)
 			end do
 			rss = sqrt(sum(r**2))
 			
-			select case(SO_TYPE)
-			case(SO_QUIET)
-			case(SO_SIMPLE)
-				write(*,*) k,rss/rss0
-			case(SO_FANCY)
-				progress = log( rss/rss0 )/log(ltol)
-				call showProgress('SOR (Sym) Solver',progress)
-			end select
+			call solverProgress(k,rss/rss0,ltol,'SOR (Sym) Solver')
 			
 			if(rss/rss0<ltol) exit
 		end do
@@ -289,8 +249,8 @@ contains
 		real(wp)::alpha
 		integer::lmaxIts
 		real(wp)::ltol
-		real(wp)::rss0,rss,progress
-		integer::N,k
+		real(wp)::rss0,rss
+		integer::k
 		
 		lmaxIts = 1000000
 		ltol    = 1.0E-6_wp
@@ -298,7 +258,6 @@ contains
 		if(present(maxIts)) lmaxIts = maxIts
 		if(present(tol   )) ltol    = tol
 		
-		N = A%N
 		D = A%getDiagonal()
 		x = b/D
 		if(present(x0)) x = x0
@@ -315,14 +274,7 @@ contains
 			r = b-matmul(A,x)
 			rss = sqrt(sum(r**2))
 			
-			select case(SO_TYPE)
-			case(SO_QUIET)
-			case(SO_SIMPLE)
-				write(*,*) k,rss/rss0
-			case(SO_FANCY)
-				progress = log( rss/rss0 )/log(ltol)
-				call showProgress('Steepest Descent Solver',progress)
-			end select
+			call solverProgress(k,rss/rss0,ltol,'Steepest Descent Solver')
 			
 			if(rss/rss0<ltol) exit
 		end do
@@ -341,8 +293,8 @@ contains
 		real(wp)::alpha
 		integer::lmaxIts
 		real(wp)::ltol
-		real(wp)::rss0,rss,progress
-		integer::N,k
+		real(wp)::rss0,rss
+		integer::k
 		
 		lmaxIts = 1000000
 		ltol    = 1.0E-6_wp
@@ -350,7 +302,6 @@ contains
 		if(present(maxIts)) lmaxIts = maxIts
 		if(present(tol   )) ltol    = tol
 		
-		N = A%N
 		D = A%getDiagonal()
 		x = b/D
 		if(present(x0)) x = x0
@@ -367,14 +318,7 @@ contains
 			r = b-matmul(A,x)
 			rss = sqrt(sum(r**2))
 			
-			select case(SO_TYPE)
-			case(SO_QUIET)
-			case(SO_SIMPLE)
-				write(*,*) k,rss/rss0
-			case(SO_FANCY)
-				progress = log( rss/rss0 )/log(ltol)
-				call showProgress('Minimum Residual Solver',progress)
-			end select
+			call solverProgress(k,rss/rss0,ltol,'Minimum Residual Solver')
 			
 			if(rss/rss0<ltol) exit
 		end do
@@ -393,8 +337,8 @@ contains
 		real(wp)::alpha,beta,rTr,rTr_old
 		integer::lmaxIts
 		real(wp)::ltol
-		real(wp)::rss0,rss,progress
-		integer::N,k
+		real(wp)::rss0,rss
+		integer::k
 		
 		lmaxIts = 1000000
 		ltol    = 1.0E-6_wp
@@ -402,11 +346,11 @@ contains
 		if(present(maxIts)) lmaxIts = maxIts
 		if(present(tol   )) ltol    = tol
 		
-		N = A%N
 		D = A%getDiagonal()
 		x = b/D
 		if(present(x0)) x = x0
 		r = b-matmul(A,x)
+		
 		p = r
 		rTr = sum(r*r)
 		
@@ -425,14 +369,7 @@ contains
 			p = r+beta*p
 			rss = sqrt(sum(r**2))
 			
-			select case(SO_TYPE)
-			case(SO_QUIET)
-			case(SO_SIMPLE)
-				write(*,*) k,rss/rss0
-			case(SO_FANCY)
-				progress = log( rss/rss0 )/log(ltol)
-				call showProgress('Conjugate Gradient Solver',progress)
-			end select
+			call solverProgress(k,rss/rss0,ltol,'Conjugate Gradient Solver')
 			
 			if(rss/rss0<ltol) exit
 		end do
@@ -451,8 +388,8 @@ contains
 		real(wp)::orho,rho,alpha,beta,omega
 		integer::lmaxIts
 		real(wp)::ltol
-		real(wp)::rss0,rss,progress
-		integer::N,k
+		real(wp)::rss0,rss
+		integer::k
 		
 		lmaxIts = 1000000
 		ltol    = 1.0E-6_wp
@@ -460,11 +397,11 @@ contains
 		if(present(maxIts)) lmaxIts = maxIts
 		if(present(tol   )) ltol    = tol
 		
-		N = A%N
 		D = A%getDiagonal()
 		x = b/D
 		if(present(x0)) x = x0
 		r = b-matmul(A,x)
+		
 		r0 = r
 		
 		rho   = 1.0_wp
@@ -492,17 +429,32 @@ contains
 			r = s-omega*As
 			rss = sqrt(sum(r**2))
 			
-			select case(SO_TYPE)
-			case(SO_QUIET)
-			case(SO_SIMPLE)
-				write(*,*) k,rss/rss0
-			case(SO_FANCY)
-				progress = log( rss/rss0 )/log(ltol)
-				call showProgress('Bi-Conjugate Gradient (Stab) Solver',progress)
-			end select
+			call solverProgress(k,rss/rss0,ltol,'Bi-Conjugate Gradient (Stab) Solver')
 			
 			if(rss/rss0<ltol) exit
 		end do
 	end function biConjugateGradientStabilized
+
+	subroutine solverProgress(k,rr,tol,nm)
+		integer,intent(in)::k
+		real(wp),intent(in)::rr
+		real(wp),intent(in)::tol
+		character(*),intent(in)::nm
+		
+		real(wp)::progress
+		
+		select case(SO_TYPE)
+		case(SO_QUIET)
+		case(SO_SIMPLE)
+			write(*,*) k,rr
+		case(SO_FANCY)
+			progress = log( rr )/log(tol)
+			call showProgress(nm,progress)
+		end select
+	end subroutine solverProgress
+
+	subroutine solverInit()
+	
+	end subroutine solverInit
 
 end module solver_mod

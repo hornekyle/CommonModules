@@ -52,10 +52,11 @@ contains
 		real(wp)::Ap,Ae,Aw,dx
 		type(sparse_t)::A
 		real(wp),dimension(:),allocatable::x,q
-		real(wp),dimension(:),allocatable::T1,T2
-		integer::N,i
+		real(wp),dimension(:),allocatable::T1,T2,T3
+		integer::N,i,s
 		
-		N  = 100
+		N  = 1000
+		s  = N/30
 		allocate(x(0:N+1))
 		x  = linspace(0.0_wp,1.0_wp,N+2)
 		q  = [( q0     , i=1,N )]
@@ -63,12 +64,16 @@ contains
 		
 		allocate(T1(0:N+1))
 		allocate(T2(0:N+1))
+		allocate(T3(0:N+1))
 		
 		T1(0)   = Tl
 		T1(N+1) = Tr
 		
 		T2(0)   = Tl
 		T2(N+1) = Tr
+		
+		T3(0)   = Tl
+		T3(N+1) = Tr
 		
 		dx = x(2)-x(1)
 		
@@ -97,13 +102,15 @@ contains
 		
 		T1(1:N) = biConjugateGradientStabilized(A,q)
 		T2(1:N) = conjugateGradient(A,q)
+		T3(1:N) = successiveOverRelaxation(A,q,1.995_wp)
 		
 		call setup(device='svg',fileName='testsSparse-%n.svg',figSize=[400,300])
 		call figure()
 		call subplot(1,1,1)
 		call xylim(mixval(x),mixval(T1)+[0.0_wp,0.05_wp]*span(T1))
-		call plot(x,T1,lineStyle='',markStyle='x',markColor='r')
-		call plot(x,T2,lineStyle='',markStyle='o',markColor='b')
+		call plot(x(::s),T1(::s),lineStyle='-',lineColor='r',markStyle='x',markColor='r')
+		call plot(x(::s),T2(::s),lineStyle='-',lineColor='b',markStyle='o',markColor='b')
+		call plot(x(::s),T3(::s),lineStyle='-',lineColor='c',markStyle='s',markColor='c')
 		call ticks()
 		call labels('Position #fix#fn','Temperature #fiT#fn','1D Heat Conduction with Generation')
 		call show()
