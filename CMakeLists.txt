@@ -105,8 +105,9 @@ set(modules_src
 	"src/IO/mesh.f90"
 	"src/IO/text.f90"
 	"src/IO/vtkIO.f90"
+	"src/matrix/basicSolvers.f90"
 	"src/matrix/quaternion.f90"
-	"src/matrix/solver.f90"
+	"src/matrix/solvers.f90"
 	"src/matrix/sparse.f90"
 	"src/matrix/tensor.f90")
 

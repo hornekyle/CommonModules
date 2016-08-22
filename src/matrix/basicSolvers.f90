@@ -1,4 +1,4 @@
-module solver_mod
+module basicSolvers_mod
 	!! Module for solving sparse linear systems
 	use kinds_mod
 	use sparse_mod
@@ -14,7 +14,7 @@ module solver_mod
 contains
 
 	function jacobi(A,b,x0,tol,maxIts) result(x)
-		type(sparse_t),intent(in)::A
+		class(sparse_t),intent(in)::A
 		real(wp),dimension(:),intent(in)::b
 		real(wp),dimension(:),intent(in),optional::x0
 		real(wp),intent(in),optional::tol
@@ -41,21 +41,19 @@ contains
 		
 		rss0 = sqrt(sum(r**2))
 		
-		if(SO_TYPE==SO_FANCY) call showProgress('Jacobi Solver',0.0_wp)
-		
+		call startReport('Jacobi Solver')
 		do k=1,lmaxIts
 			r = b-matmul(A,x)
 			x = x+r/D
 			rss = sqrt(sum(r**2))
 			
 			call solverProgress(k,rss/rss0,ltol,'Jacobi Solver')
-			
 			if(rss/rss0<ltol) exit
 		end do
 	end function jacobi
 
 	function gaussSeidel(A,b,x0,tol,maxIts) result(x)
-		type(sparse_t),intent(in)::A
+		class(sparse_t),intent(in)::A
 		real(wp),dimension(:),intent(in)::b
 		real(wp),dimension(:),intent(in),optional::x0
 		real(wp),intent(in),optional::tol
@@ -82,8 +80,7 @@ contains
 		
 		rss0 = sqrt(sum(r**2))
 		
-		if(SO_TYPE==SO_FANCY) call showProgress('Gauss-Seidel Solver',0.0_wp)
-		
+		call startReport('Gauss-Seidel Solver')
 		do k=1,lmaxIts
 			do i=1,A%N
 				r(i) = b(i)-(A%rows(i).o.x)
@@ -92,13 +89,12 @@ contains
 			rss = sqrt(sum(r**2))
 			
 			call solverProgress(k,rss/rss0,ltol,'Gauss-Seidel Solver')
-			
 			if(rss/rss0<ltol) exit
 		end do
 	end function gaussSeidel
 
 	function symmetricGaussSeidel(A,b,x0,tol,maxIts) result(x)
-		type(sparse_t),intent(in)::A
+		class(sparse_t),intent(in)::A
 		real(wp),dimension(:),intent(in)::b
 		real(wp),dimension(:),intent(in),optional::x0
 		real(wp),intent(in),optional::tol
@@ -125,8 +121,7 @@ contains
 		
 		rss0 = sqrt(sum(r**2))
 		
-		if(SO_TYPE==SO_FANCY) call showProgress('Gauss-Seidel (Sym) Solver',0.0_wp)
-		
+		call startReport('Gauss-Seidel (Sym) Solver')
 		do k=1,lmaxIts
 			do i=1,A%N,1
 				r(i) = b(i)-(A%rows(i).o.x)
@@ -139,13 +134,12 @@ contains
 			rss = sqrt(sum(r**2))
 			
 			call solverProgress(k,rss/rss0,ltol,'Gauss-Seidel (Sym) Solver')
-			
 			if(rss/rss0<ltol) exit
 		end do
 	end function symmetricGaussSeidel
 
 	function successiveOverRelaxation(A,b,w,x0,tol,maxIts) result(x)
-		type(sparse_t),intent(in)::A
+		class(sparse_t),intent(in)::A
 		real(wp),dimension(:),intent(in)::b
 		real(wp),intent(in)::w
 		real(wp),dimension(:),intent(in),optional::x0
@@ -173,8 +167,7 @@ contains
 		
 		rss0 = sqrt(sum(r**2))
 		
-		if(SO_TYPE==SO_FANCY) call showProgress('SOR Solver',0.0_wp)
-		
+		call startReport('SOR Solver')
 		do k=1,lmaxIts
 			do i=1,A%N
 				r(i) = b(i)-(A%rows(i).o.x)
@@ -183,13 +176,12 @@ contains
 			rss = sqrt(sum(r**2))
 			
 			call solverProgress(k,rss/rss0,ltol,'SOR Solver')
-			
 			if(rss/rss0<ltol) exit
 		end do
 	end function successiveOverRelaxation
 
 	function symmetricSuccessiveOverRelaxation(A,b,w,x0,tol,maxIts) result(x)
-		type(sparse_t),intent(in)::A
+		class(sparse_t),intent(in)::A
 		real(wp),dimension(:),intent(in)::b
 		real(wp),intent(in)::w
 		real(wp),dimension(:),intent(in),optional::x0
@@ -217,8 +209,7 @@ contains
 		
 		rss0 = sqrt(sum(r**2))
 		
-		if(SO_TYPE==SO_FANCY) call showProgress('SOR (Sym) Solver',0.0_wp)
-		
+		call startReport('SOR (Sym) Solver')
 		do k=1,lmaxIts
 			do i=1,A%N,1
 				r(i) = b(i)-(A%rows(i).o.x)
@@ -231,13 +222,12 @@ contains
 			rss = sqrt(sum(r**2))
 			
 			call solverProgress(k,rss/rss0,ltol,'SOR (Sym) Solver')
-			
 			if(rss/rss0<ltol) exit
 		end do
 	end function symmetricSuccessiveOverRelaxation
 
 	function steepestDescent(A,b,x0,tol,maxIts) result(x)
-		type(sparse_t),intent(in)::A
+		class(sparse_t),intent(in)::A
 		real(wp),dimension(:),intent(in)::b
 		real(wp),dimension(:),intent(in),optional::x0
 		real(wp),intent(in),optional::tol
@@ -265,8 +255,7 @@ contains
 		
 		rss0 = sqrt(sum(r**2))
 		
-		if(SO_TYPE==SO_FANCY) call showProgress('Steepest Descent Solver',0.0_wp)
-		
+		call startReport('Steepest Descent Solver')
 		do k=1,lmaxIts
 			Ar = matmul(A,r)
 			alpha = sum(r*r)/sum(Ar*r)
@@ -275,13 +264,12 @@ contains
 			rss = sqrt(sum(r**2))
 			
 			call solverProgress(k,rss/rss0,ltol,'Steepest Descent Solver')
-			
 			if(rss/rss0<ltol) exit
 		end do
 	end function steepestDescent
 
 	function minimumResidual(A,b,x0,tol,maxIts) result(x)
-		type(sparse_t),intent(in)::A
+		class(sparse_t),intent(in)::A
 		real(wp),dimension(:),intent(in)::b
 		real(wp),dimension(:),intent(in),optional::x0
 		real(wp),intent(in),optional::tol
@@ -309,8 +297,7 @@ contains
 		
 		rss0 = sqrt(sum(r**2))
 		
-		if(SO_TYPE==SO_FANCY) call showProgress('Minimum Residual Solver',0.0_wp)
-		
+		call startReport('Minimum Residual Solver')
 		do k=1,lmaxIts
 			Ar = matmul(A,r)
 			alpha = sum(Ar*r)/sum(Ar*Ar)
@@ -319,13 +306,12 @@ contains
 			rss = sqrt(sum(r**2))
 			
 			call solverProgress(k,rss/rss0,ltol,'Minimum Residual Solver')
-			
 			if(rss/rss0<ltol) exit
 		end do
 	end function minimumResidual
 
 	function conjugateGradient(A,b,x0,tol,maxIts) result(x)
-		type(sparse_t),intent(in)::A
+		class(sparse_t),intent(in)::A
 		real(wp),dimension(:),intent(in)::b
 		real(wp),dimension(:),intent(in),optional::x0
 		real(wp),intent(in),optional::tol
@@ -356,8 +342,7 @@ contains
 		
 		rss0 = sqrt(sum(r**2))
 		
-		if(SO_TYPE==SO_FANCY) call showProgress('Conjugate Gradient Solver',0.0_wp)
-		
+		call startReport('Conjugate Gradient Solver')
 		do k=1,lmaxIts
 			Ap = matmul(A,p)
 			alpha = rTr/sum(p*Ap)
@@ -370,13 +355,12 @@ contains
 			rss = sqrt(sum(r**2))
 			
 			call solverProgress(k,rss/rss0,ltol,'Conjugate Gradient Solver')
-			
 			if(rss/rss0<ltol) exit
 		end do
 	end function conjugateGradient
 
 	function biConjugateGradientStabilized(A,b,x0,tol,maxIts) result(x)
-		type(sparse_t),intent(in)::A
+		class(sparse_t),intent(in)::A
 		real(wp),dimension(:),intent(in)::b
 		real(wp),dimension(:),intent(in),optional::x0
 		real(wp),intent(in),optional::tol
@@ -413,8 +397,7 @@ contains
 		
 		rss0 = sqrt(sum(r**2))
 		
-		if(SO_TYPE==SO_FANCY) call showProgress('Bi-Conjugate Gradient (Stab) Solver',0.0_wp)
-		
+		call startReport('Bi-Conjugate Gradient (Stab) Solver')
 		do k=1,lmaxIts
 			orho = rho
 			rho = sum(r0*r)
@@ -430,10 +413,15 @@ contains
 			rss = sqrt(sum(r**2))
 			
 			call solverProgress(k,rss/rss0,ltol,'Bi-Conjugate Gradient (Stab) Solver')
-			
 			if(rss/rss0<ltol) exit
 		end do
 	end function biConjugateGradientStabilized
+
+	subroutine startReport(nm)
+		character(*),intent(in)::nm
+		
+		if(SO_TYPE==SO_FANCY) call showProgress(nm,0.0_wp)
+	end subroutine startReport
 
 	subroutine solverProgress(k,rr,tol,nm)
 		integer,intent(in)::k
@@ -453,8 +441,4 @@ contains
 		end select
 	end subroutine solverProgress
 
-	subroutine solverInit()
-	
-	end subroutine solverInit
-
-end module solver_mod
+end module basicSolvers_mod
