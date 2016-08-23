@@ -26,7 +26,7 @@ if(NOT HAVE_RUN)
 	set(CMAKE_Fortran_FLAGS ${CMAKE_Fortran_FLAGS}
 		CACHE STRING "Fortran flags" FORCE)
 	
-	set(debug_flags "-Wall -Wno-tabs -fcheck=all -ffpe-trap=invalid,zero,overflow -fbacktrace -finit-real=snan")
+	set(debug_flags "-Wall -Wtabs -Wno-maybe-uninitialized -fcheck=all -ffpe-trap=invalid,zero,overflow -fbacktrace -finit-real=snan")
 	set(CMAKE_Fortran_FLAGS_DEBUG 
 		"${CMAKE_Fortran_FLAGS_DEBUG} ${debug_flags}"
 		CACHE STRING "Fortran debugging flags" FORCE)

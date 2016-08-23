@@ -25,9 +25,9 @@ module kinds_mod
 	!= Math Constants =!
 	!==================!
 	
-	real(wp),parameter::PI = real(4.0_qp*atan(1.0_qp),wp)
+	real(wp),parameter::PI = 4.0_wp*atan(1.0_wp)
 		!! Archimedes' constant
-	real(wp),parameter::E  = real(exp(1.0_qp),wp)
+	real(wp),parameter::E  = exp(1.0_wp)
 		!! Euler's constant
 	
 	!===========!
