@@ -180,9 +180,10 @@ contains
 			!! Time span in seconds
 		character(:),allocatable::o
 		
-		integer::d,r,h,m,s
+		integer::d,r,h,m,s,t
+		character(:),allocatable::tc
 		
-		r = nint(a)
+		r = floor(a)
 		
 		d = r/(3600*24)
 		r = mod(r,3600*24)
@@ -199,7 +200,16 @@ contains
 		if(d>0) o = o//intToChar(d)//'d '
 		if(h>0.or.d>0) o = o//intToChar(h)//'h '
 		if(m>0.or.h>0.or.d>0) o = o//intToChar(m)//'m '
-		o = o//intToChar(s)//'s'
+		o = o//intToChar(s)
+		
+		if(d==0 .and. h==0 .and. m==0) then
+			t  = floor(1000.0_wp*(a-real(s,wp)))
+			tc = intToChar(t)
+			tc = tc//repeat('0',3-len(tc))
+			o = o//'.'//tc
+		end if
+		
+		o = o//'s'
 	end function realToTime
 
 	function colorize(s,c) result(o)
@@ -245,7 +255,7 @@ contains
 		if(p<=0.0_wp) then
 			po = p
 			tStart = wallTime()
-		else if(p-po<=0.01 .and. p<1.0_wp) then
+		else if(p-po<=0.005 .and. p<1.0_wp) then
 			return
 		else
 			po = p
@@ -265,7 +275,7 @@ contains
 		& colorize(realToChar(100.0_wp*p,'1F5.1'),colorMap(p,[0.0_wp,1.0_wp])), &
 		& colorize('%',[5,5,0]), colorize(' (',[5,5,0]), realToTime(tNow-tStart), &
 		& colorize(' / ',[5,5,0]), realToTime( (tNow-tStart)/(p+0.0001_wp) ), colorize(')',[5,5,0])
-		if(p>=1.0_wp) write(stdout,'(1A)') ''
+		if(p>=1.0_wp) write(stdout,'(1A)') repeat(' ',10)
 		flush(stdout)
 	end subroutine showProgress
 

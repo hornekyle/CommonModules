@@ -134,7 +134,7 @@ contains
 		real(wp),dimension(:),allocatable::T1
 		integer::N,i,s
 		
-		N  = 200
+		N  = 300
 		s  = N/30
 		allocate(x(0:N+1))
 		x  = linspace(0.0_wp,1.0_wp,N+2)
@@ -177,6 +177,11 @@ contains
 		deallocate(solver)
 		
 		allocate(solver,source=gaussSeidel_t())
+		call solver%setup(A)
+		T1(1:N) = solver%solve(A,q)
+		deallocate(solver)
+		
+		allocate(solver,source=SOR_t(1.99_wp))
 		call solver%setup(A)
 		T1(1:N) = solver%solve(A,q)
 		deallocate(solver)

@@ -18,6 +18,7 @@ module solvers_mod
 	contains
 		procedure,private::startReport
 		procedure,private::stepReport
+		procedure,private::stopReport
 		procedure(setup_p),deferred::setup
 		procedure(step_p),deferred::step
 		procedure(solve_p),deferred::solve
@@ -82,6 +83,23 @@ module solvers_mod
 		module procedure newGaussSeidel
 	end interface
 	
+	!====================!
+	!= SOR Declarations =!
+	!====================!
+	
+	type,extends(solver_t)::SOR_t
+		real(wp),dimension(:),allocatable::D
+		real(wp)::w = 1.0_wp
+	contains
+		procedure::setup => setup_sor
+		procedure::step  =>  step_sor
+		procedure::solve => solve_sor
+	end type
+	
+	interface SOR_t
+		module procedure newSOR
+	end interface
+	
 	!===========!
 	!= Exports =!
 	!===========!
@@ -89,6 +107,7 @@ module solvers_mod
 	public::solver_t
 	public::jacobi_t
 	public::gaussSeidel_t
+	public::SOR_t
 	
 contains
 
@@ -110,8 +129,15 @@ contains
 		real(wp)::progress
 		
 		progress = log( r )/log(self%tol)
+		if(progress>=1.0_wp) progress = 0.995_wp
 		call showProgress(self%name_long,progress)
 	end subroutine stepReport
+
+	subroutine stopReport(self)
+		class(solver_t),intent(in)::self
+		
+		call showProgress(self%name_long,1.0_wp)
+	end subroutine stopReport
 
 	!===================!
 	!= Jacobi Routines =!
@@ -162,11 +188,8 @@ contains
 		real(wp)::rss0,rss
 		integer::k
 		
-		if(present(x0)) then
-			x = x0
-		else
-			x = b/self%D
-		end if
+		x = b/self%D
+		if(present(x0)) x = x0
 		
 		r = b-matmul(A,x)
 		rss0 = norm2(r)
@@ -180,6 +203,7 @@ contains
 			call self%stepReport(k,rss/rss0)
 			if(rss/rss0<self%tol) exit
 		end do
+		call self%stopReport()
 	end function solve_jkb
 
 	!========================!
@@ -234,11 +258,8 @@ contains
 		real(wp)::rss0,rss
 		integer::k,i
 		
-		if(present(x0)) then
-			x = x0
-		else
-			x = b/self%D
-		end if
+		x = b/self%D
+		if(present(x0)) x = x0
 		
 		r = b-matmul(A,x)
 		rss0 = norm2(r)
@@ -254,6 +275,81 @@ contains
 			call self%stepReport(k,rss/rss0)
 			if(rss/rss0<self%tol) exit
 		end do
+		call self%stopReport()
 	end function solve_gs
+
+	!================!
+	!= SOR Routines =!
+	!================!
+
+	function newSOR(w) result(self)
+		real(wp),intent(in)::w
+		type(SOR_t)::self
+		
+		self%name_long = 'SuccessiveOverRelaxation'
+		self%name_short = ' SOR '
+		self%w = w
+	end function newSOR
+
+	subroutine setup_sor(self,A)
+		class(SOR_t),intent(inout)::self
+		class(sparse_t),intent(in)::A
+		
+		self%D = A%getDiagonal()
+		self%maxIts = A%N**3
+	end subroutine setup_sor
+	
+	function step_sor(self,A,b,x0,l) result(x)
+		class(SOR_t),intent(inout)::self
+		class(sparse_t),intent(in)::A
+		real(wp),dimension(A%N),intent(in)::b
+		real(wp),dimension(A%N),intent(in)::x0
+		integer,intent(in)::l
+		real(wp),dimension(:),allocatable::x
+		
+		real(wp),dimension(:),allocatable::r
+		integer::k,i
+		
+		x = x0
+		r = [( 0.0_wp, i=1,A%N )]
+		
+		do k=1,l
+			do i=1,A%N
+				r(i) = b(i)-(A%rows(i).o.x)
+				x(i) = x(i)+self%w*r(i)/self%D(i)
+			end do
+		end do
+	end function step_sor
+	
+	function solve_sor(self,A,b,x0) result(x)
+		class(SOR_t),intent(inout)::self
+		class(sparse_t),intent(in)::A
+		real(wp),dimension(A%N),intent(in)::b
+		real(wp),dimension(A%N),intent(in),optional::x0
+		real(wp),dimension(:),allocatable::x
+		
+		real(wp),dimension(:),allocatable::r
+		real(wp)::rss0,rss
+		integer::k,i
+		
+		x = b/self%D
+		if(present(x0)) x = x0
+		
+		r = b-matmul(A,x)
+		rss0 = norm2(r)
+		
+		call self%startReport()
+		do k=1,self%maxIts
+			do i=1,A%N
+				r(i) = b(i)-(A%rows(i).o.x)
+				x(i) = x(i)+self%w*r(i)/self%D(i)
+			end do
+			
+			rss = norm2(r)
+			call self%stepReport(k,rss/rss0)
+			if(rss/rss0<self%tol) exit
+		end do
+		call self%stopReport()
+	end function solve_sor
 
 end module solvers_mod
