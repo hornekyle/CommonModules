@@ -205,7 +205,7 @@ contains
 		if(d==0 .and. h==0 .and. m==0) then
 			t  = floor(1000.0_wp*(a-real(s,wp)))
 			tc = intToChar(t)
-			tc = tc//repeat('0',3-len(tc))
+			tc = repeat('0',3-len(tc))//tc
 			o = o//'.'//tc
 		end if
 		

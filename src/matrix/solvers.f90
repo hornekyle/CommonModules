@@ -15,6 +15,7 @@ module solvers_mod
 		real(wp)::tol = 1.0E-6_wp
 		character(:),allocatable::name_long
 		character(:),allocatable::name_short
+		real(wp)::solveTime
 	contains
 		procedure,private::startReport
 		procedure,private::stepReport
@@ -100,6 +101,21 @@ module solvers_mod
 		module procedure newSOR
 	end interface
 	
+	!==================================!
+	!= conjugateGradient Declarations =!
+	!==================================!
+	
+	type,extends(solver_t)::conjugateGradient_t
+	contains
+		procedure::setup => setup_cg
+		procedure::step  =>  step_cg
+		procedure::solve => solve_cg
+	end type
+	
+	interface conjugateGradient_t
+		module procedure newConjugateGradient
+	end interface
+	
 	!===========!
 	!= Exports =!
 	!===========!
@@ -108,6 +124,7 @@ module solvers_mod
 	public::jacobi_t
 	public::gaussSeidel_t
 	public::SOR_t
+	public::conjugateGradient_t
 	
 contains
 
@@ -116,9 +133,10 @@ contains
 	!===================!
 
 	subroutine startReport(self)
-		class(solver_t),intent(in)::self
+		class(solver_t),intent(inout)::self
 		
 		call showProgress(self%name_long,0.0_wp)
+		self%solveTime = cpuTime()
 	end subroutine startReport
 
 	subroutine stepReport(self,k,r)
@@ -134,9 +152,13 @@ contains
 	end subroutine stepReport
 
 	subroutine stopReport(self)
-		class(solver_t),intent(in)::self
+		class(solver_t),intent(inout)::self
+		real(wp)::t0,t1
 		
 		call showProgress(self%name_long,1.0_wp)
+		t0 = self%solveTime
+		t1 = cpuTime()
+		self%solveTime = t1-t0
 	end subroutine stopReport
 
 	!===================!
@@ -351,5 +373,81 @@ contains
 		end do
 		call self%stopReport()
 	end function solve_sor
+
+	!================!
+	!= SOR Routines =!
+	!================!
+
+	function newConjugateGradient() result(self)
+		type(conjugateGradient_t)::self
+		
+		self%name_long = 'ConjugateGradient'
+		self%name_short = ' C_G '
+	end function newConjugateGradient
+
+	subroutine setup_cg(self,A)
+		class(conjugateGradient_t),intent(inout)::self
+		class(sparse_t),intent(in)::A
+		
+		self%maxIts = A%N
+	end subroutine setup_cg
+	
+	function step_cg(self,A,b,x0,l) result(x)
+		class(conjugateGradient_t),intent(inout)::self
+		class(sparse_t),intent(in)::A
+		real(wp),dimension(A%N),intent(in)::b
+		real(wp),dimension(A%N),intent(in)::x0
+		integer,intent(in)::l
+		real(wp),dimension(:),allocatable::x
+		
+		real(wp),dimension(:),allocatable::r
+		integer::k
+		
+		x = x0
+		r = b-matmul(A,x)
+		
+		
+	end function step_cg
+	
+	function solve_cg(self,A,b,x0) result(x)
+		class(conjugateGradient_t),intent(inout)::self
+		class(sparse_t),intent(in)::A
+		real(wp),dimension(A%N),intent(in)::b
+		real(wp),dimension(A%N),intent(in),optional::x0
+		real(wp),dimension(:),allocatable::x
+		
+		real(wp),dimension(:),allocatable::r
+		real(wp)::rss0,rss
+		integer::k
+		
+		real(wp),dimension(:),allocatable::Ap,p
+		real(wp)::alpha,beta,rTr,rTr_old
+		
+		x = b/A%getDiagonal()
+		if(present(x0)) x = x0
+		
+		r = b-matmul(A,x)
+		rss0 = norm2(r)
+		
+		p = r
+		rTr = norm2(r)
+		
+		call self%startReport()
+		do k=1,self%maxIts
+			Ap = matmul(A,p)
+			alpha = rTr/dot_product(p,Ap)
+			x = x+alpha*p
+			r = r-alpha*Ap
+			rTr_old = rTr
+			rTr = norm2(r)
+			beta = rTr/rTr_old
+			p = r+beta*p
+			
+			rss = norm2(r)
+			call self%stepReport(k,rss/rss0)
+			if(rss/rss0<self%tol) exit
+		end do
+		call self%stopReport()
+	end function solve_cg
 
 end module solvers_mod
