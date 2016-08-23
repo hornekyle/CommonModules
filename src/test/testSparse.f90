@@ -134,7 +134,7 @@ contains
 		real(wp),dimension(:),allocatable::T1
 		integer::N,i,s
 		
-		N  = 200
+		N  = 100
 		s  = N/30
 		allocate(x(0:N+1))
 		x  = linspace(0.0_wp,1.0_wp,N+2)
@@ -191,6 +191,10 @@ contains
 		T1(1:N) = solver%solve(A,q)
 		deallocate(solver)
 		
+		allocate(solver,source=biCGSTAB_t())
+		call solver%setup(A)
+		T1(1:N) = solver%solve(A,q)
+		deallocate(solver)
 		
 		call figure()
 		call subplot(1,1,1)
