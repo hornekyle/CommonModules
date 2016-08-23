@@ -136,6 +136,7 @@ contains
 		class(solver_t),intent(inout)::self
 		
 		call showProgress(self%name_long,0.0_wp)
+! 		write(*,*) 'Start: ',self%name_long
 		self%solveTime = cpuTime()
 	end subroutine startReport
 
@@ -149,6 +150,7 @@ contains
 		progress = log( r )/log(self%tol)
 		if(progress>=1.0_wp) progress = 0.995_wp
 		call showProgress(self%name_long,progress)
+! 		write(*,*) k,r,progress
 	end subroutine stepReport
 
 	subroutine stopReport(self)
@@ -430,7 +432,7 @@ contains
 		rss0 = norm2(r)
 		
 		p = r
-		rTr = norm2(r)
+		rTr = dot_product(r,r)
 		
 		call self%startReport()
 		do k=1,self%maxIts
@@ -439,7 +441,7 @@ contains
 			x = x+alpha*p
 			r = r-alpha*Ap
 			rTr_old = rTr
-			rTr = norm2(r)
+			rTr = dot_product(r,r)
 			beta = rTr/rTr_old
 			p = r+beta*p
 			
