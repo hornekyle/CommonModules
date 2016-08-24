@@ -9,9 +9,9 @@ program testAutoDiff_prg
 contains
 
 	subroutine testDiff
-		type(ad_t)::x
+		type(ad1_t)::x
 		
-		x = diff(1.0_wp,1)
+		x = diff1(1.0_wp,1)
 	end subroutine testDiff
 
 end program testAutoDiff_prg 
