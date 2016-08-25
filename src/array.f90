@@ -171,7 +171,11 @@ contains
 		Nl = 20
 		if(present(N)) Nl = N
 		
-		o = [( (h-l)*real(i-1,wp)/real(Nl-1,wp)+l , i=1 , Nl )]
+		if(Nl==1) then
+			o = [ (l+h)/2.0_wp ]
+		else
+			o = [( (h-l)*real(i-1,wp)/real(Nl-1,wp)+l , i=1 , Nl )]
+		end if
 	end function linspace
 
 	function meshGridX(x,y) result(o)
