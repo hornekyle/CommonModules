@@ -5,6 +5,10 @@ module eval_mod
 	implicit none
 	private
 	
+	!==============!
+	!= Parameters =!
+	!==============!
+	
 	character(8),parameter::ops = ',+-*/^()'
 	
 	integer,parameter::R_SPAN = 99
@@ -38,6 +42,10 @@ module eval_mod
 	integer,parameter::T_ATAN  = 111
 	integer,parameter::T_LOG10 = 112
 	
+	!=========!
+	!= Types =!
+	!=========!
+	
 	type::token_t
 		integer::t = T_NONE
 		real(wp)::a = 0.0_wp
@@ -49,9 +57,20 @@ module eval_mod
 	contains
 		procedure::eval
 	end type
-
+	
+	!==============!
+	!= Interfaces =!
+	!==============!
+	
+	interface function_t
+		module procedure newFunction
+	end interface
+	
+	!===========!
+	!= Exports =!
+	!===========!
+	
 	public::function_t
-	public::newFunction
 	
 contains
 

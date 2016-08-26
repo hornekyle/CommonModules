@@ -61,12 +61,19 @@ module config_mod
 		procedure,private::sortKeys
 	end type
 	
+	!==============!
+	!= Interfaces =!
+	!==============!
+	
+	interface config_t
+		module procedure newConfig
+	end interface
+	
 	!===========!
 	!= Exports =!
 	!===========!
 	
 	public::config_t
-	public::newConfig
 	
 contains
 

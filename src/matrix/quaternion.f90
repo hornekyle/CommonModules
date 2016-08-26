@@ -7,10 +7,22 @@ module quaternion_mod
 	implicit none
 	private
 	
+	!=========!
+	!= Types =!
+	!=========!
+	
 	type::quat_t
 		real(wp)::r = 0.0_wp
 		real(wp),dimension(3)::v = 0.0_wp
 	end type
+	
+	!==============!
+	!= Interfaces =!
+	!==============!
+	
+	interface quat_t
+		module procedure newQuat
+	end interface
 	
 	interface norm2
 		module procedure norm2_q
@@ -60,6 +72,10 @@ module quaternion_mod
 		module procedure div_qr
 	end interface
 	
+	!===========!
+	!= Exports =!
+	!===========!
+	
 	public::quat_t
 	
 	public::scaler
@@ -83,6 +99,15 @@ contains
 	!==================!
 	!= Basic Routines =!
 	!==================!
+
+	function newQuat(r,v) result(self)
+		real(wp),intent(in)::r
+		real(wp),dimension(3),intent(in)::v
+		type(quat_t)::self
+		
+		self%r = r
+		self%v = v
+	end function newQuat
 
 	elemental function scaler(q) result(o)
 		!! Return the scalar part of the quaternion

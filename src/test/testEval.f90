@@ -45,7 +45,7 @@ contains
 		real(wp),dimension(N)::x,y
 		integer::k
 		
-		f = newFunction(s)
+		f = function_t(s)
 		
 		write(*,*) 'Arguments'
 		write(*,*) f%ar

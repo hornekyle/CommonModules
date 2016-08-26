@@ -15,7 +15,7 @@ contains
 		logical,dimension(1)::results
 		type(config_t)::cfg
 		
-		cfg = newConfig('./input/testConfig.cfg')
+		cfg = config_t('./input/testConfig.cfg')
 		
 		results(1) = allocated(cfg%pairs)
 		
