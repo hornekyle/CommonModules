@@ -35,7 +35,9 @@ contains
 		!! Verify operation of obj_t
 		type(test_t)::test
 		
-		write(*,*) test%eval(2.0_wp)
+		write(*,*) test%eval(2.0_wp)-3.0_wp
+		write(*,*) test%der(0.0_wp)
+		write(*,*) test%rootNewton(4.0_wp,tol=1.0E-10_wp,maxIts=1000000)
 	end subroutine testObjective
 
 end program testOptimize_prg

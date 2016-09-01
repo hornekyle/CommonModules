@@ -3,7 +3,11 @@ module optimize_mod
 	implicit none
 	
 	type,abstract::obj_t
+		integer::derivativeOrder = 2
+		real(wp)::stepSize = 1.0E-3_wp
 	contains
+		procedure::der
+		procedure::rootNewton
 		procedure(eval_p),deferred::eval
 	end type
 	
@@ -30,5 +34,53 @@ module optimize_mod
 	
 contains
 
+	function der(self,x) result(o)
+		class(obj_t),intent(in)::self
+		real(wp),intent(in)::x
+		real(wp)::o
+		
+		real(wp)::h
+		
+		h = self%stepSize
+		
+		select case(self%derivativeOrder)
+		case(-1)
+			o = ( self%eval(x)-self%eval(x-h) )/( h )
+		case( 1)
+			o = ( self%eval(x+h)-self%eval(x) )/( h )
+		case( 2)
+			o = ( self%eval(x+h)-self%eval(x-h) )/( 2.0_wp*h )
+		end select
+	end function der
+
+	function rootNewton(self,x0,tol,maxIts) result(o)
+		class(obj_t),intent(in)::self
+		real(wp),intent(in)::x0
+		real(wp),intent(in),optional::tol
+		integer,intent(in),optional::maxIts
+		real(wp)::o
+		
+		real(wp)::lTol
+		integer::lMaxIts
+		real(wp)::x,xn
+		integer::k
+		
+		lTol = 1.0E-6_wp
+		lMaxIts = 10000
+		
+		if(present(tol)) lTol = tol
+		if(present(maxIts)) lMaxIts = maxIts
+		
+		xn = x0
+		
+		do k=1,lMaxIts
+			x = xn
+			xn = x-self%eval(x)/self%der(x)
+			
+			if(abs(xn-x)<lTol) exit
+		end do
+		
+		o = xn
+	end function rootNewton
 
 end module optimize_mod
