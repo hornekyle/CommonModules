@@ -98,6 +98,7 @@ set(modules_src
 	"src/eval.f90"
 	"src/iterate.f90"
 	"src/kinds.f90"
+	"src/optimize.f90"
 	"src/stats.f90"
 	"src/time.f90"
 	"src/IO/config.f90"
@@ -157,6 +158,7 @@ addTest("testConfig")
 addTest("testIterate")
 addTest("testKinds")
 addTest("testMatIO")
+addTest("testOptimize")
 addTest("testQuaternion")
 addTest("testStats")
 addTest("testTensor")
