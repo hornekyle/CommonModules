@@ -19,6 +19,7 @@ contains
 		w = u*v
 		
 		write(*,*) scaler(w),vector(w)
+		write(*,*) w%getRotationMatrix()
 	end subroutine testBasic
 
 end program testQuaternion_prg

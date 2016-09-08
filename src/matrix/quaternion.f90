@@ -2,6 +2,7 @@ module quaternion_mod
 	!! Module for working with quaternions
 	!! @todo
 	!! Add documentation
+	!! Refactor self%r -> self%s
 	use kinds_mod
 	use tensor_mod
 	implicit none
@@ -14,6 +15,8 @@ module quaternion_mod
 	type::quat_t
 		real(wp)::r = 0.0_wp
 		real(wp),dimension(3)::v = 0.0_wp
+	contains
+		procedure::getRotationMatrix
 	end type
 	
 	!==============!
@@ -356,5 +359,37 @@ contains
 		o%r = q%r/r
 		o%v = q%v/r
 	end function div_qr
+
+	!=======================!
+	!= Quaternion Routines =!
+	!=======================!
+
+	function getRotationMatrix(self) result(o)
+		class(quat_t),intent(in)::self
+		real(wp),dimension(3,3)::o
+		
+		type(quat_t)::q
+		real(wp)::a,b,c,d
+		
+		q = self/norm2(self)
+		
+		a = q%r
+		b = q%v(1)
+		c = q%v(2)
+		d = q%v(3)
+		
+		o(1,1) = a**2 + b**2 - c**2 - d**2
+		o(2,2) = a**2 - b**2 + c**2 - d**2
+		o(3,3) = a**2 - b**2 - c**2 + d**2
+		
+		o(2,1) = 2.0_wp*b*c + 2.0_wp*a*d
+		o(1,2) = 2.0_wp*b*c - 2.0_wp*a*d
+		
+		o(3,1) = 2.0_wp*b*d - 2.0_wp*a*c
+		o(1,3) = 2.0_wp*b*d + 2.0_wp*a*c
+		
+		o(3,2) = 2.0_wp*c*d + 2.0_wp*a*b
+		o(2,3) = 2.0_wp*c*d - 2.0_wp*a*b
+	end function getRotationMatrix
 
 end module quaternion_mod
