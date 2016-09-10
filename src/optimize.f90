@@ -1,6 +1,7 @@
 module optimize_mod
 	use kinds_mod
 	implicit none
+	private
 	
 	!==================!
 	!= Abstract Types =!
@@ -49,13 +50,33 @@ module optimize_mod
 	!= Definite Types =!
 	!==================!
 	
-! 	type,extends(obj_t)::lineSearch_t
-! 		class(objN_t),allocatable::parent
-! 	contains
-! 		procedure(evalN_p)::eval_lineSearch
-! 	end type
+	type,extends(obj_t)::lineSearch_t
+		class(objN_t),allocatable::parent
+		real(wp),dimension(:),allocatable::x0
+		real(wp),dimension(:),allocatable::n0
+	contains
+		procedure::parentX
+		procedure::eval => eval_lineSearch
+	end type
+	
+	!==============!
+	!= Interfaces =!
+	!==============!
+	
+	interface lineSearch_t
+		module procedure newLineSearch
+	end interface
+	
+	public::obj_t
+	public::objN_t
+	
+	public::lineSearch_t
 	
 contains
+
+	!==================!
+	!= obj_t Routines =!
+	!==================!
 
 	function der1(self,x) result(o)
 		class(obj_t),intent(in)::self
@@ -155,6 +176,10 @@ contains
 		o = xn
 	end function minNewton
 
+	!===================!
+	!= objN_t Routines =!
+	!===================!
+
 	function grad(self,x) result(o)
 		class(objN_t),intent(in)::self
 		real(wp),dimension(:),intent(in)::x
@@ -188,5 +213,39 @@ contains
 			end do
 		end select
 	end function grad
+
+	!=========================!
+	!= lineSearch_t Routines =!
+	!=========================!
+
+	function newLineSearch(obj,x) result(self)
+		class(objN_t),intent(in)::obj
+		real(wp),dimension(:),intent(in)::x
+		type(lineSearch_t)::self
+		
+		real(wp),dimension(:),allocatable::g
+		
+		g = obj%grad(x)
+		
+		allocate(self%parent,source=obj)
+		self%x0 = x
+		self%n0 = g/norm2(g)
+	end function newLineSearch
+
+	function parentX(self,x) result(o)
+		class(lineSearch_t),intent(in)::self
+		real(wp),intent(in)::x
+		real(wp),dimension(:),allocatable::o
+		
+		o = self%x0+x*self%n0
+	end function parentX
+
+	function eval_lineSearch(self,x) result(o)
+		class(lineSearch_t),intent(in)::self
+		real(wp),intent(in)::x
+		real(wp)::o
+		
+		o = self%parent%eval(self%parentX(x))
+	end function eval_lineSearch
 
 end module optimize_mod

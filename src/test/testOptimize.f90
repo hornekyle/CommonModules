@@ -8,6 +8,12 @@ module objective_mod
 		procedure::eval => eval_test
 	end type
 	
+	type,extends(objN_t)::testN_t
+		real(wp),dimension(2)::c0
+	contains
+		procedure::eval => eval_testN
+	end type
+	
 contains
 
 	function eval_test(self,x) result(o)
@@ -18,6 +24,14 @@ contains
 		o = x**2-1.0_wp
 	end function eval_test
 
+	function eval_testN(self,x) result(o)
+		class(testN_t),intent(in)::self
+		real(wp),dimension(:),intent(in)::x
+		real(wp)::o
+		
+		o = norm2(x-self%c0)**2-1.0_wp
+	end function eval_testN
+
 end module objective_mod
 
 program testOptimize_prg
@@ -27,7 +41,8 @@ program testOptimize_prg
 	use objective_mod
 	implicit none
 	
-	call testObjective
+! 	call testObjective
+	call testObjectiveN
 	
 contains
 
@@ -41,5 +56,18 @@ contains
 		write(*,*) test%rootNewton(4.0_wp,tol=1.0E-10_wp,maxIts=1000000)
 		write(*,*) test%minNewton(4.0_wp,tol=1.0E-10_wp,maxIts=1000000)
 	end subroutine testObjective
+
+	subroutine testObjectiveN
+		type(testN_t)::test
+		type(lineSearch_t)::line
+		real(wp)::x
+		
+		test%c0 = [2.0_wp,3.0_wp]
+		
+		line = lineSearch_t(test,[5.0_wp,5.0_wp])
+		x = line%minNewton(0.0_wp)
+		write(*,*) x
+		write(*,*) line%parentX(x)
+	end subroutine testObjectiveN
 
 end program testOptimize_prg
