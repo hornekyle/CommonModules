@@ -1,9 +1,5 @@
 module config_mod
 	!! Module for reading variables from config files
-	!! @todo
-	!! Make code fault tolerant  
-	!! Check type of pair when accessing
-	!! Cange pair_t%s to allocatable
 	use kinds_mod
 	use text_mod
 	implicit none
@@ -23,7 +19,7 @@ module config_mod
 	
 	type::pair_t
 		!! Type to store a single key-value pair and the data's type
-		character(100)::key
+		character(:),allocatable::key
 		
 		integer::pType
 		
@@ -33,12 +29,12 @@ module config_mod
 		complex(wp)::c = 0.0_wp
 		real(wp),dimension(:),allocatable::v
 		real(wp),dimension(:,:),allocatable::m
-		character(strShort)::s = ' '
+		character(:),allocatable::s
 	end type
 	
 	type::config_t
 		!! Type to store a set of pairs and access their data
-		character(strLong)::fn
+		character(:),allocatable::fn
 			!! Filename data was read from
 		type(pair_t),dimension(:),allocatable::pairs
 			!! Pairs of data
@@ -295,8 +291,14 @@ contains
 		class(config_t),intent(in)::self
 		character(*),intent(in)::key
 		logical::o
-	
-		o = self%pairs(self%findKey(key))%l
+		
+		integer::idx
+		
+		idx = self%findKey(key)
+		if(idx<1 .or. idx>size(self%pairs)) call doError('Invalid index for key: '//key)
+		if(self%pairs(idx)%pType/=PT_LOGICAL) call doError('Data not LOGICAL type: '//key)
+		
+		o = self%pairs(idx)%l
 	end function getLogical
 
 	function getInteger(self,key) result(o)
@@ -304,7 +306,13 @@ contains
 		character(*),intent(in)::key
 		integer::o
 		
-		o = self%pairs(self%findKey(key))%i
+		integer::idx
+		
+		idx = self%findKey(key)
+		if(idx<1 .or. idx>size(self%pairs)) call doError('Invalid index for key: '//key)
+		if(self%pairs(idx)%pType/=PT_INTEGER) call doError('Data not INTEGER type: '//key)
+		
+		o = self%pairs(idx)%i
 	end function getInteger
 
 	function getReal(self,key) result(o)
@@ -312,7 +320,13 @@ contains
 		character(*),intent(in)::key
 		real(wp)::o
 		
-		o = self%pairs(self%findKey(key))%r
+		integer::idx
+		
+		idx = self%findKey(key)
+		if(idx<1 .or. idx>size(self%pairs)) call doError('Invalid index for key: '//key)
+		if(self%pairs(idx)%pType/=PT_REAL) call doError('Data not REAL type: '//key)
+		
+		o = self%pairs(idx)%r
 	end function getReal
 
 	function getComplex(self,key) result(o)
@@ -320,7 +334,13 @@ contains
 		character(*),intent(in)::key
 		complex(wp)::o
 		
-		o = self%pairs(self%findKey(key))%c
+		integer::idx
+		
+		idx = self%findKey(key)
+		if(idx<1 .or. idx>size(self%pairs)) call doError('Invalid index for key: '//key)
+		if(self%pairs(idx)%pType/=PT_COMPLEX) call doError('Data not COMPLEX type: '//key)
+		
+		o = self%pairs(idx)%c
 	end function getComplex
 	
 	function getVector(self,key) result(o)
@@ -328,11 +348,14 @@ contains
 		character(*),intent(in)::key
 		real(wp),dimension(:),allocatable::o
 		
-		integer::k
+		integer::idx
 		
-		k = self%findKey(key)
-		allocate(o(size(self%pairs(k)%v)))
-		o = self%pairs(k)%v
+		idx = self%findKey(key)
+		if(idx<1 .or. idx>size(self%pairs)) call doError('Invalid index for key: '//key)
+		if(self%pairs(idx)%pType/=PT_VECTOR) call doError('Data not VECTOR type: '//key)
+
+		allocate(o(size(self%pairs(idx)%v)))
+		o = self%pairs(idx)%v
 	end function getVector
 	
 	function getMatrix(self,key) result(o)
@@ -340,19 +363,28 @@ contains
 		character(*),intent(in)::key
 		real(wp),dimension(:,:),allocatable::o
 
-		integer::k
+		integer::idx
 		
-		k = self%findKey(key)
-		allocate(o(size(self%pairs(k)%m,1),size(self%pairs(k)%m,2)))
-		o = self%pairs(k)%m
+		idx = self%findKey(key)
+		if(idx<1 .or. idx>size(self%pairs)) call doError('Invalid index for key: '//key)
+		if(self%pairs(idx)%pType/=PT_MATRIX) call doError('Data not MATRIX type: '//key)
+		
+		allocate(o(size(self%pairs(idx)%m,1),size(self%pairs(idx)%m,2)))
+		o = self%pairs(idx)%m
 	end function getMatrix
 	
 	function getString(self,key) result(o)
 		class(config_t),intent(in)::self
 		character(*),intent(in)::key
-		character(1024)::o
+		character(:),allocatable::o
 		
-		o = self%pairs(self%findKey(key))%s
+		integer::idx
+		
+		idx = self%findKey(key)
+		if(idx<1 .or. idx>size(self%pairs)) call doError('Invalid index for key: '//key)
+		if(self%pairs(idx)%pType/=PT_STRING) call doError('Data not STRING type: '//key)
+		
+		o = self%pairs(idx)%s
 	end function getString
 
 	function findKey(self,key) result(idx)
@@ -360,36 +392,68 @@ contains
 		character(*),intent(in)::key
 		integer::idx
 		
-		integer::L,M,H
-		logical::found
+		integer,dimension(2)::R
+		integer::N
 		
-		L = 1
-		M = size(self%pairs)/2+1
-		H = size(self%pairs)
-		found = .false.              ! 6
+		N = size(self%pairs)
 		
-		idx = 0
-		do while(.not.found)
-			if(key==self%pairs(L)%key) then
-				idx = L
-				found = .true.
-			else if(key==self%pairs(M)%key) then
-				idx = M
-				found = .true.
-			else if(key==self%pairs(H)%key) then
-				idx = H
-				found = .true.
-			else if(H-L<=2) then
+		if(N<7) then
+			R = [1,N]
+		else
+			R = narrowSearch()
+		end if
+		
+		idx = directSearch( R(1) , R(2) )
+		if(idx<1 .or. idx>N) stop 'Key not found'
+		
+	contains
+	
+		function narrowSearch() result(o)
+			integer,dimension(2)::o
+			
+			integer::l,m,h
+			
+			l = 1
+			h = N
+			m = (l+h-1)/2+1
+			
+			do while(h-l>5)
+				if( self%pairs(m)%key == key) then
+					h = m
+					l = m
+				else if( self%pairs(m)%key < key ) then
+					l = m
+					m = (l+h-1)/2+1
+				else if( self%pairs(m)%key > key ) then
+					h = m
+					m = (l+h-1)/2+1
+				end if
+			end do
+			
+			o = [l,h]
+		end function narrowSearch
+	
+		function directSearch(l,h) result(o)
+			integer,intent(in)::l,h
+			integer::o
+			
+			integer::k
+			
+			do k=l,h
+				if( self%pairs(k)%key/=key ) cycle
+				o = k
 				exit
-			else if(key<self%pairs(M)%key) then
-				H = M
-				M = (L+H)/2+1
-			else if(key>self%pairs(M)%key) then
-				L = M
-				M = (L+H)/2+1
-			end if
-		end do
-		if(idx==0) error stop 'Key not found'
+			end do
+			
+			if(k>h) o = -1
+		end function directSearch
+	
 	end function findKey
 
+	subroutine doError(msg)
+		character(*),intent(in)::msg
+		
+		write(*,*) msg
+		stop 'Error in config_mod'
+	end subroutine doError
 end module config_mod
