@@ -28,6 +28,11 @@ module array_mod
 		module procedure flatten_3
 	end interface
 	
+	interface TDMA
+		module procedure TDMA_s
+		module procedure TDMA_m
+	end interface
+	
 	!===========!
 	!= Exports =!
 	!===========!
@@ -214,8 +219,14 @@ contains
 		forall(i=1:Nx,j=1:Ny) o(i,j) = y(j)
 	end function meshGridY
 
-	function TDMA(A,b) result(x)
+	!========!
+	!= TMDA =!
+	!========!
+
+	function TDMA_s(A,b) result(x)
 		!! Solve a tridiagonal linear algebra problem \( [A]\{x\}=\{b\} \)
+		!! @todo
+		!! Put behind interface and allow for multiple RHS in another routine
 		real(wp),dimension(:,:),intent(in)::A
 			!! Coefficient matrix with the diagonals in columns \( [A] \)
 		real(wp),dimension(:),intent(in)::b
@@ -227,7 +238,9 @@ contains
 		real(wp)::r
 		integer::N,k
 		
-		N = size(A)
+		N = size(A,1)
+		
+		allocate( W(N,-1:+1) )
 		
 		W(:,-1) =  A(:,1)
 		W(:, 0) =  A(:,2)
@@ -249,9 +262,52 @@ contains
 		do k=1,N
 			r = 1.0_wp/W(k,0)
 			W(k,:) = r*W(k,:)
-			x(k) = r*x(k)  
+			x(k) = r*x(k)
 		end do
-	end function TDMA
+	end function TDMA_s
+
+	function TDMA_m(A,b) result(x)
+		!! Solve a tridiagonal linear algebra problem \( [A]\{x\}=\{b\} \)
+		!! @todo
+		!! Put behind interface and allow for multiple RHS in another routine
+		real(wp),dimension(:,:),intent(in)::A
+			!! Coefficient matrix with the diagonals in columns \( [A] \)
+		real(wp),dimension(:,:),intent(in)::b
+			!! Right-hand-side of the system \( \{b\} \)
+		real(wp),dimension(:,:),allocatable::x
+			!! Problem solution \( \{x\} \)
+		
+		real(wp),dimension(:,:),allocatable::W
+		real(wp)::r
+		integer::N,k
+		
+		N = size(A,1)
+		
+		allocate( W(N,-1:+1) )
+		
+		W(:,-1) =  A(:,1)
+		W(:, 0) =  A(:,2)
+		W(:,+1) = -A(:,3)
+		x       = b
+		
+		do k=2,N
+			r = W(k,-1)/W(k-1,0)
+			W(k,-1:0) = W(k,-1:0)-r*W(k-1,0:1)
+			x(k,:) = x(k,:)-r*x(k-1,:)
+		end do
+		
+		do k=N-1,1,-1
+			r = W(k,1)/W(k+1,0)
+			W(k,0:1) = W(k,0:1)-r*W(k+1,-1:0)
+			x(k,:) = x(k,:)-r*x(k+1,:)
+		end do
+		
+		do k=1,N
+			r = 1.0_wp/W(k,0)
+			W(k,:) = r*W(k,:)
+			x(k,:) = r*x(k,:)
+		end do
+	end function TDMA_m
 
 	!========================!
 	!= Linear Interpolation =!
@@ -262,7 +318,7 @@ contains
 		!!
 		!! Arrays x and y must be sorted
 		real(wp),intent(in)::r
-			!! Position of desired value!! x values of data
+			!! Position of desired value
 		real(wp),dimension(:),intent(in)::x
 			!! x values of data
 		real(wp),dimension(size(x)),intent(in)::y

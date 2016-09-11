@@ -36,12 +36,14 @@ end module objective_mod
 
 program testOptimize_prg
 	!! Test program for Optimize_mod
+	!! @todo
+	!! Finish tests
 	use kinds_mod
 	use optimize_mod
 	use objective_mod
 	implicit none
 	
-! 	call testObjective
+	call testObjective
 	call testObjectiveN
 	
 contains

@@ -7,7 +7,7 @@ program testSparse_prg
 	use plplotlib_mod
 	implicit none
 	
-	call setup(device='svg',fileName='testsSparse-%n.svg',figSize=[400,300])
+	call setup(fileName='testsSparse-%n.svg',figSize=[400,300])
 ! 	call testNewSparse
 ! 	call testSpvec
 ! 	call testBasicSolvers

@@ -99,6 +99,7 @@ set(modules_src
 	"src/iterate.f90"
 	"src/kinds.f90"
 	"src/optimize.f90"
+	"src/spline.f90"
 	"src/stats.f90"
 	"src/time.f90"
 	"src/IO/config.f90"
@@ -181,9 +182,11 @@ endif(NETCDF_FOUND)
 if(PLPLOT_FOUND)
 	addTest("testEval")
 	addTest("testSparse")
+	addTest("testSpline")
 	
-	target_link_libraries(testEval ${PLPLOT_LIBRARIES})
+	target_link_libraries(testEval   ${PLPLOT_LIBRARIES})
 	target_link_libraries(testSparse ${PLPLOT_LIBRARIES})
+	target_link_libraries(testSpline ${PLPLOT_LIBRARIES})
 endif(PLPLOT_FOUND)
 
 if(EXECUTABLE_GMSH)

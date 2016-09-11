@@ -10,7 +10,7 @@ module plplotlib_mod
 	integer,parameter::pp = plflt
 	integer,parameter::pi = kind(1)
 	
-	character(*),parameter::default_dev = 'svg'
+	character(*),parameter::default_dev = 'svgqt'
 		!! Default output device
 	
 	!=================!
