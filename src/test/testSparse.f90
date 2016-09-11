@@ -8,9 +8,9 @@ program testSparse_prg
 	implicit none
 	
 	call setup(fileName='testsSparse-%n.svg',figSize=[400,300])
-! 	call testNewSparse
-! 	call testSpvec
-! 	call testBasicSolvers
+	call testNewSparse
+	call testSpvec
+	call testBasicSolvers
 	call testSolvers
 	call show()
 	
@@ -199,7 +199,7 @@ contains
 		call figure()
 		call subplot(1,1,1)
 		call xylim(mixval(x),mixval(T1)+[0.0_wp,0.05_wp]*span(T1))
-		call plot(x(::s),T1(::s),lineStyle='-',lineColor='r',markStyle='x',markColor='r')
+		call plot(x(::s),T1(::s),lineStyle='-',lineColor='k',markStyle='x',markColor='r')
 		call ticks()
 		call labels('Position #fix#fn','Temperature #fiT#fn','1D Heat Conduction with Generation')
 		
