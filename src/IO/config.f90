@@ -404,7 +404,7 @@ contains
 		end if
 		
 		idx = directSearch( R(1) , R(2) )
-		if(idx<1 .or. idx>N) stop 'Key not found'
+		if(idx<1 .or. idx>N) call doError('Key not found: '//key)
 		
 	contains
 	
@@ -456,4 +456,5 @@ contains
 		write(*,*) msg
 		stop 'Error in config_mod'
 	end subroutine doError
+
 end module config_mod
