@@ -29,7 +29,7 @@ contains
 		real(wp),dimension(:),intent(in)::x
 		real(wp)::o
 		
-		o = norm2(x-self%c0)**2-1.0_wp
+		o = norm2( (x-self%c0)*[1.0_wp,2.0_wp] )**2-1.0_wp
 	end function eval_testN
 
 end module objective_mod
@@ -43,7 +43,7 @@ program testOptimize_prg
 	use objective_mod
 	implicit none
 	
-	call testObjective
+! 	call testObjective
 	call testObjectiveN
 	
 contains
@@ -61,15 +61,13 @@ contains
 
 	subroutine testObjectiveN
 		type(testN_t)::test
-		type(lineSearch_t)::line
+		real(wp),dimension(:),allocatable::xm
 		real(wp)::x
 		
 		test%c0 = [2.0_wp,3.0_wp]
 		
-		line = lineSearch_t(test,[5.0_wp,5.0_wp])
-		x = line%minNewton(0.0_wp)
-		write(*,*) x
-		write(*,*) line%parentX(x)
+		xm = test%steepestDescent([5.0_wp,5.0_wp])
+		write(*,*) xm
 	end subroutine testObjectiveN
 
 end program testOptimize_prg

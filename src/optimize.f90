@@ -23,6 +23,7 @@ module optimize_mod
 		real(wp)::stepSize = 1.0E-3_wp
 	contains
 		procedure::grad
+		procedure::steepestDescent
 		procedure(evalN_p),deferred::eval
 	end type
 	
@@ -213,6 +214,43 @@ contains
 			end do
 		end select
 	end function grad
+
+	function steepestDescent(self,x0,tol,maxIts) result(o)
+		class(objN_t),intent(in)::self
+		real(wp),dimension(:),intent(in)::x0
+		real(wp),intent(in),optional::tol
+		integer,intent(in),optional::maxIts
+		real(wp),dimension(:),allocatable::o
+		
+		real(wp)::lTol
+		integer::lMaxIts
+		
+		real(wp),dimension(:),allocatable::x,xn
+		type(lineSearch_t)::line
+		real(wp)::rss,t
+		integer::k
+		
+		lTol = 1.0E-6_wp
+		lMaxIts = 10000
+		
+		if(present(tol)) lTol = tol
+		if(present(maxIts)) lMaxIts = maxIts
+		
+		x  = x0
+		
+		do k=1,lMaxIts
+			line = lineSearch_t(self,x)
+			t    = line%minNewton(0.0_wp)
+			xn   = line%parentX(t)
+			
+			rss = norm2(xn-x)
+			if( rss<lTol ) exit
+			
+			x = xn
+		end do
+		
+		o = xn
+	end function steepestDescent
 
 	!=========================!
 	!= lineSearch_t Routines =!
