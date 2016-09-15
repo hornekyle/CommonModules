@@ -6,6 +6,7 @@ module autoDiff_mod
 	!! Less-commonly used routines need to be implemented  
 	!! A full implementation of matmul is needed
 	!! Loop bounds in matmul need work
+	!! Extend to complex numbers
 	use kinds_mod
 	implicit none
 	

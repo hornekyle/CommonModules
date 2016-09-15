@@ -1,5 +1,8 @@
 module eval_mod
 	!! Module for dynamic evaluation of function expressions
+	!! @todo
+	!! Extend to complex numbers
+	!! Add ability to take derivative
 	use kinds_mod
 	use text_mod
 	implicit none

@@ -12,7 +12,7 @@ module iterate_mod
 		real(wp),dimension(:),allocatable::lB
 			!! Lower bounds for real conversion
 		real(wp),dimension(:),allocatable::hB
-			!! Upper boudns for real conversion
+			!! Upper bounds for real conversion
 		logical::isDone = .false.
 			!! Completion state flag
 	contains

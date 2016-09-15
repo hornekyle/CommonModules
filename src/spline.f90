@@ -96,6 +96,8 @@ contains
 	contains
 	
 		function finiteDifference(t0,x0) result(d0)
+			!! @todo
+			!! Improve to handle unevenly spaced data
 			real(wp),dimension(:),intent(in)::t0
 			real(wp),dimension(:,:),intent(in)::x0
 			real(wp),dimension(:,:),allocatable::d0
@@ -139,6 +141,8 @@ contains
 		end function catmullRom
 	
 		function conventional(t0,x0) result(d0)
+			!! @todo
+			!! Re-derive system to solve
 			real(wp),dimension(:),intent(in)::t0
 			real(wp),dimension(:,:),intent(in)::x0
 			real(wp),dimension(:,:),allocatable::d0
