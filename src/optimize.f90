@@ -1,5 +1,6 @@
 module optimize_mod
 	use kinds_mod
+	use array_mod
 	implicit none
 	private
 	
@@ -14,7 +15,7 @@ module optimize_mod
 		procedure::der1
 		procedure::der2
 		procedure::rootNewton
-		procedure::minNewton
+		procedure::minNewton => minNewton_obj
 		procedure(eval_p),deferred::eval
 	end type
 	
@@ -26,6 +27,7 @@ module optimize_mod
 		procedure::hessian
 		procedure::steepestDescent
 		procedure::nelderMead
+		procedure::minNewton => minNewton_objN
 		procedure(evalN_p),deferred::eval
 	end type
 	
@@ -140,7 +142,7 @@ contains
 		xn = x0
 		
 		do k=1,lMaxIts
-			x = xn
+			x  = xn
 			xn = x-self%eval(x)/self%der1(x)
 			
 			if(abs(xn-x)<lTol) exit
@@ -149,7 +151,7 @@ contains
 		o = xn
 	end function rootNewton
 
-	function minNewton(self,x0,tol,maxIts) result(o)
+	function minNewton_obj(self,x0,tol,maxIts) result(o)
 		class(obj_t),intent(in)::self
 		real(wp),intent(in)::x0
 		real(wp),intent(in),optional::tol
@@ -173,11 +175,11 @@ contains
 			x = xn
 			xn = x-self%der1(x)/self%der2(x)
 			
-			if(abs(xn-x)<lTol) exit
+			if( abs(xn-x)<lTol ) exit
 		end do
 		
 		o = xn
-	end function minNewton
+	end function minNewton_obj
 
 	!===================!
 	!= objN_t Routines =!
@@ -201,27 +203,45 @@ contains
 		
 		h = self%stepSize
 		
-		select case(self%derivativeOrder)
-		case(-1)
-			do k=1,N
+		do k=1,N
+			select case(self%derivativeOrder)
+			case(-1)
 				o(k) = ( self%eval(x)-self%eval(x-h*I(k,:)) )/( h )
-			end do
-		case( 1)
-			do k=1,N
+			case( 1)
 				o(k) = ( self%eval(x+h*I(k,:))-self%eval(x) )/( h )
-			end do
-		case( 2)
-			do k=1,N
+			case( 2)
 				o(k) = ( self%eval(x+h*I(k,:))-self%eval(x-h*I(k,:)) )/( 2.0_wp*h )
-			end do
-		end select
+			end select
+		end do
 	end function grad
 
 	function hessian(self,x) result(o)
 		class(objN_t),intent(in)::self
 		real(wp),dimension(:),intent(in)::x
 		real(wp),dimension(:,:),allocatable::o
-	
+		
+		real(wp)::h
+		real(wp),dimension(:,:),allocatable::I
+		integer::N,k
+		
+		N = size(x)
+		
+		allocate( o(N,N) , I(N,N) )
+		I = 0.0_wp
+		forall(k=1:N) I(k,k) = 1.0_wp
+		
+		h = self%stepSize
+		
+		do k=1,N
+			select case(self%derivativeOrder)
+			case(-1)
+				o(k,:) = ( self%grad(x)-self%grad(x-h*I(k,:)) )/( h )
+			case( 1)
+				o(k,:) = ( self%grad(x+h*I(k,:))-self%grad(x) )/( h )
+			case( 2)
+				o(k,:) = ( self%grad(x+h*I(k,:))-self%grad(x-h*I(k,:)) )/( 2.0_wp*h )
+			end select
+		end do
 	end function hessian
 
 	function steepestDescent(self,x0,tol,maxIts) result(o)
@@ -278,6 +298,36 @@ contains
 		if(present(maxIts)) lMaxIts = maxIts
 		
 	end function nelderMead
+
+	function minNewton_objN(self,x0,tol,maxIts) result(o)
+		class(objN_t),intent(in)::self
+		real(wp),dimension(:),intent(in)::x0
+		real(wp),intent(in),optional::tol
+		integer,intent(in),optional::maxIts
+		real(wp),dimension(:),allocatable::o
+		
+		real(wp)::lTol
+		integer::lMaxIts
+		real(wp),dimension(:),allocatable::x,xn
+		integer::k
+		
+		lTol = 1.0E-6_wp
+		lMaxIts = 10000
+		
+		if(present(tol)) lTol = tol
+		if(present(maxIts)) lMaxIts = maxIts
+		
+		xn = x0
+		
+		do k=1,lMaxIts
+			x  = xn
+			xn = x-solveLU(self%hessian(x),self%grad(x))
+			
+			if( norm2(xn-x)<lTol ) exit
+		end do
+		
+		o = xn
+	end function minNewton_objN
 
 	!=========================!
 	!= lineSearch_t Routines =!

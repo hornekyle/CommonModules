@@ -43,7 +43,7 @@ program testOptimize_prg
 	use objective_mod
 	implicit none
 	
-! 	call testObjective
+	call testObjective
 	call testObjectiveN
 	
 contains
@@ -61,13 +61,15 @@ contains
 
 	subroutine testObjectiveN
 		type(testN_t)::test
-		real(wp),dimension(:),allocatable::xm
+		real(wp),dimension(:),allocatable::xSD,xMN
 		real(wp)::x
 		
 		test%c0 = [2.0_wp,3.0_wp]
 		
-		xm = test%steepestDescent([5.0_wp,5.0_wp])
-		write(*,*) xm
+		xSD = test%steepestDescent([5.0_wp,5.0_wp])
+		xMN = test%minNewton([5.0_wp,5.0_wp])
+		write(*,*) xSD
+		write(*,*) xMN
 	end subroutine testObjectiveN
 
 end program testOptimize_prg
