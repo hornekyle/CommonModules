@@ -23,7 +23,9 @@ module optimize_mod
 		real(wp)::stepSize = 1.0E-3_wp
 	contains
 		procedure::grad
+		procedure::hessian
 		procedure::steepestDescent
+		procedure::nelderMead
 		procedure(evalN_p),deferred::eval
 	end type
 	
@@ -215,6 +217,13 @@ contains
 		end select
 	end function grad
 
+	function hessian(self,x) result(o)
+		class(objN_t),intent(in)::self
+		real(wp),dimension(:),intent(in)::x
+		real(wp),dimension(:,:),allocatable::o
+	
+	end function hessian
+
 	function steepestDescent(self,x0,tol,maxIts) result(o)
 		class(objN_t),intent(in)::self
 		real(wp),dimension(:),intent(in)::x0
@@ -251,6 +260,24 @@ contains
 		
 		o = xn
 	end function steepestDescent
+
+	function nelderMead(self,x0,tol,maxIts) result(o)
+		class(objN_t),intent(in)::self
+		real(wp),dimension(:),intent(in)::x0
+		real(wp),intent(in),optional::tol
+		integer,intent(in),optional::maxIts
+		real(wp),dimension(:),allocatable::o
+		
+		real(wp)::lTol
+		integer::lMaxIts
+		
+		lTol = 1.0E-6_wp
+		lMaxIts = 10000
+		
+		if(present(tol)) lTol = tol
+		if(present(maxIts)) lMaxIts = maxIts
+		
+	end function nelderMead
 
 	!=========================!
 	!= lineSearch_t Routines =!

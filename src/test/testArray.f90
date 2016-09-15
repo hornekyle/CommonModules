@@ -15,6 +15,8 @@ program testArray_prg
 	
 	call testLinearInterp
 	
+	call testLU
+	
 contains
 
 	subroutine testMixval
@@ -143,5 +145,28 @@ contains
 		
 		if( .not.all(results) ) error stop "Failed linearInterp check"
 	end subroutine testLinearInterp
+
+	subroutine testLU
+		!! Test solveLU to verify operation
+		
+		real(wp),dimension(:,:),allocatable::A
+		real(wp),dimension(:),allocatable::x,b,bc
+		integer::N
+		
+		do N=2,100
+			if(allocated(A)) deallocate(A)
+			if(allocated(b)) deallocate(b)
+			
+			allocate( A(N,N) , b(N) )
+			
+			call random_number(A)
+			call random_number(b)
+			
+			x  = solveLU(A,b)
+			bc = matmul(A,x)
+			
+			if( norm2(bc-b)>1.0E-10_wp ) stop 'solveLU Failed'
+		end do
+	end subroutine testLU
 
 end program testArray_prg

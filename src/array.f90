@@ -33,6 +33,11 @@ module array_mod
 		module procedure TDMA_m
 	end interface
 	
+	interface solveLU
+		module procedure solveLU_s
+		module procedure solveLU_m
+	end interface
+	
 	!===========!
 	!= Exports =!
 	!===========!
@@ -47,6 +52,7 @@ module array_mod
 	public::meshGridX
 	public::meshGridY
 	public::TDMA
+	public::solveLU
 	
 	public::linearInterp
 	
@@ -308,6 +314,97 @@ contains
 			x(k,:) = r*x(k,:)
 		end do
 	end function TDMA_m
+
+	!====================!
+	!= solveLU Routines =!
+	!====================!
+
+	subroutine decomposeLU(A,LU,p)
+		!! Shamelessly adapted from Rosetta Code
+		!!
+		!! L -> j<i , L(i,i) = 1
+		!! U -> j>=i
+		real(wp),dimension(:,:),intent(in)::A
+		real(wp),dimension(:,:),allocatable,intent(inout):: LU
+		integer,dimension(:),allocatable,intent(inout)::p
+		integer::N,j,i,m
+		
+		LU = A
+		
+		N = size(A,1)
+		p = [( i , i=1,N )]
+		do i=1,N-1
+			m = maxloc( abs( LU(p(i:),i) ) , 1 ) + (i-1)
+			
+			if(m/=i) p([i,m]) = p([m,i])
+			
+			LU(p(i+1:),i) = LU(p(i+1:),i) / LU(p(i),i)
+			
+			forall(j=i+1:N) LU(p(i+1:),j) = LU(p(i+1:),j) - LU(p(i+1:),i) * LU(p(i),j)
+		end do
+		
+		LU = LU(p,:)
+	end subroutine decomposeLU
+
+	function applyLU(LU,p,b) result(x)
+		real(wp),dimension(:,:),intent(in)::LU
+		integer,dimension(:),intent(in)::p
+		real(wp),dimension(:),intent(in)::b
+		real(wp),dimension(:),allocatable::x
+		
+		real(wp),dimension(:),allocatable::pb
+		real(wp),dimension(:),allocatable::r
+		integer::N,i
+		
+		N  = size(b)
+		allocate(r(N),x(N),pb(N))
+		r  = 0.0_wp
+		x  = 0.0_wp
+		pb = b(p)
+		
+		! L.r=pb
+		r(1) = pb(1)
+		do i=2,N,+1
+			r(i) = pb(i)-dot_product(LU(i,1:i-1),r(1:i-1))
+		end do
+		
+		! U.x=r
+		x(N) = r(N)/LU(N,N)
+		do i=N-1,1,-1
+			x(i) = ( r(i)-dot_product(LU(i,i+1:N),x(i+1:N)) )/LU(i,i)
+		end do
+	end function applyLU
+
+	function solveLU_s(A,b) result(x)
+		real(wp),dimension(:,:),intent(in)::A
+		real(wp),dimension(:),intent(in)::b
+		real(wp),dimension(:),allocatable::x
+		
+		real(wp),dimension(:,:),allocatable::LU
+		integer,dimension(:),allocatable::p
+		
+		call decomposeLU(A,LU,p)
+		
+		x = applyLU(LU,p,b)
+	end function solveLU_s
+
+	function solveLU_m(A,b) result(x)
+		real(wp),dimension(:,:),intent(in)::A
+		real(wp),dimension(:,:),intent(in)::b
+		real(wp),dimension(:,:),allocatable::x
+		
+		real(wp),dimension(:,:),allocatable::LU
+		integer,dimension(:),allocatable::p
+		integer::k
+		
+		call decomposeLU(A,LU,p)
+		
+		allocate(x,mold=b)
+		
+		do k=1,size(b,2)
+			x(:,k) = applyLU(LU,p,b(:,k))
+		end do
+	end function solveLU_m
 
 	!========================!
 	!= Linear Interpolation =!
