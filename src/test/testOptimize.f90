@@ -1,15 +1,23 @@
 module objective_mod
 	use kinds_mod
 	use optimize_mod
+	use array_mod
+	use plplotlib_mod
+	use text_mod
 	implicit none
 	
+	integer::kLog = 1
+	real(wp),dimension(1000,2)::xLog
+	
 	type,extends(obj_t)::test_t
+		real(wp),private::b = -1.0_wp
 	contains
 		procedure::eval => eval_test
 	end type
 	
 	type,extends(objN_t)::testN_t
-		real(wp),dimension(2)::c0
+		real(wp),dimension(2)::c0 = [2.0_wp,3.0_wp]
+		real(wp),dimension(2)::s0 = [1.0_wp,2.0_wp]
 	contains
 		procedure::eval => eval_testN
 	end type
@@ -21,15 +29,21 @@ contains
 		real(wp),intent(in)::x
 		real(wp)::o
 		
-		o = x**2-1.0_wp
+		o = x**2-self%b
 	end function eval_test
 
 	function eval_testN(self,x) result(o)
 		class(testN_t),intent(in)::self
 		real(wp),dimension(:),intent(in)::x
+			!! Must be dimension(2)
 		real(wp)::o
 		
-		o = norm2( (x-self%c0)*[1.0_wp,2.0_wp] )**2-1.0_wp
+		if( kLog<=size(xLog,1) ) then
+			xLog(kLog,1:2) = x(1:2)
+			kLog = kLog+1
+		end if
+		
+		o = norm2( (x(1:2)-self%c0)*self%s0 )**2-1.0_wp
 	end function eval_testN
 
 end module objective_mod
@@ -43,8 +57,9 @@ program testOptimize_prg
 	use objective_mod
 	implicit none
 	
-! 	call testObjective
+	call testObjective
 	call testObjectiveN
+	call testPlot
 	
 contains
 
@@ -62,9 +77,6 @@ contains
 	subroutine testObjectiveN
 		type(testN_t)::test
 		real(wp),dimension(:),allocatable::xSD,xMN,xNM
-		real(wp)::x
-		
-		test%c0 = [2.0_wp,3.0_wp]
 		
 		xSD = test%steepestDescent([5.0_wp,5.0_wp])
 		xMN = test%minNewton([5.0_wp,5.0_wp])
@@ -73,5 +85,63 @@ contains
 		write(*,*) xMN
 		write(*,*) xNM
 	end subroutine testObjectiveN
+
+	subroutine testPlot
+		type(testN_t)::test
+		real(wp),dimension(:),allocatable::x,y
+		real(wp),dimension(:,:),allocatable::f
+		integer::N,i,j
+		
+		real(wp),dimension(:),allocatable::xm
+		
+		N = 100
+		x = linspace(0.0_wp,7.0_wp,N)
+		y = linspace(0.0_wp,7.0_wp,N)
+		allocate( f(N,N) )
+		
+		do j=1,N
+			do i=1,N
+				f(i,j) = test%eval([ x(i) , y(j) ])
+			end do
+		end do
+		
+		call setup(fileName='testsOptimize-%n.svg',figSize=[400,350])
+		
+		kLog = 1
+		xm = test%steepestDescent([5.0_wp,5.0_wp])
+		call figure()
+		call subplot(1,1,1,aspect=span(y)/span(x))
+		call xylim(mixval(x),mixval(y))
+		call contourf(x,y,f,30)
+		call plot(xLog(:kLog-1,1),xLog(:kLog-1,2),lineStyle='-',markStyle='x',markColor='k')
+		call colorbar2(f,30)
+		call ticks()
+		call labels('x','y','Steepest Descent ['//intToChar(kLog-1)//']')
+		
+		kLog = 1
+		xm = test%minNewton([5.0_wp,5.0_wp])
+		call figure()
+		call subplot(1,1,1,aspect=span(y)/span(x))
+		call xylim(mixval(x),mixval(y))
+		call contourf(x,y,f,30)
+		call plot(xLog(:kLog-1,1),xLog(:kLog-1,2),lineStyle='-',markStyle='x',markColor='k')
+		call colorbar2(f,30)
+		call ticks()
+		call labels('x','y','Newton-Raphson ['//intToChar(kLog-1)//']')
+		
+		kLog = 1
+		xm = test%nelderMead([5.0_wp,5.0_wp])
+		call figure()
+		call subplot(1,1,1,aspect=span(y)/span(x))
+		call xylim(mixval(x),mixval(y))
+		call contourf(x,y,f,30)
+		call plot(xLog(:kLog-1,1),xLog(:kLog-1,2),lineStyle='-',markStyle='x',markColor='k')
+		call colorbar2(f,30)
+		call ticks()
+		call labels('x','y','Nelder-Mead Simplex ['//intToChar(kLog-1)//']')
+		
+		call show()
+		
+	end subroutine testPlot
 
 end program testOptimize_prg

@@ -26,7 +26,7 @@ if(NOT HAVE_RUN)
 	set(CMAKE_Fortran_FLAGS ${CMAKE_Fortran_FLAGS}
 		CACHE STRING "Fortran flags" FORCE)
 	
-	set(debug_flags "-Wall -Wtabs -Wno-maybe-uninitialized -fcheck=all -ffpe-trap=invalid,zero,overflow -fbacktrace -finit-real=snan")
+	set(debug_flags "-Wall -Wno-tabs -Wno-maybe-uninitialized -Wno-unused-dummy-argument -fcheck=all -ffpe-trap=invalid,zero,overflow -fbacktrace -finit-real=snan")
 	set(CMAKE_Fortran_FLAGS_DEBUG 
 		"${CMAKE_Fortran_FLAGS_DEBUG} ${debug_flags}"
 		CACHE STRING "Fortran debugging flags" FORCE)
@@ -159,7 +159,6 @@ addTest("testConfig")
 addTest("testIterate")
 addTest("testKinds")
 addTest("testMatIO")
-addTest("testOptimize")
 addTest("testQuaternion")
 addTest("testStats")
 addTest("testTensor")
@@ -181,12 +180,14 @@ endif(NETCDF_FOUND)
 
 if(PLPLOT_FOUND)
 	addTest("testEval")
+	addTest("testOptimize")
 	addTest("testSparse")
 	addTest("testSpline")
 	
-	target_link_libraries(testEval   ${PLPLOT_LIBRARIES})
-	target_link_libraries(testSparse ${PLPLOT_LIBRARIES})
-	target_link_libraries(testSpline ${PLPLOT_LIBRARIES})
+	target_link_libraries(testEval     ${PLPLOT_LIBRARIES})
+	target_link_libraries(testOptimize ${PLPLOT_LIBRARIES})
+	target_link_libraries(testSparse   ${PLPLOT_LIBRARIES})
+	target_link_libraries(testSpline   ${PLPLOT_LIBRARIES})
 endif(PLPLOT_FOUND)
 
 if(EXECUTABLE_GMSH)

@@ -10,6 +10,8 @@ program testArray_prg
 	call testSpan
 	call testFlatten
 	
+	call testDeDup
+	
 	call testLinspace
 	call testMeshGrid
 	
