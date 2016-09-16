@@ -125,18 +125,18 @@ if(PLPLOT_FOUND)
 	set(modules_src ${modules_src} "src/plplotlib/plplotlib.f90")
 endif(PLPLOT_FOUND)
 
-add_library(modulesLib SHARED ${modules_src})
+add_library(CommonModules SHARED ${modules_src})
 
 if(FFTW3_FOUND)
-	target_link_libraries(modulesLib ${FFTW3_LIBRARY})
+	target_link_libraries(CommonModules ${FFTW3_LIBRARY})
 endif(FFTW3_FOUND)
 
 if(NETCDF_FOUND)
-	target_link_libraries(modulesLib ${NETCDF_LIBRARY})
+	target_link_libraries(CommonModules ${NETCDF_LIBRARY})
 endif(NETCDF_FOUND)
 
 if(PLPLOT_FOUND)
-	target_link_libraries(modulesLib ${PLPLOT_LIBRARIES})
+	target_link_libraries(CommonModules ${PLPLOT_LIBRARIES})
 endif(PLPLOT_FOUND)
 
 
@@ -146,7 +146,7 @@ endif(PLPLOT_FOUND)
 
 function(addTest name)
 	add_executable(${name} "src/test/${name}.f90")
-	target_link_libraries(${name} modulesLib)
+	target_link_libraries(${name} CommonModules)
 	set_target_properties(${name} PROPERTIES RUNTIME_OUTPUT_DIRECTORY "tests")
 	
 	add_test(${name} "${CMAKE_BINARY_DIR}/tests/${name}" )
@@ -201,7 +201,7 @@ endif(EXECUTABLE_GMSH)
 if(PLPLOT_FOUND)
 	function(addExample name)
 		add_executable(${name} "src/plplotlib/${name}.f90")
-		target_link_libraries(${name} modulesLib)
+		target_link_libraries(${name} CommonModules)
 		target_link_libraries(${name} ${PLPLOT_LIBRARIES})
 		set_target_properties(${name} PROPERTIES RUNTIME_OUTPUT_DIRECTORY "plplotlib")
 	endfunction(addExample)

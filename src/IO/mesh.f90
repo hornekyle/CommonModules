@@ -1,7 +1,7 @@
 module mesh_mod
 	!! Module for handeling 2D meshes
 	!! @todo
-	!! Figure out why there are two connect routines
+	!! Add VTK field output
 	use kinds_mod
 	implicit none
 	private
@@ -104,7 +104,7 @@ contains
 		end do
 		close(iou)
 		
-		call connect(self)
+		call nodalGroups(self)
 		call self%connect()
 		
 	contains
@@ -217,8 +217,8 @@ contains
 			end do
 		end subroutine readPhysical
 		
-		subroutine connect(self)
-			!! Build connectivity in the mesh
+		subroutine nodalGroups(self)
+			!! Assign groups to nodes
 			class(mesh_t),intent(inout)::self
 				!! Self mesh_t object
 			
@@ -236,7 +236,7 @@ contains
 					self%nodes(i)%ngroup = g
 				end do
 			end do
-		end subroutine connect
+		end subroutine nodalGroups
 		
 	end subroutine readGmsh
 
@@ -380,7 +380,7 @@ contains
 					if(self%elements(e%elements(l))%ecolor>0) cycle
 					self%elements(e%elements(l))%ecolor = -1
 					n = n+1
-				end do!! Build connectivity in the mesh
+				end do
 			end do
 			if(n==0) exit
 		end do

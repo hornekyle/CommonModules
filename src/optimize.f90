@@ -291,12 +291,108 @@ contains
 		real(wp)::lTol
 		integer::lMaxIts
 		
+		real(wp),parameter::alpha = 1.0_wp
+		real(wp),parameter::beta  = 0.5_wp
+		real(wp),parameter::gamma = 2.0_wp
+		
+		real(wp),dimension(:,:),allocatable::v
+			!! Vertices of simplex
+		real(wp),dimension(:),allocatable::f
+			!! Function values at vertices
+		
+		real(wp),dimension(:),allocatable::vr
+			!! Reflection vertex
+		real(wp),dimension(:),allocatable::ve
+			!! Expansion vertex
+		real(wp),dimension(:),allocatable::vc
+			!! Contraction vertex
+		real(wp),dimension(:),allocatable::vm
+			!! Centroid vertex
+		
+		real(wp)::fr
+			!! Function value at reflection vertex
+		real(wp)::fe
+			!! Function value at expansion vertex
+		real(wp)::fc
+			!! Function value at contraction vertex
+		
+		integer::vg,vh,vs
+		integer::N,i,j,k
+		real(wp)::rss
+		
 		lTol = 1.0E-6_wp
 		lMaxIts = 10000
 		
 		if(present(tol)) lTol = tol
 		if(present(maxIts)) lMaxIts = maxIts
 		
+		N = size(x0)
+		
+		allocate( v(N,N+1) , f(N+1) )
+		
+		! Assume one vertex is \vec{0.0}
+		v(:,1) = 0.0_wp
+		do j=1,N
+			forall(i=1:N,i/=j) v(i,j+1) = ( sqrt(real(N+1,wp))-1.0_wp )/( real(N,wp)*sqrt(2.0_wp) ) + x0(i)
+			v(j,j+1) = ( sqrt(real(N+1,wp))-1.0_wp+real(N,wp) )/( real(N,wp)*sqrt(2.0_wp) ) + x0(j)
+		end do
+		
+		do j=1,N+1
+			f(j) = self%eval( v(:,j) )
+		end do
+		
+		do k=1,lMaxIts
+			! Find greatest, high, and small values
+			vg = maxloc(f,1)
+			vh = maxloc(f,1,f<f(vg))
+			vs = minloc(f,1)
+			
+			! Compute centroid ignoring greatest vertex
+			vm = ( sum(v,2)-v(:,vg) )/real(N,wp)
+			
+			! Consider reflection vertex
+			vr = (1.0_wp+alpha)*vm-alpha*v(:,vg)
+			fr = self%eval(vr)
+			if( fr<f(vh) .and. fr>f(vs) ) then
+				v(:,vg) = vr
+				f(vg)   = fr
+			end if
+			
+			! Invetigate another step in this direction
+			if( fr<f(vs) ) then
+				ve = gamma*vr+(1.0_wp-gamma)*vm
+				fe = self%eval(ve)
+				if( fe<f(vs) ) then
+					v(:,vg) = ve
+					f(vg)   = fe
+				else
+					v(:,vg) = vr
+					f(vg)   = fr
+				end if
+			end if
+			
+			! Check if contraction needed
+			if( fr>f(vh) ) then
+				vc = beta*v(:,vg)+(1.0_wp-beta)*vm
+				fc = self%eval(vc)
+				if( fc<f(vg) ) then
+					v(:,vg) = vc
+					f(vg)   = fc
+				else
+					forall(j=1:N+1,j/=vs) v(:,j) = v(:,vs)+( v(:,j)-v(:,vs) )/2.0_wp
+					f(vg) = self%eval( v(:,vg) )
+					f(vh) = self%eval( v(:,vh) )
+				end if
+			end if
+			
+			! Check convergence
+			vm = ( sum(v,2)-v(:,vs) )/real(N,wp)
+			rss = norm2(v(:,vs)-vm)
+			
+			if( rss<lTol) exit
+		end do
+		
+		o = v(:,vs)
 	end function nelderMead
 
 	function minNewton_objN(self,x0,tol,maxIts) result(o)
