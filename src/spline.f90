@@ -28,8 +28,14 @@ module spline_mod
 	!= linearSpline_t Type and Interfaces =!
 	!======================================!
 	
-	!! @todo
-	!! Add linearSpline_t
+	type,extends(spline_t)::linearSpline_t
+	contains
+		procedure::x => x_linearSpline
+	end type
+	
+	interface linearSpline_t
+		module procedure newLinearSpline
+	end interface
 	
 	!=====================================!
 	!= cubicSpline_t Type and Interfaces =!
@@ -47,7 +53,12 @@ module spline_mod
 		module procedure newCubicSpline
 	end interface
 	
+	!===========!
+	!= Exports =!
+	!===========!
+	
 	public::spline_t
+	public::linearSpline_t
 	public::cubicSpline_t
 	
 contains
@@ -96,12 +107,12 @@ contains
 	contains
 	
 		function finiteDifference(t0,x0) result(d0)
-			!! @todo
-			!! Improve to handle unevenly spaced data
 			real(wp),dimension(:),intent(in)::t0
 			real(wp),dimension(:,:),intent(in)::x0
 			real(wp),dimension(:,:),allocatable::d0
 			
+			real(wp)::dtm,dtp
+			real(wp)::a,b,c
 			integer::N,M,k
 			
 			N = size(x0,1)
@@ -112,8 +123,14 @@ contains
 			d0(k,:) = (x0(k+1,:)-x0(k  ,:))/(t0(k+1)-t0(k  ))
 			
 			do k=2,N-1
-				d0(k,:) = 0.5_wp*(x0(k+1,:)-x0(k  ,:))/(t0(k+1)-t0(k  )) + &
-				        & 0.5_wp*(x0(k  ,:)-x0(k-1,:))/(t0(k  )-t0(k-1))
+				dtm = t0( k )-t0(k-1)
+				dtp = t0(k+1)-t0( k )
+				
+				a = -dtm/dtp * (dtm+dtp)**(-1)
+				b =  (dtm-dtp)/(dtm*dtp)
+				c =  dtp/dtm * (dtm+dtp)**(-1)
+				
+				d0(k,:) = a*x0(k-1,:)+b*x0(k,:)+c*x0(k+1,:)
 			end do
 			
 			k = N
@@ -142,7 +159,8 @@ contains
 	
 		function conventional(t0,x0) result(d0)
 			!! @todo
-			!! Re-derive system to solve
+			!! Re-derive system to solve - Done
+			!! Definately still broken -- maybe check TDMA
 			real(wp),dimension(:),intent(in)::t0
 			real(wp),dimension(:,:),intent(in)::x0
 			real(wp),dimension(:,:),allocatable::d0
@@ -150,24 +168,40 @@ contains
 			real(wp),dimension(:,:),allocatable::A
 			real(wp),dimension(:,:),allocatable::b
 			
+			real(wp)::dt,dtm,dtp
 			integer::N,M,k
-			integer::km,kp
 			
 			N = size(x0,1)
 			M = size(x0,2)
 			
 			allocate( A(N,-1:+1) , b(N,M) )
 			
-			A(:,-1) = [0.0_wp, (1.0_wp , k=2,N)]
-			A(:, 0) = [2.0_wp, (4.0_wp , k=2,N-1) , 2.0_wp]
-			A(:,+1) = [(1.0_wp , k=1,N-1) , 0.0_wp]
+			k  = 1
+			dt = t0(k+1)-t0(k)
+			A(k,-1) = 0.0_wp
+			A(k, 0) = 2.0_wp/dt
+			A(k,+1) = 1.0_wp/dt
+			b(k, :) = -3.0_wp/dt*x0(k,:)+3.0_wp/dt*x0(k+1,:)
 			
-			do k=1,N
-				km = max(k-1,1)
-				kp = min(k+1,N)
+			do k=2,N-1
+				dtm = t0( k )-t0(k-1)
+				dtp = t0(k+1)-t0( k )
 				
-				b(k,:) = 3.0_wp*( x0(kp,:)-x0(km,:) )/( t0(kp)-t0(km) )
+				A(k,-1) = 1.0_wp/dtm
+				A(k, 0) = 2.0_wp/dtm+2.0_wp/dtp
+				A(k,+1) = 1.0_wp/dtp
+				
+				b(k,:) = -3.0_wp/dtm**2*x0(k-1,:) + &
+				       & (3.0_wp/dtm**2-3.0_wp/dtp**2)*x0(k,:) + &
+				       &  3.0_wp/dtp**2*x0(k+1,:)
 			end do
+			
+			k  = N
+			dt = t0(k)-t0(k-1)
+			A(k,-1) = 1.0_wp/dt
+			A(k, 0) = 2.0_wp/dt
+			A(k,+1) = 0.0_wp
+			b(k, :) = -3.0_wp/dt*x0(k-1,:)+3.0_wp/dt*x0(k,:)
 			
 			d0 = TDMA(A,b)
 		end function conventional
@@ -231,6 +265,56 @@ contains
 		end function J
 	
 	end function x_cubicSpline
+
+	!===========================!
+	!= linearSpline_t Routines =!
+	!===========================!
+
+	function newLinearSpline(t0,x0) result(self)
+		real(wp),dimension(:),intent(in)::t0
+		real(wp),dimension(:,:),intent(in)::x0
+		type(linearSpline_t)::self
+		
+		self%t0 = t0
+		self%x0 = x0
+	end function newLinearSpline
+
+	function x_linearSpline(self,t) result(o)
+		class(linearSpline_t),intent(in)::self
+		real(wp),intent(in)::t
+		real(wp),dimension(:),allocatable::o
+		
+		integer::N,M,k,i
+		real(wp)::dt,xi
+		
+		N = size(self%x0,1)
+		M = size(self%x0,2)
+		
+		if( t<=self%t0(1) ) then
+			o = self%x0(1,:)
+			return
+		else if( t>=self%t0(N) ) then
+			o = self%x0(N,:)
+			return
+		end if
+		
+		k  = findInterval(self%t0,t)
+		dt = self%t0(k+1)-self%t0(k)
+		xi = ( t-self%t0(k) )/dt
+		
+		allocate( o(M) )
+		forall(i=1:M) o(i) = sum( L(xi)*self%x0(k:k+1,i) )
+		
+	contains
+	
+		pure function L(xi) result(o)
+			real(wp),intent(in)::xi
+			real(wp),dimension(2)::o
+			
+			o = [1.0_wp-xi,xi]
+		end function L
+	
+	end function x_linearSpline
 
 	!===================!
 	!= Shared Routines =!

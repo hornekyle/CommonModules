@@ -6,9 +6,9 @@ a,b,c = symbols('a b c')
 dtm,dtp = symbols('dt_+ dt_-')
 
 A = Matrix( [
-	[1,1,1],
-	[-dtm,0,dtp],
-	[dtm**2,0,dtp**2]
+	[  1      , 1 , 1      ],
+	[ -dtm    , 0 , dtp    ],
+	[  dtm**2 , 0 , dtp**2 ]
 	] )
 
 b = Matrix( [
