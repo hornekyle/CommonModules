@@ -1,7 +1,5 @@
 program testArray_prg
 	!! Test program for array_mod
-	!! @todo
-	!! Write test for TDMA
 	use kinds_mod
 	use array_mod
 	implicit none
@@ -17,6 +15,7 @@ program testArray_prg
 	
 	call testLinearInterp
 	
+	call testTDMA
 	call testLU
 	
 contains
@@ -147,6 +146,41 @@ contains
 		
 		if( .not.all(results) ) error stop "Failed linearInterp check"
 	end subroutine testLinearInterp
+
+	subroutine testTDMA
+		!! Test TDMA to verify operation
+		
+		real(wp),dimension(:,:),allocatable::A
+		real(wp),dimension(:),allocatable::b,x,xt
+		
+		integer::N,k
+		
+		N = 10
+		
+		allocate( A(N,-1:+1) , x(N) , b(N) )
+		xt = linspace(0.0_wp,1.0_wp,N)
+		
+		A(1,-1:+1) = [0.0_wp,1.0_wp,0.0_wp]
+		b(   1   ) = 0.0_wp
+		
+		do k=2,N-1
+			A(k,-1) =  1.0_wp
+			A(k, 0) = -2.0_wp
+			A(k,+1) =  1.0_wp
+			b(  k ) =  0.0_wp
+		end do
+		
+		A(N,-1:+1) = [0.0_wp,1.0_wp,0.0_wp]
+		b(   N   ) = 1.0_wp
+		
+		x = TDMA(A,b)
+		
+		do k=1,N
+			write(*,*) xt(k),x(k)
+		end do
+		
+		write(*,*) norm2(xt-x)
+	end subroutine testTDMA
 
 	subroutine testLU
 		!! Test solveLU to verify operation

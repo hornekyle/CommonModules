@@ -36,7 +36,7 @@ contains
 		
 		sl = linearSpline_t(t0,x0)
 		sf = cubicSpline_t(t0,x0,'finiteDifference')
-		sc = cubicSpline_t(t0,x0,'cardinal',c=0.2_wp)
+		sc = cubicSpline_t(t0,x0,'conventional')
 		
 		allocate( xl(N,2) , xf(N,2) , xc(N,2) , xt(N,2) )
 		
@@ -54,8 +54,8 @@ contains
 		call subplot(1,1,1)
 		call xylim(mixval(xt(:,1)),mixval(xt(:,2)))
 		
-		call plot(xl(:,1),xl(:,2),lineStyle=':' ,lineColor='m',lineWidth=2.0_wp)
 		call plot(xt(:,1),xt(:,2),lineStyle='-' ,lineColor='r',lineWidth=2.0_wp)
+		call plot(xl(:,1),xl(:,2),lineStyle=':' ,lineColor='m',lineWidth=2.0_wp)
 		call plot(xf(:,1),xf(:,2),lineStyle='-' ,lineColor='b',lineWidth=2.0_wp)
 		call plot(xc(:,1),xc(:,2),lineStyle='--',lineColor='c',lineWidth=2.0_wp)
 		call plot(x0(:,1),x0(:,2),lineStyle=''  ,markStyle='x',markColor='k')

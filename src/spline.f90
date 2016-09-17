@@ -158,9 +158,6 @@ contains
 		end function catmullRom
 	
 		function conventional(t0,x0) result(d0)
-			!! @todo
-			!! Re-derive system to solve - Done
-			!! Definately still broken -- maybe check TDMA
 			real(wp),dimension(:),intent(in)::t0
 			real(wp),dimension(:,:),intent(in)::x0
 			real(wp),dimension(:,:),allocatable::d0

@@ -12,7 +12,7 @@ find_program(EXECUTABLE_FORD "ford")
 find_program(EXECUTABLE_GMSH "gmsh")
 
 file(MAKE_DIRECTORY "${CMAKE_BINARY_DIR}/media")
-file(MAKE_DIRECTORY "${CMAKE_BINARY_DIR}/testing")
+file(MAKE_DIRECTORY "${CMAKE_BINARY_DIR}/test_files")
 
 file(MAKE_DIRECTORY "${CMAKE_BINARY_DIR}/modules")
 set(CMAKE_Fortran_MODULE_DIRECTORY "${CMAKE_BINARY_DIR}/modules")
@@ -82,7 +82,7 @@ finder(UMFPACK "umfpack")
 #=========================#
 
 add_custom_target(symlinks
-	COMMAND ${CMAKE_COMMAND} -E create_symlink "${CMAKE_SOURCE_DIR}/input" "${CMAKE_BINARY_DIR}/testing/input"
+	COMMAND ${CMAKE_COMMAND} -E create_symlink "${CMAKE_SOURCE_DIR}/input" "${CMAKE_BINARY_DIR}/test_files/input"
 	COMMAND ${CMAKE_COMMAND} -E create_symlink "${CMAKE_SOURCE_DIR}/src"   "${CMAKE_BINARY_DIR}/src"
 	COMMAND ${CMAKE_COMMAND} -E create_symlink "${CMAKE_SOURCE_DIR}/pages" "${CMAKE_BINARY_DIR}/pages"
 	COMMAND ${CMAKE_COMMAND} -E create_symlink "${CMAKE_SOURCE_DIR}/project.md" "${CMAKE_BINARY_DIR}/project.md"
@@ -150,7 +150,7 @@ function(addTest name)
 	set_target_properties(${name} PROPERTIES RUNTIME_OUTPUT_DIRECTORY "tests")
 	
 	add_test(${name} "${CMAKE_BINARY_DIR}/tests/${name}" )
-	set_tests_properties(${name} PROPERTIES WORKING_DIRECTORY "${CMAKE_BINARY_DIR}/testing")
+	set_tests_properties(${name} PROPERTIES WORKING_DIRECTORY "${CMAKE_BINARY_DIR}/test_files")
 endfunction(addTest)
 
 addTest("testArray")
