@@ -55,6 +55,8 @@ module mesh_mod
 	contains
 		procedure::readGmsh
 		procedure::writeVTK
+		procedure::appendScalarVTK
+		procedure::appendVectorVTK
 		procedure::connect
 	end type
 	
@@ -323,6 +325,66 @@ contains
 		end function elementIntToVTK
 	
 	end subroutine writeVTK
+
+	subroutine appendScalarVTK(self,fn,v,vn)
+		!! Append scalar point data to a file
+		class(mesh_t),intent(in)::self
+			!! Self mesh_t object
+		character(*),intent(in)::fn
+			!! Filename
+		real(wp),dimension(:),intent(in)::v
+			!! Variable data
+		character(*),intent(in)::vn
+			!! Variable name
+		
+		integer::N,k,iou
+		
+		open(file=fn,newunit=iou,access='append',status='old')
+		
+		N = size(v)
+		
+		write(iou,'(1A,1X,1A,1X,1A,1I10)') 'SCALARS',vn,'double',1
+		write(iou,'(1A,1X,1A)') 'LOOKUP_TABLE','default'
+		do k=1,N
+			write(iou,'(1E30.15)') v(k)
+		end do
+		
+		close(iou)
+	end subroutine appendScalarVTK
+
+
+	subroutine appendVectorVTK(self,fn,v,vn)
+		!! Append vector point data to a file
+		class(mesh_t),intent(in)::self
+			!! Self mesh_t object
+		character(*),intent(in)::fn
+			!! Filename
+		real(wp),dimension(:,:),intent(in)::v
+			!! Variable data
+		character(*),intent(in)::vn
+			!! Variable name
+		
+		integer::N,k,iou
+		integer,dimension(2)::S
+		
+		open(file=fn,newunit=iou,access='append',status='old')
+		
+		S = shape(v)
+		N = maxval(S)
+		
+		write(iou,'(1A,1X,1A,1X,1A,1I10)') 'VECTORS',vn,'double'
+		if( S(1)>S(2) ) then
+			do k=1,N
+				write(iou,'(3E30.15)') v(k,1:3)
+			end do
+		else if( S(1)<S(2) ) then
+			do k=1,N
+				write(iou,'(3E30.15)') v(1:3,k)
+			end do
+		end if
+		
+		close(iou)
+	end subroutine appendVectorVTK
 
 	subroutine connect(self)
 		!! Build connectivity in the mesh
