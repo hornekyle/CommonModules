@@ -13,8 +13,8 @@ contains
 	subroutine testBasic
 		type(quat_t)::u,v,w
 		
-		u%r = 1.0_wp
-		v%r = 2.0_wp
+		u%s = 1.0_wp
+		v%s = 2.0_wp
 		
 		w = u*v
 		

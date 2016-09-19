@@ -224,7 +224,7 @@ contains
 			return
 		end if
 		
-		k  = findInterval(self%t0,t)
+		k  = findInterval(t,self%t0)
 		dt = self%t0(k+1)-self%t0(k)
 		xi = ( t-self%t0(k) )/dt
 		
@@ -295,7 +295,7 @@ contains
 			return
 		end if
 		
-		k  = findInterval(self%t0,t)
+		k  = findInterval(t,self%t0)
 		dt = self%t0(k+1)-self%t0(k)
 		xi = ( t-self%t0(k) )/dt
 		
@@ -312,29 +312,5 @@ contains
 		end function L
 	
 	end function x_linearSpline
-
-	!===================!
-	!= Shared Routines =!
-	!===================!
-
-	function findInterval(t0,t) result(o)
-		!! @todo
-		!! Change to a better scaling algorithm
-		!! O(N) -> O( log(N) )
-		real(wp),dimension(:),intent(in)::t0
-		real(wp),intent(in)::t
-		integer::o
-		
-		integer::N,k
-		
-		N = size(t0)
-		
-		do k=1,N-1
-			if( t0(k+1)<t ) cycle
-			exit
-		end do
-		
-		o = k
-	end function findInterval
 
 end module spline_mod

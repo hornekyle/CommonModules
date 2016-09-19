@@ -2,7 +2,6 @@ module quaternion_mod
 	!! Module for working with quaternions
 	!! @todo
 	!! Add documentation
-	!! Refactor self%r -> self%s
 	use kinds_mod
 	use tensor_mod
 	implicit none
@@ -13,8 +12,11 @@ module quaternion_mod
 	!=========!
 	
 	type::quat_t
-		real(wp)::r = 0.0_wp
+		!! Hamilton's quaternion extension to complex numbers
+		real(wp)::s = 0.0_wp
+			!! Scalar part
 		real(wp),dimension(3)::v = 0.0_wp
+			!! Vector part
 	contains
 		procedure::getRotationMatrix
 	end type
@@ -108,7 +110,7 @@ contains
 		real(wp),dimension(3),intent(in)::v
 		type(quat_t)::self
 		
-		self%r = r
+		self%s = r
 		self%v = v
 	end function newQuat
 
@@ -118,7 +120,7 @@ contains
 			!! The quaternion of interest
 		real(wp)::o
 		
-		o = q%r
+		o = q%s
 	end function scaler
 
 	function vector(q) result(o)
@@ -136,7 +138,7 @@ contains
 			!! The quaternion of interest
 		real(wp)::o
 		
-		o = sqrt(q%r**2+sum(q%v**2))
+		o = sqrt(q%s**2+sum(q%v**2))
 	end function norm2_q
 
 	elemental function conjg_q(q) result(o)
@@ -145,7 +147,7 @@ contains
 			!! The quaternion of interest
 		type(quat_t)::o
 		
-		o%r =  q%r
+		o%s =  q%s
 		o%v = -q%v
 	end function conjg_q
 
@@ -172,8 +174,8 @@ contains
 		
 		vm = norm2(q%v)
 		
-		o%r = exp(q%r)*( cos(vm) )
-		o%v = exp(q%r)*( q%v/vm*sin(vm) )
+		o%s = exp(q%s)*( cos(vm) )
+		o%v = exp(q%s)*( q%v/vm*sin(vm) )
 	end function exp_q
 
 	elemental function log_q(q) result(o)
@@ -187,8 +189,8 @@ contains
 		vm = norm2(q%v)
 		qm = norm2(q)
 		
-		o%r = log(qm)
-		o%v = q%v/vm*acos(q%r/qm)
+		o%s = log(qm)
+		o%v = q%v/vm*acos(q%s/qm)
 	end function log_q
 
 	elemental function log10_q(q) result(o)
@@ -209,7 +211,7 @@ contains
 		type(quat_t),intent(in)::q
 		type(quat_t)::o
 		
-		o%r = r+q%r
+		o%s = r+q%s
 		o%v = q%v
 	end function add_rq
 
@@ -218,7 +220,7 @@ contains
 		real(wp),intent(in)::r
 		type(quat_t)::o
 		
-		o%r = q%r+r
+		o%s = q%s+r
 		o%v = q%v
 	end function add_qr
 
@@ -227,7 +229,7 @@ contains
 		type(quat_t),intent(in)::q
 		type(quat_t)::o
 		
-		o%r = q%r
+		o%s = q%s
 		o%v = v+q%v
 	end function add_vq
 
@@ -236,7 +238,7 @@ contains
 		real(wp),dimension(3),intent(in)::v
 		type(quat_t)::o
 		
-		o%r = q%r
+		o%s = q%s
 		o%v = q%v+v
 	end function add_qv
 
@@ -245,7 +247,7 @@ contains
 		type(quat_t),intent(in)::v
 		type(quat_t)::o
 		
-		o%r = u%r+v%r
+		o%s = u%s+v%s
 		o%v = u%v+v%v
 	end function add_qq
 
@@ -258,7 +260,7 @@ contains
 		type(quat_t),intent(in)::q
 		type(quat_t)::o
 		
-		o%r = r-q%r
+		o%s = r-q%s
 		o%v = -q%v
 	end function sub_rq
 
@@ -267,7 +269,7 @@ contains
 		real(wp),intent(in)::r
 		type(quat_t)::o
 		
-		o%r = q%r-r
+		o%s = q%s-r
 		o%v = q%v
 	end function sub_qr
 
@@ -276,7 +278,7 @@ contains
 		type(quat_t),intent(in)::q
 		type(quat_t)::o
 		
-		o%r = -q%r
+		o%s = -q%s
 		o%v = v-q%v
 	end function sub_vq
 
@@ -285,7 +287,7 @@ contains
 		real(wp),dimension(3),intent(in)::v
 		type(quat_t)::o
 		
-		o%r = q%r
+		o%s = q%s
 		o%v = q%v-v
 	end function sub_qv
 
@@ -294,7 +296,7 @@ contains
 		type(quat_t),intent(in)::v
 		type(quat_t)::o
 		
-		o%r = u%r-v%r
+		o%s = u%s-v%s
 		o%v = u%v-v%v
 	end function sub_qq
 
@@ -307,7 +309,7 @@ contains
 		type(quat_t),intent(in)::v
 		type(quat_t)::o
 		
-		o%r = u*v%r
+		o%s = u*v%s
 		o%v = u*v%v
 	end function mul_rq
 
@@ -316,7 +318,7 @@ contains
 		real(wp),intent(in)::v
 		type(quat_t)::o
 		
-		o%r = u%r*v
+		o%s = u%s*v
 		o%v = u%v*v
 	end function mul_qr
 
@@ -325,8 +327,8 @@ contains
 		type(quat_t),intent(in)::v
 		type(quat_t)::o
 		
-		o%r = -(u.o.v%v)
-		o%v = u*v%r+(u.x.v%v)
+		o%s = -(u.o.v%v)
+		o%v = u*v%s+(u.x.v%v)
 	end function mul_vq
 
 	pure function mul_qv(u,v) result(o)
@@ -334,8 +336,8 @@ contains
 		real(wp),dimension(3),intent(in)::v
 		type(quat_t)::o
 		
-		o%r = -(u%v.o.v)
-		o%v = u%r*v+(u%v.x.v)
+		o%s = -(u%v.o.v)
+		o%v = u%s*v+(u%v.x.v)
 	end function mul_qv
 
 	elemental function mul_qq(u,v) result(o)
@@ -343,8 +345,8 @@ contains
 		type(quat_t),intent(in)::v
 		type(quat_t)::o
 		
-		o%r = u%r*v%r-(u%v.o.v%v)
-		o%v = u%r*v%v+u%v*v%r+(u%v.x.v%v)
+		o%s = u%s*v%s-(u%v.o.v%v)
+		o%v = u%s*v%v+u%v*v%s+(u%v.x.v%v)
 	end function mul_qq
 
 	!=====================!
@@ -356,7 +358,7 @@ contains
 		real(wp),intent(in)::r
 		type(quat_t)::o
 		
-		o%r = q%r/r
+		o%s = q%s/r
 		o%v = q%v/r
 	end function div_qr
 
@@ -373,7 +375,7 @@ contains
 		
 		q = self/norm2(self)
 		
-		a = q%r
+		a = q%s
 		b = q%v(1)
 		c = q%v(2)
 		d = q%v(3)

@@ -55,6 +55,7 @@ module array_mod
 	public::solveLU
 	
 	public::linearInterp
+	public::findInterval
 	
 contains
 
@@ -423,59 +424,35 @@ contains
 		real(wp)::o
 			!! y(x=r) via linear interpolation
 		
-		integer,dimension(2)::rng
-		real(wp)::phi
+		real(wp)::xi
+		integer::k
 		
-		rng = getRange(r,x)
-		phi = (r-x(rng(1)))/(x(rng(2))-x(rng(1)))
-		o = y(rng(1))+phi*(y(rng(2))-y(rng(1)))
-		
-	contains
-		
-		function getRange(r,x) result(o)
-			!! Find the locations in x that bracket r
-			!!
-			!! Use a quicksearch to find data
-			real(wp),intent(in)::r
-				!! Position of desired value
-			real(wp),dimension(:),intent(in)::x
-				!! x values of data
-			integer,dimension(2)::o
-				!! Indexes of x values that bracket r
-			
-			integer::N
-			integer::L,M,H
-			integer::MN
-			
-			N = size(x)
-			
-			if(r<x(2)) then
-				o = [1,2]
-				return
-			else if(r>x(N-1)) then
-				o = [N-1,N]
-				return
-			end if
-			
-			L = 2
-			H = N-1
-			M = (L+H)/2+1
-			
-			do
-				if(x(M)<=r) then
-					L = M
-				else
-					H = M
-				end if
-				MN = (L+H)/2+1
-				if(MN==M) then
-					o = [M,M+1]
-					return
-				end if
-				M = MN
-			end do
-		end function getRange
+		k  = findInterval(r,x)
+		xi = ( r-x(k) )/( x(k+1)-x(k) )
+		o  = y(k)+xi*( y(k+1)-y(k) )
 		
 	end function linearInterp
+
+	function findInterval(t,t0) result(o)
+		!! Find the locations in t0 that bracket t
+		!!
+		!! Use a quicksearch to find data
+		real(wp),intent(in)::t
+			!! Position of desired value
+		real(wp),dimension(:),intent(in)::t0
+			!! t values of data
+		integer::o
+			!! Index of lower t0 value which brakets t
+		
+		integer::N,k
+		
+		N = size(t0)
+		
+		do k=1,N-1
+			if( t<t0(k) ) exit
+		end do
+		
+		o = k-1
+	end function findInterval
 
 end module array_mod
