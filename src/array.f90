@@ -436,7 +436,7 @@ contains
 	function findInterval(t,t0) result(o)
 		!! Find the locations in t0 that bracket t
 		!!
-		!! Use a quicksearch to find data
+		!! Start with a quick search and finish with direct
 		real(wp),intent(in)::t
 			!! Position of desired value
 		real(wp),dimension(:),intent(in)::t0
@@ -444,15 +444,42 @@ contains
 		integer::o
 			!! Index of lower t0 value which brakets t
 		
+		integer::L,M,H
 		integer::N,k
 		
 		N = size(t0)
 		
-		do k=1,N-1
-			if( t<t0(k) ) exit
+		L = 1
+		H = N
+		
+		do while(H-L>5)
+			M = (L+H)/2
+			if( t>=t0(M) ) then
+				L = M
+			else
+				H = M
+			end if
 		end do
 		
-		o = k-1
+		k = directSearch(t,t0(L:H))+(L-1)
+		
+	contains
+	
+		function directSearch(t,t0) result(o)
+			!! Search entried linearlly until span is found
+			real(wp),intent(in)::t
+			real(wp),dimension(:),intent(in)::t0
+			integer::o
+			
+			integer::N,k
+			
+			N = size(t0)
+			do k=1,N-1
+				if( t<t0(k) ) exit
+			end do
+			o = k-1
+		end function directSearch
+	
 	end function findInterval
 
 end module array_mod
