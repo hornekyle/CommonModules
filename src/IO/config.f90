@@ -1,5 +1,9 @@
 module config_mod
 	!! Module for reading variables from config files
+	!!
+	!! @todo
+	!! Change string to character
+	!! Change pair_t component names to data_[type]
 	use kinds_mod
 	use text_mod
 	implicit none
@@ -12,18 +16,27 @@ module config_mod
 	type::pair_t
 		!! Type to store a single key-value pair and the data's type
 		character(:),allocatable::key
-		integer::pType
-		
-		logical::l = .false.
-		integer::i = 0
-		real(wp)::r = 0.0_wp
-		complex(wp)::c = 0.0_wp
+			!! Key of pair
+		integer::pType = -1
+			!! Type of data in pair
+		logical::l     =  .false.
+			!! Logical data component
+		integer::i     =  0
+			!! Integer data component
+		real(wp)::r    =  0.0_wp
+			!! Real data component
+		complex(wp)::c =  0.0_wp
+			!! Complex data component
 		real(wp),dimension(:),allocatable::v
+			!! Vector data component
 		real(wp),dimension(:,:),allocatable::m
+			!! Matrix data component
 		character(:),allocatable::s
+			!! String data component
 	end type
 	
 	interface pair_t
+		!! Constructor for pair_t
 		module procedure newPair
 	end interface
 	
@@ -34,8 +47,6 @@ module config_mod
 	integer,parameter::PT_VECTOR  = 4
 	integer,parameter::PT_MATRIX  = 5
 	integer,parameter::PT_STRING  = 6
-	
-	
 	
 	!================================!
 	!= config_t Type and Interfaces =!
@@ -63,6 +74,7 @@ module config_mod
 	end type
 	
 	interface config_t
+		!! Constructor for config_t
 		module procedure newConfig
 	end interface
 	
@@ -79,6 +91,7 @@ contains
 	!=======================!
 
 	function newPair(b) result(self)
+		!! Constructor for pair_t
 		character(*),intent(inout)::b
 		type(pair_t)::self
 		
@@ -108,6 +121,7 @@ contains
 	contains
 	
 		function parseType(v) result(t)
+			!! Return type of entry
 			character(*),intent(in)::v
 			integer::t
 			
@@ -137,6 +151,7 @@ contains
 		end function parseType
 	
 		subroutine doVector
+			!! Read a vector
 			integer::N,k
 			
 			N = 0
@@ -150,6 +165,7 @@ contains
 		end subroutine doVector
 	
 		subroutine doMatrix
+			!! Read a matrix
 			integer::N,k,Nr,Nc
 			
 			do k=1,len(v)
@@ -169,6 +185,7 @@ contains
 		end subroutine doMatrix
 	
 		subroutine doString
+			!! Read a string
 			integer::k
 			
 			do k=1,len(v)
@@ -194,13 +211,16 @@ contains
 	!=========================!
 
 	function newConfig(fn) result(self)
+		!! Constructor for config_t
 		type::node_t
 			type(node_t),pointer::next => null()
 			type(pair_t)::obj
 		end type
 
 		character(*),intent(in)::fn
+			!! Name of file to read
 		type(config_t)::self
+			!! Returned config_t object
 		
 		integer::ios
 		character(strLong)::buf
@@ -249,17 +269,25 @@ contains
 	!=====================!
 
 	function isFound(self,key) result(o)
+		!! Check for presence of a key in config
 		class(config_t),intent(in)::self
+			!! Config to check in
 		character(*),intent(in)::key
+			!! Key to check
 		logical::o
+			!! Presence of key
 		
 		o = findKey(self,key)>0
 	end function isFound
 
 	function getType(self,key) result(o)
+		!! Get the type of an entry for a key
 		class(config_t),intent(in)::self
+			!! Config to check in
 		character(*),intent(in)::key
+			!! Key to check
 		integer::o
+			!! Type of data for key
 		
 		integer::idx
 		
@@ -268,9 +296,13 @@ contains
 	end function getType
 
 	function getLogical(self,key) result(o)
+		!! Return a logical value from a config
 		class(config_t),intent(in)::self
+			!! Config to search in
 		character(*),intent(in)::key
+			!! Key to search for
 		logical::o
+			!! Logical value for key
 		
 		integer::idx
 		
@@ -282,9 +314,13 @@ contains
 	end function getLogical
 
 	function getInteger(self,key) result(o)
+		!! Return an integer value from a config
 		class(config_t),intent(in)::self
+			!! Config to search in
 		character(*),intent(in)::key
+			!! Key to search for
 		integer::o
+			!! Integer value for key
 		
 		integer::idx
 		
@@ -296,9 +332,13 @@ contains
 	end function getInteger
 
 	function getReal(self,key) result(o)
+		!! Return a real value from a config
 		class(config_t),intent(in)::self
+			!! Config to search in
 		character(*),intent(in)::key
+			!! Key to search for
 		real(wp)::o
+			!! Read value for key
 		
 		integer::idx
 		
@@ -310,9 +350,13 @@ contains
 	end function getReal
 
 	function getComplex(self,key) result(o)
+		!! Return a complex value from a config
 		class(config_t),intent(in)::self
+			!! Config to search in
 		character(*),intent(in)::key
+			!! Key to search for
 		complex(wp)::o
+			!! Complex value for key
 		
 		integer::idx
 		
@@ -324,9 +368,13 @@ contains
 	end function getComplex
 	
 	function getVector(self,key) result(o)
+		!! Return a real vector value from a config
 		class(config_t),intent(in)::self
-		character(*),intent(in)::key
+			!! Config to search in
+		character(*),intent(in)::key	
+			!! Key to search for
 		real(wp),dimension(:),allocatable::o
+			!! Real vector value for key
 		
 		integer::idx
 		
@@ -339,9 +387,13 @@ contains
 	end function getVector
 	
 	function getMatrix(self,key) result(o)
+		!! Return a real matrix value from a config
 		class(config_t),intent(in)::self
+			!! Config to search in
 		character(*),intent(in)::key
+			!! Key to search for
 		real(wp),dimension(:,:),allocatable::o
+			!! Real matrix value for key
 
 		integer::idx
 		
@@ -354,9 +406,13 @@ contains
 	end function getMatrix
 	
 	function getString(self,key) result(o)
+		!! Return a string value from a config
 		class(config_t),intent(in)::self
+			!! Config to search in
 		character(*),intent(in)::key
+			!! Key to search for
 		character(:),allocatable::o
+			!! String value for key
 		
 		integer::idx
 		
@@ -368,8 +424,11 @@ contains
 	end function getString
 
 	subroutine writeContents(self,iou)
+		!! Write the contents of a config to an I/O unit
 		class(config_t),intent(inout)::self
+			!! Config to write
 		integer,intent(in)::iou
+			!! I/O unit to write to
 		
 		integer::k
 		
@@ -405,7 +464,11 @@ contains
 	!====================!
 
 	subroutine sortKeys(self)
+		!! Sort the keys in a config_t object
+		!!
+		!! Sorting is done in-place (bang-type)
 		class(config_t),intent(inout)::self
+			!! Config to sort
 		type(pair_t)::t
 		integer::k,p
 		
@@ -428,9 +491,16 @@ contains
 	end subroutine sortKeys
 
 	function findKey(self,key) result(idx)
+		!! Find the index of a key in a config
+		!!
+		!! Will print an error and stop execution if
+		!! the key is not found.
 		class(config_t),intent(in)::self
+			!! Config to search in
 		character(*),intent(in)::key
+			!! Key to find
 		integer::idx
+			!! Index of key
 		
 		integer,dimension(2)::R
 		integer::N
@@ -449,6 +519,7 @@ contains
 	contains
 	
 		function narrowSearch() result(o)
+			!! Use a quick search to narrow the search range
 			integer,dimension(2)::o
 			
 			integer::l,m,h
@@ -474,6 +545,7 @@ contains
 		end function narrowSearch
 	
 		function directSearch(l,h) result(o)
+			!! Finish the search with a brute-force approach
 			integer,intent(in)::l,h
 			integer::o
 			
@@ -491,7 +563,9 @@ contains
 	end function findKey
 
 	subroutine doError(msg)
+		!! Print a message and stop execution
 		character(*),intent(in)::msg
+			!! Message to print
 		
 		write(*,*) msg
 		stop 'Error in config_mod'
