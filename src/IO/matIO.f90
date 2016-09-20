@@ -1,5 +1,8 @@
 module matIO_mod
 	!! Module to write MATLAB's mat file (version 4 only)
+	!!
+	!! @todo
+	!! Document routines
 	use iso_c_binding
 	implicit none
 	private

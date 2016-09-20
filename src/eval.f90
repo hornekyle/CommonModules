@@ -2,6 +2,8 @@ module eval_mod
 	!! Module for dynamic evaluation of function expressions
 	!! @todo
 	!! Extend to complex numbers
+	!! Change s in token_t to allocatable
+	!! Convert evaluation mode to object tree
 	!! Add ability to take derivative
 	use kinds_mod
 	use text_mod
@@ -45,27 +47,41 @@ module eval_mod
 	integer,parameter::T_ATAN  = 111
 	integer,parameter::T_LOG10 = 112
 	
-	!=========!
-	!= Types =!
-	!=========!
+	!===============================!
+	!= token_t Type and Interfaces =!
+	!===============================!
 	
 	type::token_t
-		integer::t = T_NONE
+		!! Type for a single mathematical token
+		integer::t  = T_NONE
+			!! Token type
 		real(wp)::a = 0.0_wp
+			!! Token real value (if any)
 		character(8)::s = ''
+			!! Token label (if any)
 	end type
 	
+	interface token_t
+		!! Constructors for token_t
+		module procedure newToken
+	end interface
+	
+	!==================================!
+	!= function_t Type and Interfaces =!
+	!==================================!
+	
 	type::function_t
-		type(token_t),dimension(:),allocatable::ex,ar
+		!! Type to store and evaluate parsed expressions
+		type(token_t),dimension(:),allocatable::ar
+			!! Tokens of function arguments
+		type(token_t),dimension(:),allocatable::ex
+			!! Tokens of function expression
 	contains
 		procedure::eval
 	end type
 	
-	!==============!
-	!= Interfaces =!
-	!==============!
-	
 	interface function_t
+		!! Constructors for function_t
 		module procedure newFunction
 	end interface
 	
@@ -77,9 +93,16 @@ module eval_mod
 	
 contains
 
-	function newFunction(str) result(o)
+	!=======================!
+	!= function_t Routines =!
+	!=======================!
+
+	function newFunction(str) result(self)
+		!! Constructor for function_t
 		character(*),intent(in)::str
-		type(function_t)::o
+			!! Character to parse into function
+		type(function_t)::self
+			!! New function_t
 		
 		character(:),allocatable::buf
 		integer::ek
@@ -88,14 +111,18 @@ contains
 		
 		ek = scan(buf,'=')
 		
-		o%ar = toRPN(tokenize(buf(:ek-1)))
-		o%ex = toRPN(tokenize(buf(ek+1:)))
+		self%ar = toRPN(tokenize(buf(:ek-1)))
+		self%ex = toRPN(tokenize(buf(ek+1:)))
 	end function newFunction
 
 	function eval(self,a) result(o)
+		!! Evaluate a function with given arguments
 		class(function_t),intent(inout)::self
+			!! Function to evaluate
 		real(wp),dimension(:),intent(in)::a
+			!! Argument values
 		real(wp)::o
+			!! Resultant value
 		
 		real(wp),dimension(:),allocatable::stk
 		integer::ek,sk
@@ -161,9 +188,79 @@ contains
 		o = stk(sk)
 	end function eval
 
+	!====================!
+	!= token_t Routines =!
+	!====================!
+
+	function newToken(str) result(self)
+		!! Constructor for token_t
+		character(*),intent(in)::str
+			!! String to parse
+		type(token_t)::self
+			!! New token_t
+		
+		self%s = str
+		if(verify(str,ops)==0) then
+			select case(str)
+			case(',')
+				self%t = T_CMA
+			case('(')
+				self%t = T_LPR
+			case(')')
+				self%t = T_RPR
+			case('+')
+				self%t = T_ADD
+			case('-')
+				self%t = T_SUB
+			case('*')
+				self%t = T_MUL
+			case('/')
+				self%t = T_DIV
+			case('^')
+				self%t = T_POW
+			end select
+		else if(verify(str,' .+-0123456789E')==0) then
+			self%t = T_REAL
+			read(str,*) self%a
+		else if(str=='sqrt') then
+			self%t = T_SQRT
+		else if(str=='exp') then
+			self%t = T_EXP
+		else if(str=='log') then
+			self%t = T_LOG
+		else if(str=='abs') then
+			self%t = T_ABS
+		else if(str=='sin') then
+			self%t = T_SIN
+		else if(str=='cos') then
+			self%t = T_COS
+		else if(str=='tan') then
+			self%t = T_TAN
+		else if(str=='asin') then
+			self%t = T_ASIN
+		else if(str=='acos') then
+			self%t = T_ACOS
+		else if(str=='atan') then
+			self%t = T_ATAN
+		else if(str=='log10') then
+			self%t = T_LOG10
+		else
+			self%t = T_VAR
+		end if
+	end function newToken
+
+	!===================!
+	!= Helper Routines =!
+	!===================!
+
 	function toRPN(tks) result(o)
+		!! Convert a list of tokens from read order into RPN
+		!!
+		!! Uses the shunting-yard algorithm
 		type(token_t),dimension(:),intent(in)::tks
+			!! Input tokens in read order
 		type(token_t),dimension(:),allocatable::o
+			!! Output list in RPN
 		
 		type(token_t),dimension(:),allocatable::s
 		integer::ok,sk,k
@@ -223,8 +320,11 @@ contains
 	end function toRPN
 
 	function tokenize(str) result(o)
+		!! Split a character into tokens
 		character(*),intent(in)::str
+			!! Character to split
 		type(token_t),dimension(:),allocatable::o
+			!! Resulting list of tokens
 		
 		character(64)::t
 		integer::s,n,k
@@ -243,10 +343,10 @@ contains
 				t = str(s:s)
 				s = s+n
 			end if
-			o = [o,token(trim(t))]
+			o = [o,token_t(trim(t))]
 		end do
 		t = str(s:)
-		o = [o,token(trim(t))]
+		o = [o,token_t(trim(t))]
 		
 		! Correct for unary (-)
 		if(o(1)%t==T_SUB) o(1)%t = T_NEG
@@ -266,59 +366,5 @@ contains
 			if(o(k+1)%t==T_LPR) o(k)%t = T_FUNCTION
 		end do
 	end function tokenize
-
-	function token(str) result(o)
-		character(*),intent(in)::str
-		type(token_t)::o
-		
-		o%s = str
-		if(verify(str,ops)==0) then
-			select case(str)
-			case(',')
-				o%t = T_CMA
-			case('(')
-				o%t = T_LPR
-			case(')')
-				o%t = T_RPR
-			case('+')
-				o%t = T_ADD
-			case('-')
-				o%t = T_SUB
-			case('*')
-				o%t = T_MUL
-			case('/')
-				o%t = T_DIV
-			case('^')
-				o%t = T_POW
-			end select
-		else if(verify(str,' .+-0123456789E')==0) then
-			o%t = T_REAL
-			read(str,*) o%a
-		else if(str=='sqrt') then
-			o%t = T_SQRT
-		else if(str=='exp') then
-			o%t = T_EXP
-		else if(str=='log') then
-			o%t = T_LOG
-		else if(str=='abs') then
-			o%t = T_ABS
-		else if(str=='sin') then
-			o%t = T_SIN
-		else if(str=='cos') then
-			o%t = T_COS
-		else if(str=='tan') then
-			o%t = T_TAN
-		else if(str=='asin') then
-			o%t = T_ASIN
-		else if(str=='acos') then
-			o%t = T_ACOS
-		else if(str=='atan') then
-			o%t = T_ATAN
-		else if(str=='log10') then
-			o%t = T_LOG10
-		else
-			o%t = T_VAR
-		end if
-	end function token
 
 end module eval_mod

@@ -11,14 +11,21 @@ module text_mod
 	!==============!
 	
 	integer,parameter::stdin  = INPUT_UNIT
+		!! Standard input unit
 	integer,parameter::stdout = OUTPUT_UNIT
+		!! Standard output unit
 	integer,parameter::stderr = ERROR_UNIT
+		!! Standard error unit
 	
 	integer,parameter::strLong = 128
+		!! Length for long characters
 	integer,parameter::strShort = 32
+		!! Length for short characters
 	
 	character(:),parameter::fmtLong = '(1A128)'
+		!! Format for long characters
 	character(:),parameter::fmtShort = '(1A32)'
+		!! Format for short characters
 	
 	!===========!
 	!= Exports =!
