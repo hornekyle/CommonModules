@@ -1,7 +1,5 @@
 module mesh_mod
-	!! Module for handeling 2D meshes
-	!! @todo
-	!! Add VTK field output
+	!! Module for 2D simplex meshes
 	use kinds_mod
 	implicit none
 	private
@@ -10,48 +8,107 @@ module mesh_mod
 	!= Parameters =!
 	!==============!
 	
+	integer,parameter::GT_POINT_1 = 15
+	integer,parameter::VT_POINT_1 = 1
 	integer,parameter::ET_POINT_1 = 11
+		!! Element type for a single point
 	
+	integer,parameter::GT_EDGE_1  = 1
+	integer,parameter::VT_EDGE_1  = 3
 	integer,parameter::ET_EDGE_1  = 21
-	integer,parameter::ET_EDGE_2  = 22
-	integer,parameter::ET_EDGE_3  = 23
+		!! Element type for a 2-node edge
 	
+	integer,parameter::GT_EDGE_2  = 8
+	integer,parameter::VT_EDGE_2  = 21
+	integer,parameter::ET_EDGE_2  = 22
+		!! Element type for a 3-node edge
+	
+	integer,parameter::GT_EDGE_3  = 26
+	integer,parameter::VT_EDGE_3  = -1
+	integer,parameter::ET_EDGE_3  = 23
+		!! Element type for a 4-node edge
+	
+	integer,parameter::GT_TRIANGLE_1 = 2
+	integer,parameter::VT_TRIANGLE_1 = 5
 	integer,parameter::ET_TRIANGLE_1 = 31
+		!! Element type for a 3-node triangle
+	
+	integer,parameter::GT_TRIANGLE_2 = 9
+	integer,parameter::VT_TRIANGLE_2 = 22
 	integer,parameter::ET_TRIANGLE_2 = 32
+		!! Element type for a 6-node triangle
+	
+	integer,parameter::GT_TRIANGLE_3 = 21
+	integer,parameter::VT_TRIANGLE_3 = -1
 	integer,parameter::ET_TRIANGLE_3 = 33
+		!! Element type for a 10-node triangle
 	
 	!=========!
 	!= Types =!
 	!=========!
 	
 	type::node_t
+		!! One node in the mesh
 		integer::nidx
+			!! Node index
 		real(wp),dimension(2)::x
+			!! Node location
 		integer::ngroup
+			!! Node group
+			!!
+			!! Groups are derived from elements the node belongs to.
+			!! The group with lowest dimenionality takes precidence.
 		integer,dimension(:),allocatable::nodes
+			!! Indicies of nodes connected to this one
 		integer,dimension(:),allocatable::elements
+			!! Indicies of elements this node occures in
 	end type
 	
 	type::element_t
+		!! One element in the mesh
 		integer::eidx
+			!! Element index
 		integer::etype
+			!! Element type
 		integer::egroup
+			!! Element group
 		integer::ecolor
+			!! Element color
+			!!
+			!! The element color can be used for parallel caculations
+			!! without race conditions, comparable to red-black versions
+			!! of the Gauss-Seidel algorithm.
 		integer,dimension(:),allocatable::nodes
+			!! Nodes of the element
 		integer,dimension(:),allocatable::elements
+			!! Elements connected to this one by at least one node
 	end type
 	
 	type::group_t
+		!! Physical group of elements
 		integer::gidx
+			!! Group index
 		integer::gdim
+			!! Group dimensionality \(d\)
+			!!
+			!! \(d \in {1,2}\)
 		character(128)::gname
+			!! Group name
 		real(wp),dimension(:),allocatable::gdata
+			!! Data for group
+			!!
+			!! This data can be used to store material properties
+			!! or source term constants.
 	end type
 	
 	type::mesh_t
+		!! A 2D mesh of elements connecting nodes
 		type(node_t),dimension(:),allocatable::nodes
+			!! All nodes in the mesh
 		type(element_t),dimension(:),allocatable::elements
+			!! All elements in the mesh
 		type(group_t),dimension(:),allocatable::groups
+			!! All groups in the mesh
 	contains
 		procedure::readGmsh
 		procedure::writeVTK
@@ -162,20 +219,20 @@ contains
 			integer::internalType
 			
 			select case(gmsh_type)
-			case(1)
-				internalType = ET_EDGE_1
-			case(2)
-				internalType = ET_TRIANGLE_1
-			case(8)
-				internalType = ET_EDGE_2
-			case(9)
-				internalType = ET_TRIANGLE_2
-			case(15)
+			case(GT_POINT_1)
 				internalType = ET_POINT_1
-			case(21)
-				internalType = ET_TRIANGLE_3
-			case(26)
+			case(GT_EDGE_1)
+				internalType = ET_EDGE_1
+			case(GT_EDGE_2)
+				internalType = ET_EDGE_2
+			case(GT_EDGE_3)
 				internalType = ET_EDGE_3
+			case(GT_TRIANGLE_1)
+				internalType = ET_TRIANGLE_1
+			case(GT_TRIANGLE_2)
+				internalType = ET_TRIANGLE_2
+			case(GT_TRIANGLE_3)
+				internalType = ET_TRIANGLE_3
 			case default
 				internalType = -1
 			end select
@@ -187,20 +244,20 @@ contains
 			integer::nodeCount
 			
 			select case(gmshType)
-			case(1)
-				nodeCount = 2
-			case(2)
-				nodeCount = 3
-			case(8)
-				nodeCount = 3
-			case(9)
-				nodeCount = 6
-			case(15)
+			case(GT_POINT_1)
 				nodeCount = 1
-			case(21)
-				nodeCount = 10
-			case(26)
+			case(GT_EDGE_1)
+				nodeCount = 2
+			case(GT_EDGE_2)
+				nodeCount = 3
+			case(GT_EDGE_3)
 				nodeCount = 4
+			case(GT_TRIANGLE_1)
+				nodeCount = 3
+			case(GT_TRIANGLE_2)
+				nodeCount = 6
+			case(GT_TRIANGLE_3)
+				nodeCount = 10
 			case default
 				nodeCount = -1
 			end select
@@ -308,19 +365,19 @@ contains
 			
 			select case(internal_type)
 			case(ET_POINT_1)
-				vtk_type = 1
+				vtk_type = VT_POINT_1
 			case(ET_EDGE_1)
-				vtk_type = 3
+				vtk_type = VT_EDGE_1
 			case(ET_EDGE_2)
-				vtk_type = 21
+				vtk_type = VT_EDGE_2
 			case(ET_EDGE_3)
-				vtk_type = -1
+				vtk_type = VT_EDGE_3
 			case(ET_TRIANGLE_1)
-				vtk_type = 5
+				vtk_type = VT_TRIANGLE_1
 			case(ET_TRIANGLE_2)
-				vtk_type = 22
+				vtk_type = VT_TRIANGLE_2
 			case(ET_TRIANGLE_3)
-				vtk_type = -1
+				vtk_type = VT_TRIANGLE_3
 			end select
 		end function elementIntToVTK
 	
@@ -389,6 +446,7 @@ contains
 	subroutine connect(self)
 		!! Build connectivity in the mesh
 		class(mesh_t),intent(inout)::self
+			!! Mesh to operate on
 		
 		integer,dimension(:),allocatable::c,b
 		type(element_t)::e
