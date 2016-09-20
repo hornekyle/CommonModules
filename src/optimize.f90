@@ -1,16 +1,20 @@
 module optimize_mod
+	!! Module for minimization of 1D and N-D problems
 	use kinds_mod
 	use array_mod
 	implicit none
 	private
 	
-	!==================!
-	!= Abstract Types =!
-	!==================!
+	!=============================!
+	!= obj_t Type and Interfaces =!
+	!=============================!
 	
 	type,abstract::obj_t
+		!! Type for a 1D objective function
 		integer::derivativeOrder = 2
+			!! Order of finite difference approximations
 		real(wp)::stepSize = 1.0E-3_wp
+			!! Step size for finite differences
 	contains
 		procedure::der1
 		procedure::der2
@@ -19,9 +23,29 @@ module optimize_mod
 		procedure(eval_p),deferred::eval
 	end type
 	
+	abstract interface
+		function eval_p(self,x) result(o)
+			!! Evaluate an objective function at point \(x\)
+			import
+			class(obj_t),intent(in)::self
+				!! Objective function
+			real(wp),intent(in)::x
+				!! Evaluation point
+			real(wp)::o
+				!! Function result
+		end function eval_p
+	end interface
+	
+	!==============================!
+	!= objN_t Type and Interfaces =!
+	!==============================!
+	
 	type,abstract::objN_t
+		!! Type for an N-D objective function
 		integer::derivativeOrder = 2
+			!! Order for finite difference approximations
 		real(wp)::stepSize = 1.0E-3_wp
+			!! Step size for finite differences
 	contains
 		procedure::grad
 		procedure::hessian
@@ -31,46 +55,44 @@ module optimize_mod
 		procedure(evalN_p),deferred::eval
 	end type
 	
-	!=======================!
-	!= Abstract Interfaces =!
-	!=======================!
-	
 	abstract interface
-		function eval_p(self,x) result(o)
-			import
-			class(obj_t),intent(in)::self
-			real(wp),intent(in)::x
-			real(wp)::o
-		end function eval_p
-		
 		function evalN_p(self,x) result(o)
+			!! Evaluate an objectgive function at point \(\vec{x}\)
 			import
 			class(objN_t),intent(in)::self
+				!! Objective function
 			real(wp),dimension(:),intent(in)::x
+				!! Evaluation point
 			real(wp)::o
+				!! Function result
 		end function evalN_p
 	end interface
 	
-	!==================!
-	!= Definite Types =!
-	!==================!
+	!====================================!
+	!= lineSearch_t Type and Interfaces =!
+	!====================================!
 	
 	type,extends(obj_t)::lineSearch_t
+		!! Objective function for a line search in an N-D space
 		class(objN_t),allocatable::parent
+			!! N-D objective function
 		real(wp),dimension(:),allocatable::x0
+			!! Base point in N-space along the line
 		real(wp),dimension(:),allocatable::n0
+			!! Direction in N-space
 	contains
 		procedure::parentX
 		procedure::eval => eval_lineSearch
 	end type
 	
-	!==============!
-	!= Interfaces =!
-	!==============!
-	
 	interface lineSearch_t
+		!! Constructors for lineSearch_t
 		module procedure newLineSearch
 	end interface
+	
+	!===========!
+	!= Exports =!
+	!===========!
 	
 	public::obj_t
 	public::objN_t
@@ -84,9 +106,18 @@ contains
 	!==================!
 
 	function der1(self,x) result(o)
+		!! Compute the first derivative using finite differences
+		!!
+		!! Order of accuracy is specified in self, with the following meanings:  
+		!! -1 -> Backward difference O(h)
+		!!  1 -> Forward difference O(h)
+		!!  2 -> Central difference O(h**2)
 		class(obj_t),intent(in)::self
+			!! Function to differentiate
 		real(wp),intent(in)::x
+			!! Evaluation point
 		real(wp)::o
+			!! First derivative
 		
 		real(wp)::h
 		
@@ -103,9 +134,18 @@ contains
 	end function der1
 
 	function der2(self,x) result(o)
+		!! Compute the second derivative using finite differences
+		!!
+		!! Order of accuracy is specified in self, with the following meanings:  
+		!! -1 -> Backward difference O(h)
+		!!  1 -> Forward difference O(h)
+		!!  2 -> Central difference O(h**2)
 		class(obj_t),intent(in)::self
+			!! Function to differentiate
 		real(wp),intent(in)::x
+			!! Evaluation point
 		real(wp)::o
+			!! Second derivative
 		
 		real(wp)::h
 		
@@ -122,11 +162,20 @@ contains
 	end function der2
 
 	function rootNewton(self,x0,tol,maxIts) result(o)
+		!! Find the root of a 1-D function using Newton's method
+		!!
+		!! Derivatives are computed using finite differences unless
+		!! the instance of self has overridden the derivative routines.
 		class(obj_t),intent(in)::self
+			!! Function for root finding
 		real(wp),intent(in)::x0
+			!! Initial guess
 		real(wp),intent(in),optional::tol
+			!! Tolerance
 		integer,intent(in),optional::maxIts
+			!! Maximum iterations
 		real(wp)::o
+			!! Location of root
 		
 		real(wp)::lTol
 		integer::lMaxIts
@@ -152,11 +201,20 @@ contains
 	end function rootNewton
 
 	function minNewton_obj(self,x0,tol,maxIts) result(o)
+		!! Find the minimum of a 1-D function using Newton's method
+		!!
+		!! Derivatives are computed using finite differences unless
+		!! the instance of self has overridden the derivative routines.
 		class(obj_t),intent(in)::self
+			!! Function for minimization
 		real(wp),intent(in)::x0
+			!! Intial guess
 		real(wp),intent(in),optional::tol
+			!! Tolerance
 		integer,intent(in),optional::maxIts
+			!! Maximum iterations
 		real(wp)::o
+			!! Location of minimum
 		
 		real(wp)::lTol
 		integer::lMaxIts
@@ -186,9 +244,18 @@ contains
 	!===================!
 
 	function grad(self,x) result(o)
+		!! Compute the gradient using finite differences
+		!!
+		!! Order of accuracy is specified in self, with the following meanings:  
+		!! -1 -> Backward difference O(h)
+		!!  1 -> Forward difference O(h)
+		!!  2 -> Central difference O(h**2)
 		class(objN_t),intent(in)::self
+			!! Function for gradient calculation
 		real(wp),dimension(:),intent(in)::x
+			!! Evaluation point
 		real(wp),dimension(:),allocatable::o
+			!! Gradient
 		
 		real(wp)::h
 		real(wp),dimension(:,:),allocatable::I
@@ -216,9 +283,18 @@ contains
 	end function grad
 
 	function hessian(self,x) result(o)
+		!! Compute the hessian using finite differences
+		!!
+		!! Order of accuracy is specified in self, with the following meanings:  
+		!! -1 -> Backward difference O(h)
+		!!  1 -> Forward difference O(h)
+		!!  2 -> Central difference O(h**2)
 		class(objN_t),intent(in)::self
+			!! Function for hessian calculation
 		real(wp),dimension(:),intent(in)::x
+			!! Evaluation point
 		real(wp),dimension(:,:),allocatable::o
+			!! Hessian
 		
 		real(wp)::h
 		real(wp),dimension(:,:),allocatable::I
@@ -244,12 +320,60 @@ contains
 		end do
 	end function hessian
 
-	function steepestDescent(self,x0,tol,maxIts) result(o)
+	function minNewton_objN(self,x0,tol,maxIts) result(o)
+		!! Find the minimum of an N-D function using Newton's method
+		!!
+		!! Derivatives are computed using finite differences unless
+		!! the instance of self has overridden the derivative routines.
 		class(objN_t),intent(in)::self
+			!! Function for minimization
 		real(wp),dimension(:),intent(in)::x0
+			!! Initial guess
 		real(wp),intent(in),optional::tol
+			!! Tolerance
 		integer,intent(in),optional::maxIts
+			!! Maximum iterations
 		real(wp),dimension(:),allocatable::o
+			!! Location of minimum
+		
+		real(wp)::lTol
+		integer::lMaxIts
+		real(wp),dimension(:),allocatable::x,xn
+		integer::k
+		
+		lTol = 1.0E-6_wp
+		lMaxIts = 10000
+		
+		if(present(tol)) lTol = tol
+		if(present(maxIts)) lMaxIts = maxIts
+		
+		xn = x0
+		
+		do k=1,lMaxIts
+			x  = xn
+			xn = x-solveLU(self%hessian(x),self%grad(x))
+			
+			if( norm2(xn-x)<lTol ) exit
+		end do
+		
+		o = xn
+	end function minNewton_objN
+
+	function steepestDescent(self,x0,tol,maxIts) result(o)
+		!! Find the minimum using the steepest descent method
+		!!
+		!! Derivatives are computed using finite differences unless
+		!! the instance of self has overridden the derivative routines.
+		class(objN_t),intent(in)::self
+			!! Function for minimization
+		real(wp),dimension(:),intent(in)::x0
+			!! Initial guess
+		real(wp),intent(in),optional::tol
+			!! Tolerance
+		integer,intent(in),optional::maxIts
+			!! Maximum iterations
+		real(wp),dimension(:),allocatable::o
+			!! Location of minimum
 		
 		real(wp)::lTol
 		integer::lMaxIts
@@ -282,11 +406,17 @@ contains
 	end function steepestDescent
 
 	function nelderMead(self,x0,tol,maxIts) result(o)
+		!! Find the minimum of an N-D function using Nelder-Mead's simplex method
 		class(objN_t),intent(in)::self
+			!! Function for minimization
 		real(wp),dimension(:),intent(in)::x0
+			!! Initial guess
 		real(wp),intent(in),optional::tol
+			!! Tolerance
 		integer,intent(in),optional::maxIts
+			!! Maximum iterations
 		real(wp),dimension(:),allocatable::o
+			!! Location of minimum
 		
 		real(wp)::lTol
 		integer::lMaxIts
@@ -395,44 +525,18 @@ contains
 		o = v(:,vs)
 	end function nelderMead
 
-	function minNewton_objN(self,x0,tol,maxIts) result(o)
-		class(objN_t),intent(in)::self
-		real(wp),dimension(:),intent(in)::x0
-		real(wp),intent(in),optional::tol
-		integer,intent(in),optional::maxIts
-		real(wp),dimension(:),allocatable::o
-		
-		real(wp)::lTol
-		integer::lMaxIts
-		real(wp),dimension(:),allocatable::x,xn
-		integer::k
-		
-		lTol = 1.0E-6_wp
-		lMaxIts = 10000
-		
-		if(present(tol)) lTol = tol
-		if(present(maxIts)) lMaxIts = maxIts
-		
-		xn = x0
-		
-		do k=1,lMaxIts
-			x  = xn
-			xn = x-solveLU(self%hessian(x),self%grad(x))
-			
-			if( norm2(xn-x)<lTol ) exit
-		end do
-		
-		o = xn
-	end function minNewton_objN
-
 	!=========================!
 	!= lineSearch_t Routines =!
 	!=========================!
 
 	function newLineSearch(obj,x) result(self)
+		!! Constructor for lineSearch_t
 		class(objN_t),intent(in)::obj
+			!! Parent N-D objective function
 		real(wp),dimension(:),intent(in)::x
+			!! Point along line
 		type(lineSearch_t)::self
+			!! New lineSearch_t
 		
 		real(wp),dimension(:),allocatable::g
 		
@@ -444,17 +548,25 @@ contains
 	end function newLineSearch
 
 	function parentX(self,x) result(o)
+		!! Convert a local 1-D x into the parent's N-space
 		class(lineSearch_t),intent(in)::self
+			!! Line search space
 		real(wp),intent(in)::x
+			!! Local location \(x\)
 		real(wp),dimension(:),allocatable::o
+			!! Parent location \(\vec{x}\)
 		
 		o = self%x0+x*self%n0
 	end function parentX
 
 	function eval_lineSearch(self,x) result(o)
+		!! Evaluate the parent function at a local \(x\)
 		class(lineSearch_t),intent(in)::self
+			!! Line search space
 		real(wp),intent(in)::x
+			!! Local location
 		real(wp)::o
+			!! Parent result
 		
 		o = self%parent%eval(self%parentX(x))
 	end function eval_lineSearch

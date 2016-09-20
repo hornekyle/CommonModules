@@ -2,6 +2,7 @@ module eval_mod
 	!! Module for dynamic evaluation of function expressions
 	!! @todo
 	!! Extend to complex numbers
+	!! * Two versions of eval, one for R and one for Z
 	!! Change s in token_t to allocatable
 	!! Convert evaluation mode to object tree
 	!! Add ability to take derivative
