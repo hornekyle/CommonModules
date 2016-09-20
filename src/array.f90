@@ -445,12 +445,9 @@ contains
 			!! Index of lower t0 value which brakets t
 		
 		integer::L,M,H
-		integer::N,k
-		
-		N = size(t0)
 		
 		L = 1
-		H = N
+		H = size(t0)
 		
 		do while(H-L>5)
 			M = (L+H)/2
@@ -461,7 +458,7 @@ contains
 			end if
 		end do
 		
-		k = directSearch(t,t0(L:H))+(L-1)
+		o = directSearch(t,t0(L:H))+(L-1)
 		
 	contains
 	

@@ -1,4 +1,5 @@
 module spline_mod
+	!! Module to construct and evaluate splines of multivariate datasets
 	use kinds_mod
 	use array_mod
 	implicit none
@@ -9,18 +10,25 @@ module spline_mod
 	!================================!
 	
 	type,abstract::spline_t
+		!! Abstract type from which others derive
 		real(wp),dimension(:),allocatable::t0
+			!! Parameterization variable data
 		real(wp),dimension(:,:),allocatable::x0
+			!! Datapoints for spline
 	contains
 		procedure(x_p),deferred::x
 	end type
 	
 	abstract interface
 		function x_p(self,t) result(o)
+			!! Evaluate spline coordinate \(\vec{x}\) at point \(t\)
 			import
 			class(spline_t),intent(in)::self
+				!! Spline
 			real(wp),intent(in)::t
+				!! Parametric sampling point
 			real(wp),dimension(:),allocatable::o
+				!! Location \(\vec{x}\) along spline
 		end function x_p
 	end interface
 	
@@ -29,11 +37,13 @@ module spline_mod
 	!======================================!
 	
 	type,extends(spline_t)::linearSpline_t
+		!! Linear spline type
 	contains
 		procedure::x => x_linearSpline
 	end type
 	
 	interface linearSpline_t
+		!! Constructor for linearSpline_t
 		module procedure newLinearSpline
 	end interface
 	
@@ -42,14 +52,22 @@ module spline_mod
 	!=====================================!
 	
 	type,extends(spline_t)::cubicSpline_t
+		!! Cubic spline type
+		!!
+		!! Uses hermite interpolation between datapoints with
+		!! derivaties computed at construction time.
 		real(wp),dimension(:,:),allocatable::d0
+			!! Derivatives at datapoints \(\vec{x}_0\)
 		character(:),allocatable::method
+			!! Method used to compute derivatives
 		real(wp)::c
+			!! Tension parameter for cardinal splines
 	contains
 		procedure::x => x_cubicSpline
 	end type
 	
 	interface cubicSpline_t
+		!! Constructor for cubicSpline_t
 		module procedure newCubicSpline
 	end interface
 	
@@ -68,11 +86,25 @@ contains
 	!==========================!
 
 	function newCubicSpline(t0,x0,method,c) result(self)
+		!! Constructor for cubicSpline_t
 		real(wp),dimension(:),intent(in)::t0
+			!! Parameterization data \(t_0\)
 		real(wp),dimension(:,:),intent(in)::x0
+			!! Datapoints for spline \(\vec{x}_0\)
 		character(*),intent(in),optional::method
+			!! Derivative calculation method
+			!!
+			!! Valid methods are the following:  
+			!! * 'finiteDifference'  
+			!! * 'catmullRom'  
+			!! * 'cardinal'  
+			!! * 'conventional'  
 		real(wp),intent(in),optional::c
+			!! Tension parameter for cardinal splines
+			!!
+			!! Not used by other spline types
 		type(cubicSpline_t)::self
+			!! New spline
 		
 		self%t0 = t0
 		self%x0 = x0
@@ -107,6 +139,7 @@ contains
 	contains
 	
 		function finiteDifference(t0,x0) result(d0)
+			!! Use finite differences from \(\vec{x}_0\) to compute \(\vec{d}_0\)
 			real(wp),dimension(:),intent(in)::t0
 			real(wp),dimension(:,:),intent(in)::x0
 			real(wp),dimension(:,:),allocatable::d0
@@ -138,6 +171,9 @@ contains
 		end function finiteDifference
 	
 		function catmullRom(t0,x0) result(d0)
+			!! Use finite differences from \(\vec{x}_0\) to compute \(\vec{d}_0\)
+			!!
+			!! Assumes second order differencing on regularly-spaced data
 			real(wp),dimension(:),intent(in)::t0
 			real(wp),dimension(:,:),intent(in)::x0
 			real(wp),dimension(:,:),allocatable::d0
@@ -158,6 +194,10 @@ contains
 		end function catmullRom
 	
 		function conventional(t0,x0) result(d0)
+			!! Use finite differences from \(\vec{x}_0\) to compute \(\vec{d}_0\)
+			!!
+			!! Selects \(\vec{d}_0\) to force second derivaties to be continuous.
+			!! Endpoints have a zero second derivative.
 			real(wp),dimension(:),intent(in)::t0
 			real(wp),dimension(:,:),intent(in)::x0
 			real(wp),dimension(:,:),allocatable::d0
@@ -206,9 +246,13 @@ contains
 	end function newCubicSpline
 
 	function x_cubicSpline(self,t) result(o)
+		!! Evalute the cubic spline at point \(t\)
 		class(cubicSpline_t),intent(in)::self
+			!! Spline of curve
 		real(wp),intent(in)::t
+			!! Parameterization point
 		real(wp),dimension(:),allocatable::o
+			!! Spline location \(\vec{x}\)
 		
 		integer::N,M,k,i
 		real(wp)::dt,xi
@@ -234,6 +278,7 @@ contains
 	contains
 	
 		pure function H(xi) result(o)
+			!! Hermite shape functions
 			real(wp),intent(in)::xi
 			real(wp),dimension(2,2)::o
 			
@@ -244,6 +289,7 @@ contains
 		end function H
 	
 		pure function C(k,v) result(o)
+			!! Spline datapoints and derivatives
 			integer,intent(in)::k,v
 			real(wp),dimension(2,2)::o
 			
@@ -254,6 +300,7 @@ contains
 		end function C
 	
 		pure function J(dt) result(o)
+			!! Interval Jacobian
 			real(wp),intent(in)::dt
 			real(wp),dimension(2,2)::o
 			
@@ -268,18 +315,26 @@ contains
 	!===========================!
 
 	function newLinearSpline(t0,x0) result(self)
+		!! Constructor for linearSpline_t
 		real(wp),dimension(:),intent(in)::t0
+			!! Parameterization data \(t_0\)
 		real(wp),dimension(:,:),intent(in)::x0
+			!! Datapoints for spline \(\vec{x}_0\)
 		type(linearSpline_t)::self
+			!! New spline
 		
 		self%t0 = t0
 		self%x0 = x0
 	end function newLinearSpline
 
 	function x_linearSpline(self,t) result(o)
+		!! Evalute the linear spline at point \(t\)
 		class(linearSpline_t),intent(in)::self
+			!! Spline of curve
 		real(wp),intent(in)::t
+			!! Parameterization point
 		real(wp),dimension(:),allocatable::o
+			!! Spline location \(\vec{x}\)
 		
 		integer::N,M,k,i
 		real(wp)::dt,xi
@@ -305,6 +360,7 @@ contains
 	contains
 	
 		pure function L(xi) result(o)
+			!! Linear shape functions
 			real(wp),intent(in)::xi
 			real(wp),dimension(2)::o
 			
