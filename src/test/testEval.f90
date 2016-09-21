@@ -7,8 +7,22 @@ program testEval_prg
 	implicit none
 	
 	call testFunction
+! 	call testNew
 	
 contains
+
+	subroutine testNew
+		type(function_t)::f
+		real(wp)::x,y,yT
+		
+		f = function_t('f(x) = x^2-1.0')
+		
+		x  = 2.0_wp
+		y  = f%eval([x])
+		yT = f%evalT([x])
+		
+		write(*,*) x,y,yT
+	end subroutine testNew
 
 	subroutine testFunction
 		!! Verify operation of newFunction and eval
@@ -56,7 +70,7 @@ contains
 		
 		x = linspace(r(1),r(2),N)
 		do k=1,N
-			y(k) = f%eval([x(k)])
+			y(k) = f%evalT([x(k)])
 		end do
 		
 		call figure()

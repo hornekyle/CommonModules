@@ -9,7 +9,7 @@ module eval_mod
 	use kinds_mod
 	use text_mod
 	implicit none
-	private
+	public
 	
 	!==============!
 	!= Parameters =!
@@ -67,6 +67,258 @@ module eval_mod
 		module procedure newToken
 	end interface
 	
+	!========================================!
+	!= Evaluation Tree Types and Interfaces =!
+	!========================================!
+	
+	type,abstract::node_t
+	contains
+		procedure(eval_p),deferred::eval
+	end type
+	
+	interface
+		function eval_p(self,args) result(o)
+			import
+			class(node_t),intent(in)::self
+			real(wp),dimension(:),intent(in)::args
+			real(wp)::o
+		end function eval_p
+	end interface
+	
+	! real_t
+	type,extends(node_t)::real_t
+		real(wp)::value
+	contains
+		procedure::eval => eval_real
+	end type
+	
+	interface real_t
+		module procedure newReal
+	end interface
+	
+	! var_t
+	type,extends(node_t)::var_t
+		integer::idx
+	contains
+		procedure::eval => eval_var
+	end type
+	
+	interface var_t
+		module procedure newVar
+	end interface
+	
+	! add_t
+	type,extends(node_t)::add_t
+		class(node_t),allocatable::a
+		class(node_t),allocatable::b
+	contains
+		procedure::eval => eval_add
+	end type
+	
+	interface add_t
+		module procedure newAdd
+	end interface
+	
+	! sub_t
+	type,extends(node_t)::sub_t
+		class(node_t),allocatable::a
+		class(node_t),allocatable::b
+	contains
+		procedure::eval => eval_sub
+	end type
+	
+	interface sub_t
+		module procedure newSub
+	end interface
+	
+	
+	! mul_t
+	type,extends(node_t)::mul_t
+		class(node_t),allocatable::a
+		class(node_t),allocatable::b
+	contains
+		procedure::eval => eval_mul
+	end type
+	
+	interface mul_t
+		module procedure newMul
+	end interface
+	
+	! div_t
+	type,extends(node_t)::div_t
+		class(node_t),allocatable::a
+		class(node_t),allocatable::b
+	contains
+		procedure::eval => eval_div
+	end type
+	
+	interface div_t
+		module procedure newDiv
+	end interface
+	
+	! pow_t
+	type,extends(node_t)::pow_t
+		class(node_t),allocatable::a
+		class(node_t),allocatable::b
+	contains
+		procedure::eval => eval_pow
+	end type
+	
+	interface pow_t
+		module procedure newPow
+	end interface
+	
+	! neg_t
+	type,extends(node_t)::neg_t
+		class(node_t),allocatable::a
+	contains
+		procedure::eval => eval_neg
+	end type
+	
+	interface neg_t
+		module procedure newNeg
+	end interface
+	
+	! sqrt_t
+	type,extends(node_t)::sqrt_t
+		class(node_t),allocatable::a
+	contains
+		procedure::eval => eval_sqrt
+	end type
+	
+	interface sqrt_t
+		module procedure newSqrt
+	end interface
+	
+	! exp_t
+	type,extends(node_t)::exp_t
+		class(node_t),allocatable::a
+	contains
+		procedure::eval => eval_exp
+	end type
+	
+	interface exp_t
+		module procedure newExp
+	end interface
+	
+	! log_t
+	type,extends(node_t)::log_t
+		class(node_t),allocatable::a
+	contains
+		procedure::eval => eval_log
+	end type
+	
+	interface log_t
+		module procedure newLog
+	end interface
+	
+	! abs_t
+	type,extends(node_t)::abs_t
+		class(node_t),allocatable::a
+	contains
+		procedure::eval => eval_abs
+	end type
+	
+	interface abs_t
+		module procedure newAbs
+	end interface
+	
+	! sin_t
+	type,extends(node_t)::sin_t
+		class(node_t),allocatable::a
+	contains
+		procedure::eval => eval_sin
+	end type
+	
+	interface sin_t
+		module procedure newSin
+	end interface
+	
+	! cos_t
+	type,extends(node_t)::cos_t
+		class(node_t),allocatable::a
+	contains
+		procedure::eval => eval_cos
+	end type
+	
+	interface cos_t
+		module procedure newCos
+	end interface
+	
+	! tan_t
+	type,extends(node_t)::tan_t
+		class(node_t),allocatable::a
+	contains
+		procedure::eval => eval_tan
+	end type
+	
+	interface tan_t
+		module procedure newTan
+	end interface
+	
+	! asin_t
+	type,extends(node_t)::asin_t
+		class(node_t),allocatable::a
+	contains
+		procedure::eval => eval_asin
+	end type
+	
+	interface asin_t
+		module procedure newAsin
+	end interface
+	
+	! acos_t
+	type,extends(node_t)::acos_t
+		class(node_t),allocatable::a
+	contains
+		procedure::eval => eval_acos
+	end type
+	
+	interface acos_t
+		module procedure newAcos
+	end interface
+	
+	! atan_t
+	type,extends(node_t)::atan_t
+		class(node_t),allocatable::a
+	contains
+		procedure::eval => eval_atan
+	end type
+	
+	interface atan_t
+		module procedure newAtan
+	end interface
+	
+	! log10_t
+	type,extends(node_t)::log10_t
+		class(node_t),allocatable::a
+	contains
+		procedure::eval => eval_log10
+	end type
+	
+	interface log10_t
+		module procedure newLog10
+	end interface
+	
+	!===================================!
+	!= nodeStack_t Type and Interfaces =!
+	!===================================!
+	
+	type::genericNode_t
+		class(node_t),allocatable::node
+	end type
+	
+	type::nodeStack_t
+		type(genericNode_t),dimension(:),allocatable::levels
+	contains
+		procedure::pop
+		procedure::push
+	end type
+	
+	interface nodeStack_t
+		module procedure newNodeStack
+	end interface
+	
 	!==================================!
 	!= function_t Type and Interfaces =!
 	!==================================!
@@ -77,8 +329,11 @@ module eval_mod
 			!! Tokens of function arguments
 		type(token_t),dimension(:),allocatable::ex
 			!! Tokens of function expression
+		
+		class(node_t),allocatable::root
 	contains
 		procedure::eval
+		procedure::evalT
 	end type
 	
 	interface function_t
@@ -93,6 +348,371 @@ module eval_mod
 	public::function_t
 	
 contains
+
+	!============================!
+	!= Evaluation Tree Routines =!
+	!============================!
+
+	! real_t
+	function newReal(value) result(self)
+		real(wp),intent(in)::value
+		type(real_t)::self
+		
+		self%value = value
+	end function newReal
+
+	function eval_real(self,args) result(o)
+		class(real_t),intent(in)::self
+		real(wp),dimension(:),intent(in)::args
+		real(wp)::o
+		
+		o = self%value
+	end function eval_real
+
+	! var_t
+	function newVar(idx) result(self)
+		integer,intent(in)::idx
+		type(var_t)::self
+		
+		self%idx = idx
+	end function newVar
+
+	function eval_var(self,args) result(o)
+		class(var_t),intent(in)::self
+		real(wp),dimension(:),intent(in)::args
+		real(wp)::o
+		
+		integer::N
+		
+		N = size(args)
+		
+		if(self%idx>N) then
+			write(*,*) 'Invalid argument index: '//intToChar(self%idx)
+			stop 'Error in eval_var'
+		end if
+		
+		o = args(self%idx)
+	end function eval_var
+
+	! add_t
+	function newAdd(a,b) result(self)
+		class(node_t),intent(in)::a
+		class(node_t),intent(in)::b
+		type(add_t)::self
+		
+		allocate(self%a,source=a)
+		allocate(self%b,source=b)
+	end function newAdd
+
+	function eval_add(self,args) result(o)
+		class(add_t),intent(in)::self
+		real(wp),dimension(:),intent(in)::args
+		real(wp)::o
+		
+		o = self%a%eval(args)+self%b%eval(args)
+	end function eval_add
+
+
+	! sub_t
+	function newSub(a,b) result(self)
+		class(node_t),intent(in)::a
+		class(node_t),intent(in)::b
+		type(sub_t)::self
+		
+		allocate(self%a,source=a)
+		allocate(self%b,source=b)
+	end function newSub
+
+	function eval_sub(self,args) result(o)
+		class(sub_t),intent(in)::self
+		real(wp),dimension(:),intent(in)::args
+		real(wp)::o
+		
+		o = self%a%eval(args)-self%b%eval(args)
+	end function eval_sub
+
+	! mul_t
+	function newMul(a,b) result(self)
+		class(node_t),intent(in)::a
+		class(node_t),intent(in)::b
+		type(mul_t)::self
+		
+		allocate(self%a,source=a)
+		allocate(self%b,source=b)
+	end function newMul
+
+	function eval_mul(self,args) result(o)
+		class(mul_t),intent(in)::self
+		real(wp),dimension(:),intent(in)::args
+		real(wp)::o
+		
+		o = self%a%eval(args)*self%b%eval(args)
+	end function eval_mul
+
+	! div_t
+	function newDiv(a,b) result(self)
+		class(node_t),intent(in)::a
+		class(node_t),intent(in)::b
+		type(div_t)::self
+		
+		allocate(self%a,source=a)
+		allocate(self%b,source=b)
+	end function newDiv
+
+	function eval_div(self,args) result(o)
+		class(div_t),intent(in)::self
+		real(wp),dimension(:),intent(in)::args
+		real(wp)::o
+		
+		o = self%a%eval(args)/self%b%eval(args)
+	end function eval_div
+
+	! pow_t
+	function newPow(a,b) result(self)
+		class(node_t),intent(in)::a
+		class(node_t),intent(in)::b
+		type(pow_t)::self
+		
+		allocate(self%a,source=a)
+		allocate(self%b,source=b)
+	end function newPow
+
+	function eval_pow(self,args) result(o)
+		class(pow_t),intent(in)::self
+		real(wp),dimension(:),intent(in)::args
+		real(wp)::o
+		
+		o = self%a%eval(args)**self%b%eval(args)
+	end function eval_pow
+
+	! neg_t
+	function newNeg(a) result(self)
+		class(node_t),intent(in)::a
+		type(neg_t)::self
+		
+		allocate(self%a,source=a)
+	end function newNeg
+
+	function eval_neg(self,args) result(o)
+		class(neg_t),intent(in)::self
+		real(wp),dimension(:),intent(in)::args
+		real(wp)::o
+		
+		o = -self%a%eval(args)
+	end function eval_neg
+
+	! sqrt_t
+	function newSqrt(a) result(self)
+		class(node_t),intent(in)::a
+		type(sqrt_t)::self
+		
+		allocate(self%a,source=a)
+	end function newSqrt
+
+	function eval_sqrt(self,args) result(o)
+		class(sqrt_t),intent(in)::self
+		real(wp),dimension(:),intent(in)::args
+		real(wp)::o
+		
+		o = sqrt( self%a%eval(args) )
+	end function eval_sqrt
+
+	! exp_t
+	function newExp(a) result(self)
+		class(node_t),intent(in)::a
+		type(exp_t)::self
+		
+		allocate(self%a,source=a)
+	end function newExp
+
+	function eval_exp(self,args) result(o)
+		class(exp_t),intent(in)::self
+		real(wp),dimension(:),intent(in)::args
+		real(wp)::o
+		
+		o = exp( self%a%eval(args) )
+	end function eval_exp
+
+	! log_t
+	function newLog(a) result(self)
+		class(node_t),intent(in)::a
+		type(log_t)::self
+		
+		allocate(self%a,source=a)
+	end function newLog
+
+	function eval_log(self,args) result(o)
+		class(log_t),intent(in)::self
+		real(wp),dimension(:),intent(in)::args
+		real(wp)::o
+		
+		o = log( self%a%eval(args) )
+	end function eval_log
+
+	! abs_t
+	function newAbs(a) result(self)
+		class(node_t),intent(in)::a
+		type(abs_t)::self
+		
+		allocate(self%a,source=a)
+	end function newAbs
+
+	function eval_abs(self,args) result(o)
+		class(abs_t),intent(in)::self
+		real(wp),dimension(:),intent(in)::args
+		real(wp)::o
+		
+		o = abs( self%a%eval(args) )
+	end function eval_abs
+
+	! sin_t
+	function newSin(a) result(self)
+		class(node_t),intent(in)::a
+		type(sin_t)::self
+		
+		allocate(self%a,source=a)
+	end function newSin
+
+	function eval_sin(self,args) result(o)
+		class(sin_t),intent(in)::self
+		real(wp),dimension(:),intent(in)::args
+		real(wp)::o
+		
+		o = sin( self%a%eval(args) )
+	end function eval_sin
+
+	! cos_t
+	function newCos(a) result(self)
+		class(node_t),intent(in)::a
+		type(cos_t)::self
+		
+		allocate(self%a,source=a)
+	end function newCos
+
+	function eval_cos(self,args) result(o)
+		class(cos_t),intent(in)::self
+		real(wp),dimension(:),intent(in)::args
+		real(wp)::o
+		
+		o = cos( self%a%eval(args) )
+	end function eval_cos
+
+	! tan_t
+	function newTan(a) result(self)
+		class(node_t),intent(in)::a
+		type(tan_t)::self
+		
+		allocate(self%a,source=a)
+	end function newTan
+
+	function eval_tan(self,args) result(o)
+		class(tan_t),intent(in)::self
+		real(wp),dimension(:),intent(in)::args
+		real(wp)::o
+		
+		o = tan( self%a%eval(args) )
+	end function eval_tan
+
+	! asin_t
+	function newAsin(a) result(self)
+		class(node_t),intent(in)::a
+		type(asin_t)::self
+		
+		allocate(self%a,source=a)
+	end function newAsin
+
+	function eval_asin(self,args) result(o)
+		class(asin_t),intent(in)::self
+		real(wp),dimension(:),intent(in)::args
+		real(wp)::o
+		
+		o = asin( self%a%eval(args) )
+	end function eval_asin
+
+	! acos_t
+	function newAcos(a) result(self)
+		class(node_t),intent(in)::a
+		type(acos_t)::self
+		
+		allocate(self%a,source=a)
+	end function newAcos
+
+	function eval_acos(self,args) result(o)
+		class(acos_t),intent(in)::self
+		real(wp),dimension(:),intent(in)::args
+		real(wp)::o
+		
+		o = acos( self%a%eval(args) )
+	end function eval_acos
+
+	! atan_t
+	function newAtan(a) result(self)
+		class(node_t),intent(in)::a
+		type(atan_t)::self
+		
+		allocate(self%a,source=a)
+	end function newAtan
+
+	function eval_atan(self,args) result(o)
+		class(atan_t),intent(in)::self
+		real(wp),dimension(:),intent(in)::args
+		real(wp)::o
+		
+		o = atan( self%a%eval(args) )
+	end function eval_atan
+
+	! log10_t
+	function newLog10(a) result(self)
+		class(node_t),intent(in)::a
+		type(log10_t)::self
+		
+		allocate(self%a,source=a)
+	end function newLog10
+
+	function eval_log10(self,args) result(o)
+		class(log10_t),intent(in)::self
+		real(wp),dimension(:),intent(in)::args
+		real(wp)::o
+		
+		o = log10( self%a%eval(args) )
+	end function eval_log10
+
+	!========================!
+	!= nodeStack_t Routines =!
+	!========================!
+
+	function newNodeStack(N) result(self)
+		integer,intent(in)::N
+		type(nodeStack_t)::self
+		
+		allocate(self%levels(N))
+	end function newNodeStack
+
+	function pop(self) result(o)
+		class(nodeStack_t),intent(inout)::self
+		class(node_t),allocatable::o
+		integer::N,k
+		
+		N = size(self%levels)
+		allocate(o,source=self%levels(1)%node)
+		do k=1,N-1
+			self%levels(k) = self%levels(k+1)
+		end do
+		if(allocated(self%levels(N)%node)) deallocate(self%levels(N)%node)
+	end function pop
+
+	subroutine push(self,a)
+		class(nodeStack_t),intent(inout)::self
+		class(node_t),intent(in)::a
+		integer::N,k
+		
+		N = size(self%levels)
+		do k=N,2,-1
+			self%levels(k) = self%levels(k-1)
+		end do
+		if(allocated(self%levels(1)%node)) deallocate(self%levels(1)%node)
+		allocate(self%levels(1)%node,source=a)
+	end subroutine push
 
 	!=======================!
 	!= function_t Routines =!
@@ -114,6 +734,8 @@ contains
 		
 		self%ar = toRPN(tokenize(buf(:ek-1)))
 		self%ex = toRPN(tokenize(buf(ek+1:)))
+		
+		allocate(self%root,source=toTree( self%ex , self%ar%s ))
 	end function newFunction
 
 	function eval(self,a) result(o)
@@ -188,6 +810,18 @@ contains
 		
 		o = stk(sk)
 	end function eval
+
+	function evalT(self,a) result(o)
+		!! Evaluate a function with given arguments
+		class(function_t),intent(inout)::self
+			!! Function to evaluate
+		real(wp),dimension(:),intent(in)::a
+			!! Argument values
+		real(wp)::o
+			!! Resultant value
+		
+		o = self%root%eval(a)
+	end function evalT
 
 	!====================!
 	!= token_t Routines =!
@@ -319,6 +953,85 @@ contains
 		
 		o = pack(o,o%t/=T_NONE)
 	end function toRPN
+
+	function toTree(tks,args) result(o)
+		type(token_t),dimension(:),intent(in)::tks
+		character(*),dimension(:),intent(in)::args
+		class(node_t),allocatable::o
+		
+		type(nodeStack_t)::stk
+		class(node_t),allocatable::l1,l2
+		integer::N,M,i,k,idx
+		
+		N = size(tks)
+		M = size(args)
+		
+		stk = nodeStack_t(N)
+		
+		do k=1,N
+			write(*,*) k,tks(k)%s
+			
+			select case( tks(k)%t )
+			case(T_VAR)
+				do i=1,M
+					if( tks(k)%s/=args(i) ) cycle
+					idx = i
+				end do
+				call stk%push( newVar(idx) )
+			case(T_REAL)
+				call stk%push( newReal(tks(k)%a) )
+			case(T_ADD)
+				allocate(l1,source=stk%pop())
+				allocate(l2,source=stk%pop())
+				call stk%push( newAdd(l2,l1) )
+			case(T_SUB)
+				allocate(l1,source=stk%pop())
+				allocate(l2,source=stk%pop())
+				call stk%push( newSub(l2,l1) )
+			case(T_MUL)
+				allocate(l1,source=stk%pop())
+				allocate(l2,source=stk%pop())
+				call stk%push( newMul(l2,l1) )
+			case(T_DIV)
+				allocate(l1,source=stk%pop())
+				allocate(l2,source=stk%pop())
+				call stk%push( newDiv(l2,l1) )
+			case(T_POW)
+				allocate(l1,source=stk%pop())
+				allocate(l2,source=stk%pop())
+				call stk%push( newPow(l2,l1) )
+			case(T_NEG)
+				call stk%push( newNeg( stk%pop() ) )
+			case(T_SQRT)
+				call stk%push( newSqrt( stk%pop() ) )
+			case(T_EXP)
+				call stk%push( newExp( stk%pop() ) )
+			case(T_LOG)
+				call stk%push( newLog( stk%pop() ) )
+			case(T_ABS)
+				call stk%push( newAbs( stk%pop() ) )
+			case(T_SIN)
+				call stk%push( newSin( stk%pop() ) )
+			case(T_COS)
+				call stk%push( newCos( stk%pop() ) )
+			case(T_TAN)
+				call stk%push( newTan( stk%pop() ) )
+			case(T_ASIN)
+				call stk%push( newAsin( stk%pop() ) )
+			case(T_ACOS)
+				call stk%push( newAcos( stk%pop() ) )
+			case(T_ATAN)
+				call stk%push( newAtan( stk%pop() ) )
+			case(T_LOG10)
+				call stk%push( newLog10( stk%pop() ) )
+			end select
+			
+			if(allocated(l1)) deallocate(l1)
+			if(allocated(l2)) deallocate(l2)
+		end do
+		
+		allocate( o,source=stk%pop() )
+	end function toTree
 
 	function tokenize(str) result(o)
 		!! Split a character into tokens
