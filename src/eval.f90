@@ -3,17 +3,71 @@ module eval_mod
 	!! @todo
 	!! Extend to complex numbers
 	!! * Two versions of eval, one for R and one for Z
-	!! Change s in token_t to allocatable
-	!! Convert evaluation mode to object tree
 	!! Add ability to take derivative
 	use kinds_mod
 	use text_mod
 	implicit none
-	public
+	private
 	
-	!==============!
-	!= Parameters =!
-	!==============!
+	!==============================!
+	!= node_t Type and Interfaces =!
+	!==============================!
+	
+	type,abstract::node_t
+	contains
+		procedure(eval_p),deferred::eval
+	end type
+	
+	interface
+		function eval_p(self,args) result(o)
+			import
+			class(node_t),intent(in)::self
+			real(wp),dimension(:),intent(in)::args
+			real(wp)::o
+		end function eval_p
+	end interface
+	
+	!==================================!
+	!= function_t Type and Interfaces =!
+	!==================================!
+	
+	type::function_t
+		!! Type to store and evaluate parsed expressions
+		character(:),allocatable::str
+		class(node_t),allocatable::root
+	contains
+		procedure::eval
+	end type
+	
+	interface function_t
+		!! Constructors for function_t
+		module procedure newFunction
+	end interface
+	
+	!===================================!
+	!= nodeStack_t Type and Interfaces =!
+	!===================================!
+	
+	type::genericNode_t
+		class(node_t),allocatable::node
+	end type
+	
+	type::nodeStack_t
+		integer,private::N = 0
+		integer,private::D = 0
+		type(genericNode_t),dimension(:),allocatable::levels
+	contains
+		procedure::pop
+		procedure::push
+	end type
+	
+	interface nodeStack_t
+		module procedure newNodeStack
+	end interface
+	
+	!======================!
+	!= token_t Parameters =!
+	!======================!
 	
 	character(8),parameter::ops = ',+-*/^()'
 	
@@ -70,20 +124,6 @@ module eval_mod
 	!========================================!
 	!= Evaluation Tree Types and Interfaces =!
 	!========================================!
-	
-	type,abstract::node_t
-	contains
-		procedure(eval_p),deferred::eval
-	end type
-	
-	interface
-		function eval_p(self,args) result(o)
-			import
-			class(node_t),intent(in)::self
-			real(wp),dimension(:),intent(in)::args
-			real(wp)::o
-		end function eval_p
-	end interface
 	
 	! real_t
 	type,extends(node_t)::real_t
@@ -300,47 +340,6 @@ module eval_mod
 		module procedure newLog10
 	end interface
 	
-	!===================================!
-	!= nodeStack_t Type and Interfaces =!
-	!===================================!
-	
-	type::genericNode_t
-		class(node_t),allocatable::node
-	end type
-	
-	type::nodeStack_t
-		type(genericNode_t),dimension(:),allocatable::levels
-	contains
-		procedure::pop
-		procedure::push
-	end type
-	
-	interface nodeStack_t
-		module procedure newNodeStack
-	end interface
-	
-	!==================================!
-	!= function_t Type and Interfaces =!
-	!==================================!
-	
-	type::function_t
-		!! Type to store and evaluate parsed expressions
-		type(token_t),dimension(:),allocatable::ar
-			!! Tokens of function arguments
-		type(token_t),dimension(:),allocatable::ex
-			!! Tokens of function expression
-		
-		class(node_t),allocatable::root
-	contains
-		procedure::eval
-		procedure::evalT
-	end type
-	
-	interface function_t
-		!! Constructors for function_t
-		module procedure newFunction
-	end interface
-	
 	!===========!
 	!= Exports =!
 	!===========!
@@ -348,6 +347,94 @@ module eval_mod
 	public::function_t
 	
 contains
+
+	!=======================!
+	!= function_t Routines =!
+	!=======================!
+
+	function newFunction(str) result(self)
+		!! Constructor for function_t
+		character(*),intent(in)::str
+			!! Character to parse into function
+		type(function_t)::self
+			!! New function_t
+		
+		type(token_t),dimension(:),allocatable::ar
+		type(token_t),dimension(:),allocatable::ex
+		integer::ek
+		
+		self%str = removeSpaces(str)
+		
+		ek = scan(self%str,'=')
+		ar = toRPN(tokenize(self%str(:ek-1)))
+		ex = toRPN(tokenize(self%str(ek+1:)))
+		
+		allocate(self%root,source=toTree( ex , ar%s ))
+	end function newFunction
+
+	function eval(self,a) result(o)
+		!! Evaluate a function with given arguments
+		class(function_t),intent(inout)::self
+			!! Function to evaluate
+		real(wp),dimension(:),intent(in)::a
+			!! Argument values
+		real(wp)::o
+			!! Resultant value
+		
+		o = self%root%eval(a)
+	end function eval
+
+	!========================!
+	!= nodeStack_t Routines =!
+	!========================!
+
+	function newNodeStack(N) result(self)
+		integer,intent(in)::N
+		type(nodeStack_t)::self
+		
+		self%N = N
+		self%D = 0
+		allocate(self%levels(N))
+	end function newNodeStack
+
+	function pop(self) result(o)
+		class(nodeStack_t),intent(inout)::self
+		class(node_t),allocatable::o
+		integer::k
+		
+		if(self%D==0) then
+			stop 'Tried to pop with empty stack'
+		end if
+		
+		allocate(o,source=self%levels(1)%node)
+		do k=1,min(self%D,self%N-1)
+			self%levels(k) = self%levels(k+1)
+		end do
+		
+		if(self%N==self%D) then
+			if(allocated(self%levels(self%N)%node)) deallocate(self%levels(self%N)%node)
+		end if
+		
+		self%D = self%D-1
+	end function pop
+
+	subroutine push(self,a)
+		class(nodeStack_t),intent(inout)::self
+		class(node_t),intent(in)::a
+		integer::k
+		
+		if(self%D==self%N) then
+			stop 'Tried to push a full stack'
+		end if
+		
+		do k=self%D+1,2,-1
+			self%levels(k) = self%levels(k-1)
+		end do
+		if(allocated(self%levels(1)%node)) deallocate(self%levels(1)%node)
+		allocate(self%levels(1)%node,source=a)
+		
+		self%D = self%D+1
+	end subroutine push
 
 	!============================!
 	!= Evaluation Tree Routines =!
@@ -677,152 +764,6 @@ contains
 		o = log10( self%a%eval(args) )
 	end function eval_log10
 
-	!========================!
-	!= nodeStack_t Routines =!
-	!========================!
-
-	function newNodeStack(N) result(self)
-		integer,intent(in)::N
-		type(nodeStack_t)::self
-		
-		allocate(self%levels(N))
-	end function newNodeStack
-
-	function pop(self) result(o)
-		class(nodeStack_t),intent(inout)::self
-		class(node_t),allocatable::o
-		integer::N,k
-		
-		N = size(self%levels)
-		allocate(o,source=self%levels(1)%node)
-		do k=1,N-1
-			self%levels(k) = self%levels(k+1)
-		end do
-		if(allocated(self%levels(N)%node)) deallocate(self%levels(N)%node)
-	end function pop
-
-	subroutine push(self,a)
-		class(nodeStack_t),intent(inout)::self
-		class(node_t),intent(in)::a
-		integer::N,k
-		
-		N = size(self%levels)
-		do k=N,2,-1
-			self%levels(k) = self%levels(k-1)
-		end do
-		if(allocated(self%levels(1)%node)) deallocate(self%levels(1)%node)
-		allocate(self%levels(1)%node,source=a)
-	end subroutine push
-
-	!=======================!
-	!= function_t Routines =!
-	!=======================!
-
-	function newFunction(str) result(self)
-		!! Constructor for function_t
-		character(*),intent(in)::str
-			!! Character to parse into function
-		type(function_t)::self
-			!! New function_t
-		
-		character(:),allocatable::buf
-		integer::ek
-		
-		buf = removeSpaces(str)
-		
-		ek = scan(buf,'=')
-		
-		self%ar = toRPN(tokenize(buf(:ek-1)))
-		self%ex = toRPN(tokenize(buf(ek+1:)))
-		
-		allocate(self%root,source=toTree( self%ex , self%ar%s ))
-	end function newFunction
-
-	function eval(self,a) result(o)
-		!! Evaluate a function with given arguments
-		class(function_t),intent(inout)::self
-			!! Function to evaluate
-		real(wp),dimension(:),intent(in)::a
-			!! Argument values
-		real(wp)::o
-			!! Resultant value
-		
-		real(wp),dimension(:),allocatable::stk
-		integer::ek,sk
-		
-		allocate(stk(size(self%ex)))
-		stk = 0.0_wp
-		sk = 0
-		do ek=1,size(self%ex)
-			select case(self%ex(ek)%t)
-			case(T_VAR)
-				sk = sk+1
-				stk(sk) = sum(pack(a,self%ex(ek)%s==self%ar(:size(self%ar)-1)%s))
-			case(T_REAL)
-				sk = sk+1
-				stk(sk) = self%ex(ek)%a
-			case(T_ADD)
-				stk(sk-1) = stk(sk-1)+stk(sk)
-				stk(sk)   = 0.0_wp
-				sk = sk-1
-			case(T_SUB)
-				stk(sk-1) = stk(sk-1)-stk(sk)
-				stk(sk)   = 0.0_wp
-				sk = sk-1
-			case(T_MUL)
-				stk(sk-1) = stk(sk-1)*stk(sk)
-				stk(sk)   = 0.0_wp
-				sk = sk-1
-			case(T_DIV)
-				stk(sk-1) = stk(sk-1)/stk(sk)
-				stk(sk)   = 0.0_wp
-				sk = sk-1
-			case(T_POW)
-				stk(sk-1) = stk(sk-1)**stk(sk)
-				stk(sk)   = 0.0_wp
-				sk = sk-1
-			case(T_NEG)
-				stk(sk) = -stk(sk)
-			case(T_SQRT)
-				stk(sk) = sqrt(stk(sk))
-			case(T_EXP)
-				stk(sk) = exp(stk(sk))
-			case(T_LOG)
-				stk(sk) = log(stk(sk))
-			case(T_ABS)
-				stk(sk) = abs(stk(sk))
-			case(T_SIN)
-				stk(sk) = sin(stk(sk))
-			case(T_COS)
-				stk(sk) = cos(stk(sk))
-			case(T_TAN)
-				stk(sk) = tan(stk(sk))
-			case(T_ASIN)
-				stk(sk) = asin(stk(sk))
-			case(T_ACOS)
-				stk(sk) = acos(stk(sk))
-			case(T_ATAN)
-				stk(sk) = atan(stk(sk))
-			case(T_LOG10)
-				stk(sk) = log10(stk(sk))
-			end select
-		end do
-		
-		o = stk(sk)
-	end function eval
-
-	function evalT(self,a) result(o)
-		!! Evaluate a function with given arguments
-		class(function_t),intent(inout)::self
-			!! Function to evaluate
-		real(wp),dimension(:),intent(in)::a
-			!! Argument values
-		real(wp)::o
-			!! Resultant value
-		
-		o = self%root%eval(a)
-	end function evalT
-
 	!====================!
 	!= token_t Routines =!
 	!====================!
@@ -955,9 +896,13 @@ contains
 	end function toRPN
 
 	function toTree(tks,args) result(o)
+		!! Convert an RPN list into an evaluation tree
 		type(token_t),dimension(:),intent(in)::tks
+			!! List of tokens in RPN order
 		character(*),dimension(:),intent(in)::args
+			!! Names of variables in proper order
 		class(node_t),allocatable::o
+			!! Evaluation tree
 		
 		type(nodeStack_t)::stk
 		class(node_t),allocatable::l1,l2
@@ -969,8 +914,6 @@ contains
 		stk = nodeStack_t(N)
 		
 		do k=1,N
-			write(*,*) k,tks(k)%s
-			
 			select case( tks(k)%t )
 			case(T_VAR)
 				do i=1,M
