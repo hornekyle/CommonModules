@@ -14,6 +14,8 @@ contains
 		!! Verify operation of newFunction and eval
 		call setup(fileName='testsEval-%n.svg',figSize=[400,300])
 		
+! 		call doFunction('f(x) = x+1j',[-2.0_wp,2.0_wp])
+		
 		call doFunction('f(x) = x+1',[-2.0_wp,2.0_wp])
 		call doFunction('f(x) = x-1',[-2.0_wp,2.0_wp])
 		call doFunction('f(x) = 2*x',[-2.0_wp,2.0_wp])
@@ -47,12 +49,7 @@ contains
 		
 		f = function_t(s)
 		
-		write(*,*) 'Arguments'
-		write(*,*) f%ar
-		write(*,*) 'Expression'
-		do k=1,size(f%ex)
-			write(*,*) f%ex(k)
-		end do
+		write(*,*) f%str
 		
 		x = linspace(r(1),r(2),N)
 		do k=1,N
