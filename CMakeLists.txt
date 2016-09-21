@@ -1,7 +1,9 @@
-cmake_minimum_required(VERSION 2.6)
+cmake_minimum_required(VERSION 3.0)
 enable_language(Fortran)
-set(PROJECT "CommonModules")
-project(${PROJECT})
+
+
+project(CommonModules
+	VERSION "0.1.1")
 enable_testing()
 
 #=======================#
@@ -92,6 +94,7 @@ add_custom_target(symlinks
 #= Create Library Target =#
 #=========================#
 
+# Source Files
 set(modules_src
 	"src/array.f90"
 	"src/autoDiff.f90"
@@ -113,6 +116,7 @@ set(modules_src
 	"src/matrix/sparse.f90"
 	"src/matrix/tensor.f90")
 
+# Conditional source files
 if(FFTW3_FOUND)
 	set(modules_src ${modules_src} "src/fftw3.f90" "src/fourier.f90")
 endif(FFTW3_FOUND)
@@ -125,8 +129,10 @@ if(PLPLOT_FOUND)
 	set(modules_src ${modules_src} "src/plplotlib/plplotlib.f90")
 endif(PLPLOT_FOUND)
 
+# Add target
 add_library(CommonModules SHARED ${modules_src})
 
+# Linking directives
 if(FFTW3_FOUND)
 	target_link_libraries(CommonModules ${FFTW3_LIBRARY})
 endif(FFTW3_FOUND)
@@ -217,12 +223,27 @@ endif(PLPLOT_FOUND)
 #= Create FORD Target =#
 #======================#
 
-add_custom_target(doc
+add_custom_command(OUTPUT "docs/index.html"
 	COMMAND basic
 	COMMAND examples
 	COMMAND ${EXECUTABLE_FORD} "${CMAKE_BINARY_DIR}/project.md"
-	DEPENDS basic examples symlinks
+	DEPENDS logo basic examples symlinks
 	WORKING_DIRECTORY "${CMAKE_BINARY_DIR}")
-add_dependencies(doc logo basic examples)
+add_custom_target(doc DEPENDS "docs/index.html")
 
 set(HAVE_RUN "1" CACHE STRING "Indicate if first run of CMake" FORCE)
+
+#========================#
+#= Create Install Files =#
+#========================#
+
+install(TARGETS CommonModules
+	RUNTIME DESTINATION bin
+	LIBRARY DESTINATION lib)
+
+install(DIRECTORY "${CMAKE_BINARY_DIR}/modules/"
+	DESTINATION "include/CommonModules"
+	FILES_MATCHING PATTERN "*.mod")
+
+install(DIRECTORY "${CMAKE_BINARY_DIR}/doc/" OPTIONAL
+	DESTINATION "share/doc/CommonModules")
