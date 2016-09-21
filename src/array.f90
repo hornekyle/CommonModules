@@ -26,6 +26,8 @@ module array_mod
 		!! Reduce an array to one dimension
 		module procedure flatten_2
 		module procedure flatten_3
+		module procedure flatten_2Z
+		module procedure flatten_3Z
 	end interface
 	
 	interface TDMA
@@ -147,6 +149,26 @@ contains
 		
 		o = reshape(A,[size(A)])
 	end function flatten_3
+
+	function flatten_2Z(A) result(o)
+		!! Convert a 2D array to 1D
+		complex(wp),dimension(:,:),intent(in)::A
+			!! Array to convert
+		complex(wp),dimension(:),allocatable::o
+			!! 1D version of the data
+		
+		o = reshape(A,[size(A)])
+	end function flatten_2Z
+
+	function flatten_3Z(A) result(o)
+		!! Convert a 3D array to 1D
+		complex(wp),dimension(:,:,:),intent(in)::A
+			!! Array to convert
+		complex(wp),dimension(:),allocatable::o
+			!! 1D version of the data
+		
+		o = reshape(A,[size(A)])
+	end function flatten_3Z
 
 	function deDup(l) result(o)
 		!! Remove duplicates from a list of positive integers
