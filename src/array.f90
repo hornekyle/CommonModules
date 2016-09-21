@@ -31,6 +31,8 @@ module array_mod
 	interface TDMA
 		module procedure TDMA_s
 		module procedure TDMA_m
+		module procedure TDMA_sZ
+		module procedure TDMA_mZ
 	end interface
 	
 	interface solveLU
@@ -315,6 +317,92 @@ contains
 			x(k,:) = r*x(k,:)
 		end do
 	end function TDMA_m
+
+	function TDMA_sZ(A,b) result(x)
+		!! Solve a tridiagonal linear algebra problem \( [A]\{x\}=\{b\} \)
+		!! @todo
+		!! Put behind interface and allow for multiple RHS in another routine
+		complex(wp),dimension(:,:),intent(in)::A
+			!! Coefficient matrix with the diagonals in columns \( [A] \)
+		complex(wp),dimension(:),intent(in)::b
+			!! Right-hand-side of the system \( \{b\} \)
+		complex(wp),dimension(:),allocatable::x
+			!! Problem solution \( \{x\} \)
+		
+		complex(wp),dimension(:,:),allocatable::W
+		complex(wp)::r
+		integer::N,k
+		
+		N = size(A,1)
+		
+		allocate( W(N,-1:+1) )
+		
+		W(:,-1) = A(:,1)
+		W(:, 0) = A(:,2)
+		W(:,+1) = A(:,3)
+		x       = b
+		
+		do k=2,N
+			r = W(k,-1)/W(k-1,0)
+			W(k,-1:0) = W(k,-1:0)-r*W(k-1,0:1)
+			x(k) = x(k)-r*x(k-1)
+		end do
+		
+		do k=N-1,1,-1
+			r = W(k,1)/W(k+1,0)
+			W(k,0:1) = W(k,0:1)-r*W(k+1,-1:0)
+			x(k) = x(k)-r*x(k+1)
+		end do
+		
+		do k=1,N
+			r = 1.0_wp/W(k,0)
+			W(k,:) = r*W(k,:)
+			x(k) = r*x(k)
+		end do
+	end function TDMA_sZ
+
+	function TDMA_mZ(A,b) result(x)
+		!! Solve a tridiagonal linear algebra problem \( [A]\{x\}=\{b\} \)
+		!! @todo
+		!! Put behind interface and allow for multiple RHS in another routine
+		complex(wp),dimension(:,:),intent(in)::A
+			!! Coefficient matrix with the diagonals in columns \( [A] \)
+		complex(wp),dimension(:,:),intent(in)::b
+			!! Right-hand-side of the system \( \{b\} \)
+		complex(wp),dimension(:,:),allocatable::x
+			!! Problem solution \( \{x\} \)
+		
+		complex(wp),dimension(:,:),allocatable::W
+		complex(wp)::r
+		integer::N,k
+		
+		N = size(A,1)
+		
+		allocate( W(N,-1:+1) )
+		
+		W(:,-1) = A(:,1)
+		W(:, 0) = A(:,2)
+		W(:,+1) = A(:,3)
+		x       = b
+		
+		do k=2,N
+			r = W(k,-1)/W(k-1,0)
+			W(k,-1:0) = W(k,-1:0)-r*W(k-1,0:1)
+			x(k,:) = x(k,:)-r*x(k-1,:)
+		end do
+		
+		do k=N-1,1,-1
+			r = W(k,1)/W(k+1,0)
+			W(k,0:1) = W(k,0:1)-r*W(k+1,-1:0)
+			x(k,:) = x(k,:)-r*x(k+1,:)
+		end do
+		
+		do k=1,N
+			r = 1.0_wp/W(k,0)
+			W(k,:) = r*W(k,:)
+			x(k,:) = r*x(k,:)
+		end do
+	end function TDMA_mZ
 
 	!====================!
 	!= solveLU Routines =!
