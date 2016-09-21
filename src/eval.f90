@@ -75,7 +75,8 @@ module eval_mod
 	
 	integer,parameter::T_NONE = -1
 	integer,parameter::T_REAL = -2
-	integer,parameter::T_VAR  = -3
+	integer,parameter::T_IMAG = -3
+	integer,parameter::T_VAR  = -4
 	
 	integer,parameter::T_CMA  = 001
 	integer,parameter::T_LPR  = 002
@@ -134,6 +135,17 @@ module eval_mod
 	
 	interface real_t
 		module procedure newReal
+	end interface
+	
+	! imag_t
+	type,extends(node_t)::imag_t
+		real(wp)::value
+	contains
+		procedure::eval => eval_imag
+	end type
+	
+	interface imag_t
+		module procedure newImag
 	end interface
 	
 	! var_t
@@ -456,6 +468,22 @@ contains
 		o = self%value
 	end function eval_real
 
+	! imag_t
+	function newImag(value) result(self)
+		real(wp),intent(in)::value
+		type(imag_t)::self
+		
+		self%value = value
+	end function newImag
+
+	function eval_imag(self,args) result(o)
+		class(imag_t),intent(in)::self
+		real(wp),dimension(:),intent(in)::args
+		real(wp)::o
+		
+		stop 'Imaginary number encountered in real evaluation'
+	end function eval_imag
+
 	! var_t
 	function newVar(idx) result(self)
 		integer,intent(in)::idx
@@ -775,6 +803,8 @@ contains
 		type(token_t)::self
 			!! New token_t
 		
+		character(:),allocatable::buf
+		
 		self%s = str
 		if(verify(str,ops)==0) then
 			select case(str)
@@ -798,6 +828,10 @@ contains
 		else if(verify(str,' .+-0123456789E')==0) then
 			self%t = T_REAL
 			read(str,*) self%a
+		else if(verify(str,' .+-0123456789EJj')==0) then
+			self%t = T_IMAG
+			buf = removeJ(str)
+			read(buf,*) self%a
 		else if(str=='sqrt') then
 			self%t = T_SQRT
 		else if(str=='exp') then
@@ -823,6 +857,20 @@ contains
 		else
 			self%t = T_VAR
 		end if
+	
+	contains
+	
+		function removeJ(str) result(o)
+			character(*),intent(in)::str
+			character(:),allocatable::o
+			
+			character(1),dimension(:),allocatable::a,b
+			
+			a = charToArray(str)
+			b = pack(a, a/='j' .and. a/='J' )
+			o = arrayToChar(b)
+		end function removeJ
+	
 	end function newToken
 
 	!===================!
@@ -848,7 +896,7 @@ contains
 		
 		do k=1,size(tks)
 			select case(tks(k)%t)
-			case(T_REAL,T_VAR)
+			case(T_REAL,T_IMAG,T_VAR)
 				ok = ok+1
 				o(ok) = tks(k)
 			case(T_FUNCTION:T_FUNCTION+R_SPAN)
@@ -923,6 +971,8 @@ contains
 				call stk%push( newVar(idx) )
 			case(T_REAL)
 				call stk%push( newReal(tks(k)%a) )
+			case(T_IMAG)
+				call stk%push( newImag(tks(k)%a) )
 			case(T_ADD)
 				allocate(l1,source=stk%pop())
 				allocate(l2,source=stk%pop())

@@ -50,6 +50,9 @@ module text_mod
 	public::realToChar
 	public::realToTime
 	
+	public::charToArray
+	public::arrayToChar
+	
 	public::colorize
 	public::colorMap
 	
@@ -218,6 +221,33 @@ contains
 		
 		o = o//'s'
 	end function realToTime
+
+	function charToArray(c) result(o)
+		!! Convert a character into an array of character(1)
+		character(*),intent(in)::c
+			!! Character to convert
+		character(1),dimension(:),allocatable::o
+			!! New array of character(1)
+		
+		integer::k
+		
+		o = [character(1)::( c(k:k) , k=1,len(c) )]
+	end function charToArray
+
+	function arrayToChar(a) result(o)
+		!! Convert an array of character(1) into a character
+		character(1),dimension(:),intent(in)::a
+			!! Array to convert
+		character(:),allocatable::o
+			!! New character
+		
+		integer::k
+		
+		allocate(character( size(a) )::o)
+		do k=1,size(a)
+			o(k:k) = a(k)
+		end do
+	end function arrayToChar
 
 	function colorize(s,c) result(o)
 		!! Bracket a string with text to change its color on a terminal
