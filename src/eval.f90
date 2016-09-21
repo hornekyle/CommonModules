@@ -1,8 +1,6 @@
 module eval_mod
 	!! Module for dynamic evaluation of function expressions
 	!! @todo
-	!! Extend to complex numbers
-	!! * Two versions of eval, one for R and one for Z
 	!! Add ability to take derivative
 	use kinds_mod
 	use text_mod
@@ -15,16 +13,25 @@ module eval_mod
 	
 	type,abstract::node_t
 	contains
-		procedure(eval_p),deferred::eval
+		procedure(evalR_p),deferred,private::evalR
+		procedure(evalZ_p),deferred,private::evalZ
+		generic::eval => evalR,evalZ
 	end type
 	
 	interface
-		function eval_p(self,args) result(o)
+		function evalR_p(self,args) result(o)
 			import
 			class(node_t),intent(in)::self
 			real(wp),dimension(:),intent(in)::args
 			real(wp)::o
-		end function eval_p
+		end function evalR_p
+		
+		function evalZ_p(self,args) result(o)
+			import
+			class(node_t),intent(in)::self
+			complex(wp),dimension(:),intent(in)::args
+			complex(wp)::o
+		end function evalZ_p
 	end interface
 	
 	!==================================!
@@ -36,7 +43,9 @@ module eval_mod
 		character(:),allocatable::str
 		class(node_t),allocatable::root
 	contains
-		procedure::eval
+		procedure,private::evalR
+		procedure,private::evalZ
+		generic::eval => evalR, evalZ
 	end type
 	
 	interface function_t
@@ -130,7 +139,8 @@ module eval_mod
 	type,extends(node_t)::real_t
 		real(wp)::value
 	contains
-		procedure::eval => eval_real
+		procedure::evalR => evalR_real
+		procedure::evalZ => evalZ_real
 	end type
 	
 	interface real_t
@@ -141,7 +151,8 @@ module eval_mod
 	type,extends(node_t)::imag_t
 		real(wp)::value
 	contains
-		procedure::eval => eval_imag
+		procedure::evalR => evalR_imag
+		procedure::evalZ => evalZ_imag
 	end type
 	
 	interface imag_t
@@ -152,7 +163,8 @@ module eval_mod
 	type,extends(node_t)::var_t
 		integer::idx
 	contains
-		procedure::eval => eval_var
+		procedure::evalR => evalR_var
+		procedure::evalZ => evalZ_var
 	end type
 	
 	interface var_t
@@ -164,7 +176,8 @@ module eval_mod
 		class(node_t),allocatable::a
 		class(node_t),allocatable::b
 	contains
-		procedure::eval => eval_add
+		procedure::evalR => evalR_add
+		procedure::evalZ => evalZ_add
 	end type
 	
 	interface add_t
@@ -176,7 +189,8 @@ module eval_mod
 		class(node_t),allocatable::a
 		class(node_t),allocatable::b
 	contains
-		procedure::eval => eval_sub
+		procedure::evalR => evalR_sub
+		procedure::evalZ => evalZ_sub
 	end type
 	
 	interface sub_t
@@ -189,7 +203,8 @@ module eval_mod
 		class(node_t),allocatable::a
 		class(node_t),allocatable::b
 	contains
-		procedure::eval => eval_mul
+		procedure::evalR => evalR_mul
+		procedure::evalZ => evalZ_mul
 	end type
 	
 	interface mul_t
@@ -201,7 +216,8 @@ module eval_mod
 		class(node_t),allocatable::a
 		class(node_t),allocatable::b
 	contains
-		procedure::eval => eval_div
+		procedure::evalR => evalR_div
+		procedure::evalZ => evalZ_div
 	end type
 	
 	interface div_t
@@ -213,7 +229,8 @@ module eval_mod
 		class(node_t),allocatable::a
 		class(node_t),allocatable::b
 	contains
-		procedure::eval => eval_pow
+		procedure::evalR => evalR_pow
+		procedure::evalZ => evalZ_pow
 	end type
 	
 	interface pow_t
@@ -224,7 +241,8 @@ module eval_mod
 	type,extends(node_t)::neg_t
 		class(node_t),allocatable::a
 	contains
-		procedure::eval => eval_neg
+		procedure::evalR => evalR_neg
+		procedure::evalZ => evalZ_neg
 	end type
 	
 	interface neg_t
@@ -235,7 +253,8 @@ module eval_mod
 	type,extends(node_t)::sqrt_t
 		class(node_t),allocatable::a
 	contains
-		procedure::eval => eval_sqrt
+		procedure::evalR => evalR_sqrt
+		procedure::evalZ => evalZ_sqrt
 	end type
 	
 	interface sqrt_t
@@ -246,7 +265,8 @@ module eval_mod
 	type,extends(node_t)::exp_t
 		class(node_t),allocatable::a
 	contains
-		procedure::eval => eval_exp
+		procedure::evalR => evalR_exp
+		procedure::evalZ => evalZ_exp
 	end type
 	
 	interface exp_t
@@ -257,7 +277,8 @@ module eval_mod
 	type,extends(node_t)::log_t
 		class(node_t),allocatable::a
 	contains
-		procedure::eval => eval_log
+		procedure::evalR => evalR_log
+		procedure::evalZ => evalZ_log
 	end type
 	
 	interface log_t
@@ -268,7 +289,8 @@ module eval_mod
 	type,extends(node_t)::abs_t
 		class(node_t),allocatable::a
 	contains
-		procedure::eval => eval_abs
+		procedure::evalR => evalR_abs
+		procedure::evalZ => evalZ_abs
 	end type
 	
 	interface abs_t
@@ -279,7 +301,8 @@ module eval_mod
 	type,extends(node_t)::sin_t
 		class(node_t),allocatable::a
 	contains
-		procedure::eval => eval_sin
+		procedure::evalR => evalR_sin
+		procedure::evalZ => evalZ_sin
 	end type
 	
 	interface sin_t
@@ -290,7 +313,8 @@ module eval_mod
 	type,extends(node_t)::cos_t
 		class(node_t),allocatable::a
 	contains
-		procedure::eval => eval_cos
+		procedure::evalR => evalR_cos
+		procedure::evalZ => evalZ_cos
 	end type
 	
 	interface cos_t
@@ -301,7 +325,8 @@ module eval_mod
 	type,extends(node_t)::tan_t
 		class(node_t),allocatable::a
 	contains
-		procedure::eval => eval_tan
+		procedure::evalR => evalR_tan
+		procedure::evalZ => evalZ_tan
 	end type
 	
 	interface tan_t
@@ -312,7 +337,8 @@ module eval_mod
 	type,extends(node_t)::asin_t
 		class(node_t),allocatable::a
 	contains
-		procedure::eval => eval_asin
+		procedure::evalR => evalR_asin
+		procedure::evalZ => evalZ_asin
 	end type
 	
 	interface asin_t
@@ -323,7 +349,8 @@ module eval_mod
 	type,extends(node_t)::acos_t
 		class(node_t),allocatable::a
 	contains
-		procedure::eval => eval_acos
+		procedure::evalR => evalR_acos
+		procedure::evalZ => evalZ_acos
 	end type
 	
 	interface acos_t
@@ -334,7 +361,8 @@ module eval_mod
 	type,extends(node_t)::atan_t
 		class(node_t),allocatable::a
 	contains
-		procedure::eval => eval_atan
+		procedure::evalR => evalR_atan
+		procedure::evalZ => evalZ_atan
 	end type
 	
 	interface atan_t
@@ -345,7 +373,8 @@ module eval_mod
 	type,extends(node_t)::log10_t
 		class(node_t),allocatable::a
 	contains
-		procedure::eval => eval_log10
+		procedure::evalR => evalR_log10
+		procedure::evalZ => evalZ_log10
 	end type
 	
 	interface log10_t
@@ -384,7 +413,7 @@ contains
 		allocate(self%root,source=toTree( ex , ar%s ))
 	end function newFunction
 
-	function eval(self,a) result(o)
+	function evalR(self,a) result(o)
 		!! Evaluate a function with given arguments
 		class(function_t),intent(inout)::self
 			!! Function to evaluate
@@ -394,7 +423,19 @@ contains
 			!! Resultant value
 		
 		o = self%root%eval(a)
-	end function eval
+	end function evalR
+
+	function evalZ(self,a) result(o)
+		!! Evaluate a function with given arguments
+		class(function_t),intent(inout)::self
+			!! Function to evaluate
+		complex(wp),dimension(:),intent(in)::a
+			!! Argument values
+		complex(wp)::o
+			!! Resultant value
+		
+		o = self%root%eval(a)
+	end function evalZ
 
 	!========================!
 	!= nodeStack_t Routines =!
@@ -460,13 +501,21 @@ contains
 		self%value = value
 	end function newReal
 
-	function eval_real(self,args) result(o)
+	function evalR_real(self,args) result(o)
 		class(real_t),intent(in)::self
 		real(wp),dimension(:),intent(in)::args
 		real(wp)::o
 		
 		o = self%value
-	end function eval_real
+	end function evalR_real
+
+	function evalZ_real(self,args) result(o)
+		class(real_t),intent(in)::self
+		complex(wp),dimension(:),intent(in)::args
+		complex(wp)::o
+		
+		o = self%value
+	end function evalZ_real
 
 	! imag_t
 	function newImag(value) result(self)
@@ -476,13 +525,21 @@ contains
 		self%value = value
 	end function newImag
 
-	function eval_imag(self,args) result(o)
+	function evalR_imag(self,args) result(o)
 		class(imag_t),intent(in)::self
 		real(wp),dimension(:),intent(in)::args
 		real(wp)::o
 		
 		stop 'Imaginary number encountered in real evaluation'
-	end function eval_imag
+	end function evalR_imag
+
+	function evalZ_imag(self,args) result(o)
+		class(imag_t),intent(in)::self
+		complex(wp),dimension(:),intent(in)::args
+		complex(wp)::o
+		
+		o = self%value
+	end function evalZ_imag
 
 	! var_t
 	function newVar(idx) result(self)
@@ -492,7 +549,7 @@ contains
 		self%idx = idx
 	end function newVar
 
-	function eval_var(self,args) result(o)
+	function evalR_var(self,args) result(o)
 		class(var_t),intent(in)::self
 		real(wp),dimension(:),intent(in)::args
 		real(wp)::o
@@ -507,7 +564,24 @@ contains
 		end if
 		
 		o = args(self%idx)
-	end function eval_var
+	end function evalR_var
+
+	function evalZ_var(self,args) result(o)
+		class(var_t),intent(in)::self
+		complex(wp),dimension(:),intent(in)::args
+		complex(wp)::o
+		
+		integer::N
+		
+		N = size(args)
+		
+		if(self%idx>N) then
+			write(*,*) 'Invalid argument index: '//intToChar(self%idx)
+			stop 'Error in eval_var'
+		end if
+		
+		o = args(self%idx)
+	end function evalZ_var
 
 	! add_t
 	function newAdd(a,b) result(self)
@@ -519,14 +593,21 @@ contains
 		allocate(self%b,source=b)
 	end function newAdd
 
-	function eval_add(self,args) result(o)
+	function evalR_add(self,args) result(o)
 		class(add_t),intent(in)::self
 		real(wp),dimension(:),intent(in)::args
 		real(wp)::o
 		
 		o = self%a%eval(args)+self%b%eval(args)
-	end function eval_add
+	end function evalR_add
 
+	function evalZ_add(self,args) result(o)
+		class(add_t),intent(in)::self
+		complex(wp),dimension(:),intent(in)::args
+		complex(wp)::o
+		
+		o = self%a%eval(args)+self%b%eval(args)
+	end function evalZ_add
 
 	! sub_t
 	function newSub(a,b) result(self)
@@ -538,13 +619,21 @@ contains
 		allocate(self%b,source=b)
 	end function newSub
 
-	function eval_sub(self,args) result(o)
+	function evalR_sub(self,args) result(o)
 		class(sub_t),intent(in)::self
 		real(wp),dimension(:),intent(in)::args
 		real(wp)::o
 		
 		o = self%a%eval(args)-self%b%eval(args)
-	end function eval_sub
+	end function evalR_sub
+
+	function evalZ_sub(self,args) result(o)
+		class(sub_t),intent(in)::self
+		complex(wp),dimension(:),intent(in)::args
+		complex(wp)::o
+		
+		o = self%a%eval(args)-self%b%eval(args)
+	end function evalZ_sub
 
 	! mul_t
 	function newMul(a,b) result(self)
@@ -556,13 +645,21 @@ contains
 		allocate(self%b,source=b)
 	end function newMul
 
-	function eval_mul(self,args) result(o)
+	function evalR_mul(self,args) result(o)
 		class(mul_t),intent(in)::self
 		real(wp),dimension(:),intent(in)::args
 		real(wp)::o
 		
 		o = self%a%eval(args)*self%b%eval(args)
-	end function eval_mul
+	end function evalR_mul
+
+	function evalZ_mul(self,args) result(o)
+		class(mul_t),intent(in)::self
+		complex(wp),dimension(:),intent(in)::args
+		complex(wp)::o
+		
+		o = self%a%eval(args)*self%b%eval(args)
+	end function evalZ_mul
 
 	! div_t
 	function newDiv(a,b) result(self)
@@ -574,13 +671,21 @@ contains
 		allocate(self%b,source=b)
 	end function newDiv
 
-	function eval_div(self,args) result(o)
+	function evalR_div(self,args) result(o)
 		class(div_t),intent(in)::self
 		real(wp),dimension(:),intent(in)::args
 		real(wp)::o
 		
 		o = self%a%eval(args)/self%b%eval(args)
-	end function eval_div
+	end function evalR_div
+
+	function evalZ_div(self,args) result(o)
+		class(div_t),intent(in)::self
+		complex(wp),dimension(:),intent(in)::args
+		complex(wp)::o
+		
+		o = self%a%eval(args)/self%b%eval(args)
+	end function evalZ_div
 
 	! pow_t
 	function newPow(a,b) result(self)
@@ -592,13 +697,21 @@ contains
 		allocate(self%b,source=b)
 	end function newPow
 
-	function eval_pow(self,args) result(o)
+	function evalR_pow(self,args) result(o)
 		class(pow_t),intent(in)::self
 		real(wp),dimension(:),intent(in)::args
 		real(wp)::o
 		
 		o = self%a%eval(args)**self%b%eval(args)
-	end function eval_pow
+	end function evalR_pow
+
+	function evalZ_pow(self,args) result(o)
+		class(pow_t),intent(in)::self
+		complex(wp),dimension(:),intent(in)::args
+		complex(wp)::o
+		
+		o = self%a%eval(args)**self%b%eval(args)
+	end function evalZ_pow
 
 	! neg_t
 	function newNeg(a) result(self)
@@ -608,13 +721,21 @@ contains
 		allocate(self%a,source=a)
 	end function newNeg
 
-	function eval_neg(self,args) result(o)
+	function evalR_neg(self,args) result(o)
 		class(neg_t),intent(in)::self
 		real(wp),dimension(:),intent(in)::args
 		real(wp)::o
 		
 		o = -self%a%eval(args)
-	end function eval_neg
+	end function evalR_neg
+
+	function evalZ_neg(self,args) result(o)
+		class(neg_t),intent(in)::self
+		complex(wp),dimension(:),intent(in)::args
+		complex(wp)::o
+		
+		o = -self%a%eval(args)
+	end function evalZ_neg
 
 	! sqrt_t
 	function newSqrt(a) result(self)
@@ -624,13 +745,21 @@ contains
 		allocate(self%a,source=a)
 	end function newSqrt
 
-	function eval_sqrt(self,args) result(o)
+	function evalR_sqrt(self,args) result(o)
 		class(sqrt_t),intent(in)::self
 		real(wp),dimension(:),intent(in)::args
 		real(wp)::o
 		
 		o = sqrt( self%a%eval(args) )
-	end function eval_sqrt
+	end function evalR_sqrt
+
+	function evalZ_sqrt(self,args) result(o)
+		class(sqrt_t),intent(in)::self
+		complex(wp),dimension(:),intent(in)::args
+		complex(wp)::o
+		
+		o = sqrt( self%a%eval(args) )
+	end function evalZ_sqrt
 
 	! exp_t
 	function newExp(a) result(self)
@@ -640,13 +769,21 @@ contains
 		allocate(self%a,source=a)
 	end function newExp
 
-	function eval_exp(self,args) result(o)
+	function evalR_exp(self,args) result(o)
 		class(exp_t),intent(in)::self
 		real(wp),dimension(:),intent(in)::args
 		real(wp)::o
 		
 		o = exp( self%a%eval(args) )
-	end function eval_exp
+	end function evalR_exp
+
+	function evalZ_exp(self,args) result(o)
+		class(exp_t),intent(in)::self
+		complex(wp),dimension(:),intent(in)::args
+		complex(wp)::o
+		
+		o = exp( self%a%eval(args) )
+	end function evalZ_exp
 
 	! log_t
 	function newLog(a) result(self)
@@ -656,13 +793,21 @@ contains
 		allocate(self%a,source=a)
 	end function newLog
 
-	function eval_log(self,args) result(o)
+	function evalR_log(self,args) result(o)
 		class(log_t),intent(in)::self
 		real(wp),dimension(:),intent(in)::args
 		real(wp)::o
 		
 		o = log( self%a%eval(args) )
-	end function eval_log
+	end function evalR_log
+
+	function evalZ_log(self,args) result(o)
+		class(log_t),intent(in)::self
+		complex(wp),dimension(:),intent(in)::args
+		complex(wp)::o
+		
+		o = log( self%a%eval(args) )
+	end function evalZ_log
 
 	! abs_t
 	function newAbs(a) result(self)
@@ -672,13 +817,21 @@ contains
 		allocate(self%a,source=a)
 	end function newAbs
 
-	function eval_abs(self,args) result(o)
+	function evalR_abs(self,args) result(o)
 		class(abs_t),intent(in)::self
 		real(wp),dimension(:),intent(in)::args
 		real(wp)::o
 		
 		o = abs( self%a%eval(args) )
-	end function eval_abs
+	end function evalR_abs
+
+	function evalZ_abs(self,args) result(o)
+		class(abs_t),intent(in)::self
+		complex(wp),dimension(:),intent(in)::args
+		complex(wp)::o
+		
+		o = abs( self%a%eval(args) )
+	end function evalZ_abs
 
 	! sin_t
 	function newSin(a) result(self)
@@ -688,13 +841,21 @@ contains
 		allocate(self%a,source=a)
 	end function newSin
 
-	function eval_sin(self,args) result(o)
+	function evalR_sin(self,args) result(o)
 		class(sin_t),intent(in)::self
 		real(wp),dimension(:),intent(in)::args
 		real(wp)::o
 		
 		o = sin( self%a%eval(args) )
-	end function eval_sin
+	end function evalR_sin
+
+	function evalZ_sin(self,args) result(o)
+		class(sin_t),intent(in)::self
+		complex(wp),dimension(:),intent(in)::args
+		complex(wp)::o
+		
+		o = sin( self%a%eval(args) )
+	end function evalZ_sin
 
 	! cos_t
 	function newCos(a) result(self)
@@ -704,13 +865,21 @@ contains
 		allocate(self%a,source=a)
 	end function newCos
 
-	function eval_cos(self,args) result(o)
+	function evalR_cos(self,args) result(o)
 		class(cos_t),intent(in)::self
 		real(wp),dimension(:),intent(in)::args
 		real(wp)::o
 		
 		o = cos( self%a%eval(args) )
-	end function eval_cos
+	end function evalR_cos
+
+	function evalZ_cos(self,args) result(o)
+		class(cos_t),intent(in)::self
+		complex(wp),dimension(:),intent(in)::args
+		complex(wp)::o
+		
+		o = cos( self%a%eval(args) )
+	end function evalZ_cos
 
 	! tan_t
 	function newTan(a) result(self)
@@ -720,13 +889,21 @@ contains
 		allocate(self%a,source=a)
 	end function newTan
 
-	function eval_tan(self,args) result(o)
+	function evalR_tan(self,args) result(o)
 		class(tan_t),intent(in)::self
 		real(wp),dimension(:),intent(in)::args
 		real(wp)::o
 		
 		o = tan( self%a%eval(args) )
-	end function eval_tan
+	end function evalR_tan
+
+	function evalZ_tan(self,args) result(o)
+		class(tan_t),intent(in)::self
+		complex(wp),dimension(:),intent(in)::args
+		complex(wp)::o
+		
+		o = tan( self%a%eval(args) )
+	end function evalZ_tan
 
 	! asin_t
 	function newAsin(a) result(self)
@@ -736,13 +913,21 @@ contains
 		allocate(self%a,source=a)
 	end function newAsin
 
-	function eval_asin(self,args) result(o)
+	function evalR_asin(self,args) result(o)
 		class(asin_t),intent(in)::self
 		real(wp),dimension(:),intent(in)::args
 		real(wp)::o
 		
 		o = asin( self%a%eval(args) )
-	end function eval_asin
+	end function evalR_asin
+
+	function evalZ_asin(self,args) result(o)
+		class(asin_t),intent(in)::self
+		complex(wp),dimension(:),intent(in)::args
+		complex(wp)::o
+		
+		o = asin( self%a%eval(args) )
+	end function evalZ_asin
 
 	! acos_t
 	function newAcos(a) result(self)
@@ -752,13 +937,21 @@ contains
 		allocate(self%a,source=a)
 	end function newAcos
 
-	function eval_acos(self,args) result(o)
+	function evalR_acos(self,args) result(o)
 		class(acos_t),intent(in)::self
 		real(wp),dimension(:),intent(in)::args
 		real(wp)::o
 		
 		o = acos( self%a%eval(args) )
-	end function eval_acos
+	end function evalR_acos
+
+	function evalZ_acos(self,args) result(o)
+		class(acos_t),intent(in)::self
+		complex(wp),dimension(:),intent(in)::args
+		complex(wp)::o
+		
+		o = acos( self%a%eval(args) )
+	end function evalZ_acos
 
 	! atan_t
 	function newAtan(a) result(self)
@@ -768,13 +961,21 @@ contains
 		allocate(self%a,source=a)
 	end function newAtan
 
-	function eval_atan(self,args) result(o)
+	function evalR_atan(self,args) result(o)
 		class(atan_t),intent(in)::self
 		real(wp),dimension(:),intent(in)::args
 		real(wp)::o
 		
 		o = atan( self%a%eval(args) )
-	end function eval_atan
+	end function evalR_atan
+
+	function evalZ_atan(self,args) result(o)
+		class(atan_t),intent(in)::self
+		complex(wp),dimension(:),intent(in)::args
+		complex(wp)::o
+		
+		o = atan( self%a%eval(args) )
+	end function evalZ_atan
 
 	! log10_t
 	function newLog10(a) result(self)
@@ -784,13 +985,21 @@ contains
 		allocate(self%a,source=a)
 	end function newLog10
 
-	function eval_log10(self,args) result(o)
+	function evalR_log10(self,args) result(o)
 		class(log10_t),intent(in)::self
 		real(wp),dimension(:),intent(in)::args
 		real(wp)::o
 		
 		o = log10( self%a%eval(args) )
-	end function eval_log10
+	end function evalR_log10
+
+	function evalZ_log10(self,args) result(o)
+		class(log10_t),intent(in)::self
+		complex(wp),dimension(:),intent(in)::args
+		complex(wp)::o
+		
+		stop 'Log of complex argument not supported'
+	end function evalZ_log10
 
 	!====================!
 	!= token_t Routines =!
