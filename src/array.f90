@@ -38,6 +38,8 @@ module array_mod
 	interface solveLU
 		module procedure solveLU_s
 		module procedure solveLU_m
+		module procedure solveLU_sZ
+		module procedure solveLU_mZ
 	end interface
 	
 	!===========!
@@ -435,6 +437,33 @@ contains
 		LU = LU(p,:)
 	end subroutine decomposeLU
 
+	subroutine decomposeLU_z(A,LU,p)
+		!! Shamelessly adapted from Rosetta Code
+		!!
+		!! L -> j<i , L(i,i) = 1
+		!! U -> j>=i
+		complex(wp),dimension(:,:),intent(in)::A
+		complex(wp),dimension(:,:),allocatable,intent(inout):: LU
+		integer,dimension(:),allocatable,intent(inout)::p
+		integer::N,j,i,m
+		
+		LU = A
+		
+		N = size(A,1)
+		p = [( i , i=1,N )]
+		do i=1,N-1
+			m = maxloc( abs( LU(p(i:),i) ) , 1 ) + (i-1)
+			
+			if(m/=i) p([i,m]) = p([m,i])
+			
+			LU(p(i+1:),i) = LU(p(i+1:),i) / LU(p(i),i)
+			
+			forall(j=i+1:N) LU(p(i+1:),j) = LU(p(i+1:),j) - LU(p(i+1:),i) * LU(p(i),j)
+		end do
+		
+		LU = LU(p,:)
+	end subroutine decomposeLU_z
+
 	function applyLU(LU,p,b) result(x)
 		real(wp),dimension(:,:),intent(in)::LU
 		integer,dimension(:),intent(in)::p
@@ -463,6 +492,36 @@ contains
 			x(i) = ( r(i)-dot_product(LU(i,i+1:N),x(i+1:N)) )/LU(i,i)
 		end do
 	end function applyLU
+
+
+	function applyLU_z(LU,p,b) result(x)
+		complex(wp),dimension(:,:),intent(in)::LU
+		integer,dimension(:),intent(in)::p
+		complex(wp),dimension(:),intent(in)::b
+		complex(wp),dimension(:),allocatable::x
+		
+		complex(wp),dimension(:),allocatable::pb
+		complex(wp),dimension(:),allocatable::r
+		integer::N,i
+		
+		N  = size(b)
+		allocate(r(N),x(N),pb(N))
+		r  = 0.0_wp
+		x  = 0.0_wp
+		pb = b(p)
+		
+		! L.r=pb
+		r(1) = pb(1)
+		do i=2,N,+1
+			r(i) = pb(i)-dot_product(LU(i,1:i-1),r(1:i-1))
+		end do
+		
+		! U.x=r
+		x(N) = r(N)/LU(N,N)
+		do i=N-1,1,-1
+			x(i) = ( r(i)-dot_product(LU(i,i+1:N),x(i+1:N)) )/LU(i,i)
+		end do
+	end function applyLU_z
 
 	function solveLU_s(A,b) result(x)
 		real(wp),dimension(:,:),intent(in)::A
@@ -494,6 +553,37 @@ contains
 			x(:,k) = applyLU(LU,p,b(:,k))
 		end do
 	end function solveLU_m
+
+	function solveLU_sZ(A,b) result(x)
+		complex(wp),dimension(:,:),intent(in)::A
+		complex(wp),dimension(:),intent(in)::b
+		complex(wp),dimension(:),allocatable::x
+		
+		complex(wp),dimension(:,:),allocatable::LU
+		integer,dimension(:),allocatable::p
+		
+		call decomposeLU_z(A,LU,p)
+		
+		x = applyLU_z(LU,p,b)
+	end function solveLU_sZ
+
+	function solveLU_mZ(A,b) result(x)
+		complex(wp),dimension(:,:),intent(in)::A
+		complex(wp),dimension(:,:),intent(in)::b
+		complex(wp),dimension(:,:),allocatable::x
+		
+		complex(wp),dimension(:,:),allocatable::LU
+		integer,dimension(:),allocatable::p
+		integer::k
+		
+		call decomposeLU_z(A,LU,p)
+		
+		allocate(x,mold=b)
+		
+		do k=1,size(b,2)
+			x(:,k) = applyLU_z(LU,p,b(:,k))
+		end do
+	end function solveLU_mZ
 
 	!========================!
 	!= Linear Interpolation =!
