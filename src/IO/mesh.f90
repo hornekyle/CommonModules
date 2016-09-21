@@ -24,7 +24,7 @@ module mesh_mod
 		!! Element type for a 3-node edge
 	
 	integer,parameter::GT_EDGE_3  = 26
-	integer,parameter::VT_EDGE_3  = -1
+	integer,parameter::VT_EDGE_3  = -1 ! Unsupported by VTK
 	integer,parameter::ET_EDGE_3  = 23
 		!! Element type for a 4-node edge
 	
@@ -39,7 +39,7 @@ module mesh_mod
 		!! Element type for a 6-node triangle
 	
 	integer,parameter::GT_TRIANGLE_3 = 21
-	integer,parameter::VT_TRIANGLE_3 = -1
+	integer,parameter::VT_TRIANGLE_3 = -1 ! Unsupported by VTK
 	integer,parameter::ET_TRIANGLE_3 = 33
 		!! Element type for a 10-node triangle
 	
