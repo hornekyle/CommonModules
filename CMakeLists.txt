@@ -1,9 +1,8 @@
 cmake_minimum_required(VERSION 3.0)
 enable_language(Fortran)
 
-
 project(CommonModules
-	VERSION "0.1.1")
+	VERSION "0.2.1")
 enable_testing()
 
 #=======================#

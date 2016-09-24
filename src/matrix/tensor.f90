@@ -2,6 +2,9 @@ module tensor_mod
 	!! Module for working with tensors
 	!! @note
 	!! Array size must be specific (either 2 or 3) for this to work!
+	!!
+	!! @todo
+	!! Extend to complex numbers
 	use kinds_mod
 	implicit none
 	private
