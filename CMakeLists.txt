@@ -104,9 +104,12 @@ set(modules_src
 	"src/spline.f90"
 	"src/stats.f90"
 	"src/time.f90"
-	"src/expression/eval.f90"
+	"src/expression/expression.f90"
 	"src/expression/node.f90"
-	"src/expression/tree.f90"
+	"src/expression/treeExponential.f90"
+	"src/expression/treeOperator.f90"
+	"src/expression/treeTrigonometric.f90"
+	"src/expression/treeValue.f90"
 	"src/IO/config.f90"
 	"src/IO/matIO.f90"
 	"src/IO/mesh.f90"
@@ -187,15 +190,15 @@ if(NETCDF_FOUND)
 endif(NETCDF_FOUND)
 
 if(PLPLOT_FOUND)
-	addTest("testEval")
+	addTest("testExpression")
 	addTest("testOptimize")
 	addTest("testSparse")
 	addTest("testSpline")
 	
-	target_link_libraries(testEval     ${PLPLOT_LIBRARIES})
-	target_link_libraries(testOptimize ${PLPLOT_LIBRARIES})
-	target_link_libraries(testSparse   ${PLPLOT_LIBRARIES})
-	target_link_libraries(testSpline   ${PLPLOT_LIBRARIES})
+	target_link_libraries(testExpression ${PLPLOT_LIBRARIES})
+	target_link_libraries(testOptimize   ${PLPLOT_LIBRARIES})
+	target_link_libraries(testSparse     ${PLPLOT_LIBRARIES})
+	target_link_libraries(testSpline     ${PLPLOT_LIBRARIES})
 endif(PLPLOT_FOUND)
 
 if(EXECUTABLE_GMSH)

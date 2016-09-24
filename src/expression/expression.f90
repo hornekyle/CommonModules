@@ -1,10 +1,13 @@
-module eval_mod
+module expression_mod
 	!! Module for dynamic evaluation of function expressions
 	!! @todo
 	!! Add ability to take derivative
 	use kinds_mod
 	use node_mod
-	use tree_mod
+	use treeValue_mod
+	use treeOperator_mod
+	use treeExponential_mod
+	use treeTrigonometric_mod
 	implicit none
 	private
 	
@@ -166,4 +169,4 @@ contains
 		allocate( o,source=stk%pop() )
 	end function toTree
 
-end module eval_mod
+end module expression_mod

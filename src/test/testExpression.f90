@@ -1,7 +1,7 @@
 program testEval_prg
 	!! Test program for eval_mod
 	use kinds_mod
-	use eval_mod
+	use expression_mod
 	use array_mod
 	use plplotlib_mod
 	implicit none
@@ -12,7 +12,7 @@ contains
 
 	subroutine testFunction
 		!! Verify operation of newFunction and eval
-		call setup(fileName='testsEval-%n.svg',figSize=[400,300])
+		call setup(fileName='testsExpression-%n.svg',figSize=[400,300])
 		
 ! 		call doFunction('f(x) = x+1j',[-2.0_wp,2.0_wp])
 		
