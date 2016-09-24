@@ -1,0 +1,1639 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	 
+	 <meta name="description" content="Common modules for using in other programs">
+    
+    <meta name="author" content="Chris MacMackin" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>array.f90 &ndash; CommonModules</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+    
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+
+    
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">CommonModules </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+				
+            <li><a href='../page/index.html'>Instructions</a></li>
+	    
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+              data-toggle="dropdown" role="button"
+              aria-haspopup="true"
+		 aria-expanded="false">Contents <span class="caret"></span></a>
+	      <ul class="dropdown-menu">
+              
+            <li><a href="../lists/files.html">Source Files</a></li>
+				
+				
+            <li><a href="../lists/modules.html">Modules</a></li>
+				
+            
+                                
+            <li><a href="../lists/procedures.html">Procedures</a></li>
+				
+								
+            <li><a href="../lists/types.html">Derived Types</a></li>
+				
+				
+            <li><a href="../lists/programs.html">Programs</a></li>
+				
+            </ul>
+            </li>
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
+
+                             
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/programs.html">Programs</a></li>
+
+          </ul>
+        
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    
+  
+  <div class="row">
+    <h1>array.f90
+    <small>Source File</small>
+    
+    </h1>
+    
+<div class="row">
+  <div class="col-lg-12">
+<div class="well well-sm">
+  <ul class="list-inline" style="margin-bottom:0px;display:inline">
+     
+     
+     
+     
+    
+    
+     <li><i class="fa fa-list-ol"></i>
+       <a data-toggle="tooltip"
+	  data-placement="bottom" data-html="true"
+	  title="34.4% of total for source files.">418 statements</a>
+     </li> 
+     
+     
+    <li><i class="fa fa-code"></i><a href="../src/array.f90"> Source File</a></li>
+     
+  </ul>
+  <ol class="breadcrumb in-well text-right">
+  
+     <li class="active">array.f90</li>
+  </ol>
+</div>
+</div>
+</div>
+<script>
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+
+  </div>
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+    
+<div id="sidebar">
+  
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#mods-0">Modules</a></h3></div>
+  <div id="mods-0" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/array_mod.html">array_mod</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../sourcefile/array.f90.html#src">array.f90</a>
+  </div>
+</div>
+
+
+  <hr>
+  
+
+<div class="panel panel-default">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#allfiles-0">All Source Files</a></h3></div>
+  <div id="allfiles-0" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../sourcefile/animate.f90.html">animate.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/array.f90.html">array.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/autodiff.f90.html">autoDiff.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/basic.f90.html">basic.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/basicsolvers.f90.html">basicSolvers.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/config.f90.html">config.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/examples.f90.html">examples.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/expression.f90.html">expression.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/fourier.f90.html">fourier.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/iterate.f90.html">iterate.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/kinds.f90.html">kinds.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/logo.f90.html">logo.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/matio.f90.html">matIO.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/mesh.f90.html">mesh.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/netcdf.f90.html">netCDF.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/node.f90.html">node.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/optimize.f90.html">optimize.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/plplotlib.f90.html">plplotlib.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/quaternion.f90.html">quaternion.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/solvers.f90.html">solvers.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/sparse.f90.html">sparse.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/spline.f90.html">spline.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/stats.f90.html">stats.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/tensor.f90.html">tensor.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testarray.f90.html">testArray.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testautodiff.f90.html">testAutoDiff.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testconfig.f90.html">testConfig.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testexpression.f90.html">testExpression.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testfourier.f90.html">testFourier.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testiterate.f90.html">testIterate.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testkinds.f90.html">testKinds.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testmatio.f90.html">testMatIO.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testmesh.f90.html">testMesh.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testnetcdf.f90.html">testNetCDF.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testoptimize.f90.html">testOptimize.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testquaternion.f90.html">testQuaternion.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testsparse.f90.html">testSparse.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testspline.f90.html">testSpline.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/teststats.f90.html">testStats.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testtensor.f90.html">testTensor.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testtext.f90.html">testText.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testtime.f90.html">testTime.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testvtkio.f90.html">testVtkIO.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/text.f90.html">text.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/time.f90.html">time.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/treeexponential.f90.html">treeExponential.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/treeoperator.f90.html">treeOperator.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/treetrigonometric.f90.html">treeTrigonometric.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/treevalue.f90.html">treeValue.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/vtkio.f90.html">vtkIO.f90</a>
+      
+    </div>
+  </div>
+</div>
+
+
+</div>  
+
+    </div>
+    <div class="col-md-9" id='text'>
+    
+    
+    <h3>This File Depends On</h3>
+    
+                <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.38.0 (20140413.2041)
+ -->
+<!-- Title: sourcefile~~array.f90~~EfferentGraph Pages: 1 -->
+<svg id="sourcefilearrayf90EfferentGraph" width="154pt" height="32pt"
+ viewBox="0.00 0.00 154.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="sourcefile~~array.f90~~EfferentGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>sourcefile~~array.f90~~EfferentGraph</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-28 150,-28 150,4 -4,4"/>
+<!-- sourcefile~array.f90 -->
+<g id="sourcefile~~array.f90~~EfferentGraph_node1" class="node"><title>sourcefile~array.f90</title>
+<polygon fill="none" stroke="black" points="146,-24 91,-24 91,-0 146,-0 146,-24"/>
+<text text-anchor="middle" x="118.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">array.f90</text>
+</g>
+<!-- sourcefile~kinds.f90 -->
+<g id="sourcefile~~array.f90~~EfferentGraph_node2" class="node"><title>sourcefile~kinds.f90</title>
+<g id="a_sourcefile~~array.f90~~EfferentGraph_node2"><a xlink:href="../sourcefile/kinds.f90.html" xlink:title="kinds.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="55,-24 0,-24 0,-0 55,-0 55,-24"/>
+<text text-anchor="middle" x="27.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">kinds.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~kinds.f90&#45;&gt;sourcefile~array.f90 -->
+<g id="sourcefile~~array.f90~~EfferentGraph_edge1" class="edge"><title>sourcefile~kinds.f90&#45;&gt;sourcefile~array.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M55.2029,-12C63.2113,-12 72.1403,-12 80.6802,-12"/>
+<polygon fill="#000000" stroke="#000000" points="80.8159,-15.5001 90.8159,-12 80.8159,-8.5001 80.8159,-15.5001"/>
+</g>
+</g>
+</svg>
+</div>
+                <div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div>
+                <div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                      </div>
+                      <div class="modal-body">
+                        
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.38.0 (20140413.2041)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="190pt" height="32pt"
+ viewBox="0.00 0.00 190.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-28 186,-28 186,4 -4,4"/>
+<!-- Source File -->
+<g id="node1" class="node"><title>Source File</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="67,-24 0,-24 0,-0 67,-0 67,-24"/>
+<text text-anchor="middle" x="33.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Source File</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node2" class="node"><title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="182,-24 85,-24 85,-0 182,-0 182,-24"/>
+<text text-anchor="middle" x="133.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+
+<p>Solid arrows point from a file to a file which depends upon it. A file 
+is dependent upon another if the latter must be compiled before the former
+can be.
+</p>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+    
+      
+      <h3>Files Dependent On This One</h3>
+      
+                <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.38.0 (20140413.2041)
+ -->
+<!-- Title: sourcefile~~array.f90~~AfferentGraph Pages: 1 -->
+<svg id="sourcefilearrayf90AfferentGraph" width="439pt" height="581pt"
+ viewBox="0.00 0.00 439.00 581.12" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="sourcefile~~array.f90~~AfferentGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 577.119)">
+<title>sourcefile~~array.f90~~AfferentGraph</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-577.119 435,-577.119 435,4 -4,4"/>
+<!-- sourcefile~array.f90 -->
+<g id="sourcefile~~array.f90~~AfferentGraph_node1" class="node"><title>sourcefile~array.f90</title>
+<polygon fill="none" stroke="black" points="55,-248 0,-248 0,-224 55,-224 55,-248"/>
+<text text-anchor="middle" x="27.5" y="-233.6" font-family="Helvetica,sans-Serif" font-size="10.50">array.f90</text>
+</g>
+<!-- sourcefile~basic.f90 -->
+<g id="sourcefile~~array.f90~~AfferentGraph_node2" class="node"><title>sourcefile~basic.f90</title>
+<g id="a_sourcefile~~array.f90~~AfferentGraph_node2"><a xlink:href="../sourcefile/basic.f90.html" xlink:title="basic.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="290.5,-455 235.5,-455 235.5,-431 290.5,-431 290.5,-455"/>
+<text text-anchor="middle" x="263" y="-440.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">basic.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~array.f90&#45;&gt;sourcefile~basic.f90 -->
+<g id="sourcefile~~array.f90~~AfferentGraph_edge16" class="edge"><title>sourcefile~array.f90&#45;&gt;sourcefile~basic.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M135,-401C163.716,-416.643 199.264,-427.784 225.442,-434.643"/>
+<polygon fill="#000000" stroke="#000000" points="224.78,-438.086 235.333,-437.149 226.499,-431.3 224.78,-438.086"/>
+</g>
+<!-- sourcefile~plplotlib.f90 -->
+<g id="sourcefile~~array.f90~~AfferentGraph_node3" class="node"><title>sourcefile~plplotlib.f90</title>
+<g id="a_sourcefile~~array.f90~~AfferentGraph_node3"><a xlink:href="../sourcefile/plplotlib.f90.html" xlink:title="plplotlib.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="167.5,-348 100.5,-348 100.5,-324 167.5,-324 167.5,-348"/>
+<text text-anchor="middle" x="134" y="-333.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">plplotlib.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~array.f90&#45;&gt;sourcefile~plplotlib.f90 -->
+<g id="sourcefile~~array.f90~~AfferentGraph_edge17" class="edge"><title>sourcefile~array.f90&#45;&gt;sourcefile~plplotlib.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M36.8105,-248.03C47.9341,-263.569 68.8459,-290.885 91,-310 94.2871,-312.836 97.9166,-315.567 101.625,-318.124"/>
+<polygon fill="#000000" stroke="#000000" points="99.9988,-321.241 110.295,-323.741 103.805,-315.366 99.9988,-321.241"/>
+</g>
+<!-- sourcefile~examples.f90 -->
+<g id="sourcefile~~array.f90~~AfferentGraph_node4" class="node"><title>sourcefile~examples.f90</title>
+<g id="a_sourcefile~~array.f90~~AfferentGraph_node4"><a xlink:href="../sourcefile/examples.f90.html" xlink:title="examples.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="301,-413 225,-413 225,-389 301,-389 301,-413"/>
+<text text-anchor="middle" x="263" y="-398.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">examples.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~array.f90&#45;&gt;sourcefile~examples.f90 -->
+<g id="sourcefile~~array.f90~~AfferentGraph_edge18" class="edge"><title>sourcefile~array.f90&#45;&gt;sourcefile~examples.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M135,-401C159.08,-414.118 189.736,-414.49 214.896,-411.405"/>
+<polygon fill="#000000" stroke="#000000" points="215.552,-414.847 224.951,-409.957 214.554,-407.918 215.552,-414.847"/>
+</g>
+<!-- sourcefile~logo.f90 -->
+<g id="sourcefile~~array.f90~~AfferentGraph_node5" class="node"><title>sourcefile~logo.f90</title>
+<g id="a_sourcefile~~array.f90~~AfferentGraph_node5"><a xlink:href="../sourcefile/logo.f90.html" xlink:title="logo.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="290,-371 236,-371 236,-347 290,-347 290,-371"/>
+<text text-anchor="middle" x="263" y="-356.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">logo.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~array.f90&#45;&gt;sourcefile~logo.f90 -->
+<g id="sourcefile~~array.f90~~AfferentGraph_edge19" class="edge"><title>sourcefile~array.f90&#45;&gt;sourcefile~logo.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M31.7455,-248.13C41.0802,-280.265 71.3635,-367.423 133,-401"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M135,-401C143.249,-405.493 191.796,-387.532 226.411,-373.704"/>
+<polygon fill="#000000" stroke="#000000" points="227.794,-376.92 235.76,-369.935 225.176,-370.428 227.794,-376.92"/>
+</g>
+<!-- sourcefile~testsparse.f90 -->
+<g id="sourcefile~~array.f90~~AfferentGraph_node6" class="node"><title>sourcefile~testsparse.f90</title>
+<g id="a_sourcefile~~array.f90~~AfferentGraph_node6"><a xlink:href="../sourcefile/testsparse.f90.html" xlink:title="testSparse.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="431,-518 349,-518 349,-494 431,-494 431,-518"/>
+<text text-anchor="middle" x="390" y="-503.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">testSparse.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~array.f90&#45;&gt;sourcefile~testsparse.f90 -->
+<g id="sourcefile~~array.f90~~AfferentGraph_edge20" class="edge"><title>sourcefile~array.f90&#45;&gt;sourcefile~testsparse.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M29.4148,-248.206C33.4035,-298.143 50.9043,-486.167 91,-527 145.686,-582.691 184.402,-575.398 262,-567"/>
+</g>
+<!-- sourcefile~testnetcdf.f90 -->
+<g id="sourcefile~~array.f90~~AfferentGraph_node7" class="node"><title>sourcefile~testnetcdf.f90</title>
+<g id="a_sourcefile~~array.f90~~AfferentGraph_node7"><a xlink:href="../sourcefile/testnetcdf.f90.html" xlink:title="testNetCDF.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="177,-108 91,-108 91,-84 177,-84 177,-108"/>
+<text text-anchor="middle" x="134" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">testNetCDF.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~array.f90&#45;&gt;sourcefile~testnetcdf.f90 -->
+<g id="sourcefile~~array.f90~~AfferentGraph_edge21" class="edge"><title>sourcefile~array.f90&#45;&gt;sourcefile~testnetcdf.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M32.8037,-223.733C41.1431,-201.342 61.3318,-153.278 91,-122 93.7757,-119.074 96.949,-116.345 100.28,-113.84"/>
+<polygon fill="#000000" stroke="#000000" points="102.442,-116.603 108.75,-108.09 98.5103,-110.812 102.442,-116.603"/>
+</g>
+<!-- sourcefile~testarray.f90 -->
+<g id="sourcefile~~array.f90~~AfferentGraph_node8" class="node"><title>sourcefile~testarray.f90</title>
+<g id="a_sourcefile~~array.f90~~AfferentGraph_node8"><a xlink:href="../sourcefile/testarray.f90.html" xlink:title="testArray.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="170.5,-66 97.5,-66 97.5,-42 170.5,-42 170.5,-66"/>
+<text text-anchor="middle" x="134" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">testArray.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~array.f90&#45;&gt;sourcefile~testarray.f90 -->
+<g id="sourcefile~~array.f90~~AfferentGraph_edge22" class="edge"><title>sourcefile~array.f90&#45;&gt;sourcefile~testarray.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M30.1574,-223.941C34.73,-194.87 50.0158,-120.001 91,-75 91.8646,-74.0507 92.7817,-73.1387 93.7417,-72.2631"/>
+<polygon fill="#000000" stroke="#000000" points="95.8722,-75.0403 101.779,-66.2447 91.6763,-69.4372 95.8722,-75.0403"/>
+</g>
+<!-- sourcefile~testvtkio.f90 -->
+<g id="sourcefile~~array.f90~~AfferentGraph_node9" class="node"><title>sourcefile~testvtkio.f90</title>
+<g id="a_sourcefile~~array.f90~~AfferentGraph_node9"><a xlink:href="../sourcefile/testvtkio.f90.html" xlink:title="testVtkIO.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="171,-24 97,-24 97,-0 171,-0 171,-24"/>
+<text text-anchor="middle" x="134" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">testVtkIO.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~array.f90&#45;&gt;sourcefile~testvtkio.f90 -->
+<g id="sourcefile~~array.f90~~AfferentGraph_edge23" class="edge"><title>sourcefile~array.f90&#45;&gt;sourcefile~testvtkio.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M29.0085,-223.931C31.0488,-189.895 41.1788,-91.8017 91,-33 91.83,-32.0204 92.7169,-31.0818 93.6505,-30.1829"/>
+<polygon fill="#000000" stroke="#000000" points="95.8012,-32.9442 101.554,-24.0471 91.5085,-27.4149 95.8012,-32.9442"/>
+</g>
+<!-- sourcefile~testoptimize.f90 -->
+<g id="sourcefile~~array.f90~~AfferentGraph_node10" class="node"><title>sourcefile~testoptimize.f90</title>
+<g id="a_sourcefile~~array.f90~~AfferentGraph_node10"><a xlink:href="../sourcefile/testoptimize.f90.html" xlink:title="testOptimize.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="308,-249 218,-249 218,-225 308,-225 308,-249"/>
+<text text-anchor="middle" x="263" y="-234.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">testOptimize.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~array.f90&#45;&gt;sourcefile~testoptimize.f90 -->
+<g id="sourcefile~~array.f90~~AfferentGraph_edge24" class="edge"><title>sourcefile~array.f90&#45;&gt;sourcefile~testoptimize.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M135,-216C160.489,-213.627 188.595,-217.583 211.873,-222.678"/>
+<polygon fill="#000000" stroke="#000000" points="211.333,-226.146 221.866,-224.998 212.917,-219.327 211.333,-226.146"/>
+</g>
+<!-- sourcefile~optimize.f90 -->
+<g id="sourcefile~~array.f90~~AfferentGraph_node11" class="node"><title>sourcefile~optimize.f90</title>
+<g id="a_sourcefile~~array.f90~~AfferentGraph_node11"><a xlink:href="../sourcefile/optimize.f90.html" xlink:title="optimize.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="169,-268 99,-268 99,-244 169,-244 169,-268"/>
+<text text-anchor="middle" x="134" y="-253.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">optimize.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~array.f90&#45;&gt;sourcefile~optimize.f90 -->
+<g id="sourcefile~~array.f90~~AfferentGraph_edge25" class="edge"><title>sourcefile~array.f90&#45;&gt;sourcefile~optimize.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M55.1401,-241.099C65.4295,-243.068 77.4793,-245.374 88.9829,-247.576"/>
+<polygon fill="#000000" stroke="#000000" points="88.4138,-251.03 98.8935,-249.472 89.7297,-244.155 88.4138,-251.03"/>
+</g>
+<!-- sourcefile~sparse.f90 -->
+<g id="sourcefile~~array.f90~~AfferentGraph_node12" class="node"><title>sourcefile~sparse.f90</title>
+<g id="a_sourcefile~~array.f90~~AfferentGraph_node12"><a xlink:href="../sourcefile/sparse.f90.html" xlink:title="sparse.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="165.5,-518 102.5,-518 102.5,-494 165.5,-494 165.5,-518"/>
+<text text-anchor="middle" x="134" y="-503.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sparse.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~array.f90&#45;&gt;sourcefile~sparse.f90 -->
+<g id="sourcefile~~array.f90~~AfferentGraph_edge26" class="edge"><title>sourcefile~array.f90&#45;&gt;sourcefile~sparse.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M32.3431,-248.305C41.5732,-277.545 66.08,-353.356 91,-415 100.794,-439.228 113.552,-466.349 122.425,-484.629"/>
+<polygon fill="#000000" stroke="#000000" points="119.374,-486.356 126.912,-493.801 125.662,-483.28 119.374,-486.356"/>
+</g>
+<!-- sourcefile~spline.f90 -->
+<g id="sourcefile~~array.f90~~AfferentGraph_node13" class="node"><title>sourcefile~spline.f90</title>
+<g id="a_sourcefile~~array.f90~~AfferentGraph_node13"><a xlink:href="../sourcefile/spline.f90.html" xlink:title="spline.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="163,-188 105,-188 105,-164 163,-164 163,-188"/>
+<text text-anchor="middle" x="134" y="-173.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">spline.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~array.f90&#45;&gt;sourcefile~spline.f90 -->
+<g id="sourcefile~~array.f90~~AfferentGraph_edge27" class="edge"><title>sourcefile~array.f90&#45;&gt;sourcefile~spline.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M49.6471,-223.858C64.9446,-215.075 85.8344,-203.081 102.874,-193.297"/>
+<polygon fill="#000000" stroke="#000000" points="104.955,-196.138 111.884,-188.124 101.469,-190.068 104.955,-196.138"/>
+</g>
+<!-- sourcefile~testexpression.f90 -->
+<g id="sourcefile~~array.f90~~AfferentGraph_node14" class="node"><title>sourcefile~testexpression.f90</title>
+<g id="a_sourcefile~~array.f90~~AfferentGraph_node14"><a xlink:href="../sourcefile/testexpression.f90.html" xlink:title="testExpression.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="313,-291 213,-291 213,-267 313,-267 313,-291"/>
+<text text-anchor="middle" x="263" y="-276.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">testExpression.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~array.f90&#45;&gt;sourcefile~testexpression.f90 -->
+<g id="sourcefile~~array.f90~~AfferentGraph_edge28" class="edge"><title>sourcefile~array.f90&#45;&gt;sourcefile~testexpression.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M42.1965,-248.345C54.1241,-258.219 72.3817,-271.319 91,-277 127.029,-287.993 169.347,-288.581 202.872,-286.377"/>
+<polygon fill="#000000" stroke="#000000" points="203.269,-289.857 212.977,-285.612 202.741,-282.877 203.269,-289.857"/>
+</g>
+<!-- sourcefile~animate.f90 -->
+<g id="sourcefile~~array.f90~~AfferentGraph_node15" class="node"><title>sourcefile~animate.f90</title>
+<g id="a_sourcefile~~array.f90~~AfferentGraph_node15"><a xlink:href="../sourcefile/animate.f90.html" xlink:title="animate.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="297.5,-207 228.5,-207 228.5,-183 297.5,-183 297.5,-207"/>
+<text text-anchor="middle" x="263" y="-192.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">animate.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~array.f90&#45;&gt;sourcefile~animate.f90 -->
+<g id="sourcefile~~array.f90~~AfferentGraph_edge29" class="edge"><title>sourcefile~array.f90&#45;&gt;sourcefile~animate.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M55.3607,-229.381C76.3481,-224.569 106.331,-218.482 133,-216"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M135,-216C162.94,-213.399 194.024,-208.298 218.447,-203.774"/>
+<polygon fill="#000000" stroke="#000000" points="219.301,-207.175 228.477,-201.88 218.002,-200.297 219.301,-207.175"/>
+</g>
+<!-- sourcefile~testspline.f90 -->
+<g id="sourcefile~~array.f90~~AfferentGraph_node16" class="node"><title>sourcefile~testspline.f90</title>
+<g id="a_sourcefile~~array.f90~~AfferentGraph_node16"><a xlink:href="../sourcefile/testspline.f90.html" xlink:title="testSpline.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="301.5,-165 224.5,-165 224.5,-141 301.5,-141 301.5,-165"/>
+<text text-anchor="middle" x="263" y="-150.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">testSpline.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~array.f90&#45;&gt;sourcefile~testspline.f90 -->
+<g id="sourcefile~~array.f90~~AfferentGraph_edge30" class="edge"><title>sourcefile~array.f90&#45;&gt;sourcefile~testspline.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M33.6103,-223.844C42.2613,-205.05 61.7536,-169.587 91,-155 129.206,-135.944 178.448,-137.666 214.271,-142.835"/>
+<polygon fill="#000000" stroke="#000000" points="214.039,-146.342 224.463,-144.45 215.134,-139.428 214.039,-146.342"/>
+</g>
+<!-- sourcefile~plplotlib.f90&#45;&gt;sourcefile~basic.f90 -->
+<g id="sourcefile~~array.f90~~AfferentGraph_edge1" class="edge"><title>sourcefile~plplotlib.f90&#45;&gt;sourcefile~basic.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M145.045,-348.316C162.368,-369.336 197.492,-410.94 213,-422 217.027,-424.872 221.507,-427.46 226.077,-429.757"/>
+<polygon fill="#000000" stroke="#000000" points="224.916,-433.075 235.465,-434.063 227.834,-426.712 224.916,-433.075"/>
+</g>
+<!-- sourcefile~plplotlib.f90&#45;&gt;sourcefile~examples.f90 -->
+<g id="sourcefile~~array.f90~~AfferentGraph_edge2" class="edge"><title>sourcefile~plplotlib.f90&#45;&gt;sourcefile~examples.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M154.879,-348.007C170.452,-357.218 192.792,-370.007 213,-380 216.306,-381.635 219.769,-383.269 223.261,-384.864"/>
+<polygon fill="#000000" stroke="#000000" points="221.925,-388.1 232.484,-388.966 224.769,-381.704 221.925,-388.1"/>
+</g>
+<!-- sourcefile~plplotlib.f90&#45;&gt;sourcefile~logo.f90 -->
+<g id="sourcefile~~array.f90~~AfferentGraph_edge3" class="edge"><title>sourcefile~plplotlib.f90&#45;&gt;sourcefile~logo.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M167.706,-341.923C185.482,-345.142 207.507,-349.131 225.799,-352.444"/>
+<polygon fill="#000000" stroke="#000000" points="225.337,-355.917 235.801,-354.255 226.585,-349.029 225.337,-355.917"/>
+</g>
+<!-- sourcefile~plplotlib.f90&#45;&gt;sourcefile~testsparse.f90 -->
+<g id="sourcefile~~array.f90~~AfferentGraph_edge4" class="edge"><title>sourcefile~plplotlib.f90&#45;&gt;sourcefile~testsparse.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M167.55,-326.64C205.705,-317.715 269.272,-309.438 313,-338 363.495,-370.982 380.83,-446.41 386.463,-483.944"/>
+<polygon fill="#000000" stroke="#000000" points="382.998,-484.435 387.81,-493.874 389.935,-483.495 382.998,-484.435"/>
+</g>
+<!-- sourcefile~plplotlib.f90&#45;&gt;sourcefile~testoptimize.f90 -->
+<g id="sourcefile~~array.f90~~AfferentGraph_edge5" class="edge"><title>sourcefile~plplotlib.f90&#45;&gt;sourcefile~testoptimize.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M144.68,-323.73C158.389,-307.016 184.931,-277.004 213,-258 215.146,-256.547 217.409,-255.161 219.737,-253.844"/>
+<polygon fill="#000000" stroke="#000000" points="221.641,-256.801 228.933,-249.115 218.44,-250.575 221.641,-256.801"/>
+</g>
+<!-- sourcefile~plplotlib.f90&#45;&gt;sourcefile~testexpression.f90 -->
+<g id="sourcefile~~array.f90~~AfferentGraph_edge6" class="edge"><title>sourcefile~plplotlib.f90&#45;&gt;sourcefile~testexpression.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M161.933,-323.912C180.539,-315.561 205.498,-304.359 225.835,-295.232"/>
+<polygon fill="#000000" stroke="#000000" points="227.415,-298.359 235.105,-291.071 224.549,-291.972 227.415,-298.359"/>
+</g>
+<!-- sourcefile~plplotlib.f90&#45;&gt;sourcefile~animate.f90 -->
+<g id="sourcefile~~array.f90~~AfferentGraph_edge7" class="edge"><title>sourcefile~plplotlib.f90&#45;&gt;sourcefile~animate.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M144.33,-323.556C153.059,-311.761 166.318,-293.451 177,-277 194.144,-250.597 189.359,-236.788 213,-216 214.977,-214.262 217.119,-212.651 219.365,-211.16"/>
+<polygon fill="#000000" stroke="#000000" points="221.468,-213.99 228.417,-205.992 217.998,-207.911 221.468,-213.99"/>
+</g>
+<!-- sourcefile~plplotlib.f90&#45;&gt;sourcefile~testspline.f90 -->
+<g id="sourcefile~~array.f90~~AfferentGraph_edge8" class="edge"><title>sourcefile~plplotlib.f90&#45;&gt;sourcefile~testspline.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M145.093,-324C154.362,-312.519 167.987,-294.421 177,-277 199.283,-233.93 179.907,-209.447 213,-174 214.026,-172.901 215.12,-171.856 216.268,-170.864"/>
+<polygon fill="#000000" stroke="#000000" points="218.351,-173.678 224.501,-165.051 214.313,-167.96 218.351,-173.678"/>
+</g>
+<!-- sourcefile~optimize.f90&#45;&gt;sourcefile~testoptimize.f90 -->
+<g id="sourcefile~~array.f90~~AfferentGraph_edge9" class="edge"><title>sourcefile~optimize.f90&#45;&gt;sourcefile~testoptimize.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M169.034,-250.908C180.978,-249.121 194.709,-247.067 207.889,-245.095"/>
+<polygon fill="#000000" stroke="#000000" points="208.449,-248.551 217.821,-243.609 207.413,-241.628 208.449,-248.551"/>
+</g>
+<!-- sourcefile~sparse.f90&#45;&gt;sourcefile~testsparse.f90 -->
+<g id="sourcefile~~array.f90~~AfferentGraph_edge12" class="edge"><title>sourcefile~sparse.f90&#45;&gt;sourcefile~testsparse.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M148.148,-518.286C170.222,-537.476 216.768,-571.895 262,-567"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M264,-567C301.892,-562.899 340.576,-540.667 364.671,-524.22"/>
+<polygon fill="#000000" stroke="#000000" points="366.994,-526.866 373.16,-518.25 362.967,-521.14 366.994,-526.866"/>
+</g>
+<!-- sourcefile~basicsolvers.f90 -->
+<g id="sourcefile~~array.f90~~AfferentGraph_node17" class="node"><title>sourcefile~basicsolvers.f90</title>
+<g id="a_sourcefile~~array.f90~~AfferentGraph_node17"><a xlink:href="../sourcefile/basicsolvers.f90.html" xlink:title="basicSolvers.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="308.5,-539 217.5,-539 217.5,-515 308.5,-515 308.5,-539"/>
+<text text-anchor="middle" x="263" y="-524.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">basicSolvers.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~sparse.f90&#45;&gt;sourcefile~basicsolvers.f90 -->
+<g id="sourcefile~~array.f90~~AfferentGraph_edge13" class="edge"><title>sourcefile~sparse.f90&#45;&gt;sourcefile~basicsolvers.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M165.743,-511.084C178.148,-513.135 192.85,-515.566 206.982,-517.902"/>
+<polygon fill="#000000" stroke="#000000" points="206.693,-521.402 217.13,-519.58 207.835,-514.496 206.693,-521.402"/>
+</g>
+<!-- sourcefile~solvers.f90 -->
+<g id="sourcefile~~array.f90~~AfferentGraph_node18" class="node"><title>sourcefile~solvers.f90</title>
+<g id="a_sourcefile~~array.f90~~AfferentGraph_node18"><a xlink:href="../sourcefile/solvers.f90.html" xlink:title="solvers.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="295,-497 231,-497 231,-473 295,-473 295,-497"/>
+<text text-anchor="middle" x="263" y="-482.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">solvers.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~sparse.f90&#45;&gt;sourcefile~solvers.f90 -->
+<g id="sourcefile~~array.f90~~AfferentGraph_edge14" class="edge"><title>sourcefile~sparse.f90&#45;&gt;sourcefile~solvers.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M165.743,-500.916C182.266,-498.184 202.864,-494.778 220.761,-491.819"/>
+<polygon fill="#000000" stroke="#000000" points="221.363,-495.267 230.658,-490.183 220.221,-488.361 221.363,-495.267"/>
+</g>
+<!-- sourcefile~spline.f90&#45;&gt;sourcefile~testspline.f90 -->
+<g id="sourcefile~~array.f90~~AfferentGraph_edge15" class="edge"><title>sourcefile~spline.f90&#45;&gt;sourcefile~testspline.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M163.185,-170.896C178.213,-168.174 197.109,-164.752 214.343,-161.631"/>
+<polygon fill="#000000" stroke="#000000" points="215.04,-165.062 224.256,-159.836 213.792,-158.174 215.04,-165.062"/>
+</g>
+<!-- sourcefile~basicsolvers.f90&#45;&gt;sourcefile~testsparse.f90 -->
+<g id="sourcefile~~array.f90~~AfferentGraph_edge10" class="edge"><title>sourcefile~basicsolvers.f90&#45;&gt;sourcefile~testsparse.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M308.775,-519.478C318.445,-517.853 328.733,-516.125 338.603,-514.467"/>
+<polygon fill="#000000" stroke="#000000" points="339.411,-517.88 348.692,-512.772 338.251,-510.977 339.411,-517.88"/>
+</g>
+<!-- sourcefile~solvers.f90&#45;&gt;sourcefile~testsparse.f90 -->
+<g id="sourcefile~~array.f90~~AfferentGraph_edge11" class="edge"><title>sourcefile~solvers.f90&#45;&gt;sourcefile~testsparse.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M295.22,-490.245C308.381,-492.456 324.035,-495.086 338.747,-497.558"/>
+<polygon fill="#000000" stroke="#000000" points="338.298,-501.031 348.74,-499.236 339.458,-494.128 338.298,-501.031"/>
+</g>
+</g>
+</svg>
+</div>
+                <div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div>
+                <div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                      </div>
+                      <div class="modal-body">
+                        
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.38.0 (20140413.2041)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="190pt" height="32pt"
+ viewBox="0.00 0.00 190.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-28 186,-28 186,4 -4,4"/>
+<!-- Source File -->
+<g id="node1" class="node"><title>Source File</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="67,-24 0,-24 0,-0 67,-0 67,-24"/>
+<text text-anchor="middle" x="33.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Source File</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node2" class="node"><title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="182,-24 85,-24 85,-0 182,-0 182,-24"/>
+<text text-anchor="middle" x="133.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+
+<p>Solid arrows point from a file to a file which depends upon it. A file 
+is dependent upon another if the latter must be compiled before the former
+can be.
+</p>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+      
+      <br>
+
+    <section class="visible-xs visible-sm hidden-md">
+      
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#mods-1">Modules</a></h3></div>
+  <div id="mods-1" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/array_mod.html">array_mod</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../sourcefile/array.f90.html#src">array.f90</a>
+  </div>
+</div>
+
+
+    </section>
+    <br class="visible-xs visible-sm hidden-md">
+
+    <section>
+      <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="hl"><pre><span></span><a name="ln-1"></a><span class="k">module </span><span class="n">array_mod</span>
+<a name="ln-2"></a>	<span class="c">!! Array reduction and transformation routines</span>
+<a name="ln-3"></a>	<span class="k">use </span><span class="n">kinds_mod</span>
+<a name="ln-4"></a>	<span class="k">implicit none</span>
+<a name="ln-5"></a><span class="k">	private</span>
+<a name="ln-6"></a>	
+<a name="ln-7"></a>	<span class="c">!==============!</span>
+<a name="ln-8"></a>	<span class="c">!= Interfaces =!</span>
+<a name="ln-9"></a>	<span class="c">!==============!</span>
+<a name="ln-10"></a>	
+<a name="ln-11"></a>	<span class="k">interface </span><span class="n">mixval</span>
+<a name="ln-12"></a>		<span class="c">!! Return a 2-vector comprising the minimum and maximum values of an array</span>
+<a name="ln-13"></a>		<span class="k">module procedure </span><span class="n">mixval_1</span>
+<a name="ln-14"></a>		<span class="k">module procedure </span><span class="n">mixval_2</span>
+<a name="ln-15"></a>		<span class="k">module procedure </span><span class="n">mixval_3</span>
+<a name="ln-16"></a>	<span class="k">end interface</span>
+<a name="ln-17"></a><span class="k">	</span>
+<a name="ln-18"></a><span class="k">	interface </span><span class="n">span</span>
+<a name="ln-19"></a>		<span class="c">!! Return a the maximum-minumum values of an array</span>
+<a name="ln-20"></a>		<span class="k">module procedure </span><span class="n">span_1</span>
+<a name="ln-21"></a>		<span class="k">module procedure </span><span class="n">span_2</span>
+<a name="ln-22"></a>		<span class="k">module procedure </span><span class="n">span_3</span>
+<a name="ln-23"></a>	<span class="k">end interface</span>
+<a name="ln-24"></a><span class="k">	</span>
+<a name="ln-25"></a><span class="k">	interface </span><span class="n">flatten</span>
+<a name="ln-26"></a>		<span class="c">!! Reduce an array to one dimension</span>
+<a name="ln-27"></a>		<span class="k">module procedure </span><span class="n">flatten_2</span>
+<a name="ln-28"></a>		<span class="k">module procedure </span><span class="n">flatten_3</span>
+<a name="ln-29"></a>		<span class="k">module procedure </span><span class="n">flatten_2Z</span>
+<a name="ln-30"></a>		<span class="k">module procedure </span><span class="n">flatten_3Z</span>
+<a name="ln-31"></a>	<span class="k">end interface</span>
+<a name="ln-32"></a><span class="k">	</span>
+<a name="ln-33"></a><span class="k">	interface </span><span class="n">TDMA</span>
+<a name="ln-34"></a>		<span class="k">module procedure </span><span class="n">TDMA_s</span>
+<a name="ln-35"></a>		<span class="k">module procedure </span><span class="n">TDMA_m</span>
+<a name="ln-36"></a>		<span class="k">module procedure </span><span class="n">TDMA_sZ</span>
+<a name="ln-37"></a>		<span class="k">module procedure </span><span class="n">TDMA_mZ</span>
+<a name="ln-38"></a>	<span class="k">end interface</span>
+<a name="ln-39"></a><span class="k">	</span>
+<a name="ln-40"></a><span class="k">	interface </span><span class="n">solveLU</span>
+<a name="ln-41"></a>		<span class="k">module procedure </span><span class="n">solveLU_s</span>
+<a name="ln-42"></a>		<span class="k">module procedure </span><span class="n">solveLU_m</span>
+<a name="ln-43"></a>		<span class="k">module procedure </span><span class="n">solveLU_sZ</span>
+<a name="ln-44"></a>		<span class="k">module procedure </span><span class="n">solveLU_mZ</span>
+<a name="ln-45"></a>	<span class="k">end interface</span>
+<a name="ln-46"></a>	
+<a name="ln-47"></a>	<span class="c">!===========!</span>
+<a name="ln-48"></a>	<span class="c">!= Exports =!</span>
+<a name="ln-49"></a>	<span class="c">!===========!</span>
+<a name="ln-50"></a>	
+<a name="ln-51"></a>	<span class="k">public</span><span class="kd">::</span><span class="n">mixval</span>
+<a name="ln-52"></a>	<span class="k">public</span><span class="kd">::</span><span class="n">span</span>
+<a name="ln-53"></a>	<span class="k">public</span><span class="kd">::</span><span class="n">flatten</span>
+<a name="ln-54"></a>	
+<a name="ln-55"></a>	<span class="k">public</span><span class="kd">::</span><span class="n">deDup</span>
+<a name="ln-56"></a>	
+<a name="ln-57"></a>	<span class="k">public</span><span class="kd">::</span><span class="n">linspace</span>
+<a name="ln-58"></a>	<span class="k">public</span><span class="kd">::</span><span class="n">meshGridX</span>
+<a name="ln-59"></a>	<span class="k">public</span><span class="kd">::</span><span class="n">meshGridY</span>
+<a name="ln-60"></a>	<span class="k">public</span><span class="kd">::</span><span class="n">TDMA</span>
+<a name="ln-61"></a>	<span class="k">public</span><span class="kd">::</span><span class="n">solveLU</span>
+<a name="ln-62"></a>	
+<a name="ln-63"></a>	<span class="k">public</span><span class="kd">::</span><span class="n">linearInterp</span>
+<a name="ln-64"></a>	<span class="k">public</span><span class="kd">::</span><span class="n">findInterval</span>
+<a name="ln-65"></a>	
+<a name="ln-66"></a><span class="k">contains</span>
+<a name="ln-67"></a>
+<a name="ln-68"></a>	<span class="c">!====================!</span>
+<a name="ln-69"></a>	<span class="c">!= Array Reductions =!</span>
+<a name="ln-70"></a>	<span class="c">!====================!</span>
+<a name="ln-71"></a>
+<a name="ln-72"></a>	<span class="k">function </span><span class="n">mixval_1</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<a name="ln-73"></a>		<span class="c">!! Return [hi,low] for an array</span>
+<a name="ln-74"></a>		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span><span class="n">x</span>
+<a name="ln-75"></a>			<span class="c">!! Array to find extrema in</span>
+<a name="ln-76"></a>		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="kd">::</span><span class="n">b</span>
+<a name="ln-77"></a>		
+<a name="ln-78"></a>		<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="nb">minval</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="nb">maxval</span><span class="p">(</span><span class="n">x</span><span class="p">)]</span>
+<a name="ln-79"></a>	<span class="k">end function </span><span class="n">mixval_1</span>
+<a name="ln-80"></a>
+<a name="ln-81"></a>	<span class="k">function </span><span class="n">mixval_2</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<a name="ln-82"></a>		<span class="c">!! Return [hi,low] for an array</span>
+<a name="ln-83"></a>		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:,:),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span><span class="n">x</span>
+<a name="ln-84"></a>			<span class="c">!! Array to find extrema in</span>
+<a name="ln-85"></a>		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="kd">::</span><span class="n">b</span>
+<a name="ln-86"></a>		
+<a name="ln-87"></a>		<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="nb">minval</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="nb">maxval</span><span class="p">(</span><span class="n">x</span><span class="p">)]</span>
+<a name="ln-88"></a>	<span class="k">end function </span><span class="n">mixval_2</span>
+<a name="ln-89"></a>
+<a name="ln-90"></a>	<span class="k">function </span><span class="n">mixval_3</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<a name="ln-91"></a>		<span class="c">!! Return [hi,low] for an array</span>
+<a name="ln-92"></a>		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:,:,:),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span><span class="n">x</span>
+<a name="ln-93"></a>			<span class="c">!! Array to find extrema in</span>
+<a name="ln-94"></a>		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="kd">::</span><span class="n">b</span>
+<a name="ln-95"></a>		
+<a name="ln-96"></a>		<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="nb">minval</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="nb">maxval</span><span class="p">(</span><span class="n">x</span><span class="p">)]</span>
+<a name="ln-97"></a>	<span class="k">end function </span><span class="n">mixval_3</span>
+<a name="ln-98"></a>
+<a name="ln-99"></a>	<span class="k">function </span><span class="n">span_1</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">o</span><span class="p">)</span><span class="c">!! x values of data</span>
+<a name="ln-100"></a>		<span class="c">!! Return (hi-low) for an array</span>
+<a name="ln-101"></a>		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span><span class="n">x</span>
+<a name="ln-102"></a>			<span class="c">!! Array of which to find the range</span>
+<a name="ln-103"></a>		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span><span class="kd">::</span><span class="n">o</span>
+<a name="ln-104"></a>			<span class="c">!! Range of the array</span>
+<a name="ln-105"></a>		
+<a name="ln-106"></a>		<span class="n">o</span> <span class="o">=</span> <span class="nb">maxval</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">-</span><span class="nb">minval</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<a name="ln-107"></a>	<span class="k">end function </span><span class="n">span_1</span>
+<a name="ln-108"></a>
+<a name="ln-109"></a>	<span class="k">function </span><span class="n">span_2</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">o</span><span class="p">)</span>
+<a name="ln-110"></a>		<span class="c">!! Return (hi-low) for an array</span>
+<a name="ln-111"></a>		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:,:),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span><span class="n">x</span>
+<a name="ln-112"></a>			<span class="c">!! Array of which to find the range</span>
+<a name="ln-113"></a>		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span><span class="kd">::</span><span class="n">o</span>
+<a name="ln-114"></a>			<span class="c">!! Range of the array</span>
+<a name="ln-115"></a>		
+<a name="ln-116"></a>		<span class="n">o</span> <span class="o">=</span> <span class="nb">maxval</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">-</span><span class="nb">minval</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<a name="ln-117"></a>	<span class="k">end function </span><span class="n">span_2</span>
+<a name="ln-118"></a>
+<a name="ln-119"></a>	<span class="k">function </span><span class="n">span_3</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">o</span><span class="p">)</span>
+<a name="ln-120"></a>		<span class="c">!! Return (hi-low) for an array</span>
+<a name="ln-121"></a>		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:,:,:),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span><span class="n">x</span>
+<a name="ln-122"></a>			<span class="c">!! Array of which to find the range</span>
+<a name="ln-123"></a>		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span><span class="kd">::</span><span class="n">o</span>
+<a name="ln-124"></a>			<span class="c">!! Range of the array</span>
+<a name="ln-125"></a>		
+<a name="ln-126"></a>		<span class="n">o</span> <span class="o">=</span> <span class="nb">maxval</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">-</span><span class="nb">minval</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<a name="ln-127"></a>	<span class="k">end function </span><span class="n">span_3</span>
+<a name="ln-128"></a>
+<a name="ln-129"></a>	<span class="c">!=========================!</span>
+<a name="ln-130"></a>	<span class="c">!= Array Transformations =!</span>
+<a name="ln-131"></a>	<span class="c">!=========================!</span>
+<a name="ln-132"></a>
+<a name="ln-133"></a>	<span class="k">function </span><span class="n">flatten_2</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">o</span><span class="p">)</span>
+<a name="ln-134"></a>		<span class="c">!! Convert a 2D array to 1D</span>
+<a name="ln-135"></a>		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:,:),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span><span class="n">A</span>
+<a name="ln-136"></a>			<span class="c">!! Array to convert</span>
+<a name="ln-137"></a>		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">allocatable</span><span class="kd">::</span><span class="n">o</span>
+<a name="ln-138"></a>			<span class="c">!! 1D version of the data</span>
+<a name="ln-139"></a>		
+<a name="ln-140"></a>		<span class="n">o</span> <span class="o">=</span> <span class="nb">reshape</span><span class="p">(</span><span class="n">A</span><span class="p">,[</span><span class="n">size</span><span class="p">(</span><span class="n">A</span><span class="p">)])</span>
+<a name="ln-141"></a>	<span class="k">end function </span><span class="n">flatten_2</span>
+<a name="ln-142"></a>
+<a name="ln-143"></a>	<span class="k">function </span><span class="n">flatten_3</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">o</span><span class="p">)</span>
+<a name="ln-144"></a>		<span class="c">!! Convert a 3D array to 1D</span>
+<a name="ln-145"></a>		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:,:,:),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span><span class="n">A</span>
+<a name="ln-146"></a>			<span class="c">!! Array to convert</span>
+<a name="ln-147"></a>		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">allocatable</span><span class="kd">::</span><span class="n">o</span>
+<a name="ln-148"></a>			<span class="c">!! 1D version of the data</span>
+<a name="ln-149"></a>		
+<a name="ln-150"></a>		<span class="n">o</span> <span class="o">=</span> <span class="nb">reshape</span><span class="p">(</span><span class="n">A</span><span class="p">,[</span><span class="n">size</span><span class="p">(</span><span class="n">A</span><span class="p">)])</span>
+<a name="ln-151"></a>	<span class="k">end function </span><span class="n">flatten_3</span>
+<a name="ln-152"></a>
+<a name="ln-153"></a>	<span class="k">function </span><span class="n">flatten_2Z</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">o</span><span class="p">)</span>
+<a name="ln-154"></a>		<span class="c">!! Convert a 2D array to 1D</span>
+<a name="ln-155"></a>		<span class="kt">complex</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:,:),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span><span class="n">A</span>
+<a name="ln-156"></a>			<span class="c">!! Array to convert</span>
+<a name="ln-157"></a>		<span class="kt">complex</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">allocatable</span><span class="kd">::</span><span class="n">o</span>
+<a name="ln-158"></a>			<span class="c">!! 1D version of the data</span>
+<a name="ln-159"></a>		
+<a name="ln-160"></a>		<span class="n">o</span> <span class="o">=</span> <span class="nb">reshape</span><span class="p">(</span><span class="n">A</span><span class="p">,[</span><span class="n">size</span><span class="p">(</span><span class="n">A</span><span class="p">)])</span>
+<a name="ln-161"></a>	<span class="k">end function </span><span class="n">flatten_2Z</span>
+<a name="ln-162"></a>
+<a name="ln-163"></a>	<span class="k">function </span><span class="n">flatten_3Z</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">o</span><span class="p">)</span>
+<a name="ln-164"></a>		<span class="c">!! Convert a 3D array to 1D</span>
+<a name="ln-165"></a>		<span class="kt">complex</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:,:,:),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span><span class="n">A</span>
+<a name="ln-166"></a>			<span class="c">!! Array to convert</span>
+<a name="ln-167"></a>		<span class="kt">complex</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">allocatable</span><span class="kd">::</span><span class="n">o</span>
+<a name="ln-168"></a>			<span class="c">!! 1D version of the data</span>
+<a name="ln-169"></a>		
+<a name="ln-170"></a>		<span class="n">o</span> <span class="o">=</span> <span class="nb">reshape</span><span class="p">(</span><span class="n">A</span><span class="p">,[</span><span class="n">size</span><span class="p">(</span><span class="n">A</span><span class="p">)])</span>
+<a name="ln-171"></a>	<span class="k">end function </span><span class="n">flatten_3Z</span>
+<a name="ln-172"></a>
+<a name="ln-173"></a>	<span class="k">function </span><span class="n">deDup</span><span class="p">(</span><span class="n">l</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">o</span><span class="p">)</span>
+<a name="ln-174"></a>		<span class="c">!! Remove duplicates from a list of positive integers</span>
+<a name="ln-175"></a>		<span class="kt">integer</span><span class="p">,</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span><span class="n">l</span>
+<a name="ln-176"></a>			<span class="c">!! List for de-duplication</span>
+<a name="ln-177"></a>		<span class="kt">integer</span><span class="p">,</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">allocatable</span><span class="kd">::</span><span class="n">o</span>
+<a name="ln-178"></a>			<span class="c">!! List without duplicates</span>
+<a name="ln-179"></a>		
+<a name="ln-180"></a>		<span class="kt">integer</span><span class="p">,</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">allocatable</span><span class="kd">::</span><span class="n">b</span>
+<a name="ln-181"></a>		<span class="kt">integer</span><span class="kd">::</span><span class="n">T</span><span class="p">,</span><span class="n">k</span>
+<a name="ln-182"></a>		
+<a name="ln-183"></a>		<span class="n">b</span> <span class="o">=</span> <span class="n">l</span>
+<a name="ln-184"></a>		<span class="k">do </span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<a name="ln-185"></a>			<span class="n">T</span> <span class="o">=</span> <span class="n">b</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+<a name="ln-186"></a>			<span class="k">where</span><span class="p">(</span><span class="n">b</span><span class="o">==</span><span class="n">T</span><span class="p">)</span> <span class="n">b</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<a name="ln-187"></a>			<span class="n">b</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="o">=</span> <span class="n">T</span>
+<a name="ln-188"></a>		<span class="k">end do</span>
+<a name="ln-189"></a><span class="k">		</span>
+<a name="ln-190"></a><span class="k">		</span><span class="n">o</span> <span class="o">=</span> <span class="nb">pack</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">b</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span>
+<a name="ln-191"></a>	<span class="k">end function </span><span class="n">deDup</span>
+<a name="ln-192"></a>
+<a name="ln-193"></a>	<span class="c">!=================!</span>
+<a name="ln-194"></a>	<span class="c">!= Grid Routines =!</span>
+<a name="ln-195"></a>	<span class="c">!=================!</span>
+<a name="ln-196"></a>
+<a name="ln-197"></a>	<span class="k">function </span><span class="n">linspace</span><span class="p">(</span><span class="n">l</span><span class="p">,</span><span class="n">h</span><span class="p">,</span><span class="n">N</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">o</span><span class="p">)</span>
+<a name="ln-198"></a>		<span class="c">!! Return an array of evenly-spaced values</span>
+<a name="ln-199"></a>		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span><span class="n">l</span>
+<a name="ln-200"></a>			<span class="c">!! Low-bound for values</span>
+<a name="ln-201"></a>		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span><span class="n">h</span>
+<a name="ln-202"></a>			<span class="c">!! High-bound for values</span>
+<a name="ln-203"></a>		<span class="kt">integer</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="k">optional</span><span class="kd">::</span><span class="n">N</span>
+<a name="ln-204"></a>			<span class="c">!! Number of values (default 20)</span>
+<a name="ln-205"></a>		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">allocatable</span><span class="kd">::</span><span class="n">o</span>
+<a name="ln-206"></a>		
+<a name="ln-207"></a>		<span class="kt">integer</span><span class="kd">::</span><span class="n">Nl</span><span class="p">,</span><span class="n">i</span>
+<a name="ln-208"></a>		
+<a name="ln-209"></a>		<span class="n">Nl</span> <span class="o">=</span> <span class="mi">20</span>
+<a name="ln-210"></a>		<span class="k">if</span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">N</span><span class="p">))</span> <span class="n">Nl</span> <span class="o">=</span> <span class="n">N</span>
+<a name="ln-211"></a>		
+<a name="ln-212"></a>		<span class="k">if</span><span class="p">(</span><span class="n">Nl</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span> <span class="k">then</span>
+<a name="ln-213"></a><span class="k">			</span><span class="n">o</span> <span class="o">=</span> <span class="p">[</span> <span class="p">(</span><span class="n">l</span><span class="o">+</span><span class="n">h</span><span class="p">)</span><span class="o">/</span><span class="mf">2.0_wp</span> <span class="p">]</span>
+<a name="ln-214"></a>		<span class="k">else</span>
+<a name="ln-215"></a><span class="k">			</span><span class="n">o</span> <span class="o">=</span> <span class="p">[(</span> <span class="p">(</span><span class="n">h</span><span class="o">-</span><span class="n">l</span><span class="p">)</span><span class="o">*</span><span class="kt">real</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">wp</span><span class="p">)</span><span class="o">/</span><span class="kt">real</span><span class="p">(</span><span class="n">Nl</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">wp</span><span class="p">)</span><span class="o">+</span><span class="n">l</span> <span class="p">,</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span> <span class="p">,</span> <span class="n">Nl</span> <span class="p">)]</span>
+<a name="ln-216"></a>		<span class="k">end if</span>
+<a name="ln-217"></a><span class="k">	end function </span><span class="n">linspace</span>
+<a name="ln-218"></a>
+<a name="ln-219"></a>	<span class="k">function </span><span class="n">meshGridX</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">o</span><span class="p">)</span>
+<a name="ln-220"></a>		<span class="c">!! Construct a grid from x and y spacing</span>
+<a name="ln-221"></a>		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span><span class="n">x</span><span class="p">,</span><span class="n">y</span>
+<a name="ln-222"></a>			<span class="c">!! Grid values in x and y</span>
+<a name="ln-223"></a>		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:,:),</span><span class="k">allocatable</span><span class="kd">::</span><span class="n">o</span>
+<a name="ln-224"></a>			<span class="c">!! Array x expanded into y</span>
+<a name="ln-225"></a>		
+<a name="ln-226"></a>		<span class="kt">integer</span><span class="kd">::</span><span class="n">Nx</span><span class="p">,</span><span class="n">Ny</span>
+<a name="ln-227"></a>		<span class="kt">integer</span><span class="kd">::</span><span class="n">i</span><span class="p">,</span><span class="n">j</span>
+<a name="ln-228"></a>		
+<a name="ln-229"></a>		<span class="n">Nx</span> <span class="o">=</span> <span class="n">size</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<a name="ln-230"></a>		<span class="n">Ny</span> <span class="o">=</span> <span class="n">size</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<a name="ln-231"></a>		
+<a name="ln-232"></a>		<span class="k">allocate</span><span class="p">(</span><span class="n">o</span><span class="p">(</span><span class="n">Nx</span><span class="p">,</span><span class="n">Ny</span><span class="p">))</span>
+<a name="ln-233"></a>		
+<a name="ln-234"></a>		<span class="k">forall</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">:</span><span class="n">Nx</span><span class="p">,</span><span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">:</span><span class="n">Ny</span><span class="p">)</span> <span class="n">o</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span> <span class="o">=</span> <span class="n">x</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<a name="ln-235"></a>	<span class="k">end function </span><span class="n">meshGridX</span>
+<a name="ln-236"></a>
+<a name="ln-237"></a>	<span class="k">function </span><span class="n">meshGridY</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">o</span><span class="p">)</span>
+<a name="ln-238"></a>		<span class="c">!! Construct a grid from x and y spacing</span>
+<a name="ln-239"></a>		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span><span class="n">x</span><span class="p">,</span><span class="n">y</span>
+<a name="ln-240"></a>			<span class="c">!! Grid values in x and y</span>
+<a name="ln-241"></a>		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:,:),</span><span class="k">allocatable</span><span class="kd">::</span><span class="n">o</span>
+<a name="ln-242"></a>			<span class="c">!! Array x expanded into y</span>
+<a name="ln-243"></a>		
+<a name="ln-244"></a>		<span class="kt">integer</span><span class="kd">::</span><span class="n">Nx</span><span class="p">,</span><span class="n">Ny</span>
+<a name="ln-245"></a>		<span class="kt">integer</span><span class="kd">::</span><span class="n">i</span><span class="p">,</span><span class="n">j</span>
+<a name="ln-246"></a>		
+<a name="ln-247"></a>		<span class="n">Nx</span> <span class="o">=</span> <span class="n">size</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<a name="ln-248"></a>		<span class="n">Ny</span> <span class="o">=</span> <span class="n">size</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<a name="ln-249"></a>		
+<a name="ln-250"></a>		<span class="k">allocate</span><span class="p">(</span><span class="n">o</span><span class="p">(</span><span class="n">Nx</span><span class="p">,</span><span class="n">Ny</span><span class="p">))</span>
+<a name="ln-251"></a>		
+<a name="ln-252"></a>		<span class="k">forall</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">:</span><span class="n">Nx</span><span class="p">,</span><span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">:</span><span class="n">Ny</span><span class="p">)</span> <span class="n">o</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span> <span class="o">=</span> <span class="n">y</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+<a name="ln-253"></a>	<span class="k">end function </span><span class="n">meshGridY</span>
+<a name="ln-254"></a>
+<a name="ln-255"></a>	<span class="c">!========!</span>
+<a name="ln-256"></a>	<span class="c">!= TMDA =!</span>
+<a name="ln-257"></a>	<span class="c">!========!</span>
+<a name="ln-258"></a>
+<a name="ln-259"></a>	<span class="k">function </span><span class="n">TDMA_s</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">b</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<a name="ln-260"></a>		<span class="c">!! Solve a tridiagonal linear algebra problem \( [A]\{x\}=\{b\} \)</span>
+<a name="ln-261"></a>		<span class="c">!! @todo</span>
+<a name="ln-262"></a>		<span class="c">!! Put behind interface and allow for multiple RHS in another routine</span>
+<a name="ln-263"></a>		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:,:),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span><span class="n">A</span>
+<a name="ln-264"></a>			<span class="c">!! Coefficient matrix with the diagonals in columns \( [A] \)</span>
+<a name="ln-265"></a>		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span><span class="n">b</span>
+<a name="ln-266"></a>			<span class="c">!! Right-hand-side of the system \( \{b\} \)</span>
+<a name="ln-267"></a>		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">allocatable</span><span class="kd">::</span><span class="n">x</span>
+<a name="ln-268"></a>			<span class="c">!! Problem solution \( \{x\} \)</span>
+<a name="ln-269"></a>		
+<a name="ln-270"></a>		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:,:),</span><span class="k">allocatable</span><span class="kd">::</span><span class="n">W</span>
+<a name="ln-271"></a>		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span><span class="kd">::</span><span class="n">r</span>
+<a name="ln-272"></a>		<span class="kt">integer</span><span class="kd">::</span><span class="n">N</span><span class="p">,</span><span class="n">k</span>
+<a name="ln-273"></a>		
+<a name="ln-274"></a>		<span class="n">N</span> <span class="o">=</span> <span class="n">size</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<a name="ln-275"></a>		
+<a name="ln-276"></a>		<span class="k">allocate</span><span class="p">(</span> <span class="n">W</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="p">)</span>
+<a name="ln-277"></a>		
+<a name="ln-278"></a>		<span class="n">W</span><span class="p">(:,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">A</span><span class="p">(:,</span><span class="mi">1</span><span class="p">)</span>
+<a name="ln-279"></a>		<span class="n">W</span><span class="p">(:,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">=</span> <span class="n">A</span><span class="p">(:,</span><span class="mi">2</span><span class="p">)</span>
+<a name="ln-280"></a>		<span class="n">W</span><span class="p">(:,</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">A</span><span class="p">(:,</span><span class="mi">3</span><span class="p">)</span>
+<a name="ln-281"></a>		<span class="n">x</span>       <span class="o">=</span> <span class="n">b</span>
+<a name="ln-282"></a>		
+<a name="ln-283"></a>		<span class="k">do </span><span class="n">k</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">N</span>
+<a name="ln-284"></a>			<span class="n">r</span> <span class="o">=</span> <span class="n">W</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">W</span><span class="p">(</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<a name="ln-285"></a>			<span class="n">W</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mi">0</span><span class="p">)</span> <span class="o">=</span> <span class="n">W</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mi">0</span><span class="p">)</span><span class="o">-</span><span class="n">r</span><span class="o">*</span><span class="n">W</span><span class="p">(</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">)</span>
+<a name="ln-286"></a>			<span class="n">x</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="o">=</span> <span class="n">x</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="o">-</span><span class="n">r</span><span class="o">*</span><span class="n">x</span><span class="p">(</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<a name="ln-287"></a>		<span class="k">end do</span>
+<a name="ln-288"></a><span class="k">		</span>
+<a name="ln-289"></a><span class="k">		do </span><span class="n">k</span><span class="o">=</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span>
+<a name="ln-290"></a>			<span class="n">r</span> <span class="o">=</span> <span class="n">W</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">W</span><span class="p">(</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<a name="ln-291"></a>			<span class="n">W</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">W</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="n">r</span><span class="o">*</span><span class="n">W</span><span class="p">(</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mi">0</span><span class="p">)</span>
+<a name="ln-292"></a>			<span class="n">x</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="o">=</span> <span class="n">x</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="o">-</span><span class="n">r</span><span class="o">*</span><span class="n">x</span><span class="p">(</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<a name="ln-293"></a>		<span class="k">end do</span>
+<a name="ln-294"></a><span class="k">		</span>
+<a name="ln-295"></a><span class="k">		do </span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">N</span>
+<a name="ln-296"></a>			<span class="n">r</span> <span class="o">=</span> <span class="mf">1.0_wp</span><span class="o">/</span><span class="n">W</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<a name="ln-297"></a>			<span class="n">W</span><span class="p">(</span><span class="n">k</span><span class="p">,:)</span> <span class="o">=</span> <span class="n">r</span><span class="o">*</span><span class="n">W</span><span class="p">(</span><span class="n">k</span><span class="p">,:)</span>
+<a name="ln-298"></a>			<span class="n">x</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="o">=</span> <span class="n">r</span><span class="o">*</span><span class="n">x</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+<a name="ln-299"></a>		<span class="k">end do</span>
+<a name="ln-300"></a><span class="k">	end function </span><span class="n">TDMA_s</span>
+<a name="ln-301"></a>
+<a name="ln-302"></a>	<span class="k">function </span><span class="n">TDMA_m</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">b</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<a name="ln-303"></a>		<span class="c">!! Solve a tridiagonal linear algebra problem \( [A]\{x\}=\{b\} \)</span>
+<a name="ln-304"></a>		<span class="c">!! @todo</span>
+<a name="ln-305"></a>		<span class="c">!! Put behind interface and allow for multiple RHS in another routine</span>
+<a name="ln-306"></a>		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:,:),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span><span class="n">A</span>
+<a name="ln-307"></a>			<span class="c">!! Coefficient matrix with the diagonals in columns \( [A] \)</span>
+<a name="ln-308"></a>		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:,:),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span><span class="n">b</span>
+<a name="ln-309"></a>			<span class="c">!! Right-hand-side of the system \( \{b\} \)</span>
+<a name="ln-310"></a>		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:,:),</span><span class="k">allocatable</span><span class="kd">::</span><span class="n">x</span>
+<a name="ln-311"></a>			<span class="c">!! Problem solution \( \{x\} \)</span>
+<a name="ln-312"></a>		
+<a name="ln-313"></a>		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:,:),</span><span class="k">allocatable</span><span class="kd">::</span><span class="n">W</span>
+<a name="ln-314"></a>		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span><span class="kd">::</span><span class="n">r</span>
+<a name="ln-315"></a>		<span class="kt">integer</span><span class="kd">::</span><span class="n">N</span><span class="p">,</span><span class="n">k</span>
+<a name="ln-316"></a>		
+<a name="ln-317"></a>		<span class="n">N</span> <span class="o">=</span> <span class="n">size</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<a name="ln-318"></a>		
+<a name="ln-319"></a>		<span class="k">allocate</span><span class="p">(</span> <span class="n">W</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="p">)</span>
+<a name="ln-320"></a>		
+<a name="ln-321"></a>		<span class="n">W</span><span class="p">(:,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">A</span><span class="p">(:,</span><span class="mi">1</span><span class="p">)</span>
+<a name="ln-322"></a>		<span class="n">W</span><span class="p">(:,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">=</span> <span class="n">A</span><span class="p">(:,</span><span class="mi">2</span><span class="p">)</span>
+<a name="ln-323"></a>		<span class="n">W</span><span class="p">(:,</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">A</span><span class="p">(:,</span><span class="mi">3</span><span class="p">)</span>
+<a name="ln-324"></a>		<span class="n">x</span>       <span class="o">=</span> <span class="n">b</span>
+<a name="ln-325"></a>		
+<a name="ln-326"></a>		<span class="k">do </span><span class="n">k</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">N</span>
+<a name="ln-327"></a>			<span class="n">r</span> <span class="o">=</span> <span class="n">W</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">W</span><span class="p">(</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<a name="ln-328"></a>			<span class="n">W</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mi">0</span><span class="p">)</span> <span class="o">=</span> <span class="n">W</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mi">0</span><span class="p">)</span><span class="o">-</span><span class="n">r</span><span class="o">*</span><span class="n">W</span><span class="p">(</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">)</span>
+<a name="ln-329"></a>			<span class="n">x</span><span class="p">(</span><span class="n">k</span><span class="p">,:)</span> <span class="o">=</span> <span class="n">x</span><span class="p">(</span><span class="n">k</span><span class="p">,:)</span><span class="o">-</span><span class="n">r</span><span class="o">*</span><span class="n">x</span><span class="p">(</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">,:)</span>
+<a name="ln-330"></a>		<span class="k">end do</span>
+<a name="ln-331"></a><span class="k">		</span>
+<a name="ln-332"></a><span class="k">		do </span><span class="n">k</span><span class="o">=</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span>
+<a name="ln-333"></a>			<span class="n">r</span> <span class="o">=</span> <span class="n">W</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">W</span><span class="p">(</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<a name="ln-334"></a>			<span class="n">W</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">W</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="n">r</span><span class="o">*</span><span class="n">W</span><span class="p">(</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mi">0</span><span class="p">)</span>
+<a name="ln-335"></a>			<span class="n">x</span><span class="p">(</span><span class="n">k</span><span class="p">,:)</span> <span class="o">=</span> <span class="n">x</span><span class="p">(</span><span class="n">k</span><span class="p">,:)</span><span class="o">-</span><span class="n">r</span><span class="o">*</span><span class="n">x</span><span class="p">(</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">,:)</span>
+<a name="ln-336"></a>		<span class="k">end do</span>
+<a name="ln-337"></a><span class="k">		</span>
+<a name="ln-338"></a><span class="k">		do </span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">N</span>
+<a name="ln-339"></a>			<span class="n">r</span> <span class="o">=</span> <span class="mf">1.0_wp</span><span class="o">/</span><span class="n">W</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<a name="ln-340"></a>			<span class="n">W</span><span class="p">(</span><span class="n">k</span><span class="p">,:)</span> <span class="o">=</span> <span class="n">r</span><span class="o">*</span><span class="n">W</span><span class="p">(</span><span class="n">k</span><span class="p">,:)</span>
+<a name="ln-341"></a>			<span class="n">x</span><span class="p">(</span><span class="n">k</span><span class="p">,:)</span> <span class="o">=</span> <span class="n">r</span><span class="o">*</span><span class="n">x</span><span class="p">(</span><span class="n">k</span><span class="p">,:)</span>
+<a name="ln-342"></a>		<span class="k">end do</span>
+<a name="ln-343"></a><span class="k">	end function </span><span class="n">TDMA_m</span>
+<a name="ln-344"></a>
+<a name="ln-345"></a>	<span class="k">function </span><span class="n">TDMA_sZ</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">b</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<a name="ln-346"></a>		<span class="c">!! Solve a tridiagonal linear algebra problem \( [A]\{x\}=\{b\} \)</span>
+<a name="ln-347"></a>		<span class="c">!! @todo</span>
+<a name="ln-348"></a>		<span class="c">!! Put behind interface and allow for multiple RHS in another routine</span>
+<a name="ln-349"></a>		<span class="kt">complex</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:,:),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span><span class="n">A</span>
+<a name="ln-350"></a>			<span class="c">!! Coefficient matrix with the diagonals in columns \( [A] \)</span>
+<a name="ln-351"></a>		<span class="kt">complex</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span><span class="n">b</span>
+<a name="ln-352"></a>			<span class="c">!! Right-hand-side of the system \( \{b\} \)</span>
+<a name="ln-353"></a>		<span class="kt">complex</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">allocatable</span><span class="kd">::</span><span class="n">x</span>
+<a name="ln-354"></a>			<span class="c">!! Problem solution \( \{x\} \)</span>
+<a name="ln-355"></a>		
+<a name="ln-356"></a>		<span class="kt">complex</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:,:),</span><span class="k">allocatable</span><span class="kd">::</span><span class="n">W</span>
+<a name="ln-357"></a>		<span class="kt">complex</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span><span class="kd">::</span><span class="n">r</span>
+<a name="ln-358"></a>		<span class="kt">integer</span><span class="kd">::</span><span class="n">N</span><span class="p">,</span><span class="n">k</span>
+<a name="ln-359"></a>		
+<a name="ln-360"></a>		<span class="n">N</span> <span class="o">=</span> <span class="n">size</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<a name="ln-361"></a>		
+<a name="ln-362"></a>		<span class="k">allocate</span><span class="p">(</span> <span class="n">W</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="p">)</span>
+<a name="ln-363"></a>		
+<a name="ln-364"></a>		<span class="n">W</span><span class="p">(:,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">A</span><span class="p">(:,</span><span class="mi">1</span><span class="p">)</span>
+<a name="ln-365"></a>		<span class="n">W</span><span class="p">(:,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">=</span> <span class="n">A</span><span class="p">(:,</span><span class="mi">2</span><span class="p">)</span>
+<a name="ln-366"></a>		<span class="n">W</span><span class="p">(:,</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">A</span><span class="p">(:,</span><span class="mi">3</span><span class="p">)</span>
+<a name="ln-367"></a>		<span class="n">x</span>       <span class="o">=</span> <span class="n">b</span>
+<a name="ln-368"></a>		
+<a name="ln-369"></a>		<span class="k">do </span><span class="n">k</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">N</span>
+<a name="ln-370"></a>			<span class="n">r</span> <span class="o">=</span> <span class="n">W</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">W</span><span class="p">(</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<a name="ln-371"></a>			<span class="n">W</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mi">0</span><span class="p">)</span> <span class="o">=</span> <span class="n">W</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mi">0</span><span class="p">)</span><span class="o">-</span><span class="n">r</span><span class="o">*</span><span class="n">W</span><span class="p">(</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">)</span>
+<a name="ln-372"></a>			<span class="n">x</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="o">=</span> <span class="n">x</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="o">-</span><span class="n">r</span><span class="o">*</span><span class="n">x</span><span class="p">(</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<a name="ln-373"></a>		<span class="k">end do</span>
+<a name="ln-374"></a><span class="k">		</span>
+<a name="ln-375"></a><span class="k">		do </span><span class="n">k</span><span class="o">=</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span>
+<a name="ln-376"></a>			<span class="n">r</span> <span class="o">=</span> <span class="n">W</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">W</span><span class="p">(</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<a name="ln-377"></a>			<span class="n">W</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">W</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="n">r</span><span class="o">*</span><span class="n">W</span><span class="p">(</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mi">0</span><span class="p">)</span>
+<a name="ln-378"></a>			<span class="n">x</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="o">=</span> <span class="n">x</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="o">-</span><span class="n">r</span><span class="o">*</span><span class="n">x</span><span class="p">(</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<a name="ln-379"></a>		<span class="k">end do</span>
+<a name="ln-380"></a><span class="k">		</span>
+<a name="ln-381"></a><span class="k">		do </span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">N</span>
+<a name="ln-382"></a>			<span class="n">r</span> <span class="o">=</span> <span class="mf">1.0_wp</span><span class="o">/</span><span class="n">W</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<a name="ln-383"></a>			<span class="n">W</span><span class="p">(</span><span class="n">k</span><span class="p">,:)</span> <span class="o">=</span> <span class="n">r</span><span class="o">*</span><span class="n">W</span><span class="p">(</span><span class="n">k</span><span class="p">,:)</span>
+<a name="ln-384"></a>			<span class="n">x</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="o">=</span> <span class="n">r</span><span class="o">*</span><span class="n">x</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+<a name="ln-385"></a>		<span class="k">end do</span>
+<a name="ln-386"></a><span class="k">	end function </span><span class="n">TDMA_sZ</span>
+<a name="ln-387"></a>
+<a name="ln-388"></a>	<span class="k">function </span><span class="n">TDMA_mZ</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">b</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<a name="ln-389"></a>		<span class="c">!! Solve a tridiagonal linear algebra problem \( [A]\{x\}=\{b\} \)</span>
+<a name="ln-390"></a>		<span class="c">!! @todo</span>
+<a name="ln-391"></a>		<span class="c">!! Put behind interface and allow for multiple RHS in another routine</span>
+<a name="ln-392"></a>		<span class="kt">complex</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:,:),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span><span class="n">A</span>
+<a name="ln-393"></a>			<span class="c">!! Coefficient matrix with the diagonals in columns \( [A] \)</span>
+<a name="ln-394"></a>		<span class="kt">complex</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:,:),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span><span class="n">b</span>
+<a name="ln-395"></a>			<span class="c">!! Right-hand-side of the system \( \{b\} \)</span>
+<a name="ln-396"></a>		<span class="kt">complex</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:,:),</span><span class="k">allocatable</span><span class="kd">::</span><span class="n">x</span>
+<a name="ln-397"></a>			<span class="c">!! Problem solution \( \{x\} \)</span>
+<a name="ln-398"></a>		
+<a name="ln-399"></a>		<span class="kt">complex</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:,:),</span><span class="k">allocatable</span><span class="kd">::</span><span class="n">W</span>
+<a name="ln-400"></a>		<span class="kt">complex</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span><span class="kd">::</span><span class="n">r</span>
+<a name="ln-401"></a>		<span class="kt">integer</span><span class="kd">::</span><span class="n">N</span><span class="p">,</span><span class="n">k</span>
+<a name="ln-402"></a>		
+<a name="ln-403"></a>		<span class="n">N</span> <span class="o">=</span> <span class="n">size</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<a name="ln-404"></a>		
+<a name="ln-405"></a>		<span class="k">allocate</span><span class="p">(</span> <span class="n">W</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="p">)</span>
+<a name="ln-406"></a>		
+<a name="ln-407"></a>		<span class="n">W</span><span class="p">(:,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">A</span><span class="p">(:,</span><span class="mi">1</span><span class="p">)</span>
+<a name="ln-408"></a>		<span class="n">W</span><span class="p">(:,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">=</span> <span class="n">A</span><span class="p">(:,</span><span class="mi">2</span><span class="p">)</span>
+<a name="ln-409"></a>		<span class="n">W</span><span class="p">(:,</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">A</span><span class="p">(:,</span><span class="mi">3</span><span class="p">)</span>
+<a name="ln-410"></a>		<span class="n">x</span>       <span class="o">=</span> <span class="n">b</span>
+<a name="ln-411"></a>		
+<a name="ln-412"></a>		<span class="k">do </span><span class="n">k</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">N</span>
+<a name="ln-413"></a>			<span class="n">r</span> <span class="o">=</span> <span class="n">W</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">W</span><span class="p">(</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<a name="ln-414"></a>			<span class="n">W</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mi">0</span><span class="p">)</span> <span class="o">=</span> <span class="n">W</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mi">0</span><span class="p">)</span><span class="o">-</span><span class="n">r</span><span class="o">*</span><span class="n">W</span><span class="p">(</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">)</span>
+<a name="ln-415"></a>			<span class="n">x</span><span class="p">(</span><span class="n">k</span><span class="p">,:)</span> <span class="o">=</span> <span class="n">x</span><span class="p">(</span><span class="n">k</span><span class="p">,:)</span><span class="o">-</span><span class="n">r</span><span class="o">*</span><span class="n">x</span><span class="p">(</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">,:)</span>
+<a name="ln-416"></a>		<span class="k">end do</span>
+<a name="ln-417"></a><span class="k">		</span>
+<a name="ln-418"></a><span class="k">		do </span><span class="n">k</span><span class="o">=</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span>
+<a name="ln-419"></a>			<span class="n">r</span> <span class="o">=</span> <span class="n">W</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">W</span><span class="p">(</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<a name="ln-420"></a>			<span class="n">W</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">W</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="n">r</span><span class="o">*</span><span class="n">W</span><span class="p">(</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mi">0</span><span class="p">)</span>
+<a name="ln-421"></a>			<span class="n">x</span><span class="p">(</span><span class="n">k</span><span class="p">,:)</span> <span class="o">=</span> <span class="n">x</span><span class="p">(</span><span class="n">k</span><span class="p">,:)</span><span class="o">-</span><span class="n">r</span><span class="o">*</span><span class="n">x</span><span class="p">(</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">,:)</span>
+<a name="ln-422"></a>		<span class="k">end do</span>
+<a name="ln-423"></a><span class="k">		</span>
+<a name="ln-424"></a><span class="k">		do </span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">N</span>
+<a name="ln-425"></a>			<span class="n">r</span> <span class="o">=</span> <span class="mf">1.0_wp</span><span class="o">/</span><span class="n">W</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<a name="ln-426"></a>			<span class="n">W</span><span class="p">(</span><span class="n">k</span><span class="p">,:)</span> <span class="o">=</span> <span class="n">r</span><span class="o">*</span><span class="n">W</span><span class="p">(</span><span class="n">k</span><span class="p">,:)</span>
+<a name="ln-427"></a>			<span class="n">x</span><span class="p">(</span><span class="n">k</span><span class="p">,:)</span> <span class="o">=</span> <span class="n">r</span><span class="o">*</span><span class="n">x</span><span class="p">(</span><span class="n">k</span><span class="p">,:)</span>
+<a name="ln-428"></a>		<span class="k">end do</span>
+<a name="ln-429"></a><span class="k">	end function </span><span class="n">TDMA_mZ</span>
+<a name="ln-430"></a>
+<a name="ln-431"></a>	<span class="c">!====================!</span>
+<a name="ln-432"></a>	<span class="c">!= solveLU Routines =!</span>
+<a name="ln-433"></a>	<span class="c">!====================!</span>
+<a name="ln-434"></a>
+<a name="ln-435"></a>	<span class="k">subroutine </span><span class="n">decomposeLU</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">LU</span><span class="p">,</span><span class="n">p</span><span class="p">)</span>
+<a name="ln-436"></a>		<span class="c">!! Shamelessly adapted from Rosetta Code</span>
+<a name="ln-437"></a>		<span class="c">!!</span>
+<a name="ln-438"></a>		<span class="c">!! L -&gt; j&lt;i , L(i,i) = 1</span>
+<a name="ln-439"></a>		<span class="c">!! U -&gt; j&gt;=i</span>
+<a name="ln-440"></a>		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:,:),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span><span class="n">A</span>
+<a name="ln-441"></a>		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:,:),</span><span class="k">allocatable</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="kd">::</span> <span class="n">LU</span>
+<a name="ln-442"></a>		<span class="kt">integer</span><span class="p">,</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">allocatable</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="kd">::</span><span class="n">p</span>
+<a name="ln-443"></a>		<span class="kt">integer</span><span class="kd">::</span><span class="n">N</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">m</span>
+<a name="ln-444"></a>		
+<a name="ln-445"></a>		<span class="n">LU</span> <span class="o">=</span> <span class="n">A</span>
+<a name="ln-446"></a>		
+<a name="ln-447"></a>		<span class="n">N</span> <span class="o">=</span> <span class="n">size</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<a name="ln-448"></a>		<span class="n">p</span> <span class="o">=</span> <span class="p">[(</span> <span class="n">i</span> <span class="p">,</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">N</span> <span class="p">)]</span>
+<a name="ln-449"></a>		<span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span>
+<a name="ln-450"></a>			<span class="n">m</span> <span class="o">=</span> <span class="nb">maxloc</span><span class="p">(</span> <span class="nb">abs</span><span class="p">(</span> <span class="n">LU</span><span class="p">(</span><span class="n">p</span><span class="p">(</span><span class="n">i</span><span class="p">:),</span><span class="n">i</span><span class="p">)</span> <span class="p">)</span> <span class="p">,</span> <span class="mi">1</span> <span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<a name="ln-451"></a>			
+<a name="ln-452"></a>			<span class="k">if</span><span class="p">(</span><span class="n">m</span><span class="o">/=</span><span class="n">i</span><span class="p">)</span> <span class="n">p</span><span class="p">([</span><span class="n">i</span><span class="p">,</span><span class="n">m</span><span class="p">])</span> <span class="o">=</span> <span class="n">p</span><span class="p">([</span><span class="n">m</span><span class="p">,</span><span class="n">i</span><span class="p">])</span>
+<a name="ln-453"></a>			
+<a name="ln-454"></a>			<span class="n">LU</span><span class="p">(</span><span class="n">p</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">:),</span><span class="n">i</span><span class="p">)</span> <span class="o">=</span> <span class="n">LU</span><span class="p">(</span><span class="n">p</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">:),</span><span class="n">i</span><span class="p">)</span> <span class="o">/</span> <span class="n">LU</span><span class="p">(</span><span class="n">p</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="n">i</span><span class="p">)</span>
+<a name="ln-455"></a>			
+<a name="ln-456"></a>			<span class="k">forall</span><span class="p">(</span><span class="n">j</span><span class="o">=</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">:</span><span class="n">N</span><span class="p">)</span> <span class="n">LU</span><span class="p">(</span><span class="n">p</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">:),</span><span class="n">j</span><span class="p">)</span> <span class="o">=</span> <span class="n">LU</span><span class="p">(</span><span class="n">p</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">:),</span><span class="n">j</span><span class="p">)</span> <span class="o">-</span> <span class="n">LU</span><span class="p">(</span><span class="n">p</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">:),</span><span class="n">i</span><span class="p">)</span> <span class="o">*</span> <span class="n">LU</span><span class="p">(</span><span class="n">p</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="n">j</span><span class="p">)</span>
+<a name="ln-457"></a>		<span class="k">end do</span>
+<a name="ln-458"></a><span class="k">		</span>
+<a name="ln-459"></a><span class="k">		</span><span class="n">LU</span> <span class="o">=</span> <span class="n">LU</span><span class="p">(</span><span class="n">p</span><span class="p">,:)</span>
+<a name="ln-460"></a>	<span class="k">end subroutine </span><span class="n">decomposeLU</span>
+<a name="ln-461"></a>
+<a name="ln-462"></a>	<span class="k">subroutine </span><span class="n">decomposeLU_z</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">LU</span><span class="p">,</span><span class="n">p</span><span class="p">)</span>
+<a name="ln-463"></a>		<span class="c">!! Shamelessly adapted from Rosetta Code</span>
+<a name="ln-464"></a>		<span class="c">!!</span>
+<a name="ln-465"></a>		<span class="c">!! L -&gt; j&lt;i , L(i,i) = 1</span>
+<a name="ln-466"></a>		<span class="c">!! U -&gt; j&gt;=i</span>
+<a name="ln-467"></a>		<span class="kt">complex</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:,:),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span><span class="n">A</span>
+<a name="ln-468"></a>		<span class="kt">complex</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:,:),</span><span class="k">allocatable</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="kd">::</span> <span class="n">LU</span>
+<a name="ln-469"></a>		<span class="kt">integer</span><span class="p">,</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">allocatable</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="kd">::</span><span class="n">p</span>
+<a name="ln-470"></a>		<span class="kt">integer</span><span class="kd">::</span><span class="n">N</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">m</span>
+<a name="ln-471"></a>		
+<a name="ln-472"></a>		<span class="n">LU</span> <span class="o">=</span> <span class="n">A</span>
+<a name="ln-473"></a>		
+<a name="ln-474"></a>		<span class="n">N</span> <span class="o">=</span> <span class="n">size</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<a name="ln-475"></a>		<span class="n">p</span> <span class="o">=</span> <span class="p">[(</span> <span class="n">i</span> <span class="p">,</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">N</span> <span class="p">)]</span>
+<a name="ln-476"></a>		<span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span>
+<a name="ln-477"></a>			<span class="n">m</span> <span class="o">=</span> <span class="nb">maxloc</span><span class="p">(</span> <span class="nb">abs</span><span class="p">(</span> <span class="n">LU</span><span class="p">(</span><span class="n">p</span><span class="p">(</span><span class="n">i</span><span class="p">:),</span><span class="n">i</span><span class="p">)</span> <span class="p">)</span> <span class="p">,</span> <span class="mi">1</span> <span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<a name="ln-478"></a>			
+<a name="ln-479"></a>			<span class="k">if</span><span class="p">(</span><span class="n">m</span><span class="o">/=</span><span class="n">i</span><span class="p">)</span> <span class="n">p</span><span class="p">([</span><span class="n">i</span><span class="p">,</span><span class="n">m</span><span class="p">])</span> <span class="o">=</span> <span class="n">p</span><span class="p">([</span><span class="n">m</span><span class="p">,</span><span class="n">i</span><span class="p">])</span>
+<a name="ln-480"></a>			
+<a name="ln-481"></a>			<span class="n">LU</span><span class="p">(</span><span class="n">p</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">:),</span><span class="n">i</span><span class="p">)</span> <span class="o">=</span> <span class="n">LU</span><span class="p">(</span><span class="n">p</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">:),</span><span class="n">i</span><span class="p">)</span> <span class="o">/</span> <span class="n">LU</span><span class="p">(</span><span class="n">p</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="n">i</span><span class="p">)</span>
+<a name="ln-482"></a>			
+<a name="ln-483"></a>			<span class="k">forall</span><span class="p">(</span><span class="n">j</span><span class="o">=</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">:</span><span class="n">N</span><span class="p">)</span> <span class="n">LU</span><span class="p">(</span><span class="n">p</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">:),</span><span class="n">j</span><span class="p">)</span> <span class="o">=</span> <span class="n">LU</span><span class="p">(</span><span class="n">p</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">:),</span><span class="n">j</span><span class="p">)</span> <span class="o">-</span> <span class="n">LU</span><span class="p">(</span><span class="n">p</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">:),</span><span class="n">i</span><span class="p">)</span> <span class="o">*</span> <span class="n">LU</span><span class="p">(</span><span class="n">p</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="n">j</span><span class="p">)</span>
+<a name="ln-484"></a>		<span class="k">end do</span>
+<a name="ln-485"></a><span class="k">		</span>
+<a name="ln-486"></a><span class="k">		</span><span class="n">LU</span> <span class="o">=</span> <span class="n">LU</span><span class="p">(</span><span class="n">p</span><span class="p">,:)</span>
+<a name="ln-487"></a>	<span class="k">end subroutine </span><span class="n">decomposeLU_z</span>
+<a name="ln-488"></a>
+<a name="ln-489"></a>	<span class="k">function </span><span class="n">applyLU</span><span class="p">(</span><span class="n">LU</span><span class="p">,</span><span class="n">p</span><span class="p">,</span><span class="n">b</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<a name="ln-490"></a>		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:,:),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span><span class="n">LU</span>
+<a name="ln-491"></a>		<span class="kt">integer</span><span class="p">,</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span><span class="n">p</span>
+<a name="ln-492"></a>		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span><span class="n">b</span>
+<a name="ln-493"></a>		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">allocatable</span><span class="kd">::</span><span class="n">x</span>
+<a name="ln-494"></a>		
+<a name="ln-495"></a>		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">allocatable</span><span class="kd">::</span><span class="n">pb</span>
+<a name="ln-496"></a>		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">allocatable</span><span class="kd">::</span><span class="n">r</span>
+<a name="ln-497"></a>		<span class="kt">integer</span><span class="kd">::</span><span class="n">N</span><span class="p">,</span><span class="n">i</span>
+<a name="ln-498"></a>		
+<a name="ln-499"></a>		<span class="n">N</span>  <span class="o">=</span> <span class="n">size</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<a name="ln-500"></a>		<span class="k">allocate</span><span class="p">(</span><span class="n">r</span><span class="p">(</span><span class="n">N</span><span class="p">),</span><span class="n">x</span><span class="p">(</span><span class="n">N</span><span class="p">),</span><span class="n">pb</span><span class="p">(</span><span class="n">N</span><span class="p">))</span>
+<a name="ln-501"></a>		<span class="n">r</span>  <span class="o">=</span> <span class="mf">0.0_wp</span>
+<a name="ln-502"></a>		<span class="n">x</span>  <span class="o">=</span> <span class="mf">0.0_wp</span>
+<a name="ln-503"></a>		<span class="n">pb</span> <span class="o">=</span> <span class="n">b</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+<a name="ln-504"></a>		
+<a name="ln-505"></a>		<span class="c">! L.r=pb</span>
+<a name="ln-506"></a>		<span class="n">r</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">pb</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a name="ln-507"></a>		<span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">N</span><span class="p">,</span><span class="o">+</span><span class="mi">1</span>
+<a name="ln-508"></a>			<span class="n">r</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">=</span> <span class="n">pb</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">-</span><span class="nb">dot_product</span><span class="p">(</span><span class="n">LU</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="n">r</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+<a name="ln-509"></a>		<span class="k">end do</span>
+<a name="ln-510"></a>		
+<a name="ln-511"></a>		<span class="c">! U.x=r</span>
+<a name="ln-512"></a>		<span class="n">x</span><span class="p">(</span><span class="n">N</span><span class="p">)</span> <span class="o">=</span> <span class="n">r</span><span class="p">(</span><span class="n">N</span><span class="p">)</span><span class="o">/</span><span class="n">LU</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">N</span><span class="p">)</span>
+<a name="ln-513"></a>		<span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span>
+<a name="ln-514"></a>			<span class="n">x</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span> <span class="n">r</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">-</span><span class="nb">dot_product</span><span class="p">(</span><span class="n">LU</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">:</span><span class="n">N</span><span class="p">),</span><span class="n">x</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">:</span><span class="n">N</span><span class="p">))</span> <span class="p">)</span><span class="o">/</span><span class="n">LU</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">i</span><span class="p">)</span>
+<a name="ln-515"></a>		<span class="k">end do</span>
+<a name="ln-516"></a><span class="k">	end function </span><span class="n">applyLU</span>
+<a name="ln-517"></a>
+<a name="ln-518"></a>
+<a name="ln-519"></a>	<span class="k">function </span><span class="n">applyLU_z</span><span class="p">(</span><span class="n">LU</span><span class="p">,</span><span class="n">p</span><span class="p">,</span><span class="n">b</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<a name="ln-520"></a>		<span class="kt">complex</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:,:),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span><span class="n">LU</span>
+<a name="ln-521"></a>		<span class="kt">integer</span><span class="p">,</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span><span class="n">p</span>
+<a name="ln-522"></a>		<span class="kt">complex</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span><span class="n">b</span>
+<a name="ln-523"></a>		<span class="kt">complex</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">allocatable</span><span class="kd">::</span><span class="n">x</span>
+<a name="ln-524"></a>		
+<a name="ln-525"></a>		<span class="kt">complex</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">allocatable</span><span class="kd">::</span><span class="n">pb</span>
+<a name="ln-526"></a>		<span class="kt">complex</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">allocatable</span><span class="kd">::</span><span class="n">r</span>
+<a name="ln-527"></a>		<span class="kt">integer</span><span class="kd">::</span><span class="n">N</span><span class="p">,</span><span class="n">i</span>
+<a name="ln-528"></a>		
+<a name="ln-529"></a>		<span class="n">N</span>  <span class="o">=</span> <span class="n">size</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<a name="ln-530"></a>		<span class="k">allocate</span><span class="p">(</span><span class="n">r</span><span class="p">(</span><span class="n">N</span><span class="p">),</span><span class="n">x</span><span class="p">(</span><span class="n">N</span><span class="p">),</span><span class="n">pb</span><span class="p">(</span><span class="n">N</span><span class="p">))</span>
+<a name="ln-531"></a>		<span class="n">r</span>  <span class="o">=</span> <span class="mf">0.0_wp</span>
+<a name="ln-532"></a>		<span class="n">x</span>  <span class="o">=</span> <span class="mf">0.0_wp</span>
+<a name="ln-533"></a>		<span class="n">pb</span> <span class="o">=</span> <span class="n">b</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+<a name="ln-534"></a>		
+<a name="ln-535"></a>		<span class="c">! L.r=pb</span>
+<a name="ln-536"></a>		<span class="n">r</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">pb</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a name="ln-537"></a>		<span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">N</span><span class="p">,</span><span class="o">+</span><span class="mi">1</span>
+<a name="ln-538"></a>			<span class="n">r</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">=</span> <span class="n">pb</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">-</span><span class="nb">dot_product</span><span class="p">(</span><span class="n">LU</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="n">r</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+<a name="ln-539"></a>		<span class="k">end do</span>
+<a name="ln-540"></a>		
+<a name="ln-541"></a>		<span class="c">! U.x=r</span>
+<a name="ln-542"></a>		<span class="n">x</span><span class="p">(</span><span class="n">N</span><span class="p">)</span> <span class="o">=</span> <span class="n">r</span><span class="p">(</span><span class="n">N</span><span class="p">)</span><span class="o">/</span><span class="n">LU</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">N</span><span class="p">)</span>
+<a name="ln-543"></a>		<span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span>
+<a name="ln-544"></a>			<span class="n">x</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span> <span class="n">r</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">-</span><span class="nb">dot_product</span><span class="p">(</span><span class="n">LU</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">:</span><span class="n">N</span><span class="p">),</span><span class="n">x</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">:</span><span class="n">N</span><span class="p">))</span> <span class="p">)</span><span class="o">/</span><span class="n">LU</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">i</span><span class="p">)</span>
+<a name="ln-545"></a>		<span class="k">end do</span>
+<a name="ln-546"></a><span class="k">	end function </span><span class="n">applyLU_z</span>
+<a name="ln-547"></a>
+<a name="ln-548"></a>	<span class="k">function </span><span class="n">solveLU_s</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">b</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<a name="ln-549"></a>		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:,:),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span><span class="n">A</span>
+<a name="ln-550"></a>		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span><span class="n">b</span>
+<a name="ln-551"></a>		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">allocatable</span><span class="kd">::</span><span class="n">x</span>
+<a name="ln-552"></a>		
+<a name="ln-553"></a>		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:,:),</span><span class="k">allocatable</span><span class="kd">::</span><span class="n">LU</span>
+<a name="ln-554"></a>		<span class="kt">integer</span><span class="p">,</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">allocatable</span><span class="kd">::</span><span class="n">p</span>
+<a name="ln-555"></a>		
+<a name="ln-556"></a>		<span class="k">call </span><span class="n">decomposeLU</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">LU</span><span class="p">,</span><span class="n">p</span><span class="p">)</span>
+<a name="ln-557"></a>		
+<a name="ln-558"></a>		<span class="n">x</span> <span class="o">=</span> <span class="n">applyLU</span><span class="p">(</span><span class="n">LU</span><span class="p">,</span><span class="n">p</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+<a name="ln-559"></a>	<span class="k">end function </span><span class="n">solveLU_s</span>
+<a name="ln-560"></a>
+<a name="ln-561"></a>	<span class="k">function </span><span class="n">solveLU_m</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">b</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<a name="ln-562"></a>		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:,:),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span><span class="n">A</span>
+<a name="ln-563"></a>		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:,:),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span><span class="n">b</span>
+<a name="ln-564"></a>		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:,:),</span><span class="k">allocatable</span><span class="kd">::</span><span class="n">x</span>
+<a name="ln-565"></a>		
+<a name="ln-566"></a>		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:,:),</span><span class="k">allocatable</span><span class="kd">::</span><span class="n">LU</span>
+<a name="ln-567"></a>		<span class="kt">integer</span><span class="p">,</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">allocatable</span><span class="kd">::</span><span class="n">p</span>
+<a name="ln-568"></a>		<span class="kt">integer</span><span class="kd">::</span><span class="n">k</span>
+<a name="ln-569"></a>		
+<a name="ln-570"></a>		<span class="k">call </span><span class="n">decomposeLU</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">LU</span><span class="p">,</span><span class="n">p</span><span class="p">)</span>
+<a name="ln-571"></a>		
+<a name="ln-572"></a>		<span class="k">allocate</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">mold</span><span class="o">=</span><span class="n">b</span><span class="p">)</span>
+<a name="ln-573"></a>		
+<a name="ln-574"></a>		<span class="k">do </span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<a name="ln-575"></a>			<span class="n">x</span><span class="p">(:,</span><span class="n">k</span><span class="p">)</span> <span class="o">=</span> <span class="n">applyLU</span><span class="p">(</span><span class="n">LU</span><span class="p">,</span><span class="n">p</span><span class="p">,</span><span class="n">b</span><span class="p">(:,</span><span class="n">k</span><span class="p">))</span>
+<a name="ln-576"></a>		<span class="k">end do</span>
+<a name="ln-577"></a><span class="k">	end function </span><span class="n">solveLU_m</span>
+<a name="ln-578"></a>
+<a name="ln-579"></a>	<span class="k">function </span><span class="n">solveLU_sZ</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">b</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<a name="ln-580"></a>		<span class="kt">complex</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:,:),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span><span class="n">A</span>
+<a name="ln-581"></a>		<span class="kt">complex</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span><span class="n">b</span>
+<a name="ln-582"></a>		<span class="kt">complex</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">allocatable</span><span class="kd">::</span><span class="n">x</span>
+<a name="ln-583"></a>		
+<a name="ln-584"></a>		<span class="kt">complex</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:,:),</span><span class="k">allocatable</span><span class="kd">::</span><span class="n">LU</span>
+<a name="ln-585"></a>		<span class="kt">integer</span><span class="p">,</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">allocatable</span><span class="kd">::</span><span class="n">p</span>
+<a name="ln-586"></a>		
+<a name="ln-587"></a>		<span class="k">call </span><span class="n">decomposeLU_z</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">LU</span><span class="p">,</span><span class="n">p</span><span class="p">)</span>
+<a name="ln-588"></a>		
+<a name="ln-589"></a>		<span class="n">x</span> <span class="o">=</span> <span class="n">applyLU_z</span><span class="p">(</span><span class="n">LU</span><span class="p">,</span><span class="n">p</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+<a name="ln-590"></a>	<span class="k">end function </span><span class="n">solveLU_sZ</span>
+<a name="ln-591"></a>
+<a name="ln-592"></a>	<span class="k">function </span><span class="n">solveLU_mZ</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">b</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<a name="ln-593"></a>		<span class="kt">complex</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:,:),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span><span class="n">A</span>
+<a name="ln-594"></a>		<span class="kt">complex</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:,:),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span><span class="n">b</span>
+<a name="ln-595"></a>		<span class="kt">complex</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:,:),</span><span class="k">allocatable</span><span class="kd">::</span><span class="n">x</span>
+<a name="ln-596"></a>		
+<a name="ln-597"></a>		<span class="kt">complex</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:,:),</span><span class="k">allocatable</span><span class="kd">::</span><span class="n">LU</span>
+<a name="ln-598"></a>		<span class="kt">integer</span><span class="p">,</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">allocatable</span><span class="kd">::</span><span class="n">p</span>
+<a name="ln-599"></a>		<span class="kt">integer</span><span class="kd">::</span><span class="n">k</span>
+<a name="ln-600"></a>		
+<a name="ln-601"></a>		<span class="k">call </span><span class="n">decomposeLU_z</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">LU</span><span class="p">,</span><span class="n">p</span><span class="p">)</span>
+<a name="ln-602"></a>		
+<a name="ln-603"></a>		<span class="k">allocate</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">mold</span><span class="o">=</span><span class="n">b</span><span class="p">)</span>
+<a name="ln-604"></a>		
+<a name="ln-605"></a>		<span class="k">do </span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<a name="ln-606"></a>			<span class="n">x</span><span class="p">(:,</span><span class="n">k</span><span class="p">)</span> <span class="o">=</span> <span class="n">applyLU_z</span><span class="p">(</span><span class="n">LU</span><span class="p">,</span><span class="n">p</span><span class="p">,</span><span class="n">b</span><span class="p">(:,</span><span class="n">k</span><span class="p">))</span>
+<a name="ln-607"></a>		<span class="k">end do</span>
+<a name="ln-608"></a><span class="k">	end function </span><span class="n">solveLU_mZ</span>
+<a name="ln-609"></a>
+<a name="ln-610"></a>	<span class="c">!========================!</span>
+<a name="ln-611"></a>	<span class="c">!= Linear Interpolation =!</span>
+<a name="ln-612"></a>	<span class="c">!========================!</span>
+<a name="ln-613"></a>
+<a name="ln-614"></a>	<span class="k">function </span><span class="n">linearInterp</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">o</span><span class="p">)</span>
+<a name="ln-615"></a>		<span class="c">!! Linear interpolation of y(x) at x=r</span>
+<a name="ln-616"></a>		<span class="c">!!</span>
+<a name="ln-617"></a>		<span class="c">!! Arrays x and y must be sorted</span>
+<a name="ln-618"></a>		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span><span class="n">r</span>
+<a name="ln-619"></a>			<span class="c">!! Position of desired value</span>
+<a name="ln-620"></a>		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span><span class="n">x</span>
+<a name="ln-621"></a>			<span class="c">!! x values of data</span>
+<a name="ln-622"></a>		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(</span><span class="n">size</span><span class="p">(</span><span class="n">x</span><span class="p">)),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span><span class="n">y</span>
+<a name="ln-623"></a>			<span class="c">!! y values of data</span>
+<a name="ln-624"></a>		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span><span class="kd">::</span><span class="n">o</span>
+<a name="ln-625"></a>			<span class="c">!! y(x=r) via linear interpolation</span>
+<a name="ln-626"></a>		
+<a name="ln-627"></a>		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span><span class="kd">::</span><span class="n">xi</span>
+<a name="ln-628"></a>		<span class="kt">integer</span><span class="kd">::</span><span class="n">k</span>
+<a name="ln-629"></a>		
+<a name="ln-630"></a>		<span class="n">k</span>  <span class="o">=</span> <span class="n">findInterval</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+<a name="ln-631"></a>		<span class="n">xi</span> <span class="o">=</span> <span class="p">(</span> <span class="n">r</span><span class="o">-</span><span class="n">x</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="p">)</span><span class="o">/</span><span class="p">(</span> <span class="n">x</span><span class="p">(</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="n">x</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="p">)</span>
+<a name="ln-632"></a>		<span class="n">o</span>  <span class="o">=</span> <span class="n">y</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="o">+</span><span class="n">xi</span><span class="o">*</span><span class="p">(</span> <span class="n">y</span><span class="p">(</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="n">y</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="p">)</span>
+<a name="ln-633"></a>		
+<a name="ln-634"></a>	<span class="k">end function </span><span class="n">linearInterp</span>
+<a name="ln-635"></a>
+<a name="ln-636"></a>	<span class="k">function </span><span class="n">findInterval</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">t0</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">o</span><span class="p">)</span>
+<a name="ln-637"></a>		<span class="c">!! Find the locations in t0 that bracket t</span>
+<a name="ln-638"></a>		<span class="c">!!</span>
+<a name="ln-639"></a>		<span class="c">!! Start with a quick search and finish with direct</span>
+<a name="ln-640"></a>		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span><span class="n">t</span>
+<a name="ln-641"></a>			<span class="c">!! Position of desired value</span>
+<a name="ln-642"></a>		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span><span class="n">t0</span>
+<a name="ln-643"></a>			<span class="c">!! t values of data</span>
+<a name="ln-644"></a>		<span class="kt">integer</span><span class="kd">::</span><span class="n">o</span>
+<a name="ln-645"></a>			<span class="c">!! Index of lower t0 value which brakets t</span>
+<a name="ln-646"></a>		
+<a name="ln-647"></a>		<span class="kt">integer</span><span class="kd">::</span><span class="n">L</span><span class="p">,</span><span class="n">M</span><span class="p">,</span><span class="n">H</span>
+<a name="ln-648"></a>		
+<a name="ln-649"></a>		<span class="n">L</span> <span class="o">=</span> <span class="mi">1</span>
+<a name="ln-650"></a>		<span class="n">H</span> <span class="o">=</span> <span class="n">size</span><span class="p">(</span><span class="n">t0</span><span class="p">)</span>
+<a name="ln-651"></a>		
+<a name="ln-652"></a>		<span class="k">do while</span><span class="p">(</span><span class="n">H</span><span class="o">-</span><span class="n">L</span><span class="o">&gt;</span><span class="mi">5</span><span class="p">)</span>
+<a name="ln-653"></a>			<span class="n">M</span> <span class="o">=</span> <span class="p">(</span><span class="n">L</span><span class="o">+</span><span class="n">H</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+<a name="ln-654"></a>			<span class="k">if</span><span class="p">(</span> <span class="n">t</span><span class="o">&gt;=</span><span class="n">t0</span><span class="p">(</span><span class="n">M</span><span class="p">)</span> <span class="p">)</span> <span class="k">then</span>
+<a name="ln-655"></a><span class="k">				</span><span class="n">L</span> <span class="o">=</span> <span class="n">M</span>
+<a name="ln-656"></a>			<span class="k">else</span>
+<a name="ln-657"></a><span class="k">				</span><span class="n">H</span> <span class="o">=</span> <span class="n">M</span>
+<a name="ln-658"></a>			<span class="k">end if</span>
+<a name="ln-659"></a><span class="k">		end do</span>
+<a name="ln-660"></a><span class="k">		</span>
+<a name="ln-661"></a><span class="k">		</span><span class="n">o</span> <span class="o">=</span> <span class="n">directSearch</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">t0</span><span class="p">(</span><span class="n">L</span><span class="p">:</span><span class="n">H</span><span class="p">))</span><span class="o">+</span><span class="p">(</span><span class="n">L</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<a name="ln-662"></a>		
+<a name="ln-663"></a>	<span class="k">contains</span>
+<a name="ln-664"></a><span class="k">	</span>
+<a name="ln-665"></a><span class="k">		function </span><span class="n">directSearch</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">t0</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">o</span><span class="p">)</span>
+<a name="ln-666"></a>			<span class="c">!! Search entried linearlly until span is found</span>
+<a name="ln-667"></a>			<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span><span class="n">t</span>
+<a name="ln-668"></a>			<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span><span class="n">t0</span>
+<a name="ln-669"></a>			<span class="kt">integer</span><span class="kd">::</span><span class="n">o</span>
+<a name="ln-670"></a>			
+<a name="ln-671"></a>			<span class="kt">integer</span><span class="kd">::</span><span class="n">N</span><span class="p">,</span><span class="n">k</span>
+<a name="ln-672"></a>			
+<a name="ln-673"></a>			<span class="n">N</span> <span class="o">=</span> <span class="n">size</span><span class="p">(</span><span class="n">t0</span><span class="p">)</span>
+<a name="ln-674"></a>			<span class="k">do </span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span>
+<a name="ln-675"></a>				<span class="k">if</span><span class="p">(</span> <span class="n">t</span><span class="o">&lt;</span><span class="n">t0</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="p">)</span> <span class="k">exit</span>
+<a name="ln-676"></a><span class="k">			end do</span>
+<a name="ln-677"></a><span class="k">			</span><span class="n">o</span> <span class="o">=</span> <span class="n">k</span><span class="o">-</span><span class="mi">1</span>
+<a name="ln-678"></a>		<span class="k">end function </span><span class="n">directSearch</span>
+<a name="ln-679"></a>	
+<a name="ln-680"></a>	<span class="k">end function </span><span class="n">findInterval</span>
+<a name="ln-681"></a>
+<a name="ln-682"></a><span class="k">end module </span><span class="n">array_mod</span>
+</pre></div>
+
+    </section>
+    </div>
+  </div>
+
+  <section class="visible-xs visible-sm hidden-md">
+    <hr>
+    
+
+<div class="panel panel-default">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#allfiles-1">All Source Files</a></h3></div>
+  <div id="allfiles-1" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../sourcefile/animate.f90.html">animate.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/array.f90.html">array.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/autodiff.f90.html">autoDiff.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/basic.f90.html">basic.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/basicsolvers.f90.html">basicSolvers.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/config.f90.html">config.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/examples.f90.html">examples.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/expression.f90.html">expression.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/fourier.f90.html">fourier.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/iterate.f90.html">iterate.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/kinds.f90.html">kinds.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/logo.f90.html">logo.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/matio.f90.html">matIO.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/mesh.f90.html">mesh.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/netcdf.f90.html">netCDF.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/node.f90.html">node.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/optimize.f90.html">optimize.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/plplotlib.f90.html">plplotlib.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/quaternion.f90.html">quaternion.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/solvers.f90.html">solvers.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/sparse.f90.html">sparse.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/spline.f90.html">spline.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/stats.f90.html">stats.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/tensor.f90.html">tensor.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testarray.f90.html">testArray.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testautodiff.f90.html">testAutoDiff.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testconfig.f90.html">testConfig.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testexpression.f90.html">testExpression.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testfourier.f90.html">testFourier.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testiterate.f90.html">testIterate.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testkinds.f90.html">testKinds.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testmatio.f90.html">testMatIO.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testmesh.f90.html">testMesh.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testnetcdf.f90.html">testNetCDF.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testoptimize.f90.html">testOptimize.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testquaternion.f90.html">testQuaternion.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testsparse.f90.html">testSparse.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testspline.f90.html">testSpline.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/teststats.f90.html">testStats.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testtensor.f90.html">testTensor.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testtext.f90.html">testText.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testtime.f90.html">testTime.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testvtkio.f90.html">testVtkIO.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/text.f90.html">text.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/time.f90.html">time.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/treeexponential.f90.html">treeExponential.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/treeoperator.f90.html">treeOperator.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/treetrigonometric.f90.html">treeTrigonometric.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/treevalue.f90.html">treeValue.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/vtkio.f90.html">vtkIO.f90</a>
+      
+    </div>
+  </div>
+</div>
+
+
+  </section>
+  
+    <hr>    
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-md-4"><p>&copy; 2016 </p></div>
+        <div class="col-xs-6 col-md-4 col-md-push-4">
+          <p class="text-right">
+            Documentation generated by 
+            <a href="https://github.com/cmacmackin/ford">FORD</a>
+            
+          </p>
+        </div>
+        <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> CommonModules was developed by Kyle Horne</p></div>
+      </div>
+      <br>
+      </div> <!-- /container -->    
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+-->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- MathJax JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js'],
+        'HTML-CSS': { 
+           styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: '#000000 ! important'} }
+        }
+      });
+    </script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  </body>
+</html>

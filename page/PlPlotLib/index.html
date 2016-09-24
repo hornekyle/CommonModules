@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	 
+	 <meta name="description" content="Common modules for using in other programs">
+    
+    <meta name="author" content="Chris MacMackin" >
+    <link rel="icon" href="../../favicon.png">
+
+    <title>PlPlotLib Instructions &ndash; CommonModules</title>
+
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/pygments.css" rel="stylesheet">
+    <link href="../../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../../css/local.css" rel="stylesheet">
+    
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="../../js/jquery-2.1.3.min.js"></script>
+    <script src="../../js/svg-pan-zoom.min.js"></script>
+
+    
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../../index.html">CommonModules </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+				
+            <li><a href='../../page/index.html'>Instructions</a></li>
+	    
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+              data-toggle="dropdown" role="button"
+              aria-haspopup="true"
+		 aria-expanded="false">Contents <span class="caret"></span></a>
+	      <ul class="dropdown-menu">
+              
+            <li><a href="../../lists/files.html">Source Files</a></li>
+				
+				
+            <li><a href="../../lists/modules.html">Modules</a></li>
+				
+            
+                                
+            <li><a href="../../lists/procedures.html">Procedures</a></li>
+				
+								
+            <li><a href="../../lists/types.html">Derived Types</a></li>
+				
+				
+            <li><a href="../../lists/programs.html">Programs</a></li>
+				
+            </ul>
+            </li>
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../../lists/files.html">Source Files</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../../lists/modules.html">Modules</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../../lists/procedures.html">Procedures</a></li>
+
+                             
+<li class="visible-xs hidden-sm visible-lg"><a href="../../lists/types.html">Derived Types</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../../lists/programs.html">Programs</a></li>
+
+          </ul>
+        
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    
+  <div class="row">
+    <h1>PlPlotLib Instructions</h1>
+    <div class="row">
+    <div class="col-lg-12">
+    <div class="well well-sm" style="min-height: 40px;">
+      <ul class="list-inline" style="margin-bottom:0px; display:inline">
+         
+         
+<!--
+        
+        <li><i class="fa fa-sitemap"></i> Subsections:</li>
+        
+        <li><a href='../../page/PlPlotLib/arguments.html'>PlPlotLib Common Arguments</a></li>
+        
+        <li><a href='../../page/PlPlotLib/escapeCodes.html'>PlPlotLib Escape Codes</a></li>
+        
+        
+-->
+      </ul>
+        <ol class="breadcrumb in-well">
+      
+         <li><a href='../../page/index.html'>Instructions</a></li>
+      
+         <li class="active">PlPlotLib Instructions</li>
+      </ol>
+    </div>
+    </div>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-md-9 col-md-push-3" id='text'>
+      <h2>PlPlotLib Module Usage</h2>
+<p>Plotting using PlPLotLib involves several basic steps that must be taken
+for the process to succeed. For a single line plot, the steps taken are
+the following:</p>
+<div class="codehilite"><pre><span></span>1. Initialize the library (call setup)
+2. Create a figure (call figure)
+3. Specify the subplot (call subplot)
+4. Specify axis ranges (call xylim)
+5. Plot the data (call plot)
+6. Draw axis ticks and numeric labels (call ticks)
+7. Label the axes and subplot (call labels)
+</pre></div>
+
+
+<p>The same basic process is followed for all plot types. The most common
+variations from these step are the inclusion of more than one plot and
+the creation of a legend to distinguish between plots.</p>
+<p><em>Example</em></p>
+<div class="codehilite"><pre><span></span><span class="k">program </span><span class="n">basic_prg</span>
+    <span class="c">!! Create a basic plot</span>
+    <span class="c">!!</span>
+    <span class="c">!! ![plot](../../media/basic-1.svg)</span>
+    <span class="k">use </span><span class="n">kinds_mod</span>
+    <span class="k">use </span><span class="n">array_mod</span>
+    <span class="k">use </span><span class="n">plplotlib_mod</span>
+    <span class="k">implicit none</span>
+
+<span class="k">    </span><span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">allocatable</span><span class="kd">::</span><span class="n">x</span><span class="p">,</span><span class="n">y</span>
+
+    <span class="n">x</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">2.0_wp</span><span class="p">,</span><span class="mf">2.0_wp</span><span class="p">,</span><span class="mi">101</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="mf">1.0_wp</span>
+
+    <span class="k">call </span><span class="n">setup</span><span class="p">(</span><span class="n">device</span><span class="o">=</span><span class="s1">&#39;svg&#39;</span><span class="p">,</span><span class="n">fileName</span><span class="o">=</span><span class="s1">&#39;media/basic-%n.svg&#39;</span><span class="p">,</span><span class="n">figSize</span><span class="o">=</span><span class="p">[</span><span class="mi">400</span><span class="p">,</span><span class="mi">300</span><span class="p">])</span>
+    <span class="k">call </span><span class="n">figure</span><span class="p">()</span>
+    <span class="k">call </span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">call </span><span class="n">xylim</span><span class="p">(</span><span class="n">mixval</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">mixval</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+    <span class="k">call </span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">lineColor</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="n">lineWidth</span><span class="o">=</span><span class="mf">2.0_wp</span><span class="p">)</span>
+    <span class="k">call </span><span class="n">ticks</span><span class="p">()</span>
+    <span class="k">call </span><span class="n">labels</span><span class="p">(</span><span class="s1">&#39;#fix#fn&#39;</span><span class="p">,</span><span class="s1">&#39;#fiy#fn&#39;</span><span class="p">,</span><span class="s1">&#39;Plot&#39;</span><span class="p">)</span>
+    <span class="k">call </span><span class="n">show</span><span class="p">()</span>
+<span class="k">end program </span><span class="n">basic_prg</span>
+</pre></div>
+
+
+<p><img alt="basic-1.svg" src="../../media/basic-1.svg"></p>
+<h2>Step Details</h2>
+<p>Details about each step of the process are found below:</p>
+<h3><code>setup</code></h3>
+<p>The <code>setup</code> routine initializes the plplot library and must be the 
+first call made to the module. The output device can be specified 
+through <code>device</code>, while the size of the plots can be controlled through 
+<code>figSize</code>. After setup, these values unfortunately cannot be changed 
+during execution of the program.</p>
+<p><em>Example</em></p>
+<div class="codehilite"><pre><span></span><span class="k">call </span><span class="n">setup</span><span class="p">(</span><span class="n">device</span><span class="o">=</span><span class="s1">&#39;svgqt&#39;</span><span class="p">,</span><span class="n">figSize</span><span class="o">=</span><span class="p">[</span><span class="mi">800</span><span class="p">,</span><span class="mi">600</span><span class="p">])</span>
+</pre></div>
+
+
+<p></p><div class="alert alert-info" role="alert"><h4>Note</h4><p><a href="../../module/plplotlib_mod.html#proc-setup">setup</a></p></div>
+<h3><code>figure</code></h3>
+<p>The <code>figure</code> routine creates a new figure on which to place plots. Its 
+size is defined at library setup and cannot be changed afterwards. 
+There are no options to this routine, but it must be called to setup 
+the window or file for output.</p>
+<p><em>Example</em></p>
+<div class="codehilite"><pre><span></span><span class="k">call </span><span class="n">figure</span><span class="p">()</span>
+</pre></div>
+
+
+<h3><code>subplot</code></h3>
+<p>After the creation of a figure, plots must be positioned on the output 
+surface. The <code>subplot</code> routine handles this process by breaking the 
+figure into rows and columns and selecting a cell in which to plot.</p>
+<p>Basic usage might appear as the following:</p>
+<div class="codehilite"><pre><span></span><span class="k">call </span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+
+<p>The command splits the figure into two rows and three columns, as well 
+as preparing the library to plot in the upper-left most of these cells.</p>
+<p>Additionally, the subplot routine can force a particular aspect ratio 
+for the plotting region, which is useful if the horizontal and vertical 
+axes share the same units and should be scaled equally.</p>
+<p></p><div class="alert alert-info" role="alert"><h4>Note</h4><p><a href="../../module/plplotlib_mod.html#proc-subplot">subplot</a></p></div>
+<h3><code>xylim</code></h3>
+<p>A call to <code>xylim</code> is used to set the ranges of the plotting region. Most
+often the routine <code>mixval</code> is used to get the needed boundary arrays to
+specify these ranges.</p>
+<p>The most commonly use form of this routine will appear close to the 
+following:</p>
+<div class="codehilite"><pre><span></span><span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">allocatable</span><span class="kd">::</span><span class="n">x</span><span class="p">,</span><span class="n">y</span>
+<span class="p">...</span>
+<span class="k">call </span><span class="n">xylim</span><span class="p">(</span><span class="n">mixval</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">mixval</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+</pre></div>
+
+
+<p>There are two other variants of this routine which set only the horizontal
+or vertical ranges of the plot.</p>
+<p></p><div class="alert alert-info" role="alert"><h4>Note</h4><p><a href="../../module/plplotlib_mod.html#proc-xylim">xylim</a>
+<a href="../../module/plplotlib_mod.html#proc-xlim">xlim</a>
+<a href="../../module/plplotlib_mod.html#proc-ylim">ylim</a></p></div>
+<h3><code>plot</code></h3>
+<p>The basic <code>plot</code> routine draws a line plot in the defined plotting area 
+using the set ranges for each axis to scale the data from plot 
+coordinates to world coordinates on the output device. It requires 
+arrays of horizontal and vertical positions, commonly referred to as 
+<code>x</code> and <code>y</code>.</p>
+<p>Basic usage might appear as the following:</p>
+<div class="codehilite"><pre><span></span><span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">allocatable</span><span class="kd">::</span><span class="n">x</span><span class="p">,</span><span class="n">y</span>
+<span class="p">...</span>
+<span class="k">call </span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+
+
+<p></p><div class="alert alert-info" role="alert"><h4>Note</h4><p><a href="../../module/plplotlib_mod.html#proc-plot">plot</a></p></div>
+<h3><code>ticks</code></h3>
+<p>The <code>ticks</code> routine is used to draw tick lines and labels on the axes, and
+can control some aspects of this process.</p>
+<p>Basic usage requires no arguments:</p>
+<div class="codehilite"><pre><span></span><span class="k">call </span><span class="n">ticks</span><span class="p">()</span>
+</pre></div>
+
+
+<p>Additional routines exist to control the drawing of ticks on the horizontal
+and vertical axes separately.</p>
+<p></p><div class="alert alert-info" role="alert"><h4>Note</h4><p><a href="../../module/plplotlib_mod.html#proc-ticks">ticks</a>
+<a href="../../module/plplotlib_mod.html#proc-xticks">xticks</a>
+<a href="../../module/plplotlib_mod.html#proc-yticks">yticks</a></p></div>
+<h3><code>labels</code></h3>
+<p>Labels can be added to the axes as well as the top of the plot using the
+<code>labels</code> routine. The color of the labels may also be adjusted.</p>
+<p><em>Example</em></p>
+<div class="codehilite"><pre><span></span><span class="k">call </span><span class="n">labels</span><span class="p">(</span><span class="s1">&#39;x-Axis&#39;</span><span class="p">,</span><span class="s1">&#39;y-Axis&#39;</span><span class="p">,</span><span class="s1">&#39;Plot Title&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Additional routines exist to control the drawing of labels on the horizontal
+and vertical axes, and the plot title, separately.</p>
+<p></p><div class="alert alert-info" role="alert"><h4>Note</h4><p><a href="../../module/plplotlib_mod.html#proc-labels">labels</a>
+<a href="../../module/plplotlib_mod.html#proc-xlabel">xlabel</a>
+<a href="../../module/plplotlib_mod.html#proc-ylabel">ylabel</a>
+<a href="../../module/plplotlib_mod.html#proc-title">title</a></p></div>
+    </div>
+    
+    <div class="col-md-3 col-md-pull-9">
+      <hr class="visible-xs visible-sm">
+        <div class="well toc">
+          <ul class="nav nav-stacked nav-pills">
+            <li role="presentation" class="title"><a href='../../page/index.html'>Instructions</a></li>
+          </ul>
+          <hr>
+          <ul class="nav nav-stacked nav-pills">
+            
+            <li role="presentation">
+            <a href='../../page/IO/index.html'>I/O Instructions</a>
+            
+            <ul class="nav nav-stacked nav-pills">
+              
+            <li role="presentation">
+            <a href='../../page/IO/config.html'>Config Instructions</a>
+            
+            </li>
+            
+            <li role="presentation">
+            <a href='../../page/IO/matIO.html'>matIO Instructions</a>
+            
+            </li>
+            
+            <li role="presentation">
+            <a href='../../page/IO/mesh.html'>Mesh Instructions</a>
+            
+            </li>
+            
+            <li role="presentation">
+            <a href='../../page/IO/netCDF.html'>netCDF Instructions</a>
+            
+            </li>
+            
+            <li role="presentation">
+            <a href='../../page/IO/vtkIO.html'>vtkIO Instructions</a>
+            
+            </li>
+            
+            </ul>
+            
+            </li>
+            
+            <li role="presentation">
+            <a href='../../page/Matrix/index.html'>Matrix Instructions</a>
+            
+            <ul class="nav nav-stacked nav-pills">
+              
+            <li role="presentation">
+            <a href='../../page/Matrix/quaternion.html'>Quaternion Instructions</a>
+            
+            </li>
+            
+            <li role="presentation">
+            <a href='../../page/Matrix/solvers.html'>Solvers Instructions</a>
+            
+            </li>
+            
+            <li role="presentation">
+            <a href='../../page/Matrix/sparse.html'>Sparse Instructions</a>
+            
+            </li>
+            
+            <li role="presentation">
+            <a href='../../page/Matrix/tensor.html'>Tensor Instructions</a>
+            
+            </li>
+            
+            </ul>
+            
+            </li>
+            
+            <li role="presentation" class="disabled">
+            <a href='../../page/PlPlotLib/index.html'>PlPlotLib Instructions</a>
+            
+            <ul class="nav nav-stacked nav-pills">
+              
+            <li role="presentation">
+            <a href='../../page/PlPlotLib/arguments.html'>PlPlotLib Common Arguments</a>
+            
+            </li>
+            
+            <li role="presentation">
+            <a href='../../page/PlPlotLib/escapeCodes.html'>PlPlotLib Escape Codes</a>
+            
+            </li>
+            
+            </ul>
+            
+            </li>
+            
+            <li role="presentation">
+            <a href='../../page/./autoDiff.html'>AutoDiff Instructions</a>
+            
+            </li>
+            
+            <li role="presentation">
+            <a href='../../page/./expression.html'>Expression Instructions</a>
+            
+            </li>
+            
+            <li role="presentation">
+            <a href='../../page/./fourier.html'>Fourier Instructions</a>
+            
+            </li>
+            
+            <li role="presentation">
+            <a href='../../page/./license.html'>License</a>
+            
+            </li>
+            
+          </ul>
+        </div>
+    </div>
+    
+  </div>
+
+    <hr>    
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-md-4"><p>&copy; 2016 </p></div>
+        <div class="col-xs-6 col-md-4 col-md-push-4">
+          <p class="text-right">
+            Documentation generated by 
+            <a href="https://github.com/cmacmackin/ford">FORD</a>
+            
+          </p>
+        </div>
+        <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> CommonModules was developed by Kyle Horne</p></div>
+      </div>
+      <br>
+      </div> <!-- /container -->    
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+-->
+    <script src="../../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- MathJax JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js'],
+        'HTML-CSS': { 
+           styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: '#000000 ! important'} }
+        }
+      });
+    </script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  </body>
+</html>

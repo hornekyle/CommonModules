@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	 
+	 <meta name="description" content="Common modules for using in other programs">
+    
+    <meta name="author" content="Chris MacMackin" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>
+All Types &ndash; CommonModules
+</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+    
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+
+    
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">CommonModules </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+				
+            <li><a href='../page/index.html'>Instructions</a></li>
+	    
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+              data-toggle="dropdown" role="button"
+              aria-haspopup="true"
+		 aria-expanded="false">Contents <span class="caret"></span></a>
+	      <ul class="dropdown-menu">
+              
+            <li><a href="../lists/files.html">Source Files</a></li>
+				
+				
+            <li><a href="../lists/modules.html">Modules</a></li>
+				
+            
+                                
+            <li><a href="../lists/procedures.html">Procedures</a></li>
+				
+								
+            <li><a href="../lists/types.html">Derived Types</a></li>
+				
+				
+            <li><a href="../lists/programs.html">Programs</a></li>
+				
+            </ul>
+            </li>
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
+
+                             
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/programs.html">Programs</a></li>
+
+          </ul>
+        
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    
+      <div class="row">
+        <div class="col-lg-12" id='text'>
+			 <h1>Derived Types</h1>
+			 <table class="table table-striped nostretched">
+			 <thead>
+			 <tr><th>Type</th><th>Location</th><th>Extends</th><th>Description</th></tr>
+			 </thead><tbody>
+			 
+			   <tr><td><a href='../type/abs_t.html'>abs_t</a></td><td><a href='../module/treeoperator_mod.html'>treeOperator_mod</a></td><td><a href='../type/node_t%7E2.html'>node_t</a></td><td></td></tr>
+			 
+			   <tr><td><a href='../type/acos_t.html'>acos_t</a></td><td><a href='../module/treetrigonometric_mod.html'>treeTrigonometric_mod</a></td><td><a href='../type/node_t%7E2.html'>node_t</a></td><td></td></tr>
+			 
+			   <tr><td><a href='../type/ad1_t.html'>ad1_t</a></td><td><a href='../module/autodiff_mod.html'>autoDiff_mod</a></td><td>None</td><td></td></tr>
+			 
+			   <tr><td><a href='../type/ad3_t.html'>ad3_t</a></td><td><a href='../module/autodiff_mod.html'>autoDiff_mod</a></td><td>None</td><td></td></tr>
+			 
+			   <tr><td><a href='../type/add_t.html'>add_t</a></td><td><a href='../module/treeoperator_mod.html'>treeOperator_mod</a></td><td><a href='../type/node_t%7E2.html'>node_t</a></td><td></td></tr>
+			 
+			   <tr><td><a href='../type/asin_t.html'>asin_t</a></td><td><a href='../module/treetrigonometric_mod.html'>treeTrigonometric_mod</a></td><td><a href='../type/node_t%7E2.html'>node_t</a></td><td></td></tr>
+			 
+			   <tr><td><a href='../type/atan_t.html'>atan_t</a></td><td><a href='../module/treetrigonometric_mod.html'>treeTrigonometric_mod</a></td><td><a href='../type/node_t%7E2.html'>node_t</a></td><td></td></tr>
+			 
+			   <tr><td><a href='../type/bicgstab_t.html'>biCGSTAB_t</a></td><td><a href='../module/solvers_mod.html'>solvers_mod</a></td><td><a href='../type/solver_t.html'>solver_t</a></td><td></td></tr>
+			 
+			   <tr><td><a href='../type/config_t.html'>config_t</a></td><td><a href='../module/config_mod.html'>config_mod</a></td><td>None</td><td><p>Type to store a set of pairs and access their data</p></td></tr>
+			 
+			   <tr><td><a href='../type/conjugategradient_t.html'>conjugateGradient_t</a></td><td><a href='../module/solvers_mod.html'>solvers_mod</a></td><td><a href='../type/solver_t.html'>solver_t</a></td><td></td></tr>
+			 
+			   <tr><td><a href='../type/cos_t.html'>cos_t</a></td><td><a href='../module/treetrigonometric_mod.html'>treeTrigonometric_mod</a></td><td><a href='../type/node_t%7E2.html'>node_t</a></td><td></td></tr>
+			 
+			   <tr><td><a href='../type/cubicspline_t.html'>cubicSpline_t</a></td><td><a href='../module/spline_mod.html'>spline_mod</a></td><td><a href='../type/spline_t.html'>spline_t</a></td><td><p>Cubic spline type</p></td></tr>
+			 
+			   <tr><td><a href='../type/div_t.html'>div_t</a></td><td><a href='../module/treeoperator_mod.html'>treeOperator_mod</a></td><td><a href='../type/node_t%7E2.html'>node_t</a></td><td></td></tr>
+			 
+			   <tr><td><a href='../type/element_t.html'>element_t</a></td><td><a href='../module/mesh_mod.html'>mesh_mod</a></td><td>None</td><td><p>One element in the mesh</p></td></tr>
+			 
+			   <tr><td><a href='../type/exp_t.html'>exp_t</a></td><td><a href='../module/treeexponential_mod.html'>treeExponential_mod</a></td><td><a href='../type/node_t%7E2.html'>node_t</a></td><td></td></tr>
+			 
+			   <tr><td><a href='../type/function_t.html'>function_t</a></td><td><a href='../module/expression_mod.html'>expression_mod</a></td><td>None</td><td><p>Type to store and evaluate parsed expressions</p></td></tr>
+			 
+			   <tr><td><a href='../type/gaussseidel_t.html'>gaussSeidel_t</a></td><td><a href='../module/solvers_mod.html'>solvers_mod</a></td><td><a href='../type/solver_t.html'>solver_t</a></td><td></td></tr>
+			 
+			   <tr><td><a href='../type/genericnode_t.html'>genericNode_t</a></td><td><a href='../module/node_mod.html'>node_mod</a></td><td>None</td><td></td></tr>
+			 
+			   <tr><td><a href='../type/group_t.html'>group_t</a></td><td><a href='../module/mesh_mod.html'>mesh_mod</a></td><td>None</td><td><p>Physical group of elements</p></td></tr>
+			 
+			   <tr><td><a href='../type/imag_t.html'>imag_t</a></td><td><a href='../module/treevalue_mod.html'>treeValue_mod</a></td><td><a href='../type/node_t%7E2.html'>node_t</a></td><td></td></tr>
+			 
+			   <tr><td><a href='../type/iterator_t.html'>iterator_t</a></td><td><a href='../module/iterate_mod.html'>iterate_mod</a></td><td>None</td><td></td></tr>
+			 
+			   <tr><td><a href='../type/jacobi_t.html'>jacobi_t</a></td><td><a href='../module/solvers_mod.html'>solvers_mod</a></td><td><a href='../type/solver_t.html'>solver_t</a></td><td></td></tr>
+			 
+			   <tr><td><a href='../type/linearspline_t.html'>linearSpline_t</a></td><td><a href='../module/spline_mod.html'>spline_mod</a></td><td><a href='../type/spline_t.html'>spline_t</a></td><td><p>Linear spline type</p></td></tr>
+			 
+			   <tr><td><a href='../type/linesearch_t.html'>lineSearch_t</a></td><td><a href='../module/optimize_mod.html'>optimize_mod</a></td><td><a href='../type/obj_t.html'>obj_t</a></td><td><p>Objective function for a line search in an N-D space</p></td></tr>
+			 
+			   <tr><td><a href='../type/log10_t.html'>log10_t</a></td><td><a href='../module/treeexponential_mod.html'>treeExponential_mod</a></td><td><a href='../type/node_t%7E2.html'>node_t</a></td><td></td></tr>
+			 
+			   <tr><td><a href='../type/log_t.html'>log_t</a></td><td><a href='../module/treeexponential_mod.html'>treeExponential_mod</a></td><td><a href='../type/node_t%7E2.html'>node_t</a></td><td></td></tr>
+			 
+			   <tr><td><a href='../type/mesh_t.html'>mesh_t</a></td><td><a href='../module/mesh_mod.html'>mesh_mod</a></td><td>None</td><td><p>A 2D mesh of elements connecting nodes</p></td></tr>
+			 
+			   <tr><td><a href='../type/mul_t.html'>mul_t</a></td><td><a href='../module/treeoperator_mod.html'>treeOperator_mod</a></td><td><a href='../type/node_t%7E2.html'>node_t</a></td><td></td></tr>
+			 
+			   <tr><td><a href='../type/neg_t.html'>neg_t</a></td><td><a href='../module/treeoperator_mod.html'>treeOperator_mod</a></td><td><a href='../type/node_t%7E2.html'>node_t</a></td><td></td></tr>
+			 
+			   <tr><td><a href='../type/node_t.html'>node_t</a></td><td><a href='../module/mesh_mod.html'>mesh_mod</a></td><td>None</td><td><p>One node in the mesh</p></td></tr>
+			 
+			   <tr><td><a href='../type/node_t%7E2.html'>node_t</a></td><td><a href='../module/node_mod.html'>node_mod</a></td><td>None</td><td></td></tr>
+			 
+			   <tr><td><a href='../type/nodestack_t.html'>nodeStack_t</a></td><td><a href='../module/node_mod.html'>node_mod</a></td><td>None</td><td></td></tr>
+			 
+			   <tr><td><a href='../type/obj_t.html'>obj_t</a></td><td><a href='../module/optimize_mod.html'>optimize_mod</a></td><td>None</td><td><p>Type for a 1D objective function</p></td></tr>
+			 
+			   <tr><td><a href='../type/objn_t.html'>objN_t</a></td><td><a href='../module/optimize_mod.html'>optimize_mod</a></td><td>None</td><td><p>Type for an N-D objective function</p></td></tr>
+			 
+			   <tr><td><a href='../type/pow_t.html'>pow_t</a></td><td><a href='../module/treeoperator_mod.html'>treeOperator_mod</a></td><td><a href='../type/node_t%7E2.html'>node_t</a></td><td></td></tr>
+			 
+			   <tr><td><a href='../type/quat_t.html'>quat_t</a></td><td><a href='../module/quaternion_mod.html'>quaternion_mod</a></td><td>None</td><td><p>Hamilton's quaternion extension to complex numbers</p></td></tr>
+			 
+			   <tr><td><a href='../type/real_t.html'>real_t</a></td><td><a href='../module/treevalue_mod.html'>treeValue_mod</a></td><td><a href='../type/node_t%7E2.html'>node_t</a></td><td></td></tr>
+			 
+			   <tr><td><a href='../type/sin_t.html'>sin_t</a></td><td><a href='../module/treetrigonometric_mod.html'>treeTrigonometric_mod</a></td><td><a href='../type/node_t%7E2.html'>node_t</a></td><td></td></tr>
+			 
+			   <tr><td><a href='../type/solver_t.html'>solver_t</a></td><td><a href='../module/solvers_mod.html'>solvers_mod</a></td><td>None</td><td></td></tr>
+			 
+			   <tr><td><a href='../type/sor_t.html'>SOR_t</a></td><td><a href='../module/solvers_mod.html'>solvers_mod</a></td><td><a href='../type/solver_t.html'>solver_t</a></td><td></td></tr>
+			 
+			   <tr><td><a href='../type/sparse_t.html'>sparse_t</a></td><td><a href='../module/sparse_mod.html'>sparse_mod</a></td><td>None</td><td></td></tr>
+			 
+			   <tr><td><a href='../type/spline_t.html'>spline_t</a></td><td><a href='../module/spline_mod.html'>spline_mod</a></td><td>None</td><td><p>Abstract type from which others derive</p></td></tr>
+			 
+			   <tr><td><a href='../type/spvec_t.html'>spvec_t</a></td><td><a href='../module/sparse_mod.html'>sparse_mod</a></td><td>None</td><td></td></tr>
+			 
+			   <tr><td><a href='../type/sqrt_t.html'>sqrt_t</a></td><td><a href='../module/treeoperator_mod.html'>treeOperator_mod</a></td><td><a href='../type/node_t%7E2.html'>node_t</a></td><td></td></tr>
+			 
+			   <tr><td><a href='../type/sub_t.html'>sub_t</a></td><td><a href='../module/treeoperator_mod.html'>treeOperator_mod</a></td><td><a href='../type/node_t%7E2.html'>node_t</a></td><td></td></tr>
+			 
+			   <tr><td><a href='../type/tan_t.html'>tan_t</a></td><td><a href='../module/treetrigonometric_mod.html'>treeTrigonometric_mod</a></td><td><a href='../type/node_t%7E2.html'>node_t</a></td><td></td></tr>
+			 
+			   <tr><td><a href='../type/test_t.html'>test_t</a></td><td><a href='../module/objective_mod.html'>objective_mod</a></td><td><a href='../type/obj_t.html'>obj_t</a></td><td></td></tr>
+			 
+			   <tr><td><a href='../type/testn_t.html'>testN_t</a></td><td><a href='../module/objective_mod.html'>objective_mod</a></td><td>objN_t</td><td></td></tr>
+			 
+			   <tr><td><a href='../type/token_t.html'>token_t</a></td><td><a href='../module/node_mod.html'>node_mod</a></td><td>None</td><td><p>Type for a single mathematical token</p></td></tr>
+			 
+			   <tr><td><a href='../type/var_t.html'>var_t</a></td><td><a href='../module/treevalue_mod.html'>treeValue_mod</a></td><td><a href='../type/node_t%7E2.html'>node_t</a></td><td></td></tr>
+			 
+			 </tbody></table>
+             
+                <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.38.0 (20140413.2041)
+ -->
+<!-- Title: type~~graph~~TypeGraph Pages: 1 -->
+<svg id="typegraphTypeGraph" width="387pt" height="1840pt"
+ viewBox="0.00 0.00 387.00 1840.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="type~~graph~~TypeGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 1836)">
+<title>type~~graph~~TypeGraph</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-1836 383,-1836 383,4 -4,4"/>
+<!-- type~ad1_t -->
+<g id="type~~graph~~TypeGraph_node1" class="node"><title>type~ad1_t</title>
+<g id="a_type~~graph~~TypeGraph_node1"><a xlink:href="../type/ad1_t.html" xlink:title="ad1_t">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="57,-24 3,-24 3,-0 57,-0 57,-24"/>
+<text text-anchor="middle" x="30" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">ad1_t</text>
+</a>
+</g>
+</g>
+<!-- type~element_t -->
+<g id="type~~graph~~TypeGraph_node2" class="node"><title>type~element_t</title>
+<g id="a_type~~graph~~TypeGraph_node2"><a xlink:href="../type/element_t.html" xlink:title="element_t">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="60,-150 3.55271e-15,-150 3.55271e-15,-126 60,-126 60,-150"/>
+<text text-anchor="middle" x="30" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">element_t</text>
+</a>
+</g>
+</g>
+<!-- type~mesh_t -->
+<g id="type~~graph~~TypeGraph_node16" class="node"><title>type~mesh_t</title>
+<g id="a_type~~graph~~TypeGraph_node16"><a xlink:href="../type/mesh_t.html" xlink:title="mesh_t">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="217.5,-108 163.5,-108 163.5,-84 217.5,-84 217.5,-108"/>
+<text text-anchor="middle" x="190.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">mesh_t</text>
+</a>
+</g>
+</g>
+<!-- type~element_t&#45;&gt;type~mesh_t -->
+<g id="type~~graph~~TypeGraph_edge19" class="edge"><title>type~element_t&#45;&gt;type~mesh_t</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M60.0713,-130.297C86.3378,-123.336 125.097,-113.066 153.352,-105.579"/>
+<polygon fill="#000000" stroke="#000000" points="154.474,-108.902 163.244,-102.958 152.681,-102.136 154.474,-108.902"/>
+<text text-anchor="middle" x="98" y="-127.4" font-family="Helvetica,sans-Serif" font-size="9.50">elements</text>
+</g>
+<!-- type~spline_t -->
+<g id="type~~graph~~TypeGraph_node3" class="node"><title>type~spline_t</title>
+<g id="a_type~~graph~~TypeGraph_node3"><a xlink:href="../type/spline_t.html" xlink:title="spline_t">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="57,-192 3,-192 3,-168 57,-168 57,-192"/>
+<text text-anchor="middle" x="30" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">spline_t</text>
+</a>
+</g>
+</g>
+<!-- type~cubicspline_t -->
+<g id="type~~graph~~TypeGraph_node11" class="node"><title>type~cubicspline_t</title>
+<g id="a_type~~graph~~TypeGraph_node11"><a xlink:href="../type/cubicspline_t.html" xlink:title="cubicSpline_t">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="228.5,-192 152.5,-192 152.5,-168 228.5,-168 228.5,-192"/>
+<text text-anchor="middle" x="190.5" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">cubicSpline_t</text>
+</a>
+</g>
+</g>
+<!-- type~spline_t&#45;&gt;type~cubicspline_t -->
+<g id="type~~graph~~TypeGraph_edge10" class="edge"><title>type~spline_t&#45;&gt;type~cubicspline_t</title>
+<path fill="none" stroke="#000000" d="M99,-180C112.936,-178.438 128.154,-177.965 142.067,-178.012"/>
+<polygon fill="#000000" stroke="#000000" points="142.367,-181.516 152.409,-178.139 142.453,-174.516 142.367,-181.516"/>
+</g>
+<!-- type~linearspline_t -->
+<g id="type~~graph~~TypeGraph_node50" class="node"><title>type~linearspline_t</title>
+<g id="a_type~~graph~~TypeGraph_node50"><a xlink:href="../type/linearspline_t.html" xlink:title="linearSpline_t">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="229,-150 152,-150 152,-126 229,-126 229,-150"/>
+<text text-anchor="middle" x="190.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">linearSpline_t</text>
+</a>
+</g>
+</g>
+<!-- type~spline_t&#45;&gt;type~linearspline_t -->
+<g id="type~~graph~~TypeGraph_edge56" class="edge"><title>type~spline_t&#45;&gt;type~linearspline_t</title>
+<path fill="none" stroke="#000000" d="M57.0925,-181.336C69.2563,-181.617 83.9049,-181.468 97,-180"/>
+<path fill="none" stroke="#000000" d="M99,-180C117.791,-177.894 118.934,-167.142 136,-159 139.595,-157.285 143.37,-155.594 147.181,-153.961"/>
+<polygon fill="#000000" stroke="#000000" points="148.747,-157.101 156.648,-150.043 146.07,-150.634 148.747,-157.101"/>
+</g>
+<!-- type~pow_t -->
+<g id="type~~graph~~TypeGraph_node4" class="node"><title>type~pow_t</title>
+<g id="a_type~~graph~~TypeGraph_node4"><a xlink:href="../type/pow_t.html" xlink:title="pow_t">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="217.5,-1244 163.5,-1244 163.5,-1220 217.5,-1220 217.5,-1244"/>
+<text text-anchor="middle" x="190.5" y="-1229.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pow_t</text>
+</a>
+</g>
+</g>
+<!-- type~conjugategradient_t -->
+<g id="type~~graph~~TypeGraph_node5" class="node"><title>type~conjugategradient_t</title>
+<g id="a_type~~graph~~TypeGraph_node5"><a xlink:href="../type/conjugategradient_t.html" xlink:title="conjugateGradient_t">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="245,-1454 136,-1454 136,-1430 245,-1430 245,-1454"/>
+<text text-anchor="middle" x="190.5" y="-1439.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">conjugateGradient_t</text>
+</a>
+</g>
+</g>
+<!-- type~atan_t -->
+<g id="type~~graph~~TypeGraph_node6" class="node"><title>type~atan_t</title>
+<g id="a_type~~graph~~TypeGraph_node6"><a xlink:href="../type/atan_t.html" xlink:title="atan_t">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="217.5,-1194 163.5,-1194 163.5,-1170 217.5,-1170 217.5,-1194"/>
+<text text-anchor="middle" x="190.5" y="-1179.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">atan_t</text>
+</a>
+</g>
+</g>
+<!-- type~sub_t -->
+<g id="type~~graph~~TypeGraph_node7" class="node"><title>type~sub_t</title>
+<g id="a_type~~graph~~TypeGraph_node7"><a xlink:href="../type/sub_t.html" xlink:title="sub_t">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="217.5,-1151 163.5,-1151 163.5,-1127 217.5,-1127 217.5,-1151"/>
+<text text-anchor="middle" x="190.5" y="-1136.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sub_t</text>
+</a>
+</g>
+</g>
+<!-- type~real_t -->
+<g id="type~~graph~~TypeGraph_node8" class="node"><title>type~real_t</title>
+<g id="a_type~~graph~~TypeGraph_node8"><a xlink:href="../type/real_t.html" xlink:title="real_t">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="217.5,-1109 163.5,-1109 163.5,-1085 217.5,-1085 217.5,-1109"/>
+<text text-anchor="middle" x="190.5" y="-1094.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">real_t</text>
+</a>
+</g>
+</g>
+<!-- type~node_t~2 -->
+<g id="type~~graph~~TypeGraph_node9" class="node"><title>type~node_t~2</title>
+<g id="a_type~~graph~~TypeGraph_node9"><a xlink:href="../type/node_t%7E2.html" xlink:title="node_t">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="57,-739 3,-739 3,-715 57,-715 57,-739"/>
+<text text-anchor="middle" x="30" y="-724.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">node_t</text>
+</a>
+</g>
+</g>
+<!-- type~node_t~2&#45;&gt;type~pow_t -->
+<g id="type~~graph~~TypeGraph_edge1" class="edge"><title>type~node_t~2&#45;&gt;type~pow_t</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M31.2652,-739.147C32.9595,-811.487 43.3278,-1183.6 78,-1219 97.0909,-1238.49 128.648,-1240.55 153.326,-1238.42"/>
+<polygon fill="#000000" stroke="#000000" points="153.878,-1241.88 163.425,-1237.29 153.097,-1234.92 153.878,-1241.88"/>
+<text text-anchor="middle" x="98" y="-1240.4" font-family="Helvetica,sans-Serif" font-size="9.50">a, b</text>
+</g>
+<!-- type~node_t~2&#45;&gt;type~pow_t -->
+<g id="type~~graph~~TypeGraph_edge2" class="edge"><title>type~node_t~2&#45;&gt;type~pow_t</title>
+<path fill="none" stroke="#000000" d="M31.4541,-739.337C34.1421,-809.59 48.8556,-1157.31 78,-1194 96.0006,-1216.66 128.168,-1225.88 153.342,-1229.59"/>
+<polygon fill="#000000" stroke="#000000" points="152.936,-1233.07 163.293,-1230.84 153.804,-1226.12 152.936,-1233.07"/>
+</g>
+<!-- type~node_t~2&#45;&gt;type~atan_t -->
+<g id="type~~graph~~TypeGraph_edge4" class="edge"><title>type~node_t~2&#45;&gt;type~atan_t</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M31.4752,-739.402C34.1778,-806.999 48.5438,-1129.14 78,-1161 96.722,-1181.25 128.313,-1185.63 153.099,-1185.44"/>
+<polygon fill="#000000" stroke="#000000" points="153.365,-1188.94 163.247,-1185.12 153.14,-1181.94 153.365,-1188.94"/>
+<text text-anchor="middle" x="98" y="-1184.4" font-family="Helvetica,sans-Serif" font-size="9.50">a</text>
+</g>
+<!-- type~node_t~2&#45;&gt;type~atan_t -->
+<g id="type~~graph~~TypeGraph_edge5" class="edge"><title>type~node_t~2&#45;&gt;type~atan_t</title>
+<path fill="none" stroke="#000000" d="M30.7916,-739.064C29.9745,-799.744 29.1359,-1071.24 78,-1136 87.5341,-1148.63 124.691,-1162.39 153.521,-1171.53"/>
+<polygon fill="#000000" stroke="#000000" points="152.725,-1174.95 163.313,-1174.57 154.796,-1168.26 152.725,-1174.95"/>
+</g>
+<!-- type~node_t~2&#45;&gt;type~sub_t -->
+<g id="type~~graph~~TypeGraph_edge6" class="edge"><title>type~node_t~2&#45;&gt;type~sub_t</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M30.8284,-739.306C30.2624,-797.642 30.7044,-1045.86 78,-1103 87.7613,-1114.79 124.588,-1125.16 153.28,-1131.71"/>
+<polygon fill="#000000" stroke="#000000" points="152.899,-1135.21 163.418,-1133.94 154.405,-1128.37 152.899,-1135.21"/>
+<text text-anchor="middle" x="98" y="-1124.4" font-family="Helvetica,sans-Serif" font-size="9.50">a, b</text>
+</g>
+<!-- type~node_t~2&#45;&gt;type~sub_t -->
+<g id="type~~graph~~TypeGraph_edge7" class="edge"><title>type~node_t~2&#45;&gt;type~sub_t</title>
+<path fill="none" stroke="#000000" d="M99,-1092C100.695,-1093.85 133.787,-1116.81 136,-1118 141.652,-1121.04 147.841,-1123.88 153.94,-1126.42"/>
+<polygon fill="#000000" stroke="#000000" points="152.775,-1129.72 163.36,-1130.17 155.361,-1123.22 152.775,-1129.72"/>
+</g>
+<!-- type~node_t~2&#45;&gt;type~real_t -->
+<g id="type~~graph~~TypeGraph_edge8" class="edge"><title>type~node_t~2&#45;&gt;type~real_t</title>
+<path fill="none" stroke="#000000" d="M31.474,-739.183C33.7728,-793.794 45.0288,-1015.99 78,-1076 83.3158,-1085.68 89.552,-1083.85 97,-1092"/>
+<path fill="none" stroke="#000000" d="M99,-1092C112.257,-1106.5 134.114,-1108.05 153.027,-1105.82"/>
+<polygon fill="#000000" stroke="#000000" points="153.81,-1109.25 163.158,-1104.26 152.741,-1102.33 153.81,-1109.25"/>
+</g>
+<!-- type~log_t -->
+<g id="type~~graph~~TypeGraph_node13" class="node"><title>type~log_t</title>
+<g id="a_type~~graph~~TypeGraph_node13"><a xlink:href="../type/log_t.html" xlink:title="log_t">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="217.5,-1067 163.5,-1067 163.5,-1043 217.5,-1043 217.5,-1067"/>
+<text text-anchor="middle" x="190.5" y="-1052.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">log_t</text>
+</a>
+</g>
+</g>
+<!-- type~node_t~2&#45;&gt;type~log_t -->
+<g id="type~~graph~~TypeGraph_edge12" class="edge"><title>type~node_t~2&#45;&gt;type~log_t</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M30.8877,-739.004C30.663,-791.745 32.656,-1002.18 78,-1045 97.6595,-1063.56 128.882,-1064.9 153.293,-1062.26"/>
+<polygon fill="#000000" stroke="#000000" points="153.838,-1065.72 163.284,-1060.92 152.908,-1058.78 153.838,-1065.72"/>
+<text text-anchor="middle" x="98" y="-1064.4" font-family="Helvetica,sans-Serif" font-size="9.50">a</text>
+</g>
+<!-- type~node_t~2&#45;&gt;type~log_t -->
+<g id="type~~graph~~TypeGraph_edge13" class="edge"><title>type~node_t~2&#45;&gt;type~log_t</title>
+<path fill="none" stroke="#000000" d="M99,-1034C114.246,-1046.24 135.343,-1051.6 153.333,-1053.84"/>
+<polygon fill="#000000" stroke="#000000" points="153.205,-1057.35 163.498,-1054.84 153.886,-1050.38 153.205,-1057.35"/>
+</g>
+<!-- type~var_t -->
+<g id="type~~graph~~TypeGraph_node14" class="node"><title>type~var_t</title>
+<g id="a_type~~graph~~TypeGraph_node14"><a xlink:href="../type/var_t.html" xlink:title="var_t">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="217.5,-1025 163.5,-1025 163.5,-1001 217.5,-1001 217.5,-1025"/>
+<text text-anchor="middle" x="190.5" y="-1010.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">var_t</text>
+</a>
+</g>
+</g>
+<!-- type~node_t~2&#45;&gt;type~var_t -->
+<g id="type~~graph~~TypeGraph_edge14" class="edge"><title>type~node_t~2&#45;&gt;type~var_t</title>
+<path fill="none" stroke="#000000" d="M31.6444,-739.092C34.698,-791.237 49.5977,-995.948 97,-1034"/>
+<path fill="none" stroke="#000000" d="M99,-1034C107.508,-1040.83 132.296,-1034.58 153.782,-1027.16"/>
+<polygon fill="#000000" stroke="#000000" points="155.129,-1030.4 163.352,-1023.71 152.757,-1023.81 155.129,-1030.4"/>
+</g>
+<!-- type~sqrt_t -->
+<g id="type~~graph~~TypeGraph_node15" class="node"><title>type~sqrt_t</title>
+<g id="a_type~~graph~~TypeGraph_node15"><a xlink:href="../type/sqrt_t.html" xlink:title="sqrt_t">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="217.5,-983 163.5,-983 163.5,-959 217.5,-959 217.5,-983"/>
+<text text-anchor="middle" x="190.5" y="-968.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sqrt_t</text>
+</a>
+</g>
+</g>
+<!-- type~node_t~2&#45;&gt;type~sqrt_t -->
+<g id="type~~graph~~TypeGraph_edge15" class="edge"><title>type~node_t~2&#45;&gt;type~sqrt_t</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M31.2297,-739.06C32.3986,-785.885 39.2776,-954.65 78,-987 89.1942,-996.352 125.205,-989.371 153.308,-981.917"/>
+<polygon fill="#000000" stroke="#000000" points="154.533,-985.21 163.243,-979.179 152.673,-978.462 154.533,-985.21"/>
+<text text-anchor="middle" x="98" y="-994.4" font-family="Helvetica,sans-Serif" font-size="9.50">a</text>
+</g>
+<!-- type~node_t~2&#45;&gt;type~sqrt_t -->
+<g id="type~~graph~~TypeGraph_edge16" class="edge"><title>type~node_t~2&#45;&gt;type~sqrt_t</title>
+<path fill="none" stroke="#000000" d="M31.7898,-739.276C34.7854,-781.827 46.8925,-922.027 78,-952 97.5854,-970.871 128.616,-974.884 152.974,-974.592"/>
+<polygon fill="#000000" stroke="#000000" points="153.426,-978.078 163.291,-974.214 153.169,-971.083 153.426,-978.078"/>
+</g>
+<!-- type~function_t -->
+<g id="type~~graph~~TypeGraph_node22" class="node"><title>type~function_t</title>
+<g id="a_type~~graph~~TypeGraph_node22"><a xlink:href="../type/function_t.html" xlink:title="function_t">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="220,-941 161,-941 161,-917 220,-917 220,-941"/>
+<text text-anchor="middle" x="190.5" y="-926.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">function_t</text>
+</a>
+</g>
+</g>
+<!-- type~node_t~2&#45;&gt;type~function_t -->
+<g id="type~~graph~~TypeGraph_edge22" class="edge"><title>type~node_t~2&#45;&gt;type~function_t</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M32.0759,-739.089C35.7937,-777.873 49.4648,-898.039 78,-922 97.7964,-938.623 127.201,-939.835 150.844,-937.177"/>
+<polygon fill="#000000" stroke="#000000" points="151.488,-940.621 160.912,-935.78 150.526,-933.688 151.488,-940.621"/>
+<text text-anchor="middle" x="98" y="-940.4" font-family="Helvetica,sans-Serif" font-size="9.50">root</text>
+</g>
+<!-- type~div_t -->
+<g id="type~~graph~~TypeGraph_node23" class="node"><title>type~div_t</title>
+<g id="a_type~~graph~~TypeGraph_node23"><a xlink:href="../type/div_t.html" xlink:title="div_t">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="217.5,-897 163.5,-897 163.5,-873 217.5,-873 217.5,-897"/>
+<text text-anchor="middle" x="190.5" y="-882.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">div_t</text>
+</a>
+</g>
+</g>
+<!-- type~node_t~2&#45;&gt;type~div_t -->
+<g id="type~~graph~~TypeGraph_edge23" class="edge"><title>type~node_t~2&#45;&gt;type~div_t</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M32.4749,-739.028C37.0777,-774.358 52.4184,-876.562 78,-896 99.2764,-912.167 129.826,-907.815 153.569,-900.311"/>
+<polygon fill="#000000" stroke="#000000" points="154.974,-903.528 163.282,-896.952 152.687,-896.913 154.974,-903.528"/>
+<text text-anchor="middle" x="98" y="-910.4" font-family="Helvetica,sans-Serif" font-size="9.50">a, b</text>
+</g>
+<!-- type~node_t~2&#45;&gt;type~div_t -->
+<g id="type~~graph~~TypeGraph_edge24" class="edge"><title>type~node_t~2&#45;&gt;type~div_t</title>
+<path fill="none" stroke="#000000" d="M31.3766,-739.369C32.9044,-766.282 40.5089,-830.354 78,-863 98.4799,-880.833 129.167,-885.85 153.166,-886.677"/>
+<polygon fill="#000000" stroke="#000000" points="153.286,-890.179 163.327,-886.797 153.369,-883.179 153.286,-890.179"/>
+</g>
+<!-- type~sin_t -->
+<g id="type~~graph~~TypeGraph_node24" class="node"><title>type~sin_t</title>
+<g id="a_type~~graph~~TypeGraph_node24"><a xlink:href="../type/sin_t.html" xlink:title="sin_t">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="217.5,-845 163.5,-845 163.5,-821 217.5,-821 217.5,-845"/>
+<text text-anchor="middle" x="190.5" y="-830.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sin_t</text>
+</a>
+</g>
+</g>
+<!-- type~node_t~2&#45;&gt;type~sin_t -->
+<g id="type~~graph~~TypeGraph_edge25" class="edge"><title>type~node_t~2&#45;&gt;type~sin_t</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M31.9393,-739.065C34.5176,-762.855 43.9809,-815.461 78,-838 99.9511,-852.543 130.016,-850.238 153.395,-844.873"/>
+<polygon fill="#000000" stroke="#000000" points="154.47,-848.211 163.287,-842.335 152.73,-841.43 154.47,-848.211"/>
+<text text-anchor="middle" x="98" y="-851.4" font-family="Helvetica,sans-Serif" font-size="9.50">a</text>
+</g>
+<!-- type~node_t~2&#45;&gt;type~sin_t -->
+<g id="type~~graph~~TypeGraph_edge26" class="edge"><title>type~node_t~2&#45;&gt;type~sin_t</title>
+<path fill="none" stroke="#000000" d="M34.9199,-739.065C41.1833,-756.384 55.1275,-788.067 78,-805 99.7009,-821.065 129.603,-827.97 152.979,-830.91"/>
+<polygon fill="#000000" stroke="#000000" points="152.892,-834.421 163.206,-832.001 153.634,-827.46 152.892,-834.421"/>
+</g>
+<!-- type~tan_t -->
+<g id="type~~graph~~TypeGraph_node25" class="node"><title>type~tan_t</title>
+<g id="a_type~~graph~~TypeGraph_node25"><a xlink:href="../type/tan_t.html" xlink:title="tan_t">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="217.5,-799 163.5,-799 163.5,-775 217.5,-775 217.5,-799"/>
+<text text-anchor="middle" x="190.5" y="-784.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">tan_t</text>
+</a>
+</g>
+</g>
+<!-- type~node_t~2&#45;&gt;type~tan_t -->
+<g id="type~~graph~~TypeGraph_edge27" class="edge"><title>type~node_t~2&#45;&gt;type~tan_t</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M37.8245,-739.188C45.6832,-751.891 59.8741,-771.154 78,-780 101.174,-791.309 130.349,-792.76 153.042,-791.542"/>
+<polygon fill="#000000" stroke="#000000" points="153.57,-795.013 163.287,-790.791 153.058,-788.031 153.57,-795.013"/>
+<text text-anchor="middle" x="98" y="-793.4" font-family="Helvetica,sans-Serif" font-size="9.50">a</text>
+</g>
+<!-- type~node_t~2&#45;&gt;type~tan_t -->
+<g id="type~~graph~~TypeGraph_edge28" class="edge"><title>type~node_t~2&#45;&gt;type~tan_t</title>
+<path fill="none" stroke="#000000" d="M57.2391,-738.482C63.9741,-741.342 71.2294,-744.348 78,-747 103.074,-756.823 131.67,-767.063 153.624,-774.722"/>
+<polygon fill="#000000" stroke="#000000" points="152.612,-778.076 163.207,-778.049 154.908,-771.463 152.612,-778.076"/>
+</g>
+<!-- type~acos_t -->
+<g id="type~~graph~~TypeGraph_node27" class="node"><title>type~acos_t</title>
+<g id="a_type~~graph~~TypeGraph_node27"><a xlink:href="../type/acos_t.html" xlink:title="acos_t">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="217.5,-750 163.5,-750 163.5,-726 217.5,-726 217.5,-750"/>
+<text text-anchor="middle" x="190.5" y="-735.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">acos_t</text>
+</a>
+</g>
+</g>
+<!-- type~node_t~2&#45;&gt;type~acos_t -->
+<g id="type~~graph~~TypeGraph_edge30" class="edge"><title>type~node_t~2&#45;&gt;type~acos_t</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M57.1731,-728.816C83.3285,-730.632 123.759,-733.438 153.048,-735.47"/>
+<polygon fill="#000000" stroke="#000000" points="153.07,-738.98 163.288,-736.181 153.554,-731.997 153.07,-738.98"/>
+<text text-anchor="middle" x="98" y="-735.4" font-family="Helvetica,sans-Serif" font-size="9.50">a</text>
+</g>
+<!-- type~node_t~2&#45;&gt;type~acos_t -->
+<g id="type~~graph~~TypeGraph_edge31" class="edge"><title>type~node_t~2&#45;&gt;type~acos_t</title>
+<path fill="none" stroke="#000000" d="M57.3089,-725.958C74.5866,-725.53 97.6687,-725.445 118,-727 129.601,-727.887 142.169,-729.573 153.485,-731.363"/>
+<polygon fill="#000000" stroke="#000000" points="153.024,-734.834 163.462,-733.016 154.168,-727.928 153.024,-734.834"/>
+</g>
+<!-- type~add_t -->
+<g id="type~~graph~~TypeGraph_node31" class="node"><title>type~add_t</title>
+<g id="a_type~~graph~~TypeGraph_node31"><a xlink:href="../type/add_t.html" xlink:title="add_t">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="217.5,-698 163.5,-698 163.5,-674 217.5,-674 217.5,-698"/>
+<text text-anchor="middle" x="190.5" y="-683.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">add_t</text>
+</a>
+</g>
+</g>
+<!-- type~node_t~2&#45;&gt;type~add_t -->
+<g id="type~~graph~~TypeGraph_edge33" class="edge"><title>type~node_t~2&#45;&gt;type~add_t</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M57.2387,-718.218C63.9737,-716.077 71.2291,-713.867 78,-712 102.979,-705.114 131.429,-698.499 153.34,-693.665"/>
+<polygon fill="#000000" stroke="#000000" points="154.194,-697.061 163.218,-691.508 152.701,-690.222 154.194,-697.061"/>
+<text text-anchor="middle" x="98" y="-714.4" font-family="Helvetica,sans-Serif" font-size="9.50">a, b</text>
+</g>
+<!-- type~node_t~2&#45;&gt;type~add_t -->
+<g id="type~~graph~~TypeGraph_edge34" class="edge"><title>type~node_t~2&#45;&gt;type~add_t</title>
+<path fill="none" stroke="#000000" d="M99,-653C100.422,-652.482 129.182,-663.105 153.903,-672.433"/>
+<polygon fill="#000000" stroke="#000000" points="152.869,-675.784 163.461,-676.05 155.347,-669.237 152.869,-675.784"/>
+</g>
+<!-- type~imag_t -->
+<g id="type~~graph~~TypeGraph_node33" class="node"><title>type~imag_t</title>
+<g id="a_type~~graph~~TypeGraph_node33"><a xlink:href="../type/imag_t.html" xlink:title="imag_t">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="217.5,-656 163.5,-656 163.5,-632 217.5,-632 217.5,-656"/>
+<text text-anchor="middle" x="190.5" y="-641.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">imag_t</text>
+</a>
+</g>
+</g>
+<!-- type~node_t~2&#45;&gt;type~imag_t -->
+<g id="type~~graph~~TypeGraph_edge35" class="edge"><title>type~node_t~2&#45;&gt;type~imag_t</title>
+<path fill="none" stroke="#000000" d="M36.9767,-714.713C46.6223,-696.601 67.5614,-663.723 97,-653"/>
+<path fill="none" stroke="#000000" d="M99,-653C116.2,-646.735 136.383,-644.299 153.319,-643.508"/>
+<polygon fill="#000000" stroke="#000000" points="153.497,-647.004 163.388,-643.209 153.289,-640.007 153.497,-647.004"/>
+</g>
+<!-- type~neg_t -->
+<g id="type~~graph~~TypeGraph_node36" class="node"><title>type~neg_t</title>
+<g id="a_type~~graph~~TypeGraph_node36"><a xlink:href="../type/neg_t.html" xlink:title="neg_t">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="217.5,-610 163.5,-610 163.5,-586 217.5,-586 217.5,-610"/>
+<text text-anchor="middle" x="190.5" y="-595.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">neg_t</text>
+</a>
+</g>
+</g>
+<!-- type~node_t~2&#45;&gt;type~neg_t -->
+<g id="type~~graph~~TypeGraph_edge37" class="edge"><title>type~node_t~2&#45;&gt;type~neg_t</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M33.4311,-714.752C38.2069,-693.955 50.8082,-651.782 78,-629 99.0624,-611.353 129.442,-603.714 153.173,-600.426"/>
+<polygon fill="#000000" stroke="#000000" points="153.702,-603.888 163.22,-599.234 152.877,-596.936 153.702,-603.888"/>
+<text text-anchor="middle" x="98" y="-631.4" font-family="Helvetica,sans-Serif" font-size="9.50">a</text>
+</g>
+<!-- type~node_t~2&#45;&gt;type~neg_t -->
+<g id="type~~graph~~TypeGraph_edge38" class="edge"><title>type~node_t~2&#45;&gt;type~neg_t</title>
+<path fill="none" stroke="#000000" d="M31.8437,-714.875C34.2605,-690.35 43.4635,-634.986 78,-609 99.2572,-593.006 129.624,-590.961 153.3,-592.527"/>
+<polygon fill="#000000" stroke="#000000" points="153.048,-596.018 163.321,-593.425 153.673,-589.046 153.048,-596.018"/>
+</g>
+<!-- type~log10_t -->
+<g id="type~~graph~~TypeGraph_node38" class="node"><title>type~log10_t</title>
+<g id="a_type~~graph~~TypeGraph_node38"><a xlink:href="../type/log10_t.html" xlink:title="log10_t">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="217.5,-558 163.5,-558 163.5,-534 217.5,-534 217.5,-558"/>
+<text text-anchor="middle" x="190.5" y="-543.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">log10_t</text>
+</a>
+</g>
+</g>
+<!-- type~node_t~2&#45;&gt;type~log10_t -->
+<g id="type~~graph~~TypeGraph_edge39" class="edge"><title>type~node_t~2&#45;&gt;type~log10_t</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M31.2674,-714.797C32.5529,-686.874 39.6629,-617.824 78,-580 98.0427,-560.226 129.232,-551.903 153.532,-548.424"/>
+<polygon fill="#000000" stroke="#000000" points="153.971,-551.897 163.473,-547.211 153.122,-544.949 153.971,-551.897"/>
+<text text-anchor="middle" x="98" y="-582.4" font-family="Helvetica,sans-Serif" font-size="9.50">a</text>
+</g>
+<!-- type~node_t~2&#45;&gt;type~log10_t -->
+<g id="type~~graph~~TypeGraph_edge40" class="edge"><title>type~node_t~2&#45;&gt;type~log10_t</title>
+<path fill="none" stroke="#000000" d="M32.496,-714.777C37.1577,-678.86 52.6462,-574.865 78,-554 98.6249,-537.027 129.301,-535.992 153.26,-538.663"/>
+<polygon fill="#000000" stroke="#000000" points="153.017,-542.163 163.4,-540.053 153.968,-535.228 153.017,-542.163"/>
+</g>
+<!-- type~exp_t -->
+<g id="type~~graph~~TypeGraph_node40" class="node"><title>type~exp_t</title>
+<g id="a_type~~graph~~TypeGraph_node40"><a xlink:href="../type/exp_t.html" xlink:title="exp_t">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="217.5,-503 163.5,-503 163.5,-479 217.5,-479 217.5,-503"/>
+<text text-anchor="middle" x="190.5" y="-488.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">exp_t</text>
+</a>
+</g>
+</g>
+<!-- type~node_t~2&#45;&gt;type~exp_t -->
+<g id="type~~graph~~TypeGraph_edge42" class="edge"><title>type~node_t~2&#45;&gt;type~exp_t</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M32.2556,-714.745C36.524,-675.391 51.6905,-553.144 78,-525 97.2272,-504.432 128.487,-496.178 153.023,-492.928"/>
+<polygon fill="#000000" stroke="#000000" points="153.515,-496.395 163.071,-491.82 152.748,-489.437 153.515,-496.395"/>
+<text text-anchor="middle" x="98" y="-527.4" font-family="Helvetica,sans-Serif" font-size="9.50">a</text>
+</g>
+<!-- type~node_t~2&#45;&gt;type~exp_t -->
+<g id="type~~graph~~TypeGraph_edge43" class="edge"><title>type~node_t~2&#45;&gt;type~exp_t</title>
+<path fill="none" stroke="#000000" d="M31.5916,-714.922C33.9768,-671.727 44.4311,-525.941 78,-497 98.2985,-479.5 129.191,-479.152 153.316,-482.533"/>
+<polygon fill="#000000" stroke="#000000" points="152.751,-485.988 163.19,-484.172 153.897,-479.082 152.751,-485.988"/>
+</g>
+<!-- type~mul_t -->
+<g id="type~~graph~~TypeGraph_node41" class="node"><title>type~mul_t</title>
+<g id="a_type~~graph~~TypeGraph_node41"><a xlink:href="../type/mul_t.html" xlink:title="mul_t">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="217.5,-447 163.5,-447 163.5,-423 217.5,-423 217.5,-447"/>
+<text text-anchor="middle" x="190.5" y="-432.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">mul_t</text>
+</a>
+</g>
+</g>
+<!-- type~node_t~2&#45;&gt;type~mul_t -->
+<g id="type~~graph~~TypeGraph_edge44" class="edge"><title>type~node_t~2&#45;&gt;type~mul_t</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M31.5512,-714.983C33.8956,-669.055 44.5051,-505.332 78,-468 96.8745,-446.963 128.452,-439.066 153.193,-436.229"/>
+<polygon fill="#000000" stroke="#000000" points="153.683,-439.699 163.321,-435.299 153.043,-432.728 153.683,-439.699"/>
+<text text-anchor="middle" x="98" y="-470.4" font-family="Helvetica,sans-Serif" font-size="9.50">a, b</text>
+</g>
+<!-- type~node_t~2&#45;&gt;type~mul_t -->
+<g id="type~~graph~~TypeGraph_edge45" class="edge"><title>type~node_t~2&#45;&gt;type~mul_t</title>
+<path fill="none" stroke="#000000" d="M31.0536,-714.792C31.5497,-664.87 36.2066,-477.15 78,-440 98.0222,-422.202 128.937,-422.169 153.14,-425.904"/>
+<polygon fill="#000000" stroke="#000000" points="152.588,-429.361 163.051,-427.695 153.832,-422.473 152.588,-429.361"/>
+</g>
+<!-- type~abs_t -->
+<g id="type~~graph~~TypeGraph_node42" class="node"><title>type~abs_t</title>
+<g id="a_type~~graph~~TypeGraph_node42"><a xlink:href="../type/abs_t.html" xlink:title="abs_t">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="217.5,-381 163.5,-381 163.5,-357 217.5,-357 217.5,-381"/>
+<text text-anchor="middle" x="190.5" y="-366.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">abs_t</text>
+</a>
+</g>
+</g>
+<!-- type~node_t~2&#45;&gt;type~abs_t -->
+<g id="type~~graph~~TypeGraph_edge46" class="edge"><title>type~node_t~2&#45;&gt;type~abs_t</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M31.2053,-715C32.3219,-663.189 39.1567,-459.122 78,-411 96.3848,-388.223 128.512,-377.794 153.572,-373.021"/>
+<polygon fill="#000000" stroke="#000000" points="154.194,-376.466 163.474,-371.353 153.031,-369.563 154.194,-376.466"/>
+<text text-anchor="middle" x="98" y="-413.4" font-family="Helvetica,sans-Serif" font-size="9.50">a</text>
+</g>
+<!-- type~node_t~2&#45;&gt;type~abs_t -->
+<g id="type~~graph~~TypeGraph_edge47" class="edge"><title>type~node_t~2&#45;&gt;type~abs_t</title>
+<path fill="none" stroke="#000000" d="M30.7285,-714.683C29.7665,-658.517 28.8792,-427.37 78,-380 97.4798,-361.215 128.718,-359.599 153.181,-362.038"/>
+<polygon fill="#000000" stroke="#000000" points="152.838,-365.523 163.196,-363.294 153.709,-358.577 152.838,-365.523"/>
+</g>
+<!-- type~cos_t -->
+<g id="type~~graph~~TypeGraph_node44" class="node"><title>type~cos_t</title>
+<g id="a_type~~graph~~TypeGraph_node44"><a xlink:href="../type/cos_t.html" xlink:title="cos_t">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="217.5,-335 163.5,-335 163.5,-311 217.5,-311 217.5,-335"/>
+<text text-anchor="middle" x="190.5" y="-320.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">cos_t</text>
+</a>
+</g>
+</g>
+<!-- type~node_t~2&#45;&gt;type~cos_t -->
+<g id="type~~graph~~TypeGraph_edge50" class="edge"><title>type~node_t~2&#45;&gt;type~cos_t</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M30.7258,-714.932C29.6552,-656.617 28.0162,-404.55 78,-349 96.6135,-328.314 128.215,-322.477 153.032,-321.435"/>
+<polygon fill="#000000" stroke="#000000" points="153.26,-324.932 163.195,-321.253 153.134,-317.933 153.26,-324.932"/>
+<text text-anchor="middle" x="98" y="-351.4" font-family="Helvetica,sans-Serif" font-size="9.50">a</text>
+</g>
+<!-- type~node_t~2&#45;&gt;type~cos_t -->
+<g id="type~~graph~~TypeGraph_edge51" class="edge"><title>type~node_t~2&#45;&gt;type~cos_t</title>
+<path fill="none" stroke="#000000" d="M31.4676,-714.944C34.083,-650.628 47.8744,-349.824 78,-323 97.987,-305.203 128.905,-306.629 153.118,-311.705"/>
+<polygon fill="#000000" stroke="#000000" points="152.495,-315.154 163.033,-314.058 154.112,-308.343 152.495,-315.154"/>
+</g>
+<!-- type~asin_t -->
+<g id="type~~graph~~TypeGraph_node45" class="node"><title>type~asin_t</title>
+<g id="a_type~~graph~~TypeGraph_node45"><a xlink:href="../type/asin_t.html" xlink:title="asin_t">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="217.5,-286 163.5,-286 163.5,-262 217.5,-262 217.5,-286"/>
+<text text-anchor="middle" x="190.5" y="-271.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">asin_t</text>
+</a>
+</g>
+</g>
+<!-- type~node_t~2&#45;&gt;type~asin_t -->
+<g id="type~~graph~~TypeGraph_edge52" class="edge"><title>type~node_t~2&#45;&gt;type~asin_t</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M31.4794,-714.655C34.2045,-647.368 48.6701,-326.705 78,-295 96.727,-274.756 128.318,-270.374 153.102,-270.558"/>
+<polygon fill="#000000" stroke="#000000" points="153.143,-274.061 163.25,-270.884 153.367,-267.065 153.143,-274.061"/>
+<text text-anchor="middle" x="98" y="-297.4" font-family="Helvetica,sans-Serif" font-size="9.50">a</text>
+</g>
+<!-- type~node_t~2&#45;&gt;type~asin_t -->
+<g id="type~~graph~~TypeGraph_edge53" class="edge"><title>type~node_t~2&#45;&gt;type~asin_t</title>
+<path fill="none" stroke="#000000" d="M31.3045,-714.793C33.1605,-645.305 44.023,-301.655 78,-271 98.003,-252.953 129.195,-255.407 153.508,-261.41"/>
+<polygon fill="#000000" stroke="#000000" points="152.883,-264.868 163.453,-264.151 154.742,-258.12 152.883,-264.868"/>
+</g>
+<!-- type~genericnode_t -->
+<g id="type~~graph~~TypeGraph_node48" class="node"><title>type~genericnode_t</title>
+<g id="a_type~~graph~~TypeGraph_node48"><a xlink:href="../type/genericnode_t.html" xlink:title="genericNode_t">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="231.5,-234 149.5,-234 149.5,-210 231.5,-210 231.5,-234"/>
+<text text-anchor="middle" x="190.5" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">genericNode_t</text>
+</a>
+</g>
+</g>
+<!-- type~node_t~2&#45;&gt;type~genericnode_t -->
+<g id="type~~graph~~TypeGraph_edge55" class="edge"><title>type~node_t~2&#45;&gt;type~genericnode_t</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M31.3354,-714.648C33.4004,-642.735 45.3897,-279.967 78,-244 93.274,-227.154 117.393,-221.017 139.298,-219.361"/>
+<polygon fill="#000000" stroke="#000000" points="139.668,-222.848 149.495,-218.887 139.343,-215.855 139.668,-222.848"/>
+<text text-anchor="middle" x="98" y="-246.4" font-family="Helvetica,sans-Serif" font-size="9.50">node</text>
+</g>
+<!-- type~nodestack_t -->
+<g id="type~~graph~~TypeGraph_node10" class="node"><title>type~nodestack_t</title>
+<g id="a_type~~graph~~TypeGraph_node10"><a xlink:href="../type/nodestack_t.html" xlink:title="nodeStack_t">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="379,-234 307,-234 307,-210 379,-210 379,-234"/>
+<text text-anchor="middle" x="343" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">nodeStack_t</text>
+</a>
+</g>
+</g>
+<!-- type~testn_t -->
+<g id="type~~graph~~TypeGraph_node12" class="node"><title>type~testn_t</title>
+<g id="a_type~~graph~~TypeGraph_node12"><a xlink:href="../type/testn_t.html" xlink:title="testN_t">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="217.5,-1496 163.5,-1496 163.5,-1472 217.5,-1472 217.5,-1496"/>
+<text text-anchor="middle" x="190.5" y="-1481.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">testN_t</text>
+</a>
+</g>
+</g>
+<!-- type~test_t -->
+<g id="type~~graph~~TypeGraph_node17" class="node"><title>type~test_t</title>
+<g id="a_type~~graph~~TypeGraph_node17"><a xlink:href="../type/test_t.html" xlink:title="test_t">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="217.5,-1580 163.5,-1580 163.5,-1556 217.5,-1556 217.5,-1580"/>
+<text text-anchor="middle" x="190.5" y="-1565.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">test_t</text>
+</a>
+</g>
+</g>
+<!-- type~quat_t -->
+<g id="type~~graph~~TypeGraph_node18" class="node"><title>type~quat_t</title>
+<g id="a_type~~graph~~TypeGraph_node18"><a xlink:href="../type/quat_t.html" xlink:title="quat_t">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="57,-1622 3,-1622 3,-1598 57,-1598 57,-1622"/>
+<text text-anchor="middle" x="30" y="-1607.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">quat_t</text>
+</a>
+</g>
+</g>
+<!-- type~sor_t -->
+<g id="type~~graph~~TypeGraph_node19" class="node"><title>type~sor_t</title>
+<g id="a_type~~graph~~TypeGraph_node19"><a xlink:href="../type/sor_t.html" xlink:title="SOR_t">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="217.5,-1412 163.5,-1412 163.5,-1388 217.5,-1388 217.5,-1412"/>
+<text text-anchor="middle" x="190.5" y="-1397.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">SOR_t</text>
+</a>
+</g>
+</g>
+<!-- type~spvec_t -->
+<g id="type~~graph~~TypeGraph_node20" class="node"><title>type~spvec_t</title>
+<g id="a_type~~graph~~TypeGraph_node20"><a xlink:href="../type/spvec_t.html" xlink:title="spvec_t">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="57,-1664 3,-1664 3,-1640 57,-1640 57,-1664"/>
+<text text-anchor="middle" x="30" y="-1649.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">spvec_t</text>
+</a>
+</g>
+</g>
+<!-- type~sparse_t -->
+<g id="type~~graph~~TypeGraph_node26" class="node"><title>type~sparse_t</title>
+<g id="a_type~~graph~~TypeGraph_node26"><a xlink:href="../type/sparse_t.html" xlink:title="sparse_t">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="217.5,-1664 163.5,-1664 163.5,-1640 217.5,-1640 217.5,-1664"/>
+<text text-anchor="middle" x="190.5" y="-1649.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sparse_t</text>
+</a>
+</g>
+</g>
+<!-- type~spvec_t&#45;&gt;type~sparse_t -->
+<g id="type~~graph~~TypeGraph_edge29" class="edge"><title>type~spvec_t&#45;&gt;type~sparse_t</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M57.1731,-1652C83.3285,-1652 123.759,-1652 153.048,-1652"/>
+<polygon fill="#000000" stroke="#000000" points="153.288,-1655.5 163.288,-1652 153.288,-1648.5 153.288,-1655.5"/>
+<text text-anchor="middle" x="98" y="-1654.4" font-family="Helvetica,sans-Serif" font-size="9.50">rows</text>
+</g>
+<!-- type~token_t -->
+<g id="type~~graph~~TypeGraph_node21" class="node"><title>type~token_t</title>
+<g id="a_type~~graph~~TypeGraph_node21"><a xlink:href="../type/token_t.html" xlink:title="token_t">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="57,-1706 3,-1706 3,-1682 57,-1682 57,-1706"/>
+<text text-anchor="middle" x="30" y="-1691.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">token_t</text>
+</a>
+</g>
+</g>
+<!-- type~bicgstab_t -->
+<g id="type~~graph~~TypeGraph_node28" class="node"><title>type~bicgstab_t</title>
+<g id="a_type~~graph~~TypeGraph_node28"><a xlink:href="../type/bicgstab_t.html" xlink:title="biCGSTAB_t">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="227,-1370 154,-1370 154,-1346 227,-1346 227,-1370"/>
+<text text-anchor="middle" x="190.5" y="-1355.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">biCGSTAB_t</text>
+</a>
+</g>
+</g>
+<!-- type~obj_t -->
+<g id="type~~graph~~TypeGraph_node29" class="node"><title>type~obj_t</title>
+<g id="a_type~~graph~~TypeGraph_node29"><a xlink:href="../type/obj_t.html" xlink:title="obj_t">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="57,-1580 3,-1580 3,-1556 57,-1556 57,-1580"/>
+<text text-anchor="middle" x="30" y="-1565.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">obj_t</text>
+</a>
+</g>
+</g>
+<!-- type~obj_t&#45;&gt;type~test_t -->
+<g id="type~~graph~~TypeGraph_edge20" class="edge"><title>type~obj_t&#45;&gt;type~test_t</title>
+<path fill="none" stroke="#000000" d="M99,-1568C116.676,-1566.02 136.415,-1565.79 152.937,-1566.15"/>
+<polygon fill="#000000" stroke="#000000" points="153.176,-1569.66 163.276,-1566.46 153.385,-1562.66 153.176,-1569.66"/>
+</g>
+<!-- type~linesearch_t -->
+<g id="type~~graph~~TypeGraph_node43" class="node"><title>type~linesearch_t</title>
+<g id="a_type~~graph~~TypeGraph_node43"><a xlink:href="../type/linesearch_t.html" xlink:title="lineSearch_t">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="226.5,-1538 154.5,-1538 154.5,-1514 226.5,-1514 226.5,-1538"/>
+<text text-anchor="middle" x="190.5" y="-1523.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">lineSearch_t</text>
+</a>
+</g>
+</g>
+<!-- type~obj_t&#45;&gt;type~linesearch_t -->
+<g id="type~~graph~~TypeGraph_edge49" class="edge"><title>type~obj_t&#45;&gt;type~linesearch_t</title>
+<path fill="none" stroke="#000000" d="M57.0925,-1569.34C69.2563,-1569.62 83.9049,-1569.47 97,-1568"/>
+<path fill="none" stroke="#000000" d="M99,-1568C117.791,-1565.89 118.934,-1555.14 136,-1547 139.595,-1545.28 143.37,-1543.59 147.181,-1541.96"/>
+<polygon fill="#000000" stroke="#000000" points="148.747,-1545.1 156.648,-1538.04 146.07,-1538.63 148.747,-1545.1"/>
+</g>
+<!-- type~ad3_t -->
+<g id="type~~graph~~TypeGraph_node30" class="node"><title>type~ad3_t</title>
+<g id="a_type~~graph~~TypeGraph_node30"><a xlink:href="../type/ad3_t.html" xlink:title="ad3_t">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="57,-1748 3,-1748 3,-1724 57,-1724 57,-1748"/>
+<text text-anchor="middle" x="30" y="-1733.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">ad3_t</text>
+</a>
+</g>
+</g>
+<!-- type~group_t -->
+<g id="type~~graph~~TypeGraph_node32" class="node"><title>type~group_t</title>
+<g id="a_type~~graph~~TypeGraph_node32"><a xlink:href="../type/group_t.html" xlink:title="group_t">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="57,-108 3,-108 3,-84 57,-84 57,-108"/>
+<text text-anchor="middle" x="30" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">group_t</text>
+</a>
+</g>
+</g>
+<!-- type~group_t&#45;&gt;type~mesh_t -->
+<g id="type~~graph~~TypeGraph_edge17" class="edge"><title>type~group_t&#45;&gt;type~mesh_t</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M57.1731,-96C83.3285,-96 123.759,-96 153.048,-96"/>
+<polygon fill="#000000" stroke="#000000" points="153.288,-99.5001 163.288,-96 153.288,-92.5001 153.288,-99.5001"/>
+<text text-anchor="middle" x="98" y="-98.4" font-family="Helvetica,sans-Serif" font-size="9.50">groups</text>
+</g>
+<!-- type~objn_t -->
+<g id="type~~graph~~TypeGraph_node34" class="node"><title>type~objn_t</title>
+<g id="a_type~~graph~~TypeGraph_node34"><a xlink:href="../type/objn_t.html" xlink:title="objN_t">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="57,-1538 3,-1538 3,-1514 57,-1514 57,-1538"/>
+<text text-anchor="middle" x="30" y="-1523.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">objN_t</text>
+</a>
+</g>
+</g>
+<!-- type~objn_t&#45;&gt;type~linesearch_t -->
+<g id="type~~graph~~TypeGraph_edge48" class="edge"><title>type~objn_t&#45;&gt;type~linesearch_t</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M57.1731,-1526C80.8226,-1526 116.143,-1526 144.345,-1526"/>
+<polygon fill="#000000" stroke="#000000" points="144.379,-1529.5 154.379,-1526 144.379,-1522.5 144.379,-1529.5"/>
+<text text-anchor="middle" x="98" y="-1528.4" font-family="Helvetica,sans-Serif" font-size="9.50">parent</text>
+</g>
+<!-- type~config_t -->
+<g id="type~~graph~~TypeGraph_node35" class="node"><title>type~config_t</title>
+<g id="a_type~~graph~~TypeGraph_node35"><a xlink:href="../type/config_t.html" xlink:title="config_t">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="217.5,-1790 163.5,-1790 163.5,-1766 217.5,-1766 217.5,-1790"/>
+<text text-anchor="middle" x="190.5" y="-1775.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">config_t</text>
+</a>
+</g>
+</g>
+<!-- type~solver_t -->
+<g id="type~~graph~~TypeGraph_node37" class="node"><title>type~solver_t</title>
+<g id="a_type~~graph~~TypeGraph_node37"><a xlink:href="../type/solver_t.html" xlink:title="solver_t">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="57,-1370 3,-1370 3,-1346 57,-1346 57,-1370"/>
+<text text-anchor="middle" x="30" y="-1355.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">solver_t</text>
+</a>
+</g>
+</g>
+<!-- type~solver_t&#45;&gt;type~conjugategradient_t -->
+<g id="type~~graph~~TypeGraph_edge3" class="edge"><title>type~solver_t&#45;&gt;type~conjugategradient_t</title>
+<path fill="none" stroke="#000000" d="M99,-1358C131.472,-1358 111.309,-1399.91 136,-1421 137.536,-1422.31 139.164,-1423.55 140.86,-1424.71"/>
+<polygon fill="#000000" stroke="#000000" points="139.393,-1427.91 149.79,-1429.95 142.932,-1421.87 139.393,-1427.91"/>
+</g>
+<!-- type~solver_t&#45;&gt;type~sor_t -->
+<g id="type~~graph~~TypeGraph_edge21" class="edge"><title>type~solver_t&#45;&gt;type~sor_t</title>
+<path fill="none" stroke="#000000" d="M99,-1358C117.908,-1358 118.934,-1370.86 136,-1379 141.733,-1381.73 147.922,-1384.41 153.987,-1386.88"/>
+<polygon fill="#000000" stroke="#000000" points="152.746,-1390.15 163.332,-1390.58 155.324,-1383.65 152.746,-1390.15"/>
+</g>
+<!-- type~solver_t&#45;&gt;type~bicgstab_t -->
+<g id="type~~graph~~TypeGraph_edge32" class="edge"><title>type~solver_t&#45;&gt;type~bicgstab_t</title>
+<path fill="none" stroke="#000000" d="M99,-1358C113.54,-1358 129.393,-1358 143.711,-1358"/>
+<polygon fill="#000000" stroke="#000000" points="143.824,-1361.5 153.824,-1358 143.824,-1354.5 143.824,-1361.5"/>
+</g>
+<!-- type~gaussseidel_t -->
+<g id="type~~graph~~TypeGraph_node39" class="node"><title>type~gaussseidel_t</title>
+<g id="a_type~~graph~~TypeGraph_node39"><a xlink:href="../type/gaussseidel_t.html" xlink:title="gaussSeidel_t">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="230,-1328 151,-1328 151,-1304 230,-1304 230,-1328"/>
+<text text-anchor="middle" x="190.5" y="-1313.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">gaussSeidel_t</text>
+</a>
+</g>
+</g>
+<!-- type~solver_t&#45;&gt;type~gaussseidel_t -->
+<g id="type~~graph~~TypeGraph_edge41" class="edge"><title>type~solver_t&#45;&gt;type~gaussseidel_t</title>
+<path fill="none" stroke="#000000" d="M99,-1358C117.908,-1358 118.934,-1345.14 136,-1337 139.595,-1335.28 143.37,-1333.59 147.181,-1331.96"/>
+<polygon fill="#000000" stroke="#000000" points="148.747,-1335.1 156.648,-1328.04 146.07,-1328.63 148.747,-1335.1"/>
+</g>
+<!-- type~jacobi_t -->
+<g id="type~~graph~~TypeGraph_node46" class="node"><title>type~jacobi_t</title>
+<g id="a_type~~graph~~TypeGraph_node46"><a xlink:href="../type/jacobi_t.html" xlink:title="jacobi_t">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="217.5,-1286 163.5,-1286 163.5,-1262 217.5,-1262 217.5,-1286"/>
+<text text-anchor="middle" x="190.5" y="-1271.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">jacobi_t</text>
+</a>
+</g>
+</g>
+<!-- type~solver_t&#45;&gt;type~jacobi_t -->
+<g id="type~~graph~~TypeGraph_edge54" class="edge"><title>type~solver_t&#45;&gt;type~jacobi_t</title>
+<path fill="none" stroke="#000000" d="M57.0179,-1358C69.166,-1358 83.8229,-1358 97,-1358"/>
+<path fill="none" stroke="#000000" d="M99,-1358C131.472,-1358 111.309,-1316.09 136,-1295 141.251,-1290.52 147.572,-1286.92 154.001,-1284.06"/>
+<polygon fill="#000000" stroke="#000000" points="155.353,-1287.29 163.387,-1280.38 152.799,-1280.77 155.353,-1287.29"/>
+</g>
+<!-- type~iterator_t -->
+<g id="type~~graph~~TypeGraph_node47" class="node"><title>type~iterator_t</title>
+<g id="a_type~~graph~~TypeGraph_node47"><a xlink:href="../type/iterator_t.html" xlink:title="iterator_t">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="57.5,-1832 2.5,-1832 2.5,-1808 57.5,-1808 57.5,-1832"/>
+<text text-anchor="middle" x="30" y="-1817.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">iterator_t</text>
+</a>
+</g>
+</g>
+<!-- type~genericnode_t&#45;&gt;type~nodestack_t -->
+<g id="type~~graph~~TypeGraph_edge9" class="edge"><title>type~genericnode_t&#45;&gt;type~nodestack_t</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M231.831,-222C251.868,-222 276.149,-222 296.811,-222"/>
+<polygon fill="#000000" stroke="#000000" points="296.936,-225.5 306.936,-222 296.935,-218.5 296.936,-225.5"/>
+<text text-anchor="middle" x="276" y="-224.4" font-family="Helvetica,sans-Serif" font-size="9.50">levels</text>
+</g>
+<!-- type~node_t -->
+<g id="type~~graph~~TypeGraph_node49" class="node"><title>type~node_t</title>
+<g id="a_type~~graph~~TypeGraph_node49"><a xlink:href="../type/node_t.html" xlink:title="node_t">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="57,-66 3,-66 3,-42 57,-42 57,-66"/>
+<text text-anchor="middle" x="30" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">node_t</text>
+</a>
+</g>
+</g>
+<!-- type~node_t&#45;&gt;type~mesh_t -->
+<g id="type~~graph~~TypeGraph_edge18" class="edge"><title>type~node_t&#45;&gt;type~mesh_t</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M57.1731,-60.9354C83.4432,-67.8966 124.114,-78.6737 153.433,-86.4429"/>
+<polygon fill="#000000" stroke="#000000" points="152.725,-89.876 163.288,-89.0543 154.518,-83.1095 152.725,-89.876"/>
+<text text-anchor="middle" x="98" y="-79.4" font-family="Helvetica,sans-Serif" font-size="9.50">nodes</text>
+</g>
+<!-- objN_t -->
+<g id="type~~graph~~TypeGraph_node51" class="node"><title>objN_t</title>
+<polygon fill="#5cb85c" stroke="#5cb85c" points="57,-1496 3,-1496 3,-1472 57,-1472 57,-1496"/>
+<text text-anchor="middle" x="30" y="-1481.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">objN_t</text>
+</g>
+<!-- objN_t&#45;&gt;type~testn_t -->
+<g id="type~~graph~~TypeGraph_edge11" class="edge"><title>objN_t&#45;&gt;type~testn_t</title>
+<path fill="none" stroke="#000000" d="M57.1731,-1484C83.3285,-1484 123.759,-1484 153.048,-1484"/>
+<polygon fill="#000000" stroke="#000000" points="153.288,-1487.5 163.288,-1484 153.288,-1480.5 153.288,-1487.5"/>
+</g>
+<!-- type~pair_t -->
+<g id="type~~graph~~TypeGraph_node52" class="node"><title>type~pair_t</title>
+<polygon fill="#5cb85c" stroke="#5cb85c" points="57,-1790 3,-1790 3,-1766 57,-1766 57,-1790"/>
+<text text-anchor="middle" x="30" y="-1775.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pair_t</text>
+</g>
+<!-- type~pair_t&#45;&gt;type~config_t -->
+<g id="type~~graph~~TypeGraph_edge36" class="edge"><title>type~pair_t&#45;&gt;type~config_t</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M57.1731,-1778C83.3285,-1778 123.759,-1778 153.048,-1778"/>
+<polygon fill="#000000" stroke="#000000" points="153.288,-1781.5 163.288,-1778 153.288,-1774.5 153.288,-1781.5"/>
+<text text-anchor="middle" x="98" y="-1780.4" font-family="Helvetica,sans-Serif" font-size="9.50">pairs</text>
+</g>
+</g>
+</svg>
+</div>
+                <div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div>
+                <div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                      </div>
+                      <div class="modal-body">
+                        
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.38.0 (20140413.2041)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="178pt" height="32pt"
+ viewBox="0.00 0.00 177.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-28 173.5,-28 173.5,4 -4,4"/>
+<!-- Type -->
+<g id="node1" class="node"><title>Type</title>
+<polygon fill="#5cb85c" stroke="#5cb85c" points="54,-24 0,-24 0,-0 54,-0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Type</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node2" class="node"><title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="169.5,-24 72.5,-24 72.5,-0 169.5,-0 169.5,-24"/>
+<text text-anchor="middle" x="121" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+
+<p>Solid arrows point from one derived type to another which extends
+(inherits from) it. Dashed arrows point from a derived type to another
+type containing it as a components, with a label listing the name(s) of
+said component(s).
+</p>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+        </div>
+      </div>
+
+    <hr>    
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-md-4"><p>&copy; 2016 </p></div>
+        <div class="col-xs-6 col-md-4 col-md-push-4">
+          <p class="text-right">
+            Documentation generated by 
+            <a href="https://github.com/cmacmackin/ford">FORD</a>
+            
+          </p>
+        </div>
+        <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> CommonModules was developed by Kyle Horne</p></div>
+      </div>
+      <br>
+      </div> <!-- /container -->    
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+-->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- MathJax JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js'],
+        'HTML-CSS': { 
+           styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: '#000000 ! important'} }
+        }
+      });
+    </script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  </body>
+</html>

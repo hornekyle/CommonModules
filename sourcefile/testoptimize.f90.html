@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	 
+	 <meta name="description" content="Common modules for using in other programs">
+    
+    <meta name="author" content="Chris MacMackin" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>testOptimize.f90 &ndash; CommonModules</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+    
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+
+    
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">CommonModules </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+				
+            <li><a href='../page/index.html'>Instructions</a></li>
+	    
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+              data-toggle="dropdown" role="button"
+              aria-haspopup="true"
+		 aria-expanded="false">Contents <span class="caret"></span></a>
+	      <ul class="dropdown-menu">
+              
+            <li><a href="../lists/files.html">Source Files</a></li>
+				
+				
+            <li><a href="../lists/modules.html">Modules</a></li>
+				
+            
+                                
+            <li><a href="../lists/procedures.html">Procedures</a></li>
+				
+								
+            <li><a href="../lists/types.html">Derived Types</a></li>
+				
+				
+            <li><a href="../lists/programs.html">Programs</a></li>
+				
+            </ul>
+            </li>
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
+
+                             
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/programs.html">Programs</a></li>
+
+          </ul>
+        
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    
+  
+  <div class="row">
+    <h1>testOptimize.f90
+    <small>Source File</small>
+    
+    </h1>
+    
+<div class="row">
+  <div class="col-lg-12">
+<div class="well well-sm">
+  <ul class="list-inline" style="margin-bottom:0px;display:inline">
+     
+     
+     
+     
+    
+    
+     <li><i class="fa fa-list-ol"></i>
+       <a data-toggle="tooltip"
+	  data-placement="bottom" data-html="true"
+	  title=" 9.4% of total for source files.">114 statements</a>
+     </li> 
+     
+     
+    <li><i class="fa fa-code"></i><a href="../src/testOptimize.f90"> Source File</a></li>
+     
+  </ul>
+  <ol class="breadcrumb in-well text-right">
+  
+     <li class="active">testOptimize.f90</li>
+  </ol>
+</div>
+</div>
+</div>
+<script>
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+
+  </div>
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+    
+<div id="sidebar">
+  
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#progs-0">Programs</a></h3></div>
+  <div id="progs-0" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../program/testoptimize_prg.html">testOptimize_prg</a>
+      
+    </div>
+  </div>
+</div>
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#mods-0">Modules</a></h3></div>
+  <div id="mods-0" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/objective_mod.html">objective_mod</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../sourcefile/testoptimize.f90.html#src">testOptimize.f90</a>
+  </div>
+</div>
+
+
+  <hr>
+  
+
+<div class="panel panel-default">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#allfiles-0">All Source Files</a></h3></div>
+  <div id="allfiles-0" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../sourcefile/animate.f90.html">animate.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/array.f90.html">array.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/autodiff.f90.html">autoDiff.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/basic.f90.html">basic.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/basicsolvers.f90.html">basicSolvers.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/config.f90.html">config.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/examples.f90.html">examples.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/expression.f90.html">expression.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/fourier.f90.html">fourier.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/iterate.f90.html">iterate.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/kinds.f90.html">kinds.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/logo.f90.html">logo.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/matio.f90.html">matIO.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/mesh.f90.html">mesh.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/netcdf.f90.html">netCDF.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/node.f90.html">node.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/optimize.f90.html">optimize.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/plplotlib.f90.html">plplotlib.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/quaternion.f90.html">quaternion.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/solvers.f90.html">solvers.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/sparse.f90.html">sparse.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/spline.f90.html">spline.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/stats.f90.html">stats.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/tensor.f90.html">tensor.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testarray.f90.html">testArray.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testautodiff.f90.html">testAutoDiff.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testconfig.f90.html">testConfig.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testexpression.f90.html">testExpression.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testfourier.f90.html">testFourier.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testiterate.f90.html">testIterate.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testkinds.f90.html">testKinds.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testmatio.f90.html">testMatIO.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testmesh.f90.html">testMesh.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testnetcdf.f90.html">testNetCDF.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testoptimize.f90.html">testOptimize.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testquaternion.f90.html">testQuaternion.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testsparse.f90.html">testSparse.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testspline.f90.html">testSpline.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/teststats.f90.html">testStats.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testtensor.f90.html">testTensor.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testtext.f90.html">testText.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testtime.f90.html">testTime.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testvtkio.f90.html">testVtkIO.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/text.f90.html">text.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/time.f90.html">time.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/treeexponential.f90.html">treeExponential.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/treeoperator.f90.html">treeOperator.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/treetrigonometric.f90.html">treeTrigonometric.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/treevalue.f90.html">treeValue.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/vtkio.f90.html">vtkIO.f90</a>
+      
+    </div>
+  </div>
+</div>
+
+
+</div>  
+
+    </div>
+    <div class="col-md-9" id='text'>
+    
+    
+    <h3>This File Depends On</h3>
+    
+                <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.38.0 (20140413.2041)
+ -->
+<!-- Title: sourcefile~~testoptimize.f90~~EfferentGraph Pages: 1 -->
+<svg id="sourcefiletestoptimizef90EfferentGraph" width="476pt" height="192pt"
+ viewBox="0.00 0.00 476.00 191.77" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="sourcefile~~testoptimize.f90~~EfferentGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 187.768)">
+<title>sourcefile~~testoptimize.f90~~EfferentGraph</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-187.768 472,-187.768 472,4 -4,4"/>
+<!-- sourcefile~testoptimize.f90 -->
+<g id="sourcefile~~testoptimize.f90~~EfferentGraph_node1" class="node"><title>sourcefile~testoptimize.f90</title>
+<polygon fill="none" stroke="black" points="468,-84 378,-84 378,-60 468,-60 468,-84"/>
+<text text-anchor="middle" x="423" y="-69.6" font-family="Helvetica,sans-Serif" font-size="10.50">testOptimize.f90</text>
+</g>
+<!-- sourcefile~text.f90 -->
+<g id="sourcefile~~testoptimize.f90~~EfferentGraph_node2" class="node"><title>sourcefile~text.f90</title>
+<g id="a_sourcefile~~testoptimize.f90~~EfferentGraph_node2"><a xlink:href="../sourcefile/text.f90.html" xlink:title="text.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="235.5,-144 181.5,-144 181.5,-120 235.5,-120 235.5,-144"/>
+<text text-anchor="middle" x="208.5" y="-129.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">text.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~text.f90&#45;&gt;sourcefile~testoptimize.f90 -->
+<g id="sourcefile~~testoptimize.f90~~EfferentGraph_edge10" class="edge"><title>sourcefile~text.f90&#45;&gt;sourcefile~testoptimize.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M223.462,-144.138C241.86,-158.631 275.469,-179.977 306,-172"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M308,-172C352.432,-160.391 389.242,-118.174 408.188,-92.4506"/>
+<polygon fill="#000000" stroke="#000000" points="411.173,-94.2917 414.127,-84.117 405.473,-90.2289 411.173,-94.2917"/>
+</g>
+<!-- sourcefile~plplotlib.f90 -->
+<g id="sourcefile~~testoptimize.f90~~EfferentGraph_node3" class="node"><title>sourcefile~plplotlib.f90</title>
+<g id="a_sourcefile~~testoptimize.f90~~EfferentGraph_node3"><a xlink:href="../sourcefile/plplotlib.f90.html" xlink:title="plplotlib.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="340.5,-104 273.5,-104 273.5,-80 340.5,-80 340.5,-104"/>
+<text text-anchor="middle" x="307" y="-89.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">plplotlib.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~text.f90&#45;&gt;sourcefile~plplotlib.f90 -->
+<g id="sourcefile~~testoptimize.f90~~EfferentGraph_edge5" class="edge"><title>sourcefile~text.f90&#45;&gt;sourcefile~plplotlib.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M235.614,-121.175C245.358,-117.137 256.639,-112.46 267.277,-108.051"/>
+<polygon fill="#000000" stroke="#000000" points="268.906,-111.165 276.803,-104.102 266.225,-104.698 268.906,-111.165"/>
+</g>
+<!-- sourcefile~plplotlib.f90&#45;&gt;sourcefile~testoptimize.f90 -->
+<g id="sourcefile~~testoptimize.f90~~EfferentGraph_edge11" class="edge"><title>sourcefile~plplotlib.f90&#45;&gt;sourcefile~testoptimize.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M340.668,-86.2688C349.172,-84.7769 358.565,-83.1289 367.857,-81.4987"/>
+<polygon fill="#000000" stroke="#000000" points="368.609,-84.9205 377.853,-79.745 367.399,-78.0258 368.609,-84.9205"/>
+</g>
+<!-- sourcefile~array.f90 -->
+<g id="sourcefile~~testoptimize.f90~~EfferentGraph_node4" class="node"><title>sourcefile~array.f90</title>
+<g id="a_sourcefile~~testoptimize.f90~~EfferentGraph_node4"><a xlink:href="../sourcefile/array.f90.html" xlink:title="array.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="236,-64 181,-64 181,-40 236,-40 236,-64"/>
+<text text-anchor="middle" x="208.5" y="-49.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">array.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~array.f90&#45;&gt;sourcefile~testoptimize.f90 -->
+<g id="sourcefile~~testoptimize.f90~~EfferentGraph_edge12" class="edge"><title>sourcefile~array.f90&#45;&gt;sourcefile~testoptimize.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M236.413,-54.533C269.326,-57.6307 325.835,-62.9492 367.874,-66.9058"/>
+<polygon fill="#000000" stroke="#000000" points="367.672,-70.4021 377.956,-67.8547 368.328,-63.4329 367.672,-70.4021"/>
+</g>
+<!-- sourcefile~array.f90&#45;&gt;sourcefile~plplotlib.f90 -->
+<g id="sourcefile~~testoptimize.f90~~EfferentGraph_edge4" class="edge"><title>sourcefile~array.f90&#45;&gt;sourcefile~plplotlib.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M236.124,-63.0361C245.778,-67.0373 256.887,-71.6421 267.365,-75.9856"/>
+<polygon fill="#000000" stroke="#000000" points="266.173,-79.2801 276.751,-79.8761 268.854,-72.8137 266.173,-79.2801"/>
+</g>
+<!-- sourcefile~optimize.f90 -->
+<g id="sourcefile~~testoptimize.f90~~EfferentGraph_node5" class="node"><title>sourcefile~optimize.f90</title>
+<g id="a_sourcefile~~testoptimize.f90~~EfferentGraph_node5"><a xlink:href="../sourcefile/optimize.f90.html" xlink:title="optimize.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="342,-24 272,-24 272,-0 342,-0 342,-24"/>
+<text text-anchor="middle" x="307" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">optimize.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~array.f90&#45;&gt;sourcefile~optimize.f90 -->
+<g id="sourcefile~~testoptimize.f90~~EfferentGraph_edge8" class="edge"><title>sourcefile~array.f90&#45;&gt;sourcefile~optimize.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M236.124,-40.9639C245.778,-36.9627 256.887,-32.3579 267.365,-28.0144"/>
+<polygon fill="#000000" stroke="#000000" points="268.854,-31.1863 276.751,-24.1239 266.173,-24.7199 268.854,-31.1863"/>
+</g>
+<!-- sourcefile~optimize.f90&#45;&gt;sourcefile~testoptimize.f90 -->
+<g id="sourcefile~~testoptimize.f90~~EfferentGraph_edge13" class="edge"><title>sourcefile~optimize.f90&#45;&gt;sourcefile~testoptimize.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M331.07,-24.1419C347.989,-33.0471 371.181,-45.253 389.907,-55.1091"/>
+<polygon fill="#000000" stroke="#000000" points="388.485,-58.3159 398.965,-59.8762 391.746,-52.1214 388.485,-58.3159"/>
+</g>
+<!-- sourcefile~kinds.f90 -->
+<g id="sourcefile~~testoptimize.f90~~EfferentGraph_node6" class="node"><title>sourcefile~kinds.f90</title>
+<g id="a_sourcefile~~testoptimize.f90~~EfferentGraph_node6"><a xlink:href="../sourcefile/kinds.f90.html" xlink:title="kinds.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="55,-144 0,-144 0,-120 55,-120 55,-144"/>
+<text text-anchor="middle" x="27.5" y="-129.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">kinds.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~kinds.f90&#45;&gt;sourcefile~testoptimize.f90 -->
+<g id="sourcefile~~testoptimize.f90~~EfferentGraph_edge14" class="edge"><title>sourcefile~kinds.f90&#45;&gt;sourcefile~testoptimize.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M119,-172C201.701,-180.242 225.588,-193.01 306,-172"/>
+</g>
+<!-- sourcefile~kinds.f90&#45;&gt;sourcefile~text.f90 -->
+<g id="sourcefile~~testoptimize.f90~~EfferentGraph_edge3" class="edge"><title>sourcefile~kinds.f90&#45;&gt;sourcefile~text.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M46.151,-144.142C63.3405,-154.925 90.6586,-169.375 117,-172"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M119,-172C142.86,-174.378 167.522,-161.77 184.731,-150.092"/>
+<polygon fill="#000000" stroke="#000000" points="186.922,-152.828 193.007,-144.155 182.842,-147.14 186.922,-152.828"/>
+</g>
+<!-- sourcefile~kinds.f90&#45;&gt;sourcefile~plplotlib.f90 -->
+<g id="sourcefile~~testoptimize.f90~~EfferentGraph_edge6" class="edge"><title>sourcefile~kinds.f90&#45;&gt;sourcefile~plplotlib.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M119,-72C131.934,-66.5092 212.027,-77.4458 263.111,-85.2001"/>
+<polygon fill="#000000" stroke="#000000" points="262.81,-88.6947 273.225,-86.751 263.871,-81.7756 262.81,-88.6947"/>
+</g>
+<!-- sourcefile~kinds.f90&#45;&gt;sourcefile~array.f90 -->
+<g id="sourcefile~~testoptimize.f90~~EfferentGraph_edge7" class="edge"><title>sourcefile~kinds.f90&#45;&gt;sourcefile~array.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M119,-72C135.295,-65.0823 154.339,-60.3839 170.577,-57.2895"/>
+<polygon fill="#000000" stroke="#000000" points="171.55,-60.6717 180.786,-55.4804 170.329,-53.779 171.55,-60.6717"/>
+</g>
+<!-- sourcefile~kinds.f90&#45;&gt;sourcefile~optimize.f90 -->
+<g id="sourcefile~~testoptimize.f90~~EfferentGraph_edge9" class="edge"><title>sourcefile~kinds.f90&#45;&gt;sourcefile~optimize.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M42.9153,-119.929C59.7084,-106.436 88.7678,-84.8037 117,-72"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M119,-72C149.086,-58.3555 150.171,-42.871 181,-31 206.721,-21.096 237.282,-16.3366 261.747,-14.0577"/>
+<polygon fill="#000000" stroke="#000000" points="262.149,-17.5365 271.827,-13.2252 261.573,-10.5603 262.149,-17.5365"/>
+</g>
+<!-- sourcefile~time.f90 -->
+<g id="sourcefile~~testoptimize.f90~~EfferentGraph_node7" class="node"><title>sourcefile~time.f90</title>
+<g id="a_sourcefile~~testoptimize.f90~~EfferentGraph_node7"><a xlink:href="../sourcefile/time.f90.html" xlink:title="time.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="145,-144 91,-144 91,-120 145,-120 145,-144"/>
+<text text-anchor="middle" x="118" y="-129.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">time.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~kinds.f90&#45;&gt;sourcefile~time.f90 -->
+<g id="sourcefile~~testoptimize.f90~~EfferentGraph_edge1" class="edge"><title>sourcefile~kinds.f90&#45;&gt;sourcefile~time.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M55.0529,-132C63.0887,-132 72.0566,-132 80.6185,-132"/>
+<polygon fill="#000000" stroke="#000000" points="80.7708,-135.5 90.7708,-132 80.7708,-128.5 80.7708,-135.5"/>
+</g>
+<!-- sourcefile~time.f90&#45;&gt;sourcefile~text.f90 -->
+<g id="sourcefile~~testoptimize.f90~~EfferentGraph_edge2" class="edge"><title>sourcefile~time.f90&#45;&gt;sourcefile~text.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M145.074,-132C153.283,-132 162.502,-132 171.284,-132"/>
+<polygon fill="#000000" stroke="#000000" points="171.306,-135.5 181.306,-132 171.306,-128.5 171.306,-135.5"/>
+</g>
+</g>
+</svg>
+</div>
+                <div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div>
+                <div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                      </div>
+                      <div class="modal-body">
+                        
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.38.0 (20140413.2041)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="190pt" height="32pt"
+ viewBox="0.00 0.00 190.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-28 186,-28 186,4 -4,4"/>
+<!-- Source File -->
+<g id="node1" class="node"><title>Source File</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="67,-24 0,-24 0,-0 67,-0 67,-24"/>
+<text text-anchor="middle" x="33.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Source File</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node2" class="node"><title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="182,-24 85,-24 85,-0 182,-0 182,-24"/>
+<text text-anchor="middle" x="133.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+
+<p>Solid arrows point from a file to a file which depends upon it. A file 
+is dependent upon another if the latter must be compiled before the former
+can be.
+</p>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+    
+      
+      <br>
+
+    <section class="visible-xs visible-sm hidden-md">
+      
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#progs-1">Programs</a></h3></div>
+  <div id="progs-1" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../program/testoptimize_prg.html">testOptimize_prg</a>
+      
+    </div>
+  </div>
+</div>
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#mods-1">Modules</a></h3></div>
+  <div id="mods-1" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/objective_mod.html">objective_mod</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../sourcefile/testoptimize.f90.html#src">testOptimize.f90</a>
+  </div>
+</div>
+
+
+    </section>
+    <br class="visible-xs visible-sm hidden-md">
+
+    <section>
+      <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="hl"><pre><span></span><a name="ln-1"></a><span class="k">module </span><span class="n">objective_mod</span>
+<a name="ln-2"></a>	<span class="k">use </span><span class="n">kinds_mod</span>
+<a name="ln-3"></a>	<span class="k">use </span><span class="n">optimize_mod</span>
+<a name="ln-4"></a>	<span class="k">use </span><span class="n">array_mod</span>
+<a name="ln-5"></a>	<span class="k">use </span><span class="n">plplotlib_mod</span>
+<a name="ln-6"></a>	<span class="k">use </span><span class="n">text_mod</span>
+<a name="ln-7"></a>	<span class="k">implicit none</span>
+<a name="ln-8"></a><span class="k">	</span>
+<a name="ln-9"></a><span class="k">	</span><span class="kt">integer</span><span class="kd">::</span><span class="n">kLog</span> <span class="o">=</span> <span class="mi">1</span>
+<a name="ln-10"></a>	<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="kd">::</span><span class="n">xLog</span>
+<a name="ln-11"></a>	
+<a name="ln-12"></a>	<span class="k">type</span><span class="p">,</span><span class="k">extends</span><span class="p">(</span><span class="n">obj_t</span><span class="p">)</span><span class="kd">::</span><span class="n">test_t</span>
+<a name="ln-13"></a>		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">private</span><span class="kd">::</span><span class="n">b</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.0_wp</span>
+<a name="ln-14"></a>	<span class="k">contains</span>
+<a name="ln-15"></a><span class="k">		procedure</span><span class="kd">::</span><span class="n">eval</span> <span class="o">=&gt;</span> <span class="n">eval_test</span>
+<a name="ln-16"></a>	<span class="k">end type</span>
+<a name="ln-17"></a><span class="k">	</span>
+<a name="ln-18"></a><span class="k">	type</span><span class="p">,</span><span class="k">extends</span><span class="p">(</span><span class="n">objN_t</span><span class="p">)</span><span class="kd">::</span><span class="n">testN_t</span>
+<a name="ln-19"></a>		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="kd">::</span><span class="n">c0</span> <span class="o">=</span> <span class="p">[</span><span class="mf">2.0_wp</span><span class="p">,</span><span class="mf">3.0_wp</span><span class="p">]</span>
+<a name="ln-20"></a>		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="kd">::</span><span class="n">s0</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.0_wp</span><span class="p">,</span><span class="mf">2.0_wp</span><span class="p">]</span>
+<a name="ln-21"></a>	<span class="k">contains</span>
+<a name="ln-22"></a><span class="k">		procedure</span><span class="kd">::</span><span class="n">eval</span> <span class="o">=&gt;</span> <span class="n">eval_testN</span>
+<a name="ln-23"></a>	<span class="k">end type</span>
+<a name="ln-24"></a><span class="k">	</span>
+<a name="ln-25"></a><span class="k">contains</span>
+<a name="ln-26"></a>
+<a name="ln-27"></a><span class="k">	function </span><span class="n">eval_test</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="n">x</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">o</span><span class="p">)</span>
+<a name="ln-28"></a>		<span class="k">class</span><span class="p">(</span><span class="n">test_t</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span><span class="n">self</span>
+<a name="ln-29"></a>		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span><span class="n">x</span>
+<a name="ln-30"></a>		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span><span class="kd">::</span><span class="n">o</span>
+<a name="ln-31"></a>		
+<a name="ln-32"></a>		<span class="n">o</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="n">self</span><span class="p">%</span><span class="n">b</span>
+<a name="ln-33"></a>	<span class="k">end function </span><span class="n">eval_test</span>
+<a name="ln-34"></a>
+<a name="ln-35"></a>	<span class="k">function </span><span class="n">eval_testN</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="n">x</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">o</span><span class="p">)</span>
+<a name="ln-36"></a>		<span class="k">class</span><span class="p">(</span><span class="n">testN_t</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span><span class="n">self</span>
+<a name="ln-37"></a>		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span><span class="n">x</span>
+<a name="ln-38"></a>			<span class="c">!! Must be dimension(2)</span>
+<a name="ln-39"></a>		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span><span class="kd">::</span><span class="n">o</span>
+<a name="ln-40"></a>		
+<a name="ln-41"></a>		<span class="k">if</span><span class="p">(</span> <span class="n">kLog</span><span class="o">&lt;=</span><span class="n">size</span><span class="p">(</span><span class="n">xLog</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">)</span> <span class="k">then</span>
+<a name="ln-42"></a><span class="k">			</span><span class="n">xLog</span><span class="p">(</span><span class="n">kLog</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">)</span> <span class="o">=</span> <span class="n">x</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">)</span>
+<a name="ln-43"></a>			<span class="n">kLog</span> <span class="o">=</span> <span class="n">kLog</span><span class="o">+</span><span class="mi">1</span>
+<a name="ln-44"></a>		<span class="k">end if</span>
+<a name="ln-45"></a><span class="k">		</span>
+<a name="ln-46"></a><span class="k">		</span><span class="n">o</span> <span class="o">=</span> <span class="nb">norm2</span><span class="p">(</span> <span class="p">(</span><span class="n">x</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="n">self</span><span class="p">%</span><span class="n">c0</span><span class="p">)</span><span class="o">*</span><span class="n">self</span><span class="p">%</span><span class="n">s0</span> <span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="mf">1.0_wp</span>
+<a name="ln-47"></a>	<span class="k">end function </span><span class="n">eval_testN</span>
+<a name="ln-48"></a>
+<a name="ln-49"></a><span class="k">end module </span><span class="n">objective_mod</span>
+<a name="ln-50"></a>
+<a name="ln-51"></a><span class="k">program </span><span class="n">testOptimize_prg</span>
+<a name="ln-52"></a>	<span class="c">!! Test program for Optimize_mod</span>
+<a name="ln-53"></a>	<span class="c">!! @todo</span>
+<a name="ln-54"></a>	<span class="c">!! Finish tests</span>
+<a name="ln-55"></a>	<span class="k">use </span><span class="n">kinds_mod</span>
+<a name="ln-56"></a>	<span class="k">use </span><span class="n">optimize_mod</span>
+<a name="ln-57"></a>	<span class="k">use </span><span class="n">objective_mod</span>
+<a name="ln-58"></a>	<span class="k">implicit none</span>
+<a name="ln-59"></a><span class="k">	</span>
+<a name="ln-60"></a><span class="k">	call </span><span class="n">testObjective</span>
+<a name="ln-61"></a>	<span class="k">call </span><span class="n">testObjectiveN</span>
+<a name="ln-62"></a>	<span class="k">call </span><span class="n">testPlot</span>
+<a name="ln-63"></a>	
+<a name="ln-64"></a><span class="k">contains</span>
+<a name="ln-65"></a>
+<a name="ln-66"></a><span class="k">	subroutine </span><span class="n">testObjective</span>
+<a name="ln-67"></a>		<span class="c">!! Verify operation of obj_t</span>
+<a name="ln-68"></a>		<span class="k">type</span><span class="p">(</span><span class="n">test_t</span><span class="p">)</span><span class="kd">::</span><span class="n">test</span>
+<a name="ln-69"></a>		
+<a name="ln-70"></a>		<span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span> <span class="n">test</span><span class="p">%</span><span class="n">eval</span><span class="p">(</span><span class="mf">2.0_wp</span><span class="p">)</span><span class="o">-</span><span class="mf">3.0_wp</span>
+<a name="ln-71"></a>		<span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span> <span class="n">test</span><span class="p">%</span><span class="n">der1</span><span class="p">(</span><span class="mf">0.0_wp</span><span class="p">)</span>
+<a name="ln-72"></a>		<span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span> <span class="n">test</span><span class="p">%</span><span class="n">der2</span><span class="p">(</span><span class="mf">0.0_wp</span><span class="p">)</span>
+<a name="ln-73"></a>		<span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span> <span class="n">test</span><span class="p">%</span><span class="n">rootNewton</span><span class="p">(</span><span class="mf">4.0_wp</span><span class="p">,</span><span class="n">tol</span><span class="o">=</span><span class="mf">1.0E-10_wp</span><span class="p">,</span><span class="n">maxIts</span><span class="o">=</span><span class="mi">1000000</span><span class="p">)</span>
+<a name="ln-74"></a>		<span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span> <span class="n">test</span><span class="p">%</span><span class="n">minNewton</span><span class="p">(</span><span class="mf">4.0_wp</span><span class="p">,</span><span class="n">tol</span><span class="o">=</span><span class="mf">1.0E-10_wp</span><span class="p">,</span><span class="n">maxIts</span><span class="o">=</span><span class="mi">1000000</span><span class="p">)</span>
+<a name="ln-75"></a>	<span class="k">end subroutine </span><span class="n">testObjective</span>
+<a name="ln-76"></a>
+<a name="ln-77"></a>	<span class="k">subroutine </span><span class="n">testObjectiveN</span>
+<a name="ln-78"></a>		<span class="k">type</span><span class="p">(</span><span class="n">testN_t</span><span class="p">)</span><span class="kd">::</span><span class="n">test</span>
+<a name="ln-79"></a>		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">allocatable</span><span class="kd">::</span><span class="n">xSD</span><span class="p">,</span><span class="n">xMN</span><span class="p">,</span><span class="n">xNM</span>
+<a name="ln-80"></a>		
+<a name="ln-81"></a>		<span class="n">xSD</span> <span class="o">=</span> <span class="n">test</span><span class="p">%</span><span class="n">steepestDescent</span><span class="p">([</span><span class="mf">5.0_wp</span><span class="p">,</span><span class="mf">5.0_wp</span><span class="p">])</span>
+<a name="ln-82"></a>		<span class="n">xMN</span> <span class="o">=</span> <span class="n">test</span><span class="p">%</span><span class="n">minNewton</span><span class="p">([</span><span class="mf">5.0_wp</span><span class="p">,</span><span class="mf">5.0_wp</span><span class="p">])</span>
+<a name="ln-83"></a>		<span class="n">xNM</span> <span class="o">=</span> <span class="n">test</span><span class="p">%</span><span class="n">nelderMead</span><span class="p">([</span><span class="mf">5.0_wp</span><span class="p">,</span><span class="mf">5.0_wp</span><span class="p">])</span>
+<a name="ln-84"></a>		<span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span> <span class="n">xSD</span>
+<a name="ln-85"></a>		<span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span> <span class="n">xMN</span>
+<a name="ln-86"></a>		<span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span> <span class="n">xNM</span>
+<a name="ln-87"></a>	<span class="k">end subroutine </span><span class="n">testObjectiveN</span>
+<a name="ln-88"></a>
+<a name="ln-89"></a>	<span class="k">subroutine </span><span class="n">testPlot</span>
+<a name="ln-90"></a>		<span class="k">type</span><span class="p">(</span><span class="n">testN_t</span><span class="p">)</span><span class="kd">::</span><span class="n">test</span>
+<a name="ln-91"></a>		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">allocatable</span><span class="kd">::</span><span class="n">x</span><span class="p">,</span><span class="n">y</span>
+<a name="ln-92"></a>		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:,:),</span><span class="k">allocatable</span><span class="kd">::</span><span class="n">f</span>
+<a name="ln-93"></a>		<span class="kt">integer</span><span class="kd">::</span><span class="n">N</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">j</span>
+<a name="ln-94"></a>		
+<a name="ln-95"></a>		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">allocatable</span><span class="kd">::</span><span class="n">xm</span>
+<a name="ln-96"></a>		
+<a name="ln-97"></a>		<span class="n">N</span> <span class="o">=</span> <span class="mi">100</span>
+<a name="ln-98"></a>		<span class="n">x</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mf">0.0_wp</span><span class="p">,</span><span class="mf">7.0_wp</span><span class="p">,</span><span class="n">N</span><span class="p">)</span>
+<a name="ln-99"></a>		<span class="n">y</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mf">0.0_wp</span><span class="p">,</span><span class="mf">7.0_wp</span><span class="p">,</span><span class="n">N</span><span class="p">)</span>
+<a name="ln-100"></a>		<span class="k">allocate</span><span class="p">(</span> <span class="n">f</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">N</span><span class="p">)</span> <span class="p">)</span>
+<a name="ln-101"></a>		
+<a name="ln-102"></a>		<span class="k">do </span><span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">N</span>
+<a name="ln-103"></a>			<span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">N</span>
+<a name="ln-104"></a>				<span class="n">f</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span> <span class="o">=</span> <span class="n">test</span><span class="p">%</span><span class="n">eval</span><span class="p">([</span> <span class="n">x</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="p">,</span> <span class="n">y</span><span class="p">(</span><span class="n">j</span><span class="p">)</span> <span class="p">])</span>
+<a name="ln-105"></a>			<span class="k">end do</span>
+<a name="ln-106"></a><span class="k">		end do</span>
+<a name="ln-107"></a><span class="k">		</span>
+<a name="ln-108"></a><span class="k">		call </span><span class="n">setup</span><span class="p">(</span><span class="n">fileName</span><span class="o">=</span><span class="s1">&#39;testsOptimize-%n.svg&#39;</span><span class="p">,</span><span class="n">figSize</span><span class="o">=</span><span class="p">[</span><span class="mi">400</span><span class="p">,</span><span class="mi">350</span><span class="p">])</span>
+<a name="ln-109"></a>		
+<a name="ln-110"></a>		<span class="n">kLog</span> <span class="o">=</span> <span class="mi">1</span>
+<a name="ln-111"></a>		<span class="n">xm</span> <span class="o">=</span> <span class="n">test</span><span class="p">%</span><span class="n">steepestDescent</span><span class="p">([</span><span class="mf">5.0_wp</span><span class="p">,</span><span class="mf">5.0_wp</span><span class="p">])</span>
+<a name="ln-112"></a>		<span class="k">call </span><span class="n">figure</span><span class="p">()</span>
+<a name="ln-113"></a>		<span class="k">call </span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">aspect</span><span class="o">=</span><span class="n">span</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="o">/</span><span class="n">span</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<a name="ln-114"></a>		<span class="k">call </span><span class="n">xylim</span><span class="p">(</span><span class="n">mixval</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">mixval</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+<a name="ln-115"></a>		<span class="k">call </span><span class="n">contourf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">f</span><span class="p">,</span><span class="mi">30</span><span class="p">)</span>
+<a name="ln-116"></a>		<span class="k">call </span><span class="n">plot</span><span class="p">(</span><span class="n">xLog</span><span class="p">(:</span><span class="n">kLog</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="n">xLog</span><span class="p">(:</span><span class="n">kLog</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="n">lineStyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span><span class="n">markStyle</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span><span class="n">markColor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<a name="ln-117"></a>		<span class="k">call </span><span class="n">colorbar2</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="mi">30</span><span class="p">)</span>
+<a name="ln-118"></a>		<span class="k">call </span><span class="n">ticks</span><span class="p">()</span>
+<a name="ln-119"></a>		<span class="k">call </span><span class="n">labels</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span><span class="s1">&#39;y&#39;</span><span class="p">,</span><span class="s1">&#39;Steepest Descent [&#39;</span><span class="o">//</span><span class="n">intToChar</span><span class="p">(</span><span class="n">kLog</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">//</span><span class="s1">&#39;]&#39;</span><span class="p">)</span>
+<a name="ln-120"></a>		
+<a name="ln-121"></a>		<span class="n">kLog</span> <span class="o">=</span> <span class="mi">1</span>
+<a name="ln-122"></a>		<span class="n">xm</span> <span class="o">=</span> <span class="n">test</span><span class="p">%</span><span class="n">minNewton</span><span class="p">([</span><span class="mf">5.0_wp</span><span class="p">,</span><span class="mf">5.0_wp</span><span class="p">])</span>
+<a name="ln-123"></a>		<span class="k">call </span><span class="n">figure</span><span class="p">()</span>
+<a name="ln-124"></a>		<span class="k">call </span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">aspect</span><span class="o">=</span><span class="n">span</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="o">/</span><span class="n">span</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<a name="ln-125"></a>		<span class="k">call </span><span class="n">xylim</span><span class="p">(</span><span class="n">mixval</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">mixval</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+<a name="ln-126"></a>		<span class="k">call </span><span class="n">contourf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">f</span><span class="p">,</span><span class="mi">30</span><span class="p">)</span>
+<a name="ln-127"></a>		<span class="k">call </span><span class="n">plot</span><span class="p">(</span><span class="n">xLog</span><span class="p">(:</span><span class="n">kLog</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="n">xLog</span><span class="p">(:</span><span class="n">kLog</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="n">lineStyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span><span class="n">markStyle</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span><span class="n">markColor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<a name="ln-128"></a>		<span class="k">call </span><span class="n">colorbar2</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="mi">30</span><span class="p">)</span>
+<a name="ln-129"></a>		<span class="k">call </span><span class="n">ticks</span><span class="p">()</span>
+<a name="ln-130"></a>		<span class="k">call </span><span class="n">labels</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span><span class="s1">&#39;y&#39;</span><span class="p">,</span><span class="s1">&#39;Newton-Raphson [&#39;</span><span class="o">//</span><span class="n">intToChar</span><span class="p">(</span><span class="n">kLog</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">//</span><span class="s1">&#39;]&#39;</span><span class="p">)</span>
+<a name="ln-131"></a>		
+<a name="ln-132"></a>		<span class="n">kLog</span> <span class="o">=</span> <span class="mi">1</span>
+<a name="ln-133"></a>		<span class="n">xm</span> <span class="o">=</span> <span class="n">test</span><span class="p">%</span><span class="n">nelderMead</span><span class="p">([</span><span class="mf">5.0_wp</span><span class="p">,</span><span class="mf">5.0_wp</span><span class="p">])</span>
+<a name="ln-134"></a>		<span class="k">call </span><span class="n">figure</span><span class="p">()</span>
+<a name="ln-135"></a>		<span class="k">call </span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">aspect</span><span class="o">=</span><span class="n">span</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="o">/</span><span class="n">span</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<a name="ln-136"></a>		<span class="k">call </span><span class="n">xylim</span><span class="p">(</span><span class="n">mixval</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">mixval</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+<a name="ln-137"></a>		<span class="k">call </span><span class="n">contourf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">f</span><span class="p">,</span><span class="mi">30</span><span class="p">)</span>
+<a name="ln-138"></a>		<span class="k">call </span><span class="n">plot</span><span class="p">(</span><span class="n">xLog</span><span class="p">(:</span><span class="n">kLog</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="n">xLog</span><span class="p">(:</span><span class="n">kLog</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="n">lineStyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span><span class="n">markStyle</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span><span class="n">markColor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<a name="ln-139"></a>		<span class="k">call </span><span class="n">colorbar2</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="mi">30</span><span class="p">)</span>
+<a name="ln-140"></a>		<span class="k">call </span><span class="n">ticks</span><span class="p">()</span>
+<a name="ln-141"></a>		<span class="k">call </span><span class="n">labels</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span><span class="s1">&#39;y&#39;</span><span class="p">,</span><span class="s1">&#39;Nelder-Mead Simplex [&#39;</span><span class="o">//</span><span class="n">intToChar</span><span class="p">(</span><span class="n">kLog</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">//</span><span class="s1">&#39;]&#39;</span><span class="p">)</span>
+<a name="ln-142"></a>		
+<a name="ln-143"></a>		<span class="k">call </span><span class="n">show</span><span class="p">()</span>
+<a name="ln-144"></a>		
+<a name="ln-145"></a>	<span class="k">end subroutine </span><span class="n">testPlot</span>
+<a name="ln-146"></a>
+<a name="ln-147"></a><span class="k">end program </span><span class="n">testOptimize_prg</span>
+</pre></div>
+
+    </section>
+    </div>
+  </div>
+
+  <section class="visible-xs visible-sm hidden-md">
+    <hr>
+    
+
+<div class="panel panel-default">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#allfiles-1">All Source Files</a></h3></div>
+  <div id="allfiles-1" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../sourcefile/animate.f90.html">animate.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/array.f90.html">array.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/autodiff.f90.html">autoDiff.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/basic.f90.html">basic.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/basicsolvers.f90.html">basicSolvers.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/config.f90.html">config.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/examples.f90.html">examples.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/expression.f90.html">expression.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/fourier.f90.html">fourier.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/iterate.f90.html">iterate.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/kinds.f90.html">kinds.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/logo.f90.html">logo.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/matio.f90.html">matIO.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/mesh.f90.html">mesh.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/netcdf.f90.html">netCDF.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/node.f90.html">node.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/optimize.f90.html">optimize.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/plplotlib.f90.html">plplotlib.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/quaternion.f90.html">quaternion.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/solvers.f90.html">solvers.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/sparse.f90.html">sparse.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/spline.f90.html">spline.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/stats.f90.html">stats.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/tensor.f90.html">tensor.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testarray.f90.html">testArray.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testautodiff.f90.html">testAutoDiff.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testconfig.f90.html">testConfig.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testexpression.f90.html">testExpression.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testfourier.f90.html">testFourier.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testiterate.f90.html">testIterate.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testkinds.f90.html">testKinds.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testmatio.f90.html">testMatIO.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testmesh.f90.html">testMesh.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testnetcdf.f90.html">testNetCDF.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testoptimize.f90.html">testOptimize.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testquaternion.f90.html">testQuaternion.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testsparse.f90.html">testSparse.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testspline.f90.html">testSpline.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/teststats.f90.html">testStats.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testtensor.f90.html">testTensor.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testtext.f90.html">testText.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testtime.f90.html">testTime.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testvtkio.f90.html">testVtkIO.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/text.f90.html">text.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/time.f90.html">time.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/treeexponential.f90.html">treeExponential.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/treeoperator.f90.html">treeOperator.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/treetrigonometric.f90.html">treeTrigonometric.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/treevalue.f90.html">treeValue.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/vtkio.f90.html">vtkIO.f90</a>
+      
+    </div>
+  </div>
+</div>
+
+
+  </section>
+  
+    <hr>    
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-md-4"><p>&copy; 2016 </p></div>
+        <div class="col-xs-6 col-md-4 col-md-push-4">
+          <p class="text-right">
+            Documentation generated by 
+            <a href="https://github.com/cmacmackin/ford">FORD</a>
+            
+          </p>
+        </div>
+        <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> CommonModules was developed by Kyle Horne</p></div>
+      </div>
+      <br>
+      </div> <!-- /container -->    
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+-->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- MathJax JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js'],
+        'HTML-CSS': { 
+           styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: '#000000 ! important'} }
+        }
+      });
+    </script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  </body>
+</html>

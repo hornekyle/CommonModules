@@ -1,0 +1,1824 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	 
+	 <meta name="description" content="Common modules for using in other programs">
+    
+    <meta name="author" content="Chris MacMackin" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>kinds_mod &ndash; CommonModules</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+    
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+
+    
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">CommonModules </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+				
+            <li><a href='../page/index.html'>Instructions</a></li>
+	    
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+              data-toggle="dropdown" role="button"
+              aria-haspopup="true"
+		 aria-expanded="false">Contents <span class="caret"></span></a>
+	      <ul class="dropdown-menu">
+              
+            <li><a href="../lists/files.html">Source Files</a></li>
+				
+				
+            <li><a href="../lists/modules.html">Modules</a></li>
+				
+            
+                                
+            <li><a href="../lists/procedures.html">Procedures</a></li>
+				
+								
+            <li><a href="../lists/types.html">Derived Types</a></li>
+				
+				
+            <li><a href="../lists/programs.html">Programs</a></li>
+				
+            </ul>
+            </li>
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
+
+                             
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/programs.html">Programs</a></li>
+
+          </ul>
+        
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    
+  
+  <div class="row">
+    <h1>kinds_mod 
+    <small>Module</small>
+    
+    </h1>
+    
+<div class="row">
+  <div class="col-lg-12">
+<div class="well well-sm">
+  <ul class="list-inline" style="margin-bottom:0px;display:inline">
+     
+     
+     
+     
+    
+    
+     <li><i class="fa fa-list-ol"></i>
+       <a data-toggle="tooltip"
+	  data-placement="bottom" data-html="true"
+	  title=" 0.4% of total for modules and submodules.">28 statements</a>
+     </li> 
+     
+     
+    <li><i class="fa fa-code"></i><a href="../src/kinds.f90"> Source File</a></li>
+     
+  </ul>
+  <ol class="breadcrumb in-well text-right">
+  
+     <li><a href='../sourcefile/kinds.f90.html'>kinds.f90</a></li>
+  
+     <li class="active">kinds_mod</li>
+  </ol>
+</div>
+</div>
+</div>
+<script>
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+    
+<div id="sidebar">
+  
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-0">Variables</a></h3></div>
+  <div id="vars-0" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/kinds_mod.html#variable-sp">sp</a>
+      
+      <a class="list-group-item" href="../module/kinds_mod.html#variable-dp">dp</a>
+      
+      <a class="list-group-item" href="../module/kinds_mod.html#variable-ep">ep</a>
+      
+      <a class="list-group-item" href="../module/kinds_mod.html#variable-qp">qp</a>
+      
+      <a class="list-group-item" href="../module/kinds_mod.html#variable-rkinds">rkinds</a>
+      
+      <a class="list-group-item" href="../module/kinds_mod.html#variable-wp">wp</a>
+      
+      <a class="list-group-item" href="../module/kinds_mod.html#variable-pi">PI</a>
+      
+      <a class="list-group-item" href="../module/kinds_mod.html#variable-e">E</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#funcs-0">Functions</a></h3></div>
+  <div id="funcs-0" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/kinds_mod.html#proc-arg">arg</a>
+      
+    </div>
+  </div>
+</div>
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-0">Subroutines</a></h3></div>
+  <div class="list-group">
+    <div id="subs-0" class="panel-collapse collapse">
+      
+      <a class="list-group-item" href="../module/kinds_mod.html#proc-printtypes">printTypes</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+  <hr>
+  
+
+<div class="panel panel-default">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#allmods-0">All Modules</a></h3></div>
+  <div id="allmods-0" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/array_mod.html">array_mod</a>
+      
+      <a class="list-group-item" href="../module/autodiff_mod.html">autoDiff_mod</a>
+      
+      <a class="list-group-item" href="../module/basicsolvers_mod.html">basicSolvers_mod</a>
+      
+      <a class="list-group-item" href="../module/config_mod.html">config_mod</a>
+      
+      <a class="list-group-item" href="../module/expression_mod.html">expression_mod</a>
+      
+      <a class="list-group-item" href="../module/fourier_mod.html">fourier_mod</a>
+      
+      <a class="list-group-item" href="../module/iterate_mod.html">iterate_mod</a>
+      
+      <a class="list-group-item" href="../module/kinds_mod.html">kinds_mod</a>
+      
+      <a class="list-group-item" href="../module/matio_mod.html">matIO_mod</a>
+      
+      <a class="list-group-item" href="../module/mesh_mod.html">mesh_mod</a>
+      
+      <a class="list-group-item" href="../module/netcdf_mod.html">netCDF_mod</a>
+      
+      <a class="list-group-item" href="../module/node_mod.html">node_mod</a>
+      
+      <a class="list-group-item" href="../module/objective_mod.html">objective_mod</a>
+      
+      <a class="list-group-item" href="../module/optimize_mod.html">optimize_mod</a>
+      
+      <a class="list-group-item" href="../module/plplotlib_mod.html">plplotlib_mod</a>
+      
+      <a class="list-group-item" href="../module/quaternion_mod.html">quaternion_mod</a>
+      
+      <a class="list-group-item" href="../module/solvers_mod.html">solvers_mod</a>
+      
+      <a class="list-group-item" href="../module/sparse_mod.html">sparse_mod</a>
+      
+      <a class="list-group-item" href="../module/spline_mod.html">spline_mod</a>
+      
+      <a class="list-group-item" href="../module/stats_mod.html">stats_mod</a>
+      
+      <a class="list-group-item" href="../module/tensor_mod.html">tensor_mod</a>
+      
+      <a class="list-group-item" href="../module/text_mod.html">text_mod</a>
+      
+      <a class="list-group-item" href="../module/time_mod.html">time_mod</a>
+      
+      <a class="list-group-item" href="../module/treeexponential_mod.html">treeExponential_mod</a>
+      
+      <a class="list-group-item" href="../module/treeoperator_mod.html">treeOperator_mod</a>
+      
+      <a class="list-group-item" href="../module/treetrigonometric_mod.html">treeTrigonometric_mod</a>
+      
+      <a class="list-group-item" href="../module/treevalue_mod.html">treeValue_mod</a>
+      
+      <a class="list-group-item" href="../module/vtkio_mod.html">vtkIO_mod</a>
+      
+    </div>
+  </div>
+</div>
+
+
+</div>  
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+      
+    
+  
+
+    
+    <p>Module to manage real kinds and basic constants</p>
+    
+    
+    <h3>Used By</h3>
+    
+                <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.38.0 (20140413.2041)
+ -->
+<!-- Title: module~~kinds_mod~~UsedByGraph Pages: 1 -->
+<svg id="modulekinds_modUsedByGraph" width="641pt" height="1195pt"
+ viewBox="0.00 0.00 641.00 1194.99" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="module~~kinds_mod~~UsedByGraph" class="graph" transform="scale(0.749708 0.749708) rotate(0) translate(4 1589.94)">
+<title>module~~kinds_mod~~UsedByGraph</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-1589.94 851,-1589.94 851,4 -4,4"/>
+<!-- module~kinds_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_node1" class="node"><title>module~kinds_mod</title>
+<polygon fill="none" stroke="black" points="64,-455.732 0,-455.732 0,-431.732 64,-431.732 64,-455.732"/>
+<text text-anchor="middle" x="32" y="-441.332" font-family="Helvetica,sans-Serif" font-size="10.50">kinds_mod</text>
+</g>
+<!-- module~basicsolvers_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_node2" class="node"><title>module~basicsolvers_mod</title>
+<g id="a_module~~kinds_mod~~UsedByGraph_node2"><a xlink:href="../module/basicsolvers_mod.html" xlink:title="basicSolvers_mod">
+<polygon fill="#337ab7" stroke="#337ab7" points="446.5,-1364.73 346.5,-1364.73 346.5,-1340.73 446.5,-1340.73 446.5,-1364.73"/>
+<text text-anchor="middle" x="396.5" y="-1350.33" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">basicSolvers_mod</text>
+</a>
+</g>
+</g>
+<!-- module~kinds_mod&#45;&gt;module~basicsolvers_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_edge66" class="edge"><title>module~kinds_mod&#45;&gt;module~basicsolvers_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M263.5,-1308.73C290.485,-1319.36 321.193,-1329.7 346.195,-1337.68"/>
+<polygon fill="#000000" stroke="#000000" points="345.239,-1341.05 355.829,-1340.73 347.351,-1334.37 345.239,-1341.05"/>
+</g>
+<!-- module~node_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_node3" class="node"><title>module~node_mod</title>
+<g id="a_module~~kinds_mod~~UsedByGraph_node3"><a xlink:href="../module/node_mod.html" xlink:title="node_mod">
+<polygon fill="#337ab7" stroke="#337ab7" points="428.5,-1124.73 364.5,-1124.73 364.5,-1100.73 428.5,-1100.73 428.5,-1124.73"/>
+<text text-anchor="middle" x="396.5" y="-1110.33" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">node_mod</text>
+</a>
+</g>
+</g>
+<!-- module~kinds_mod&#45;&gt;module~node_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_edge67" class="edge"><title>module~kinds_mod&#45;&gt;module~node_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M263.5,-1112.73C290.17,-1095.53 326.616,-1096.94 354.455,-1101.86"/>
+<polygon fill="#000000" stroke="#000000" points="353.799,-1105.3 364.288,-1103.8 355.156,-1098.43 353.799,-1105.3"/>
+</g>
+<!-- module~treevalue_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_node4" class="node"><title>module~treevalue_mod</title>
+<g id="a_module~~kinds_mod~~UsedByGraph_node4"><a xlink:href="../module/treevalue_mod.html" xlink:title="treeValue_mod">
+<polygon fill="#337ab7" stroke="#337ab7" points="589.5,-1099.73 504.5,-1099.73 504.5,-1075.73 589.5,-1075.73 589.5,-1099.73"/>
+<text text-anchor="middle" x="547" y="-1085.33" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">treeValue_mod</text>
+</a>
+</g>
+</g>
+<!-- module~kinds_mod&#45;&gt;module~treevalue_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_edge68" class="edge"><title>module~kinds_mod&#45;&gt;module~treevalue_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M397.5,-1072.73C429.181,-1065.19 465.547,-1068.67 494.362,-1074.16"/>
+<polygon fill="#000000" stroke="#000000" points="493.721,-1077.6 504.22,-1076.18 495.123,-1070.75 493.721,-1077.6"/>
+</g>
+<!-- module~treeoperator_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_node5" class="node"><title>module~treeoperator_mod</title>
+<g id="a_module~~kinds_mod~~UsedByGraph_node5"><a xlink:href="../module/treeoperator_mod.html" xlink:title="treeOperator_mod">
+<polygon fill="#337ab7" stroke="#337ab7" points="597.5,-1057.73 496.5,-1057.73 496.5,-1033.73 597.5,-1033.73 597.5,-1057.73"/>
+<text text-anchor="middle" x="547" y="-1043.33" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">treeOperator_mod</text>
+</a>
+</g>
+</g>
+<!-- module~kinds_mod&#45;&gt;module~treeoperator_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_edge69" class="edge"><title>module~kinds_mod&#45;&gt;module~treeoperator_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M397.5,-1072.73C426.432,-1065.84 458.9,-1059.75 486.081,-1055.11"/>
+<polygon fill="#000000" stroke="#000000" points="486.941,-1058.52 496.221,-1053.4 485.779,-1051.61 486.941,-1058.52"/>
+</g>
+<!-- module~treeexponential_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_node6" class="node"><title>module~treeexponential_mod</title>
+<g id="a_module~~kinds_mod~~UsedByGraph_node6"><a xlink:href="../module/treeexponential_mod.html" xlink:title="treeExponential_mod">
+<polygon fill="#337ab7" stroke="#337ab7" points="604,-1015.73 490,-1015.73 490,-991.732 604,-991.732 604,-1015.73"/>
+<text text-anchor="middle" x="547" y="-1001.33" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">treeExponential_mod</text>
+</a>
+</g>
+</g>
+<!-- module~kinds_mod&#45;&gt;module~treeexponential_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_edge70" class="edge"><title>module~kinds_mod&#45;&gt;module~treeexponential_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M263.5,-1112.73C315.013,-1079.5 335.867,-1086.93 395.5,-1072.73"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M397.5,-1072.73C440.649,-1062.46 444.439,-1042.68 485,-1024.73 489.318,-1022.82 493.867,-1020.97 498.456,-1019.21"/>
+<polygon fill="#000000" stroke="#000000" points="499.696,-1022.48 507.866,-1015.74 497.273,-1015.92 499.696,-1022.48"/>
+</g>
+<!-- module~treetrigonometric_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_node7" class="node"><title>module~treetrigonometric_mod</title>
+<g id="a_module~~kinds_mod~~UsedByGraph_node7"><a xlink:href="../module/treetrigonometric_mod.html" xlink:title="treeTrigonometric_mod">
+<polygon fill="#337ab7" stroke="#337ab7" points="609,-1179.73 485,-1179.73 485,-1155.73 609,-1155.73 609,-1179.73"/>
+<text text-anchor="middle" x="547" y="-1165.33" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">treeTrigonometric_mod</text>
+</a>
+</g>
+</g>
+<!-- module~kinds_mod&#45;&gt;module~treetrigonometric_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_edge71" class="edge"><title>module~kinds_mod&#45;&gt;module~treetrigonometric_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M263.5,-1112.73C269.939,-1108.58 388.094,-1150.77 395.5,-1152.73"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M397.5,-1152.73C422.265,-1159.3 450.053,-1163.03 474.834,-1165.14"/>
+<polygon fill="#000000" stroke="#000000" points="474.649,-1168.64 484.89,-1165.92 475.191,-1161.66 474.649,-1168.64"/>
+</g>
+<!-- module~quaternion_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_node8" class="node"><title>module~quaternion_mod</title>
+<g id="a_module~~kinds_mod~~UsedByGraph_node8"><a xlink:href="../module/quaternion_mod.html" xlink:title="quaternion_mod">
+<polygon fill="#337ab7" stroke="#337ab7" points="308,-455.732 217,-455.732 217,-431.732 308,-431.732 308,-455.732"/>
+<text text-anchor="middle" x="262.5" y="-441.332" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">quaternion_mod</text>
+</a>
+</g>
+</g>
+<!-- module~kinds_mod&#45;&gt;module~quaternion_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_edge72" class="edge"><title>module~kinds_mod&#45;&gt;module~quaternion_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M55.0159,-455.931C75.9907,-466.587 108.829,-480.798 139.5,-483.732"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M141.5,-483.732C173.922,-486.833 209.054,-472.915 232.873,-460.658"/>
+<polygon fill="#000000" stroke="#000000" points="234.571,-463.719 241.728,-455.908 231.262,-457.55 234.571,-463.719"/>
+</g>
+<!-- module~sparse_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_node9" class="node"><title>module~sparse_mod</title>
+<g id="a_module~~kinds_mod~~UsedByGraph_node9"><a xlink:href="../module/sparse_mod.html" xlink:title="sparse_mod">
+<polygon fill="#337ab7" stroke="#337ab7" points="298.5,-1360.73 226.5,-1360.73 226.5,-1336.73 298.5,-1336.73 298.5,-1360.73"/>
+<text text-anchor="middle" x="262.5" y="-1346.33" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sparse_mod</text>
+</a>
+</g>
+</g>
+<!-- module~kinds_mod&#45;&gt;module~sparse_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_edge73" class="edge"><title>module~kinds_mod&#45;&gt;module~sparse_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M141.5,-1228.73C188.342,-1254.75 176.414,-1287.74 217,-1322.73 220.448,-1325.7 224.283,-1328.52 228.215,-1331.13"/>
+<polygon fill="#000000" stroke="#000000" points="226.519,-1334.2 236.865,-1336.48 230.201,-1328.24 226.519,-1334.2"/>
+</g>
+<!-- module~solvers_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_node10" class="node"><title>module~solvers_mod</title>
+<g id="a_module~~kinds_mod~~UsedByGraph_node10"><a xlink:href="../module/solvers_mod.html" xlink:title="solvers_mod">
+<polygon fill="#337ab7" stroke="#337ab7" points="433,-1444.73 360,-1444.73 360,-1420.73 433,-1420.73 433,-1444.73"/>
+<text text-anchor="middle" x="396.5" y="-1430.33" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">solvers_mod</text>
+</a>
+</g>
+</g>
+<!-- module~kinds_mod&#45;&gt;module~solvers_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_edge74" class="edge"><title>module~kinds_mod&#45;&gt;module~solvers_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M141.5,-1228.73C203.64,-1263.25 163.057,-1323.44 217,-1369.73 237.329,-1387.18 304.163,-1407.96 350.022,-1420.74"/>
+<polygon fill="#000000" stroke="#000000" points="349.181,-1424.14 359.752,-1423.43 351.041,-1417.39 349.181,-1424.14"/>
+</g>
+<!-- module~tensor_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_node11" class="node"><title>module~tensor_mod</title>
+<g id="a_module~~kinds_mod~~UsedByGraph_node11"><a xlink:href="../module/tensor_mod.html" xlink:title="tensor_mod">
+<polygon fill="#337ab7" stroke="#337ab7" points="175.5,-455.732 105.5,-455.732 105.5,-431.732 175.5,-431.732 175.5,-455.732"/>
+<text text-anchor="middle" x="140.5" y="-441.332" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">tensor_mod</text>
+</a>
+</g>
+</g>
+<!-- module~kinds_mod&#45;&gt;module~tensor_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_edge75" class="edge"><title>module~kinds_mod&#45;&gt;module~tensor_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M64.0905,-443.732C73.7604,-443.732 84.617,-443.732 95.015,-443.732"/>
+<polygon fill="#000000" stroke="#000000" points="95.1993,-447.232 105.199,-443.732 95.1993,-440.232 95.1993,-447.232"/>
+</g>
+<!-- module~plplotlib_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_node12" class="node"><title>module~plplotlib_mod</title>
+<g id="a_module~~kinds_mod~~UsedByGraph_node12"><a xlink:href="../module/plplotlib_mod.html" xlink:title="plplotlib_mod">
+<polygon fill="#337ab7" stroke="#337ab7" points="434.5,-850.732 358.5,-850.732 358.5,-826.732 434.5,-826.732 434.5,-850.732"/>
+<text text-anchor="middle" x="396.5" y="-836.332" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">plplotlib_mod</text>
+</a>
+</g>
+</g>
+<!-- module~kinds_mod&#45;&gt;module~plplotlib_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_edge76" class="edge"><title>module~kinds_mod&#45;&gt;module~plplotlib_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M141.5,-1228.73C271.374,-1300.88 151.735,-1016.85 261.5,-916.732"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M263.5,-916.732C280.102,-901.589 289.177,-905.006 308,-892.732 324.979,-881.661 326.873,-875.573 344,-864.732 349.096,-861.506 354.645,-858.36 360.15,-855.433"/>
+<polygon fill="#000000" stroke="#000000" points="361.992,-858.422 369.289,-850.741 358.794,-852.195 361.992,-858.422"/>
+</g>
+<!-- module~objective_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_node13" class="node"><title>module~objective_mod</title>
+<g id="a_module~~kinds_mod~~UsedByGraph_node13"><a xlink:href="../module/objective_mod.html" xlink:title="objective_mod">
+<polygon fill="#337ab7" stroke="#337ab7" points="588,-897.732 506,-897.732 506,-873.732 588,-873.732 588,-897.732"/>
+<text text-anchor="middle" x="547" y="-883.332" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">objective_mod</text>
+</a>
+</g>
+</g>
+<!-- module~kinds_mod&#45;&gt;module~objective_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_edge77" class="edge"><title>module~kinds_mod&#45;&gt;module~objective_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M263.5,-916.732C306.844,-877.196 336.862,-918.559 395.5,-916.732"/>
+</g>
+<!-- program~animate_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_node14" class="node"><title>program~animate_prg</title>
+<g id="a_module~~kinds_mod~~UsedByGraph_node14"><a xlink:href="../program/animate_prg.html" xlink:title="animate_prg">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="583.5,-855.732 510.5,-855.732 510.5,-831.732 583.5,-831.732 583.5,-855.732"/>
+<text text-anchor="middle" x="547" y="-841.332" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">animate_prg</text>
+</a>
+</g>
+</g>
+<!-- module~kinds_mod&#45;&gt;program~animate_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_edge78" class="edge"><title>module~kinds_mod&#45;&gt;program~animate_prg</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M263.5,-916.732C286.052,-896.161 365.494,-884.337 395.5,-878.732"/>
+</g>
+<!-- program~basic_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_node15" class="node"><title>program~basic_prg</title>
+<g id="a_module~~kinds_mod~~UsedByGraph_node15"><a xlink:href="../program/basic_prg.html" xlink:title="basic_prg">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="576.5,-775.732 517.5,-775.732 517.5,-751.732 576.5,-751.732 576.5,-775.732"/>
+<text text-anchor="middle" x="547" y="-761.332" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">basic_prg</text>
+</a>
+</g>
+</g>
+<!-- module~kinds_mod&#45;&gt;program~basic_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_edge79" class="edge"><title>module~kinds_mod&#45;&gt;program~basic_prg</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M33.522,-456.015C37.7749,-552.756 68.3994,-1189.27 139.5,-1228.73"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M141.5,-1228.73C285.964,-1308.91 109.249,-989.983 217,-864.732 255.317,-820.192 428.935,-784.477 507.352,-770.315"/>
+<polygon fill="#000000" stroke="#000000" points="508.086,-773.74 517.317,-768.539 506.858,-766.848 508.086,-773.74"/>
+</g>
+<!-- program~examples_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_node16" class="node"><title>program~examples_prg</title>
+<g id="a_module~~kinds_mod~~UsedByGraph_node16"><a xlink:href="../program/examples_prg.html" xlink:title="examples_prg">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="587,-733.732 507,-733.732 507,-709.732 587,-709.732 587,-733.732"/>
+<text text-anchor="middle" x="547" y="-719.332" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">examples_prg</text>
+</a>
+</g>
+</g>
+<!-- module~kinds_mod&#45;&gt;program~examples_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_edge80" class="edge"><title>module~kinds_mod&#45;&gt;program~examples_prg</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M263.5,-685.732C344.879,-699.981 440.383,-710.966 496.899,-716.878"/>
+<polygon fill="#000000" stroke="#000000" points="496.679,-720.374 506.986,-717.923 497.4,-713.411 496.679,-720.374"/>
+</g>
+<!-- program~logo_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_node17" class="node"><title>program~logo_prg</title>
+<g id="a_module~~kinds_mod~~UsedByGraph_node17"><a xlink:href="../program/logo_prg.html" xlink:title="logo_prg">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="574.5,-653.732 519.5,-653.732 519.5,-629.732 574.5,-629.732 574.5,-653.732"/>
+<text text-anchor="middle" x="547" y="-639.332" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">logo_prg</text>
+</a>
+</g>
+</g>
+<!-- module~kinds_mod&#45;&gt;program~logo_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_edge81" class="edge"><title>module~kinds_mod&#45;&gt;program~logo_prg</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M141.5,-645.732C189.463,-675.058 205.859,-677.693 261.5,-685.732"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M263.5,-685.732C299.785,-690.975 307.892,-674.079 344,-667.732 401.505,-657.624 468.869,-649.739 509.448,-645.414"/>
+<polygon fill="#000000" stroke="#000000" points="509.833,-648.893 519.412,-644.366 509.101,-641.931 509.833,-648.893"/>
+</g>
+<!-- module~array_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_node18" class="node"><title>module~array_mod</title>
+<g id="a_module~~kinds_mod~~UsedByGraph_node18"><a xlink:href="../module/array_mod.html" xlink:title="array_mod">
+<polygon fill="#337ab7" stroke="#337ab7" points="172.5,-757.732 108.5,-757.732 108.5,-733.732 172.5,-733.732 172.5,-757.732"/>
+<text text-anchor="middle" x="140.5" y="-743.332" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">array_mod</text>
+</a>
+</g>
+</g>
+<!-- module~kinds_mod&#45;&gt;module~array_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_edge82" class="edge"><title>module~kinds_mod&#45;&gt;module~array_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M36.2301,-456.101C45.0688,-489.451 70.9387,-583.832 100,-659.732 108.644,-682.307 120.398,-707.339 128.834,-724.547"/>
+<polygon fill="#000000" stroke="#000000" points="125.792,-726.291 133.368,-733.697 132.064,-723.183 125.792,-726.291"/>
+</g>
+<!-- program~testarray_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_node19" class="node"><title>program~testarray_prg</title>
+<g id="a_module~~kinds_mod~~UsedByGraph_node19"><a xlink:href="../program/testarray_prg.html" xlink:title="testArray_prg">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="301,-737.732 224,-737.732 224,-713.732 301,-713.732 301,-737.732"/>
+<text text-anchor="middle" x="262.5" y="-723.332" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">testArray_prg</text>
+</a>
+</g>
+</g>
+<!-- module~kinds_mod&#45;&gt;program~testarray_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_edge83" class="edge"><title>module~kinds_mod&#45;&gt;program~testarray_prg</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M141.5,-645.732C176.907,-666.905 182.375,-677.302 217,-699.732 221.485,-702.637 226.299,-705.602 231.044,-708.44"/>
+<polygon fill="#000000" stroke="#000000" points="229.587,-711.643 239.981,-713.694 233.134,-705.609 229.587,-711.643"/>
+</g>
+<!-- module~autodiff_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_node20" class="node"><title>module~autodiff_mod</title>
+<g id="a_module~~kinds_mod~~UsedByGraph_node20"><a xlink:href="../module/autodiff_mod.html" xlink:title="autoDiff_mod">
+<polygon fill="#337ab7" stroke="#337ab7" points="178.5,-375.732 102.5,-375.732 102.5,-351.732 178.5,-351.732 178.5,-375.732"/>
+<text text-anchor="middle" x="140.5" y="-361.332" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">autoDiff_mod</text>
+</a>
+</g>
+</g>
+<!-- module~kinds_mod&#45;&gt;module~autodiff_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_edge84" class="edge"><title>module~kinds_mod&#45;&gt;module~autodiff_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M47.3218,-431.521C60.6769,-420.297 81.2924,-403.379 100,-389.732 103.758,-386.991 107.787,-384.189 111.783,-381.489"/>
+<polygon fill="#000000" stroke="#000000" points="113.962,-384.244 120.362,-375.8 110.093,-378.41 113.962,-384.244"/>
+</g>
+<!-- program~testautodiff_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_node21" class="node"><title>program~testautodiff_prg</title>
+<g id="a_module~~kinds_mod~~UsedByGraph_node21"><a xlink:href="../program/testautodiff_prg.html" xlink:title="testAutoDiff_prg">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="307,-353.732 218,-353.732 218,-329.732 307,-329.732 307,-353.732"/>
+<text text-anchor="middle" x="262.5" y="-339.332" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">testAutoDiff_prg</text>
+</a>
+</g>
+</g>
+<!-- module~kinds_mod&#45;&gt;program~testautodiff_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_edge85" class="edge"><title>module~kinds_mod&#45;&gt;program~testautodiff_prg</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M36.8052,-431.554C44.5429,-409.152 64.4608,-361.946 100,-342.732 132.746,-325.028 174.964,-325.418 208.023,-329.896"/>
+<polygon fill="#000000" stroke="#000000" points="207.556,-333.365 217.967,-331.402 208.604,-326.444 207.556,-333.365"/>
+</g>
+<!-- program~testconfig_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_node22" class="node"><title>program~testconfig_prg</title>
+<g id="a_module~~kinds_mod~~UsedByGraph_node22"><a xlink:href="../program/testconfig_prg.html" xlink:title="testConfig_prg">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="588,-1269.73 506,-1269.73 506,-1245.73 588,-1245.73 588,-1269.73"/>
+<text text-anchor="middle" x="547" y="-1255.33" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">testConfig_prg</text>
+</a>
+</g>
+</g>
+<!-- module~kinds_mod&#45;&gt;program~testconfig_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_edge86" class="edge"><title>module~kinds_mod&#45;&gt;program~testconfig_prg</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M141.5,-1228.73C187.909,-1255.01 208.313,-1224.78 261.5,-1228.73"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M263.5,-1228.73C344.965,-1234.78 439.315,-1245.15 495.747,-1251.71"/>
+<polygon fill="#000000" stroke="#000000" points="495.492,-1255.2 505.831,-1252.89 496.305,-1248.25 495.492,-1255.2"/>
+</g>
+<!-- module~fourier_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_node23" class="node"><title>module~fourier_mod</title>
+<g id="a_module~~kinds_mod~~UsedByGraph_node23"><a xlink:href="../module/fourier_mod.html" xlink:title="fourier_mod">
+<polygon fill="#337ab7" stroke="#337ab7" points="175.5,-295.732 105.5,-295.732 105.5,-271.732 175.5,-271.732 175.5,-295.732"/>
+<text text-anchor="middle" x="140.5" y="-281.332" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">fourier_mod</text>
+</a>
+</g>
+</g>
+<!-- module~kinds_mod&#45;&gt;module~fourier_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_edge87" class="edge"><title>module~kinds_mod&#45;&gt;module~fourier_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M36.7377,-431.382C44.8586,-406.149 66.1499,-347.851 100,-309.732 102.491,-306.927 105.35,-304.296 108.368,-301.865"/>
+<polygon fill="#000000" stroke="#000000" points="110.534,-304.617 116.58,-295.917 106.428,-298.948 110.534,-304.617"/>
+</g>
+<!-- program~testeval_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_node24" class="node"><title>program~testeval_prg</title>
+<g id="a_module~~kinds_mod~~UsedByGraph_node24"><a xlink:href="../program/testeval_prg.html" xlink:title="testEval_prg">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="847,-975.732 775,-975.732 775,-951.732 847,-951.732 847,-975.732"/>
+<text text-anchor="middle" x="811" y="-961.332" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">testEval_prg</text>
+</a>
+</g>
+</g>
+<!-- module~kinds_mod&#45;&gt;program~testeval_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_edge88" class="edge"><title>module~kinds_mod&#45;&gt;program~testeval_prg</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M397.5,-1152.73C438.146,-1163.51 443.747,-1180.58 485,-1188.73 539.065,-1199.42 558.698,-1211.25 609,-1188.73 704.741,-1145.88 773.69,-1032.39 799.178,-984.996"/>
+<polygon fill="#000000" stroke="#000000" points="802.387,-986.414 803.951,-975.935 796.194,-983.151 802.387,-986.414"/>
+</g>
+<!-- module~iterate_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_node25" class="node"><title>module~iterate_mod</title>
+<g id="a_module~~kinds_mod~~UsedByGraph_node25"><a xlink:href="../module/iterate_mod.html" xlink:title="iterate_mod">
+<polygon fill="#337ab7" stroke="#337ab7" points="175.5,-1518.73 105.5,-1518.73 105.5,-1494.73 175.5,-1494.73 175.5,-1518.73"/>
+<text text-anchor="middle" x="140.5" y="-1504.33" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">iterate_mod</text>
+</a>
+</g>
+</g>
+<!-- module~kinds_mod&#45;&gt;module~iterate_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_edge89" class="edge"><title>module~kinds_mod&#45;&gt;module~iterate_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M33.1344,-455.955C34.4316,-566.23 45.8802,-1387.64 100,-1480.73 101.509,-1483.33 103.392,-1485.71 105.512,-1487.89"/>
+<polygon fill="#000000" stroke="#000000" points="103.522,-1490.79 113.434,-1494.53 108.019,-1485.43 103.522,-1490.79"/>
+</g>
+<!-- program~testfourier_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_node26" class="node"><title>program~testfourier_prg</title>
+<g id="a_module~~kinds_mod~~UsedByGraph_node26"><a xlink:href="../program/testfourier_prg.html" xlink:title="testFourier_prg">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="305.5,-274.732 219.5,-274.732 219.5,-250.732 305.5,-250.732 305.5,-274.732"/>
+<text text-anchor="middle" x="262.5" y="-260.332" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">testFourier_prg</text>
+</a>
+</g>
+</g>
+<!-- module~kinds_mod&#45;&gt;program~testfourier_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_edge90" class="edge"><title>module~kinds_mod&#45;&gt;program~testfourier_prg</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M33.1339,-431.715C34.2391,-398.064 42.525,-302.743 100,-262.732 131.835,-240.57 176.426,-242.361 210.69,-248.689"/>
+<polygon fill="#000000" stroke="#000000" points="210.017,-252.123 220.513,-250.676 211.406,-245.262 210.017,-252.123"/>
+</g>
+<!-- program~testiterate_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_node27" class="node"><title>program~testiterate_prg</title>
+<g id="a_module~~kinds_mod~~UsedByGraph_node27"><a xlink:href="../program/testiterate_prg.html" xlink:title="testIterate_prg">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="437.5,-1486.73 355.5,-1486.73 355.5,-1462.73 437.5,-1462.73 437.5,-1486.73"/>
+<text text-anchor="middle" x="396.5" y="-1472.33" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">testIterate_prg</text>
+</a>
+</g>
+</g>
+<!-- module~kinds_mod&#45;&gt;program~testiterate_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_edge91" class="edge"><title>module~kinds_mod&#45;&gt;program~testiterate_prg</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M141.5,-1466.73C151.152,-1476.95 247.455,-1507.24 261.5,-1506.73"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M263.5,-1506.73C293.769,-1505.64 326.895,-1497.59 352.39,-1489.84"/>
+<polygon fill="#000000" stroke="#000000" points="353.624,-1493.12 362.115,-1486.78 351.526,-1486.44 353.624,-1493.12"/>
+</g>
+<!-- program~testkinds_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_node28" class="node"><title>program~testkinds_prg</title>
+<g id="a_module~~kinds_mod~~UsedByGraph_node28"><a xlink:href="../program/testkinds_prg.html" xlink:title="testKinds_prg">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="179.5,-215.732 101.5,-215.732 101.5,-191.732 179.5,-191.732 179.5,-215.732"/>
+<text text-anchor="middle" x="140.5" y="-201.332" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">testKinds_prg</text>
+</a>
+</g>
+</g>
+<!-- module~kinds_mod&#45;&gt;program~testkinds_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_edge92" class="edge"><title>module~kinds_mod&#45;&gt;program~testkinds_prg</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M33.9925,-431.311C37.3567,-396.223 51.0154,-294.701 100,-229.732 102.026,-227.044 104.417,-224.551 107.003,-222.258"/>
+<polygon fill="#000000" stroke="#000000" points="109.373,-224.851 115.179,-215.988 105.114,-219.296 109.373,-224.851"/>
+</g>
+<!-- module~optimize_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_node29" class="node"><title>module~optimize_mod</title>
+<g id="a_module~~kinds_mod~~UsedByGraph_node29"><a xlink:href="../module/optimize_mod.html" xlink:title="optimize_mod">
+<polygon fill="#337ab7" stroke="#337ab7" points="436,-968.732 357,-968.732 357,-944.732 436,-944.732 436,-968.732"/>
+<text text-anchor="middle" x="396.5" y="-954.332" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">optimize_mod</text>
+</a>
+</g>
+</g>
+<!-- module~kinds_mod&#45;&gt;module~optimize_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_edge93" class="edge"><title>module~kinds_mod&#45;&gt;module~optimize_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M141.5,-1228.73C206.344,-1264.76 199.166,-1152.94 261.5,-1112.73"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M263.5,-1112.73C320.607,-1075.89 293.904,-1028.65 344,-982.732 347.595,-979.437 351.685,-976.455 355.952,-973.786"/>
+<polygon fill="#000000" stroke="#000000" points="357.878,-976.718 364.857,-968.747 354.43,-970.625 357.878,-976.718"/>
+</g>
+<!-- program~testmatio_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_node30" class="node"><title>program~testmatio_prg</title>
+<g id="a_module~~kinds_mod~~UsedByGraph_node30"><a xlink:href="../program/testmatio_prg.html" xlink:title="testMatIO_prg">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="181,-173.732 100,-173.732 100,-149.732 181,-149.732 181,-173.732"/>
+<text text-anchor="middle" x="140.5" y="-159.332" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">testMatIO_prg</text>
+</a>
+</g>
+</g>
+<!-- module~kinds_mod&#45;&gt;program~testmatio_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_edge94" class="edge"><title>module~kinds_mod&#45;&gt;program~testmatio_prg</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M32.819,-431.596C32.8424,-391.537 37.9447,-261.59 100,-182.732 100.588,-181.984 101.211,-181.26 101.863,-180.559"/>
+<polygon fill="#000000" stroke="#000000" points="104.376,-183.019 109.768,-173.899 99.8655,-177.665 104.376,-183.019"/>
+</g>
+<!-- module~spline_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_node31" class="node"><title>module~spline_mod</title>
+<g id="a_module~~kinds_mod~~UsedByGraph_node31"><a xlink:href="../module/spline_mod.html" xlink:title="spline_mod">
+<polygon fill="#337ab7" stroke="#337ab7" points="296,-657.732 229,-657.732 229,-633.732 296,-633.732 296,-657.732"/>
+<text text-anchor="middle" x="262.5" y="-643.332" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">spline_mod</text>
+</a>
+</g>
+</g>
+<!-- module~kinds_mod&#45;&gt;module~spline_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_edge95" class="edge"><title>module~kinds_mod&#45;&gt;module~spline_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M141.5,-645.732C164.42,-659.438 194.475,-659.418 218.772,-655.982"/>
+<polygon fill="#000000" stroke="#000000" points="219.497,-659.409 228.795,-654.33 218.359,-652.503 219.497,-659.409"/>
+</g>
+<!-- program~testmesh_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_node32" class="node"><title>program~testmesh_prg</title>
+<g id="a_module~~kinds_mod~~UsedByGraph_node32"><a xlink:href="../program/testmesh_prg.html" xlink:title="testMesh_prg">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="301.5,-101.732 223.5,-101.732 223.5,-77.7321 301.5,-77.7321 301.5,-101.732"/>
+<text text-anchor="middle" x="262.5" y="-87.3321" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">testMesh_prg</text>
+</a>
+</g>
+</g>
+<!-- module~kinds_mod&#45;&gt;program~testmesh_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_edge96" class="edge"><title>module~kinds_mod&#45;&gt;program~testmesh_prg</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M33.4493,-431.392C35.7727,-375.133 48.3888,-143.755 100,-98.7321 130.431,-72.1856 177.635,-72.6235 213.165,-78.1062"/>
+<polygon fill="#000000" stroke="#000000" points="212.869,-81.6067 223.318,-79.8562 214.058,-74.7084 212.869,-81.6067"/>
+</g>
+<!-- module~stats_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_node33" class="node"><title>module~stats_mod</title>
+<g id="a_module~~kinds_mod~~UsedByGraph_node33"><a xlink:href="../module/stats_mod.html" xlink:title="stats_mod">
+<polygon fill="#337ab7" stroke="#337ab7" points="171.5,-51.7321 109.5,-51.7321 109.5,-27.7321 171.5,-27.7321 171.5,-51.7321"/>
+<text text-anchor="middle" x="140.5" y="-37.3321" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">stats_mod</text>
+</a>
+</g>
+</g>
+<!-- module~kinds_mod&#45;&gt;module~stats_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_edge97" class="edge"><title>module~kinds_mod&#45;&gt;module~stats_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M33.8674,-431.587C38.1705,-373.985 58.6902,-128.504 100,-65.7321 101.805,-62.9889 104.011,-60.4681 106.447,-58.1673"/>
+<polygon fill="#000000" stroke="#000000" points="108.644,-60.8927 114.281,-51.9222 104.28,-55.4191 108.644,-60.8927"/>
+</g>
+<!-- program~testnetcdf_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_node34" class="node"><title>program~testnetcdf_prg</title>
+<g id="a_module~~kinds_mod~~UsedByGraph_node34"><a xlink:href="../program/testnetcdf_prg.html" xlink:title="testNetCDF_prg">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="307.5,-577.732 217.5,-577.732 217.5,-553.732 307.5,-553.732 307.5,-577.732"/>
+<text text-anchor="middle" x="262.5" y="-563.332" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">testNetCDF_prg</text>
+</a>
+</g>
+</g>
+<!-- module~kinds_mod&#45;&gt;program~testnetcdf_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_edge98" class="edge"><title>module~kinds_mod&#45;&gt;program~testnetcdf_prg</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M34.4703,-455.801C38.8707,-487.23 54.572,-572.763 100,-624.732 113.085,-639.702 122.436,-635.528 139.5,-645.732"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M141.5,-645.732C176.907,-666.905 183.796,-616.216 217,-591.732 221.019,-588.768 225.401,-585.861 229.797,-583.127"/>
+<polygon fill="#000000" stroke="#000000" points="231.935,-585.926 238.726,-577.793 228.346,-579.916 231.935,-585.926"/>
+</g>
+<!-- module~time_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_node35" class="node"><title>module~time_mod</title>
+<g id="a_module~~kinds_mod~~UsedByGraph_node35"><a xlink:href="../module/time_mod.html" xlink:title="time_mod">
+<polygon fill="#337ab7" stroke="#337ab7" points="170.5,-1359.73 110.5,-1359.73 110.5,-1335.73 170.5,-1335.73 170.5,-1359.73"/>
+<text text-anchor="middle" x="140.5" y="-1345.33" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">time_mod</text>
+</a>
+</g>
+</g>
+<!-- module~kinds_mod&#45;&gt;module~time_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_edge99" class="edge"><title>module~kinds_mod&#45;&gt;module~time_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M32.7688,-456.129C31.6349,-530.9 29.2819,-929.048 100,-1242.73 106.736,-1272.61 120.103,-1305.41 129.411,-1326.26"/>
+<polygon fill="#000000" stroke="#000000" points="126.277,-1327.82 133.608,-1335.47 132.647,-1324.92 126.277,-1327.82"/>
+</g>
+<!-- program~testoptimize_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_node36" class="node"><title>program~testoptimize_prg</title>
+<g id="a_module~~kinds_mod~~UsedByGraph_node36"><a xlink:href="../program/testoptimize_prg.html" xlink:title="testOptimize_prg">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="739,-933.732 645,-933.732 645,-909.732 739,-909.732 739,-933.732"/>
+<text text-anchor="middle" x="692" y="-919.332" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">testOptimize_prg</text>
+</a>
+</g>
+</g>
+<!-- module~kinds_mod&#45;&gt;program~testoptimize_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_edge100" class="edge"><title>module~kinds_mod&#45;&gt;program~testoptimize_prg</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M263.5,-1112.73C382.783,-1035.78 406.34,-989.123 546,-963.732"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M548,-963.732C574.87,-956.538 582.247,-957.348 609,-949.732 621.901,-946.06 635.762,-941.549 648.35,-937.229"/>
+<polygon fill="#000000" stroke="#000000" points="649.836,-940.418 658.13,-933.825 647.535,-933.807 649.836,-940.418"/>
+</g>
+<!-- module~config_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_node37" class="node"><title>module~config_mod</title>
+<g id="a_module~~kinds_mod~~UsedByGraph_node37"><a xlink:href="../module/config_mod.html" xlink:title="config_mod">
+<polygon fill="#337ab7" stroke="#337ab7" points="430.5,-1280.73 362.5,-1280.73 362.5,-1256.73 430.5,-1256.73 430.5,-1280.73"/>
+<text text-anchor="middle" x="396.5" y="-1266.33" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">config_mod</text>
+</a>
+</g>
+</g>
+<!-- module~kinds_mod&#45;&gt;module~config_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_edge101" class="edge"><title>module~kinds_mod&#45;&gt;module~config_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M263.5,-1228.73C296.745,-1231.2 332.868,-1242.81 358.908,-1252.89"/>
+<polygon fill="#000000" stroke="#000000" points="357.781,-1256.21 368.367,-1256.66 360.371,-1249.71 357.781,-1256.21"/>
+</g>
+<!-- program~testquaternion_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_node38" class="node"><title>program~testquaternion_prg</title>
+<g id="a_module~~kinds_mod~~UsedByGraph_node38"><a xlink:href="../program/testquaternion_prg.html" xlink:title="testQuaternion_prg">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="449,-475.732 344,-475.732 344,-451.732 449,-451.732 449,-475.732"/>
+<text text-anchor="middle" x="396.5" y="-461.332" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">testQuaternion_prg</text>
+</a>
+</g>
+</g>
+<!-- module~kinds_mod&#45;&gt;program~testquaternion_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_edge102" class="edge"><title>module~kinds_mod&#45;&gt;program~testquaternion_prg</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M141.5,-483.732C207.136,-490.01 282.453,-482.196 333.923,-474.573"/>
+<polygon fill="#000000" stroke="#000000" points="334.531,-478.02 343.89,-473.055 333.477,-471.1 334.531,-478.02"/>
+</g>
+<!-- program~testsparse_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_node39" class="node"><title>program~testsparse_prg</title>
+<g id="a_module~~kinds_mod~~UsedByGraph_node39"><a xlink:href="../program/testsparse_prg.html" xlink:title="testSparse_prg">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="589.5,-1384.73 504.5,-1384.73 504.5,-1360.73 589.5,-1360.73 589.5,-1384.73"/>
+<text text-anchor="middle" x="547" y="-1370.33" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">testSparse_prg</text>
+</a>
+</g>
+</g>
+<!-- module~kinds_mod&#45;&gt;program~testsparse_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_edge103" class="edge"><title>module~kinds_mod&#45;&gt;program~testsparse_prg</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M33.2779,-455.813C36.0092,-572.068 58.8294,-1489.03 100,-1527.73 213.487,-1634.42 315.342,-1575.72 449,-1495.73 490.124,-1471.12 520.594,-1422.11 535.592,-1393.95"/>
+<polygon fill="#000000" stroke="#000000" points="538.769,-1395.43 540.244,-1384.94 532.548,-1392.22 538.769,-1395.43"/>
+</g>
+<!-- module~text_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_node40" class="node"><title>module~text_mod</title>
+<g id="a_module~~kinds_mod~~UsedByGraph_node40"><a xlink:href="../module/text_mod.html" xlink:title="text_mod">
+<polygon fill="#337ab7" stroke="#337ab7" points="291,-1280.73 234,-1280.73 234,-1256.73 291,-1256.73 291,-1280.73"/>
+<text text-anchor="middle" x="262.5" y="-1266.33" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">text_mod</text>
+</a>
+</g>
+</g>
+<!-- module~kinds_mod&#45;&gt;module~text_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_edge104" class="edge"><title>module~kinds_mod&#45;&gt;module~text_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M141.5,-1228.73C167.368,-1243.1 199.251,-1253.43 223.65,-1259.98"/>
+<polygon fill="#000000" stroke="#000000" points="223.051,-1263.44 233.609,-1262.56 224.807,-1256.67 223.051,-1263.44"/>
+</g>
+<!-- program~testspline_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_node41" class="node"><title>program~testspline_prg</title>
+<g id="a_module~~kinds_mod~~UsedByGraph_node41"><a xlink:href="../program/testspline_prg.html" xlink:title="testSpline_prg">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="587.5,-611.732 506.5,-611.732 506.5,-587.732 587.5,-587.732 587.5,-611.732"/>
+<text text-anchor="middle" x="547" y="-597.332" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">testSpline_prg</text>
+</a>
+</g>
+</g>
+<!-- module~kinds_mod&#45;&gt;program~testspline_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_edge105" class="edge"><title>module~kinds_mod&#45;&gt;program~testspline_prg</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M141.5,-645.732C171.392,-663.608 182.789,-631.264 217,-624.732 295.366,-609.769 316.071,-613.221 395.5,-605.732"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M397.5,-605.732C430.256,-601.924 467.318,-600.422 496.222,-599.874"/>
+<polygon fill="#000000" stroke="#000000" points="496.535,-603.37 506.479,-599.712 496.425,-596.37 496.535,-603.37"/>
+</g>
+<!-- module~mesh_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_node42" class="node"><title>module~mesh_mod</title>
+<g id="a_module~~kinds_mod~~UsedByGraph_node42"><a xlink:href="../module/mesh_mod.html" xlink:title="mesh_mod">
+<polygon fill="#337ab7" stroke="#337ab7" points="173.5,-131.732 107.5,-131.732 107.5,-107.732 173.5,-107.732 173.5,-131.732"/>
+<text text-anchor="middle" x="140.5" y="-117.332" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">mesh_mod</text>
+</a>
+</g>
+</g>
+<!-- module~kinds_mod&#45;&gt;module~mesh_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_edge106" class="edge"><title>module~kinds_mod&#45;&gt;module~mesh_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M34.3167,-431.637C40.0033,-381.239 63.8146,-188.343 100,-140.732 100.576,-139.975 101.187,-139.242 101.828,-138.532"/>
+<polygon fill="#000000" stroke="#000000" points="104.348,-140.982 109.662,-131.817 99.7922,-135.668 104.348,-140.982"/>
+</g>
+<!-- program~teststats_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_node43" class="node"><title>program~teststats_prg</title>
+<g id="a_module~~kinds_mod~~UsedByGraph_node43"><a xlink:href="../program/teststats_prg.html" xlink:title="testStats_prg">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="300.5,-40.7321 224.5,-40.7321 224.5,-16.7321 300.5,-16.7321 300.5,-40.7321"/>
+<text text-anchor="middle" x="262.5" y="-26.3321" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">testStats_prg</text>
+</a>
+</g>
+</g>
+<!-- module~kinds_mod&#45;&gt;program~teststats_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_edge107" class="edge"><title>module~kinds_mod&#45;&gt;program~teststats_prg</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M32.9061,-431.577C32.6948,-367.95 35.2687,-74.0581 100,-18.7321 134.062,10.3804 188.374,-0.66696 224.478,-13.1317"/>
+<polygon fill="#000000" stroke="#000000" points="223.553,-16.5195 234.147,-16.6527 225.948,-9.94207 223.553,-16.5195"/>
+</g>
+<!-- program~testtensor_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_node44" class="node"><title>program~testtensor_prg</title>
+<g id="a_module~~kinds_mod~~UsedByGraph_node44"><a xlink:href="../program/testtensor_prg.html" xlink:title="testTensor_prg">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="305,-413.732 220,-413.732 220,-389.732 305,-389.732 305,-413.732"/>
+<text text-anchor="middle" x="262.5" y="-399.332" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">testTensor_prg</text>
+</a>
+</g>
+</g>
+<!-- module~kinds_mod&#45;&gt;program~testtensor_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_edge108" class="edge"><title>module~kinds_mod&#45;&gt;program~testtensor_prg</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M64.0542,-432.759C75.267,-429.128 88.0947,-425.351 100,-422.732 136.255,-414.757 177.8,-409.439 209.674,-406.15"/>
+<polygon fill="#000000" stroke="#000000" points="210.061,-409.629 219.664,-405.152 209.366,-402.663 210.061,-409.629"/>
+</g>
+<!-- module~netcdf_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_node45" class="node"><title>module~netcdf_mod</title>
+<g id="a_module~~kinds_mod~~UsedByGraph_node45"><a xlink:href="../module/netcdf_mod.html" xlink:title="netCDF_mod">
+<polygon fill="#337ab7" stroke="#337ab7" points="178.5,-615.732 102.5,-615.732 102.5,-591.732 178.5,-591.732 178.5,-615.732"/>
+<text text-anchor="middle" x="140.5" y="-601.332" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">netCDF_mod</text>
+</a>
+</g>
+</g>
+<!-- module~kinds_mod&#45;&gt;module~netcdf_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_edge109" class="edge"><title>module~kinds_mod&#45;&gt;module~netcdf_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M36.7377,-456.082C44.8586,-481.316 66.1499,-539.613 100,-577.732 102.491,-580.537 105.35,-583.168 108.368,-585.6"/>
+<polygon fill="#000000" stroke="#000000" points="106.428,-588.516 116.58,-591.548 110.534,-582.847 106.428,-588.516"/>
+</g>
+<!-- program~testtext_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_node46" class="node"><title>program~testtext_prg</title>
+<g id="a_module~~kinds_mod~~UsedByGraph_node46"><a xlink:href="../program/testtext_prg.html" xlink:title="testText_prg">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="433,-1322.73 360,-1322.73 360,-1298.73 433,-1298.73 433,-1322.73"/>
+<text text-anchor="middle" x="396.5" y="-1308.33" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">testText_prg</text>
+</a>
+</g>
+</g>
+<!-- module~kinds_mod&#45;&gt;program~testtext_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_edge110" class="edge"><title>module~kinds_mod&#45;&gt;program~testtext_prg</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M141.5,-1228.73C179.211,-1249.68 180.034,-1267.5 217,-1289.73 235.428,-1300.82 241.491,-1300.85 261.5,-1308.73"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M263.5,-1308.73C290.703,-1319.45 323.572,-1319.98 349.706,-1317.82"/>
+<polygon fill="#000000" stroke="#000000" points="350.118,-1321.29 359.728,-1316.83 349.433,-1314.33 350.118,-1321.29"/>
+</g>
+<!-- module~vtkio_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_node47" class="node"><title>module~vtkio_mod</title>
+<g id="a_module~~kinds_mod~~UsedByGraph_node47"><a xlink:href="../module/vtkio_mod.html" xlink:title="vtkIO_mod">
+<polygon fill="#337ab7" stroke="#337ab7" points="172.5,-535.732 108.5,-535.732 108.5,-511.732 172.5,-511.732 172.5,-535.732"/>
+<text text-anchor="middle" x="140.5" y="-521.332" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">vtkIO_mod</text>
+</a>
+</g>
+</g>
+<!-- module~kinds_mod&#45;&gt;module~vtkio_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_edge111" class="edge"><title>module~kinds_mod&#45;&gt;module~vtkio_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M47.3218,-455.943C60.6769,-467.168 81.2924,-484.085 100,-497.732 103.758,-500.473 107.787,-503.275 111.783,-505.975"/>
+<polygon fill="#000000" stroke="#000000" points="110.093,-509.054 120.362,-511.664 113.962,-503.221 110.093,-509.054"/>
+</g>
+<!-- program~testtime_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_node48" class="node"><title>program~testtime_prg</title>
+<g id="a_module~~kinds_mod~~UsedByGraph_node48"><a xlink:href="../program/testtime_prg.html" xlink:title="testTime_prg">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="300.5,-1478.73 224.5,-1478.73 224.5,-1454.73 300.5,-1454.73 300.5,-1478.73"/>
+<text text-anchor="middle" x="262.5" y="-1464.33" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">testTime_prg</text>
+</a>
+</g>
+</g>
+<!-- module~kinds_mod&#45;&gt;program~testtime_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_edge112" class="edge"><title>module~kinds_mod&#45;&gt;program~testtime_prg</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M33.3588,-455.787C36.27,-551.026 57.0161,-1183.25 100,-1368.73 110.602,-1414.48 107.251,-1432.6 139.5,-1466.73"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M141.5,-1466.73C160.13,-1486.45 190.855,-1486.11 216.55,-1481.01"/>
+<polygon fill="#000000" stroke="#000000" points="217.495,-1484.39 226.477,-1478.77 215.951,-1477.56 217.495,-1484.39"/>
+</g>
+<!-- program~testvtkio_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_node49" class="node"><title>program~testvtkio_prg</title>
+<g id="a_module~~kinds_mod~~UsedByGraph_node49"><a xlink:href="../program/testvtkio_prg.html" xlink:title="testVtkIO_prg">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="301.5,-535.732 223.5,-535.732 223.5,-511.732 301.5,-511.732 301.5,-535.732"/>
+<text text-anchor="middle" x="262.5" y="-521.332" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">testVtkIO_prg</text>
+</a>
+</g>
+</g>
+<!-- module~kinds_mod&#45;&gt;program~testvtkio_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_edge113" class="edge"><title>module~kinds_mod&#45;&gt;program~testvtkio_prg</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M36.794,-455.931C44.5133,-478.368 64.4015,-525.628 100,-544.732 139.681,-566.027 192.502,-552.695 226.752,-539.58"/>
+<polygon fill="#000000" stroke="#000000" points="228.346,-542.711 236.321,-535.736 225.737,-536.216 228.346,-542.711"/>
+</g>
+<!-- module~expression_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_node50" class="node"><title>module~expression_mod</title>
+<g id="a_module~~kinds_mod~~UsedByGraph_node50"><a xlink:href="../module/expression_mod.html" xlink:title="expression_mod">
+<polygon fill="#337ab7" stroke="#337ab7" points="737.5,-975.732 646.5,-975.732 646.5,-951.732 737.5,-951.732 737.5,-975.732"/>
+<text text-anchor="middle" x="692" y="-961.332" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">expression_mod</text>
+</a>
+</g>
+</g>
+<!-- module~kinds_mod&#45;&gt;module~expression_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_edge114" class="edge"><title>module~kinds_mod&#45;&gt;module~expression_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M548,-963.732C576.495,-956.103 609.345,-955.556 636.368,-957.16"/>
+<polygon fill="#000000" stroke="#000000" points="636.197,-960.657 646.419,-957.87 636.69,-953.674 636.197,-960.657"/>
+</g>
+<!-- module~basicsolvers_mod&#45;&gt;program~testsparse_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_edge1" class="edge"><title>module~basicsolvers_mod&#45;&gt;program~testsparse_prg</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M446.536,-1359.34C461.921,-1361.41 478.945,-1363.7 494.495,-1365.8"/>
+<polygon fill="#000000" stroke="#000000" points="494.092,-1369.27 504.469,-1367.14 495.026,-1362.34 494.092,-1369.27"/>
+</g>
+<!-- module~node_mod&#45;&gt;module~treevalue_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_edge3" class="edge"><title>module~node_mod&#45;&gt;module~treevalue_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M428.63,-1107.49C447.647,-1104.29 472.437,-1100.12 494.332,-1096.43"/>
+<polygon fill="#000000" stroke="#000000" points="495.202,-1099.83 504.483,-1094.72 494.04,-1092.93 495.202,-1099.83"/>
+</g>
+<!-- module~node_mod&#45;&gt;module~treeoperator_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_edge5" class="edge"><title>module~node_mod&#45;&gt;module~treeoperator_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M421.965,-1100.63C430.552,-1096.32 440.239,-1091.38 449,-1086.73 465.173,-1078.16 468.282,-1074.18 485,-1066.73 489.14,-1064.89 493.495,-1063.1 497.895,-1061.4"/>
+<polygon fill="#000000" stroke="#000000" points="499.371,-1064.58 507.529,-1057.83 496.936,-1058.02 499.371,-1064.58"/>
+</g>
+<!-- module~node_mod&#45;&gt;module~treeexponential_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_edge2" class="edge"><title>module~node_mod&#45;&gt;module~treeexponential_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M428.521,-1100.7C435.775,-1096.95 443.098,-1092.3 449,-1086.73 472.181,-1064.87 460.387,-1044.97 485,-1024.73 486.757,-1023.29 488.62,-1021.94 490.56,-1020.68"/>
+<polygon fill="#000000" stroke="#000000" points="492.431,-1023.65 499.475,-1015.73 489.033,-1017.53 492.431,-1023.65"/>
+</g>
+<!-- module~node_mod&#45;&gt;module~treetrigonometric_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_edge4" class="edge"><title>module~node_mod&#45;&gt;module~treetrigonometric_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M428.63,-1124.26C450.457,-1132.35 479.892,-1143.25 503.824,-1152.11"/>
+<polygon fill="#000000" stroke="#000000" points="502.775,-1155.46 513.368,-1155.65 505.206,-1148.89 502.775,-1155.46"/>
+</g>
+<!-- module~node_mod&#45;&gt;module~expression_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_edge6" class="edge"><title>module~node_mod&#45;&gt;module~expression_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M428.8,-1121.17C472.53,-1131.06 552.847,-1142.2 609,-1108.73 654.505,-1081.61 676.872,-1019.06 685.915,-985.673"/>
+<polygon fill="#000000" stroke="#000000" points="689.318,-986.493 688.396,-975.939 682.535,-984.765 689.318,-986.493"/>
+</g>
+<!-- module~treevalue_mod&#45;&gt;module~expression_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_edge7" class="edge"><title>module~treevalue_mod&#45;&gt;module~expression_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M589.589,-1076.99C596.405,-1074.25 603.145,-1070.87 609,-1066.73 640.176,-1044.71 665.571,-1007.59 679.461,-984.441"/>
+<polygon fill="#000000" stroke="#000000" points="682.519,-986.146 684.532,-975.744 676.472,-982.62 682.519,-986.146"/>
+</g>
+<!-- module~treeoperator_mod&#45;&gt;module~expression_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_edge8" class="edge"><title>module~treeoperator_mod&#45;&gt;module~expression_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M588.771,-1033.66C595.678,-1031.06 602.66,-1028.08 609,-1024.73 631.182,-1013.03 653.87,-995.649 669.741,-982.432"/>
+<polygon fill="#000000" stroke="#000000" points="672.018,-985.09 677.38,-975.952 667.49,-979.752 672.018,-985.09"/>
+</g>
+<!-- module~treeexponential_mod&#45;&gt;module~expression_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_edge9" class="edge"><title>module~treeexponential_mod&#45;&gt;module~expression_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M590.905,-991.731C605.617,-987.616 622.262,-982.959 637.696,-978.642"/>
+<polygon fill="#000000" stroke="#000000" points="638.944,-981.928 647.631,-975.863 637.058,-975.186 638.944,-981.928"/>
+</g>
+<!-- module~treetrigonometric_mod&#45;&gt;module~expression_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_edge10" class="edge"><title>module~treetrigonometric_mod&#45;&gt;module~expression_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M588.025,-1155.7C595.629,-1152.09 603.055,-1147.51 609,-1141.73 654.556,-1097.47 677.277,-1023.1 686.24,-986.078"/>
+<polygon fill="#000000" stroke="#000000" points="689.76,-986.391 688.591,-975.861 682.938,-984.821 689.76,-986.391"/>
+</g>
+<!-- module~quaternion_mod&#45;&gt;program~testquaternion_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_edge11" class="edge"><title>module~quaternion_mod&#45;&gt;program~testquaternion_prg</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M308.189,-450.503C316.36,-451.741 325.02,-453.053 333.587,-454.351"/>
+<polygon fill="#000000" stroke="#000000" points="333.155,-457.826 343.567,-455.863 334.204,-450.905 333.155,-457.826"/>
+</g>
+<!-- module~sparse_mod&#45;&gt;module~basicsolvers_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_edge13" class="edge"><title>module~sparse_mod&#45;&gt;module~basicsolvers_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M298.527,-1349.79C310.098,-1350.14 323.312,-1350.54 336.184,-1350.93"/>
+<polygon fill="#000000" stroke="#000000" points="336.294,-1354.44 346.395,-1351.24 336.506,-1347.44 336.294,-1354.44"/>
+</g>
+<!-- module~sparse_mod&#45;&gt;module~solvers_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_edge14" class="edge"><title>module~sparse_mod&#45;&gt;module~solvers_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M286.228,-1360.86C293.384,-1364.97 301.192,-1369.79 308,-1374.73 325.327,-1387.3 326.297,-1394.7 344,-1406.73 348.711,-1409.93 353.871,-1413 359.047,-1415.83"/>
+<polygon fill="#000000" stroke="#000000" points="357.804,-1419.12 368.29,-1420.64 361.037,-1412.92 357.804,-1419.12"/>
+</g>
+<!-- module~sparse_mod&#45;&gt;program~testsparse_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_edge12" class="edge"><title>module~sparse_mod&#45;&gt;program~testsparse_prg</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M294.718,-1360.83C309.427,-1365.91 327.361,-1371.21 344,-1373.73 394.663,-1381.42 453.3,-1380 494.303,-1377.37"/>
+<polygon fill="#000000" stroke="#000000" points="494.595,-1380.86 504.332,-1376.68 494.115,-1373.88 494.595,-1380.86"/>
+</g>
+<!-- module~solvers_mod&#45;&gt;program~testsparse_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_edge15" class="edge"><title>module~solvers_mod&#45;&gt;program~testsparse_prg</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M427.551,-1420.59C450.371,-1411.37 481.948,-1398.61 506.76,-1388.59"/>
+<polygon fill="#000000" stroke="#000000" points="508.287,-1391.74 516.247,-1384.75 505.664,-1385.25 508.287,-1391.74"/>
+</g>
+<!-- module~tensor_mod&#45;&gt;module~quaternion_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_edge17" class="edge"><title>module~tensor_mod&#45;&gt;module~quaternion_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M175.566,-443.732C185.228,-443.732 196.001,-443.732 206.563,-443.732"/>
+<polygon fill="#000000" stroke="#000000" points="206.582,-447.232 216.582,-443.732 206.582,-440.232 206.582,-447.232"/>
+</g>
+<!-- module~tensor_mod&#45;&gt;program~testtensor_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_edge16" class="edge"><title>module~tensor_mod&#45;&gt;program~testtensor_prg</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M175.566,-431.809C188.502,-427.281 203.429,-422.057 217.176,-417.245"/>
+<polygon fill="#000000" stroke="#000000" points="218.65,-420.438 226.932,-413.831 216.337,-413.831 218.65,-420.438"/>
+</g>
+<!-- module~plplotlib_mod&#45;&gt;module~objective_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_edge19" class="edge"><title>module~plplotlib_mod&#45;&gt;module~objective_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M434.59,-850.471C453.872,-856.574 477.659,-864.102 498.296,-870.634"/>
+<polygon fill="#000000" stroke="#000000" points="497.243,-873.972 507.833,-873.652 499.355,-867.298 497.243,-873.972"/>
+</g>
+<!-- module~plplotlib_mod&#45;&gt;program~animate_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_edge22" class="edge"><title>module~plplotlib_mod&#45;&gt;program~animate_prg</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M434.59,-839.981C454.523,-840.652 479.27,-841.485 500.375,-842.196"/>
+<polygon fill="#000000" stroke="#000000" points="500.293,-845.695 510.405,-842.534 500.529,-838.699 500.293,-845.695"/>
+</g>
+<!-- module~plplotlib_mod&#45;&gt;program~basic_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_edge23" class="edge"><title>module~plplotlib_mod&#45;&gt;program~basic_prg</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M422.653,-826.669C431.121,-822.441 440.559,-817.543 449,-812.732 465.496,-803.331 468.209,-798.596 485,-789.732 492.31,-785.873 500.319,-782.133 508.058,-778.75"/>
+<polygon fill="#000000" stroke="#000000" points="509.471,-781.952 517.301,-774.815 506.729,-775.512 509.471,-781.952"/>
+</g>
+<!-- module~plplotlib_mod&#45;&gt;program~examples_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_edge24" class="edge"><title>module~plplotlib_mod&#45;&gt;program~examples_prg</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M407.195,-826.682C425.897,-803.684 466.722,-754.749 485,-742.732 488.841,-740.206 493.019,-737.951 497.327,-735.944"/>
+<polygon fill="#000000" stroke="#000000" points="499.014,-739.031 506.884,-731.938 496.308,-732.576 499.014,-739.031"/>
+</g>
+<!-- module~plplotlib_mod&#45;&gt;program~logo_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_edge25" class="edge"><title>module~plplotlib_mod&#45;&gt;program~logo_prg</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M408.639,-826.612C419.717,-814.185 436.779,-794.002 449,-774.732 468.588,-743.846 463.529,-730.341 485,-700.732 495.856,-685.762 510.729,-671.29 523.071,-660.425"/>
+<polygon fill="#000000" stroke="#000000" points="525.439,-663.005 530.749,-653.837 520.88,-657.693 525.439,-663.005"/>
+</g>
+<!-- module~plplotlib_mod&#45;&gt;program~testeval_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_edge18" class="edge"><title>module~plplotlib_mod&#45;&gt;program~testeval_prg</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M434.723,-827.941C504.618,-808.682 651.974,-773.145 691,-803.732"/>
+</g>
+<!-- module~plplotlib_mod&#45;&gt;program~testsparse_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_edge20" class="edge"><title>module~plplotlib_mod&#45;&gt;program~testsparse_prg</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M405.97,-850.92C417.826,-868.672 439.034,-903.09 449,-935.732 493.76,-1082.33 433.868,-1134.23 485,-1278.73 494.871,-1306.63 514.548,-1334.56 528.893,-1352.64"/>
+<polygon fill="#000000" stroke="#000000" points="526.411,-1355.13 535.44,-1360.68 531.838,-1350.71 526.411,-1355.13"/>
+</g>
+<!-- module~plplotlib_mod&#45;&gt;program~testspline_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_edge21" class="edge"><title>module~plplotlib_mod&#45;&gt;program~testspline_prg</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M410.022,-826.681C421.822,-814.619 439.125,-794.987 449,-774.732 479.802,-711.551 437.894,-672.901 485,-620.732 488.476,-616.882 492.691,-613.738 497.264,-611.17"/>
+<polygon fill="#000000" stroke="#000000" points="498.815,-614.308 506.397,-606.908 495.855,-607.965 498.815,-614.308"/>
+</g>
+<!-- module~objective_mod&#45;&gt;program~testoptimize_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_edge26" class="edge"><title>module~objective_mod&#45;&gt;program~testoptimize_prg</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M588.214,-895.856C602.648,-899.49 619.201,-903.657 634.746,-907.57"/>
+<polygon fill="#000000" stroke="#000000" points="634.231,-911.05 644.783,-910.097 635.94,-904.261 634.231,-911.05"/>
+</g>
+<!-- module~array_mod&#45;&gt;module~sparse_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_edge39" class="edge"><title>module~array_mod&#45;&gt;module~sparse_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M142.451,-757.934C148.685,-836.884 184.486,-1273.76 217,-1322.73 218.881,-1325.56 221.183,-1328.13 223.742,-1330.44"/>
+<polygon fill="#000000" stroke="#000000" points="221.916,-1333.45 232.016,-1336.65 226.116,-1327.85 221.916,-1333.45"/>
+</g>
+<!-- module~array_mod&#45;&gt;module~plplotlib_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_edge27" class="edge"><title>module~array_mod&#45;&gt;module~plplotlib_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M147.804,-758.047C162.909,-785.991 204.215,-853.714 261.5,-878.732"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M263.5,-878.732C280.926,-886.343 327.536,-869.114 360.411,-854.938"/>
+<polygon fill="#000000" stroke="#000000" points="361.956,-858.082 369.704,-850.856 359.141,-851.673 361.956,-858.082"/>
+</g>
+<!-- module~array_mod&#45;&gt;module~objective_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_edge29" class="edge"><title>module~array_mod&#45;&gt;module~objective_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M263.5,-878.732C319.446,-903.166 334.48,-918.633 395.5,-916.732"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M397.5,-916.732C431.291,-915.679 468.532,-907.888 497.267,-900.381"/>
+<polygon fill="#000000" stroke="#000000" points="498.308,-903.725 507.056,-897.749 496.49,-896.965 498.308,-903.725"/>
+</g>
+<!-- module~array_mod&#45;&gt;program~animate_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_edge32" class="edge"><title>module~array_mod&#45;&gt;program~animate_prg</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M263.5,-878.732C317.263,-902.212 337.831,-889.505 395.5,-878.732"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M397.5,-878.732C432.32,-872.228 471.286,-862.968 500.563,-855.606"/>
+<polygon fill="#000000" stroke="#000000" points="501.659,-858.939 510.492,-853.089 499.939,-852.154 501.659,-858.939"/>
+</g>
+<!-- module~array_mod&#45;&gt;program~basic_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_edge33" class="edge"><title>module~array_mod&#45;&gt;program~basic_prg</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M397.5,-760.732C434.754,-757.814 477.416,-759.161 507.426,-760.879"/>
+<polygon fill="#000000" stroke="#000000" points="507.288,-764.377 517.483,-761.496 507.716,-757.391 507.288,-764.377"/>
+</g>
+<!-- module~array_mod&#45;&gt;program~examples_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_edge35" class="edge"><title>module~array_mod&#45;&gt;program~examples_prg</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M263.5,-765.732C322.025,-761.095 336.971,-765.316 395.5,-760.732"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M397.5,-760.732C416.75,-759.224 461.773,-746.932 497.232,-736.545"/>
+<polygon fill="#000000" stroke="#000000" points="498.351,-739.864 506.951,-733.676 496.369,-733.151 498.351,-739.864"/>
+</g>
+<!-- module~array_mod&#45;&gt;program~logo_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_edge38" class="edge"><title>module~array_mod&#45;&gt;program~logo_prg</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M397.5,-681.732C434.21,-665.693 478.899,-654.714 509.605,-648.374"/>
+<polygon fill="#000000" stroke="#000000" points="510.333,-651.798 519.45,-646.401 508.957,-644.934 510.333,-651.798"/>
+</g>
+<!-- module~array_mod&#45;&gt;program~testarray_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_edge41" class="edge"><title>module~array_mod&#45;&gt;program~testarray_prg</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M172.715,-740.53C185.111,-738.464 199.655,-736.04 213.343,-733.758"/>
+<polygon fill="#000000" stroke="#000000" points="214.305,-737.146 223.593,-732.05 213.154,-730.242 214.305,-737.146"/>
+</g>
+<!-- module~array_mod&#45;&gt;program~testeval_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_edge28" class="edge"><title>module~array_mod&#45;&gt;program~testeval_prg</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M397.5,-681.732C440.742,-662.839 567.453,-678.357 609,-700.732 660.517,-728.477 644.946,-767.637 691,-803.732"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M693,-803.732C743.33,-842.583 781.955,-908.697 799.554,-942.484"/>
+<polygon fill="#000000" stroke="#000000" points="796.483,-944.166 804.142,-951.487 802.72,-940.988 796.483,-944.166"/>
+</g>
+<!-- module~array_mod&#45;&gt;module~optimize_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_edge34" class="edge"><title>module~array_mod&#45;&gt;module~optimize_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M142.474,-758.115C145.849,-791.929 160.175,-886.266 217,-930.732 253.564,-959.343 307.642,-963.536 346.686,-961.997"/>
+<polygon fill="#000000" stroke="#000000" points="346.971,-965.487 356.77,-961.46 346.598,-958.497 346.971,-965.487"/>
+</g>
+<!-- module~array_mod&#45;&gt;module~spline_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_edge36" class="edge"><title>module~array_mod&#45;&gt;module~spline_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M152.204,-733.516C166.156,-718.021 191.763,-691 217,-671.732 220.885,-668.766 225.138,-665.882 229.425,-663.18"/>
+<polygon fill="#000000" stroke="#000000" points="231.402,-666.076 238.166,-657.922 227.793,-660.077 231.402,-666.076"/>
+</g>
+<!-- module~array_mod&#45;&gt;program~testnetcdf_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_edge40" class="edge"><title>module~array_mod&#45;&gt;program~testnetcdf_prg</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M148.655,-733.483C161.674,-711.377 190.357,-663.507 217,-624.732 226.032,-611.587 236.786,-597.296 245.459,-586.071"/>
+<polygon fill="#000000" stroke="#000000" points="248.241,-588.196 251.623,-578.156 242.717,-583.895 248.241,-588.196"/>
+</g>
+<!-- module~array_mod&#45;&gt;program~testsparse_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_edge30" class="edge"><title>module~array_mod&#45;&gt;program~testsparse_prg</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M142.519,-758.076C147.558,-816.609 171.422,-1065.88 217,-1126.73 286.714,-1219.81 359.741,-1173.19 449,-1247.73 485.777,-1278.45 517.471,-1325.34 533.934,-1352.1"/>
+<polygon fill="#000000" stroke="#000000" points="530.941,-1353.92 539.105,-1360.67 536.934,-1350.3 530.941,-1353.92"/>
+</g>
+<!-- module~array_mod&#45;&gt;program~testspline_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_edge31" class="edge"><title>module~array_mod&#45;&gt;program~testspline_prg</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M172.899,-755.246C197.002,-761.506 231.181,-768.134 261.5,-765.732"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M263.5,-765.732C332.821,-760.239 331.779,-709.573 395.5,-681.732"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M397.5,-681.732C440.941,-662.752 442.738,-642.209 485,-620.732 488.763,-618.82 492.74,-617.015 496.787,-615.329"/>
+<polygon fill="#000000" stroke="#000000" points="498.25,-618.514 506.287,-611.611 495.699,-611.996 498.25,-618.514"/>
+</g>
+<!-- module~array_mod&#45;&gt;program~testvtkio_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_edge37" class="edge"><title>module~array_mod&#45;&gt;program~testvtkio_prg</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M147.622,-733.694C155.846,-717.25 170.625,-686.724 181,-659.732 200.216,-609.741 181.821,-585.115 217,-544.732 217.852,-543.754 218.76,-542.818 219.714,-541.922"/>
+<polygon fill="#000000" stroke="#000000" points="221.905,-544.653 227.764,-535.826 217.679,-539.072 221.905,-544.653"/>
+</g>
+<!-- module~autodiff_mod&#45;&gt;program~testautodiff_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_edge42" class="edge"><title>module~autodiff_mod&#45;&gt;program~testautodiff_prg</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M178.811,-356.892C188.002,-355.207 198.027,-353.369 207.824,-351.573"/>
+<polygon fill="#000000" stroke="#000000" points="208.702,-354.97 217.907,-349.724 207.44,-348.085 208.702,-354.97"/>
+</g>
+<!-- module~fourier_mod&#45;&gt;program~testfourier_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_edge43" class="edge"><title>module~fourier_mod&#45;&gt;program~testfourier_prg</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M175.566,-277.771C186.07,-275.932 197.888,-273.864 209.32,-271.864"/>
+<polygon fill="#000000" stroke="#000000" points="209.977,-275.302 219.224,-270.13 208.77,-268.407 209.977,-275.302"/>
+</g>
+<!-- module~iterate_mod&#45;&gt;program~testiterate_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_edge44" class="edge"><title>module~iterate_mod&#45;&gt;program~testiterate_prg</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M175.65,-1507.38C199.67,-1507.68 232.56,-1507.77 261.5,-1506.73"/>
+</g>
+<!-- module~optimize_mod&#45;&gt;module~objective_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_edge45" class="edge"><title>module~optimize_mod&#45;&gt;module~objective_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M421.65,-944.653C430.295,-940.299 440.1,-935.327 449,-930.732 465.076,-922.433 468.665,-919.508 485,-911.732 491.932,-908.432 499.392,-905.088 506.634,-901.945"/>
+<polygon fill="#000000" stroke="#000000" points="508.487,-904.959 516.305,-897.808 505.734,-898.523 508.487,-904.959"/>
+</g>
+<!-- module~optimize_mod&#45;&gt;program~testoptimize_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_edge46" class="edge"><title>module~optimize_mod&#45;&gt;program~testoptimize_prg</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M436.172,-952.12C486.98,-946.062 576.572,-935.378 634.85,-928.428"/>
+<polygon fill="#000000" stroke="#000000" points="635.478,-931.878 644.993,-927.218 634.649,-924.927 635.478,-931.878"/>
+</g>
+<!-- module~spline_mod&#45;&gt;program~testspline_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_edge47" class="edge"><title>module~spline_mod&#45;&gt;program~testspline_prg</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M291.418,-633.694C317.69,-623.235 358.429,-609.227 395.5,-605.732"/>
+</g>
+<!-- module~stats_mod&#45;&gt;program~teststats_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_edge48" class="edge"><title>module~stats_mod&#45;&gt;program~teststats_prg</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M171.781,-36.9563C184.631,-35.7784 199.915,-34.3774 214.193,-33.0686"/>
+<polygon fill="#000000" stroke="#000000" points="214.725,-36.5346 224.363,-32.1363 214.086,-29.5638 214.725,-36.5346"/>
+</g>
+<!-- module~time_mod&#45;&gt;module~solvers_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_edge51" class="edge"><title>module~time_mod&#45;&gt;module~solvers_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M155.955,-1360.01C177.485,-1377.62 219.919,-1409.8 261.5,-1426.73"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M263.5,-1426.73C290.697,-1437.81 323.699,-1439.31 349.901,-1438.04"/>
+<polygon fill="#000000" stroke="#000000" points="350.188,-1441.53 359.946,-1437.4 349.745,-1434.54 350.188,-1441.53"/>
+</g>
+<!-- module~time_mod&#45;&gt;program~testiterate_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_edge52" class="edge"><title>module~time_mod&#45;&gt;program~testiterate_prg</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M263.5,-1426.73C292.237,-1438.43 325.018,-1450.36 350.723,-1459.4"/>
+<polygon fill="#000000" stroke="#000000" points="349.611,-1462.72 360.205,-1462.72 351.921,-1456.11 349.611,-1462.72"/>
+</g>
+<!-- module~time_mod&#45;&gt;module~text_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_edge50" class="edge"><title>module~time_mod&#45;&gt;module~text_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M158.02,-1335.54C173.137,-1324.52 196.242,-1308.05 217,-1294.73 221.497,-1291.85 226.318,-1288.89 231.067,-1286.06"/>
+<polygon fill="#000000" stroke="#000000" points="233.156,-1288.89 240.005,-1280.81 229.61,-1282.86 233.156,-1288.89"/>
+</g>
+<!-- module~time_mod&#45;&gt;program~testtime_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_edge49" class="edge"><title>module~time_mod&#45;&gt;program~testtime_prg</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M149.164,-1359.75C161.657,-1378.68 187.952,-1415.82 217,-1440.73 220.534,-1443.76 224.47,-1446.64 228.498,-1449.29"/>
+<polygon fill="#000000" stroke="#000000" points="226.992,-1452.47 237.344,-1454.73 230.657,-1446.51 226.992,-1452.47"/>
+</g>
+<!-- module~config_mod&#45;&gt;program~testconfig_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_edge53" class="edge"><title>module~config_mod&#45;&gt;program~testconfig_prg</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M430.826,-1266.26C449.933,-1264.85 474.298,-1263.04 495.693,-1261.46"/>
+<polygon fill="#000000" stroke="#000000" points="496.207,-1264.93 505.921,-1260.7 495.69,-1257.95 496.207,-1264.93"/>
+</g>
+<!-- module~text_mod&#45;&gt;module~basicsolvers_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_edge54" class="edge"><title>module~text_mod&#45;&gt;module~basicsolvers_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M286.907,-1280.83C293.946,-1284.87 301.517,-1289.66 308,-1294.73 326.07,-1308.87 324.975,-1318.91 344,-1331.73 346.364,-1333.33 348.869,-1334.83 351.449,-1336.25"/>
+<polygon fill="#000000" stroke="#000000" points="349.911,-1339.39 360.422,-1340.72 353.033,-1333.13 349.911,-1339.39"/>
+</g>
+<!-- module~text_mod&#45;&gt;module~node_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_edge57" class="edge"><title>module~text_mod&#45;&gt;module~node_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M291.237,-1256.61C297.407,-1252.88 303.457,-1248.26 308,-1242.73 339.046,-1204.93 311.812,-1175.56 344,-1138.73 347.374,-1134.87 351.457,-1131.52 355.832,-1128.62"/>
+<polygon fill="#000000" stroke="#000000" points="357.6,-1131.64 364.493,-1123.59 354.087,-1125.58 357.6,-1131.64"/>
+</g>
+<!-- module~text_mod&#45;&gt;module~solvers_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_edge61" class="edge"><title>module~text_mod&#45;&gt;module~solvers_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M290.41,-1280.89C296.747,-1284.66 303.081,-1289.29 308,-1294.73 333.869,-1323.36 323.094,-1341.3 344,-1373.73 353.129,-1387.89 365.488,-1402.17 375.81,-1413.13"/>
+<polygon fill="#000000" stroke="#000000" points="373.431,-1415.71 382.891,-1420.48 378.471,-1410.85 373.431,-1415.71"/>
+</g>
+<!-- module~text_mod&#45;&gt;module~plplotlib_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_edge56" class="edge"><title>module~text_mod&#45;&gt;module~plplotlib_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M291.291,-1257.87C297.772,-1254.04 303.954,-1249.07 308,-1242.73 398.853,-1100.52 248.835,-1004.1 344,-864.732 346.039,-861.747 348.526,-859.086 351.295,-856.718"/>
+<polygon fill="#000000" stroke="#000000" points="353.547,-859.414 359.707,-850.794 349.516,-853.691 353.547,-859.414"/>
+</g>
+<!-- module~text_mod&#45;&gt;module~objective_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_edge58" class="edge"><title>module~text_mod&#45;&gt;module~objective_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M291.339,-1257.32C297.658,-1253.53 303.751,-1248.71 308,-1242.73 356.255,-1174.8 300.199,-1129.62 344,-1058.73 374.981,-1008.59 404.227,-1016.06 449,-977.732 477.049,-953.72 507.695,-924.025 526.879,-904.982"/>
+<polygon fill="#000000" stroke="#000000" points="529.511,-907.3 534.119,-897.76 524.567,-902.344 529.511,-907.3"/>
+</g>
+<!-- module~text_mod&#45;&gt;program~testiterate_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_edge59" class="edge"><title>module~text_mod&#45;&gt;program~testiterate_prg</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M291.218,-1280.24C297.539,-1284.02 303.663,-1288.81 308,-1294.73 350.824,-1353.18 297.149,-1398.46 344,-1453.73 344.995,-1454.91 346.066,-1456.02 347.199,-1457.06"/>
+<polygon fill="#000000" stroke="#000000" points="345.314,-1460.02 355.443,-1463.13 349.461,-1454.38 345.314,-1460.02"/>
+</g>
+<!-- module~text_mod&#45;&gt;module~config_mod -->
+<g id="module~~kinds_mod~~UsedByGraph_edge55" class="edge"><title>module~text_mod&#45;&gt;module~config_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M291.172,-1268.73C308.811,-1268.73 332.04,-1268.73 352.101,-1268.73"/>
+<polygon fill="#000000" stroke="#000000" points="352.256,-1272.23 362.256,-1268.73 352.256,-1265.23 352.256,-1272.23"/>
+</g>
+<!-- module~text_mod&#45;&gt;program~testtext_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_edge60" class="edge"><title>module~text_mod&#45;&gt;program~testtext_prg</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M291.172,-1277.54C308.245,-1282.97 330.555,-1290.07 350.161,-1296.31"/>
+<polygon fill="#000000" stroke="#000000" points="349.237,-1299.69 359.828,-1299.38 351.36,-1293.01 349.237,-1299.69"/>
+</g>
+<!-- module~mesh_mod&#45;&gt;program~testmesh_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_edge62" class="edge"><title>module~mesh_mod&#45;&gt;program~testmesh_prg</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M173.658,-111.693C185.829,-108.65 199.964,-105.116 213.291,-101.784"/>
+<polygon fill="#000000" stroke="#000000" points="214.426,-105.108 223.279,-99.2874 212.728,-98.3174 214.426,-105.108"/>
+</g>
+<!-- module~netcdf_mod&#45;&gt;program~testnetcdf_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_edge63" class="edge"><title>module~netcdf_mod&#45;&gt;program~testnetcdf_prg</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M178.811,-591.917C189.884,-588.411 202.165,-584.521 213.802,-580.836"/>
+<polygon fill="#000000" stroke="#000000" points="214.908,-584.158 223.384,-577.802 212.794,-577.484 214.908,-584.158"/>
+</g>
+<!-- module~vtkio_mod&#45;&gt;program~testvtkio_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_edge64" class="edge"><title>module~vtkio_mod&#45;&gt;program~testvtkio_prg</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M172.715,-523.732C185,-523.732 199.396,-523.732 212.976,-523.732"/>
+<polygon fill="#000000" stroke="#000000" points="213.154,-527.232 223.154,-523.732 213.154,-520.232 213.154,-527.232"/>
+</g>
+<!-- module~expression_mod&#45;&gt;program~testeval_prg -->
+<g id="module~~kinds_mod~~UsedByGraph_edge65" class="edge"><title>module~expression_mod&#45;&gt;program~testeval_prg</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M737.566,-963.732C746.385,-963.732 755.653,-963.732 764.502,-963.732"/>
+<polygon fill="#000000" stroke="#000000" points="764.647,-967.232 774.647,-963.732 764.647,-960.232 764.647,-967.232"/>
+</g>
+</g>
+</svg>
+</div>
+                <script>var panmodulekinds_modUsedByGraph = svgPanZoom('#modulekinds_modUsedByGraph', {
+                    zoomEnabled: true,
+                    controlIconsEnabled: true,
+                    fit: true,
+                    center: true,});
+                    </script>
+                <div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div>
+                <div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                      </div>
+                      <div class="modal-body">
+                        
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.38.0 (20140413.2041)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="490pt" height="32pt"
+ viewBox="0.00 0.00 489.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-28 485.5,-28 485.5,4 -4,4"/>
+<!-- Module -->
+<g id="node1" class="node"><title>Module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-24 0,-24 0,-0 54,-0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Module</text>
+</g>
+<!-- Submodule -->
+<g id="node2" class="node"><title>Submodule</title>
+<polygon fill="#5bc0de" stroke="#5bc0de" points="139.5,-24 72.5,-24 72.5,-0 139.5,-0 139.5,-24"/>
+<text text-anchor="middle" x="106" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Submodule</text>
+</g>
+<!-- Subroutine -->
+<g id="node3" class="node"><title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="222,-24 158,-24 158,-0 222,-0 222,-24"/>
+<text text-anchor="middle" x="190" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node4" class="node"><title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="294,-24 240,-24 240,-0 294,-0 294,-24"/>
+<text text-anchor="middle" x="267" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node"><title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="366,-24 312,-24 312,-0 366,-0 366,-24"/>
+<text text-anchor="middle" x="339" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node"><title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="481.5,-24 384.5,-24 384.5,-0 481.5,-0 481.5,-24"/>
+<text text-anchor="middle" x="433" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+
+<p>Solid arrows point from a parent (sub)module to the submodule which is
+descended from it. Dashed arrows point from a module being used to the
+module or program unit using it.
+</p>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+    <br>
+    
+
+    <section class="visible-xs visible-sm hidden-md">
+      
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-1">Variables</a></h3></div>
+  <div id="vars-1" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/kinds_mod.html#variable-sp">sp</a>
+      
+      <a class="list-group-item" href="../module/kinds_mod.html#variable-dp">dp</a>
+      
+      <a class="list-group-item" href="../module/kinds_mod.html#variable-ep">ep</a>
+      
+      <a class="list-group-item" href="../module/kinds_mod.html#variable-qp">qp</a>
+      
+      <a class="list-group-item" href="../module/kinds_mod.html#variable-rkinds">rkinds</a>
+      
+      <a class="list-group-item" href="../module/kinds_mod.html#variable-wp">wp</a>
+      
+      <a class="list-group-item" href="../module/kinds_mod.html#variable-pi">PI</a>
+      
+      <a class="list-group-item" href="../module/kinds_mod.html#variable-e">E</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#funcs-1">Functions</a></h3></div>
+  <div id="funcs-1" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/kinds_mod.html#proc-arg">arg</a>
+      
+    </div>
+  </div>
+</div>
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-1">Subroutines</a></h3></div>
+  <div class="list-group">
+    <div id="subs-1" class="panel-collapse collapse">
+      
+      <a class="list-group-item" href="../module/kinds_mod.html#proc-printtypes">printTypes</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+    </section>
+    <br class="visible-xs visible-sm hidden-md">
+
+    
+
+    
+    <section>
+    <h2>Variables</h2>
+    
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Visibility</th>
+
+<th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-sp"></span>integer,</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>sp</strong></td><td> =</td><td>selected_real_kind(6)</td><td><p>Single precision</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-dp"></span>integer,</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>dp</strong></td><td> =</td><td>selected_real_kind(15)</td><td><p>Double precision</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-ep"></span>integer,</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>ep</strong></td><td> =</td><td>selected_real_kind(18)</td><td><p>Extended precision</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-qp"></span>integer,</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>qp</strong></td><td> =</td><td>selected_real_kind(32)</td><td><p>Quad precision</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-rkinds"></span>integer,</td>
+  
+  <td>public,</td>
+  <td>parameter, dimension(4)</td><td>::</td>
+  <td><strong>rkinds</strong></td><td> =</td><td>[sp, dp, ep, qp]</td><td><p>List of real kinds</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-wp"></span>integer,</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>wp</strong></td><td> =</td><td>dp</td><td><p>Set working precision to double</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-pi"></span>real(kind=wp),</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>PI</strong></td><td> =</td><td>4.0_wp*atan(1.0_wp)</td><td><p>Archimedes' constant</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-e"></span>real(kind=wp),</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>E</strong></td><td> =</td><td>exp(1.0_wp)</td><td><p>Euler's constant</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+    </section>
+    <br>
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+     
+    <section>
+    <h2>Functions</h2>
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-arg"></span><h3>
+public elemental function <a href='../proc/arg.html'>arg</a>(z) result(v)
+    
+    
+	 
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Compute the argument of a complex number</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>complex(kind=wp),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>z</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real(kind=wp)
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+    
+    </section>
+    <br>
+    
+
+    
+    <section>
+    <h2>Subroutines</h2>
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-printtypes"></span><h3>
+public subroutine <a href='../proc/printtypes.html'>printTypes</a>()
+    
+    
+	 
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Print the integer kinds for each real type</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    </section>    
+    <br>
+    
+    
+    
+    </div>
+  </div>
+
+  <section class="visible-xs visible-sm hidden-md">
+    <hr>
+    
+
+<div class="panel panel-default">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#allmods-1">All Modules</a></h3></div>
+  <div id="allmods-1" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/array_mod.html">array_mod</a>
+      
+      <a class="list-group-item" href="../module/autodiff_mod.html">autoDiff_mod</a>
+      
+      <a class="list-group-item" href="../module/basicsolvers_mod.html">basicSolvers_mod</a>
+      
+      <a class="list-group-item" href="../module/config_mod.html">config_mod</a>
+      
+      <a class="list-group-item" href="../module/expression_mod.html">expression_mod</a>
+      
+      <a class="list-group-item" href="../module/fourier_mod.html">fourier_mod</a>
+      
+      <a class="list-group-item" href="../module/iterate_mod.html">iterate_mod</a>
+      
+      <a class="list-group-item" href="../module/kinds_mod.html">kinds_mod</a>
+      
+      <a class="list-group-item" href="../module/matio_mod.html">matIO_mod</a>
+      
+      <a class="list-group-item" href="../module/mesh_mod.html">mesh_mod</a>
+      
+      <a class="list-group-item" href="../module/netcdf_mod.html">netCDF_mod</a>
+      
+      <a class="list-group-item" href="../module/node_mod.html">node_mod</a>
+      
+      <a class="list-group-item" href="../module/objective_mod.html">objective_mod</a>
+      
+      <a class="list-group-item" href="../module/optimize_mod.html">optimize_mod</a>
+      
+      <a class="list-group-item" href="../module/plplotlib_mod.html">plplotlib_mod</a>
+      
+      <a class="list-group-item" href="../module/quaternion_mod.html">quaternion_mod</a>
+      
+      <a class="list-group-item" href="../module/solvers_mod.html">solvers_mod</a>
+      
+      <a class="list-group-item" href="../module/sparse_mod.html">sparse_mod</a>
+      
+      <a class="list-group-item" href="../module/spline_mod.html">spline_mod</a>
+      
+      <a class="list-group-item" href="../module/stats_mod.html">stats_mod</a>
+      
+      <a class="list-group-item" href="../module/tensor_mod.html">tensor_mod</a>
+      
+      <a class="list-group-item" href="../module/text_mod.html">text_mod</a>
+      
+      <a class="list-group-item" href="../module/time_mod.html">time_mod</a>
+      
+      <a class="list-group-item" href="../module/treeexponential_mod.html">treeExponential_mod</a>
+      
+      <a class="list-group-item" href="../module/treeoperator_mod.html">treeOperator_mod</a>
+      
+      <a class="list-group-item" href="../module/treetrigonometric_mod.html">treeTrigonometric_mod</a>
+      
+      <a class="list-group-item" href="../module/treevalue_mod.html">treeValue_mod</a>
+      
+      <a class="list-group-item" href="../module/vtkio_mod.html">vtkIO_mod</a>
+      
+    </div>
+  </div>
+</div>
+
+
+  </section>
+  
+    <hr>    
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-md-4"><p>&copy; 2016 </p></div>
+        <div class="col-xs-6 col-md-4 col-md-push-4">
+          <p class="text-right">
+            Documentation generated by 
+            <a href="https://github.com/cmacmackin/ford">FORD</a>
+            
+          </p>
+        </div>
+        <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> CommonModules was developed by Kyle Horne</p></div>
+      </div>
+      <br>
+      </div> <!-- /container -->    
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+-->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- MathJax JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js'],
+        'HTML-CSS': { 
+           styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: '#000000 ! important'} }
+        }
+      });
+    </script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  </body>
+</html>

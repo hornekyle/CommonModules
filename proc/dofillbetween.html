@@ -1,0 +1,2043 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	 
+	 <meta name="description" content="Common modules for using in other programs">
+    
+    <meta name="author" content="Chris MacMackin" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>doFillBetween &ndash; CommonModules</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+    
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+
+    
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">CommonModules </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+				
+            <li><a href='../page/index.html'>Instructions</a></li>
+	    
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+              data-toggle="dropdown" role="button"
+              aria-haspopup="true"
+		 aria-expanded="false">Contents <span class="caret"></span></a>
+	      <ul class="dropdown-menu">
+              
+            <li><a href="../lists/files.html">Source Files</a></li>
+				
+				
+            <li><a href="../lists/modules.html">Modules</a></li>
+				
+            
+                                
+            <li><a href="../lists/procedures.html">Procedures</a></li>
+				
+								
+            <li><a href="../lists/types.html">Derived Types</a></li>
+				
+				
+            <li><a href="../lists/programs.html">Programs</a></li>
+				
+            </ul>
+            </li>
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
+
+                             
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/programs.html">Programs</a></li>
+
+          </ul>
+        
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    
+  
+  <div class="row">
+    <h1>doFillBetween
+      <small>Subroutine</small>
+    
+    </h1>
+    
+<div class="row">
+  <div class="col-lg-12">
+<div class="well well-sm">
+  <ul class="list-inline" style="margin-bottom:0px;display:inline">
+     
+     
+     
+     
+    
+    
+     <li><i class="fa fa-list-ol"></i>
+       <a data-toggle="tooltip"
+	  data-placement="bottom" data-html="true"
+	  title=" 0.4% of total for procedures.">15 statements</a>
+     </li> 
+     
+     
+    <li><i class="fa fa-code"></i><a href="../src/examples.f90"> Source File</a></li>
+     
+  </ul>
+  <ol class="breadcrumb in-well text-right">
+  
+     <li><a href='../sourcefile/examples.f90.html'>examples.f90</a></li>
+  
+     <li><a href='../program/examples_prg.html'>examples_prg</a></li>
+  
+     <li class="active">doFillBetween</li>
+  </ol>
+</div>
+</div>
+</div>
+<script>
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+    
+<div id="sidebar">
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../proc/dofillbetween.html#src">doFillBetween</a>
+  </div>
+</div>
+
+
+  <hr>
+  
+
+<div class="panel panel-default">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#allprocs-0">All Procedures</a></h3></div>
+  <div id="allprocs-0" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../interface/abs_t.html">abs_t</a>
+      
+      <a class="list-group-item" href="../interface/acos_t.html">acos_t</a>
+      
+      <a class="list-group-item" href="../interface/add_t.html">add_t</a>
+      
+      <a class="list-group-item" href="../proc/arg.html">arg</a>
+      
+      <a class="list-group-item" href="../proc/arraytochar.html">arrayToChar</a>
+      
+      <a class="list-group-item" href="../interface/asin_t.html">asin_t</a>
+      
+      <a class="list-group-item" href="../interface/assignment%28%3D%29.html">assignment(=)</a>
+      
+      <a class="list-group-item" href="../interface/atan_t.html">atan_t</a>
+      
+      <a class="list-group-item" href="../proc/bar.html">bar</a>
+      
+      <a class="list-group-item" href="../proc/barh.html">barh</a>
+      
+      <a class="list-group-item" href="../interface/bicgstab_t.html">biCGSTAB_t</a>
+      
+      <a class="list-group-item" href="../proc/biconjugategradientstabilized.html">biConjugateGradientStabilized</a>
+      
+      <a class="list-group-item" href="../proc/bindata.html">binData</a>
+      
+      <a class="list-group-item" href="../proc/box.html">box</a>
+      
+      <a class="list-group-item" href="../proc/chartoarray.html">charToArray</a>
+      
+      <a class="list-group-item" href="../proc/checkprecision.html">checkPrecision</a>
+      
+      <a class="list-group-item" href="../proc/colorbar.html">colorbar</a>
+      
+      <a class="list-group-item" href="../proc/colorbar2.html">colorbar2</a>
+      
+      <a class="list-group-item" href="../proc/colorize.html">colorize</a>
+      
+      <a class="list-group-item" href="../proc/colormap.html">colorMap</a>
+      
+      <a class="list-group-item" href="../interface/config_t.html">config_t</a>
+      
+      <a class="list-group-item" href="../interface/conjg.html">conjg</a>
+      
+      <a class="list-group-item" href="../proc/conjugategradient.html">conjugateGradient</a>
+      
+      <a class="list-group-item" href="../interface/conjugategradient_t.html">conjugateGradient_t</a>
+      
+      <a class="list-group-item" href="../proc/contour.html">contour</a>
+      
+      <a class="list-group-item" href="../proc/contourf.html">contourf</a>
+      
+      <a class="list-group-item" href="../interface/cos.html">cos</a>
+      
+      <a class="list-group-item" href="../interface/cos_t.html">cos_t</a>
+      
+      <a class="list-group-item" href="../proc/cputime.html">cpuTime</a>
+      
+      <a class="list-group-item" href="../interface/cubicspline_t.html">cubicSpline_t</a>
+      
+      <a class="list-group-item" href="../proc/dedup.html">deDup</a>
+      
+      <a class="list-group-item" href="../interface/der.html">der</a>
+      
+      <a class="list-group-item" href="../interface/dft.html">DFT</a>
+      
+      <a class="list-group-item" href="../interface/diff1.html">diff1</a>
+      
+      <a class="list-group-item" href="../interface/diff3.html">diff3</a>
+      
+      <a class="list-group-item" href="../interface/div_t.html">div_t</a>
+      
+      <a class="list-group-item" href="../proc/dobar.html">doBar</a>
+      
+      <a class="list-group-item" href="../proc/docontour.html">doContour</a>
+      
+      <a class="list-group-item" href="../proc/doerror.html">doError</a>
+      
+      <a class="list-group-item" href="../proc/dofillbetween.html">doFillBetween</a>
+      
+      <a class="list-group-item" href="../proc/dofunction.html">doFunction</a>
+      
+      <a class="list-group-item" href="../proc/dohist.html">doHist</a>
+      
+      <a class="list-group-item" href="../proc/dolegend.html">doLegend</a>
+      
+      <a class="list-group-item" href="../proc/dologplot.html">doLogPlot</a>
+      
+      <a class="list-group-item" href="../proc/doplot.html">doPlot</a>
+      
+      <a class="list-group-item" href="../proc/doquiver.html">doQuiver</a>
+      
+      <a class="list-group-item" href="../proc/doscatter.html">doScatter</a>
+      
+      <a class="list-group-item" href="../proc/dosurface.html">doSurface</a>
+      
+      <a class="list-group-item" href="../proc/endswith.html">endsWith</a>
+      
+      <a class="list-group-item" href="../proc/errorbar.html">errorbar</a>
+      
+      <a class="list-group-item" href="../proc/eval_test.html">eval_test</a>
+      
+      <a class="list-group-item" href="../proc/eval_testn.html">eval_testN</a>
+      
+      <a class="list-group-item" href="../proc/evalr_abs.html">evalR_abs</a>
+      
+      <a class="list-group-item" href="../proc/evalr_acos.html">evalR_acos</a>
+      
+      <a class="list-group-item" href="../proc/evalr_add.html">evalR_add</a>
+      
+      <a class="list-group-item" href="../proc/evalr_asin.html">evalR_asin</a>
+      
+      <a class="list-group-item" href="../proc/evalr_atan.html">evalR_atan</a>
+      
+      <a class="list-group-item" href="../proc/evalr_cos.html">evalR_cos</a>
+      
+      <a class="list-group-item" href="../proc/evalr_div.html">evalR_div</a>
+      
+      <a class="list-group-item" href="../proc/evalr_exp.html">evalR_exp</a>
+      
+      <a class="list-group-item" href="../proc/evalr_imag.html">evalR_imag</a>
+      
+      <a class="list-group-item" href="../proc/evalr_log.html">evalR_log</a>
+      
+      <a class="list-group-item" href="../proc/evalr_log10.html">evalR_log10</a>
+      
+      <a class="list-group-item" href="../proc/evalr_mul.html">evalR_mul</a>
+      
+      <a class="list-group-item" href="../proc/evalr_neg.html">evalR_neg</a>
+      
+      <a class="list-group-item" href="../interface/evalr_p.html">evalR_p</a>
+      
+      <a class="list-group-item" href="../proc/evalr_pow.html">evalR_pow</a>
+      
+      <a class="list-group-item" href="../proc/evalr_real.html">evalR_real</a>
+      
+      <a class="list-group-item" href="../proc/evalr_sin.html">evalR_sin</a>
+      
+      <a class="list-group-item" href="../proc/evalr_sqrt.html">evalR_sqrt</a>
+      
+      <a class="list-group-item" href="../proc/evalr_sub.html">evalR_sub</a>
+      
+      <a class="list-group-item" href="../proc/evalr_tan.html">evalR_tan</a>
+      
+      <a class="list-group-item" href="../proc/evalr_var.html">evalR_var</a>
+      
+      <a class="list-group-item" href="../proc/evalz_abs.html">evalZ_abs</a>
+      
+      <a class="list-group-item" href="../proc/evalz_acos.html">evalZ_acos</a>
+      
+      <a class="list-group-item" href="../proc/evalz_add.html">evalZ_add</a>
+      
+      <a class="list-group-item" href="../proc/evalz_asin.html">evalZ_asin</a>
+      
+      <a class="list-group-item" href="../proc/evalz_atan.html">evalZ_atan</a>
+      
+      <a class="list-group-item" href="../proc/evalz_cos.html">evalZ_cos</a>
+      
+      <a class="list-group-item" href="../proc/evalz_div.html">evalZ_div</a>
+      
+      <a class="list-group-item" href="../proc/evalz_exp.html">evalZ_exp</a>
+      
+      <a class="list-group-item" href="../proc/evalz_imag.html">evalZ_imag</a>
+      
+      <a class="list-group-item" href="../proc/evalz_log.html">evalZ_log</a>
+      
+      <a class="list-group-item" href="../proc/evalz_log10.html">evalZ_log10</a>
+      
+      <a class="list-group-item" href="../proc/evalz_mul.html">evalZ_mul</a>
+      
+      <a class="list-group-item" href="../proc/evalz_neg.html">evalZ_neg</a>
+      
+      <a class="list-group-item" href="../interface/evalz_p.html">evalZ_p</a>
+      
+      <a class="list-group-item" href="../proc/evalz_pow.html">evalZ_pow</a>
+      
+      <a class="list-group-item" href="../proc/evalz_real.html">evalZ_real</a>
+      
+      <a class="list-group-item" href="../proc/evalz_sin.html">evalZ_sin</a>
+      
+      <a class="list-group-item" href="../proc/evalz_sqrt.html">evalZ_sqrt</a>
+      
+      <a class="list-group-item" href="../proc/evalz_sub.html">evalZ_sub</a>
+      
+      <a class="list-group-item" href="../proc/evalz_tan.html">evalZ_tan</a>
+      
+      <a class="list-group-item" href="../proc/evalz_var.html">evalZ_var</a>
+      
+      <a class="list-group-item" href="../interface/exp.html">exp</a>
+      
+      <a class="list-group-item" href="../interface/exp%7E2.html">exp</a>
+      
+      <a class="list-group-item" href="../interface/exp_t.html">exp_t</a>
+      
+      <a class="list-group-item" href="../proc/f.html">f</a>
+      
+      <a class="list-group-item" href="../interface/fft.html">FFT</a>
+      
+      <a class="list-group-item" href="../proc/fft_freq.html">FFT_freq</a>
+      
+      <a class="list-group-item" href="../proc/figure.html">figure</a>
+      
+      <a class="list-group-item" href="../proc/fillbetween.html">fillBetween</a>
+      
+      <a class="list-group-item" href="../proc/fillbetweenx.html">fillBetweenx</a>
+      
+      <a class="list-group-item" href="../proc/findinterval.html">findInterval</a>
+      
+      <a class="list-group-item" href="../interface/flatten.html">flatten</a>
+      
+      <a class="list-group-item" href="../interface/function_t.html">function_t</a>
+      
+      <a class="list-group-item" href="../proc/gaussseidel.html">gaussSeidel</a>
+      
+      <a class="list-group-item" href="../interface/gaussseidel_t.html">gaussSeidel_t</a>
+      
+      <a class="list-group-item" href="../proc/get_adn.html">get_adN</a>
+      
+      <a class="list-group-item" href="../proc/hist.html">hist</a>
+      
+      <a class="list-group-item" href="../interface/idft.html">iDFT</a>
+      
+      <a class="list-group-item" href="../interface/ifft.html">iFFT</a>
+      
+      <a class="list-group-item" href="../interface/imag_t.html">imag_t</a>
+      
+      <a class="list-group-item" href="../proc/inttochar.html">intToChar</a>
+      
+      <a class="list-group-item" href="../proc/inv.html">inv</a>
+      
+      <a class="list-group-item" href="../proc/jacobi.html">jacobi</a>
+      
+      <a class="list-group-item" href="../interface/jacobi_t.html">jacobi_t</a>
+      
+      <a class="list-group-item" href="../proc/labels.html">labels</a>
+      
+      <a class="list-group-item" href="../proc/legend.html">legend</a>
+      
+      <a class="list-group-item" href="../proc/linearinterp.html">linearInterp</a>
+      
+      <a class="list-group-item" href="../interface/linearspline_t.html">linearSpline_t</a>
+      
+      <a class="list-group-item" href="../interface/linesearch_t.html">lineSearch_t</a>
+      
+      <a class="list-group-item" href="../proc/linspace.html">linspace</a>
+      
+      <a class="list-group-item" href="../interface/log.html">log</a>
+      
+      <a class="list-group-item" href="../interface/log%7E2.html">log</a>
+      
+      <a class="list-group-item" href="../interface/log10.html">log10</a>
+      
+      <a class="list-group-item" href="../interface/log10_t.html">log10_t</a>
+      
+      <a class="list-group-item" href="../interface/log_t.html">log_t</a>
+      
+      <a class="list-group-item" href="../proc/makelogo.html">makeLogo</a>
+      
+      <a class="list-group-item" href="../interface/matmul.html">matmul</a>
+      
+      <a class="list-group-item" href="../interface/matmul%7E2.html">matmul</a>
+      
+      <a class="list-group-item" href="../interface/maxval.html">maxval</a>
+      
+      <a class="list-group-item" href="../proc/mean.html">mean</a>
+      
+      <a class="list-group-item" href="../proc/meshgridx.html">meshGridX</a>
+      
+      <a class="list-group-item" href="../proc/meshgridy.html">meshGridY</a>
+      
+      <a class="list-group-item" href="../proc/minimumresidual.html">minimumResidual</a>
+      
+      <a class="list-group-item" href="../interface/minval.html">minval</a>
+      
+      <a class="list-group-item" href="../interface/mixval.html">mixval</a>
+      
+      <a class="list-group-item" href="../interface/mul_t.html">mul_t</a>
+      
+      <a class="list-group-item" href="../interface/neg_t.html">neg_t</a>
+      
+      <a class="list-group-item" href="../proc/newabs.html">newAbs</a>
+      
+      <a class="list-group-item" href="../proc/newacos.html">newAcos</a>
+      
+      <a class="list-group-item" href="../proc/newadd.html">newAdd</a>
+      
+      <a class="list-group-item" href="../proc/newasin.html">newAsin</a>
+      
+      <a class="list-group-item" href="../proc/newatan.html">newAtan</a>
+      
+      <a class="list-group-item" href="../proc/newcos.html">newCos</a>
+      
+      <a class="list-group-item" href="../proc/newdiv.html">newDiv</a>
+      
+      <a class="list-group-item" href="../proc/newexp.html">newExp</a>
+      
+      <a class="list-group-item" href="../proc/newimag.html">newImag</a>
+      
+      <a class="list-group-item" href="../proc/newiterator.html">newIterator</a>
+      
+      <a class="list-group-item" href="../proc/newlog.html">newLog</a>
+      
+      <a class="list-group-item" href="../proc/newlog10.html">newLog10</a>
+      
+      <a class="list-group-item" href="../proc/newmul.html">newMul</a>
+      
+      <a class="list-group-item" href="../proc/newneg.html">newNeg</a>
+      
+      <a class="list-group-item" href="../proc/newnodestack.html">newNodeStack</a>
+      
+      <a class="list-group-item" href="../proc/newpow.html">newPow</a>
+      
+      <a class="list-group-item" href="../proc/newreal.html">newReal</a>
+      
+      <a class="list-group-item" href="../proc/newsin.html">newSin</a>
+      
+      <a class="list-group-item" href="../proc/newsparse.html">newSparse</a>
+      
+      <a class="list-group-item" href="../proc/newspvec.html">newSpvec</a>
+      
+      <a class="list-group-item" href="../proc/newsqrt.html">newSqrt</a>
+      
+      <a class="list-group-item" href="../proc/newsub.html">newSub</a>
+      
+      <a class="list-group-item" href="../proc/newtan.html">newTan</a>
+      
+      <a class="list-group-item" href="../proc/newtoken.html">newToken</a>
+      
+      <a class="list-group-item" href="../proc/newvar.html">newVar</a>
+      
+      <a class="list-group-item" href="../interface/nodestack_t.html">nodeStack_t</a>
+      
+      <a class="list-group-item" href="../interface/norm2.html">norm2</a>
+      
+      <a class="list-group-item" href="../interface/operator%28%2A%29.html">operator(*)</a>
+      
+      <a class="list-group-item" href="../interface/operator%28%2A%29%7E2.html">operator(*)</a>
+      
+      <a class="list-group-item" href="../interface/operator%28%2A%29%7E3.html">operator(*)</a>
+      
+      <a class="list-group-item" href="../interface/operator%28%2A%2A%29.html">operator(**)</a>
+      
+      <a class="list-group-item" href="../interface/operator%28%2B%29.html">operator(+)</a>
+      
+      <a class="list-group-item" href="../interface/operator%28%2B%29%7E2.html">operator(+)</a>
+      
+      <a class="list-group-item" href="../interface/operator%28%2B%29%7E3.html">operator(+)</a>
+      
+      <a class="list-group-item" href="../interface/operator%28-%29.html">operator(-)</a>
+      
+      <a class="list-group-item" href="../interface/operator%28-%29%7E2.html">operator(-)</a>
+      
+      <a class="list-group-item" href="../interface/operator%28.d.%29.html">operator(.d.)</a>
+      
+      <a class="list-group-item" href="../interface/operator%28.o.%29.html">operator(.o.)</a>
+      
+      <a class="list-group-item" href="../interface/operator%28.o.%29%7E2.html">operator(.o.)</a>
+      
+      <a class="list-group-item" href="../interface/operator%28.oo.%29.html">operator(.oo.)</a>
+      
+      <a class="list-group-item" href="../interface/operator%28.sx.%29.html">operator(.sx.)</a>
+      
+      <a class="list-group-item" href="../interface/operator%28.x.%29.html">operator(.x.)</a>
+      
+      <a class="list-group-item" href="../interface/operator%28SLASH%29.html">operator(/)</a>
+      
+      <a class="list-group-item" href="../interface/operator%28SLASH%29%7E2.html">operator(/)</a>
+      
+      <a class="list-group-item" href="../proc/plot.html">plot</a>
+      
+      <a class="list-group-item" href="../proc/plot3.html">plot3</a>
+      
+      <a class="list-group-item" href="../proc/pop.html">pop</a>
+      
+      <a class="list-group-item" href="../interface/pow_t.html">pow_t</a>
+      
+      <a class="list-group-item" href="../proc/printtypes.html">printTypes</a>
+      
+      <a class="list-group-item" href="../proc/push.html">push</a>
+      
+      <a class="list-group-item" href="../interface/quat_t.html">quat_t</a>
+      
+      <a class="list-group-item" href="../proc/quiver.html">quiver</a>
+      
+      <a class="list-group-item" href="../interface/randomnormal.html">randomNormal</a>
+      
+      <a class="list-group-item" href="../interface/randomuniform.html">randomUniform</a>
+      
+      <a class="list-group-item" href="../proc/readgrid.html">readGrid</a>
+      
+      <a class="list-group-item" href="../interface/readstep.html">readStep</a>
+      
+      <a class="list-group-item" href="../interface/real.html">real</a>
+      
+      <a class="list-group-item" href="../interface/real_t.html">real_t</a>
+      
+      <a class="list-group-item" href="../proc/realtochar.html">realToChar</a>
+      
+      <a class="list-group-item" href="../proc/realtotime.html">realToTime</a>
+      
+      <a class="list-group-item" href="../proc/removespaces.html">removeSpaces</a>
+      
+      <a class="list-group-item" href="../proc/scaler.html">scaler</a>
+      
+      <a class="list-group-item" href="../proc/scatter.html">scatter</a>
+      
+      <a class="list-group-item" href="../proc/set_adn.html">set_adN</a>
+      
+      <a class="list-group-item" href="../proc/setrandomseed.html">setRandomSeed</a>
+      
+      <a class="list-group-item" href="../proc/setup.html">setup</a>
+      
+      <a class="list-group-item" href="../proc/show.html">show</a>
+      
+      <a class="list-group-item" href="../proc/showprogress.html">showProgress</a>
+      
+      <a class="list-group-item" href="../interface/sin.html">sin</a>
+      
+      <a class="list-group-item" href="../interface/sin_t.html">sin_t</a>
+      
+      <a class="list-group-item" href="../interface/solvelu.html">solveLU</a>
+      
+      <a class="list-group-item" href="../proc/solverprogress.html">solverProgress</a>
+      
+      <a class="list-group-item" href="../interface/sor_t.html">SOR_t</a>
+      
+      <a class="list-group-item" href="../interface/span.html">span</a>
+      
+      <a class="list-group-item" href="../interface/sqrt.html">sqrt</a>
+      
+      <a class="list-group-item" href="../interface/sqrt_t.html">sqrt_t</a>
+      
+      <a class="list-group-item" href="../proc/startreport.html">startReport</a>
+      
+      <a class="list-group-item" href="../proc/startswith.html">startsWith</a>
+      
+      <a class="list-group-item" href="../proc/stdev.html">stDev</a>
+      
+      <a class="list-group-item" href="../proc/steepestdescent.html">steepestDescent</a>
+      
+      <a class="list-group-item" href="../interface/sub_t.html">sub_t</a>
+      
+      <a class="list-group-item" href="../proc/subplot.html">subplot</a>
+      
+      <a class="list-group-item" href="../proc/successiveoverrelaxation.html">successiveOverRelaxation</a>
+      
+      <a class="list-group-item" href="../interface/sum.html">sum</a>
+      
+      <a class="list-group-item" href="../interface/sum%7E2.html">sum</a>
+      
+      <a class="list-group-item" href="../proc/surface.html">surface</a>
+      
+      <a class="list-group-item" href="../proc/symmetricgaussseidel.html">symmetricGaussSeidel</a>
+      
+      <a class="list-group-item" href="../proc/symmetricsuccessiveoverrelaxation.html">symmetricSuccessiveOverRelaxation</a>
+      
+      <a class="list-group-item" href="../interface/tan_t.html">tan_t</a>
+      
+      <a class="list-group-item" href="../interface/tdma.html">TDMA</a>
+      
+      <a class="list-group-item" href="../proc/testbasic.html">testBasic</a>
+      
+      <a class="list-group-item" href="../proc/testbasicsolvers.html">testBasicSolvers</a>
+      
+      <a class="list-group-item" href="../proc/testcolorize.html">testColorize</a>
+      
+      <a class="list-group-item" href="../proc/testcolormap.html">testColorMap</a>
+      
+      <a class="list-group-item" href="../proc/testconstants.html">testConstants</a>
+      
+      <a class="list-group-item" href="../proc/testcputime.html">testCpuTime</a>
+      
+      <a class="list-group-item" href="../proc/testdedup.html">testDeDup</a>
+      
+      <a class="list-group-item" href="../proc/testdiff.html">testDiff</a>
+      
+      <a class="list-group-item" href="../proc/testdot.html">testDot</a>
+      
+      <a class="list-group-item" href="../proc/testendswith.html">testEndsWith</a>
+      
+      <a class="list-group-item" href="../proc/testfft.html">testFFT</a>
+      
+      <a class="list-group-item" href="../proc/testflatten.html">testFlatten</a>
+      
+      <a class="list-group-item" href="../proc/testfunction.html">testFunction</a>
+      
+      <a class="list-group-item" href="../proc/testifft.html">testIFFT</a>
+      
+      <a class="list-group-item" href="../proc/testinttochar.html">testIntToChar</a>
+      
+      <a class="list-group-item" href="../proc/testlinearinterp.html">testLinearInterp</a>
+      
+      <a class="list-group-item" href="../proc/testlinspace.html">testLinspace</a>
+      
+      <a class="list-group-item" href="../proc/testlu.html">testLU</a>
+      
+      <a class="list-group-item" href="../proc/testmean.html">testMean</a>
+      
+      <a class="list-group-item" href="../proc/testmeshgrid.html">testMeshGrid</a>
+      
+      <a class="list-group-item" href="../proc/testmixval.html">testMixval</a>
+      
+      <a class="list-group-item" href="../proc/testnewconfig.html">testNewConfig</a>
+      
+      <a class="list-group-item" href="../proc/testnewsparse.html">testNewSparse</a>
+      
+      <a class="list-group-item" href="../proc/testnewspline.html">testNewSpline</a>
+      
+      <a class="list-group-item" href="../proc/testnext.html">testNext</a>
+      
+      <a class="list-group-item" href="../proc/testobjective.html">testObjective</a>
+      
+      <a class="list-group-item" href="../proc/testobjectiven.html">testObjectiveN</a>
+      
+      <a class="list-group-item" href="../proc/testplot.html">testPlot</a>
+      
+      <a class="list-group-item" href="../proc/testprecision.html">testPrecision</a>
+      
+      <a class="list-group-item" href="../proc/testrandomnormal.html">testRandomNormal</a>
+      
+      <a class="list-group-item" href="../proc/testrandomuniform.html">testRandomUniform</a>
+      
+      <a class="list-group-item" href="../proc/testread.html">testRead</a>
+      
+      <a class="list-group-item" href="../proc/testreadgmsh.html">testReadGmsh</a>
+      
+      <a class="list-group-item" href="../proc/testrealtochar.html">testRealToChar</a>
+      
+      <a class="list-group-item" href="../proc/testrealtotime.html">testRealToTime</a>
+      
+      <a class="list-group-item" href="../proc/testremovespaces.html">testRemoveSpaces</a>
+      
+      <a class="list-group-item" href="../proc/testsetrandomseed.html">testSetRandomSeed</a>
+      
+      <a class="list-group-item" href="../proc/testsolvers.html">testSolvers</a>
+      
+      <a class="list-group-item" href="../proc/testspan.html">testSpan</a>
+      
+      <a class="list-group-item" href="../proc/testsplinex.html">testSplineX</a>
+      
+      <a class="list-group-item" href="../proc/testspvec.html">testSpvec</a>
+      
+      <a class="list-group-item" href="../proc/teststartswith.html">testStartsWith</a>
+      
+      <a class="list-group-item" href="../proc/teststdev.html">testStDev</a>
+      
+      <a class="list-group-item" href="../proc/testtdma.html">testTDMA</a>
+      
+      <a class="list-group-item" href="../proc/testwalltime.html">testWallTime</a>
+      
+      <a class="list-group-item" href="../proc/testwrite.html">testWrite</a>
+      
+      <a class="list-group-item" href="../proc/testwritemat.html">testWriteMat</a>
+      
+      <a class="list-group-item" href="../proc/testwritevtk.html">testWriteVTK</a>
+      
+      <a class="list-group-item" href="../proc/testwritevtk%7E2.html">testWriteVTK</a>
+      
+      <a class="list-group-item" href="../proc/ticks.html">ticks</a>
+      
+      <a class="list-group-item" href="../proc/title.html">title</a>
+      
+      <a class="list-group-item" href="../interface/token_t.html">token_t</a>
+      
+      <a class="list-group-item" href="../proc/tokenize.html">tokenize</a>
+      
+      <a class="list-group-item" href="../proc/torpn.html">toRPN</a>
+      
+      <a class="list-group-item" href="../interface/transpose.html">transpose</a>
+      
+      <a class="list-group-item" href="../interface/v2m.html">v2m</a>
+      
+      <a class="list-group-item" href="../interface/var_t.html">var_t</a>
+      
+      <a class="list-group-item" href="../proc/vector.html">vector</a>
+      
+      <a class="list-group-item" href="../proc/wait.html">wait</a>
+      
+      <a class="list-group-item" href="../proc/walltime.html">wallTime</a>
+      
+      <a class="list-group-item" href="../proc/wireframe.html">wireframe</a>
+      
+      <a class="list-group-item" href="../proc/writegrid.html">writeGrid</a>
+      
+      <a class="list-group-item" href="../interface/writegridvtk.html">writeGridVTK</a>
+      
+      <a class="list-group-item" href="../proc/writeheadervtk.html">writeHeaderVTK</a>
+      
+      <a class="list-group-item" href="../interface/writemat.html">writeMat</a>
+      
+      <a class="list-group-item" href="../interface/writescalarvtk.html">writeScalarVTK</a>
+      
+      <a class="list-group-item" href="../interface/writestep.html">writeStep</a>
+      
+      <a class="list-group-item" href="../interface/writevectorvtk.html">writeVectorVTK</a>
+      
+      <a class="list-group-item" href="../proc/xlabel.html">xlabel</a>
+      
+      <a class="list-group-item" href="../proc/xlim.html">xlim</a>
+      
+      <a class="list-group-item" href="../proc/xticks.html">xticks</a>
+      
+      <a class="list-group-item" href="../proc/xylim.html">xylim</a>
+      
+      <a class="list-group-item" href="../proc/xyzlim.html">xyzlim</a>
+      
+      <a class="list-group-item" href="../proc/ylabel.html">ylabel</a>
+      
+      <a class="list-group-item" href="../proc/ylim.html">ylim</a>
+      
+      <a class="list-group-item" href="../proc/yticks.html">yticks</a>
+      
+    </div>
+  </div>
+</div>
+
+
+</div>  
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2>
+subroutine doFillBetween()
+    
+    
+	 
+</h2>
+    
+  
+
+
+    
+    <p><img alt="fillBetween" src="../media/example-7.svg"></p>
+    
+
+    <h3>Arguments</h3>
+    
+      <em>None</em>
+    
+    
+    
+     <h3>Calls</h3>
+     
+                <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.38.0 (20140413.2041)
+ -->
+<!-- Title: proc~~dofillbetween~~CallsGraph Pages: 1 -->
+<svg id="procdofillbetweenCallsGraph" width="277pt" height="578pt"
+ viewBox="0.00 0.00 277.00 578.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~dofillbetween~~CallsGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 574)">
+<title>proc~~dofillbetween~~CallsGraph</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-574 273,-574 273,4 -4,4"/>
+<!-- proc~dofillbetween -->
+<g id="proc~~dofillbetween~~CallsGraph_node1" class="node"><title>proc~dofillbetween</title>
+<polygon fill="none" stroke="black" points="79,-234 7.10543e-15,-234 7.10543e-15,-210 79,-210 79,-234"/>
+<text text-anchor="middle" x="39.5" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50">doFillBetween</text>
+</g>
+<!-- interface~mixval -->
+<g id="proc~~dofillbetween~~CallsGraph_node2" class="node"><title>interface~mixval</title>
+<g id="a_proc~~dofillbetween~~CallsGraph_node2"><a xlink:href="../interface/mixval.html" xlink:title="mixval">
+<polygon fill="#a7506f" stroke="#a7506f" points="174,-507 120,-507 120,-483 174,-483 174,-507"/>
+<text text-anchor="middle" x="147" y="-492.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">mixval</text>
+</a>
+</g>
+</g>
+<!-- proc~dofillbetween&#45;&gt;interface~mixval -->
+<g id="proc~~dofillbetween~~CallsGraph_edge17" class="edge"><title>proc~dofillbetween&#45;&gt;interface~mixval</title>
+<path fill="none" stroke="#000000" d="M41.2242,-234.029C44.0927,-272.621 57.5043,-395.377 115,-474 115.46,-474.63 115.946,-475.246 116.453,-475.85"/>
+<polygon fill="#000000" stroke="#000000" points="114.309,-478.639 123.988,-482.948 119.109,-473.544 114.309,-478.639"/>
+</g>
+<!-- proc~figure -->
+<g id="proc~~dofillbetween~~CallsGraph_node3" class="node"><title>proc~figure</title>
+<g id="a_proc~~dofillbetween~~CallsGraph_node3"><a xlink:href="../proc/figure.html" xlink:title="figure">
+<polygon fill="#d9534f" stroke="#d9534f" points="174,-465 120,-465 120,-441 174,-441 174,-465"/>
+<text text-anchor="middle" x="147" y="-450.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">figure</text>
+</a>
+</g>
+</g>
+<!-- proc~dofillbetween&#45;&gt;proc~figure -->
+<g id="proc~~dofillbetween~~CallsGraph_edge18" class="edge"><title>proc~dofillbetween&#45;&gt;proc~figure</title>
+<path fill="none" stroke="#000000" d="M45.7554,-234.302C57.7049,-262.171 87.9739,-332.194 115,-390 121.599,-404.116 129.338,-419.842 135.432,-432.052"/>
+<polygon fill="#000000" stroke="#000000" points="132.303,-433.62 139.913,-440.991 138.561,-430.483 132.303,-433.62"/>
+</g>
+<!-- proc~fillbetween -->
+<g id="proc~~dofillbetween~~CallsGraph_node4" class="node"><title>proc~fillbetween</title>
+<g id="a_proc~~dofillbetween~~CallsGraph_node4"><a xlink:href="../proc/fillbetween.html" xlink:title="fillBetween">
+<polygon fill="#d9534f" stroke="#d9534f" points="179,-276 115,-276 115,-252 179,-252 179,-276"/>
+<text text-anchor="middle" x="147" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">fillBetween</text>
+</a>
+</g>
+</g>
+<!-- proc~dofillbetween&#45;&gt;proc~fillbetween -->
+<g id="proc~~dofillbetween~~CallsGraph_edge19" class="edge"><title>proc~dofillbetween&#45;&gt;proc~fillbetween</title>
+<path fill="none" stroke="#000000" d="M70.7321,-234.036C81.7682,-238.429 94.4231,-243.467 106.168,-248.143"/>
+<polygon fill="#000000" stroke="#000000" points="105.178,-251.516 115.764,-251.963 107.767,-245.012 105.178,-251.516"/>
+</g>
+<!-- proc~subplot -->
+<g id="proc~~dofillbetween~~CallsGraph_node5" class="node"><title>proc~subplot</title>
+<g id="a_proc~~dofillbetween~~CallsGraph_node5"><a xlink:href="../proc/subplot.html" xlink:title="subplot">
+<polygon fill="#d9534f" stroke="#d9534f" points="174,-381 120,-381 120,-357 174,-357 174,-381"/>
+<text text-anchor="middle" x="147" y="-366.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">subplot</text>
+</a>
+</g>
+</g>
+<!-- proc~dofillbetween&#45;&gt;proc~subplot -->
+<g id="proc~~dofillbetween~~CallsGraph_edge20" class="edge"><title>proc~dofillbetween&#45;&gt;proc~subplot</title>
+<path fill="none" stroke="#000000" d="M49.1335,-234.03C67.1393,-259.118 108.878,-317.275 131.235,-348.426"/>
+<polygon fill="#000000" stroke="#000000" points="128.573,-350.721 137.247,-356.804 134.26,-346.639 128.573,-350.721"/>
+</g>
+<!-- proc~labels -->
+<g id="proc~~dofillbetween~~CallsGraph_node6" class="node"><title>proc~labels</title>
+<g id="a_proc~~dofillbetween~~CallsGraph_node6"><a xlink:href="../proc/labels.html" xlink:title="labels">
+<polygon fill="#d9534f" stroke="#d9534f" points="174,-234 120,-234 120,-210 174,-210 174,-234"/>
+<text text-anchor="middle" x="147" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">labels</text>
+</a>
+</g>
+</g>
+<!-- proc~dofillbetween&#45;&gt;proc~labels -->
+<g id="proc~~dofillbetween~~CallsGraph_edge21" class="edge"><title>proc~dofillbetween&#45;&gt;proc~labels</title>
+<path fill="none" stroke="#000000" d="M79.1852,-222C89.1183,-222 99.7691,-222 109.583,-222"/>
+<polygon fill="#000000" stroke="#000000" points="109.83,-225.5 119.83,-222 109.83,-218.5 109.83,-225.5"/>
+</g>
+<!-- proc~plot -->
+<g id="proc~~dofillbetween~~CallsGraph_node7" class="node"><title>proc~plot</title>
+<g id="a_proc~~dofillbetween~~CallsGraph_node7"><a xlink:href="../proc/plot.html" xlink:title="plot">
+<polygon fill="#d9534f" stroke="#d9534f" points="174,-192 120,-192 120,-168 174,-168 174,-192"/>
+<text text-anchor="middle" x="147" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">plot</text>
+</a>
+</g>
+</g>
+<!-- proc~dofillbetween&#45;&gt;proc~plot -->
+<g id="proc~~dofillbetween~~CallsGraph_edge22" class="edge"><title>proc~dofillbetween&#45;&gt;proc~plot</title>
+<path fill="none" stroke="#000000" d="M70.7321,-209.964C83.0563,-205.058 97.3994,-199.348 110.239,-194.237"/>
+<polygon fill="#000000" stroke="#000000" points="111.71,-197.418 119.706,-190.468 109.121,-190.915 111.71,-197.418"/>
+</g>
+<!-- proc~linspace -->
+<g id="proc~~dofillbetween~~CallsGraph_node8" class="node"><title>proc~linspace</title>
+<g id="a_proc~~dofillbetween~~CallsGraph_node8"><a xlink:href="../proc/linspace.html" xlink:title="linspace">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="174,-150 120,-150 120,-126 174,-126 174,-150"/>
+<text text-anchor="middle" x="147" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">linspace</text>
+</a>
+</g>
+</g>
+<!-- proc~dofillbetween&#45;&gt;proc~linspace -->
+<g id="proc~~dofillbetween~~CallsGraph_edge23" class="edge"><title>proc~dofillbetween&#45;&gt;proc~linspace</title>
+<path fill="none" stroke="#000000" d="M53.8726,-209.941C68.5143,-196.918 92.8632,-175.783 115,-159 116.353,-157.974 117.753,-156.939 119.176,-155.907"/>
+<polygon fill="#000000" stroke="#000000" points="121.243,-158.732 127.413,-150.12 117.219,-153.004 121.243,-158.732"/>
+</g>
+<!-- proc~ticks -->
+<g id="proc~~dofillbetween~~CallsGraph_node9" class="node"><title>proc~ticks</title>
+<g id="a_proc~~dofillbetween~~CallsGraph_node9"><a xlink:href="../proc/ticks.html" xlink:title="ticks">
+<polygon fill="#d9534f" stroke="#d9534f" points="174,-98 120,-98 120,-74 174,-74 174,-98"/>
+<text text-anchor="middle" x="147" y="-83.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">ticks</text>
+</a>
+</g>
+</g>
+<!-- proc~dofillbetween&#45;&gt;proc~ticks -->
+<g id="proc~~dofillbetween~~CallsGraph_edge24" class="edge"><title>proc~dofillbetween&#45;&gt;proc~ticks</title>
+<path fill="none" stroke="#000000" d="M48.1481,-209.866C61.0036,-189.8 88.1778,-148.764 115,-117 118.265,-113.133 121.926,-109.183 125.557,-105.454"/>
+<polygon fill="#000000" stroke="#000000" points="128.215,-107.746 132.829,-98.2087 123.275,-102.787 128.215,-107.746"/>
+</g>
+<!-- proc~xylim -->
+<g id="proc~~dofillbetween~~CallsGraph_node10" class="node"><title>proc~xylim</title>
+<g id="a_proc~~dofillbetween~~CallsGraph_node10"><a xlink:href="../proc/xylim.html" xlink:title="xylim">
+<polygon fill="#d9534f" stroke="#d9534f" points="174,-35 120,-35 120,-11 174,-11 174,-35"/>
+<text text-anchor="middle" x="147" y="-20.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">xylim</text>
+</a>
+</g>
+</g>
+<!-- proc~dofillbetween&#45;&gt;proc~xylim -->
+<g id="proc~~dofillbetween~~CallsGraph_edge25" class="edge"><title>proc~dofillbetween&#45;&gt;proc~xylim</title>
+<path fill="none" stroke="#000000" d="M45.3488,-209.777C56.2492,-182.808 84.1605,-116.512 115,-65 119.452,-57.5644 124.903,-49.8235 129.986,-43.0429"/>
+<polygon fill="#000000" stroke="#000000" points="132.801,-45.1232 136.125,-35.0629 127.253,-40.8551 132.801,-45.1232"/>
+</g>
+<!-- pleop -->
+<g id="proc~~dofillbetween~~CallsGraph_node11" class="node"><title>pleop</title>
+<polygon fill="#777777" stroke="#777777" points="269,-570 215,-570 215,-546 269,-546 269,-570"/>
+<text text-anchor="middle" x="242" y="-555.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pleop</text>
+</g>
+<!-- proc~figure&#45;&gt;pleop -->
+<g id="proc~~dofillbetween~~CallsGraph_edge1" class="edge"><title>proc~figure&#45;&gt;pleop</title>
+<path fill="none" stroke="#000000" d="M168.74,-465.096C172.4,-467.756 175.996,-470.757 179,-474 200.918,-497.656 194.095,-512.444 215,-537 215.592,-537.696 216.21,-538.386 216.848,-539.067"/>
+<polygon fill="#000000" stroke="#000000" points="214.524,-541.686 224.21,-545.979 219.315,-536.583 214.524,-541.686"/>
+</g>
+<!-- pladv -->
+<g id="proc~~dofillbetween~~CallsGraph_node12" class="node"><title>pladv</title>
+<polygon fill="#777777" stroke="#777777" points="269,-486 215,-486 215,-462 269,-462 269,-486"/>
+<text text-anchor="middle" x="242" y="-471.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pladv</text>
+</g>
+<!-- proc~figure&#45;&gt;pladv -->
+<g id="proc~~dofillbetween~~CallsGraph_edge2" class="edge"><title>proc~figure&#45;&gt;pladv</title>
+<path fill="none" stroke="#000000" d="M174.401,-458.962C183.906,-461.108 194.799,-463.567 204.983,-465.867"/>
+<polygon fill="#000000" stroke="#000000" points="204.329,-469.308 214.855,-468.096 205.871,-462.479 204.329,-469.308"/>
+</g>
+<!-- plbop -->
+<g id="proc~~dofillbetween~~CallsGraph_node13" class="node"><title>plbop</title>
+<polygon fill="#777777" stroke="#777777" points="269,-528 215,-528 215,-504 269,-504 269,-528"/>
+<text text-anchor="middle" x="242" y="-513.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">plbop</text>
+</g>
+<!-- proc~figure&#45;&gt;plbop -->
+<g id="proc~~dofillbetween~~CallsGraph_edge3" class="edge"><title>proc~figure&#45;&gt;plbop</title>
+<path fill="none" stroke="#000000" d="M165.931,-465.147C179.698,-474.473 198.918,-487.493 214.464,-498.024"/>
+<polygon fill="#000000" stroke="#000000" points="212.882,-501.179 223.124,-503.89 216.807,-495.384 212.882,-501.179"/>
+</g>
+<!-- plssub -->
+<g id="proc~~dofillbetween~~CallsGraph_node14" class="node"><title>plssub</title>
+<polygon fill="#777777" stroke="#777777" points="269,-444 215,-444 215,-420 269,-420 269,-444"/>
+<text text-anchor="middle" x="242" y="-429.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">plssub</text>
+</g>
+<!-- proc~figure&#45;&gt;plssub -->
+<g id="proc~~dofillbetween~~CallsGraph_edge4" class="edge"><title>proc~figure&#45;&gt;plssub</title>
+<path fill="none" stroke="#000000" d="M174.401,-447.038C183.906,-444.892 194.799,-442.433 204.983,-440.133"/>
+<polygon fill="#000000" stroke="#000000" points="205.871,-443.521 214.855,-437.904 204.329,-436.692 205.871,-443.521"/>
+</g>
+<!-- plfill -->
+<g id="proc~~dofillbetween~~CallsGraph_node15" class="node"><title>plfill</title>
+<polygon fill="#777777" stroke="#777777" points="269,-276 215,-276 215,-252 269,-252 269,-276"/>
+<text text-anchor="middle" x="242" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">plfill</text>
+</g>
+<!-- proc~fillbetween&#45;&gt;plfill -->
+<g id="proc~~dofillbetween~~CallsGraph_edge5" class="edge"><title>proc~fillbetween&#45;&gt;plfill</title>
+<path fill="none" stroke="#000000" d="M179.226,-264C187.48,-264 196.455,-264 204.941,-264"/>
+<polygon fill="#000000" stroke="#000000" points="204.969,-267.5 214.969,-264 204.969,-260.5 204.969,-267.5"/>
+</g>
+<!-- proc~subplot&#45;&gt;pladv -->
+<g id="proc~~dofillbetween~~CallsGraph_edge7" class="edge"><title>proc~subplot&#45;&gt;pladv</title>
+<path fill="none" stroke="#000000" d="M156.351,-381.083C168.345,-398.038 191.593,-429.449 215,-453 215.662,-453.666 216.344,-454.332 217.042,-454.995"/>
+<polygon fill="#000000" stroke="#000000" points="215.032,-457.888 224.851,-461.867 219.656,-452.634 215.032,-457.888"/>
+</g>
+<!-- proc~subplot&#45;&gt;plssub -->
+<g id="proc~~dofillbetween~~CallsGraph_edge10" class="edge"><title>proc~subplot&#45;&gt;plssub</title>
+<path fill="none" stroke="#000000" d="M165.931,-381.147C179.698,-390.473 198.918,-403.493 214.464,-414.024"/>
+<polygon fill="#000000" stroke="#000000" points="212.882,-417.179 223.124,-419.89 216.807,-411.384 212.882,-417.179"/>
+</g>
+<!-- plvasp -->
+<g id="proc~~dofillbetween~~CallsGraph_node16" class="node"><title>plvasp</title>
+<polygon fill="#777777" stroke="#777777" points="269,-402 215,-402 215,-378 269,-378 269,-402"/>
+<text text-anchor="middle" x="242" y="-387.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">plvasp</text>
+</g>
+<!-- proc~subplot&#45;&gt;plvasp -->
+<g id="proc~~dofillbetween~~CallsGraph_edge6" class="edge"><title>proc~subplot&#45;&gt;plvasp</title>
+<path fill="none" stroke="#000000" d="M174.401,-374.962C183.906,-377.108 194.799,-379.567 204.983,-381.867"/>
+<polygon fill="#000000" stroke="#000000" points="204.329,-385.308 214.855,-384.096 205.871,-378.479 204.329,-385.308"/>
+</g>
+<!-- plvsta -->
+<g id="proc~~dofillbetween~~CallsGraph_node17" class="node"><title>plvsta</title>
+<polygon fill="#777777" stroke="#777777" points="269,-360 215,-360 215,-336 269,-336 269,-360"/>
+<text text-anchor="middle" x="242" y="-345.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">plvsta</text>
+</g>
+<!-- proc~subplot&#45;&gt;plvsta -->
+<g id="proc~~dofillbetween~~CallsGraph_edge8" class="edge"><title>proc~subplot&#45;&gt;plvsta</title>
+<path fill="none" stroke="#000000" d="M174.401,-363.038C183.906,-360.892 194.799,-358.433 204.983,-356.133"/>
+<polygon fill="#000000" stroke="#000000" points="205.871,-359.521 214.855,-353.904 204.329,-352.692 205.871,-359.521"/>
+</g>
+<!-- plvpor -->
+<g id="proc~~dofillbetween~~CallsGraph_node18" class="node"><title>plvpor</title>
+<polygon fill="#777777" stroke="#777777" points="269,-318 215,-318 215,-294 269,-294 269,-318"/>
+<text text-anchor="middle" x="242" y="-303.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">plvpor</text>
+</g>
+<!-- proc~subplot&#45;&gt;plvpor -->
+<g id="proc~~dofillbetween~~CallsGraph_edge9" class="edge"><title>proc~subplot&#45;&gt;plvpor</title>
+<path fill="none" stroke="#000000" d="M165.931,-356.853C179.698,-347.527 198.918,-334.507 214.464,-323.976"/>
+<polygon fill="#000000" stroke="#000000" points="216.807,-326.616 223.124,-318.11 212.882,-320.821 216.807,-326.616"/>
+</g>
+<!-- pllab -->
+<g id="proc~~dofillbetween~~CallsGraph_node19" class="node"><title>pllab</title>
+<polygon fill="#777777" stroke="#777777" points="269,-234 215,-234 215,-210 269,-210 269,-234"/>
+<text text-anchor="middle" x="242" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pllab</text>
+</g>
+<!-- proc~labels&#45;&gt;pllab -->
+<g id="proc~~dofillbetween~~CallsGraph_edge11" class="edge"><title>proc~labels&#45;&gt;pllab</title>
+<path fill="none" stroke="#000000" d="M174.401,-222C183.807,-222 194.572,-222 204.665,-222"/>
+<polygon fill="#000000" stroke="#000000" points="204.855,-225.5 214.855,-222 204.855,-218.5 204.855,-225.5"/>
+</g>
+<!-- plptex -->
+<g id="proc~~dofillbetween~~CallsGraph_node20" class="node"><title>plptex</title>
+<polygon fill="#777777" stroke="#777777" points="269,-192 215,-192 215,-168 269,-168 269,-192"/>
+<text text-anchor="middle" x="242" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">plptex</text>
+</g>
+<!-- proc~plot&#45;&gt;plptex -->
+<g id="proc~~dofillbetween~~CallsGraph_edge12" class="edge"><title>proc~plot&#45;&gt;plptex</title>
+<path fill="none" stroke="#000000" d="M174.401,-180C183.807,-180 194.572,-180 204.665,-180"/>
+<polygon fill="#000000" stroke="#000000" points="204.855,-183.5 214.855,-180 204.855,-176.5 204.855,-183.5"/>
+</g>
+<!-- plline -->
+<g id="proc~~dofillbetween~~CallsGraph_node21" class="node"><title>plline</title>
+<polygon fill="#777777" stroke="#777777" points="269,-150 215,-150 215,-126 269,-126 269,-150"/>
+<text text-anchor="middle" x="242" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">plline</text>
+</g>
+<!-- proc~plot&#45;&gt;plline -->
+<g id="proc~~dofillbetween~~CallsGraph_edge13" class="edge"><title>proc~plot&#45;&gt;plline</title>
+<path fill="none" stroke="#000000" d="M174.401,-168.077C184.104,-163.695 195.253,-158.66 205.619,-153.978"/>
+<polygon fill="#000000" stroke="#000000" points="207.181,-157.113 214.855,-149.808 204.3,-150.734 207.181,-157.113"/>
+</g>
+<!-- plssym -->
+<g id="proc~~dofillbetween~~CallsGraph_node22" class="node"><title>plssym</title>
+<polygon fill="#777777" stroke="#777777" points="269,-108 215,-108 215,-84 269,-84 269,-108"/>
+<text text-anchor="middle" x="242" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">plssym</text>
+</g>
+<!-- proc~plot&#45;&gt;plssym -->
+<g id="proc~~dofillbetween~~CallsGraph_edge14" class="edge"><title>proc~plot&#45;&gt;plssym</title>
+<path fill="none" stroke="#000000" d="M167.612,-167.88C171.529,-165.142 175.509,-162.117 179,-159 197.34,-142.627 197.363,-134.129 215,-117 215.674,-116.346 216.366,-115.69 217.073,-115.036"/>
+<polygon fill="#000000" stroke="#000000" points="219.674,-117.413 224.932,-108.214 215.086,-112.126 219.674,-117.413"/>
+</g>
+<!-- plbox -->
+<g id="proc~~dofillbetween~~CallsGraph_node23" class="node"><title>plbox</title>
+<polygon fill="#777777" stroke="#777777" points="269,-66 215,-66 215,-42 269,-42 269,-66"/>
+<text text-anchor="middle" x="242" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">plbox</text>
+</g>
+<!-- proc~ticks&#45;&gt;plbox -->
+<g id="proc~~dofillbetween~~CallsGraph_edge15" class="edge"><title>proc~ticks&#45;&gt;plbox</title>
+<path fill="none" stroke="#000000" d="M174.401,-76.9157C184.005,-73.6111 195.026,-69.819 205.302,-66.2834"/>
+<polygon fill="#000000" stroke="#000000" points="206.537,-69.5595 214.855,-62.9963 204.26,-62.9404 206.537,-69.5595"/>
+</g>
+<!-- plwind -->
+<g id="proc~~dofillbetween~~CallsGraph_node24" class="node"><title>plwind</title>
+<polygon fill="#777777" stroke="#777777" points="269,-24 215,-24 215,-0 269,-0 269,-24"/>
+<text text-anchor="middle" x="242" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">plwind</text>
+</g>
+<!-- proc~xylim&#45;&gt;plwind -->
+<g id="proc~~dofillbetween~~CallsGraph_edge16" class="edge"><title>proc~xylim&#45;&gt;plwind</title>
+<path fill="none" stroke="#000000" d="M174.401,-19.8773C183.807,-18.7647 194.572,-17.4915 204.665,-16.2977"/>
+<polygon fill="#000000" stroke="#000000" points="205.335,-19.7429 214.855,-15.0925 204.513,-12.7914 205.335,-19.7429"/>
+</g>
+</g>
+</svg>
+</div>
+                <div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div>
+                <div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                      </div>
+                      <div class="modal-body">
+                        
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.38.0 (20140413.2041)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="560pt" height="32pt"
+ viewBox="0.00 0.00 559.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-28 555.5,-28 555.5,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node"><title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="64,-24 0,-24 0,-0 64,-0 64,-24"/>
+<text text-anchor="middle" x="32" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node"><title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="136,-24 82,-24 82,-0 136,-0 136,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node"><title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="209.5,-24 154.5,-24 154.5,-0 209.5,-0 209.5,-24"/>
+<text text-anchor="middle" x="182" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node4" class="node"><title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="364,-24 228,-24 228,-0 364,-0 364,-24"/>
+<text text-anchor="middle" x="296" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node"><title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="436,-24 382,-24 382,-0 436,-0 436,-24"/>
+<text text-anchor="middle" x="409" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node"><title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="551.5,-24 454.5,-24 454.5,-0 551.5,-0 551.5,-24"/>
+<text text-anchor="middle" x="503" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+
+<p>Solid arrows point from a procedure to one which it calls. Dashed 
+arrows point from an interface to procedures which implement that interface.
+This could include the module procedures in a generic interface or the
+implementation in a submodule of an interface in a parent module.
+</p>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+     
+     
+     <h3>Called By</h3>
+     
+                <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.38.0 (20140413.2041)
+ -->
+<!-- Title: proc~~dofillbetween~~CalledByGraph Pages: 1 -->
+<svg id="procdofillbetweenCalledByGraph" width="203pt" height="32pt"
+ viewBox="0.00 0.00 203.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~dofillbetween~~CalledByGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>proc~~dofillbetween~~CalledByGraph</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-28 199,-28 199,4 -4,4"/>
+<!-- proc~dofillbetween -->
+<g id="proc~~dofillbetween~~CalledByGraph_node1" class="node"><title>proc~dofillbetween</title>
+<polygon fill="none" stroke="black" points="195,-24 116,-24 116,-0 195,-0 195,-24"/>
+<text text-anchor="middle" x="155.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">doFillBetween</text>
+</g>
+<!-- program~examples_prg -->
+<g id="proc~~dofillbetween~~CalledByGraph_node2" class="node"><title>program~examples_prg</title>
+<g id="a_proc~~dofillbetween~~CalledByGraph_node2"><a xlink:href="../program/examples_prg.html" xlink:title="examples_prg">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="80,-24 0,-24 0,-0 80,-0 80,-24"/>
+<text text-anchor="middle" x="40" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">examples_prg</text>
+</a>
+</g>
+</g>
+<!-- program~examples_prg&#45;&gt;proc~dofillbetween -->
+<g id="proc~~dofillbetween~~CalledByGraph_edge1" class="edge"><title>program~examples_prg&#45;&gt;proc~dofillbetween</title>
+<path fill="none" stroke="#000000" d="M80.0603,-12C88.2661,-12 97.0203,-12 105.536,-12"/>
+<polygon fill="#000000" stroke="#000000" points="105.752,-15.5001 115.752,-12 105.752,-8.5001 105.752,-15.5001"/>
+</g>
+</g>
+</svg>
+</div>
+                <div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div>
+                <div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                      </div>
+                      <div class="modal-body">
+                        
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.38.0 (20140413.2041)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="560pt" height="32pt"
+ viewBox="0.00 0.00 559.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-28 555.5,-28 555.5,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node"><title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="64,-24 0,-24 0,-0 64,-0 64,-24"/>
+<text text-anchor="middle" x="32" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node"><title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="136,-24 82,-24 82,-0 136,-0 136,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node"><title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="209.5,-24 154.5,-24 154.5,-0 209.5,-0 209.5,-24"/>
+<text text-anchor="middle" x="182" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node4" class="node"><title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="364,-24 228,-24 228,-0 364,-0 364,-24"/>
+<text text-anchor="middle" x="296" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node"><title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="436,-24 382,-24 382,-0 436,-0 436,-24"/>
+<text text-anchor="middle" x="409" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node"><title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="551.5,-24 454.5,-24 454.5,-0 551.5,-0 551.5,-24"/>
+<text text-anchor="middle" x="503" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+
+<p>Solid arrows point from a procedure to one which it calls. Dashed 
+arrows point from an interface to procedures which implement that interface.
+This could include the module procedures in a generic interface or the
+implementation in a submodule of an interface in a parent module.
+</p>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+     
+    <br>
+
+    <section class="visible-xs visible-sm hidden-md">
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../proc/dofillbetween.html#src">doFillBetween</a>
+  </div>
+</div>
+
+
+    </section>
+    <br class="visible-xs visible-sm hidden-md">
+
+    
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+
+
+    
+    
+    
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="highlight"><pre><span></span>	<span class="k">subroutine </span><span class="n">doFillBetween</span>
+		<span class="c">!! ![fillBetween](|media|/example-7.svg)</span>
+		<span class="kt">integer</span><span class="p">,</span><span class="k">parameter</span><span class="kd">::</span><span class="n">N</span> <span class="o">=</span> <span class="mi">51</span>
+		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(</span><span class="n">N</span><span class="p">)</span><span class="kd">::</span><span class="n">x</span><span class="p">,</span><span class="n">y1</span><span class="p">,</span><span class="n">y2</span>
+		
+		<span class="n">x</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">3.0_wp</span><span class="p">,</span><span class="mf">3.0_wp</span><span class="p">,</span><span class="n">N</span><span class="p">)</span>
+		<span class="n">y1</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="mf">1.0_wp</span>
+		<span class="n">y2</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span><span class="o">-</span><span class="mf">1.0_wp</span>
+		
+		<span class="k">call </span><span class="n">figure</span><span class="p">()</span>
+		<span class="k">call </span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+		<span class="k">call </span><span class="n">xylim</span><span class="p">(</span><span class="n">mixval</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">mixval</span><span class="p">([</span><span class="n">y1</span><span class="p">,</span><span class="n">y2</span><span class="p">]))</span>
+		<span class="k">call </span><span class="n">fillBetween</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y1</span><span class="p">,</span><span class="n">y2</span><span class="p">,</span><span class="n">fillColor</span><span class="o">=</span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="n">fillPattern</span><span class="o">=</span><span class="s1">&#39;#&#39;</span><span class="p">,</span><span class="n">lineWidth</span><span class="o">=</span><span class="mf">2.0_wp</span><span class="p">)</span>
+		<span class="k">call </span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y1</span><span class="p">,</span><span class="n">lineColor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span><span class="n">lineWidth</span><span class="o">=</span><span class="mf">3.0_wp</span><span class="p">)</span>
+		<span class="k">call </span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y2</span><span class="p">,</span><span class="n">lineColor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span><span class="n">lineWidth</span><span class="o">=</span><span class="mf">3.0_wp</span><span class="p">)</span>
+		<span class="k">call </span><span class="n">ticks</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="n">lineWidth</span><span class="o">=</span><span class="mf">3.0_wp</span><span class="p">)</span>
+		<span class="k">call </span><span class="n">labels</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span><span class="s1">&#39;y&#39;</span><span class="p">,</span><span class="s1">&#39;f(x)=x#u2#d-1&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+	<span class="k">end subroutine </span><span class="n">doFillBetween</span>
+</pre></div>
+
+    </section>
+    <br>
+    
+    
+    </div>
+  </div>
+
+  <section class="visible-xs visible-sm hidden-md">
+    <hr>
+    
+
+<div class="panel panel-default">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#allprocs-1">All Procedures</a></h3></div>
+  <div id="allprocs-1" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../interface/abs_t.html">abs_t</a>
+      
+      <a class="list-group-item" href="../interface/acos_t.html">acos_t</a>
+      
+      <a class="list-group-item" href="../interface/add_t.html">add_t</a>
+      
+      <a class="list-group-item" href="../proc/arg.html">arg</a>
+      
+      <a class="list-group-item" href="../proc/arraytochar.html">arrayToChar</a>
+      
+      <a class="list-group-item" href="../interface/asin_t.html">asin_t</a>
+      
+      <a class="list-group-item" href="../interface/assignment%28%3D%29.html">assignment(=)</a>
+      
+      <a class="list-group-item" href="../interface/atan_t.html">atan_t</a>
+      
+      <a class="list-group-item" href="../proc/bar.html">bar</a>
+      
+      <a class="list-group-item" href="../proc/barh.html">barh</a>
+      
+      <a class="list-group-item" href="../interface/bicgstab_t.html">biCGSTAB_t</a>
+      
+      <a class="list-group-item" href="../proc/biconjugategradientstabilized.html">biConjugateGradientStabilized</a>
+      
+      <a class="list-group-item" href="../proc/bindata.html">binData</a>
+      
+      <a class="list-group-item" href="../proc/box.html">box</a>
+      
+      <a class="list-group-item" href="../proc/chartoarray.html">charToArray</a>
+      
+      <a class="list-group-item" href="../proc/checkprecision.html">checkPrecision</a>
+      
+      <a class="list-group-item" href="../proc/colorbar.html">colorbar</a>
+      
+      <a class="list-group-item" href="../proc/colorbar2.html">colorbar2</a>
+      
+      <a class="list-group-item" href="../proc/colorize.html">colorize</a>
+      
+      <a class="list-group-item" href="../proc/colormap.html">colorMap</a>
+      
+      <a class="list-group-item" href="../interface/config_t.html">config_t</a>
+      
+      <a class="list-group-item" href="../interface/conjg.html">conjg</a>
+      
+      <a class="list-group-item" href="../proc/conjugategradient.html">conjugateGradient</a>
+      
+      <a class="list-group-item" href="../interface/conjugategradient_t.html">conjugateGradient_t</a>
+      
+      <a class="list-group-item" href="../proc/contour.html">contour</a>
+      
+      <a class="list-group-item" href="../proc/contourf.html">contourf</a>
+      
+      <a class="list-group-item" href="../interface/cos.html">cos</a>
+      
+      <a class="list-group-item" href="../interface/cos_t.html">cos_t</a>
+      
+      <a class="list-group-item" href="../proc/cputime.html">cpuTime</a>
+      
+      <a class="list-group-item" href="../interface/cubicspline_t.html">cubicSpline_t</a>
+      
+      <a class="list-group-item" href="../proc/dedup.html">deDup</a>
+      
+      <a class="list-group-item" href="../interface/der.html">der</a>
+      
+      <a class="list-group-item" href="../interface/dft.html">DFT</a>
+      
+      <a class="list-group-item" href="../interface/diff1.html">diff1</a>
+      
+      <a class="list-group-item" href="../interface/diff3.html">diff3</a>
+      
+      <a class="list-group-item" href="../interface/div_t.html">div_t</a>
+      
+      <a class="list-group-item" href="../proc/dobar.html">doBar</a>
+      
+      <a class="list-group-item" href="../proc/docontour.html">doContour</a>
+      
+      <a class="list-group-item" href="../proc/doerror.html">doError</a>
+      
+      <a class="list-group-item" href="../proc/dofillbetween.html">doFillBetween</a>
+      
+      <a class="list-group-item" href="../proc/dofunction.html">doFunction</a>
+      
+      <a class="list-group-item" href="../proc/dohist.html">doHist</a>
+      
+      <a class="list-group-item" href="../proc/dolegend.html">doLegend</a>
+      
+      <a class="list-group-item" href="../proc/dologplot.html">doLogPlot</a>
+      
+      <a class="list-group-item" href="../proc/doplot.html">doPlot</a>
+      
+      <a class="list-group-item" href="../proc/doquiver.html">doQuiver</a>
+      
+      <a class="list-group-item" href="../proc/doscatter.html">doScatter</a>
+      
+      <a class="list-group-item" href="../proc/dosurface.html">doSurface</a>
+      
+      <a class="list-group-item" href="../proc/endswith.html">endsWith</a>
+      
+      <a class="list-group-item" href="../proc/errorbar.html">errorbar</a>
+      
+      <a class="list-group-item" href="../proc/eval_test.html">eval_test</a>
+      
+      <a class="list-group-item" href="../proc/eval_testn.html">eval_testN</a>
+      
+      <a class="list-group-item" href="../proc/evalr_abs.html">evalR_abs</a>
+      
+      <a class="list-group-item" href="../proc/evalr_acos.html">evalR_acos</a>
+      
+      <a class="list-group-item" href="../proc/evalr_add.html">evalR_add</a>
+      
+      <a class="list-group-item" href="../proc/evalr_asin.html">evalR_asin</a>
+      
+      <a class="list-group-item" href="../proc/evalr_atan.html">evalR_atan</a>
+      
+      <a class="list-group-item" href="../proc/evalr_cos.html">evalR_cos</a>
+      
+      <a class="list-group-item" href="../proc/evalr_div.html">evalR_div</a>
+      
+      <a class="list-group-item" href="../proc/evalr_exp.html">evalR_exp</a>
+      
+      <a class="list-group-item" href="../proc/evalr_imag.html">evalR_imag</a>
+      
+      <a class="list-group-item" href="../proc/evalr_log.html">evalR_log</a>
+      
+      <a class="list-group-item" href="../proc/evalr_log10.html">evalR_log10</a>
+      
+      <a class="list-group-item" href="../proc/evalr_mul.html">evalR_mul</a>
+      
+      <a class="list-group-item" href="../proc/evalr_neg.html">evalR_neg</a>
+      
+      <a class="list-group-item" href="../interface/evalr_p.html">evalR_p</a>
+      
+      <a class="list-group-item" href="../proc/evalr_pow.html">evalR_pow</a>
+      
+      <a class="list-group-item" href="../proc/evalr_real.html">evalR_real</a>
+      
+      <a class="list-group-item" href="../proc/evalr_sin.html">evalR_sin</a>
+      
+      <a class="list-group-item" href="../proc/evalr_sqrt.html">evalR_sqrt</a>
+      
+      <a class="list-group-item" href="../proc/evalr_sub.html">evalR_sub</a>
+      
+      <a class="list-group-item" href="../proc/evalr_tan.html">evalR_tan</a>
+      
+      <a class="list-group-item" href="../proc/evalr_var.html">evalR_var</a>
+      
+      <a class="list-group-item" href="../proc/evalz_abs.html">evalZ_abs</a>
+      
+      <a class="list-group-item" href="../proc/evalz_acos.html">evalZ_acos</a>
+      
+      <a class="list-group-item" href="../proc/evalz_add.html">evalZ_add</a>
+      
+      <a class="list-group-item" href="../proc/evalz_asin.html">evalZ_asin</a>
+      
+      <a class="list-group-item" href="../proc/evalz_atan.html">evalZ_atan</a>
+      
+      <a class="list-group-item" href="../proc/evalz_cos.html">evalZ_cos</a>
+      
+      <a class="list-group-item" href="../proc/evalz_div.html">evalZ_div</a>
+      
+      <a class="list-group-item" href="../proc/evalz_exp.html">evalZ_exp</a>
+      
+      <a class="list-group-item" href="../proc/evalz_imag.html">evalZ_imag</a>
+      
+      <a class="list-group-item" href="../proc/evalz_log.html">evalZ_log</a>
+      
+      <a class="list-group-item" href="../proc/evalz_log10.html">evalZ_log10</a>
+      
+      <a class="list-group-item" href="../proc/evalz_mul.html">evalZ_mul</a>
+      
+      <a class="list-group-item" href="../proc/evalz_neg.html">evalZ_neg</a>
+      
+      <a class="list-group-item" href="../interface/evalz_p.html">evalZ_p</a>
+      
+      <a class="list-group-item" href="../proc/evalz_pow.html">evalZ_pow</a>
+      
+      <a class="list-group-item" href="../proc/evalz_real.html">evalZ_real</a>
+      
+      <a class="list-group-item" href="../proc/evalz_sin.html">evalZ_sin</a>
+      
+      <a class="list-group-item" href="../proc/evalz_sqrt.html">evalZ_sqrt</a>
+      
+      <a class="list-group-item" href="../proc/evalz_sub.html">evalZ_sub</a>
+      
+      <a class="list-group-item" href="../proc/evalz_tan.html">evalZ_tan</a>
+      
+      <a class="list-group-item" href="../proc/evalz_var.html">evalZ_var</a>
+      
+      <a class="list-group-item" href="../interface/exp.html">exp</a>
+      
+      <a class="list-group-item" href="../interface/exp%7E2.html">exp</a>
+      
+      <a class="list-group-item" href="../interface/exp_t.html">exp_t</a>
+      
+      <a class="list-group-item" href="../proc/f.html">f</a>
+      
+      <a class="list-group-item" href="../interface/fft.html">FFT</a>
+      
+      <a class="list-group-item" href="../proc/fft_freq.html">FFT_freq</a>
+      
+      <a class="list-group-item" href="../proc/figure.html">figure</a>
+      
+      <a class="list-group-item" href="../proc/fillbetween.html">fillBetween</a>
+      
+      <a class="list-group-item" href="../proc/fillbetweenx.html">fillBetweenx</a>
+      
+      <a class="list-group-item" href="../proc/findinterval.html">findInterval</a>
+      
+      <a class="list-group-item" href="../interface/flatten.html">flatten</a>
+      
+      <a class="list-group-item" href="../interface/function_t.html">function_t</a>
+      
+      <a class="list-group-item" href="../proc/gaussseidel.html">gaussSeidel</a>
+      
+      <a class="list-group-item" href="../interface/gaussseidel_t.html">gaussSeidel_t</a>
+      
+      <a class="list-group-item" href="../proc/get_adn.html">get_adN</a>
+      
+      <a class="list-group-item" href="../proc/hist.html">hist</a>
+      
+      <a class="list-group-item" href="../interface/idft.html">iDFT</a>
+      
+      <a class="list-group-item" href="../interface/ifft.html">iFFT</a>
+      
+      <a class="list-group-item" href="../interface/imag_t.html">imag_t</a>
+      
+      <a class="list-group-item" href="../proc/inttochar.html">intToChar</a>
+      
+      <a class="list-group-item" href="../proc/inv.html">inv</a>
+      
+      <a class="list-group-item" href="../proc/jacobi.html">jacobi</a>
+      
+      <a class="list-group-item" href="../interface/jacobi_t.html">jacobi_t</a>
+      
+      <a class="list-group-item" href="../proc/labels.html">labels</a>
+      
+      <a class="list-group-item" href="../proc/legend.html">legend</a>
+      
+      <a class="list-group-item" href="../proc/linearinterp.html">linearInterp</a>
+      
+      <a class="list-group-item" href="../interface/linearspline_t.html">linearSpline_t</a>
+      
+      <a class="list-group-item" href="../interface/linesearch_t.html">lineSearch_t</a>
+      
+      <a class="list-group-item" href="../proc/linspace.html">linspace</a>
+      
+      <a class="list-group-item" href="../interface/log.html">log</a>
+      
+      <a class="list-group-item" href="../interface/log%7E2.html">log</a>
+      
+      <a class="list-group-item" href="../interface/log10.html">log10</a>
+      
+      <a class="list-group-item" href="../interface/log10_t.html">log10_t</a>
+      
+      <a class="list-group-item" href="../interface/log_t.html">log_t</a>
+      
+      <a class="list-group-item" href="../proc/makelogo.html">makeLogo</a>
+      
+      <a class="list-group-item" href="../interface/matmul.html">matmul</a>
+      
+      <a class="list-group-item" href="../interface/matmul%7E2.html">matmul</a>
+      
+      <a class="list-group-item" href="../interface/maxval.html">maxval</a>
+      
+      <a class="list-group-item" href="../proc/mean.html">mean</a>
+      
+      <a class="list-group-item" href="../proc/meshgridx.html">meshGridX</a>
+      
+      <a class="list-group-item" href="../proc/meshgridy.html">meshGridY</a>
+      
+      <a class="list-group-item" href="../proc/minimumresidual.html">minimumResidual</a>
+      
+      <a class="list-group-item" href="../interface/minval.html">minval</a>
+      
+      <a class="list-group-item" href="../interface/mixval.html">mixval</a>
+      
+      <a class="list-group-item" href="../interface/mul_t.html">mul_t</a>
+      
+      <a class="list-group-item" href="../interface/neg_t.html">neg_t</a>
+      
+      <a class="list-group-item" href="../proc/newabs.html">newAbs</a>
+      
+      <a class="list-group-item" href="../proc/newacos.html">newAcos</a>
+      
+      <a class="list-group-item" href="../proc/newadd.html">newAdd</a>
+      
+      <a class="list-group-item" href="../proc/newasin.html">newAsin</a>
+      
+      <a class="list-group-item" href="../proc/newatan.html">newAtan</a>
+      
+      <a class="list-group-item" href="../proc/newcos.html">newCos</a>
+      
+      <a class="list-group-item" href="../proc/newdiv.html">newDiv</a>
+      
+      <a class="list-group-item" href="../proc/newexp.html">newExp</a>
+      
+      <a class="list-group-item" href="../proc/newimag.html">newImag</a>
+      
+      <a class="list-group-item" href="../proc/newiterator.html">newIterator</a>
+      
+      <a class="list-group-item" href="../proc/newlog.html">newLog</a>
+      
+      <a class="list-group-item" href="../proc/newlog10.html">newLog10</a>
+      
+      <a class="list-group-item" href="../proc/newmul.html">newMul</a>
+      
+      <a class="list-group-item" href="../proc/newneg.html">newNeg</a>
+      
+      <a class="list-group-item" href="../proc/newnodestack.html">newNodeStack</a>
+      
+      <a class="list-group-item" href="../proc/newpow.html">newPow</a>
+      
+      <a class="list-group-item" href="../proc/newreal.html">newReal</a>
+      
+      <a class="list-group-item" href="../proc/newsin.html">newSin</a>
+      
+      <a class="list-group-item" href="../proc/newsparse.html">newSparse</a>
+      
+      <a class="list-group-item" href="../proc/newspvec.html">newSpvec</a>
+      
+      <a class="list-group-item" href="../proc/newsqrt.html">newSqrt</a>
+      
+      <a class="list-group-item" href="../proc/newsub.html">newSub</a>
+      
+      <a class="list-group-item" href="../proc/newtan.html">newTan</a>
+      
+      <a class="list-group-item" href="../proc/newtoken.html">newToken</a>
+      
+      <a class="list-group-item" href="../proc/newvar.html">newVar</a>
+      
+      <a class="list-group-item" href="../interface/nodestack_t.html">nodeStack_t</a>
+      
+      <a class="list-group-item" href="../interface/norm2.html">norm2</a>
+      
+      <a class="list-group-item" href="../interface/operator%28%2A%29.html">operator(*)</a>
+      
+      <a class="list-group-item" href="../interface/operator%28%2A%29%7E2.html">operator(*)</a>
+      
+      <a class="list-group-item" href="../interface/operator%28%2A%29%7E3.html">operator(*)</a>
+      
+      <a class="list-group-item" href="../interface/operator%28%2A%2A%29.html">operator(**)</a>
+      
+      <a class="list-group-item" href="../interface/operator%28%2B%29.html">operator(+)</a>
+      
+      <a class="list-group-item" href="../interface/operator%28%2B%29%7E2.html">operator(+)</a>
+      
+      <a class="list-group-item" href="../interface/operator%28%2B%29%7E3.html">operator(+)</a>
+      
+      <a class="list-group-item" href="../interface/operator%28-%29.html">operator(-)</a>
+      
+      <a class="list-group-item" href="../interface/operator%28-%29%7E2.html">operator(-)</a>
+      
+      <a class="list-group-item" href="../interface/operator%28.d.%29.html">operator(.d.)</a>
+      
+      <a class="list-group-item" href="../interface/operator%28.o.%29.html">operator(.o.)</a>
+      
+      <a class="list-group-item" href="../interface/operator%28.o.%29%7E2.html">operator(.o.)</a>
+      
+      <a class="list-group-item" href="../interface/operator%28.oo.%29.html">operator(.oo.)</a>
+      
+      <a class="list-group-item" href="../interface/operator%28.sx.%29.html">operator(.sx.)</a>
+      
+      <a class="list-group-item" href="../interface/operator%28.x.%29.html">operator(.x.)</a>
+      
+      <a class="list-group-item" href="../interface/operator%28SLASH%29.html">operator(/)</a>
+      
+      <a class="list-group-item" href="../interface/operator%28SLASH%29%7E2.html">operator(/)</a>
+      
+      <a class="list-group-item" href="../proc/plot.html">plot</a>
+      
+      <a class="list-group-item" href="../proc/plot3.html">plot3</a>
+      
+      <a class="list-group-item" href="../proc/pop.html">pop</a>
+      
+      <a class="list-group-item" href="../interface/pow_t.html">pow_t</a>
+      
+      <a class="list-group-item" href="../proc/printtypes.html">printTypes</a>
+      
+      <a class="list-group-item" href="../proc/push.html">push</a>
+      
+      <a class="list-group-item" href="../interface/quat_t.html">quat_t</a>
+      
+      <a class="list-group-item" href="../proc/quiver.html">quiver</a>
+      
+      <a class="list-group-item" href="../interface/randomnormal.html">randomNormal</a>
+      
+      <a class="list-group-item" href="../interface/randomuniform.html">randomUniform</a>
+      
+      <a class="list-group-item" href="../proc/readgrid.html">readGrid</a>
+      
+      <a class="list-group-item" href="../interface/readstep.html">readStep</a>
+      
+      <a class="list-group-item" href="../interface/real.html">real</a>
+      
+      <a class="list-group-item" href="../interface/real_t.html">real_t</a>
+      
+      <a class="list-group-item" href="../proc/realtochar.html">realToChar</a>
+      
+      <a class="list-group-item" href="../proc/realtotime.html">realToTime</a>
+      
+      <a class="list-group-item" href="../proc/removespaces.html">removeSpaces</a>
+      
+      <a class="list-group-item" href="../proc/scaler.html">scaler</a>
+      
+      <a class="list-group-item" href="../proc/scatter.html">scatter</a>
+      
+      <a class="list-group-item" href="../proc/set_adn.html">set_adN</a>
+      
+      <a class="list-group-item" href="../proc/setrandomseed.html">setRandomSeed</a>
+      
+      <a class="list-group-item" href="../proc/setup.html">setup</a>
+      
+      <a class="list-group-item" href="../proc/show.html">show</a>
+      
+      <a class="list-group-item" href="../proc/showprogress.html">showProgress</a>
+      
+      <a class="list-group-item" href="../interface/sin.html">sin</a>
+      
+      <a class="list-group-item" href="../interface/sin_t.html">sin_t</a>
+      
+      <a class="list-group-item" href="../interface/solvelu.html">solveLU</a>
+      
+      <a class="list-group-item" href="../proc/solverprogress.html">solverProgress</a>
+      
+      <a class="list-group-item" href="../interface/sor_t.html">SOR_t</a>
+      
+      <a class="list-group-item" href="../interface/span.html">span</a>
+      
+      <a class="list-group-item" href="../interface/sqrt.html">sqrt</a>
+      
+      <a class="list-group-item" href="../interface/sqrt_t.html">sqrt_t</a>
+      
+      <a class="list-group-item" href="../proc/startreport.html">startReport</a>
+      
+      <a class="list-group-item" href="../proc/startswith.html">startsWith</a>
+      
+      <a class="list-group-item" href="../proc/stdev.html">stDev</a>
+      
+      <a class="list-group-item" href="../proc/steepestdescent.html">steepestDescent</a>
+      
+      <a class="list-group-item" href="../interface/sub_t.html">sub_t</a>
+      
+      <a class="list-group-item" href="../proc/subplot.html">subplot</a>
+      
+      <a class="list-group-item" href="../proc/successiveoverrelaxation.html">successiveOverRelaxation</a>
+      
+      <a class="list-group-item" href="../interface/sum.html">sum</a>
+      
+      <a class="list-group-item" href="../interface/sum%7E2.html">sum</a>
+      
+      <a class="list-group-item" href="../proc/surface.html">surface</a>
+      
+      <a class="list-group-item" href="../proc/symmetricgaussseidel.html">symmetricGaussSeidel</a>
+      
+      <a class="list-group-item" href="../proc/symmetricsuccessiveoverrelaxation.html">symmetricSuccessiveOverRelaxation</a>
+      
+      <a class="list-group-item" href="../interface/tan_t.html">tan_t</a>
+      
+      <a class="list-group-item" href="../interface/tdma.html">TDMA</a>
+      
+      <a class="list-group-item" href="../proc/testbasic.html">testBasic</a>
+      
+      <a class="list-group-item" href="../proc/testbasicsolvers.html">testBasicSolvers</a>
+      
+      <a class="list-group-item" href="../proc/testcolorize.html">testColorize</a>
+      
+      <a class="list-group-item" href="../proc/testcolormap.html">testColorMap</a>
+      
+      <a class="list-group-item" href="../proc/testconstants.html">testConstants</a>
+      
+      <a class="list-group-item" href="../proc/testcputime.html">testCpuTime</a>
+      
+      <a class="list-group-item" href="../proc/testdedup.html">testDeDup</a>
+      
+      <a class="list-group-item" href="../proc/testdiff.html">testDiff</a>
+      
+      <a class="list-group-item" href="../proc/testdot.html">testDot</a>
+      
+      <a class="list-group-item" href="../proc/testendswith.html">testEndsWith</a>
+      
+      <a class="list-group-item" href="../proc/testfft.html">testFFT</a>
+      
+      <a class="list-group-item" href="../proc/testflatten.html">testFlatten</a>
+      
+      <a class="list-group-item" href="../proc/testfunction.html">testFunction</a>
+      
+      <a class="list-group-item" href="../proc/testifft.html">testIFFT</a>
+      
+      <a class="list-group-item" href="../proc/testinttochar.html">testIntToChar</a>
+      
+      <a class="list-group-item" href="../proc/testlinearinterp.html">testLinearInterp</a>
+      
+      <a class="list-group-item" href="../proc/testlinspace.html">testLinspace</a>
+      
+      <a class="list-group-item" href="../proc/testlu.html">testLU</a>
+      
+      <a class="list-group-item" href="../proc/testmean.html">testMean</a>
+      
+      <a class="list-group-item" href="../proc/testmeshgrid.html">testMeshGrid</a>
+      
+      <a class="list-group-item" href="../proc/testmixval.html">testMixval</a>
+      
+      <a class="list-group-item" href="../proc/testnewconfig.html">testNewConfig</a>
+      
+      <a class="list-group-item" href="../proc/testnewsparse.html">testNewSparse</a>
+      
+      <a class="list-group-item" href="../proc/testnewspline.html">testNewSpline</a>
+      
+      <a class="list-group-item" href="../proc/testnext.html">testNext</a>
+      
+      <a class="list-group-item" href="../proc/testobjective.html">testObjective</a>
+      
+      <a class="list-group-item" href="../proc/testobjectiven.html">testObjectiveN</a>
+      
+      <a class="list-group-item" href="../proc/testplot.html">testPlot</a>
+      
+      <a class="list-group-item" href="../proc/testprecision.html">testPrecision</a>
+      
+      <a class="list-group-item" href="../proc/testrandomnormal.html">testRandomNormal</a>
+      
+      <a class="list-group-item" href="../proc/testrandomuniform.html">testRandomUniform</a>
+      
+      <a class="list-group-item" href="../proc/testread.html">testRead</a>
+      
+      <a class="list-group-item" href="../proc/testreadgmsh.html">testReadGmsh</a>
+      
+      <a class="list-group-item" href="../proc/testrealtochar.html">testRealToChar</a>
+      
+      <a class="list-group-item" href="../proc/testrealtotime.html">testRealToTime</a>
+      
+      <a class="list-group-item" href="../proc/testremovespaces.html">testRemoveSpaces</a>
+      
+      <a class="list-group-item" href="../proc/testsetrandomseed.html">testSetRandomSeed</a>
+      
+      <a class="list-group-item" href="../proc/testsolvers.html">testSolvers</a>
+      
+      <a class="list-group-item" href="../proc/testspan.html">testSpan</a>
+      
+      <a class="list-group-item" href="../proc/testsplinex.html">testSplineX</a>
+      
+      <a class="list-group-item" href="../proc/testspvec.html">testSpvec</a>
+      
+      <a class="list-group-item" href="../proc/teststartswith.html">testStartsWith</a>
+      
+      <a class="list-group-item" href="../proc/teststdev.html">testStDev</a>
+      
+      <a class="list-group-item" href="../proc/testtdma.html">testTDMA</a>
+      
+      <a class="list-group-item" href="../proc/testwalltime.html">testWallTime</a>
+      
+      <a class="list-group-item" href="../proc/testwrite.html">testWrite</a>
+      
+      <a class="list-group-item" href="../proc/testwritemat.html">testWriteMat</a>
+      
+      <a class="list-group-item" href="../proc/testwritevtk.html">testWriteVTK</a>
+      
+      <a class="list-group-item" href="../proc/testwritevtk%7E2.html">testWriteVTK</a>
+      
+      <a class="list-group-item" href="../proc/ticks.html">ticks</a>
+      
+      <a class="list-group-item" href="../proc/title.html">title</a>
+      
+      <a class="list-group-item" href="../interface/token_t.html">token_t</a>
+      
+      <a class="list-group-item" href="../proc/tokenize.html">tokenize</a>
+      
+      <a class="list-group-item" href="../proc/torpn.html">toRPN</a>
+      
+      <a class="list-group-item" href="../interface/transpose.html">transpose</a>
+      
+      <a class="list-group-item" href="../interface/v2m.html">v2m</a>
+      
+      <a class="list-group-item" href="../interface/var_t.html">var_t</a>
+      
+      <a class="list-group-item" href="../proc/vector.html">vector</a>
+      
+      <a class="list-group-item" href="../proc/wait.html">wait</a>
+      
+      <a class="list-group-item" href="../proc/walltime.html">wallTime</a>
+      
+      <a class="list-group-item" href="../proc/wireframe.html">wireframe</a>
+      
+      <a class="list-group-item" href="../proc/writegrid.html">writeGrid</a>
+      
+      <a class="list-group-item" href="../interface/writegridvtk.html">writeGridVTK</a>
+      
+      <a class="list-group-item" href="../proc/writeheadervtk.html">writeHeaderVTK</a>
+      
+      <a class="list-group-item" href="../interface/writemat.html">writeMat</a>
+      
+      <a class="list-group-item" href="../interface/writescalarvtk.html">writeScalarVTK</a>
+      
+      <a class="list-group-item" href="../interface/writestep.html">writeStep</a>
+      
+      <a class="list-group-item" href="../interface/writevectorvtk.html">writeVectorVTK</a>
+      
+      <a class="list-group-item" href="../proc/xlabel.html">xlabel</a>
+      
+      <a class="list-group-item" href="../proc/xlim.html">xlim</a>
+      
+      <a class="list-group-item" href="../proc/xticks.html">xticks</a>
+      
+      <a class="list-group-item" href="../proc/xylim.html">xylim</a>
+      
+      <a class="list-group-item" href="../proc/xyzlim.html">xyzlim</a>
+      
+      <a class="list-group-item" href="../proc/ylabel.html">ylabel</a>
+      
+      <a class="list-group-item" href="../proc/ylim.html">ylim</a>
+      
+      <a class="list-group-item" href="../proc/yticks.html">yticks</a>
+      
+    </div>
+  </div>
+</div>
+
+
+  </section>
+
+    <hr>    
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-md-4"><p>&copy; 2016 </p></div>
+        <div class="col-xs-6 col-md-4 col-md-push-4">
+          <p class="text-right">
+            Documentation generated by 
+            <a href="https://github.com/cmacmackin/ford">FORD</a>
+            
+          </p>
+        </div>
+        <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> CommonModules was developed by Kyle Horne</p></div>
+      </div>
+      <br>
+      </div> <!-- /container -->    
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+-->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- MathJax JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js'],
+        'HTML-CSS': { 
+           styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: '#000000 ! important'} }
+        }
+      });
+    </script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  </body>
+</html>

@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	 
+	 <meta name="description" content="Common modules for using in other programs">
+    
+    <meta name="author" content="Chris MacMackin" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>testFourier_prg &ndash; CommonModules</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+    
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+
+    
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">CommonModules </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+				
+            <li><a href='../page/index.html'>Instructions</a></li>
+	    
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+              data-toggle="dropdown" role="button"
+              aria-haspopup="true"
+		 aria-expanded="false">Contents <span class="caret"></span></a>
+	      <ul class="dropdown-menu">
+              
+            <li><a href="../lists/files.html">Source Files</a></li>
+				
+				
+            <li><a href="../lists/modules.html">Modules</a></li>
+				
+            
+                                
+            <li><a href="../lists/procedures.html">Procedures</a></li>
+				
+								
+            <li><a href="../lists/types.html">Derived Types</a></li>
+				
+				
+            <li><a href="../lists/programs.html">Programs</a></li>
+				
+            </ul>
+            </li>
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
+
+                             
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/programs.html">Programs</a></li>
+
+          </ul>
+        
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    
+  
+  <div class="row">
+    <h1>testFourier_prg
+    <small>Program</small>
+    
+    </h1>
+    
+<div class="row">
+  <div class="col-lg-12">
+<div class="well well-sm">
+  <ul class="list-inline" style="margin-bottom:0px;display:inline">
+     
+     
+     
+     
+    
+    
+     <li><i class="fa fa-list-ol"></i>
+       <a data-toggle="tooltip"
+	  data-placement="bottom" data-html="true"
+	  title=" 3.0% of total for programs.">37 statements</a>
+     </li> 
+     
+     
+    <li><i class="fa fa-code"></i><a href="../src/testFourier.f90"> Source File</a></li>
+     
+  </ul>
+  <ol class="breadcrumb in-well text-right">
+  
+     <li><a href='../sourcefile/testfourier.f90.html'>testFourier.f90</a></li>
+  
+     <li class="active">testFourier_prg</li>
+  </ol>
+</div>
+</div>
+</div>
+<script>
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+    
+<div id="sidebar">
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-0">Subroutines</a></h3></div>
+  <div class="list-group">
+    <div id="subs-0" class="panel-collapse collapse">
+      
+      <a class="list-group-item" href="../program/testfourier_prg.html#proc-testfft">testFFT</a>
+      
+      <a class="list-group-item" href="../program/testfourier_prg.html#proc-testifft">testIFFT</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../program/testfourier_prg.html#src">testFourier_prg</a>
+  </div>
+</div>
+
+
+  <hr>
+  
+
+<div class="panel panel-default">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#allprogs-0">All Programs</a></h3></div>
+  <div id="allprogs-0" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../program/animate_prg.html">animate_prg</a>
+      
+      <a class="list-group-item" href="../program/basic_prg.html">basic_prg</a>
+      
+      <a class="list-group-item" href="../program/examples_prg.html">examples_prg</a>
+      
+      <a class="list-group-item" href="../program/logo_prg.html">logo_prg</a>
+      
+      <a class="list-group-item" href="../program/testarray_prg.html">testArray_prg</a>
+      
+      <a class="list-group-item" href="../program/testautodiff_prg.html">testAutoDiff_prg</a>
+      
+      <a class="list-group-item" href="../program/testconfig_prg.html">testConfig_prg</a>
+      
+      <a class="list-group-item" href="../program/testeval_prg.html">testEval_prg</a>
+      
+      <a class="list-group-item" href="../program/testfourier_prg.html">testFourier_prg</a>
+      
+      <a class="list-group-item" href="../program/testiterate_prg.html">testIterate_prg</a>
+      
+      <a class="list-group-item" href="../program/testkinds_prg.html">testKinds_prg</a>
+      
+      <a class="list-group-item" href="../program/testmatio_prg.html">testMatIO_prg</a>
+      
+      <a class="list-group-item" href="../program/testmesh_prg.html">testMesh_prg</a>
+      
+      <a class="list-group-item" href="../program/testnetcdf_prg.html">testNetCDF_prg</a>
+      
+      <a class="list-group-item" href="../program/testoptimize_prg.html">testOptimize_prg</a>
+      
+      <a class="list-group-item" href="../program/testquaternion_prg.html">testQuaternion_prg</a>
+      
+      <a class="list-group-item" href="../program/testsparse_prg.html">testSparse_prg</a>
+      
+      <a class="list-group-item" href="../program/testspline_prg.html">testSpline_prg</a>
+      
+      <a class="list-group-item" href="../program/teststats_prg.html">testStats_prg</a>
+      
+      <a class="list-group-item" href="../program/testtensor_prg.html">testTensor_prg</a>
+      
+      <a class="list-group-item" href="../program/testtext_prg.html">testText_prg</a>
+      
+      <a class="list-group-item" href="../program/testtime_prg.html">testTime_prg</a>
+      
+      <a class="list-group-item" href="../program/testvtkio_prg.html">testVtkIO_prg</a>
+      
+    </div>
+  </div>
+</div>
+
+
+</div>  
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    
+  
+    <ul class="list-inline">
+      <li><h4>Uses:</h4></li>
+      
+      <li><a href='../module/kinds_mod.html'>kinds_mod</a></li>
+      
+      <li><a href='../module/fourier_mod.html'>fourier_mod</a></li>
+      
+    </ul>
+    
+                <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.38.0 (20140413.2041)
+ -->
+<!-- Title: program~~testfourier_prg~~UsesGraph Pages: 1 -->
+<svg id="programtestfourier_prgUsesGraph" width="314pt" height="116pt"
+ viewBox="0.00 0.00 314.00 116.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="program~~testfourier_prg~~UsesGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 112)">
+<title>program~~testfourier_prg~~UsesGraph</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-112 310,-112 310,4 -4,4"/>
+<!-- program~testfourier_prg -->
+<g id="program~~testfourier_prg~~UsesGraph_node1" class="node"><title>program~testfourier_prg</title>
+<polygon fill="none" stroke="black" points="306,-86 220,-86 220,-62 306,-62 306,-86"/>
+<text text-anchor="middle" x="263" y="-71.6" font-family="Helvetica,sans-Serif" font-size="10.50">testFourier_prg</text>
+</g>
+<!-- module~kinds_mod -->
+<g id="program~~testfourier_prg~~UsesGraph_node2" class="node"><title>module~kinds_mod</title>
+<g id="a_program~~testfourier_prg~~UsesGraph_node2"><a xlink:href="../module/kinds_mod.html" xlink:title="kinds_mod">
+<polygon fill="#337ab7" stroke="#337ab7" points="71,-108 7,-108 7,-84 71,-84 71,-108"/>
+<text text-anchor="middle" x="39" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">kinds_mod</text>
+</a>
+</g>
+</g>
+<!-- module~kinds_mod&#45;&gt;program~testfourier_prg -->
+<g id="program~~testfourier_prg~~UsesGraph_edge4" class="edge"><title>module~kinds_mod&#45;&gt;program~testfourier_prg</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M71.3363,-92.8946C107.297,-89.3309 166.836,-83.4306 209.823,-79.1707"/>
+<polygon fill="#000000" stroke="#000000" points="210.216,-82.649 219.822,-78.1798 209.526,-75.6831 210.216,-82.649"/>
+</g>
+<!-- module~fourier_mod -->
+<g id="program~~testfourier_prg~~UsesGraph_node3" class="node"><title>module~fourier_mod</title>
+<g id="a_program~~testfourier_prg~~UsesGraph_node3"><a xlink:href="../module/fourier_mod.html" xlink:title="fourier_mod">
+<polygon fill="#337ab7" stroke="#337ab7" points="184,-66 114,-66 114,-42 184,-42 184,-66"/>
+<text text-anchor="middle" x="149" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">fourier_mod</text>
+</a>
+</g>
+</g>
+<!-- module~kinds_mod&#45;&gt;module~fourier_mod -->
+<g id="program~~testfourier_prg~~UsesGraph_edge2" class="edge"><title>module~kinds_mod&#45;&gt;module~fourier_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M70.9485,-83.9645C82.359,-79.527 95.4602,-74.4322 107.584,-69.7173"/>
+<polygon fill="#000000" stroke="#000000" points="108.996,-72.9238 117.047,-66.0373 106.458,-66.3998 108.996,-72.9238"/>
+</g>
+<!-- module~fourier_mod&#45;&gt;program~testfourier_prg -->
+<g id="program~~testfourier_prg~~UsesGraph_edge5" class="edge"><title>module~fourier_mod&#45;&gt;program~testfourier_prg</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M184.212,-60.1093C192.258,-61.546 201.014,-63.1096 209.653,-64.6524"/>
+<polygon fill="#000000" stroke="#000000" points="209.233,-68.1326 219.693,-66.4451 210.464,-61.2416 209.233,-68.1326"/>
+</g>
+<!-- fftw3_mod -->
+<g id="program~~testfourier_prg~~UsesGraph_node4" class="node"><title>fftw3_mod</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="70,-66 8,-66 8,-42 70,-42 70,-66"/>
+<text text-anchor="middle" x="39" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">fftw3_mod</text>
+</g>
+<!-- fftw3_mod&#45;&gt;module~fourier_mod -->
+<g id="program~~testfourier_prg~~UsesGraph_edge1" class="edge"><title>fftw3_mod&#45;&gt;module~fourier_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M70.084,-54C80.5014,-54 92.4069,-54 103.723,-54"/>
+<polygon fill="#000000" stroke="#000000" points="103.891,-57.5001 113.891,-54 103.891,-50.5001 103.891,-57.5001"/>
+</g>
+<!-- iso_c_binding -->
+<g id="program~~testfourier_prg~~UsesGraph_node5" class="node"><title>iso_c_binding</title>
+<g id="a_program~~testfourier_prg~~UsesGraph_node5"><a xlink:href="https://software.intel.com/en-us/node/511038" xlink:title="iso_c_binding">
+<polygon fill="#337ab7" stroke="#337ab7" points="78,-24 0,-24 0,-0 78,-0 78,-24"/>
+<text text-anchor="middle" x="39" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">iso_c_binding</text>
+</a>
+</g>
+</g>
+<!-- iso_c_binding&#45;&gt;module~fourier_mod -->
+<g id="program~~testfourier_prg~~UsesGraph_edge3" class="edge"><title>iso_c_binding&#45;&gt;module~fourier_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M70.9485,-24.0355C82.359,-28.473 95.4602,-33.5678 107.584,-38.2827"/>
+<polygon fill="#000000" stroke="#000000" points="106.458,-41.6002 117.047,-41.9627 108.996,-35.0762 106.458,-41.6002"/>
+</g>
+</g>
+</svg>
+</div>
+                <div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div>
+                <div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                      </div>
+                      <div class="modal-body">
+                        
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.38.0 (20140413.2041)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="490pt" height="32pt"
+ viewBox="0.00 0.00 489.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-28 485.5,-28 485.5,4 -4,4"/>
+<!-- Module -->
+<g id="node1" class="node"><title>Module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-24 0,-24 0,-0 54,-0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Module</text>
+</g>
+<!-- Submodule -->
+<g id="node2" class="node"><title>Submodule</title>
+<polygon fill="#5bc0de" stroke="#5bc0de" points="139.5,-24 72.5,-24 72.5,-0 139.5,-0 139.5,-24"/>
+<text text-anchor="middle" x="106" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Submodule</text>
+</g>
+<!-- Subroutine -->
+<g id="node3" class="node"><title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="222,-24 158,-24 158,-0 222,-0 222,-24"/>
+<text text-anchor="middle" x="190" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node4" class="node"><title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="294,-24 240,-24 240,-0 294,-0 294,-24"/>
+<text text-anchor="middle" x="267" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node"><title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="366,-24 312,-24 312,-0 366,-0 366,-24"/>
+<text text-anchor="middle" x="339" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node"><title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="481.5,-24 384.5,-24 384.5,-0 481.5,-0 481.5,-24"/>
+<text text-anchor="middle" x="433" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+
+<p>Solid arrows point from a parent (sub)module to the submodule which is
+descended from it. Dashed arrows point from a module being used to the
+module or program unit using it.
+</p>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+    
+
+    <br><br>
+    <p>Test program for fourier_mod<br>
+ </p><div class="alert alert-success" role="alert"><h4>Todo</h4><p>Add tests for 2d transforms<br>
+ Add tests for 2d inverse transforms</p></div>
+    
+     <h3>Calls</h3>
+     
+                <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.38.0 (20140413.2041)
+ -->
+<!-- Title: program~~testfourier_prg~~CallsGraph Pages: 1 -->
+<svg id="programtestfourier_prgCallsGraph" width="278pt" height="116pt"
+ viewBox="0.00 0.00 278.00 116.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="program~~testfourier_prg~~CallsGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 112)">
+<title>program~~testfourier_prg~~CallsGraph</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-112 274,-112 274,4 -4,4"/>
+<!-- program~testfourier_prg -->
+<g id="program~~testfourier_prg~~CallsGraph_node1" class="node"><title>program~testfourier_prg</title>
+<polygon fill="none" stroke="black" points="86,-45 0,-45 0,-21 86,-21 86,-45"/>
+<text text-anchor="middle" x="43" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50">testFourier_prg</text>
+</g>
+<!-- proc~testifft -->
+<g id="program~~testfourier_prg~~CallsGraph_node2" class="node"><title>proc~testifft</title>
+<g id="a_program~~testfourier_prg~~CallsGraph_node2"><a xlink:href="../proc/testifft.html" xlink:title="testIFFT">
+<polygon fill="#d9534f" stroke="#d9534f" points="176,-66 122,-66 122,-42 176,-42 176,-66"/>
+<text text-anchor="middle" x="149" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">testIFFT</text>
+</a>
+</g>
+</g>
+<!-- program~testfourier_prg&#45;&gt;proc~testifft -->
+<g id="program~~testfourier_prg~~CallsGraph_edge6" class="edge"><title>program~testfourier_prg&#45;&gt;proc~testifft</title>
+<path fill="none" stroke="#000000" d="M86.001,-41.481C94.5779,-43.2128 103.532,-45.0209 111.882,-46.7069"/>
+<polygon fill="#000000" stroke="#000000" points="111.206,-50.141 121.701,-48.6896 112.591,-43.2795 111.206,-50.141"/>
+</g>
+<!-- proc~testfft -->
+<g id="program~~testfourier_prg~~CallsGraph_node3" class="node"><title>proc~testfft</title>
+<g id="a_program~~testfourier_prg~~CallsGraph_node3"><a xlink:href="../proc/testfft.html" xlink:title="testFFT">
+<polygon fill="#d9534f" stroke="#d9534f" points="176,-24 122,-24 122,-0 176,-0 176,-24"/>
+<text text-anchor="middle" x="149" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">testFFT</text>
+</a>
+</g>
+</g>
+<!-- program~testfourier_prg&#45;&gt;proc~testfft -->
+<g id="program~~testfourier_prg~~CallsGraph_edge7" class="edge"><title>program~testfourier_prg&#45;&gt;proc~testfft</title>
+<path fill="none" stroke="#000000" d="M86.001,-24.519C94.5779,-22.7872 103.532,-20.9791 111.882,-19.2931"/>
+<polygon fill="#000000" stroke="#000000" points="112.591,-22.7205 121.701,-17.3104 111.206,-15.859 112.591,-22.7205"/>
+</g>
+<!-- interface~ifft -->
+<g id="program~~testfourier_prg~~CallsGraph_node4" class="node"><title>interface~ifft</title>
+<g id="a_program~~testfourier_prg~~CallsGraph_node4"><a xlink:href="../interface/ifft.html" xlink:title="iFFT">
+<polygon fill="#a7506f" stroke="#a7506f" points="268,-108 214,-108 214,-84 268,-84 268,-108"/>
+<text text-anchor="middle" x="241" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">iFFT</text>
+</a>
+</g>
+</g>
+<!-- proc~testifft&#45;&gt;interface~ifft -->
+<g id="program~~testfourier_prg~~CallsGraph_edge1" class="edge"><title>proc~testifft&#45;&gt;interface~ifft</title>
+<path fill="none" stroke="#000000" d="M176.032,-66.1481C184.987,-70.3273 195.169,-75.0789 204.735,-79.5429"/>
+<polygon fill="#000000" stroke="#000000" points="203.485,-82.8219 214.027,-83.8792 206.445,-76.4786 203.485,-82.8219"/>
+</g>
+<!-- interface~fft -->
+<g id="program~~testfourier_prg~~CallsGraph_node5" class="node"><title>interface~fft</title>
+<g id="a_program~~testfourier_prg~~CallsGraph_node5"><a xlink:href="../interface/fft.html" xlink:title="FFT">
+<polygon fill="#a7506f" stroke="#a7506f" points="268,-24 214,-24 214,-0 268,-0 268,-24"/>
+<text text-anchor="middle" x="241" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">FFT</text>
+</a>
+</g>
+</g>
+<!-- proc~testifft&#45;&gt;interface~fft -->
+<g id="program~~testfourier_prg~~CallsGraph_edge2" class="edge"><title>proc~testifft&#45;&gt;interface~fft</title>
+<path fill="none" stroke="#000000" d="M176.032,-41.8519C184.987,-37.6727 195.169,-32.9211 204.735,-28.4571"/>
+<polygon fill="#000000" stroke="#000000" points="206.445,-31.5214 214.027,-24.1208 203.485,-25.1781 206.445,-31.5214"/>
+</g>
+<!-- proc~fft_freq -->
+<g id="program~~testfourier_prg~~CallsGraph_node6" class="node"><title>proc~fft_freq</title>
+<g id="a_program~~testfourier_prg~~CallsGraph_node6"><a xlink:href="../proc/fft_freq.html" xlink:title="FFT_freq">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="270,-66 212,-66 212,-42 270,-42 270,-66"/>
+<text text-anchor="middle" x="241" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">FFT_freq</text>
+</a>
+</g>
+</g>
+<!-- proc~testifft&#45;&gt;proc~fft_freq -->
+<g id="program~~testfourier_prg~~CallsGraph_edge3" class="edge"><title>proc~testifft&#45;&gt;proc~fft_freq</title>
+<path fill="none" stroke="#000000" d="M176.032,-54C184.004,-54 192.948,-54 201.565,-54"/>
+<polygon fill="#000000" stroke="#000000" points="201.824,-57.5001 211.824,-54 201.824,-50.5001 201.824,-57.5001"/>
+</g>
+<!-- proc~testfft&#45;&gt;interface~fft -->
+<g id="program~~testfourier_prg~~CallsGraph_edge4" class="edge"><title>proc~testfft&#45;&gt;interface~fft</title>
+<path fill="none" stroke="#000000" d="M176.032,-12C184.632,-12 194.363,-12 203.593,-12"/>
+<polygon fill="#000000" stroke="#000000" points="203.715,-15.5001 213.715,-12 203.715,-8.5001 203.715,-15.5001"/>
+</g>
+<!-- proc~testfft&#45;&gt;proc~fft_freq -->
+<g id="program~~testfourier_prg~~CallsGraph_edge5" class="edge"><title>proc~testfft&#45;&gt;proc~fft_freq</title>
+<path fill="none" stroke="#000000" d="M176.032,-24.1481C184.987,-28.3273 195.169,-33.0789 204.735,-37.5429"/>
+<polygon fill="#000000" stroke="#000000" points="203.485,-40.8219 214.027,-41.8792 206.445,-34.4786 203.485,-40.8219"/>
+</g>
+</g>
+</svg>
+</div>
+                <div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div>
+                <div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                      </div>
+                      <div class="modal-body">
+                        
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.38.0 (20140413.2041)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="560pt" height="32pt"
+ viewBox="0.00 0.00 559.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-28 555.5,-28 555.5,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node"><title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="64,-24 0,-24 0,-0 64,-0 64,-24"/>
+<text text-anchor="middle" x="32" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node"><title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="136,-24 82,-24 82,-0 136,-0 136,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node"><title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="209.5,-24 154.5,-24 154.5,-0 209.5,-0 209.5,-24"/>
+<text text-anchor="middle" x="182" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node4" class="node"><title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="364,-24 228,-24 228,-0 364,-0 364,-24"/>
+<text text-anchor="middle" x="296" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node"><title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="436,-24 382,-24 382,-0 436,-0 436,-24"/>
+<text text-anchor="middle" x="409" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node"><title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="551.5,-24 454.5,-24 454.5,-0 551.5,-0 551.5,-24"/>
+<text text-anchor="middle" x="503" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+
+<p>Solid arrows point from a procedure to one which it calls. Dashed 
+arrows point from an interface to procedures which implement that interface.
+This could include the module procedures in a generic interface or the
+implementation in a submodule of an interface in a parent module.
+</p>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+     
+    <br>
+
+     <section class="visible-xs visible-sm hidden-md">
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-1">Subroutines</a></h3></div>
+  <div class="list-group">
+    <div id="subs-1" class="panel-collapse collapse">
+      
+      <a class="list-group-item" href="../program/testfourier_prg.html#proc-testfft">testFFT</a>
+      
+      <a class="list-group-item" href="../program/testfourier_prg.html#proc-testifft">testIFFT</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../program/testfourier_prg.html#src">testFourier_prg</a>
+  </div>
+</div>
+
+
+     </section>
+     <br class="visible-xs visible-sm hidden-md">
+
+     
+
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+
+    
+    <section>
+    <h2>Subroutines</h2>
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-testfft"></span><h3>
+subroutine <a href='../proc/testfft.html'>testFFT</a>()
+    
+    
+	 
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Test FFT to verify operation</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-testifft"></span><h3>
+subroutine <a href='../proc/testifft.html'>testIFFT</a>()
+    
+    
+	 
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Test FFT to verify operation</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    </section>    
+    
+    
+    
+    <section>
+    <h2 id="src">Source Code</h2>
+    <div class="highlight"><pre><span></span><span class="k">program </span><span class="n">testFourier_prg</span>
+	<span class="c">!! Test program for fourier_mod  </span>
+	<span class="c">!! @todo</span>
+	<span class="c">!! Add tests for 2d transforms  </span>
+	<span class="c">!! Add tests for 2d inverse transforms</span>
+	<span class="k">use </span><span class="n">kinds_mod</span>
+	<span class="k">use </span><span class="n">fourier_mod</span>
+	<span class="k">implicit none</span>
+<span class="k">	</span>
+<span class="k">	call </span><span class="n">testFFT</span>
+	<span class="k">call </span><span class="n">testIFFT</span>
+	
+<span class="k">contains</span>
+
+<span class="k">	subroutine </span><span class="n">testFFT</span>
+		<span class="c">!! Test FFT to verify operation</span>
+		<span class="kt">logical</span><span class="p">,</span><span class="k">dimension</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="kd">::</span><span class="n">results</span>
+		
+		<span class="kt">integer</span><span class="p">,</span><span class="k">parameter</span><span class="kd">::</span><span class="n">N</span> <span class="o">=</span> <span class="mi">10000</span>
+		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">parameter</span><span class="kd">::</span><span class="n">D</span> <span class="o">=</span> <span class="mf">5.0_wp</span>
+		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(</span><span class="n">N</span><span class="p">)</span><span class="kd">::</span><span class="n">t</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="n">f</span><span class="p">,</span><span class="n">A</span>
+		<span class="kt">integer</span><span class="kd">::</span><span class="n">k</span><span class="p">,</span><span class="n">kP</span>
+		
+		<span class="k">forall</span><span class="p">(</span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">:</span><span class="n">N</span><span class="p">)</span> <span class="n">t</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="o">=</span> <span class="n">D</span><span class="o">*</span><span class="p">(</span><span class="kt">real</span><span class="p">(</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">wp</span><span class="p">)</span><span class="o">/</span><span class="kt">real</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">wp</span><span class="p">))</span>
+		<span class="n">s</span> <span class="o">=</span> <span class="nb">cos</span><span class="p">(</span> <span class="p">(</span><span class="mf">2.0_wp</span><span class="o">*</span><span class="n">PI</span><span class="p">)</span><span class="o">*</span><span class="n">t</span> <span class="p">)</span>
+		<span class="n">f</span> <span class="o">=</span> <span class="n">FFT_freq</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+		<span class="n">A</span> <span class="o">=</span> <span class="n">FFT</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+		<span class="n">kP</span> <span class="o">=</span> <span class="nb">maxloc</span><span class="p">(</span><span class="n">A</span><span class="p">(:</span><span class="n">N</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span><span class="mi">1</span><span class="p">)</span>
+		
+		<span class="n">results</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">kP</span><span class="p">)</span><span class="o">-</span><span class="mf">1.0_wp</span><span class="p">)</span><span class="o">&lt;</span><span class="mf">1.0E-3_wp</span>
+		
+		<span class="k">if</span><span class="p">(</span> <span class="p">.</span><span class="nb">not</span><span class="p">.</span><span class="k">all</span><span class="p">(</span><span class="n">results</span><span class="p">)</span> <span class="p">)</span> <span class="n">error</span> <span class="k">stop</span> <span class="s2">&quot;Failed FFT check&quot;</span>
+	<span class="k">end subroutine </span><span class="n">testFFT</span>
+
+	<span class="k">subroutine </span><span class="n">testIFFT</span>
+		<span class="c">!! Test FFT to verify operation</span>
+		<span class="kt">logical</span><span class="p">,</span><span class="k">dimension</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="kd">::</span><span class="n">results</span>
+		
+		<span class="kt">integer</span><span class="p">,</span><span class="k">parameter</span><span class="kd">::</span><span class="n">N</span> <span class="o">=</span> <span class="mi">10000</span>
+		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">parameter</span><span class="kd">::</span><span class="n">D</span> <span class="o">=</span> <span class="mf">5.0_wp</span>
+		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(</span><span class="n">N</span><span class="p">)</span><span class="kd">::</span><span class="n">t</span><span class="p">,</span><span class="n">f</span>
+		<span class="kt">complex</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(</span><span class="n">N</span><span class="p">)</span><span class="kd">::</span><span class="n">s</span><span class="p">,</span><span class="n">fs</span><span class="p">,</span><span class="n">ffs</span>
+		<span class="kt">integer</span><span class="kd">::</span><span class="n">k</span>
+		
+		<span class="k">forall</span><span class="p">(</span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">:</span><span class="n">N</span><span class="p">)</span> <span class="n">t</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="o">=</span> <span class="n">D</span><span class="o">*</span><span class="p">(</span><span class="kt">real</span><span class="p">(</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">wp</span><span class="p">)</span><span class="o">/</span><span class="kt">real</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">wp</span><span class="p">))</span>
+		<span class="n">s</span>   <span class="o">=</span> <span class="nb">cos</span><span class="p">(</span> <span class="p">(</span><span class="mf">2.0_wp</span><span class="o">*</span><span class="n">PI</span><span class="p">)</span><span class="o">*</span><span class="n">t</span> <span class="p">)</span>
+		<span class="n">f</span>   <span class="o">=</span> <span class="n">FFT_freq</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+		<span class="n">fs</span>  <span class="o">=</span> <span class="n">FFT</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+		<span class="n">ffs</span> <span class="o">=</span> <span class="n">iFFT</span><span class="p">(</span><span class="n">fs</span><span class="p">)</span>
+		
+		<span class="n">results</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="nb">norm2</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">s</span><span class="o">-</span><span class="n">ffs</span><span class="p">))</span><span class="o">&lt;</span><span class="mf">1.0E-10_wp</span>
+		
+		<span class="k">if</span><span class="p">(</span> <span class="p">.</span><span class="nb">not</span><span class="p">.</span><span class="k">all</span><span class="p">(</span><span class="n">results</span><span class="p">)</span> <span class="p">)</span> <span class="n">error</span> <span class="k">stop</span> <span class="s2">&quot;Failed iFFT check&quot;</span>
+	<span class="k">end subroutine </span><span class="n">testIFFT</span>
+
+<span class="k">end program </span><span class="n">testFourier_prg</span>
+</pre></div>
+
+    </section>
+    
+    
+    </div>
+  </div>
+
+  <section class="visible-xs visible-sm hidden-md">
+    <hr>
+    
+
+<div class="panel panel-default">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#allprogs-1">All Programs</a></h3></div>
+  <div id="allprogs-1" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../program/animate_prg.html">animate_prg</a>
+      
+      <a class="list-group-item" href="../program/basic_prg.html">basic_prg</a>
+      
+      <a class="list-group-item" href="../program/examples_prg.html">examples_prg</a>
+      
+      <a class="list-group-item" href="../program/logo_prg.html">logo_prg</a>
+      
+      <a class="list-group-item" href="../program/testarray_prg.html">testArray_prg</a>
+      
+      <a class="list-group-item" href="../program/testautodiff_prg.html">testAutoDiff_prg</a>
+      
+      <a class="list-group-item" href="../program/testconfig_prg.html">testConfig_prg</a>
+      
+      <a class="list-group-item" href="../program/testeval_prg.html">testEval_prg</a>
+      
+      <a class="list-group-item" href="../program/testfourier_prg.html">testFourier_prg</a>
+      
+      <a class="list-group-item" href="../program/testiterate_prg.html">testIterate_prg</a>
+      
+      <a class="list-group-item" href="../program/testkinds_prg.html">testKinds_prg</a>
+      
+      <a class="list-group-item" href="../program/testmatio_prg.html">testMatIO_prg</a>
+      
+      <a class="list-group-item" href="../program/testmesh_prg.html">testMesh_prg</a>
+      
+      <a class="list-group-item" href="../program/testnetcdf_prg.html">testNetCDF_prg</a>
+      
+      <a class="list-group-item" href="../program/testoptimize_prg.html">testOptimize_prg</a>
+      
+      <a class="list-group-item" href="../program/testquaternion_prg.html">testQuaternion_prg</a>
+      
+      <a class="list-group-item" href="../program/testsparse_prg.html">testSparse_prg</a>
+      
+      <a class="list-group-item" href="../program/testspline_prg.html">testSpline_prg</a>
+      
+      <a class="list-group-item" href="../program/teststats_prg.html">testStats_prg</a>
+      
+      <a class="list-group-item" href="../program/testtensor_prg.html">testTensor_prg</a>
+      
+      <a class="list-group-item" href="../program/testtext_prg.html">testText_prg</a>
+      
+      <a class="list-group-item" href="../program/testtime_prg.html">testTime_prg</a>
+      
+      <a class="list-group-item" href="../program/testvtkio_prg.html">testVtkIO_prg</a>
+      
+    </div>
+  </div>
+</div>
+
+
+  </section>
+  
+    <hr>    
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-md-4"><p>&copy; 2016 </p></div>
+        <div class="col-xs-6 col-md-4 col-md-push-4">
+          <p class="text-right">
+            Documentation generated by 
+            <a href="https://github.com/cmacmackin/ford">FORD</a>
+            
+          </p>
+        </div>
+        <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> CommonModules was developed by Kyle Horne</p></div>
+      </div>
+      <br>
+      </div> <!-- /container -->    
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+-->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- MathJax JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js'],
+        'HTML-CSS': { 
+           styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: '#000000 ! important'} }
+        }
+      });
+    </script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  </body>
+</html>

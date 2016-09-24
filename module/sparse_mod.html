@@ -1,0 +1,2697 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	 
+	 <meta name="description" content="Common modules for using in other programs">
+    
+    <meta name="author" content="Chris MacMackin" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>sparse_mod &ndash; CommonModules</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+    
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+
+    
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">CommonModules </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+				
+            <li><a href='../page/index.html'>Instructions</a></li>
+	    
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+              data-toggle="dropdown" role="button"
+              aria-haspopup="true"
+		 aria-expanded="false">Contents <span class="caret"></span></a>
+	      <ul class="dropdown-menu">
+              
+            <li><a href="../lists/files.html">Source Files</a></li>
+				
+				
+            <li><a href="../lists/modules.html">Modules</a></li>
+				
+            
+                                
+            <li><a href="../lists/procedures.html">Procedures</a></li>
+				
+								
+            <li><a href="../lists/types.html">Derived Types</a></li>
+				
+				
+            <li><a href="../lists/programs.html">Programs</a></li>
+				
+            </ul>
+            </li>
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
+
+                             
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/programs.html">Programs</a></li>
+
+          </ul>
+        
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    
+  
+  <div class="row">
+    <h1>sparse_mod 
+    <small>Module</small>
+    
+    </h1>
+    
+<div class="row">
+  <div class="col-lg-12">
+<div class="well well-sm">
+  <ul class="list-inline" style="margin-bottom:0px;display:inline">
+     
+     
+     
+     
+    
+    
+     <li><i class="fa fa-list-ol"></i>
+       <a data-toggle="tooltip"
+	  data-placement="bottom" data-html="true"
+	  title=" 5.2% of total for modules and submodules.">393 statements</a>
+     </li> 
+     
+     
+    <li><i class="fa fa-code"></i><a href="../src/sparse.f90"> Source File</a></li>
+     
+  </ul>
+  <ol class="breadcrumb in-well text-right">
+  
+     <li><a href='../sourcefile/sparse.f90.html'>sparse.f90</a></li>
+  
+     <li class="active">sparse_mod</li>
+  </ol>
+</div>
+</div>
+</div>
+<script>
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+    
+<div id="sidebar">
+  
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#inters-0">Interfaces</a></h3></div>
+  <div id="inters-0" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/sparse_mod.html#interface-operator%28%2B%29%7E3">operator(+)</a>
+      
+      <a class="list-group-item" href="../module/sparse_mod.html#interface-operator%28%2A%29%7E3">operator(*)</a>
+      
+      <a class="list-group-item" href="../module/sparse_mod.html#interface-operator%28.o.%29">operator(.o.)</a>
+      
+      <a class="list-group-item" href="../module/sparse_mod.html#interface-matmul%7E2">matmul</a>
+      
+      <a class="list-group-item" href="../module/sparse_mod.html#interface-sum%7E2">sum</a>
+      
+      <a class="list-group-item" href="../module/sparse_mod.html#interface-minval">minval</a>
+      
+      <a class="list-group-item" href="../module/sparse_mod.html#interface-maxval">maxval</a>
+      
+      <a class="list-group-item" href="../module/sparse_mod.html#interface-transpose">transpose</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#types-0">Derived Types</a></h3></div>
+  <div id="types-0" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/sparse_mod.html#type-spvec_t">spvec_t</a>
+      
+      <a class="list-group-item" href="../module/sparse_mod.html#type-sparse_t">sparse_t</a>
+      
+    </div>
+  </div>
+</div>
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#funcs-0">Functions</a></h3></div>
+  <div id="funcs-0" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/sparse_mod.html#proc-newspvec">newSpvec</a>
+      
+      <a class="list-group-item" href="../module/sparse_mod.html#proc-newsparse">newSparse</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+  <hr>
+  
+
+<div class="panel panel-default">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#allmods-0">All Modules</a></h3></div>
+  <div id="allmods-0" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/array_mod.html">array_mod</a>
+      
+      <a class="list-group-item" href="../module/autodiff_mod.html">autoDiff_mod</a>
+      
+      <a class="list-group-item" href="../module/basicsolvers_mod.html">basicSolvers_mod</a>
+      
+      <a class="list-group-item" href="../module/config_mod.html">config_mod</a>
+      
+      <a class="list-group-item" href="../module/expression_mod.html">expression_mod</a>
+      
+      <a class="list-group-item" href="../module/fourier_mod.html">fourier_mod</a>
+      
+      <a class="list-group-item" href="../module/iterate_mod.html">iterate_mod</a>
+      
+      <a class="list-group-item" href="../module/kinds_mod.html">kinds_mod</a>
+      
+      <a class="list-group-item" href="../module/matio_mod.html">matIO_mod</a>
+      
+      <a class="list-group-item" href="../module/mesh_mod.html">mesh_mod</a>
+      
+      <a class="list-group-item" href="../module/netcdf_mod.html">netCDF_mod</a>
+      
+      <a class="list-group-item" href="../module/node_mod.html">node_mod</a>
+      
+      <a class="list-group-item" href="../module/objective_mod.html">objective_mod</a>
+      
+      <a class="list-group-item" href="../module/optimize_mod.html">optimize_mod</a>
+      
+      <a class="list-group-item" href="../module/plplotlib_mod.html">plplotlib_mod</a>
+      
+      <a class="list-group-item" href="../module/quaternion_mod.html">quaternion_mod</a>
+      
+      <a class="list-group-item" href="../module/solvers_mod.html">solvers_mod</a>
+      
+      <a class="list-group-item" href="../module/sparse_mod.html">sparse_mod</a>
+      
+      <a class="list-group-item" href="../module/spline_mod.html">spline_mod</a>
+      
+      <a class="list-group-item" href="../module/stats_mod.html">stats_mod</a>
+      
+      <a class="list-group-item" href="../module/tensor_mod.html">tensor_mod</a>
+      
+      <a class="list-group-item" href="../module/text_mod.html">text_mod</a>
+      
+      <a class="list-group-item" href="../module/time_mod.html">time_mod</a>
+      
+      <a class="list-group-item" href="../module/treeexponential_mod.html">treeExponential_mod</a>
+      
+      <a class="list-group-item" href="../module/treeoperator_mod.html">treeOperator_mod</a>
+      
+      <a class="list-group-item" href="../module/treetrigonometric_mod.html">treeTrigonometric_mod</a>
+      
+      <a class="list-group-item" href="../module/treevalue_mod.html">treeValue_mod</a>
+      
+      <a class="list-group-item" href="../module/vtkio_mod.html">vtkIO_mod</a>
+      
+    </div>
+  </div>
+</div>
+
+
+</div>  
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+      
+    
+  
+    <ul class="list-inline">
+      <li><h4>Uses:</h4></li>
+      
+      <li><a href='../module/kinds_mod.html'>kinds_mod</a></li>
+      
+      <li><a href='../module/array_mod.html'>array_mod</a></li>
+      
+    </ul>
+    
+                <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.38.0 (20140413.2041)
+ -->
+<!-- Title: module~~sparse_mod~~UsesGraph Pages: 1 -->
+<svg id="modulesparse_modUsesGraph" width="280pt" height="52pt"
+ viewBox="0.00 0.00 280.00 52.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="module~~sparse_mod~~UsesGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 48)">
+<title>module~~sparse_mod~~UsesGraph</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-48 276,-48 276,4 -4,4"/>
+<!-- module~sparse_mod -->
+<g id="module~~sparse_mod~~UsesGraph_node1" class="node"><title>module~sparse_mod</title>
+<polygon fill="none" stroke="black" points="272,-44 200,-44 200,-20 272,-20 272,-44"/>
+<text text-anchor="middle" x="236" y="-29.6" font-family="Helvetica,sans-Serif" font-size="10.50">sparse_mod</text>
+</g>
+<!-- module~kinds_mod -->
+<g id="module~~sparse_mod~~UsesGraph_node2" class="node"><title>module~kinds_mod</title>
+<g id="a_module~~sparse_mod~~UsesGraph_node2"><a xlink:href="../module/kinds_mod.html" xlink:title="kinds_mod">
+<polygon fill="#337ab7" stroke="#337ab7" points="64,-44 0,-44 0,-20 64,-20 64,-44"/>
+<text text-anchor="middle" x="32" y="-29.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">kinds_mod</text>
+</a>
+</g>
+</g>
+<!-- module~kinds_mod&#45;&gt;module~sparse_mod -->
+<g id="module~~sparse_mod~~UsesGraph_edge2" class="edge"><title>module~kinds_mod&#45;&gt;module~sparse_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M64.0208,-32.5594C75.3435,-32.7382 88.2508,-32.9123 100,-33 128.444,-33.2123 135.556,-33.2003 164,-33 172.326,-32.9414 181.2,-32.8441 189.754,-32.7326"/>
+<polygon fill="#000000" stroke="#000000" points="190.021,-36.2293 199.971,-32.5912 189.924,-29.23 190.021,-36.2293"/>
+</g>
+<!-- module~array_mod -->
+<g id="module~~sparse_mod~~UsesGraph_node3" class="node"><title>module~array_mod</title>
+<g id="a_module~~sparse_mod~~UsesGraph_node3"><a xlink:href="../module/array_mod.html" xlink:title="array_mod">
+<polygon fill="#337ab7" stroke="#337ab7" points="164,-24 100,-24 100,-0 164,-0 164,-24"/>
+<text text-anchor="middle" x="132" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">array_mod</text>
+</a>
+</g>
+</g>
+<!-- module~kinds_mod&#45;&gt;module~array_mod -->
+<g id="module~~sparse_mod~~UsesGraph_edge1" class="edge"><title>module~kinds_mod&#45;&gt;module~array_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M64.0078,-25.6719C72.23,-23.9939 81.237,-22.1557 89.905,-20.3867"/>
+<polygon fill="#000000" stroke="#000000" points="90.7594,-23.7846 99.8575,-18.3556 89.3596,-16.926 90.7594,-23.7846"/>
+</g>
+<!-- module~array_mod&#45;&gt;module~sparse_mod -->
+<g id="module~~sparse_mod~~UsesGraph_edge3" class="edge"><title>module~array_mod&#45;&gt;module~sparse_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M164.158,-18.1093C172.243,-19.6946 181.116,-21.4345 189.765,-23.1304"/>
+<polygon fill="#000000" stroke="#000000" points="189.268,-26.5995 199.755,-25.0891 190.615,-19.7303 189.268,-26.5995"/>
+</g>
+</g>
+</svg>
+</div>
+                <div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div>
+                <div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                      </div>
+                      <div class="modal-body">
+                        
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.38.0 (20140413.2041)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="490pt" height="32pt"
+ viewBox="0.00 0.00 489.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-28 485.5,-28 485.5,4 -4,4"/>
+<!-- Module -->
+<g id="node1" class="node"><title>Module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-24 0,-24 0,-0 54,-0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Module</text>
+</g>
+<!-- Submodule -->
+<g id="node2" class="node"><title>Submodule</title>
+<polygon fill="#5bc0de" stroke="#5bc0de" points="139.5,-24 72.5,-24 72.5,-0 139.5,-0 139.5,-24"/>
+<text text-anchor="middle" x="106" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Submodule</text>
+</g>
+<!-- Subroutine -->
+<g id="node3" class="node"><title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="222,-24 158,-24 158,-0 222,-0 222,-24"/>
+<text text-anchor="middle" x="190" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node4" class="node"><title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="294,-24 240,-24 240,-0 294,-0 294,-24"/>
+<text text-anchor="middle" x="267" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node"><title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="366,-24 312,-24 312,-0 366,-0 366,-24"/>
+<text text-anchor="middle" x="339" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node"><title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="481.5,-24 384.5,-24 384.5,-0 481.5,-0 481.5,-24"/>
+<text text-anchor="middle" x="433" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+
+<p>Solid arrows point from a parent (sub)module to the submodule which is
+descended from it. Dashed arrows point from a module being used to the
+module or program unit using it.
+</p>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+    
+
+    
+    
+    
+    
+    <h3>Used By</h3>
+    
+                <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.38.0 (20140413.2041)
+ -->
+<!-- Title: module~~sparse_mod~~UsedByGraph Pages: 1 -->
+<svg id="modulesparse_modUsedByGraph" width="337pt" height="88pt"
+ viewBox="0.00 0.00 337.00 87.65" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="module~~sparse_mod~~UsedByGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 83.6501)">
+<title>module~~sparse_mod~~UsedByGraph</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-83.6501 333,-83.6501 333,4 -4,4"/>
+<!-- module~sparse_mod -->
+<g id="module~~sparse_mod~~UsedByGraph_node1" class="node"><title>module~sparse_mod</title>
+<polygon fill="none" stroke="black" points="72,-66 0,-66 0,-42 72,-42 72,-66"/>
+<text text-anchor="middle" x="36" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50">sparse_mod</text>
+</g>
+<!-- program~testsparse_prg -->
+<g id="module~~sparse_mod~~UsedByGraph_node2" class="node"><title>program~testsparse_prg</title>
+<g id="a_module~~sparse_mod~~UsedByGraph_node2"><a xlink:href="../program/testsparse_prg.html" xlink:title="testSparse_prg">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="329,-66 244,-66 244,-42 329,-42 329,-66"/>
+<text text-anchor="middle" x="286.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">testSparse_prg</text>
+</a>
+</g>
+</g>
+<!-- module~sparse_mod&#45;&gt;program~testsparse_prg -->
+<g id="module~~sparse_mod~~UsedByGraph_edge3" class="edge"><title>module~sparse_mod&#45;&gt;program~testsparse_prg</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M70.5049,-66.061C82.2061,-69.6944 95.5328,-73.1949 108,-75 151.986,-81.3686 163.944,-80.8632 208,-75 218.156,-73.6483 228.869,-71.3418 238.982,-68.74"/>
+<polygon fill="#000000" stroke="#000000" points="240.116,-72.059 248.852,-66.0643 238.284,-65.3029 240.116,-72.059"/>
+</g>
+<!-- module~basicsolvers_mod -->
+<g id="module~~sparse_mod~~UsedByGraph_node3" class="node"><title>module~basicsolvers_mod</title>
+<g id="a_module~~sparse_mod~~UsedByGraph_node3"><a xlink:href="../module/basicsolvers_mod.html" xlink:title="basicSolvers_mod">
+<polygon fill="#337ab7" stroke="#337ab7" points="208,-66 108,-66 108,-42 208,-42 208,-66"/>
+<text text-anchor="middle" x="158" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">basicSolvers_mod</text>
+</a>
+</g>
+</g>
+<!-- module~sparse_mod&#45;&gt;module~basicsolvers_mod -->
+<g id="module~~sparse_mod~~UsedByGraph_edge4" class="edge"><title>module~sparse_mod&#45;&gt;module~basicsolvers_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M72.0316,-54C80.0866,-54 88.8724,-54 97.6399,-54"/>
+<polygon fill="#000000" stroke="#000000" points="97.879,-57.5001 107.879,-54 97.879,-50.5001 97.879,-57.5001"/>
+</g>
+<!-- module~solvers_mod -->
+<g id="module~~sparse_mod~~UsedByGraph_node4" class="node"><title>module~solvers_mod</title>
+<g id="a_module~~sparse_mod~~UsedByGraph_node4"><a xlink:href="../module/solvers_mod.html" xlink:title="solvers_mod">
+<polygon fill="#337ab7" stroke="#337ab7" points="194.5,-24 121.5,-24 121.5,-0 194.5,-0 194.5,-24"/>
+<text text-anchor="middle" x="158" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">solvers_mod</text>
+</a>
+</g>
+</g>
+<!-- module~sparse_mod&#45;&gt;module~solvers_mod -->
+<g id="module~~sparse_mod~~UsedByGraph_edge5" class="edge"><title>module~sparse_mod&#45;&gt;module~solvers_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M71.3872,-41.9645C84.3167,-37.4392 99.1996,-32.2301 112.893,-27.4376"/>
+<polygon fill="#000000" stroke="#000000" points="114.325,-30.6443 122.608,-24.0373 112.013,-24.0373 114.325,-30.6443"/>
+</g>
+<!-- module~basicsolvers_mod&#45;&gt;program~testsparse_prg -->
+<g id="module~~sparse_mod~~UsedByGraph_edge1" class="edge"><title>module~basicsolvers_mod&#45;&gt;program~testsparse_prg</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M208.27,-54C216.655,-54 225.384,-54 233.829,-54"/>
+<polygon fill="#000000" stroke="#000000" points="233.945,-57.5001 243.945,-54 233.945,-50.5001 233.945,-57.5001"/>
+</g>
+<!-- module~solvers_mod&#45;&gt;program~testsparse_prg -->
+<g id="module~~sparse_mod~~UsedByGraph_edge2" class="edge"><title>module~solvers_mod&#45;&gt;program~testsparse_prg</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M194.574,-23.8111C208.601,-28.4684 224.891,-33.8769 239.775,-38.8186"/>
+<polygon fill="#000000" stroke="#000000" points="238.722,-42.1566 249.315,-41.986 240.927,-35.5132 238.722,-42.1566"/>
+</g>
+</g>
+</svg>
+</div>
+                <div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div>
+                <div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                      </div>
+                      <div class="modal-body">
+                        
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.38.0 (20140413.2041)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="490pt" height="32pt"
+ viewBox="0.00 0.00 489.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-28 485.5,-28 485.5,4 -4,4"/>
+<!-- Module -->
+<g id="node1" class="node"><title>Module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-24 0,-24 0,-0 54,-0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Module</text>
+</g>
+<!-- Submodule -->
+<g id="node2" class="node"><title>Submodule</title>
+<polygon fill="#5bc0de" stroke="#5bc0de" points="139.5,-24 72.5,-24 72.5,-0 139.5,-0 139.5,-24"/>
+<text text-anchor="middle" x="106" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Submodule</text>
+</g>
+<!-- Subroutine -->
+<g id="node3" class="node"><title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="222,-24 158,-24 158,-0 222,-0 222,-24"/>
+<text text-anchor="middle" x="190" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node4" class="node"><title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="294,-24 240,-24 240,-0 294,-0 294,-24"/>
+<text text-anchor="middle" x="267" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node"><title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="366,-24 312,-24 312,-0 366,-0 366,-24"/>
+<text text-anchor="middle" x="339" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node"><title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="481.5,-24 384.5,-24 384.5,-0 481.5,-0 481.5,-24"/>
+<text text-anchor="middle" x="433" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+
+<p>Solid arrows point from a parent (sub)module to the submodule which is
+descended from it. Dashed arrows point from a module being used to the
+module or program unit using it.
+</p>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+    <br>
+    
+
+    <section class="visible-xs visible-sm hidden-md">
+      
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#inters-1">Interfaces</a></h3></div>
+  <div id="inters-1" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/sparse_mod.html#interface-operator%28%2B%29%7E3">operator(+)</a>
+      
+      <a class="list-group-item" href="../module/sparse_mod.html#interface-operator%28%2A%29%7E3">operator(*)</a>
+      
+      <a class="list-group-item" href="../module/sparse_mod.html#interface-operator%28.o.%29">operator(.o.)</a>
+      
+      <a class="list-group-item" href="../module/sparse_mod.html#interface-matmul%7E2">matmul</a>
+      
+      <a class="list-group-item" href="../module/sparse_mod.html#interface-sum%7E2">sum</a>
+      
+      <a class="list-group-item" href="../module/sparse_mod.html#interface-minval">minval</a>
+      
+      <a class="list-group-item" href="../module/sparse_mod.html#interface-maxval">maxval</a>
+      
+      <a class="list-group-item" href="../module/sparse_mod.html#interface-transpose">transpose</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#types-1">Derived Types</a></h3></div>
+  <div id="types-1" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/sparse_mod.html#type-spvec_t">spvec_t</a>
+      
+      <a class="list-group-item" href="../module/sparse_mod.html#type-sparse_t">sparse_t</a>
+      
+    </div>
+  </div>
+</div>
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#funcs-1">Functions</a></h3></div>
+  <div id="funcs-1" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/sparse_mod.html#proc-newspvec">newSpvec</a>
+      
+      <a class="list-group-item" href="../module/sparse_mod.html#proc-newsparse">newSparse</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+    </section>
+    <br class="visible-xs visible-sm hidden-md">
+
+    
+
+    
+    
+    
+    
+    
+    <section>
+	 <h2>Interfaces</h2>
+	 
+	   
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="interface-operator%28%2B%29%7E3"></span><h3>public interface <a href='../interface/operator%28%2B%29%7E3.html'>operator(+)</a>
+    
+  </h3></div>
+  
+  <ul class="list-group">
+  
+  
+  
+    <li class="list-group-item">
+    
+    
+    <h3>
+private function add_uv(u, v) result(o)
+    
+    
+	 
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=wp),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(:)</td><td>::</td>
+  <td><strong>u</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/spvec_t.html'>spvec_t</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>v</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real(kind=wp),
+  dimension(:), allocatable</small></h4>
+  
+    
+
+    </li>
+  
+    <li class="list-group-item">
+    
+    
+    <h3>
+private function add_vu(v, u) result(o)
+    
+    
+	 
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/spvec_t.html'>spvec_t</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>v</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=wp),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(:)</td><td>::</td>
+  <td><strong>u</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real(kind=wp),
+  dimension(:), allocatable</small></h4>
+  
+    
+
+    </li>
+  
+    <li class="list-group-item">
+    
+    
+    <h3>
+private function add_vv(u, v) result(o)
+    
+    
+	 
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/spvec_t.html'>spvec_t</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>u</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/spvec_t.html'>spvec_t</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>v</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>type(<a href='../type/spvec_t.html'>spvec_t</a>)
+  </small></h4>
+  
+    
+
+    </li>
+  
+  
+  </ul>
+</div>
+
+    
+	   
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="interface-operator%28%2A%29%7E3"></span><h3>public interface <a href='../interface/operator%28%2A%29%7E3.html'>operator(*)</a>
+    
+  </h3></div>
+  
+  <ul class="list-group">
+  
+  
+  
+    <li class="list-group-item">
+    
+    
+    <h3>
+private function mul_rv(r, v) result(o)
+    
+    
+	 
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=wp),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>r</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/spvec_t.html'>spvec_t</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>v</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>type(<a href='../type/spvec_t.html'>spvec_t</a>)
+  </small></h4>
+  
+    
+
+    </li>
+  
+    <li class="list-group-item">
+    
+    
+    <h3>
+private function mul_vr(v, r) result(o)
+    
+    
+	 
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/spvec_t.html'>spvec_t</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>v</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=wp),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>r</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>type(<a href='../type/spvec_t.html'>spvec_t</a>)
+  </small></h4>
+  
+    
+
+    </li>
+  
+  
+  </ul>
+</div>
+
+    
+	   
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="interface-operator%28.o.%29"></span><h3>public interface <a href='../interface/operator%28.o.%29.html'>operator(.o.)</a>
+    
+  </h3></div>
+  
+  <ul class="list-group">
+  
+  
+  
+    <li class="list-group-item">
+    
+    
+    <h3>
+private function dot_uv(u, v) result(o)
+    
+    
+	 
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=wp),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(:)</td><td>::</td>
+  <td><strong>u</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/spvec_t.html'>spvec_t</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>v</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real(kind=wp)
+  </small></h4>
+  
+    
+
+    </li>
+  
+    <li class="list-group-item">
+    
+    
+    <h3>
+private function dot_vu(v, u) result(o)
+    
+    
+	 
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/spvec_t.html'>spvec_t</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>v</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=wp),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(:)</td><td>::</td>
+  <td><strong>u</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real(kind=wp)
+  </small></h4>
+  
+    
+
+    </li>
+  
+    <li class="list-group-item">
+    
+    
+    <h3>
+private function dot_vv(u, v) result(o)
+    
+    
+	 
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/spvec_t.html'>spvec_t</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>u</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/spvec_t.html'>spvec_t</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>v</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real(kind=wp)
+  </small></h4>
+  
+    
+
+    </li>
+  
+    <li class="list-group-item">
+    
+    
+    <h3>
+private function dot_um(u, A) result(o)
+    
+    
+	 
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=wp),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(:)</td><td>::</td>
+  <td><strong>u</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/sparse_t.html'>sparse_t</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>A</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real(kind=wp),
+  dimension(:), allocatable</small></h4>
+  
+    
+
+    </li>
+  
+    <li class="list-group-item">
+    
+    
+    <h3>
+private function dot_mu(A, u) result(o)
+    
+    
+	 
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/sparse_t.html'>sparse_t</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>A</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=wp),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(:)</td><td>::</td>
+  <td><strong>u</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real(kind=wp),
+  dimension(:), allocatable</small></h4>
+  
+    
+
+    </li>
+  
+    <li class="list-group-item">
+    
+    
+    <h3>
+private function dot_vm(v, A) result(o)
+    
+    
+	 
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/spvec_t.html'>spvec_t</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>v</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/sparse_t.html'>sparse_t</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>A</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>type(<a href='../type/spvec_t.html'>spvec_t</a>)
+  </small></h4>
+  
+    
+
+    </li>
+  
+    <li class="list-group-item">
+    
+    
+    <h3>
+private function dot_mv(A, v) result(o)
+    
+    
+	 
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/sparse_t.html'>sparse_t</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>A</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/spvec_t.html'>spvec_t</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>v</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>type(<a href='../type/spvec_t.html'>spvec_t</a>)
+  </small></h4>
+  
+    
+
+    </li>
+  
+    <li class="list-group-item">
+    
+    
+    <h3>
+private function dot_mm(A, B) result(o)
+    
+    
+	 
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/sparse_t.html'>sparse_t</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>A</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/sparse_t.html'>sparse_t</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>B</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>type(<a href='../type/sparse_t.html'>sparse_t</a>)
+  </small></h4>
+  
+    
+
+    </li>
+  
+  
+  </ul>
+</div>
+
+    
+	   
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="interface-matmul%7E2"></span><h3>public interface <a href='../interface/matmul%7E2.html'>matmul</a>
+    
+  </h3></div>
+  
+  <ul class="list-group">
+  
+  
+  
+    <li class="list-group-item">
+    
+    
+    <h3>
+private function dot_mu(A, u) result(o)
+    
+    
+	 
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/sparse_t.html'>sparse_t</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>A</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=wp),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(:)</td><td>::</td>
+  <td><strong>u</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real(kind=wp),
+  dimension(:), allocatable</small></h4>
+  
+    
+
+    </li>
+  
+    <li class="list-group-item">
+    
+    
+    <h3>
+private function dot_mv(A, v) result(o)
+    
+    
+	 
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/sparse_t.html'>sparse_t</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>A</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/spvec_t.html'>spvec_t</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>v</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>type(<a href='../type/spvec_t.html'>spvec_t</a>)
+  </small></h4>
+  
+    
+
+    </li>
+  
+    <li class="list-group-item">
+    
+    
+    <h3>
+private function dot_mm(A, B) result(o)
+    
+    
+	 
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/sparse_t.html'>sparse_t</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>A</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/sparse_t.html'>sparse_t</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>B</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>type(<a href='../type/sparse_t.html'>sparse_t</a>)
+  </small></h4>
+  
+    
+
+    </li>
+  
+  
+  </ul>
+</div>
+
+    
+	   
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="interface-sum%7E2"></span><h3>public interface <a href='../interface/sum%7E2.html'>sum</a>
+    
+  </h3></div>
+  
+  <ul class="list-group">
+  
+  
+  
+    <li class="list-group-item">
+    
+    
+    <h3>
+private function sum_v(l) result(o)
+    
+    
+	 
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/spvec_t.html'>spvec_t</a>),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(:)</td><td>::</td>
+  <td><strong>l</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>type(<a href='../type/spvec_t.html'>spvec_t</a>)
+  </small></h4>
+  
+    
+
+    </li>
+  
+  
+  </ul>
+</div>
+
+    
+	   
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="interface-minval"></span><h3>public interface <a href='../interface/minval.html'>minval</a>
+    
+  </h3></div>
+  
+  <ul class="list-group">
+  
+  
+  
+    <li class="list-group-item">
+    
+    
+    <h3>
+private function minval_v(v) result(o)
+    
+    
+	 
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/spvec_t.html'>spvec_t</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>v</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real(kind=wp)
+  </small></h4>
+  
+    
+
+    </li>
+  
+    <li class="list-group-item">
+    
+    
+    <h3>
+private function minval_m(A) result(o)
+    
+    
+	 
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/sparse_t.html'>sparse_t</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>A</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real(kind=wp)
+  </small></h4>
+  
+    
+
+    </li>
+  
+  
+  </ul>
+</div>
+
+    
+	   
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="interface-maxval"></span><h3>public interface <a href='../interface/maxval.html'>maxval</a>
+    
+  </h3></div>
+  
+  <ul class="list-group">
+  
+  
+  
+    <li class="list-group-item">
+    
+    
+    <h3>
+private function maxval_v(v) result(o)
+    
+    
+	 
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/spvec_t.html'>spvec_t</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>v</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real(kind=wp)
+  </small></h4>
+  
+    
+
+    </li>
+  
+    <li class="list-group-item">
+    
+    
+    <h3>
+private function maxval_m(A) result(o)
+    
+    
+	 
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/sparse_t.html'>sparse_t</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>A</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real(kind=wp)
+  </small></h4>
+  
+    
+
+    </li>
+  
+  
+  </ul>
+</div>
+
+    
+	   
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="interface-transpose"></span><h3>public interface <a href='../interface/transpose.html'>transpose</a>
+    
+  </h3></div>
+  
+  <ul class="list-group">
+  
+  
+  
+    <li class="list-group-item">
+    
+    
+    <h3>
+private function transpose_m(A) result(o)
+    
+    
+	 
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/sparse_t.html'>sparse_t</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>A</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>type(<a href='../type/sparse_t.html'>sparse_t</a>)
+  </small></h4>
+  
+    
+
+    </li>
+  
+  
+  </ul>
+</div>
+
+    
+    </section>
+	<br>
+    
+
+    
+    
+    
+    <section>
+     <h2>Derived Types</h2>
+	 
+	   
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="type-spvec_t"></span><h3>type, public :: <a href='../type/spvec_t.html'>spvec_t</a>
+    
+  </h3></div>
+  <div class="panel-body">
+    
+     
+     <h4>Components</h4>
+    
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Visibility</th>
+
+<th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-i"></span>integer,</td>
+  
+  <td>public,</td>
+  <td>dimension(:), allocatable</td><td>::</td>
+  <td><strong>i</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-v%7E2"></span>real(kind=wp),</td>
+  
+  <td>public,</td>
+  <td>dimension(:), allocatable</td><td>::</td>
+  <td><strong>v</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+     
+     
+          
+     
+     <h4>Type-Bound Procedures</h4>
+      <table class="table table-striped varlist">
+      <tbody>
+      
+       <tr><td>procedure, public :: <strong><a href='../type/spvec_t.html#boundprocedure-get'>get</a></strong>  => get_v </td>
+       <td></td></tr>
+      
+       <tr><td>procedure, public :: <strong><a href='../type/spvec_t.html#boundprocedure-set'>set</a></strong>  => set_v </td>
+       <td></td></tr>
+      
+       <tr><td>procedure, public :: <strong><a href='../type/spvec_t.html#boundprocedure-add'>add</a></strong>  => add_v </td>
+       <td></td></tr>
+      
+       <tr><td>procedure, public :: <strong><a href='../type/spvec_t.html#boundprocedure-todense'>toDense</a></strong>  => toDense_v </td>
+       <td></td></tr>
+      
+       </tbody>
+       </table>
+     
+  </div>
+</div>
+
+     
+	   
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="type-sparse_t"></span><h3>type, public :: <a href='../type/sparse_t.html'>sparse_t</a>
+    
+  </h3></div>
+  <div class="panel-body">
+    
+     
+     <h4>Components</h4>
+    
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Visibility</th>
+
+<th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-n%7E2"></span>integer,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>N</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-m"></span>integer,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>M</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-rows"></span>type(<a href='../type/spvec_t.html'>spvec_t</a>),</td>
+  
+  <td>public,</td>
+  <td>dimension(:), allocatable</td><td>::</td>
+  <td><strong>rows</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+     
+     
+          
+     
+     <h4>Type-Bound Procedures</h4>
+      <table class="table table-striped varlist">
+      <tbody>
+      
+       <tr><td>procedure, public :: <strong><a href='../type/sparse_t.html#boundprocedure-get%7E2'>get</a></strong>  => get_m </td>
+       <td></td></tr>
+      
+       <tr><td>procedure, public :: <strong><a href='../type/sparse_t.html#boundprocedure-set%7E2'>set</a></strong>  => set_m </td>
+       <td></td></tr>
+      
+       <tr><td>procedure, public :: <strong><a href='../type/sparse_t.html#boundprocedure-add%7E2'>add</a></strong>  => add_m </td>
+       <td></td></tr>
+      
+       <tr><td>procedure, public :: <strong><a href='../type/sparse_t.html#boundprocedure-expand'>expand</a></strong>  </td>
+       <td></td></tr>
+      
+       <tr><td>procedure, public :: <strong><a href='../type/sparse_t.html#boundprocedure-getdiagonal'>getDiagonal</a></strong>  </td>
+       <td></td></tr>
+      
+       <tr><td>procedure, public :: <strong><a href='../type/sparse_t.html#boundprocedure-todense%7E2'>toDense</a></strong>  => toDense_m </td>
+       <td></td></tr>
+      
+       <tr><td>procedure, public :: <strong><a href='../type/sparse_t.html#boundprocedure-totext'>toText</a></strong>  => toText_m </td>
+       <td></td></tr>
+      
+       </tbody>
+       </table>
+     
+  </div>
+</div>
+
+     
+    </section>
+	<br>
+    
+    
+     
+    <section>
+    <h2>Functions</h2>
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-newspvec"></span><h3>
+public function <a href='../proc/newspvec.html'>newSpvec</a>() result(o)
+    
+    
+	 
+</h3></div>
+  <div class="panel-body">
+       
+    
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>type(<a href='../type/spvec_t.html'>spvec_t</a>)
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-newsparse"></span><h3>
+public function <a href='../proc/newsparse.html'>newSparse</a>(N, M) result(o)
+    
+    
+	 
+</h3></div>
+  <div class="panel-body">
+       
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>N</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>M</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>type(<a href='../type/sparse_t.html'>sparse_t</a>)
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+    
+    </section>
+    <br>
+    
+
+    
+    
+    
+    </div>
+  </div>
+
+  <section class="visible-xs visible-sm hidden-md">
+    <hr>
+    
+
+<div class="panel panel-default">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#allmods-1">All Modules</a></h3></div>
+  <div id="allmods-1" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/array_mod.html">array_mod</a>
+      
+      <a class="list-group-item" href="../module/autodiff_mod.html">autoDiff_mod</a>
+      
+      <a class="list-group-item" href="../module/basicsolvers_mod.html">basicSolvers_mod</a>
+      
+      <a class="list-group-item" href="../module/config_mod.html">config_mod</a>
+      
+      <a class="list-group-item" href="../module/expression_mod.html">expression_mod</a>
+      
+      <a class="list-group-item" href="../module/fourier_mod.html">fourier_mod</a>
+      
+      <a class="list-group-item" href="../module/iterate_mod.html">iterate_mod</a>
+      
+      <a class="list-group-item" href="../module/kinds_mod.html">kinds_mod</a>
+      
+      <a class="list-group-item" href="../module/matio_mod.html">matIO_mod</a>
+      
+      <a class="list-group-item" href="../module/mesh_mod.html">mesh_mod</a>
+      
+      <a class="list-group-item" href="../module/netcdf_mod.html">netCDF_mod</a>
+      
+      <a class="list-group-item" href="../module/node_mod.html">node_mod</a>
+      
+      <a class="list-group-item" href="../module/objective_mod.html">objective_mod</a>
+      
+      <a class="list-group-item" href="../module/optimize_mod.html">optimize_mod</a>
+      
+      <a class="list-group-item" href="../module/plplotlib_mod.html">plplotlib_mod</a>
+      
+      <a class="list-group-item" href="../module/quaternion_mod.html">quaternion_mod</a>
+      
+      <a class="list-group-item" href="../module/solvers_mod.html">solvers_mod</a>
+      
+      <a class="list-group-item" href="../module/sparse_mod.html">sparse_mod</a>
+      
+      <a class="list-group-item" href="../module/spline_mod.html">spline_mod</a>
+      
+      <a class="list-group-item" href="../module/stats_mod.html">stats_mod</a>
+      
+      <a class="list-group-item" href="../module/tensor_mod.html">tensor_mod</a>
+      
+      <a class="list-group-item" href="../module/text_mod.html">text_mod</a>
+      
+      <a class="list-group-item" href="../module/time_mod.html">time_mod</a>
+      
+      <a class="list-group-item" href="../module/treeexponential_mod.html">treeExponential_mod</a>
+      
+      <a class="list-group-item" href="../module/treeoperator_mod.html">treeOperator_mod</a>
+      
+      <a class="list-group-item" href="../module/treetrigonometric_mod.html">treeTrigonometric_mod</a>
+      
+      <a class="list-group-item" href="../module/treevalue_mod.html">treeValue_mod</a>
+      
+      <a class="list-group-item" href="../module/vtkio_mod.html">vtkIO_mod</a>
+      
+    </div>
+  </div>
+</div>
+
+
+  </section>
+  
+    <hr>    
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-md-4"><p>&copy; 2016 </p></div>
+        <div class="col-xs-6 col-md-4 col-md-push-4">
+          <p class="text-right">
+            Documentation generated by 
+            <a href="https://github.com/cmacmackin/ford">FORD</a>
+            
+          </p>
+        </div>
+        <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> CommonModules was developed by Kyle Horne</p></div>
+      </div>
+      <br>
+      </div> <!-- /container -->    
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+-->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- MathJax JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js'],
+        'HTML-CSS': { 
+           styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: '#000000 ! important'} }
+        }
+      });
+    </script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  </body>
+</html>

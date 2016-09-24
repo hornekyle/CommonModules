@@ -1,0 +1,1448 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	 
+	 <meta name="description" content="Common modules for using in other programs">
+    
+    <meta name="author" content="Chris MacMackin" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>testEval_prg &ndash; CommonModules</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+    
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+
+    
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">CommonModules </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+				
+            <li><a href='../page/index.html'>Instructions</a></li>
+	    
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+              data-toggle="dropdown" role="button"
+              aria-haspopup="true"
+		 aria-expanded="false">Contents <span class="caret"></span></a>
+	      <ul class="dropdown-menu">
+              
+            <li><a href="../lists/files.html">Source Files</a></li>
+				
+				
+            <li><a href="../lists/modules.html">Modules</a></li>
+				
+            
+                                
+            <li><a href="../lists/procedures.html">Procedures</a></li>
+				
+								
+            <li><a href="../lists/types.html">Derived Types</a></li>
+				
+				
+            <li><a href="../lists/programs.html">Programs</a></li>
+				
+            </ul>
+            </li>
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
+
+                             
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/programs.html">Programs</a></li>
+
+          </ul>
+        
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    
+  
+  <div class="row">
+    <h1>testEval_prg
+    <small>Program</small>
+    
+    </h1>
+    
+<div class="row">
+  <div class="col-lg-12">
+<div class="well well-sm">
+  <ul class="list-inline" style="margin-bottom:0px;display:inline">
+     
+     
+     
+     
+    
+    
+     <li><i class="fa fa-list-ol"></i>
+       <a data-toggle="tooltip"
+	  data-placement="bottom" data-html="true"
+	  title=" 4.0% of total for programs.">49 statements</a>
+     </li> 
+     
+     
+    <li><i class="fa fa-code"></i><a href="../src/testExpression.f90"> Source File</a></li>
+     
+  </ul>
+  <ol class="breadcrumb in-well text-right">
+  
+     <li><a href='../sourcefile/testexpression.f90.html'>testExpression.f90</a></li>
+  
+     <li class="active">testEval_prg</li>
+  </ol>
+</div>
+</div>
+</div>
+<script>
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+    
+<div id="sidebar">
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-0">Subroutines</a></h3></div>
+  <div class="list-group">
+    <div id="subs-0" class="panel-collapse collapse">
+      
+      <a class="list-group-item" href="../program/testeval_prg.html#proc-testfunction">testFunction</a>
+      
+      <a class="list-group-item" href="../program/testeval_prg.html#proc-dofunction">doFunction</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../program/testeval_prg.html#src">testEval_prg</a>
+  </div>
+</div>
+
+
+  <hr>
+  
+
+<div class="panel panel-default">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#allprogs-0">All Programs</a></h3></div>
+  <div id="allprogs-0" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../program/animate_prg.html">animate_prg</a>
+      
+      <a class="list-group-item" href="../program/basic_prg.html">basic_prg</a>
+      
+      <a class="list-group-item" href="../program/examples_prg.html">examples_prg</a>
+      
+      <a class="list-group-item" href="../program/logo_prg.html">logo_prg</a>
+      
+      <a class="list-group-item" href="../program/testarray_prg.html">testArray_prg</a>
+      
+      <a class="list-group-item" href="../program/testautodiff_prg.html">testAutoDiff_prg</a>
+      
+      <a class="list-group-item" href="../program/testconfig_prg.html">testConfig_prg</a>
+      
+      <a class="list-group-item" href="../program/testeval_prg.html">testEval_prg</a>
+      
+      <a class="list-group-item" href="../program/testfourier_prg.html">testFourier_prg</a>
+      
+      <a class="list-group-item" href="../program/testiterate_prg.html">testIterate_prg</a>
+      
+      <a class="list-group-item" href="../program/testkinds_prg.html">testKinds_prg</a>
+      
+      <a class="list-group-item" href="../program/testmatio_prg.html">testMatIO_prg</a>
+      
+      <a class="list-group-item" href="../program/testmesh_prg.html">testMesh_prg</a>
+      
+      <a class="list-group-item" href="../program/testnetcdf_prg.html">testNetCDF_prg</a>
+      
+      <a class="list-group-item" href="../program/testoptimize_prg.html">testOptimize_prg</a>
+      
+      <a class="list-group-item" href="../program/testquaternion_prg.html">testQuaternion_prg</a>
+      
+      <a class="list-group-item" href="../program/testsparse_prg.html">testSparse_prg</a>
+      
+      <a class="list-group-item" href="../program/testspline_prg.html">testSpline_prg</a>
+      
+      <a class="list-group-item" href="../program/teststats_prg.html">testStats_prg</a>
+      
+      <a class="list-group-item" href="../program/testtensor_prg.html">testTensor_prg</a>
+      
+      <a class="list-group-item" href="../program/testtext_prg.html">testText_prg</a>
+      
+      <a class="list-group-item" href="../program/testtime_prg.html">testTime_prg</a>
+      
+      <a class="list-group-item" href="../program/testvtkio_prg.html">testVtkIO_prg</a>
+      
+    </div>
+  </div>
+</div>
+
+
+</div>  
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    
+  
+    <ul class="list-inline">
+      <li><h4>Uses:</h4></li>
+      
+      <li><a href='../module/kinds_mod.html'>kinds_mod</a></li>
+      
+      <li><a href='../module/expression_mod.html'>expression_mod</a></li>
+      
+      <li><a href='../module/array_mod.html'>array_mod</a></li>
+      
+      <li><a href='../module/plplotlib_mod.html'>plplotlib_mod</a></li>
+      
+    </ul>
+    
+                <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.38.0 (20140413.2041)
+ -->
+<!-- Title: program~~testeval_prg~~UsesGraph Pages: 1 -->
+<svg id="programtesteval_prgUsesGraph" width="641pt" height="258pt"
+ viewBox="0.00 0.00 641.00 257.58" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="program~~testeval_prg~~UsesGraph" class="graph" transform="scale(0.785539 0.785539) rotate(0) translate(4 323.907)">
+<title>program~~testeval_prg~~UsesGraph</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-323.907 812,-323.907 812,4 -4,4"/>
+<!-- program~testeval_prg -->
+<g id="program~~testeval_prg~~UsesGraph_node1" class="node"><title>program~testeval_prg</title>
+<polygon fill="none" stroke="black" points="808,-229.785 736,-229.785 736,-205.785 808,-205.785 808,-229.785"/>
+<text text-anchor="middle" x="772" y="-215.385" font-family="Helvetica,sans-Serif" font-size="10.50">testEval_prg</text>
+</g>
+<!-- module~kinds_mod -->
+<g id="program~~testeval_prg~~UsesGraph_node2" class="node"><title>module~kinds_mod</title>
+<g id="a_program~~testeval_prg~~UsesGraph_node2"><a xlink:href="../module/kinds_mod.html" xlink:title="kinds_mod">
+<polygon fill="#337ab7" stroke="#337ab7" points="71,-109.785 7,-109.785 7,-85.7852 71,-85.7852 71,-109.785"/>
+<text text-anchor="middle" x="39" y="-95.3852" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">kinds_mod</text>
+</a>
+</g>
+</g>
+<!-- module~kinds_mod&#45;&gt;program~testeval_prg -->
+<g id="program~~testeval_prg~~UsesGraph_edge27" class="edge"><title>module~kinds_mod&#45;&gt;program~testeval_prg</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M158.5,-237.785C197.253,-259.009 196.29,-281.611 237,-298.785 293.638,-322.678 312.795,-312.062 374,-317.785"/>
+</g>
+<!-- module~array_mod -->
+<g id="program~~testeval_prg~~UsesGraph_node3" class="node"><title>module~array_mod</title>
+<g id="a_program~~testeval_prg~~UsesGraph_node3"><a xlink:href="../module/array_mod.html" xlink:title="array_mod">
+<polygon fill="#337ab7" stroke="#337ab7" points="301,-289.785 237,-289.785 237,-265.785 301,-265.785 301,-289.785"/>
+<text text-anchor="middle" x="269" y="-275.385" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">array_mod</text>
+</a>
+</g>
+</g>
+<!-- module~kinds_mod&#45;&gt;module~array_mod -->
+<g id="program~~testeval_prg~~UsesGraph_edge1" class="edge"><title>module~kinds_mod&#45;&gt;module~array_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M158.5,-237.785C180.364,-249.138 206.192,-258.738 227.271,-265.685"/>
+<polygon fill="#000000" stroke="#000000" points="226.303,-269.05 236.895,-268.783 228.448,-262.387 226.303,-269.05"/>
+</g>
+<!-- module~plplotlib_mod -->
+<g id="program~~testeval_prg~~UsesGraph_node4" class="node"><title>module~plplotlib_mod</title>
+<g id="a_program~~testeval_prg~~UsesGraph_node4"><a xlink:href="../module/plplotlib_mod.html" xlink:title="plplotlib_mod">
+<polygon fill="#337ab7" stroke="#337ab7" points="413,-249.785 337,-249.785 337,-225.785 413,-225.785 413,-249.785"/>
+<text text-anchor="middle" x="375" y="-235.385" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">plplotlib_mod</text>
+</a>
+</g>
+</g>
+<!-- module~kinds_mod&#45;&gt;module~plplotlib_mod -->
+<g id="program~~testeval_prg~~UsesGraph_edge8" class="edge"><title>module~kinds_mod&#45;&gt;module~plplotlib_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M158.5,-237.785C186.652,-252.403 272.061,-247.655 326.523,-242.784"/>
+<polygon fill="#000000" stroke="#000000" points="327.009,-246.254 336.644,-241.845 326.363,-239.283 327.009,-246.254"/>
+</g>
+<!-- module~expression_mod -->
+<g id="program~~testeval_prg~~UsesGraph_node5" class="node"><title>module~expression_mod</title>
+<g id="a_program~~testeval_prg~~UsesGraph_node5"><a xlink:href="../module/expression_mod.html" xlink:title="expression_mod">
+<polygon fill="#337ab7" stroke="#337ab7" points="700,-130.785 609,-130.785 609,-106.785 700,-106.785 700,-130.785"/>
+<text text-anchor="middle" x="654.5" y="-116.385" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">expression_mod</text>
+</a>
+</g>
+</g>
+<!-- module~kinds_mod&#45;&gt;module~expression_mod -->
+<g id="program~~testeval_prg~~UsesGraph_edge21" class="edge"><title>module~kinds_mod&#45;&gt;module~expression_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M71.3957,-89.3301C94.7025,-83.8053 127.36,-77.6353 156.5,-77.7852"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M158.5,-77.7852C207.166,-78.0354 219.337,-78.3972 268,-77.7852"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M270,-77.7852C319.681,-77.1604 325.137,-45.782 374,-36.7852"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M376,-36.7852C462.596,-20.8409 493.857,22.8075 573,-15.7852 607.603,-32.6587 631.693,-72.3938 644.01,-97.2852"/>
+<polygon fill="#000000" stroke="#000000" points="640.989,-99.0847 648.427,-106.63 647.318,-96.0932 640.989,-99.0847"/>
+</g>
+<!-- module~text_mod -->
+<g id="program~~testeval_prg~~UsesGraph_node6" class="node"><title>module~text_mod</title>
+<g id="a_program~~testeval_prg~~UsesGraph_node6"><a xlink:href="../module/text_mod.html" xlink:title="text_mod">
+<polygon fill="#337ab7" stroke="#337ab7" points="297.5,-129.785 240.5,-129.785 240.5,-105.785 297.5,-105.785 297.5,-129.785"/>
+<text text-anchor="middle" x="269" y="-115.385" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">text_mod</text>
+</a>
+</g>
+</g>
+<!-- module~kinds_mod&#45;&gt;module~text_mod -->
+<g id="program~~testeval_prg~~UsesGraph_edge5" class="edge"><title>module~kinds_mod&#45;&gt;module~text_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M158.5,-77.7852C187.06,-77.932 217.407,-90.0716 238.892,-100.937"/>
+<polygon fill="#000000" stroke="#000000" points="237.334,-104.073 247.813,-105.635 240.595,-97.8789 237.334,-104.073"/>
+</g>
+<!-- module~time_mod -->
+<g id="program~~testeval_prg~~UsesGraph_node9" class="node"><title>module~time_mod</title>
+<g id="a_program~~testeval_prg~~UsesGraph_node9"><a xlink:href="../module/time_mod.html" xlink:title="time_mod">
+<polygon fill="#337ab7" stroke="#337ab7" points="187.5,-129.785 127.5,-129.785 127.5,-105.785 187.5,-105.785 187.5,-129.785"/>
+<text text-anchor="middle" x="157.5" y="-115.385" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">time_mod</text>
+</a>
+</g>
+</g>
+<!-- module~kinds_mod&#45;&gt;module~time_mod -->
+<g id="program~~testeval_prg~~UsesGraph_edge2" class="edge"><title>module~kinds_mod&#45;&gt;module~time_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M71.2199,-103.145C85.3485,-105.57 102.203,-108.464 117.184,-111.036"/>
+<polygon fill="#000000" stroke="#000000" points="116.75,-114.512 127.198,-112.755 117.935,-107.613 116.75,-114.512"/>
+</g>
+<!-- module~node_mod -->
+<g id="program~~testeval_prg~~UsesGraph_node11" class="node"><title>module~node_mod</title>
+<g id="a_program~~testeval_prg~~UsesGraph_node11"><a xlink:href="../module/node_mod.html" xlink:title="node_mod">
+<polygon fill="#337ab7" stroke="#337ab7" points="407,-89.7852 343,-89.7852 343,-65.7852 407,-65.7852 407,-89.7852"/>
+<text text-anchor="middle" x="375" y="-75.3852" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">node_mod</text>
+</a>
+</g>
+</g>
+<!-- module~kinds_mod&#45;&gt;module~node_mod -->
+<g id="program~~testeval_prg~~UsesGraph_edge12" class="edge"><title>module~kinds_mod&#45;&gt;module~node_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M270,-77.7852C290.566,-77.7528 313.421,-77.7493 332.455,-77.7553"/>
+<polygon fill="#000000" stroke="#000000" points="332.596,-81.2553 342.598,-77.7595 332.599,-74.2553 332.596,-81.2553"/>
+</g>
+<!-- module~treevalue_mod -->
+<g id="program~~testeval_prg~~UsesGraph_node12" class="node"><title>module~treevalue_mod</title>
+<g id="a_program~~testeval_prg~~UsesGraph_node12"><a xlink:href="../module/treevalue_mod.html" xlink:title="treeValue_mod">
+<polygon fill="#337ab7" stroke="#337ab7" points="553.5,-48.7852 468.5,-48.7852 468.5,-24.7852 553.5,-24.7852 553.5,-48.7852"/>
+<text text-anchor="middle" x="511" y="-34.3852" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">treeValue_mod</text>
+</a>
+</g>
+</g>
+<!-- module~kinds_mod&#45;&gt;module~treevalue_mod -->
+<g id="program~~testeval_prg~~UsesGraph_edge13" class="edge"><title>module~kinds_mod&#45;&gt;module~treevalue_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M376,-36.7852C402.845,-31.8424 433.232,-31.4305 458.274,-32.4345"/>
+<polygon fill="#000000" stroke="#000000" points="458.139,-35.932 468.297,-32.922 458.479,-28.9403 458.139,-35.932"/>
+</g>
+<!-- module~treeoperator_mod -->
+<g id="program~~testeval_prg~~UsesGraph_node13" class="node"><title>module~treeoperator_mod</title>
+<g id="a_program~~testeval_prg~~UsesGraph_node13"><a xlink:href="../module/treeoperator_mod.html" xlink:title="treeOperator_mod">
+<polygon fill="#337ab7" stroke="#337ab7" points="561.5,-212.785 460.5,-212.785 460.5,-188.785 561.5,-188.785 561.5,-212.785"/>
+<text text-anchor="middle" x="511" y="-198.385" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">treeOperator_mod</text>
+</a>
+</g>
+</g>
+<!-- module~kinds_mod&#45;&gt;module~treeoperator_mod -->
+<g id="program~~testeval_prg~~UsesGraph_edge15" class="edge"><title>module~kinds_mod&#45;&gt;module~treeoperator_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M66.2455,-109.809C70.4543,-112.411 74.5529,-115.41 78,-118.785 123.275,-163.11 100.53,-208.09 156.5,-237.785"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M158.5,-237.785C197.531,-258.493 195.204,-191.115 237,-176.785 313.901,-150.419 409.764,-169.94 465.019,-185.84"/>
+<polygon fill="#000000" stroke="#000000" points="464.268,-189.268 474.85,-188.755 466.257,-182.556 464.268,-189.268"/>
+</g>
+<!-- module~treeexponential_mod -->
+<g id="program~~testeval_prg~~UsesGraph_node14" class="node"><title>module~treeexponential_mod</title>
+<g id="a_program~~testeval_prg~~UsesGraph_node14"><a xlink:href="../module/treeexponential_mod.html" xlink:title="treeExponential_mod">
+<polygon fill="#337ab7" stroke="#337ab7" points="568,-170.785 454,-170.785 454,-146.785 568,-146.785 568,-170.785"/>
+<text text-anchor="middle" x="511" y="-156.385" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">treeExponential_mod</text>
+</a>
+</g>
+</g>
+<!-- module~kinds_mod&#45;&gt;module~treeexponential_mod -->
+<g id="program~~testeval_prg~~UsesGraph_edge17" class="edge"><title>module~kinds_mod&#45;&gt;module~treeexponential_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M270,-77.7852C275.076,-77.7772 397.715,-119.93 465.665,-143.421"/>
+<polygon fill="#000000" stroke="#000000" points="464.679,-146.783 475.273,-146.745 466.967,-140.168 464.679,-146.783"/>
+</g>
+<!-- module~treetrigonometric_mod -->
+<g id="program~~testeval_prg~~UsesGraph_node15" class="node"><title>module~treetrigonometric_mod</title>
+<g id="a_program~~testeval_prg~~UsesGraph_node15"><a xlink:href="../module/treetrigonometric_mod.html" xlink:title="treeTrigonometric_mod">
+<polygon fill="#337ab7" stroke="#337ab7" points="573,-90.7852 449,-90.7852 449,-66.7852 573,-66.7852 573,-90.7852"/>
+<text text-anchor="middle" x="511" y="-76.3852" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">treeTrigonometric_mod</text>
+</a>
+</g>
+</g>
+<!-- module~kinds_mod&#45;&gt;module~treetrigonometric_mod -->
+<g id="program~~testeval_prg~~UsesGraph_edge19" class="edge"><title>module~kinds_mod&#45;&gt;module~treetrigonometric_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M376,-36.7852C380.595,-35.9392 427.739,-51.1676 464.825,-63.522"/>
+<polygon fill="#000000" stroke="#000000" points="463.895,-66.9014 474.488,-66.7517 466.113,-60.2624 463.895,-66.9014"/>
+</g>
+<!-- module~array_mod&#45;&gt;program~testeval_prg -->
+<g id="program~~testeval_prg~~UsesGraph_edge28" class="edge"><title>module~array_mod&#45;&gt;program~testeval_prg</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M291.063,-289.836C311.496,-300.553 343.76,-314.957 374,-317.785"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M376,-317.785C435.297,-323.33 450.484,-315.603 510,-317.785"/>
+</g>
+<!-- module~array_mod&#45;&gt;module~plplotlib_mod -->
+<g id="program~~testeval_prg~~UsesGraph_edge10" class="edge"><title>module~array_mod&#45;&gt;module~plplotlib_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M301.203,-265.784C311.19,-261.943 322.401,-257.631 332.978,-253.563"/>
+<polygon fill="#000000" stroke="#000000" points="334.382,-256.773 342.459,-249.916 331.869,-250.239 334.382,-256.773"/>
+</g>
+<!-- module~plplotlib_mod&#45;&gt;program~testeval_prg -->
+<g id="program~~testeval_prg~~UsesGraph_edge29" class="edge"><title>module~plplotlib_mod&#45;&gt;program~testeval_prg</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M388.316,-249.856C410.431,-270.36 459.314,-310.486 510,-317.785"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M512,-317.785C603.689,-330.989 703.683,-268.008 747.836,-235.789"/>
+<polygon fill="#000000" stroke="#000000" points="749.969,-238.565 755.903,-229.787 745.79,-232.948 749.969,-238.565"/>
+</g>
+<!-- module~expression_mod&#45;&gt;program~testeval_prg -->
+<g id="program~~testeval_prg~~UsesGraph_edge30" class="edge"><title>module~expression_mod&#45;&gt;program~testeval_prg</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M669.663,-130.925C689.492,-147.921 725.714,-178.968 749.052,-198.973"/>
+<polygon fill="#000000" stroke="#000000" points="746.851,-201.696 756.722,-205.547 751.407,-196.381 746.851,-201.696"/>
+</g>
+<!-- module~text_mod&#45;&gt;module~plplotlib_mod -->
+<g id="program~~testeval_prg~~UsesGraph_edge7" class="edge"><title>module~text_mod&#45;&gt;module~plplotlib_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M280.738,-130.175C298.736,-150.942 335.14,-192.947 356.758,-217.891"/>
+<polygon fill="#000000" stroke="#000000" points="354.281,-220.377 363.475,-225.641 359.571,-215.792 354.281,-220.377"/>
+</g>
+<!-- module~text_mod&#45;&gt;module~node_mod -->
+<g id="program~~testeval_prg~~UsesGraph_edge11" class="edge"><title>module~text_mod&#45;&gt;module~node_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M297.597,-107.171C308.613,-102.934 321.519,-97.9702 333.555,-93.341"/>
+<polygon fill="#000000" stroke="#000000" points="334.891,-96.577 342.968,-89.7205 332.378,-90.0436 334.891,-96.577"/>
+</g>
+<!-- plplot -->
+<g id="program~~testeval_prg~~UsesGraph_node7" class="node"><title>plplot</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="296,-209.785 242,-209.785 242,-185.785 296,-185.785 296,-209.785"/>
+<text text-anchor="middle" x="269" y="-195.385" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">plplot</text>
+</g>
+<!-- plplot&#45;&gt;module~plplotlib_mod -->
+<g id="program~~testeval_prg~~UsesGraph_edge9" class="edge"><title>plplot&#45;&gt;module~plplotlib_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M296.244,-207.879C307.354,-212.152 320.564,-217.233 332.913,-221.982"/>
+<polygon fill="#000000" stroke="#000000" points="331.986,-225.376 342.576,-225.699 334.499,-218.843 331.986,-225.376"/>
+</g>
+<!-- iso_fortran_env -->
+<g id="program~~testeval_prg~~UsesGraph_node8" class="node"><title>iso_fortran_env</title>
+<g id="a_program~~testeval_prg~~UsesGraph_node8"><a xlink:href="https://software.intel.com/en-us/node/511041" xlink:title="iso_fortran_env">
+<polygon fill="#337ab7" stroke="#337ab7" points="201,-171.785 114,-171.785 114,-147.785 201,-147.785 201,-171.785"/>
+<text text-anchor="middle" x="157.5" y="-157.385" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">iso_fortran_env</text>
+</a>
+</g>
+</g>
+<!-- iso_fortran_env&#45;&gt;module~text_mod -->
+<g id="program~~testeval_prg~~UsesGraph_edge4" class="edge"><title>iso_fortran_env&#45;&gt;module~text_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M189.878,-147.75C202.694,-142.834 217.612,-137.112 230.957,-131.993"/>
+<polygon fill="#000000" stroke="#000000" points="232.261,-135.242 240.344,-128.393 229.754,-128.706 232.261,-135.242"/>
+</g>
+<!-- module~time_mod&#45;&gt;module~text_mod -->
+<g id="program~~testeval_prg~~UsesGraph_edge6" class="edge"><title>module~time_mod&#45;&gt;module~text_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M187.557,-117.785C200.583,-117.785 216.119,-117.785 230.048,-117.785"/>
+<polygon fill="#000000" stroke="#000000" points="230.319,-121.285 240.319,-117.785 230.319,-114.285 230.319,-121.285"/>
+</g>
+<!-- iso_c_binding -->
+<g id="program~~testeval_prg~~UsesGraph_node10" class="node"><title>iso_c_binding</title>
+<g id="a_program~~testeval_prg~~UsesGraph_node10"><a xlink:href="https://software.intel.com/en-us/node/511038" xlink:title="iso_c_binding">
+<polygon fill="#337ab7" stroke="#337ab7" points="78,-151.785 0,-151.785 0,-127.785 78,-127.785 78,-151.785"/>
+<text text-anchor="middle" x="39" y="-137.385" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">iso_c_binding</text>
+</a>
+</g>
+</g>
+<!-- iso_c_binding&#45;&gt;module~time_mod -->
+<g id="program~~testeval_prg~~UsesGraph_edge3" class="edge"><title>iso_c_binding&#45;&gt;module~time_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M78.1465,-132.582C90.589,-130.232 104.426,-127.619 116.968,-125.25"/>
+<polygon fill="#000000" stroke="#000000" points="117.963,-128.625 127.14,-123.33 116.664,-121.746 117.963,-128.625"/>
+</g>
+<!-- module~node_mod&#45;&gt;module~expression_mod -->
+<g id="program~~testeval_prg~~UsesGraph_edge22" class="edge"><title>module~node_mod&#45;&gt;module~expression_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M407.274,-88.7117C420.065,-92.7848 435.099,-97.0731 449,-99.7852 499.168,-109.573 557.275,-114.357 598.699,-116.672"/>
+<polygon fill="#000000" stroke="#000000" points="598.685,-120.176 608.856,-117.208 599.054,-113.185 598.685,-120.176"/>
+</g>
+<!-- module~node_mod&#45;&gt;module~treevalue_mod -->
+<g id="program~~testeval_prg~~UsesGraph_edge14" class="edge"><title>module~node_mod&#45;&gt;module~treevalue_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M407.079,-68.2759C422.996,-63.4057 442.753,-57.3606 460.689,-51.8729"/>
+<polygon fill="#000000" stroke="#000000" points="461.892,-55.1652 470.43,-48.8924 459.843,-48.4715 461.892,-55.1652"/>
+</g>
+<!-- module~node_mod&#45;&gt;module~treeoperator_mod -->
+<g id="program~~testeval_prg~~UsesGraph_edge16" class="edge"><title>module~node_mod&#45;&gt;module~treeoperator_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M381.603,-90.0334C391.939,-111.314 416.002,-155.187 449,-179.785 451.043,-181.308 453.204,-182.726 455.447,-184.046"/>
+<polygon fill="#000000" stroke="#000000" points="453.93,-187.201 464.424,-188.664 457.132,-180.977 453.93,-187.201"/>
+</g>
+<!-- module~node_mod&#45;&gt;module~treeexponential_mod -->
+<g id="program~~testeval_prg~~UsesGraph_edge18" class="edge"><title>module~node_mod&#45;&gt;module~treeexponential_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M393.861,-89.9835C399.99,-94.2628 406.853,-99.1576 413,-103.785 429.414,-116.143 431.383,-122.213 449,-132.785 454.903,-136.327 461.376,-139.634 467.831,-142.62"/>
+<polygon fill="#000000" stroke="#000000" points="466.646,-145.923 477.208,-146.759 469.472,-139.519 466.646,-145.923"/>
+</g>
+<!-- module~node_mod&#45;&gt;module~treetrigonometric_mod -->
+<g id="program~~testeval_prg~~UsesGraph_edge20" class="edge"><title>module~node_mod&#45;&gt;module~treetrigonometric_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M407.079,-78.0171C416.609,-78.0882 427.516,-78.1696 438.584,-78.2522"/>
+<polygon fill="#000000" stroke="#000000" points="438.734,-81.7533 448.76,-78.3282 438.786,-74.7535 438.734,-81.7533"/>
+</g>
+<!-- module~treevalue_mod&#45;&gt;module~expression_mod -->
+<g id="program~~testeval_prg~~UsesGraph_edge23" class="edge"><title>module~treevalue_mod&#45;&gt;module~expression_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M552.796,-48.8111C559.7,-51.4124 566.675,-54.4116 573,-57.7852 594.67,-69.3438 616.725,-86.5142 632.256,-99.6958"/>
+<polygon fill="#000000" stroke="#000000" points="630.319,-102.648 640.17,-106.548 634.901,-97.356 630.319,-102.648"/>
+</g>
+<!-- module~treeoperator_mod&#45;&gt;module~expression_mod -->
+<g id="program~~testeval_prg~~UsesGraph_edge24" class="edge"><title>module~treeoperator_mod&#45;&gt;module~expression_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M552.796,-188.759C559.7,-186.158 566.675,-183.159 573,-179.785 594.67,-168.227 616.725,-151.056 632.256,-137.875"/>
+<polygon fill="#000000" stroke="#000000" points="634.901,-140.214 640.17,-131.023 630.319,-134.922 634.901,-140.214"/>
+</g>
+<!-- module~treeexponential_mod&#45;&gt;module~expression_mod -->
+<g id="program~~testeval_prg~~UsesGraph_edge25" class="edge"><title>module~treeexponential_mod&#45;&gt;module~expression_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M554.455,-146.784C569.012,-142.669 585.483,-138.012 600.756,-133.695"/>
+<polygon fill="#000000" stroke="#000000" points="601.915,-137.005 610.586,-130.916 600.011,-130.269 601.915,-137.005"/>
+</g>
+<!-- module~treetrigonometric_mod&#45;&gt;module~expression_mod -->
+<g id="program~~testeval_prg~~UsesGraph_edge26" class="edge"><title>module~treetrigonometric_mod&#45;&gt;module~expression_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M554.455,-90.7865C569.012,-94.9017 585.483,-99.5579 600.756,-103.875"/>
+<polygon fill="#000000" stroke="#000000" points="600.011,-107.302 610.586,-106.654 601.915,-100.566 600.011,-107.302"/>
+</g>
+</g>
+</svg>
+</div>
+                <script>var panprogramtesteval_prgUsesGraph = svgPanZoom('#programtesteval_prgUsesGraph', {
+                    zoomEnabled: true,
+                    controlIconsEnabled: true,
+                    fit: true,
+                    center: true,});
+                    </script>
+                <div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div>
+                <div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                      </div>
+                      <div class="modal-body">
+                        
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.38.0 (20140413.2041)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="490pt" height="32pt"
+ viewBox="0.00 0.00 489.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-28 485.5,-28 485.5,4 -4,4"/>
+<!-- Module -->
+<g id="node1" class="node"><title>Module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-24 0,-24 0,-0 54,-0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Module</text>
+</g>
+<!-- Submodule -->
+<g id="node2" class="node"><title>Submodule</title>
+<polygon fill="#5bc0de" stroke="#5bc0de" points="139.5,-24 72.5,-24 72.5,-0 139.5,-0 139.5,-24"/>
+<text text-anchor="middle" x="106" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Submodule</text>
+</g>
+<!-- Subroutine -->
+<g id="node3" class="node"><title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="222,-24 158,-24 158,-0 222,-0 222,-24"/>
+<text text-anchor="middle" x="190" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node4" class="node"><title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="294,-24 240,-24 240,-0 294,-0 294,-24"/>
+<text text-anchor="middle" x="267" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node"><title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="366,-24 312,-24 312,-0 366,-0 366,-24"/>
+<text text-anchor="middle" x="339" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node"><title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="481.5,-24 384.5,-24 384.5,-0 481.5,-0 481.5,-24"/>
+<text text-anchor="middle" x="433" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+
+<p>Solid arrows point from a parent (sub)module to the submodule which is
+descended from it. Dashed arrows point from a module being used to the
+module or program unit using it.
+</p>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+    
+
+    <br><br>
+    <p>Test program for eval_mod</p>
+    
+     <h3>Calls</h3>
+     
+                <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.38.0 (20140413.2041)
+ -->
+<!-- Title: program~~testeval_prg~~CallsGraph Pages: 1 -->
+<svg id="programtesteval_prgCallsGraph" width="469pt" height="746pt"
+ viewBox="0.00 0.00 469.00 746.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="program~~testeval_prg~~CallsGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 742)">
+<title>program~~testeval_prg~~CallsGraph</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-742 465,-742 465,4 -4,4"/>
+<!-- program~testeval_prg -->
+<g id="program~~testeval_prg~~CallsGraph_node1" class="node"><title>program~testeval_prg</title>
+<polygon fill="none" stroke="black" points="72,-486 0,-486 0,-462 72,-462 72,-486"/>
+<text text-anchor="middle" x="36" y="-471.6" font-family="Helvetica,sans-Serif" font-size="10.50">testEval_prg</text>
+</g>
+<!-- proc~testfunction -->
+<g id="program~~testeval_prg~~CallsGraph_node2" class="node"><title>proc~testfunction</title>
+<g id="a_program~~testeval_prg~~CallsGraph_node2"><a xlink:href="../proc/testfunction.html" xlink:title="testFunction">
+<polygon fill="#d9534f" stroke="#d9534f" points="179,-486 108,-486 108,-462 179,-462 179,-486"/>
+<text text-anchor="middle" x="143.5" y="-471.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">testFunction</text>
+</a>
+</g>
+</g>
+<!-- program~testeval_prg&#45;&gt;proc~testfunction -->
+<g id="program~~testeval_prg~~CallsGraph_edge35" class="edge"><title>program~testeval_prg&#45;&gt;proc~testfunction</title>
+<path fill="none" stroke="#000000" d="M72.13,-474C80.312,-474 89.133,-474 97.6707,-474"/>
+<polygon fill="#000000" stroke="#000000" points="97.8823,-477.5 107.882,-474 97.8823,-470.5 97.8823,-477.5"/>
+</g>
+<!-- proc~setup -->
+<g id="program~~testeval_prg~~CallsGraph_node3" class="node"><title>proc~setup</title>
+<g id="a_program~~testeval_prg~~CallsGraph_node3"><a xlink:href="../proc/setup.html" xlink:title="setup">
+<polygon fill="#d9534f" stroke="#d9534f" points="275,-612 221,-612 221,-588 275,-588 275,-612"/>
+<text text-anchor="middle" x="248" y="-597.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">setup</text>
+</a>
+</g>
+</g>
+<!-- proc~testfunction&#45;&gt;proc~setup -->
+<g id="program~~testeval_prg~~CallsGraph_edge32" class="edge"><title>proc~testfunction&#45;&gt;proc~setup</title>
+<path fill="none" stroke="#000000" d="M154.328,-486.081C171.962,-507.758 209.136,-553.454 230.658,-579.911"/>
+<polygon fill="#000000" stroke="#000000" points="228.025,-582.221 237.051,-587.77 233.456,-577.804 228.025,-582.221"/>
+</g>
+<!-- proc~show -->
+<g id="program~~testeval_prg~~CallsGraph_node4" class="node"><title>proc~show</title>
+<g id="a_program~~testeval_prg~~CallsGraph_node4"><a xlink:href="../proc/show.html" xlink:title="show">
+<polygon fill="#d9534f" stroke="#d9534f" points="275,-486 221,-486 221,-462 275,-462 275,-486"/>
+<text text-anchor="middle" x="248" y="-471.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">show</text>
+</a>
+</g>
+</g>
+<!-- proc~testfunction&#45;&gt;proc~show -->
+<g id="program~~testeval_prg~~CallsGraph_edge33" class="edge"><title>proc~testfunction&#45;&gt;proc~show</title>
+<path fill="none" stroke="#000000" d="M179.202,-474C189.288,-474 200.333,-474 210.525,-474"/>
+<polygon fill="#000000" stroke="#000000" points="210.762,-477.5 220.762,-474 210.762,-470.5 210.762,-477.5"/>
+</g>
+<!-- proc~dofunction -->
+<g id="program~~testeval_prg~~CallsGraph_node5" class="node"><title>proc~dofunction</title>
+<g id="a_program~~testeval_prg~~CallsGraph_node5"><a xlink:href="../proc/dofunction.html" xlink:title="doFunction">
+<polygon fill="#d9534f" stroke="#d9534f" points="281,-255 215,-255 215,-231 281,-231 281,-255"/>
+<text text-anchor="middle" x="248" y="-240.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">doFunction</text>
+</a>
+</g>
+</g>
+<!-- proc~testfunction&#45;&gt;proc~dofunction -->
+<g id="program~~testeval_prg~~CallsGraph_edge34" class="edge"><title>proc~testfunction&#45;&gt;proc~dofunction</title>
+<path fill="none" stroke="#000000" d="M149.867,-461.906C166.33,-424.803 216.279,-312.234 237.403,-264.628"/>
+<polygon fill="#000000" stroke="#000000" points="240.706,-265.813 241.563,-255.253 234.308,-262.974 240.706,-265.813"/>
+</g>
+<!-- plsetopt -->
+<g id="program~~testeval_prg~~CallsGraph_node6" class="node"><title>plsetopt</title>
+<polygon fill="#777777" stroke="#777777" points="371,-738 317,-738 317,-714 371,-714 371,-738"/>
+<text text-anchor="middle" x="344" y="-723.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">plsetopt</text>
+</g>
+<!-- proc~setup&#45;&gt;plsetopt -->
+<g id="program~~testeval_prg~~CallsGraph_edge1" class="edge"><title>proc~setup&#45;&gt;plsetopt</title>
+<path fill="none" stroke="#000000" d="M255.234,-612.194C266.067,-632.704 289.825,-674.819 317,-705 317.612,-705.679 318.246,-706.354 318.899,-707.023"/>
+<polygon fill="#000000" stroke="#000000" points="316.612,-709.675 326.345,-713.861 321.347,-704.519 316.612,-709.675"/>
+</g>
+<!-- plinit -->
+<g id="program~~testeval_prg~~CallsGraph_node7" class="node"><title>plinit</title>
+<polygon fill="#777777" stroke="#777777" points="371,-696 317,-696 317,-672 371,-672 371,-696"/>
+<text text-anchor="middle" x="344" y="-681.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">plinit</text>
+</g>
+<!-- proc~setup&#45;&gt;plinit -->
+<g id="program~~testeval_prg~~CallsGraph_edge2" class="edge"><title>proc~setup&#45;&gt;plinit</title>
+<path fill="none" stroke="#000000" d="M261.797,-612.344C275.291,-625.243 297.285,-645.94 317,-663 317.963,-663.833 318.951,-664.677 319.954,-665.525"/>
+<polygon fill="#000000" stroke="#000000" points="317.796,-668.282 327.734,-671.956 322.256,-662.887 317.796,-668.282"/>
+</g>
+<!-- plsdev -->
+<g id="program~~testeval_prg~~CallsGraph_node8" class="node"><title>plsdev</title>
+<polygon fill="#777777" stroke="#777777" points="371,-654 317,-654 317,-630 371,-630 371,-654"/>
+<text text-anchor="middle" x="344" y="-639.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">plsdev</text>
+</g>
+<!-- proc~setup&#45;&gt;plsdev -->
+<g id="program~~testeval_prg~~CallsGraph_edge3" class="edge"><title>proc~setup&#45;&gt;plsdev</title>
+<path fill="none" stroke="#000000" d="M275.184,-611.699C285.268,-616.205 296.954,-621.426 307.755,-626.252"/>
+<polygon fill="#000000" stroke="#000000" points="306.398,-629.479 316.956,-630.363 309.254,-623.088 306.398,-629.479"/>
+</g>
+<!-- plsfam -->
+<g id="program~~testeval_prg~~CallsGraph_node9" class="node"><title>plsfam</title>
+<polygon fill="#777777" stroke="#777777" points="371,-612 317,-612 317,-588 371,-588 371,-612"/>
+<text text-anchor="middle" x="344" y="-597.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">plsfam</text>
+</g>
+<!-- proc~setup&#45;&gt;plsfam -->
+<g id="program~~testeval_prg~~CallsGraph_edge4" class="edge"><title>proc~setup&#45;&gt;plsfam</title>
+<path fill="none" stroke="#000000" d="M275.184,-600C284.963,-600 296.247,-600 306.771,-600"/>
+<polygon fill="#000000" stroke="#000000" points="306.956,-603.5 316.956,-600 306.956,-596.5 306.956,-603.5"/>
+</g>
+<!-- plsfnam -->
+<g id="program~~testeval_prg~~CallsGraph_node10" class="node"><title>plsfnam</title>
+<polygon fill="#777777" stroke="#777777" points="371,-570 317,-570 317,-546 371,-546 371,-570"/>
+<text text-anchor="middle" x="344" y="-555.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">plsfnam</text>
+</g>
+<!-- proc~setup&#45;&gt;plsfnam -->
+<g id="program~~testeval_prg~~CallsGraph_edge5" class="edge"><title>proc~setup&#45;&gt;plsfnam</title>
+<path fill="none" stroke="#000000" d="M275.184,-588.301C285.268,-583.795 296.954,-578.574 307.755,-573.748"/>
+<polygon fill="#000000" stroke="#000000" points="309.254,-576.912 316.956,-569.637 306.398,-570.521 309.254,-576.912"/>
+</g>
+<!-- plfontld -->
+<g id="program~~testeval_prg~~CallsGraph_node11" class="node"><title>plfontld</title>
+<polygon fill="#777777" stroke="#777777" points="371,-528 317,-528 317,-504 371,-504 371,-528"/>
+<text text-anchor="middle" x="344" y="-513.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">plfontld</text>
+</g>
+<!-- proc~setup&#45;&gt;plfontld -->
+<g id="program~~testeval_prg~~CallsGraph_edge6" class="edge"><title>proc~setup&#45;&gt;plfontld</title>
+<path fill="none" stroke="#000000" d="M261.797,-587.656C275.291,-574.757 297.285,-554.06 317,-537 317.963,-536.167 318.951,-535.323 319.954,-534.475"/>
+<polygon fill="#000000" stroke="#000000" points="322.256,-537.113 327.734,-528.044 317.796,-531.718 322.256,-537.113"/>
+</g>
+<!-- plend -->
+<g id="program~~testeval_prg~~CallsGraph_node12" class="node"><title>plend</title>
+<polygon fill="#777777" stroke="#777777" points="371,-486 317,-486 317,-462 371,-462 371,-486"/>
+<text text-anchor="middle" x="344" y="-471.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">plend</text>
+</g>
+<!-- proc~show&#45;&gt;plend -->
+<g id="program~~testeval_prg~~CallsGraph_edge7" class="edge"><title>proc~show&#45;&gt;plend</title>
+<path fill="none" stroke="#000000" d="M275.184,-474C284.963,-474 296.247,-474 306.771,-474"/>
+<polygon fill="#000000" stroke="#000000" points="306.956,-477.5 316.956,-474 306.956,-470.5 306.956,-477.5"/>
+</g>
+<!-- interface~mixval -->
+<g id="program~~testeval_prg~~CallsGraph_node13" class="node"><title>interface~mixval</title>
+<g id="a_program~~testeval_prg~~CallsGraph_node13"><a xlink:href="../interface/mixval.html" xlink:title="mixval">
+<polygon fill="#a7506f" stroke="#a7506f" points="371,-444 317,-444 317,-420 371,-420 371,-444"/>
+<text text-anchor="middle" x="344" y="-429.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">mixval</text>
+</a>
+</g>
+</g>
+<!-- proc~dofunction&#45;&gt;interface~mixval -->
+<g id="program~~testeval_prg~~CallsGraph_edge23" class="edge"><title>proc~dofunction&#45;&gt;interface~mixval</title>
+<path fill="none" stroke="#000000" d="M251.645,-255.023C258.49,-284.116 278.957,-359.69 317,-411 317.367,-411.495 317.749,-411.986 318.143,-412.47"/>
+<polygon fill="#000000" stroke="#000000" points="315.826,-415.106 325.331,-419.786 320.819,-410.2 315.826,-415.106"/>
+</g>
+<!-- proc~figure -->
+<g id="program~~testeval_prg~~CallsGraph_node14" class="node"><title>proc~figure</title>
+<g id="a_program~~testeval_prg~~CallsGraph_node14"><a xlink:href="../proc/figure.html" xlink:title="figure">
+<polygon fill="#d9534f" stroke="#d9534f" points="371,-402 317,-402 317,-378 371,-378 371,-402"/>
+<text text-anchor="middle" x="344" y="-387.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">figure</text>
+</a>
+</g>
+</g>
+<!-- proc~dofunction&#45;&gt;proc~figure -->
+<g id="program~~testeval_prg~~CallsGraph_edge24" class="edge"><title>proc~dofunction&#45;&gt;proc~figure</title>
+<path fill="none" stroke="#000000" d="M256.692,-255.03C272.667,-280.011 309.606,-337.777 329.587,-369.024"/>
+<polygon fill="#000000" stroke="#000000" points="326.865,-371.265 335.201,-377.804 332.763,-367.494 326.865,-371.265"/>
+</g>
+<!-- proc~subplot -->
+<g id="program~~testeval_prg~~CallsGraph_node15" class="node"><title>proc~subplot</title>
+<g id="a_program~~testeval_prg~~CallsGraph_node15"><a xlink:href="../proc/subplot.html" xlink:title="subplot">
+<polygon fill="#d9534f" stroke="#d9534f" points="371,-339 317,-339 317,-315 371,-315 371,-339"/>
+<text text-anchor="middle" x="344" y="-324.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">subplot</text>
+</a>
+</g>
+</g>
+<!-- proc~dofunction&#45;&gt;proc~subplot -->
+<g id="program~~testeval_prg~~CallsGraph_edge25" class="edge"><title>proc~dofunction&#45;&gt;proc~subplot</title>
+<path fill="none" stroke="#000000" d="M262.468,-255.035C277.964,-268.883 303.607,-291.798 321.791,-308.047"/>
+<polygon fill="#000000" stroke="#000000" points="319.768,-310.934 329.557,-314.987 324.433,-305.714 319.768,-310.934"/>
+</g>
+<!-- interface~span -->
+<g id="program~~testeval_prg~~CallsGraph_node16" class="node"><title>interface~span</title>
+<g id="a_program~~testeval_prg~~CallsGraph_node16"><a xlink:href="../interface/span.html" xlink:title="span">
+<polygon fill="#a7506f" stroke="#a7506f" points="371,-276 317,-276 317,-252 371,-252 371,-276"/>
+<text text-anchor="middle" x="344" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">span</text>
+</a>
+</g>
+</g>
+<!-- proc~dofunction&#45;&gt;interface~span -->
+<g id="program~~testeval_prg~~CallsGraph_edge26" class="edge"><title>proc~dofunction&#45;&gt;interface~span</title>
+<path fill="none" stroke="#000000" d="M281.087,-250.168C289.497,-252.047 298.617,-254.085 307.208,-256.004"/>
+<polygon fill="#000000" stroke="#000000" points="306.451,-259.421 316.974,-258.186 307.977,-252.589 306.451,-259.421"/>
+</g>
+<!-- proc~labels -->
+<g id="program~~testeval_prg~~CallsGraph_node17" class="node"><title>proc~labels</title>
+<g id="a_program~~testeval_prg~~CallsGraph_node17"><a xlink:href="../proc/labels.html" xlink:title="labels">
+<polygon fill="#d9534f" stroke="#d9534f" points="371,-234 317,-234 317,-210 371,-210 371,-234"/>
+<text text-anchor="middle" x="344" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">labels</text>
+</a>
+</g>
+</g>
+<!-- proc~dofunction&#45;&gt;proc~labels -->
+<g id="program~~testeval_prg~~CallsGraph_edge27" class="edge"><title>proc~dofunction&#45;&gt;proc~labels</title>
+<path fill="none" stroke="#000000" d="M281.087,-235.832C289.497,-233.953 298.617,-231.915 307.208,-229.996"/>
+<polygon fill="#000000" stroke="#000000" points="307.977,-233.411 316.974,-227.814 306.451,-226.579 307.977,-233.411"/>
+</g>
+<!-- proc~plot -->
+<g id="program~~testeval_prg~~CallsGraph_node18" class="node"><title>proc~plot</title>
+<g id="a_program~~testeval_prg~~CallsGraph_node18"><a xlink:href="../proc/plot.html" xlink:title="plot">
+<polygon fill="#d9534f" stroke="#d9534f" points="371,-192 317,-192 317,-168 371,-168 371,-192"/>
+<text text-anchor="middle" x="344" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">plot</text>
+</a>
+</g>
+</g>
+<!-- proc~dofunction&#45;&gt;proc~plot -->
+<g id="program~~testeval_prg~~CallsGraph_edge28" class="edge"><title>proc~dofunction&#45;&gt;proc~plot</title>
+<path fill="none" stroke="#000000" d="M267.124,-230.853C281.169,-221.44 300.829,-208.263 316.618,-197.681"/>
+<polygon fill="#000000" stroke="#000000" points="318.573,-200.585 324.931,-192.11 314.676,-194.77 318.573,-200.585"/>
+</g>
+<!-- proc~linspace -->
+<g id="program~~testeval_prg~~CallsGraph_node19" class="node"><title>proc~linspace</title>
+<g id="a_program~~testeval_prg~~CallsGraph_node19"><a xlink:href="../proc/linspace.html" xlink:title="linspace">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="371,-150 317,-150 317,-126 371,-126 371,-150"/>
+<text text-anchor="middle" x="344" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">linspace</text>
+</a>
+</g>
+</g>
+<!-- proc~dofunction&#45;&gt;proc~linspace -->
+<g id="program~~testeval_prg~~CallsGraph_edge29" class="edge"><title>proc~dofunction&#45;&gt;proc~linspace</title>
+<path fill="none" stroke="#000000" d="M257.511,-230.931C269.726,-213.994 293.371,-182.603 317,-159 317.665,-158.336 318.349,-157.672 319.048,-157.011"/>
+<polygon fill="#000000" stroke="#000000" points="321.66,-159.376 326.868,-150.149 317.043,-154.114 321.66,-159.376"/>
+</g>
+<!-- proc~ticks -->
+<g id="program~~testeval_prg~~CallsGraph_node20" class="node"><title>proc~ticks</title>
+<g id="a_program~~testeval_prg~~CallsGraph_node20"><a xlink:href="../proc/ticks.html" xlink:title="ticks">
+<polygon fill="#d9534f" stroke="#d9534f" points="371,-98 317,-98 317,-74 371,-74 371,-98"/>
+<text text-anchor="middle" x="344" y="-83.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">ticks</text>
+</a>
+</g>
+</g>
+<!-- proc~dofunction&#45;&gt;proc~ticks -->
+<g id="program~~testeval_prg~~CallsGraph_edge30" class="edge"><title>proc~dofunction&#45;&gt;proc~ticks</title>
+<path fill="none" stroke="#000000" d="M254.599,-230.716C265.347,-207.618 290.194,-156.487 317,-117 319.486,-113.339 322.322,-109.602 325.187,-106.049"/>
+<polygon fill="#000000" stroke="#000000" points="328.017,-108.121 331.77,-98.2126 322.658,-103.618 328.017,-108.121"/>
+</g>
+<!-- proc~xylim -->
+<g id="program~~testeval_prg~~CallsGraph_node21" class="node"><title>proc~xylim</title>
+<g id="a_program~~testeval_prg~~CallsGraph_node21"><a xlink:href="../proc/xylim.html" xlink:title="xylim">
+<polygon fill="#d9534f" stroke="#d9534f" points="371,-35 317,-35 317,-11 371,-11 371,-35"/>
+<text text-anchor="middle" x="344" y="-20.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">xylim</text>
+</a>
+</g>
+</g>
+<!-- proc~dofunction&#45;&gt;proc~xylim -->
+<g id="program~~testeval_prg~~CallsGraph_edge31" class="edge"><title>proc~dofunction&#45;&gt;proc~xylim</title>
+<path fill="none" stroke="#000000" d="M252.844,-230.575C262.156,-201.092 287.357,-124.889 317,-65 320.557,-57.8138 324.984,-50.2742 329.171,-43.598"/>
+<polygon fill="#000000" stroke="#000000" points="332.145,-45.4436 334.628,-35.1436 326.264,-41.6476 332.145,-45.4436"/>
+</g>
+<!-- pleop -->
+<g id="program~~testeval_prg~~CallsGraph_node22" class="node"><title>pleop</title>
+<polygon fill="#777777" stroke="#777777" points="461,-528 407,-528 407,-504 461,-504 461,-528"/>
+<text text-anchor="middle" x="434" y="-513.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pleop</text>
+</g>
+<!-- proc~figure&#45;&gt;pleop -->
+<g id="program~~testeval_prg~~CallsGraph_edge8" class="edge"><title>proc~figure&#45;&gt;pleop</title>
+<path fill="none" stroke="#000000" d="M362.348,-402.02C365.493,-404.725 368.548,-407.762 371,-411 395.521,-443.381 382.479,-462.619 407,-495 407.46,-495.607 407.941,-496.207 408.439,-496.799"/>
+<polygon fill="#000000" stroke="#000000" points="406.096,-499.405 415.652,-503.98 411.034,-494.444 406.096,-499.405"/>
+</g>
+<!-- pladv -->
+<g id="program~~testeval_prg~~CallsGraph_node23" class="node"><title>pladv</title>
+<polygon fill="#777777" stroke="#777777" points="461,-444 407,-444 407,-420 461,-420 461,-444"/>
+<text text-anchor="middle" x="434" y="-429.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pladv</text>
+</g>
+<!-- proc~figure&#45;&gt;pladv -->
+<g id="program~~testeval_prg~~CallsGraph_edge9" class="edge"><title>proc~figure&#45;&gt;pladv</title>
+<path fill="none" stroke="#000000" d="M370.453,-402.148C379.21,-406.327 389.165,-411.079 398.518,-415.543"/>
+<polygon fill="#000000" stroke="#000000" points="397.072,-418.73 407.604,-419.879 400.087,-412.413 397.072,-418.73"/>
+</g>
+<!-- plbop -->
+<g id="program~~testeval_prg~~CallsGraph_node24" class="node"><title>plbop</title>
+<polygon fill="#777777" stroke="#777777" points="461,-486 407,-486 407,-462 461,-462 461,-486"/>
+<text text-anchor="middle" x="434" y="-471.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">plbop</text>
+</g>
+<!-- proc~figure&#45;&gt;plbop -->
+<g id="program~~testeval_prg~~CallsGraph_edge10" class="edge"><title>proc~figure&#45;&gt;plbop</title>
+<path fill="none" stroke="#000000" d="M361.068,-402.214C364.448,-404.992 367.92,-408.009 371,-411 388.637,-428.129 389.363,-435.871 407,-453 407.674,-453.654 408.366,-454.31 409.073,-454.964"/>
+<polygon fill="#000000" stroke="#000000" points="407.086,-457.874 416.932,-461.786 411.674,-452.587 407.086,-457.874"/>
+</g>
+<!-- plssub -->
+<g id="program~~testeval_prg~~CallsGraph_node25" class="node"><title>plssub</title>
+<polygon fill="#777777" stroke="#777777" points="461,-402 407,-402 407,-378 461,-378 461,-402"/>
+<text text-anchor="middle" x="434" y="-387.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">plssub</text>
+</g>
+<!-- proc~figure&#45;&gt;plssub -->
+<g id="program~~testeval_prg~~CallsGraph_edge11" class="edge"><title>proc~figure&#45;&gt;plssub</title>
+<path fill="none" stroke="#000000" d="M371.403,-390C379.393,-390 388.311,-390 396.824,-390"/>
+<polygon fill="#000000" stroke="#000000" points="396.919,-393.5 406.919,-390 396.919,-386.5 396.919,-393.5"/>
+</g>
+<!-- proc~subplot&#45;&gt;pladv -->
+<g id="program~~testeval_prg~~CallsGraph_edge13" class="edge"><title>proc~subplot&#45;&gt;pladv</title>
+<path fill="none" stroke="#000000" d="M352.546,-339.152C363.43,-356.188 384.689,-387.695 407,-411 407.65,-411.678 408.321,-412.355 409.009,-413.027"/>
+<polygon fill="#000000" stroke="#000000" points="406.974,-415.902 416.764,-419.953 411.636,-410.681 406.974,-415.902"/>
+</g>
+<!-- proc~subplot&#45;&gt;plssub -->
+<g id="program~~testeval_prg~~CallsGraph_edge16" class="edge"><title>proc~subplot&#45;&gt;plssub</title>
+<path fill="none" stroke="#000000" d="M361.967,-339.147C374.994,-348.473 393.181,-361.493 407.891,-372.024"/>
+<polygon fill="#000000" stroke="#000000" points="405.916,-374.915 416.085,-377.89 409.991,-369.223 405.916,-374.915"/>
+</g>
+<!-- plvasp -->
+<g id="program~~testeval_prg~~CallsGraph_node26" class="node"><title>plvasp</title>
+<polygon fill="#777777" stroke="#777777" points="461,-360 407,-360 407,-336 461,-336 461,-360"/>
+<text text-anchor="middle" x="434" y="-345.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">plvasp</text>
+</g>
+<!-- proc~subplot&#45;&gt;plvasp -->
+<g id="program~~testeval_prg~~CallsGraph_edge12" class="edge"><title>proc~subplot&#45;&gt;plvasp</title>
+<path fill="none" stroke="#000000" d="M371.403,-333.301C379.481,-335.228 388.507,-337.382 397.105,-339.434"/>
+<polygon fill="#000000" stroke="#000000" points="396.38,-342.859 406.919,-341.776 398.005,-336.05 396.38,-342.859"/>
+</g>
+<!-- plvsta -->
+<g id="program~~testeval_prg~~CallsGraph_node27" class="node"><title>plvsta</title>
+<polygon fill="#777777" stroke="#777777" points="461,-318 407,-318 407,-294 461,-294 461,-318"/>
+<text text-anchor="middle" x="434" y="-303.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">plvsta</text>
+</g>
+<!-- proc~subplot&#45;&gt;plvsta -->
+<g id="program~~testeval_prg~~CallsGraph_edge14" class="edge"><title>proc~subplot&#45;&gt;plvsta</title>
+<path fill="none" stroke="#000000" d="M371.403,-320.699C379.481,-318.772 388.507,-316.618 397.105,-314.566"/>
+<polygon fill="#000000" stroke="#000000" points="398.005,-317.95 406.919,-312.224 396.38,-311.141 398.005,-317.95"/>
+</g>
+<!-- plvpor -->
+<g id="program~~testeval_prg~~CallsGraph_node28" class="node"><title>plvpor</title>
+<polygon fill="#777777" stroke="#777777" points="461,-276 407,-276 407,-252 461,-252 461,-276"/>
+<text text-anchor="middle" x="434" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">plvpor</text>
+</g>
+<!-- proc~subplot&#45;&gt;plvpor -->
+<g id="program~~testeval_prg~~CallsGraph_edge15" class="edge"><title>proc~subplot&#45;&gt;plvpor</title>
+<path fill="none" stroke="#000000" d="M361.967,-314.853C374.994,-305.527 393.181,-292.507 407.891,-281.976"/>
+<polygon fill="#000000" stroke="#000000" points="409.991,-284.777 416.085,-276.11 405.916,-279.085 409.991,-284.777"/>
+</g>
+<!-- pllab -->
+<g id="program~~testeval_prg~~CallsGraph_node29" class="node"><title>pllab</title>
+<polygon fill="#777777" stroke="#777777" points="461,-234 407,-234 407,-210 461,-210 461,-234"/>
+<text text-anchor="middle" x="434" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pllab</text>
+</g>
+<!-- proc~labels&#45;&gt;pllab -->
+<g id="program~~testeval_prg~~CallsGraph_edge17" class="edge"><title>proc~labels&#45;&gt;pllab</title>
+<path fill="none" stroke="#000000" d="M371.403,-222C379.393,-222 388.311,-222 396.824,-222"/>
+<polygon fill="#000000" stroke="#000000" points="396.919,-225.5 406.919,-222 396.919,-218.5 396.919,-225.5"/>
+</g>
+<!-- plptex -->
+<g id="program~~testeval_prg~~CallsGraph_node30" class="node"><title>plptex</title>
+<polygon fill="#777777" stroke="#777777" points="461,-192 407,-192 407,-168 461,-168 461,-192"/>
+<text text-anchor="middle" x="434" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">plptex</text>
+</g>
+<!-- proc~plot&#45;&gt;plptex -->
+<g id="program~~testeval_prg~~CallsGraph_edge18" class="edge"><title>proc~plot&#45;&gt;plptex</title>
+<path fill="none" stroke="#000000" d="M371.403,-180C379.393,-180 388.311,-180 396.824,-180"/>
+<polygon fill="#000000" stroke="#000000" points="396.919,-183.5 406.919,-180 396.919,-176.5 396.919,-183.5"/>
+</g>
+<!-- plline -->
+<g id="program~~testeval_prg~~CallsGraph_node31" class="node"><title>plline</title>
+<polygon fill="#777777" stroke="#777777" points="461,-150 407,-150 407,-126 461,-126 461,-150"/>
+<text text-anchor="middle" x="434" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">plline</text>
+</g>
+<!-- proc~plot&#45;&gt;plline -->
+<g id="program~~testeval_prg~~CallsGraph_edge19" class="edge"><title>proc~plot&#45;&gt;plline</title>
+<path fill="none" stroke="#000000" d="M370.453,-167.852C379.21,-163.673 389.165,-158.921 398.518,-154.457"/>
+<polygon fill="#000000" stroke="#000000" points="400.087,-157.587 407.604,-150.121 397.072,-151.27 400.087,-157.587"/>
+</g>
+<!-- plssym -->
+<g id="program~~testeval_prg~~CallsGraph_node32" class="node"><title>plssym</title>
+<polygon fill="#777777" stroke="#777777" points="461,-108 407,-108 407,-84 461,-84 461,-108"/>
+<text text-anchor="middle" x="434" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">plssym</text>
+</g>
+<!-- proc~plot&#45;&gt;plssym -->
+<g id="program~~testeval_prg~~CallsGraph_edge20" class="edge"><title>proc~plot&#45;&gt;plssym</title>
+<path fill="none" stroke="#000000" d="M361.068,-167.786C364.448,-165.008 367.92,-161.991 371,-159 388.637,-141.871 389.363,-134.129 407,-117 407.674,-116.346 408.366,-115.69 409.073,-115.036"/>
+<polygon fill="#000000" stroke="#000000" points="411.674,-117.413 416.932,-108.214 407.086,-112.126 411.674,-117.413"/>
+</g>
+<!-- plbox -->
+<g id="program~~testeval_prg~~CallsGraph_node33" class="node"><title>plbox</title>
+<polygon fill="#777777" stroke="#777777" points="461,-66 407,-66 407,-42 461,-42 461,-66"/>
+<text text-anchor="middle" x="434" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">plbox</text>
+</g>
+<!-- proc~ticks&#45;&gt;plbox -->
+<g id="program~~testeval_prg~~CallsGraph_edge21" class="edge"><title>proc~ticks&#45;&gt;plbox</title>
+<path fill="none" stroke="#000000" d="M371.403,-76.3989C379.569,-73.4295 388.703,-70.108 397.385,-66.951"/>
+<polygon fill="#000000" stroke="#000000" points="398.717,-70.1908 406.919,-63.484 396.325,-63.6122 398.717,-70.1908"/>
+</g>
+<!-- plwind -->
+<g id="program~~testeval_prg~~CallsGraph_node34" class="node"><title>plwind</title>
+<polygon fill="#777777" stroke="#777777" points="461,-24 407,-24 407,-0 461,-0 461,-24"/>
+<text text-anchor="middle" x="434" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">plwind</text>
+</g>
+<!-- proc~xylim&#45;&gt;plwind -->
+<g id="program~~testeval_prg~~CallsGraph_edge22" class="edge"><title>proc~xylim&#45;&gt;plwind</title>
+<path fill="none" stroke="#000000" d="M371.403,-19.6996C379.393,-18.7008 388.311,-17.5862 396.824,-16.522"/>
+<polygon fill="#000000" stroke="#000000" points="397.43,-19.9735 406.919,-15.2601 396.562,-13.0276 397.43,-19.9735"/>
+</g>
+</g>
+</svg>
+</div>
+                <div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div>
+                <div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                      </div>
+                      <div class="modal-body">
+                        
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.38.0 (20140413.2041)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="560pt" height="32pt"
+ viewBox="0.00 0.00 559.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-28 555.5,-28 555.5,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node"><title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="64,-24 0,-24 0,-0 64,-0 64,-24"/>
+<text text-anchor="middle" x="32" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node"><title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="136,-24 82,-24 82,-0 136,-0 136,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node"><title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="209.5,-24 154.5,-24 154.5,-0 209.5,-0 209.5,-24"/>
+<text text-anchor="middle" x="182" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node4" class="node"><title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="364,-24 228,-24 228,-0 364,-0 364,-24"/>
+<text text-anchor="middle" x="296" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node"><title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="436,-24 382,-24 382,-0 436,-0 436,-24"/>
+<text text-anchor="middle" x="409" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node"><title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="551.5,-24 454.5,-24 454.5,-0 551.5,-0 551.5,-24"/>
+<text text-anchor="middle" x="503" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+
+<p>Solid arrows point from a procedure to one which it calls. Dashed 
+arrows point from an interface to procedures which implement that interface.
+This could include the module procedures in a generic interface or the
+implementation in a submodule of an interface in a parent module.
+</p>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+     
+    <br>
+
+     <section class="visible-xs visible-sm hidden-md">
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-1">Subroutines</a></h3></div>
+  <div class="list-group">
+    <div id="subs-1" class="panel-collapse collapse">
+      
+      <a class="list-group-item" href="../program/testeval_prg.html#proc-testfunction">testFunction</a>
+      
+      <a class="list-group-item" href="../program/testeval_prg.html#proc-dofunction">doFunction</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../program/testeval_prg.html#src">testEval_prg</a>
+  </div>
+</div>
+
+
+     </section>
+     <br class="visible-xs visible-sm hidden-md">
+
+     
+
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+
+    
+    <section>
+    <h2>Subroutines</h2>
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-testfunction"></span><h3>
+subroutine <a href='../proc/testfunction.html'>testFunction</a>()
+    
+    
+	 
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Verify operation of newFunction and eval</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-dofunction"></span><h3>
+subroutine <a href='../proc/dofunction.html'>doFunction</a>(s, r)
+    
+    
+	 
+</h3></div>
+  <div class="panel-body">
+       
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>s</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=wp),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(2)</td><td>::</td>
+  <td><strong>r</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  </div>
+  </div>
+
+    
+    </section>    
+    
+    
+    
+    <section>
+    <h2 id="src">Source Code</h2>
+    <div class="highlight"><pre><span></span><span class="k">program </span><span class="n">testEval_prg</span>
+	<span class="c">!! Test program for eval_mod</span>
+	<span class="k">use </span><span class="n">kinds_mod</span>
+	<span class="k">use </span><span class="n">expression_mod</span>
+	<span class="k">use </span><span class="n">array_mod</span>
+	<span class="k">use </span><span class="n">plplotlib_mod</span>
+	<span class="k">implicit none</span>
+<span class="k">	</span>
+<span class="k">	call </span><span class="n">testFunction</span>
+	
+<span class="k">contains</span>
+
+<span class="k">	subroutine </span><span class="n">testFunction</span>
+		<span class="c">!! Verify operation of newFunction and eval</span>
+		<span class="k">call </span><span class="n">setup</span><span class="p">(</span><span class="n">fileName</span><span class="o">=</span><span class="s1">&#39;testsExpression-%n.svg&#39;</span><span class="p">,</span><span class="n">figSize</span><span class="o">=</span><span class="p">[</span><span class="mi">400</span><span class="p">,</span><span class="mi">300</span><span class="p">])</span>
+		
+<span class="c">! 		call doFunction(&#39;f(x) = x+1j&#39;,[-2.0_wp,2.0_wp])</span>
+		
+		<span class="k">call </span><span class="n">doFunction</span><span class="p">(</span><span class="s1">&#39;f(x) = x+1&#39;</span><span class="p">,[</span><span class="o">-</span><span class="mf">2.0_wp</span><span class="p">,</span><span class="mf">2.0_wp</span><span class="p">])</span>
+		<span class="k">call </span><span class="n">doFunction</span><span class="p">(</span><span class="s1">&#39;f(x) = x-1&#39;</span><span class="p">,[</span><span class="o">-</span><span class="mf">2.0_wp</span><span class="p">,</span><span class="mf">2.0_wp</span><span class="p">])</span>
+		<span class="k">call </span><span class="n">doFunction</span><span class="p">(</span><span class="s1">&#39;f(x) = 2*x&#39;</span><span class="p">,[</span><span class="o">-</span><span class="mf">2.0_wp</span><span class="p">,</span><span class="mf">2.0_wp</span><span class="p">])</span>
+		<span class="k">call </span><span class="n">doFunction</span><span class="p">(</span><span class="s1">&#39;f(x) = x/2&#39;</span><span class="p">,[</span><span class="o">-</span><span class="mf">2.0_wp</span><span class="p">,</span><span class="mf">2.0_wp</span><span class="p">])</span>
+		<span class="k">call </span><span class="n">doFunction</span><span class="p">(</span><span class="s1">&#39;f(x) = x^2&#39;</span><span class="p">,[</span><span class="o">-</span><span class="mf">2.0_wp</span><span class="p">,</span><span class="mf">2.0_wp</span><span class="p">])</span>
+		
+		<span class="k">call </span><span class="n">doFunction</span><span class="p">(</span><span class="s1">&#39;f(x) = sqrt(x^2)&#39;</span><span class="p">,[</span><span class="o">-</span><span class="mf">2.0_wp</span><span class="p">,</span><span class="mf">2.0_wp</span><span class="p">])</span>
+		<span class="k">call </span><span class="n">doFunction</span><span class="p">(</span><span class="s1">&#39;f(x) = abs(x)&#39;</span><span class="p">,[</span><span class="o">-</span><span class="mf">2.0_wp</span><span class="p">,</span><span class="mf">2.0_wp</span><span class="p">])</span>
+		<span class="k">call </span><span class="n">doFunction</span><span class="p">(</span><span class="s1">&#39;f(x) = exp(x)&#39;</span><span class="p">,[</span><span class="mf">0.0_wp</span><span class="p">,</span><span class="mf">1.0_wp</span><span class="p">])</span>
+		<span class="k">call </span><span class="n">doFunction</span><span class="p">(</span><span class="s1">&#39;f(x) = log(exp(x))&#39;</span><span class="p">,[</span><span class="mf">0.0_wp</span><span class="p">,</span><span class="mf">1.0_wp</span><span class="p">])</span>
+		<span class="k">call </span><span class="n">doFunction</span><span class="p">(</span><span class="s1">&#39;f(x) = sin(x)&#39;</span><span class="p">,[</span><span class="mf">0.0_wp</span><span class="p">,</span><span class="mf">2.0_wp</span><span class="o">*</span><span class="n">PI</span><span class="p">])</span>
+		<span class="k">call </span><span class="n">doFunction</span><span class="p">(</span><span class="s1">&#39;f(x) = asin(sin(x))&#39;</span><span class="p">,[</span><span class="mf">0.0_wp</span><span class="p">,</span><span class="mf">2.0_wp</span><span class="o">*</span><span class="n">PI</span><span class="p">])</span>
+		<span class="k">call </span><span class="n">doFunction</span><span class="p">(</span><span class="s1">&#39;f(x) = cos(x)&#39;</span><span class="p">,[</span><span class="mf">0.0_wp</span><span class="p">,</span><span class="mf">2.0_wp</span><span class="o">*</span><span class="n">PI</span><span class="p">])</span>
+		<span class="k">call </span><span class="n">doFunction</span><span class="p">(</span><span class="s1">&#39;f(x) = acos(cos(x))&#39;</span><span class="p">,[</span><span class="mf">0.0_wp</span><span class="p">,</span><span class="mf">2.0_wp</span><span class="o">*</span><span class="n">PI</span><span class="p">])</span>
+		
+		<span class="k">call </span><span class="n">doFunction</span><span class="p">(</span><span class="s1">&#39;f(x) = 2*(x+1)/3&#39;</span><span class="p">,[</span><span class="mf">0.0_wp</span><span class="p">,</span><span class="mf">2.0_wp</span><span class="o">*</span><span class="n">PI</span><span class="p">])</span>
+		<span class="k">call </span><span class="n">doFunction</span><span class="p">(</span><span class="s1">&#39;f(x) = (x+1)*(x-1)/6&#39;</span><span class="p">,[</span><span class="mf">0.0_wp</span><span class="p">,</span><span class="mf">2.0_wp</span><span class="o">*</span><span class="n">PI</span><span class="p">])</span>
+		<span class="k">call </span><span class="n">doFunction</span><span class="p">(</span><span class="s1">&#39;f(x) = 4*(x+1)/(x^2+1)&#39;</span><span class="p">,[</span><span class="mf">0.0_wp</span><span class="p">,</span><span class="mf">2.0_wp</span><span class="o">*</span><span class="n">PI</span><span class="p">])</span>
+		
+		<span class="k">call </span><span class="n">show</span><span class="p">()</span>
+	<span class="k">end subroutine </span><span class="n">testFunction</span>
+
+	<span class="k">subroutine </span><span class="n">doFunction</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="n">r</span><span class="p">)</span>
+		<span class="kt">character</span><span class="p">(</span><span class="o">*</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span><span class="n">s</span>
+		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span><span class="n">r</span>
+		
+		<span class="kt">integer</span><span class="p">,</span><span class="k">parameter</span><span class="kd">::</span><span class="n">N</span> <span class="o">=</span> <span class="mi">150</span>
+		<span class="k">type</span><span class="p">(</span><span class="n">function_t</span><span class="p">)</span><span class="kd">::</span><span class="n">f</span>
+		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(</span><span class="n">N</span><span class="p">)</span><span class="kd">::</span><span class="n">x</span><span class="p">,</span><span class="n">y</span>
+		<span class="kt">integer</span><span class="kd">::</span><span class="n">k</span>
+		
+		<span class="n">f</span> <span class="o">=</span> <span class="n">function_t</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+		
+		<span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span> <span class="n">f</span><span class="p">%</span><span class="n">str</span>
+		
+		<span class="n">x</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="n">r</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="n">r</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="n">N</span><span class="p">)</span>
+		<span class="k">do </span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">N</span>
+			<span class="n">y</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="o">=</span> <span class="n">f</span><span class="p">%</span><span class="n">eval</span><span class="p">([</span><span class="n">x</span><span class="p">(</span><span class="n">k</span><span class="p">)])</span>
+		<span class="k">end do</span>
+<span class="k">		</span>
+<span class="k">		call </span><span class="n">figure</span><span class="p">()</span>
+		<span class="k">call </span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">aspect</span><span class="o">=</span><span class="n">span</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="o">/</span><span class="n">span</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+		<span class="k">call </span><span class="n">xylim</span><span class="p">(</span><span class="n">mixval</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">mixval</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="o">+</span><span class="mf">0.05_wp</span><span class="o">*</span><span class="p">[</span><span class="o">-</span><span class="mf">1.0_wp</span><span class="p">,</span><span class="mf">1.0_wp</span><span class="o">*</span><span class="n">span</span><span class="p">(</span><span class="n">y</span><span class="p">)])</span>
+		<span class="k">call </span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">lineColor</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="n">lineWidth</span><span class="o">=</span><span class="mf">2.0_wp</span><span class="p">)</span>
+		<span class="k">call </span><span class="n">ticks</span><span class="p">()</span>
+		<span class="k">call </span><span class="n">labels</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span><span class="s1">&#39;y&#39;</span><span class="p">,</span><span class="n">s</span><span class="p">)</span>
+		
+	<span class="k">end subroutine </span><span class="n">doFunction</span>
+
+<span class="k">end program </span><span class="n">testEval_prg</span>
+</pre></div>
+
+    </section>
+    
+    
+    </div>
+  </div>
+
+  <section class="visible-xs visible-sm hidden-md">
+    <hr>
+    
+
+<div class="panel panel-default">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#allprogs-1">All Programs</a></h3></div>
+  <div id="allprogs-1" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../program/animate_prg.html">animate_prg</a>
+      
+      <a class="list-group-item" href="../program/basic_prg.html">basic_prg</a>
+      
+      <a class="list-group-item" href="../program/examples_prg.html">examples_prg</a>
+      
+      <a class="list-group-item" href="../program/logo_prg.html">logo_prg</a>
+      
+      <a class="list-group-item" href="../program/testarray_prg.html">testArray_prg</a>
+      
+      <a class="list-group-item" href="../program/testautodiff_prg.html">testAutoDiff_prg</a>
+      
+      <a class="list-group-item" href="../program/testconfig_prg.html">testConfig_prg</a>
+      
+      <a class="list-group-item" href="../program/testeval_prg.html">testEval_prg</a>
+      
+      <a class="list-group-item" href="../program/testfourier_prg.html">testFourier_prg</a>
+      
+      <a class="list-group-item" href="../program/testiterate_prg.html">testIterate_prg</a>
+      
+      <a class="list-group-item" href="../program/testkinds_prg.html">testKinds_prg</a>
+      
+      <a class="list-group-item" href="../program/testmatio_prg.html">testMatIO_prg</a>
+      
+      <a class="list-group-item" href="../program/testmesh_prg.html">testMesh_prg</a>
+      
+      <a class="list-group-item" href="../program/testnetcdf_prg.html">testNetCDF_prg</a>
+      
+      <a class="list-group-item" href="../program/testoptimize_prg.html">testOptimize_prg</a>
+      
+      <a class="list-group-item" href="../program/testquaternion_prg.html">testQuaternion_prg</a>
+      
+      <a class="list-group-item" href="../program/testsparse_prg.html">testSparse_prg</a>
+      
+      <a class="list-group-item" href="../program/testspline_prg.html">testSpline_prg</a>
+      
+      <a class="list-group-item" href="../program/teststats_prg.html">testStats_prg</a>
+      
+      <a class="list-group-item" href="../program/testtensor_prg.html">testTensor_prg</a>
+      
+      <a class="list-group-item" href="../program/testtext_prg.html">testText_prg</a>
+      
+      <a class="list-group-item" href="../program/testtime_prg.html">testTime_prg</a>
+      
+      <a class="list-group-item" href="../program/testvtkio_prg.html">testVtkIO_prg</a>
+      
+    </div>
+  </div>
+</div>
+
+
+  </section>
+  
+    <hr>    
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-md-4"><p>&copy; 2016 </p></div>
+        <div class="col-xs-6 col-md-4 col-md-push-4">
+          <p class="text-right">
+            Documentation generated by 
+            <a href="https://github.com/cmacmackin/ford">FORD</a>
+            
+          </p>
+        </div>
+        <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> CommonModules was developed by Kyle Horne</p></div>
+      </div>
+      <br>
+      </div> <!-- /container -->    
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+-->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- MathJax JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js'],
+        'HTML-CSS': { 
+           styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: '#000000 ! important'} }
+        }
+      });
+    </script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  </body>
+</html>

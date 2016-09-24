@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	 
+	 <meta name="description" content="Common modules for using in other programs">
+    
+    <meta name="author" content="Chris MacMackin" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>mesh.f90 &ndash; CommonModules</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+    
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+
+    
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">CommonModules </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+				
+            <li><a href='../page/index.html'>Instructions</a></li>
+	    
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+              data-toggle="dropdown" role="button"
+              aria-haspopup="true"
+		 aria-expanded="false">Contents <span class="caret"></span></a>
+	      <ul class="dropdown-menu">
+              
+            <li><a href="../lists/files.html">Source Files</a></li>
+				
+				
+            <li><a href="../lists/modules.html">Modules</a></li>
+				
+            
+                                
+            <li><a href="../lists/procedures.html">Procedures</a></li>
+				
+								
+            <li><a href="../lists/types.html">Derived Types</a></li>
+				
+				
+            <li><a href="../lists/programs.html">Programs</a></li>
+				
+            </ul>
+            </li>
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
+
+                             
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/programs.html">Programs</a></li>
+
+          </ul>
+        
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    
+  
+  <div class="row">
+    <h1>mesh.f90
+    <small>Source File</small>
+    
+    </h1>
+    
+<div class="row">
+  <div class="col-lg-12">
+<div class="well well-sm">
+  <ul class="list-inline" style="margin-bottom:0px;display:inline">
+     
+     
+     
+     
+    
+    
+     <li><i class="fa fa-list-ol"></i>
+       <a data-toggle="tooltip"
+	  data-placement="bottom" data-html="true"
+	  title="30.8% of total for source files.">374 statements</a>
+     </li> 
+     
+     
+    <li><i class="fa fa-code"></i><a href="../src/mesh.f90"> Source File</a></li>
+     
+  </ul>
+  <ol class="breadcrumb in-well text-right">
+  
+     <li class="active">mesh.f90</li>
+  </ol>
+</div>
+</div>
+</div>
+<script>
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+
+  </div>
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+    
+<div id="sidebar">
+  
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#mods-0">Modules</a></h3></div>
+  <div id="mods-0" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/mesh_mod.html">mesh_mod</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../sourcefile/mesh.f90.html#src">mesh.f90</a>
+  </div>
+</div>
+
+
+  <hr>
+  
+
+<div class="panel panel-default">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#allfiles-0">All Source Files</a></h3></div>
+  <div id="allfiles-0" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../sourcefile/animate.f90.html">animate.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/array.f90.html">array.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/autodiff.f90.html">autoDiff.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/basic.f90.html">basic.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/basicsolvers.f90.html">basicSolvers.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/config.f90.html">config.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/examples.f90.html">examples.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/expression.f90.html">expression.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/fourier.f90.html">fourier.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/iterate.f90.html">iterate.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/kinds.f90.html">kinds.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/logo.f90.html">logo.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/matio.f90.html">matIO.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/mesh.f90.html">mesh.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/netcdf.f90.html">netCDF.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/node.f90.html">node.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/optimize.f90.html">optimize.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/plplotlib.f90.html">plplotlib.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/quaternion.f90.html">quaternion.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/solvers.f90.html">solvers.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/sparse.f90.html">sparse.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/spline.f90.html">spline.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/stats.f90.html">stats.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/tensor.f90.html">tensor.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testarray.f90.html">testArray.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testautodiff.f90.html">testAutoDiff.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testconfig.f90.html">testConfig.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testexpression.f90.html">testExpression.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testfourier.f90.html">testFourier.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testiterate.f90.html">testIterate.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testkinds.f90.html">testKinds.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testmatio.f90.html">testMatIO.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testmesh.f90.html">testMesh.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testnetcdf.f90.html">testNetCDF.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testoptimize.f90.html">testOptimize.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testquaternion.f90.html">testQuaternion.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testsparse.f90.html">testSparse.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testspline.f90.html">testSpline.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/teststats.f90.html">testStats.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testtensor.f90.html">testTensor.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testtext.f90.html">testText.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testtime.f90.html">testTime.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testvtkio.f90.html">testVtkIO.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/text.f90.html">text.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/time.f90.html">time.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/treeexponential.f90.html">treeExponential.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/treeoperator.f90.html">treeOperator.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/treetrigonometric.f90.html">treeTrigonometric.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/treevalue.f90.html">treeValue.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/vtkio.f90.html">vtkIO.f90</a>
+      
+    </div>
+  </div>
+</div>
+
+
+</div>  
+
+    </div>
+    <div class="col-md-9" id='text'>
+    
+    
+    <h3>This File Depends On</h3>
+    
+                <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.38.0 (20140413.2041)
+ -->
+<!-- Title: sourcefile~~mesh.f90~~EfferentGraph Pages: 1 -->
+<svg id="sourcefilemeshf90EfferentGraph" width="156pt" height="32pt"
+ viewBox="0.00 0.00 156.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="sourcefile~~mesh.f90~~EfferentGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>sourcefile~~mesh.f90~~EfferentGraph</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-28 152,-28 152,4 -4,4"/>
+<!-- sourcefile~mesh.f90 -->
+<g id="sourcefile~~mesh.f90~~EfferentGraph_node1" class="node"><title>sourcefile~mesh.f90</title>
+<polygon fill="none" stroke="black" points="148,-24 91,-24 91,-0 148,-0 148,-24"/>
+<text text-anchor="middle" x="119.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">mesh.f90</text>
+</g>
+<!-- sourcefile~kinds.f90 -->
+<g id="sourcefile~~mesh.f90~~EfferentGraph_node2" class="node"><title>sourcefile~kinds.f90</title>
+<g id="a_sourcefile~~mesh.f90~~EfferentGraph_node2"><a xlink:href="../sourcefile/kinds.f90.html" xlink:title="kinds.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="55,-24 0,-24 0,-0 55,-0 55,-24"/>
+<text text-anchor="middle" x="27.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">kinds.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~kinds.f90&#45;&gt;sourcefile~mesh.f90 -->
+<g id="sourcefile~~mesh.f90~~EfferentGraph_edge1" class="edge"><title>sourcefile~kinds.f90&#45;&gt;sourcefile~mesh.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M55.0162,-12C63.0523,-12 72.0403,-12 80.6675,-12"/>
+<polygon fill="#000000" stroke="#000000" points="80.9238,-15.5001 90.9237,-12 80.9237,-8.5001 80.9238,-15.5001"/>
+</g>
+</g>
+</svg>
+</div>
+                <div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div>
+                <div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                      </div>
+                      <div class="modal-body">
+                        
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.38.0 (20140413.2041)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="190pt" height="32pt"
+ viewBox="0.00 0.00 190.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-28 186,-28 186,4 -4,4"/>
+<!-- Source File -->
+<g id="node1" class="node"><title>Source File</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="67,-24 0,-24 0,-0 67,-0 67,-24"/>
+<text text-anchor="middle" x="33.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Source File</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node2" class="node"><title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="182,-24 85,-24 85,-0 182,-0 182,-24"/>
+<text text-anchor="middle" x="133.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+
+<p>Solid arrows point from a file to a file which depends upon it. A file 
+is dependent upon another if the latter must be compiled before the former
+can be.
+</p>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+    
+      
+      <h3>Files Dependent On This One</h3>
+      
+                <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.38.0 (20140413.2041)
+ -->
+<!-- Title: sourcefile~~mesh.f90~~AfferentGraph Pages: 1 -->
+<svg id="sourcefilemeshf90AfferentGraph" width="175pt" height="32pt"
+ viewBox="0.00 0.00 175.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="sourcefile~~mesh.f90~~AfferentGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>sourcefile~~mesh.f90~~AfferentGraph</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-28 171,-28 171,4 -4,4"/>
+<!-- sourcefile~mesh.f90 -->
+<g id="sourcefile~~mesh.f90~~AfferentGraph_node1" class="node"><title>sourcefile~mesh.f90</title>
+<polygon fill="none" stroke="black" points="57,-24 0,-24 0,-0 57,-0 57,-24"/>
+<text text-anchor="middle" x="28.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">mesh.f90</text>
+</g>
+<!-- sourcefile~testmesh.f90 -->
+<g id="sourcefile~~mesh.f90~~AfferentGraph_node2" class="node"><title>sourcefile~testmesh.f90</title>
+<g id="a_sourcefile~~mesh.f90~~AfferentGraph_node2"><a xlink:href="../sourcefile/testmesh.f90.html" xlink:title="testMesh.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="167,-24 93,-24 93,-0 167,-0 167,-24"/>
+<text text-anchor="middle" x="130" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">testMesh.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~mesh.f90&#45;&gt;sourcefile~testmesh.f90 -->
+<g id="sourcefile~~mesh.f90~~AfferentGraph_edge1" class="edge"><title>sourcefile~mesh.f90&#45;&gt;sourcefile~testmesh.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M57.2163,-12C65.1516,-12 74.0242,-12 82.7523,-12"/>
+<polygon fill="#000000" stroke="#000000" points="82.8672,-15.5001 92.8672,-12 82.8671,-8.5001 82.8672,-15.5001"/>
+</g>
+</g>
+</svg>
+</div>
+                <div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div>
+                <div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                      </div>
+                      <div class="modal-body">
+                        
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.38.0 (20140413.2041)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="190pt" height="32pt"
+ viewBox="0.00 0.00 190.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-28 186,-28 186,4 -4,4"/>
+<!-- Source File -->
+<g id="node1" class="node"><title>Source File</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="67,-24 0,-24 0,-0 67,-0 67,-24"/>
+<text text-anchor="middle" x="33.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Source File</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node2" class="node"><title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="182,-24 85,-24 85,-0 182,-0 182,-24"/>
+<text text-anchor="middle" x="133.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+
+<p>Solid arrows point from a file to a file which depends upon it. A file 
+is dependent upon another if the latter must be compiled before the former
+can be.
+</p>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+      
+      <br>
+
+    <section class="visible-xs visible-sm hidden-md">
+      
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#mods-1">Modules</a></h3></div>
+  <div id="mods-1" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/mesh_mod.html">mesh_mod</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../sourcefile/mesh.f90.html#src">mesh.f90</a>
+  </div>
+</div>
+
+
+    </section>
+    <br class="visible-xs visible-sm hidden-md">
+
+    <section>
+      <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="hl"><pre><span></span><a name="ln-1"></a><span class="k">module </span><span class="n">mesh_mod</span>
+<a name="ln-2"></a>	<span class="c">!! Module for 2D simplex meshes</span>
+<a name="ln-3"></a>	<span class="k">use </span><span class="n">kinds_mod</span>
+<a name="ln-4"></a>	<span class="k">implicit none</span>
+<a name="ln-5"></a><span class="k">	private</span>
+<a name="ln-6"></a>	
+<a name="ln-7"></a>	<span class="c">!==============!</span>
+<a name="ln-8"></a>	<span class="c">!= Parameters =!</span>
+<a name="ln-9"></a>	<span class="c">!==============!</span>
+<a name="ln-10"></a>	
+<a name="ln-11"></a>	<span class="kt">integer</span><span class="p">,</span><span class="k">parameter</span><span class="kd">::</span><span class="n">GT_POINT_1</span> <span class="o">=</span> <span class="mi">15</span>
+<a name="ln-12"></a>	<span class="kt">integer</span><span class="p">,</span><span class="k">parameter</span><span class="kd">::</span><span class="n">VT_POINT_1</span> <span class="o">=</span> <span class="mi">1</span>
+<a name="ln-13"></a>	<span class="kt">integer</span><span class="p">,</span><span class="k">parameter</span><span class="kd">::</span><span class="n">ET_POINT_1</span> <span class="o">=</span> <span class="mi">11</span>
+<a name="ln-14"></a>		<span class="c">!! Element type for a single point</span>
+<a name="ln-15"></a>	
+<a name="ln-16"></a>	<span class="kt">integer</span><span class="p">,</span><span class="k">parameter</span><span class="kd">::</span><span class="n">GT_EDGE_1</span>  <span class="o">=</span> <span class="mi">1</span>
+<a name="ln-17"></a>	<span class="kt">integer</span><span class="p">,</span><span class="k">parameter</span><span class="kd">::</span><span class="n">VT_EDGE_1</span>  <span class="o">=</span> <span class="mi">3</span>
+<a name="ln-18"></a>	<span class="kt">integer</span><span class="p">,</span><span class="k">parameter</span><span class="kd">::</span><span class="n">ET_EDGE_1</span>  <span class="o">=</span> <span class="mi">21</span>
+<a name="ln-19"></a>		<span class="c">!! Element type for a 2-node edge</span>
+<a name="ln-20"></a>	
+<a name="ln-21"></a>	<span class="kt">integer</span><span class="p">,</span><span class="k">parameter</span><span class="kd">::</span><span class="n">GT_EDGE_2</span>  <span class="o">=</span> <span class="mi">8</span>
+<a name="ln-22"></a>	<span class="kt">integer</span><span class="p">,</span><span class="k">parameter</span><span class="kd">::</span><span class="n">VT_EDGE_2</span>  <span class="o">=</span> <span class="mi">21</span>
+<a name="ln-23"></a>	<span class="kt">integer</span><span class="p">,</span><span class="k">parameter</span><span class="kd">::</span><span class="n">ET_EDGE_2</span>  <span class="o">=</span> <span class="mi">22</span>
+<a name="ln-24"></a>		<span class="c">!! Element type for a 3-node edge</span>
+<a name="ln-25"></a>	
+<a name="ln-26"></a>	<span class="kt">integer</span><span class="p">,</span><span class="k">parameter</span><span class="kd">::</span><span class="n">GT_EDGE_3</span>  <span class="o">=</span> <span class="mi">26</span>
+<a name="ln-27"></a>	<span class="kt">integer</span><span class="p">,</span><span class="k">parameter</span><span class="kd">::</span><span class="n">VT_EDGE_3</span>  <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="c">! Unsupported by VTK</span>
+<a name="ln-28"></a>	<span class="kt">integer</span><span class="p">,</span><span class="k">parameter</span><span class="kd">::</span><span class="n">ET_EDGE_3</span>  <span class="o">=</span> <span class="mi">23</span>
+<a name="ln-29"></a>		<span class="c">!! Element type for a 4-node edge</span>
+<a name="ln-30"></a>	
+<a name="ln-31"></a>	<span class="kt">integer</span><span class="p">,</span><span class="k">parameter</span><span class="kd">::</span><span class="n">GT_TRIANGLE_1</span> <span class="o">=</span> <span class="mi">2</span>
+<a name="ln-32"></a>	<span class="kt">integer</span><span class="p">,</span><span class="k">parameter</span><span class="kd">::</span><span class="n">VT_TRIANGLE_1</span> <span class="o">=</span> <span class="mi">5</span>
+<a name="ln-33"></a>	<span class="kt">integer</span><span class="p">,</span><span class="k">parameter</span><span class="kd">::</span><span class="n">ET_TRIANGLE_1</span> <span class="o">=</span> <span class="mi">31</span>
+<a name="ln-34"></a>		<span class="c">!! Element type for a 3-node triangle</span>
+<a name="ln-35"></a>	
+<a name="ln-36"></a>	<span class="kt">integer</span><span class="p">,</span><span class="k">parameter</span><span class="kd">::</span><span class="n">GT_TRIANGLE_2</span> <span class="o">=</span> <span class="mi">9</span>
+<a name="ln-37"></a>	<span class="kt">integer</span><span class="p">,</span><span class="k">parameter</span><span class="kd">::</span><span class="n">VT_TRIANGLE_2</span> <span class="o">=</span> <span class="mi">22</span>
+<a name="ln-38"></a>	<span class="kt">integer</span><span class="p">,</span><span class="k">parameter</span><span class="kd">::</span><span class="n">ET_TRIANGLE_2</span> <span class="o">=</span> <span class="mi">32</span>
+<a name="ln-39"></a>		<span class="c">!! Element type for a 6-node triangle</span>
+<a name="ln-40"></a>	
+<a name="ln-41"></a>	<span class="kt">integer</span><span class="p">,</span><span class="k">parameter</span><span class="kd">::</span><span class="n">GT_TRIANGLE_3</span> <span class="o">=</span> <span class="mi">21</span>
+<a name="ln-42"></a>	<span class="kt">integer</span><span class="p">,</span><span class="k">parameter</span><span class="kd">::</span><span class="n">VT_TRIANGLE_3</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="c">! Unsupported by VTK</span>
+<a name="ln-43"></a>	<span class="kt">integer</span><span class="p">,</span><span class="k">parameter</span><span class="kd">::</span><span class="n">ET_TRIANGLE_3</span> <span class="o">=</span> <span class="mi">33</span>
+<a name="ln-44"></a>		<span class="c">!! Element type for a 10-node triangle</span>
+<a name="ln-45"></a>	
+<a name="ln-46"></a>	<span class="c">!=========!</span>
+<a name="ln-47"></a>	<span class="c">!= Types =!</span>
+<a name="ln-48"></a>	<span class="c">!=========!</span>
+<a name="ln-49"></a>	
+<a name="ln-50"></a>	<span class="k">type</span><span class="kd">::</span><span class="n">node_t</span>
+<a name="ln-51"></a>		<span class="c">!! One node in the mesh</span>
+<a name="ln-52"></a>		<span class="kt">integer</span><span class="kd">::</span><span class="n">nidx</span>
+<a name="ln-53"></a>			<span class="c">!! Node index</span>
+<a name="ln-54"></a>		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="kd">::</span><span class="n">x</span>
+<a name="ln-55"></a>			<span class="c">!! Node location</span>
+<a name="ln-56"></a>		<span class="kt">integer</span><span class="kd">::</span><span class="n">ngroup</span>
+<a name="ln-57"></a>			<span class="c">!! Node group</span>
+<a name="ln-58"></a>			<span class="c">!!</span>
+<a name="ln-59"></a>			<span class="c">!! Groups are derived from elements the node belongs to.</span>
+<a name="ln-60"></a>			<span class="c">!! The group with lowest dimenionality takes precidence.</span>
+<a name="ln-61"></a>		<span class="kt">integer</span><span class="p">,</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">allocatable</span><span class="kd">::</span><span class="n">nodes</span>
+<a name="ln-62"></a>			<span class="c">!! Indicies of nodes connected to this one</span>
+<a name="ln-63"></a>		<span class="kt">integer</span><span class="p">,</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">allocatable</span><span class="kd">::</span><span class="n">elements</span>
+<a name="ln-64"></a>			<span class="c">!! Indicies of elements this node occures in</span>
+<a name="ln-65"></a>	<span class="k">end type</span>
+<a name="ln-66"></a><span class="k">	</span>
+<a name="ln-67"></a><span class="k">	type</span><span class="kd">::</span><span class="n">element_t</span>
+<a name="ln-68"></a>		<span class="c">!! One element in the mesh</span>
+<a name="ln-69"></a>		<span class="kt">integer</span><span class="kd">::</span><span class="n">eidx</span>
+<a name="ln-70"></a>			<span class="c">!! Element index</span>
+<a name="ln-71"></a>		<span class="kt">integer</span><span class="kd">::</span><span class="n">etype</span>
+<a name="ln-72"></a>			<span class="c">!! Element type</span>
+<a name="ln-73"></a>		<span class="kt">integer</span><span class="kd">::</span><span class="n">egroup</span>
+<a name="ln-74"></a>			<span class="c">!! Element group</span>
+<a name="ln-75"></a>		<span class="kt">integer</span><span class="kd">::</span><span class="n">ecolor</span>
+<a name="ln-76"></a>			<span class="c">!! Element color</span>
+<a name="ln-77"></a>			<span class="c">!!</span>
+<a name="ln-78"></a>			<span class="c">!! The element color can be used for parallel caculations</span>
+<a name="ln-79"></a>			<span class="c">!! without race conditions, comparable to red-black versions</span>
+<a name="ln-80"></a>			<span class="c">!! of the Gauss-Seidel algorithm.</span>
+<a name="ln-81"></a>		<span class="kt">integer</span><span class="p">,</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">allocatable</span><span class="kd">::</span><span class="n">nodes</span>
+<a name="ln-82"></a>			<span class="c">!! Nodes of the element</span>
+<a name="ln-83"></a>		<span class="kt">integer</span><span class="p">,</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">allocatable</span><span class="kd">::</span><span class="n">elements</span>
+<a name="ln-84"></a>			<span class="c">!! Elements connected to this one by at least one node</span>
+<a name="ln-85"></a>	<span class="k">end type</span>
+<a name="ln-86"></a><span class="k">	</span>
+<a name="ln-87"></a><span class="k">	type</span><span class="kd">::</span><span class="n">group_t</span>
+<a name="ln-88"></a>		<span class="c">!! Physical group of elements</span>
+<a name="ln-89"></a>		<span class="kt">integer</span><span class="kd">::</span><span class="n">gidx</span>
+<a name="ln-90"></a>			<span class="c">!! Group index</span>
+<a name="ln-91"></a>		<span class="kt">integer</span><span class="kd">::</span><span class="n">gdim</span>
+<a name="ln-92"></a>			<span class="c">!! Group dimensionality \(d\)</span>
+<a name="ln-93"></a>			<span class="c">!!</span>
+<a name="ln-94"></a>			<span class="c">!! \(d \in {1,2}\)</span>
+<a name="ln-95"></a>		<span class="kt">character</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span><span class="kd">::</span><span class="n">gname</span>
+<a name="ln-96"></a>			<span class="c">!! Group name</span>
+<a name="ln-97"></a>		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">allocatable</span><span class="kd">::</span><span class="n">gdata</span>
+<a name="ln-98"></a>			<span class="c">!! Data for group</span>
+<a name="ln-99"></a>			<span class="c">!!</span>
+<a name="ln-100"></a>			<span class="c">!! This data can be used to store material properties</span>
+<a name="ln-101"></a>			<span class="c">!! or source term constants.</span>
+<a name="ln-102"></a>	<span class="k">end type</span>
+<a name="ln-103"></a><span class="k">	</span>
+<a name="ln-104"></a><span class="k">	type</span><span class="kd">::</span><span class="n">mesh_t</span>
+<a name="ln-105"></a>		<span class="c">!! A 2D mesh of elements connecting nodes</span>
+<a name="ln-106"></a>		<span class="k">type</span><span class="p">(</span><span class="n">node_t</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">allocatable</span><span class="kd">::</span><span class="n">nodes</span>
+<a name="ln-107"></a>			<span class="c">!! All nodes in the mesh</span>
+<a name="ln-108"></a>		<span class="k">type</span><span class="p">(</span><span class="n">element_t</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">allocatable</span><span class="kd">::</span><span class="n">elements</span>
+<a name="ln-109"></a>			<span class="c">!! All elements in the mesh</span>
+<a name="ln-110"></a>		<span class="k">type</span><span class="p">(</span><span class="n">group_t</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">allocatable</span><span class="kd">::</span><span class="n">groups</span>
+<a name="ln-111"></a>			<span class="c">!! All groups in the mesh</span>
+<a name="ln-112"></a>	<span class="k">contains</span>
+<a name="ln-113"></a><span class="k">		procedure</span><span class="kd">::</span><span class="n">readGmsh</span>
+<a name="ln-114"></a>		<span class="k">procedure</span><span class="kd">::</span><span class="n">writeVTK</span>
+<a name="ln-115"></a>		<span class="k">procedure</span><span class="kd">::</span><span class="n">appendScalarVTK</span>
+<a name="ln-116"></a>		<span class="k">procedure</span><span class="kd">::</span><span class="n">appendVectorVTK</span>
+<a name="ln-117"></a>		<span class="k">procedure</span><span class="kd">::</span><span class="n">connect</span>
+<a name="ln-118"></a>	<span class="k">end type</span>
+<a name="ln-119"></a>	
+<a name="ln-120"></a>	<span class="c">!===========!</span>
+<a name="ln-121"></a>	<span class="c">!= Exports =!</span>
+<a name="ln-122"></a>	<span class="c">!===========!</span>
+<a name="ln-123"></a>	
+<a name="ln-124"></a>	<span class="k">public</span><span class="kd">::</span><span class="n">ET_POINT_1</span>
+<a name="ln-125"></a>	<span class="k">public</span><span class="kd">::</span><span class="n">ET_EDGE_1</span>
+<a name="ln-126"></a>	<span class="k">public</span><span class="kd">::</span><span class="n">ET_EDGE_2</span>
+<a name="ln-127"></a>	<span class="k">public</span><span class="kd">::</span><span class="n">ET_EDGE_3</span>
+<a name="ln-128"></a>	<span class="k">public</span><span class="kd">::</span><span class="n">ET_TRIANGLE_1</span>
+<a name="ln-129"></a>	<span class="k">public</span><span class="kd">::</span><span class="n">ET_TRIANGLE_2</span>
+<a name="ln-130"></a>	<span class="k">public</span><span class="kd">::</span><span class="n">ET_TRIANGLE_3</span>
+<a name="ln-131"></a>	
+<a name="ln-132"></a>	<span class="k">public</span><span class="kd">::</span><span class="n">node_t</span>
+<a name="ln-133"></a>	<span class="k">public</span><span class="kd">::</span><span class="n">element_t</span>
+<a name="ln-134"></a>	<span class="k">public</span><span class="kd">::</span><span class="n">group_t</span>
+<a name="ln-135"></a>	<span class="k">public</span><span class="kd">::</span><span class="n">mesh_t</span>
+<a name="ln-136"></a>
+<a name="ln-137"></a><span class="k">contains</span>
+<a name="ln-138"></a>
+<a name="ln-139"></a><span class="k">	subroutine </span><span class="n">readGmsh</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="n">fn</span><span class="p">)</span>
+<a name="ln-140"></a>		<span class="c">!! Read a gmsh .msh file into memory</span>
+<a name="ln-141"></a>		<span class="k">class</span><span class="p">(</span><span class="n">mesh_t</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="kd">::</span><span class="n">self</span>
+<a name="ln-142"></a>			<span class="c">!! Self mesh_t object</span>
+<a name="ln-143"></a>		<span class="kt">character</span><span class="p">(</span><span class="o">*</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span><span class="n">fn</span>
+<a name="ln-144"></a>			<span class="c">!! Filename</span>
+<a name="ln-145"></a>		
+<a name="ln-146"></a>		<span class="kt">character</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span><span class="kd">::</span><span class="n">buf</span>
+<a name="ln-147"></a>		<span class="kt">integer</span><span class="kd">::</span><span class="n">iou</span><span class="p">,</span><span class="n">ier</span>
+<a name="ln-148"></a>		
+<a name="ln-149"></a>		<span class="k">open</span><span class="p">(</span><span class="k">file</span><span class="o">=</span><span class="n">fn</span><span class="p">,</span><span class="n">newunit</span><span class="o">=</span><span class="n">iou</span><span class="p">)</span>
+<a name="ln-150"></a>		<span class="k">read</span><span class="p">(</span><span class="n">iou</span><span class="p">,</span><span class="s1">&#39;(1A)&#39;</span><span class="p">,</span><span class="n">iostat</span><span class="o">=</span><span class="n">ier</span><span class="p">)</span> <span class="n">buf</span>
+<a name="ln-151"></a>		<span class="k">do while</span><span class="p">(</span><span class="n">ier</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span>
+<a name="ln-152"></a>			<span class="k">select case</span><span class="p">(</span><span class="n">buf</span><span class="p">)</span>
+<a name="ln-153"></a>			<span class="k">case</span><span class="p">(</span><span class="s1">&#39;$MeshFormat&#39;</span><span class="p">)</span>
+<a name="ln-154"></a>			<span class="k">case</span><span class="p">(</span><span class="s1">&#39;$PhysicalNames&#39;</span><span class="p">)</span>
+<a name="ln-155"></a>				<span class="k">call </span><span class="n">readPhysical</span>
+<a name="ln-156"></a>			<span class="k">case</span><span class="p">(</span><span class="s1">&#39;$Nodes&#39;</span><span class="p">)</span>
+<a name="ln-157"></a>				<span class="k">call </span><span class="n">readNodes</span>
+<a name="ln-158"></a>			<span class="k">case</span><span class="p">(</span><span class="s1">&#39;$Elements&#39;</span><span class="p">)</span>
+<a name="ln-159"></a>				<span class="k">call </span><span class="n">readElements</span>
+<a name="ln-160"></a>			<span class="k">end select</span>
+<a name="ln-161"></a><span class="k">			call </span><span class="n">complete</span><span class="p">(</span><span class="nb">trim</span><span class="p">(</span><span class="nb">adjustl</span><span class="p">(</span><span class="n">buf</span><span class="p">)))</span>
+<a name="ln-162"></a>			<span class="k">read</span><span class="p">(</span><span class="n">iou</span><span class="p">,</span><span class="o">*</span><span class="p">,</span><span class="n">iostat</span><span class="o">=</span><span class="n">ier</span><span class="p">)</span> <span class="n">buf</span>
+<a name="ln-163"></a>		<span class="k">end do</span>
+<a name="ln-164"></a><span class="k">		close</span><span class="p">(</span><span class="n">iou</span><span class="p">)</span>
+<a name="ln-165"></a>		
+<a name="ln-166"></a>		<span class="k">call </span><span class="n">nodalGroups</span><span class="p">(</span><span class="n">self</span><span class="p">)</span>
+<a name="ln-167"></a>		<span class="k">call </span><span class="n">self</span><span class="p">%</span><span class="n">connect</span><span class="p">()</span>
+<a name="ln-168"></a>		
+<a name="ln-169"></a>	<span class="k">contains</span>
+<a name="ln-170"></a><span class="k">		</span>
+<a name="ln-171"></a><span class="k">		subroutine </span><span class="n">complete</span><span class="p">(</span><span class="n">tag</span><span class="p">)</span>
+<a name="ln-172"></a>			<span class="c">!! Read a file until the end for tag is found</span>
+<a name="ln-173"></a>			<span class="kt">character</span><span class="p">(</span><span class="o">*</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span><span class="n">tag</span>
+<a name="ln-174"></a>			<span class="kt">character</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span><span class="kd">::</span><span class="n">buf</span>
+<a name="ln-175"></a>			<span class="kt">integer</span><span class="kd">::</span><span class="n">ier</span>
+<a name="ln-176"></a>			
+<a name="ln-177"></a>			<span class="k">read</span><span class="p">(</span><span class="n">iou</span><span class="p">,</span><span class="s1">&#39;(1A)&#39;</span><span class="p">,</span><span class="n">iostat</span><span class="o">=</span><span class="n">ier</span><span class="p">)</span> <span class="n">buf</span>
+<a name="ln-178"></a>			<span class="k">do while</span><span class="p">(</span><span class="n">buf</span><span class="o">/=</span><span class="s1">&#39;$End&#39;</span><span class="o">//</span><span class="n">tag</span><span class="p">(</span><span class="mi">2</span><span class="p">:)</span> <span class="p">.</span><span class="nb">and</span><span class="p">.</span> <span class="n">ier</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span>
+<a name="ln-179"></a>				<span class="k">read</span><span class="p">(</span><span class="n">iou</span><span class="p">,</span><span class="s1">&#39;(1A)&#39;</span><span class="p">,</span><span class="n">iostat</span><span class="o">=</span><span class="n">ier</span><span class="p">)</span> <span class="n">buf</span>
+<a name="ln-180"></a>			<span class="k">end do</span>
+<a name="ln-181"></a><span class="k">		end subroutine </span><span class="n">complete</span>
+<a name="ln-182"></a>		
+<a name="ln-183"></a>		<span class="k">subroutine </span><span class="n">readNodes</span>
+<a name="ln-184"></a>			<span class="c">!! Read the nodes from a msh file</span>
+<a name="ln-185"></a>			<span class="kt">integer</span><span class="kd">::</span><span class="n">N</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">k</span>
+<a name="ln-186"></a>			<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span><span class="kd">::</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span>
+<a name="ln-187"></a>			
+<a name="ln-188"></a>			<span class="k">read</span><span class="p">(</span><span class="n">iou</span><span class="p">,</span><span class="o">*</span><span class="p">)</span> <span class="n">N</span>
+<a name="ln-189"></a>			<span class="k">if</span><span class="p">(</span><span class="nb">allocated</span><span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">nodes</span><span class="p">))</span> <span class="k">deallocate</span><span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">nodes</span><span class="p">)</span>
+<a name="ln-190"></a>			<span class="k">allocate</span><span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">nodes</span><span class="p">(</span><span class="n">N</span><span class="p">))</span>
+<a name="ln-191"></a>			<span class="k">do </span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">N</span>
+<a name="ln-192"></a>				<span class="k">read</span><span class="p">(</span><span class="n">iou</span><span class="p">,</span><span class="o">*</span><span class="p">)</span> <span class="n">i</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span>
+<a name="ln-193"></a>				<span class="n">self</span><span class="p">%</span><span class="n">nodes</span><span class="p">(</span><span class="n">i</span><span class="p">)%</span><span class="n">nidx</span> <span class="o">=</span> <span class="n">i</span>
+<a name="ln-194"></a>				<span class="n">self</span><span class="p">%</span><span class="n">nodes</span><span class="p">(</span><span class="n">i</span><span class="p">)%</span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">]</span>
+<a name="ln-195"></a>			<span class="k">end do</span>
+<a name="ln-196"></a><span class="k">		end subroutine </span><span class="n">readNodes</span>
+<a name="ln-197"></a>		
+<a name="ln-198"></a>		<span class="k">subroutine </span><span class="n">readElements</span>
+<a name="ln-199"></a>			<span class="c">!! Read the elements from a msh file</span>
+<a name="ln-200"></a>			<span class="kt">integer</span><span class="kd">::</span><span class="n">N</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">Nt</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">p</span>
+<a name="ln-201"></a>			<span class="kt">integer</span><span class="p">,</span><span class="k">dimension</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="kd">::</span><span class="n">nodes</span>
+<a name="ln-202"></a>			<span class="kt">integer</span><span class="p">,</span><span class="k">dimension</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="kd">::</span><span class="n">tags</span>
+<a name="ln-203"></a>			
+<a name="ln-204"></a>			<span class="k">read</span><span class="p">(</span><span class="n">iou</span><span class="p">,</span><span class="o">*</span><span class="p">)</span> <span class="n">N</span>
+<a name="ln-205"></a>			<span class="k">if</span><span class="p">(</span><span class="nb">allocated</span><span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">elements</span><span class="p">))</span> <span class="k">deallocate</span><span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">elements</span><span class="p">)</span>
+<a name="ln-206"></a>			<span class="k">allocate</span><span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">elements</span><span class="p">(</span><span class="n">N</span><span class="p">))</span>
+<a name="ln-207"></a>			<span class="k">do </span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">N</span>
+<a name="ln-208"></a>				<span class="k">read</span><span class="p">(</span><span class="n">iou</span><span class="p">,</span><span class="o">*</span><span class="p">)</span> <span class="n">i</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">Nt</span><span class="p">,</span><span class="n">p</span><span class="p">,</span><span class="n">tags</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">Nt</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="n">nodes</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">elementNodeCount</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+<a name="ln-209"></a>				<span class="n">self</span><span class="p">%</span><span class="n">elements</span><span class="p">(</span><span class="n">i</span><span class="p">)%</span><span class="n">eidx</span> <span class="o">=</span> <span class="n">i</span>
+<a name="ln-210"></a>				<span class="n">self</span><span class="p">%</span><span class="n">elements</span><span class="p">(</span><span class="n">i</span><span class="p">)%</span><span class="n">etype</span> <span class="o">=</span> <span class="n">elementGmshToInt</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<a name="ln-211"></a>				<span class="n">self</span><span class="p">%</span><span class="n">elements</span><span class="p">(</span><span class="n">i</span><span class="p">)%</span><span class="n">egroup</span> <span class="o">=</span> <span class="n">p</span>
+<a name="ln-212"></a>				<span class="n">self</span><span class="p">%</span><span class="n">elements</span><span class="p">(</span><span class="n">i</span><span class="p">)%</span><span class="n">nodes</span> <span class="o">=</span> <span class="n">nodes</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">elementNodeCount</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+<a name="ln-213"></a>			<span class="k">end do</span>
+<a name="ln-214"></a><span class="k">		end subroutine </span><span class="n">readElements</span>
+<a name="ln-215"></a>		
+<a name="ln-216"></a>		<span class="k">function </span><span class="n">elementGmshToInt</span><span class="p">(</span><span class="n">gmsh_type</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">internalType</span><span class="p">)</span>
+<a name="ln-217"></a>			<span class="c">!! Convert gmsh element types to internal types</span>
+<a name="ln-218"></a>			<span class="kt">integer</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span><span class="n">gmsh_type</span>
+<a name="ln-219"></a>			<span class="kt">integer</span><span class="kd">::</span><span class="n">internalType</span>
+<a name="ln-220"></a>			
+<a name="ln-221"></a>			<span class="k">select case</span><span class="p">(</span><span class="n">gmsh_type</span><span class="p">)</span>
+<a name="ln-222"></a>			<span class="k">case</span><span class="p">(</span><span class="n">GT_POINT_1</span><span class="p">)</span>
+<a name="ln-223"></a>				<span class="n">internalType</span> <span class="o">=</span> <span class="n">ET_POINT_1</span>
+<a name="ln-224"></a>			<span class="k">case</span><span class="p">(</span><span class="n">GT_EDGE_1</span><span class="p">)</span>
+<a name="ln-225"></a>				<span class="n">internalType</span> <span class="o">=</span> <span class="n">ET_EDGE_1</span>
+<a name="ln-226"></a>			<span class="k">case</span><span class="p">(</span><span class="n">GT_EDGE_2</span><span class="p">)</span>
+<a name="ln-227"></a>				<span class="n">internalType</span> <span class="o">=</span> <span class="n">ET_EDGE_2</span>
+<a name="ln-228"></a>			<span class="k">case</span><span class="p">(</span><span class="n">GT_EDGE_3</span><span class="p">)</span>
+<a name="ln-229"></a>				<span class="n">internalType</span> <span class="o">=</span> <span class="n">ET_EDGE_3</span>
+<a name="ln-230"></a>			<span class="k">case</span><span class="p">(</span><span class="n">GT_TRIANGLE_1</span><span class="p">)</span>
+<a name="ln-231"></a>				<span class="n">internalType</span> <span class="o">=</span> <span class="n">ET_TRIANGLE_1</span>
+<a name="ln-232"></a>			<span class="k">case</span><span class="p">(</span><span class="n">GT_TRIANGLE_2</span><span class="p">)</span>
+<a name="ln-233"></a>				<span class="n">internalType</span> <span class="o">=</span> <span class="n">ET_TRIANGLE_2</span>
+<a name="ln-234"></a>			<span class="k">case</span><span class="p">(</span><span class="n">GT_TRIANGLE_3</span><span class="p">)</span>
+<a name="ln-235"></a>				<span class="n">internalType</span> <span class="o">=</span> <span class="n">ET_TRIANGLE_3</span>
+<a name="ln-236"></a>			<span class="k">case </span><span class="n">default</span>
+<a name="ln-237"></a>				<span class="n">internalType</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<a name="ln-238"></a>			<span class="k">end select</span>
+<a name="ln-239"></a><span class="k">		end function </span><span class="n">elementGmshToInt</span>
+<a name="ln-240"></a>		
+<a name="ln-241"></a>		<span class="k">function </span><span class="n">elementNodeCount</span><span class="p">(</span><span class="n">gmshType</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">nodeCount</span><span class="p">)</span>
+<a name="ln-242"></a>			<span class="c">!! Output the number of nodes for each gmsh element type</span>
+<a name="ln-243"></a>			<span class="kt">integer</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span><span class="n">gmshType</span>
+<a name="ln-244"></a>			<span class="kt">integer</span><span class="kd">::</span><span class="n">nodeCount</span>
+<a name="ln-245"></a>			
+<a name="ln-246"></a>			<span class="k">select case</span><span class="p">(</span><span class="n">gmshType</span><span class="p">)</span>
+<a name="ln-247"></a>			<span class="k">case</span><span class="p">(</span><span class="n">GT_POINT_1</span><span class="p">)</span>
+<a name="ln-248"></a>				<span class="n">nodeCount</span> <span class="o">=</span> <span class="mi">1</span>
+<a name="ln-249"></a>			<span class="k">case</span><span class="p">(</span><span class="n">GT_EDGE_1</span><span class="p">)</span>
+<a name="ln-250"></a>				<span class="n">nodeCount</span> <span class="o">=</span> <span class="mi">2</span>
+<a name="ln-251"></a>			<span class="k">case</span><span class="p">(</span><span class="n">GT_EDGE_2</span><span class="p">)</span>
+<a name="ln-252"></a>				<span class="n">nodeCount</span> <span class="o">=</span> <span class="mi">3</span>
+<a name="ln-253"></a>			<span class="k">case</span><span class="p">(</span><span class="n">GT_EDGE_3</span><span class="p">)</span>
+<a name="ln-254"></a>				<span class="n">nodeCount</span> <span class="o">=</span> <span class="mi">4</span>
+<a name="ln-255"></a>			<span class="k">case</span><span class="p">(</span><span class="n">GT_TRIANGLE_1</span><span class="p">)</span>
+<a name="ln-256"></a>				<span class="n">nodeCount</span> <span class="o">=</span> <span class="mi">3</span>
+<a name="ln-257"></a>			<span class="k">case</span><span class="p">(</span><span class="n">GT_TRIANGLE_2</span><span class="p">)</span>
+<a name="ln-258"></a>				<span class="n">nodeCount</span> <span class="o">=</span> <span class="mi">6</span>
+<a name="ln-259"></a>			<span class="k">case</span><span class="p">(</span><span class="n">GT_TRIANGLE_3</span><span class="p">)</span>
+<a name="ln-260"></a>				<span class="n">nodeCount</span> <span class="o">=</span> <span class="mi">10</span>
+<a name="ln-261"></a>			<span class="k">case </span><span class="n">default</span>
+<a name="ln-262"></a>				<span class="n">nodeCount</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<a name="ln-263"></a>			<span class="k">end select</span>
+<a name="ln-264"></a><span class="k">		end function </span><span class="n">elementNodeCount</span>
+<a name="ln-265"></a>		
+<a name="ln-266"></a>		<span class="k">subroutine </span><span class="n">readPhysical</span>
+<a name="ln-267"></a>			<span class="c">!! Read physical names from msh file</span>
+<a name="ln-268"></a>			<span class="kt">integer</span><span class="kd">::</span><span class="n">N</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">d</span>
+<a name="ln-269"></a>			
+<a name="ln-270"></a>			<span class="k">read</span><span class="p">(</span><span class="n">iou</span><span class="p">,</span><span class="o">*</span><span class="p">)</span> <span class="n">N</span>
+<a name="ln-271"></a>			<span class="k">if</span><span class="p">(</span><span class="nb">allocated</span><span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">groups</span><span class="p">))</span> <span class="k">deallocate</span><span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">groups</span><span class="p">)</span>
+<a name="ln-272"></a>			<span class="k">allocate</span><span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">groups</span><span class="p">(</span><span class="n">N</span><span class="p">))</span>
+<a name="ln-273"></a>			<span class="k">do </span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">N</span>
+<a name="ln-274"></a>				<span class="k">read</span><span class="p">(</span><span class="n">iou</span><span class="p">,</span><span class="o">*</span><span class="p">)</span> <span class="n">d</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">self</span><span class="p">%</span><span class="n">groups</span><span class="p">(</span><span class="n">i</span><span class="p">)%</span><span class="n">gname</span>
+<a name="ln-275"></a>				<span class="n">self</span><span class="p">%</span><span class="n">groups</span><span class="p">(</span><span class="n">i</span><span class="p">)%</span><span class="n">gdim</span> <span class="o">=</span> <span class="n">d</span>
+<a name="ln-276"></a>			<span class="k">end do</span>
+<a name="ln-277"></a><span class="k">		end subroutine </span><span class="n">readPhysical</span>
+<a name="ln-278"></a>		
+<a name="ln-279"></a>		<span class="k">subroutine </span><span class="n">nodalGroups</span><span class="p">(</span><span class="n">self</span><span class="p">)</span>
+<a name="ln-280"></a>			<span class="c">!! Assign groups to nodes</span>
+<a name="ln-281"></a>			<span class="k">class</span><span class="p">(</span><span class="n">mesh_t</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="kd">::</span><span class="n">self</span>
+<a name="ln-282"></a>				<span class="c">!! Self mesh_t object</span>
+<a name="ln-283"></a>			
+<a name="ln-284"></a>			<span class="kt">integer</span><span class="kd">::</span><span class="n">i</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="n">g</span>
+<a name="ln-285"></a>			
+<a name="ln-286"></a>			<span class="n">self</span><span class="p">%</span><span class="n">nodes</span><span class="p">%</span><span class="n">ngroup</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<a name="ln-287"></a>			
+<a name="ln-288"></a>			<span class="k">do </span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">elements</span><span class="p">)</span>
+<a name="ln-289"></a>				<span class="n">g</span> <span class="o">=</span> <span class="n">self</span><span class="p">%</span><span class="n">elements</span><span class="p">(</span><span class="n">k</span><span class="p">)%</span><span class="n">egroup</span>
+<a name="ln-290"></a>				<span class="k">do </span><span class="n">l</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">elements</span><span class="p">(</span><span class="n">k</span><span class="p">)%</span><span class="n">nodes</span><span class="p">)</span>
+<a name="ln-291"></a>					<span class="n">i</span> <span class="o">=</span> <span class="n">self</span><span class="p">%</span><span class="n">elements</span><span class="p">(</span><span class="n">k</span><span class="p">)%</span><span class="n">nodes</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+<a name="ln-292"></a>					
+<a name="ln-293"></a>					<span class="k">if</span><span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">nodes</span><span class="p">(</span><span class="n">i</span><span class="p">)%</span><span class="n">ngroup</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="n">self</span><span class="p">%</span><span class="n">nodes</span><span class="p">(</span><span class="n">i</span><span class="p">)%</span><span class="n">ngroup</span> <span class="o">=</span> <span class="n">g</span>
+<a name="ln-294"></a>					<span class="k">if</span><span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">groups</span><span class="p">(</span><span class="n">g</span><span class="p">)%</span><span class="n">gdim</span><span class="o">&gt;</span><span class="n">self</span><span class="p">%</span><span class="n">groups</span><span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">nodes</span><span class="p">(</span><span class="n">i</span><span class="p">)%</span><span class="n">ngroup</span><span class="p">)%</span><span class="n">gdim</span><span class="p">)</span> <span class="k">cycle</span>
+<a name="ln-295"></a><span class="k">					</span><span class="n">self</span><span class="p">%</span><span class="n">nodes</span><span class="p">(</span><span class="n">i</span><span class="p">)%</span><span class="n">ngroup</span> <span class="o">=</span> <span class="n">g</span>
+<a name="ln-296"></a>				<span class="k">end do</span>
+<a name="ln-297"></a><span class="k">			end do</span>
+<a name="ln-298"></a><span class="k">		end subroutine </span><span class="n">nodalGroups</span>
+<a name="ln-299"></a>		
+<a name="ln-300"></a>	<span class="k">end subroutine </span><span class="n">readGmsh</span>
+<a name="ln-301"></a>
+<a name="ln-302"></a>	<span class="k">subroutine </span><span class="n">writeVTK</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="n">fn</span><span class="p">)</span>
+<a name="ln-303"></a>		<span class="c">!! Write the mesh as a VTK file</span>
+<a name="ln-304"></a>		<span class="k">class</span><span class="p">(</span><span class="n">mesh_t</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span><span class="n">self</span>
+<a name="ln-305"></a>			<span class="c">!! Self mesh_t object</span>
+<a name="ln-306"></a>		<span class="kt">character</span><span class="p">(</span><span class="o">*</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span><span class="n">fn</span>
+<a name="ln-307"></a>			<span class="c">!! Filename</span>
+<a name="ln-308"></a>		
+<a name="ln-309"></a>		<span class="kt">integer</span><span class="kd">::</span><span class="n">iou</span>
+<a name="ln-310"></a>		<span class="kt">integer</span><span class="kd">::</span><span class="n">k</span><span class="p">,</span><span class="n">l</span>
+<a name="ln-311"></a>		
+<a name="ln-312"></a>		<span class="k">open</span><span class="p">(</span><span class="k">file</span><span class="o">=</span><span class="n">fn</span><span class="p">,</span><span class="n">newunit</span><span class="o">=</span><span class="n">iou</span><span class="p">)</span>
+<a name="ln-313"></a>		<span class="k">write</span><span class="p">(</span><span class="n">iou</span><span class="p">,</span><span class="s1">&#39;(1A)&#39;</span><span class="p">)</span> <span class="s1">&#39;# vtk DataFile Version 2.0&#39;</span>
+<a name="ln-314"></a>		<span class="k">write</span><span class="p">(</span><span class="n">iou</span><span class="p">,</span><span class="s1">&#39;(1A256)&#39;</span><span class="p">)</span> <span class="s1">&#39;[Arbitrary data description]&#39;</span>
+<a name="ln-315"></a>		<span class="k">write</span><span class="p">(</span><span class="n">iou</span><span class="p">,</span><span class="s1">&#39;(1A)&#39;</span><span class="p">)</span> <span class="s1">&#39;ASCII&#39;</span>
+<a name="ln-316"></a>		<span class="k">write</span><span class="p">(</span><span class="n">iou</span><span class="p">,</span><span class="s1">&#39;(1A)&#39;</span><span class="p">)</span> <span class="s1">&#39;DATASET UNSTRUCTURED_GRID&#39;</span>
+<a name="ln-317"></a>		<span class="k">write</span><span class="p">(</span><span class="n">iou</span><span class="p">,</span><span class="s1">&#39;(1A,1X,I10,1X,1A)&#39;</span><span class="p">)</span> <span class="s1">&#39;POINTS&#39;</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">nodes</span><span class="p">),</span><span class="s1">&#39;double&#39;</span>
+<a name="ln-318"></a>		<span class="k">do </span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">nodes</span><span class="p">)</span>
+<a name="ln-319"></a>			<span class="k">write</span><span class="p">(</span><span class="n">iou</span><span class="p">,</span><span class="s1">&#39;(3E25.15)&#39;</span><span class="p">)</span> <span class="kt">real</span><span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">nodes</span><span class="p">(</span><span class="n">k</span><span class="p">)%</span><span class="n">x</span><span class="p">,</span><span class="n">dp</span><span class="p">),</span><span class="mf">0.0_dp</span>
+<a name="ln-320"></a>		<span class="k">end do</span>
+<a name="ln-321"></a><span class="k">		write</span><span class="p">(</span><span class="n">iou</span><span class="p">,</span><span class="s1">&#39;(1A,2I10)&#39;</span><span class="p">)</span> <span class="s1">&#39;CELLS&#39;</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">elements</span><span class="p">),</span> <span class="p">&amp;</span>
+<a name="ln-322"></a>		<span class="p">&amp;</span> <span class="nb">sum</span><span class="p">([(</span><span class="mi">1</span><span class="o">+</span><span class="n">size</span><span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">elements</span><span class="p">(</span><span class="n">l</span><span class="p">)%</span><span class="n">nodes</span><span class="p">),</span><span class="n">l</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">elements</span><span class="p">))])</span>
+<a name="ln-323"></a>		<span class="k">do </span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">elements</span><span class="p">)</span>
+<a name="ln-324"></a>			<span class="k">write</span><span class="p">(</span><span class="n">iou</span><span class="p">,</span><span class="s1">&#39;(15I10)&#39;</span><span class="p">)</span> <span class="n">size</span><span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">elements</span><span class="p">(</span><span class="n">k</span><span class="p">)%</span><span class="n">nodes</span><span class="p">),</span><span class="n">self</span><span class="p">%</span><span class="n">elements</span><span class="p">(</span><span class="n">k</span><span class="p">)%</span><span class="n">nodes</span><span class="o">-</span><span class="mi">1</span>
+<a name="ln-325"></a>		<span class="k">end do</span>
+<a name="ln-326"></a><span class="k">		write</span><span class="p">(</span><span class="n">iou</span><span class="p">,</span><span class="s1">&#39;(1A,1I10)&#39;</span><span class="p">)</span> <span class="s1">&#39;CELL_TYPES&#39;</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">elements</span><span class="p">)</span>
+<a name="ln-327"></a>		<span class="k">do </span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">elements</span><span class="p">)</span>
+<a name="ln-328"></a>			<span class="k">write</span><span class="p">(</span><span class="n">iou</span><span class="p">,</span><span class="s1">&#39;(1I10)&#39;</span><span class="p">)</span> <span class="n">elementIntToVTK</span><span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">elements</span><span class="p">(</span><span class="n">k</span><span class="p">)%</span><span class="n">etype</span><span class="p">)</span>
+<a name="ln-329"></a>		<span class="k">end do</span>
+<a name="ln-330"></a><span class="k">		write</span><span class="p">(</span><span class="n">iou</span><span class="p">,</span><span class="s1">&#39;(1A,1I10)&#39;</span><span class="p">)</span> <span class="s1">&#39;CELL_DATA&#39;</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">elements</span><span class="p">)</span>
+<a name="ln-331"></a>		<span class="k">write</span><span class="p">(</span><span class="n">iou</span><span class="p">,</span><span class="s1">&#39;(1A,1X,1A,1X,1A,1I10)&#39;</span><span class="p">)</span> <span class="s1">&#39;SCALARS&#39;</span><span class="p">,</span><span class="s1">&#39;element_idx&#39;</span><span class="p">,</span><span class="s1">&#39;int&#39;</span><span class="p">,</span><span class="mi">1</span>
+<a name="ln-332"></a>		<span class="k">write</span><span class="p">(</span><span class="n">iou</span><span class="p">,</span><span class="s1">&#39;(1A,1X,1A)&#39;</span><span class="p">)</span> <span class="s1">&#39;LOOKUP_TABLE&#39;</span><span class="p">,</span><span class="s1">&#39;default&#39;</span>
+<a name="ln-333"></a>		<span class="k">do </span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">elements</span><span class="p">)</span>
+<a name="ln-334"></a>			<span class="k">write</span><span class="p">(</span><span class="n">iou</span><span class="p">,</span><span class="s1">&#39;(1I10)&#39;</span><span class="p">)</span> <span class="n">self</span><span class="p">%</span><span class="n">elements</span><span class="p">(</span><span class="n">k</span><span class="p">)%</span><span class="n">eidx</span>
+<a name="ln-335"></a>		<span class="k">end do</span>
+<a name="ln-336"></a><span class="k">		write</span><span class="p">(</span><span class="n">iou</span><span class="p">,</span><span class="s1">&#39;(1A,1X,1A,1X,1A,1I10)&#39;</span><span class="p">)</span> <span class="s1">&#39;SCALARS&#39;</span><span class="p">,</span><span class="s1">&#39;element_group&#39;</span><span class="p">,</span><span class="s1">&#39;int&#39;</span><span class="p">,</span><span class="mi">1</span>
+<a name="ln-337"></a>		<span class="k">write</span><span class="p">(</span><span class="n">iou</span><span class="p">,</span><span class="s1">&#39;(1A,1X,1A)&#39;</span><span class="p">)</span> <span class="s1">&#39;LOOKUP_TABLE&#39;</span><span class="p">,</span><span class="s1">&#39;default&#39;</span>
+<a name="ln-338"></a>		<span class="k">do </span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">elements</span><span class="p">)</span>
+<a name="ln-339"></a>			<span class="k">write</span><span class="p">(</span><span class="n">iou</span><span class="p">,</span><span class="s1">&#39;(1I10)&#39;</span><span class="p">)</span> <span class="n">self</span><span class="p">%</span><span class="n">elements</span><span class="p">(</span><span class="n">k</span><span class="p">)%</span><span class="n">egroup</span>
+<a name="ln-340"></a>		<span class="k">end do</span>
+<a name="ln-341"></a><span class="k">		write</span><span class="p">(</span><span class="n">iou</span><span class="p">,</span><span class="s1">&#39;(1A,1X,1A,1X,1A,1I10)&#39;</span><span class="p">)</span> <span class="s1">&#39;SCALARS&#39;</span><span class="p">,</span><span class="s1">&#39;element_color&#39;</span><span class="p">,</span><span class="s1">&#39;int&#39;</span><span class="p">,</span><span class="mi">1</span>
+<a name="ln-342"></a>		<span class="k">write</span><span class="p">(</span><span class="n">iou</span><span class="p">,</span><span class="s1">&#39;(1A,1X,1A)&#39;</span><span class="p">)</span> <span class="s1">&#39;LOOKUP_TABLE&#39;</span><span class="p">,</span><span class="s1">&#39;default&#39;</span>
+<a name="ln-343"></a>		<span class="k">do </span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">elements</span><span class="p">)</span>
+<a name="ln-344"></a>			<span class="k">write</span><span class="p">(</span><span class="n">iou</span><span class="p">,</span><span class="s1">&#39;(1I10)&#39;</span><span class="p">)</span> <span class="n">self</span><span class="p">%</span><span class="n">elements</span><span class="p">(</span><span class="n">k</span><span class="p">)%</span><span class="n">ecolor</span>
+<a name="ln-345"></a>		<span class="k">end do</span>
+<a name="ln-346"></a><span class="k">		write</span><span class="p">(</span><span class="n">iou</span><span class="p">,</span><span class="s1">&#39;(1A,1I10)&#39;</span><span class="p">)</span> <span class="s1">&#39;POINT_DATA&#39;</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">nodes</span><span class="p">)</span>
+<a name="ln-347"></a>		<span class="k">write</span><span class="p">(</span><span class="n">iou</span><span class="p">,</span><span class="s1">&#39;(1A,1X,1A,1X,1A,1I10)&#39;</span><span class="p">)</span> <span class="s1">&#39;SCALARS&#39;</span><span class="p">,</span><span class="s1">&#39;node_idx&#39;</span><span class="p">,</span><span class="s1">&#39;int&#39;</span><span class="p">,</span><span class="mi">1</span>
+<a name="ln-348"></a>		<span class="k">write</span><span class="p">(</span><span class="n">iou</span><span class="p">,</span><span class="s1">&#39;(1A,1X,1A)&#39;</span><span class="p">)</span> <span class="s1">&#39;LOOKUP_TABLE&#39;</span><span class="p">,</span><span class="s1">&#39;default&#39;</span>
+<a name="ln-349"></a>		<span class="k">do </span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">nodes</span><span class="p">)</span>
+<a name="ln-350"></a>			<span class="k">write</span><span class="p">(</span><span class="n">iou</span><span class="p">,</span><span class="s1">&#39;(1I10)&#39;</span><span class="p">)</span> <span class="n">self</span><span class="p">%</span><span class="n">nodes</span><span class="p">(</span><span class="n">k</span><span class="p">)%</span><span class="n">nidx</span>
+<a name="ln-351"></a>		<span class="k">end do</span>
+<a name="ln-352"></a><span class="k">		write</span><span class="p">(</span><span class="n">iou</span><span class="p">,</span><span class="s1">&#39;(1A,1X,1A,1X,1A,1I10)&#39;</span><span class="p">)</span> <span class="s1">&#39;SCALARS&#39;</span><span class="p">,</span><span class="s1">&#39;node_group&#39;</span><span class="p">,</span><span class="s1">&#39;int&#39;</span><span class="p">,</span><span class="mi">1</span>
+<a name="ln-353"></a>		<span class="k">write</span><span class="p">(</span><span class="n">iou</span><span class="p">,</span><span class="s1">&#39;(1A,1X,1A)&#39;</span><span class="p">)</span> <span class="s1">&#39;LOOKUP_TABLE&#39;</span><span class="p">,</span><span class="s1">&#39;default&#39;</span>
+<a name="ln-354"></a>		<span class="k">do </span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">nodes</span><span class="p">)</span>
+<a name="ln-355"></a>			<span class="k">write</span><span class="p">(</span><span class="n">iou</span><span class="p">,</span><span class="s1">&#39;(1I10)&#39;</span><span class="p">)</span> <span class="n">self</span><span class="p">%</span><span class="n">nodes</span><span class="p">(</span><span class="n">k</span><span class="p">)%</span><span class="n">ngroup</span>
+<a name="ln-356"></a>		<span class="k">end do</span>
+<a name="ln-357"></a><span class="k">		close</span><span class="p">(</span><span class="n">iou</span><span class="p">)</span>
+<a name="ln-358"></a>	
+<a name="ln-359"></a>	<span class="k">contains</span>
+<a name="ln-360"></a><span class="k">	</span>
+<a name="ln-361"></a><span class="k">		function </span><span class="n">elementIntToVTK</span><span class="p">(</span><span class="n">internal_type</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">vtk_type</span><span class="p">)</span>
+<a name="ln-362"></a>			<span class="c">!! Convert internal element types to VTK types</span>
+<a name="ln-363"></a>			<span class="kt">integer</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span><span class="n">internal_type</span>
+<a name="ln-364"></a>			<span class="kt">integer</span><span class="kd">::</span><span class="n">vtk_type</span>
+<a name="ln-365"></a>			
+<a name="ln-366"></a>			<span class="k">select case</span><span class="p">(</span><span class="n">internal_type</span><span class="p">)</span>
+<a name="ln-367"></a>			<span class="k">case</span><span class="p">(</span><span class="n">ET_POINT_1</span><span class="p">)</span>
+<a name="ln-368"></a>				<span class="n">vtk_type</span> <span class="o">=</span> <span class="n">VT_POINT_1</span>
+<a name="ln-369"></a>			<span class="k">case</span><span class="p">(</span><span class="n">ET_EDGE_1</span><span class="p">)</span>
+<a name="ln-370"></a>				<span class="n">vtk_type</span> <span class="o">=</span> <span class="n">VT_EDGE_1</span>
+<a name="ln-371"></a>			<span class="k">case</span><span class="p">(</span><span class="n">ET_EDGE_2</span><span class="p">)</span>
+<a name="ln-372"></a>				<span class="n">vtk_type</span> <span class="o">=</span> <span class="n">VT_EDGE_2</span>
+<a name="ln-373"></a>			<span class="k">case</span><span class="p">(</span><span class="n">ET_EDGE_3</span><span class="p">)</span>
+<a name="ln-374"></a>				<span class="n">vtk_type</span> <span class="o">=</span> <span class="n">VT_EDGE_3</span>
+<a name="ln-375"></a>			<span class="k">case</span><span class="p">(</span><span class="n">ET_TRIANGLE_1</span><span class="p">)</span>
+<a name="ln-376"></a>				<span class="n">vtk_type</span> <span class="o">=</span> <span class="n">VT_TRIANGLE_1</span>
+<a name="ln-377"></a>			<span class="k">case</span><span class="p">(</span><span class="n">ET_TRIANGLE_2</span><span class="p">)</span>
+<a name="ln-378"></a>				<span class="n">vtk_type</span> <span class="o">=</span> <span class="n">VT_TRIANGLE_2</span>
+<a name="ln-379"></a>			<span class="k">case</span><span class="p">(</span><span class="n">ET_TRIANGLE_3</span><span class="p">)</span>
+<a name="ln-380"></a>				<span class="n">vtk_type</span> <span class="o">=</span> <span class="n">VT_TRIANGLE_3</span>
+<a name="ln-381"></a>			<span class="k">end select</span>
+<a name="ln-382"></a><span class="k">		end function </span><span class="n">elementIntToVTK</span>
+<a name="ln-383"></a>	
+<a name="ln-384"></a>	<span class="k">end subroutine </span><span class="n">writeVTK</span>
+<a name="ln-385"></a>
+<a name="ln-386"></a>	<span class="k">subroutine </span><span class="n">appendScalarVTK</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="n">fn</span><span class="p">,</span><span class="n">v</span><span class="p">,</span><span class="n">vn</span><span class="p">)</span>
+<a name="ln-387"></a>		<span class="c">!! Append scalar point data to a file</span>
+<a name="ln-388"></a>		<span class="k">class</span><span class="p">(</span><span class="n">mesh_t</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span><span class="n">self</span>
+<a name="ln-389"></a>			<span class="c">!! Self mesh_t object</span>
+<a name="ln-390"></a>		<span class="kt">character</span><span class="p">(</span><span class="o">*</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span><span class="n">fn</span>
+<a name="ln-391"></a>			<span class="c">!! Filename</span>
+<a name="ln-392"></a>		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span><span class="n">v</span>
+<a name="ln-393"></a>			<span class="c">!! Variable data</span>
+<a name="ln-394"></a>		<span class="kt">character</span><span class="p">(</span><span class="o">*</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span><span class="n">vn</span>
+<a name="ln-395"></a>			<span class="c">!! Variable name</span>
+<a name="ln-396"></a>		
+<a name="ln-397"></a>		<span class="kt">integer</span><span class="kd">::</span><span class="n">N</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">iou</span>
+<a name="ln-398"></a>		
+<a name="ln-399"></a>		<span class="k">open</span><span class="p">(</span><span class="k">file</span><span class="o">=</span><span class="n">fn</span><span class="p">,</span><span class="n">newunit</span><span class="o">=</span><span class="n">iou</span><span class="p">,</span><span class="nb">access</span><span class="o">=</span><span class="s1">&#39;append&#39;</span><span class="p">,</span><span class="n">status</span><span class="o">=</span><span class="s1">&#39;old&#39;</span><span class="p">)</span>
+<a name="ln-400"></a>		
+<a name="ln-401"></a>		<span class="n">N</span> <span class="o">=</span> <span class="n">size</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+<a name="ln-402"></a>		
+<a name="ln-403"></a>		<span class="k">write</span><span class="p">(</span><span class="n">iou</span><span class="p">,</span><span class="s1">&#39;(1A,1X,1A,1X,1A,1I10)&#39;</span><span class="p">)</span> <span class="s1">&#39;SCALARS&#39;</span><span class="p">,</span><span class="n">vn</span><span class="p">,</span><span class="s1">&#39;double&#39;</span><span class="p">,</span><span class="mi">1</span>
+<a name="ln-404"></a>		<span class="k">write</span><span class="p">(</span><span class="n">iou</span><span class="p">,</span><span class="s1">&#39;(1A,1X,1A)&#39;</span><span class="p">)</span> <span class="s1">&#39;LOOKUP_TABLE&#39;</span><span class="p">,</span><span class="s1">&#39;default&#39;</span>
+<a name="ln-405"></a>		<span class="k">do </span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">N</span>
+<a name="ln-406"></a>			<span class="k">write</span><span class="p">(</span><span class="n">iou</span><span class="p">,</span><span class="s1">&#39;(1E30.15)&#39;</span><span class="p">)</span> <span class="n">v</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+<a name="ln-407"></a>		<span class="k">end do</span>
+<a name="ln-408"></a><span class="k">		</span>
+<a name="ln-409"></a><span class="k">		close</span><span class="p">(</span><span class="n">iou</span><span class="p">)</span>
+<a name="ln-410"></a>	<span class="k">end subroutine </span><span class="n">appendScalarVTK</span>
+<a name="ln-411"></a>
+<a name="ln-412"></a>
+<a name="ln-413"></a>	<span class="k">subroutine </span><span class="n">appendVectorVTK</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="n">fn</span><span class="p">,</span><span class="n">v</span><span class="p">,</span><span class="n">vn</span><span class="p">)</span>
+<a name="ln-414"></a>		<span class="c">!! Append vector point data to a file</span>
+<a name="ln-415"></a>		<span class="k">class</span><span class="p">(</span><span class="n">mesh_t</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span><span class="n">self</span>
+<a name="ln-416"></a>			<span class="c">!! Self mesh_t object</span>
+<a name="ln-417"></a>		<span class="kt">character</span><span class="p">(</span><span class="o">*</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span><span class="n">fn</span>
+<a name="ln-418"></a>			<span class="c">!! Filename</span>
+<a name="ln-419"></a>		<span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:,:),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span><span class="n">v</span>
+<a name="ln-420"></a>			<span class="c">!! Variable data</span>
+<a name="ln-421"></a>		<span class="kt">character</span><span class="p">(</span><span class="o">*</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span><span class="n">vn</span>
+<a name="ln-422"></a>			<span class="c">!! Variable name</span>
+<a name="ln-423"></a>		
+<a name="ln-424"></a>		<span class="kt">integer</span><span class="kd">::</span><span class="n">N</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">iou</span>
+<a name="ln-425"></a>		<span class="kt">integer</span><span class="p">,</span><span class="k">dimension</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="kd">::</span><span class="n">S</span>
+<a name="ln-426"></a>		
+<a name="ln-427"></a>		<span class="k">open</span><span class="p">(</span><span class="k">file</span><span class="o">=</span><span class="n">fn</span><span class="p">,</span><span class="n">newunit</span><span class="o">=</span><span class="n">iou</span><span class="p">,</span><span class="nb">access</span><span class="o">=</span><span class="s1">&#39;append&#39;</span><span class="p">,</span><span class="n">status</span><span class="o">=</span><span class="s1">&#39;old&#39;</span><span class="p">)</span>
+<a name="ln-428"></a>		
+<a name="ln-429"></a>		<span class="n">S</span> <span class="o">=</span> <span class="nb">shape</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+<a name="ln-430"></a>		<span class="n">N</span> <span class="o">=</span> <span class="nb">maxval</span><span class="p">(</span><span class="n">S</span><span class="p">)</span>
+<a name="ln-431"></a>		
+<a name="ln-432"></a>		<span class="k">write</span><span class="p">(</span><span class="n">iou</span><span class="p">,</span><span class="s1">&#39;(1A,1X,1A,1X,1A,1I10)&#39;</span><span class="p">)</span> <span class="s1">&#39;VECTORS&#39;</span><span class="p">,</span><span class="n">vn</span><span class="p">,</span><span class="s1">&#39;double&#39;</span>
+<a name="ln-433"></a>		<span class="k">if</span><span class="p">(</span> <span class="n">S</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">&gt;</span><span class="n">S</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="p">)</span> <span class="k">then</span>
+<a name="ln-434"></a><span class="k">			do </span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">N</span>
+<a name="ln-435"></a>				<span class="k">write</span><span class="p">(</span><span class="n">iou</span><span class="p">,</span><span class="s1">&#39;(3E30.15)&#39;</span><span class="p">)</span> <span class="n">v</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">)</span>
+<a name="ln-436"></a>			<span class="k">end do</span>
+<a name="ln-437"></a><span class="k">		else if</span><span class="p">(</span> <span class="n">S</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">&lt;</span><span class="n">S</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="p">)</span> <span class="k">then</span>
+<a name="ln-438"></a><span class="k">			do </span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">N</span>
+<a name="ln-439"></a>				<span class="k">write</span><span class="p">(</span><span class="n">iou</span><span class="p">,</span><span class="s1">&#39;(3E30.15)&#39;</span><span class="p">)</span> <span class="n">v</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="n">k</span><span class="p">)</span>
+<a name="ln-440"></a>			<span class="k">end do</span>
+<a name="ln-441"></a><span class="k">		end if</span>
+<a name="ln-442"></a><span class="k">		</span>
+<a name="ln-443"></a><span class="k">		close</span><span class="p">(</span><span class="n">iou</span><span class="p">)</span>
+<a name="ln-444"></a>	<span class="k">end subroutine </span><span class="n">appendVectorVTK</span>
+<a name="ln-445"></a>
+<a name="ln-446"></a>	<span class="k">subroutine </span><span class="n">connect</span><span class="p">(</span><span class="n">self</span><span class="p">)</span>
+<a name="ln-447"></a>		<span class="c">!! Build connectivity in the mesh</span>
+<a name="ln-448"></a>		<span class="k">class</span><span class="p">(</span><span class="n">mesh_t</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="kd">::</span><span class="n">self</span>
+<a name="ln-449"></a>			<span class="c">!! Mesh to operate on</span>
+<a name="ln-450"></a>		
+<a name="ln-451"></a>		<span class="kt">integer</span><span class="p">,</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">allocatable</span><span class="kd">::</span><span class="n">c</span><span class="p">,</span><span class="n">b</span>
+<a name="ln-452"></a>		<span class="k">type</span><span class="p">(</span><span class="n">element_t</span><span class="p">)</span><span class="kd">::</span><span class="n">e</span>
+<a name="ln-453"></a>		<span class="kt">integer</span><span class="kd">::</span><span class="n">k</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">n</span>
+<a name="ln-454"></a>		
+<a name="ln-455"></a>		<span class="c">! Create nodal element lists</span>
+<a name="ln-456"></a>		<span class="n">c</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">nodes</span><span class="p">))]</span>
+<a name="ln-457"></a>		<span class="k">do </span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">elements</span><span class="p">)</span>
+<a name="ln-458"></a>			<span class="n">e</span> <span class="o">=</span> <span class="n">self</span><span class="p">%</span><span class="n">elements</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+<a name="ln-459"></a>			<span class="k">do </span><span class="n">l</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">e</span><span class="p">%</span><span class="n">nodes</span><span class="p">)</span>
+<a name="ln-460"></a>				<span class="n">c</span><span class="p">(</span><span class="n">e</span><span class="p">%</span><span class="n">nodes</span><span class="p">(</span><span class="n">l</span><span class="p">))</span> <span class="o">=</span> <span class="n">c</span><span class="p">(</span><span class="n">e</span><span class="p">%</span><span class="n">nodes</span><span class="p">(</span><span class="n">l</span><span class="p">))</span><span class="o">+</span><span class="mi">1</span>
+<a name="ln-461"></a>			<span class="k">end do</span>
+<a name="ln-462"></a><span class="k">		end do</span>
+<a name="ln-463"></a><span class="k">		do </span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<a name="ln-464"></a>			<span class="n">self</span><span class="p">%</span><span class="n">nodes</span><span class="p">(</span><span class="n">k</span><span class="p">)%</span><span class="n">elements</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span><span class="n">l</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">c</span><span class="p">(</span><span class="n">k</span><span class="p">))]</span>
+<a name="ln-465"></a>		<span class="k">end do</span>
+<a name="ln-466"></a><span class="k">		</span><span class="n">c</span> <span class="o">=</span> <span class="mi">0</span>
+<a name="ln-467"></a>		<span class="k">do </span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">elements</span><span class="p">)</span>
+<a name="ln-468"></a>			<span class="n">e</span> <span class="o">=</span> <span class="n">self</span><span class="p">%</span><span class="n">elements</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+<a name="ln-469"></a>			<span class="k">do </span><span class="n">l</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">e</span><span class="p">%</span><span class="n">nodes</span><span class="p">)</span>
+<a name="ln-470"></a>				<span class="n">n</span> <span class="o">=</span> <span class="n">e</span><span class="p">%</span><span class="n">nodes</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+<a name="ln-471"></a>				<span class="n">c</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">=</span> <span class="n">c</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span>
+<a name="ln-472"></a>				<span class="n">self</span><span class="p">%</span><span class="n">nodes</span><span class="p">(</span><span class="n">n</span><span class="p">)%</span><span class="n">elements</span><span class="p">(</span><span class="n">c</span><span class="p">(</span><span class="n">n</span><span class="p">))</span> <span class="o">=</span> <span class="n">k</span>
+<a name="ln-473"></a>			<span class="k">end do</span>
+<a name="ln-474"></a><span class="k">		end do</span>
+<a name="ln-475"></a>		
+<a name="ln-476"></a>		<span class="c">! Create nodal node lists</span>
+<a name="ln-477"></a>		<span class="k">do </span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">nodes</span><span class="p">)</span>
+<a name="ln-478"></a>			<span class="n">b</span> <span class="o">=</span> <span class="n">self</span><span class="p">%</span><span class="n">nodes</span><span class="p">(</span><span class="n">k</span><span class="p">)%</span><span class="n">elements</span>
+<a name="ln-479"></a>			<span class="n">self</span><span class="p">%</span><span class="n">nodes</span><span class="p">(</span><span class="n">k</span><span class="p">)%</span><span class="n">nodes</span> <span class="o">=</span> <span class="n">deDup</span><span class="p">([(</span><span class="n">self</span><span class="p">%</span><span class="n">elements</span><span class="p">(</span><span class="n">b</span><span class="p">(</span><span class="n">l</span><span class="p">))%</span><span class="n">nodes</span><span class="p">,</span><span class="n">l</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">b</span><span class="p">))],</span><span class="n">k</span><span class="p">)</span>
+<a name="ln-480"></a>		<span class="k">end do</span>
+<a name="ln-481"></a>		
+<a name="ln-482"></a>		<span class="c">! Create elemental element lists</span>
+<a name="ln-483"></a>		<span class="k">do </span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">elements</span><span class="p">)</span>
+<a name="ln-484"></a>			<span class="n">b</span> <span class="o">=</span> <span class="n">self</span><span class="p">%</span><span class="n">elements</span><span class="p">(</span><span class="n">k</span><span class="p">)%</span><span class="n">nodes</span>
+<a name="ln-485"></a>			<span class="n">self</span><span class="p">%</span><span class="n">elements</span><span class="p">(</span><span class="n">k</span><span class="p">)%</span><span class="n">elements</span> <span class="o">=</span> <span class="n">deDup</span><span class="p">([(</span><span class="n">self</span><span class="p">%</span><span class="n">nodes</span><span class="p">(</span><span class="n">b</span><span class="p">(</span><span class="n">l</span><span class="p">))%</span><span class="n">elements</span><span class="p">,</span><span class="n">l</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">b</span><span class="p">))],</span><span class="n">k</span><span class="p">)</span>
+<a name="ln-486"></a>		<span class="k">end do</span>
+<a name="ln-487"></a>		
+<a name="ln-488"></a>		<span class="c">! Assign element colors</span>
+<a name="ln-489"></a>		<span class="n">c</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">elements</span><span class="p">))]</span>
+<a name="ln-490"></a>		<span class="n">self</span><span class="p">%</span><span class="n">elements</span><span class="p">%</span><span class="n">ecolor</span> <span class="o">=</span> <span class="mi">0</span>
+<a name="ln-491"></a>		<span class="k">do </span><span class="n">m</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">elements</span><span class="p">)</span>
+<a name="ln-492"></a>			<span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+<a name="ln-493"></a>			<span class="k">where</span><span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">elements</span><span class="p">%</span><span class="n">ecolor</span><span class="o">==-</span><span class="mi">1</span><span class="p">)</span> <span class="n">self</span><span class="p">%</span><span class="n">elements</span><span class="p">%</span><span class="n">ecolor</span> <span class="o">=</span> <span class="mi">0</span>
+<a name="ln-494"></a>			<span class="k">do </span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">elements</span><span class="p">)</span>
+<a name="ln-495"></a>				<span class="n">e</span> <span class="o">=</span> <span class="n">self</span><span class="p">%</span><span class="n">elements</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+<a name="ln-496"></a>				<span class="k">if</span><span class="p">(</span><span class="n">e</span><span class="p">%</span><span class="n">ecolor</span><span class="o">/=</span><span class="mi">0</span><span class="p">)</span> <span class="k">cycle</span>
+<a name="ln-497"></a><span class="k">				</span>
+<a name="ln-498"></a><span class="k">				</span><span class="n">self</span><span class="p">%</span><span class="n">elements</span><span class="p">(</span><span class="n">k</span><span class="p">)%</span><span class="n">ecolor</span> <span class="o">=</span> <span class="n">m</span>
+<a name="ln-499"></a>				<span class="k">do </span><span class="n">l</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">e</span><span class="p">%</span><span class="n">elements</span><span class="p">)</span>
+<a name="ln-500"></a>					<span class="k">if</span><span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">elements</span><span class="p">(</span><span class="n">e</span><span class="p">%</span><span class="n">elements</span><span class="p">(</span><span class="n">l</span><span class="p">))%</span><span class="n">ecolor</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span> <span class="k">cycle</span>
+<a name="ln-501"></a><span class="k">					</span><span class="n">self</span><span class="p">%</span><span class="n">elements</span><span class="p">(</span><span class="n">e</span><span class="p">%</span><span class="n">elements</span><span class="p">(</span><span class="n">l</span><span class="p">))%</span><span class="n">ecolor</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<a name="ln-502"></a>					<span class="n">n</span> <span class="o">=</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span>
+<a name="ln-503"></a>				<span class="k">end do</span>
+<a name="ln-504"></a><span class="k">			end do</span>
+<a name="ln-505"></a><span class="k">			if</span><span class="p">(</span><span class="n">n</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="k">exit</span>
+<a name="ln-506"></a><span class="k">		end do</span>
+<a name="ln-507"></a><span class="k">		</span>
+<a name="ln-508"></a><span class="k">	contains</span>
+<a name="ln-509"></a><span class="k">	</span>
+<a name="ln-510"></a><span class="k">		function </span><span class="n">deDup</span><span class="p">(</span><span class="n">l</span><span class="p">,</span><span class="n">n</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">o</span><span class="p">)</span>
+<a name="ln-511"></a>			<span class="c">!! Remove duplicates from a list</span>
+<a name="ln-512"></a>			<span class="kt">integer</span><span class="p">,</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span><span class="n">l</span>
+<a name="ln-513"></a>			<span class="kt">integer</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span><span class="n">n</span>
+<a name="ln-514"></a>			<span class="kt">integer</span><span class="p">,</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">allocatable</span><span class="kd">::</span><span class="n">o</span>
+<a name="ln-515"></a>			
+<a name="ln-516"></a>			<span class="kt">integer</span><span class="kd">::</span><span class="n">k</span><span class="p">,</span><span class="n">b</span>
+<a name="ln-517"></a>			
+<a name="ln-518"></a>			<span class="n">o</span> <span class="o">=</span> <span class="n">l</span>
+<a name="ln-519"></a>			<span class="k">where</span><span class="p">(</span><span class="n">o</span><span class="o">==</span><span class="n">n</span><span class="p">)</span> <span class="n">o</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<a name="ln-520"></a>			<span class="k">do </span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+<a name="ln-521"></a>				<span class="k">if</span><span class="p">(</span><span class="n">o</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="o">==-</span><span class="mi">1</span><span class="p">)</span> <span class="k">cycle</span>
+<a name="ln-522"></a><span class="k">				</span><span class="n">b</span> <span class="o">=</span> <span class="n">o</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+<a name="ln-523"></a>				<span class="k">where</span><span class="p">(</span><span class="n">o</span><span class="o">==</span><span class="n">b</span><span class="p">)</span> <span class="n">o</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<a name="ln-524"></a>				<span class="n">o</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="o">=</span> <span class="n">b</span>
+<a name="ln-525"></a>			<span class="k">end do</span>
+<a name="ln-526"></a><span class="k">			</span>
+<a name="ln-527"></a><span class="k">			</span><span class="n">o</span> <span class="o">=</span> <span class="nb">pack</span><span class="p">(</span><span class="n">o</span><span class="p">,</span><span class="n">o</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">)</span>
+<a name="ln-528"></a>		<span class="k">end function </span><span class="n">deDup</span>
+<a name="ln-529"></a>	
+<a name="ln-530"></a>	<span class="k">end subroutine </span><span class="n">connect</span>
+<a name="ln-531"></a>
+<a name="ln-532"></a><span class="k">end module </span><span class="n">mesh_mod</span>
+</pre></div>
+
+    </section>
+    </div>
+  </div>
+
+  <section class="visible-xs visible-sm hidden-md">
+    <hr>
+    
+
+<div class="panel panel-default">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#allfiles-1">All Source Files</a></h3></div>
+  <div id="allfiles-1" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../sourcefile/animate.f90.html">animate.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/array.f90.html">array.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/autodiff.f90.html">autoDiff.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/basic.f90.html">basic.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/basicsolvers.f90.html">basicSolvers.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/config.f90.html">config.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/examples.f90.html">examples.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/expression.f90.html">expression.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/fourier.f90.html">fourier.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/iterate.f90.html">iterate.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/kinds.f90.html">kinds.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/logo.f90.html">logo.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/matio.f90.html">matIO.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/mesh.f90.html">mesh.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/netcdf.f90.html">netCDF.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/node.f90.html">node.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/optimize.f90.html">optimize.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/plplotlib.f90.html">plplotlib.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/quaternion.f90.html">quaternion.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/solvers.f90.html">solvers.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/sparse.f90.html">sparse.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/spline.f90.html">spline.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/stats.f90.html">stats.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/tensor.f90.html">tensor.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testarray.f90.html">testArray.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testautodiff.f90.html">testAutoDiff.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testconfig.f90.html">testConfig.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testexpression.f90.html">testExpression.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testfourier.f90.html">testFourier.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testiterate.f90.html">testIterate.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testkinds.f90.html">testKinds.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testmatio.f90.html">testMatIO.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testmesh.f90.html">testMesh.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testnetcdf.f90.html">testNetCDF.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testoptimize.f90.html">testOptimize.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testquaternion.f90.html">testQuaternion.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testsparse.f90.html">testSparse.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testspline.f90.html">testSpline.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/teststats.f90.html">testStats.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testtensor.f90.html">testTensor.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testtext.f90.html">testText.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testtime.f90.html">testTime.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/testvtkio.f90.html">testVtkIO.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/text.f90.html">text.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/time.f90.html">time.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/treeexponential.f90.html">treeExponential.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/treeoperator.f90.html">treeOperator.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/treetrigonometric.f90.html">treeTrigonometric.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/treevalue.f90.html">treeValue.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/vtkio.f90.html">vtkIO.f90</a>
+      
+    </div>
+  </div>
+</div>
+
+
+  </section>
+  
+    <hr>    
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-md-4"><p>&copy; 2016 </p></div>
+        <div class="col-xs-6 col-md-4 col-md-push-4">
+          <p class="text-right">
+            Documentation generated by 
+            <a href="https://github.com/cmacmackin/ford">FORD</a>
+            
+          </p>
+        </div>
+        <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> CommonModules was developed by Kyle Horne</p></div>
+      </div>
+      <br>
+      </div> <!-- /container -->    
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+-->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- MathJax JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js'],
+        'HTML-CSS': { 
+           styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: '#000000 ! important'} }
+        }
+      });
+    </script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  </body>
+</html>
