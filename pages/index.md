@@ -1,1 +1,1 @@
-title: Usage Instructions 
+title: Instructions 
