@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.0)
 enable_language(Fortran)
 
 project(CommonModules
-	VERSION "0.2.2")
+	VERSION "0.2.3")
 enable_testing()
 
 #=======================#
@@ -75,8 +75,8 @@ link_directories(${PLPLOT_LIBRARY_DIRS})
 
 finder(NETCDF "netcdff" "netcdf.mod")
 finder(FFTW3 "fftw3" "fftw3.f03")
-finder(LAPACK "lapack")
-finder(UMFPACK "umfpack")
+# finder(LAPACK "lapack")
+# finder(UMFPACK "umfpack")
 
 #=========================#
 #= Create Symlink Target =#
@@ -242,12 +242,16 @@ set(HAVE_RUN "1" CACHE STRING "Indicate if first run of CMake" FORCE)
 #========================#
 
 install(TARGETS CommonModules
-	RUNTIME DESTINATION bin
-	LIBRARY DESTINATION lib)
+	EXPORT CommonModules
+	LIBRARY DESTINATION "lib")
 
 install(DIRECTORY "${CMAKE_BINARY_DIR}/modules/"
 	DESTINATION "include/CommonModules"
 	FILES_MATCHING PATTERN "*.mod")
 
-install(DIRECTORY "${CMAKE_BINARY_DIR}/doc/" OPTIONAL
-	DESTINATION "share/doc/CommonModules")
+install(DIRECTORY "${CMAKE_BINARY_DIR}/doc/"
+	DESTINATION "share/doc/CommonModules"
+	OPTIONAL)
+
+install(EXPORT CommonModules
+	DESTINATION "lib/CommonModules")
