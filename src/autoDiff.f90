@@ -17,12 +17,12 @@ module autoDiff_mod
 	!= Parameters =!
 	!==============!
 	
-	integer,parameter::Sl = 4
+	integer,parameter::Sl = 10
 	integer,parameter::Sf = 2
-	integer,parameter::Si = 48
-	integer,parameter::Sj = 48
+	integer,parameter::Si = 64
+	integer,parameter::Sj = 64
 	
-	integer::Nl = 4
+	integer::Nl = 2
 	integer::Nf = 2
 	integer::Ni = 2
 	integer::Nj = 2
