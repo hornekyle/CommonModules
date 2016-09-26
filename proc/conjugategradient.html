@@ -185,9 +185,13 @@
   <div id="allprocs-0" class="panel-collapse collapse">
     <div class="list-group">
       
+      <a class="list-group-item" href="../interface/abs.html">abs</a>
+      
       <a class="list-group-item" href="../interface/abs_t.html">abs_t</a>
       
       <a class="list-group-item" href="../interface/acos_t.html">acos_t</a>
+      
+      <a class="list-group-item" href="../interface/ad_t.html">ad_t</a>
       
       <a class="list-group-item" href="../interface/add_t.html">add_t</a>
       
@@ -237,7 +241,7 @@
       
       <a class="list-group-item" href="../proc/contourf.html">contourf</a>
       
-      <a class="list-group-item" href="../interface/cos.html">cos</a>
+      <a class="list-group-item" href="../proc/cos_a.html">cos_a</a>
       
       <a class="list-group-item" href="../interface/cos_t.html">cos_t</a>
       
@@ -247,13 +251,7 @@
       
       <a class="list-group-item" href="../proc/dedup.html">deDup</a>
       
-      <a class="list-group-item" href="../interface/der.html">der</a>
-      
       <a class="list-group-item" href="../interface/dft.html">DFT</a>
-      
-      <a class="list-group-item" href="../interface/diff1.html">diff1</a>
-      
-      <a class="list-group-item" href="../interface/diff3.html">diff3</a>
       
       <a class="list-group-item" href="../interface/div_t.html">div_t</a>
       
@@ -401,8 +399,6 @@
       
       <a class="list-group-item" href="../interface/gaussseidel_t.html">gaussSeidel_t</a>
       
-      <a class="list-group-item" href="../proc/get_adn.html">get_adN</a>
-      
       <a class="list-group-item" href="../proc/hist.html">hist</a>
       
       <a class="list-group-item" href="../interface/idft.html">iDFT</a>
@@ -436,6 +432,8 @@
       <a class="list-group-item" href="../interface/log%7E2.html">log</a>
       
       <a class="list-group-item" href="../interface/log10.html">log10</a>
+      
+      <a class="list-group-item" href="../interface/log10%7E2.html">log10</a>
       
       <a class="list-group-item" href="../interface/log10_t.html">log10_t</a>
       
@@ -515,9 +513,13 @@
       
       <a class="list-group-item" href="../proc/newvar.html">newVar</a>
       
+      <a class="list-group-item" href="../interface/nint.html">nint</a>
+      
       <a class="list-group-item" href="../interface/nodestack_t.html">nodeStack_t</a>
       
       <a class="list-group-item" href="../interface/norm2.html">norm2</a>
+      
+      <a class="list-group-item" href="../interface/norm2%7E2.html">norm2</a>
       
       <a class="list-group-item" href="../interface/operator%28%2A%29.html">operator(*)</a>
       
@@ -553,6 +555,10 @@
       
       <a class="list-group-item" href="../interface/operator%28SLASH%29%7E2.html">operator(/)</a>
       
+      <a class="list-group-item" href="../interface/operator%28%3C%29.html">operator(<)</a>
+      
+      <a class="list-group-item" href="../interface/operator%28%3E%29.html">operator(>)</a>
+      
       <a class="list-group-item" href="../proc/plot.html">plot</a>
       
       <a class="list-group-item" href="../proc/plot3.html">plot3</a>
@@ -577,8 +583,6 @@
       
       <a class="list-group-item" href="../interface/readstep.html">readStep</a>
       
-      <a class="list-group-item" href="../interface/real.html">real</a>
-      
       <a class="list-group-item" href="../interface/real_t.html">real_t</a>
       
       <a class="list-group-item" href="../proc/realtochar.html">realToChar</a>
@@ -591,8 +595,6 @@
       
       <a class="list-group-item" href="../proc/scatter.html">scatter</a>
       
-      <a class="list-group-item" href="../proc/set_adn.html">set_adN</a>
-      
       <a class="list-group-item" href="../proc/setrandomseed.html">setRandomSeed</a>
       
       <a class="list-group-item" href="../proc/setup.html">setup</a>
@@ -601,11 +603,13 @@
       
       <a class="list-group-item" href="../proc/showprogress.html">showProgress</a>
       
-      <a class="list-group-item" href="../interface/sin.html">sin</a>
+      <a class="list-group-item" href="../proc/sin_a.html">sin_a</a>
       
       <a class="list-group-item" href="../interface/sin_t.html">sin_t</a>
       
       <a class="list-group-item" href="../interface/solvelu.html">solveLU</a>
+      
+      <a class="list-group-item" href="../interface/solvelu%7E2.html">solveLU</a>
       
       <a class="list-group-item" href="../proc/solverprogress.html">solverProgress</a>
       
@@ -641,9 +645,13 @@
       
       <a class="list-group-item" href="../proc/symmetricsuccessiveoverrelaxation.html">symmetricSuccessiveOverRelaxation</a>
       
+      <a class="list-group-item" href="../proc/tan_a.html">tan_a</a>
+      
       <a class="list-group-item" href="../interface/tan_t.html">tan_t</a>
       
       <a class="list-group-item" href="../interface/tdma.html">TDMA</a>
+      
+      <a class="list-group-item" href="../interface/tdma%7E2.html">TDMA</a>
       
       <a class="list-group-item" href="../proc/testbasic.html">testBasic</a>
       
@@ -852,7 +860,7 @@ public function conjugateGradient(A, b, x0, tol, maxIts) result(x)
   
 <tr>
   
-  <td><span class="anchor" id="variable-b%7E18"></span>real(kind=wp),</td>
+  <td><span class="anchor" id="variable-b%7E13"></span>real(kind=wp),</td>
   <td>intent(in),</td>
   <td></td>
   
@@ -916,7 +924,7 @@ public function conjugateGradient(A, b, x0, tol, maxIts) result(x)
     
     
     
-	 <h3>Return Value <small><span class="anchor" id="variable-x%7E19"></span>real(kind=wp),
+	 <h3>Return Value <small><span class="anchor" id="variable-x%7E15"></span>real(kind=wp),
   dimension(:),allocatable</small></h3>
     
     
@@ -939,31 +947,31 @@ public function conjugateGradient(A, b, x0, tol, maxIts) result(x)
 <polygon fill="none" stroke="black" points="100,-108 0,-108 0,-84 100,-84 100,-108"/>
 <text text-anchor="middle" x="50" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50">conjugateGradient</text>
 </g>
-<!-- proc~solverprogress -->
-<g id="proc~~conjugategradient~~CallsGraph_node2" class="node"><title>proc~solverprogress</title>
-<g id="a_proc~~conjugategradient~~CallsGraph_node2"><a xlink:href="../proc/solverprogress.html" xlink:title="solverProgress">
-<polygon fill="#d9534f" stroke="#d9534f" points="220,-129 136,-129 136,-105 220,-105 220,-129"/>
-<text text-anchor="middle" x="178" y="-114.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">solverProgress</text>
-</a>
-</g>
-</g>
-<!-- proc~conjugategradient&#45;&gt;proc~solverprogress -->
-<g id="proc~~conjugategradient~~CallsGraph_edge10" class="edge"><title>proc~conjugategradient&#45;&gt;proc~solverprogress</title>
-<path fill="none" stroke="#000000" d="M100.076,-104.179C108.427,-105.571 117.122,-107.02 125.533,-108.422"/>
-<polygon fill="#000000" stroke="#000000" points="125.17,-111.91 135.609,-110.102 126.321,-105.005 125.17,-111.91"/>
-</g>
 <!-- proc~startreport -->
-<g id="proc~~conjugategradient~~CallsGraph_node3" class="node"><title>proc~startreport</title>
-<g id="a_proc~~conjugategradient~~CallsGraph_node3"><a xlink:href="../proc/startreport.html" xlink:title="startReport">
-<polygon fill="#d9534f" stroke="#d9534f" points="211,-87 145,-87 145,-63 211,-63 211,-87"/>
-<text text-anchor="middle" x="178" y="-72.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">startReport</text>
+<g id="proc~~conjugategradient~~CallsGraph_node2" class="node"><title>proc~startreport</title>
+<g id="a_proc~~conjugategradient~~CallsGraph_node2"><a xlink:href="../proc/startreport.html" xlink:title="startReport">
+<polygon fill="#d9534f" stroke="#d9534f" points="211,-129 145,-129 145,-105 211,-105 211,-129"/>
+<text text-anchor="middle" x="178" y="-114.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">startReport</text>
 </a>
 </g>
 </g>
 <!-- proc~conjugategradient&#45;&gt;proc~startreport -->
-<g id="proc~~conjugategradient~~CallsGraph_edge11" class="edge"><title>proc~conjugategradient&#45;&gt;proc~startreport</title>
-<path fill="none" stroke="#000000" d="M100.076,-87.8207C111.609,-85.8985 123.797,-83.8671 134.988,-82.002"/>
-<polygon fill="#000000" stroke="#000000" points="135.649,-85.4402 144.938,-80.3437 134.498,-78.5354 135.649,-85.4402"/>
+<g id="proc~~conjugategradient~~CallsGraph_edge10" class="edge"><title>proc~conjugategradient&#45;&gt;proc~startreport</title>
+<path fill="none" stroke="#000000" d="M100.076,-104.179C111.609,-106.101 123.797,-108.133 134.988,-109.998"/>
+<polygon fill="#000000" stroke="#000000" points="134.498,-113.465 144.938,-111.656 135.649,-106.56 134.498,-113.465"/>
+</g>
+<!-- proc~solverprogress -->
+<g id="proc~~conjugategradient~~CallsGraph_node3" class="node"><title>proc~solverprogress</title>
+<g id="a_proc~~conjugategradient~~CallsGraph_node3"><a xlink:href="../proc/solverprogress.html" xlink:title="solverProgress">
+<polygon fill="#d9534f" stroke="#d9534f" points="220,-87 136,-87 136,-63 220,-63 220,-87"/>
+<text text-anchor="middle" x="178" y="-72.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">solverProgress</text>
+</a>
+</g>
+</g>
+<!-- proc~conjugategradient&#45;&gt;proc~solverprogress -->
+<g id="proc~~conjugategradient~~CallsGraph_edge11" class="edge"><title>proc~conjugategradient&#45;&gt;proc~solverprogress</title>
+<path fill="none" stroke="#000000" d="M100.076,-87.8207C108.427,-86.4288 117.122,-84.9797 125.533,-83.5779"/>
+<polygon fill="#000000" stroke="#000000" points="126.321,-86.9949 135.609,-81.8985 125.17,-80.0901 126.321,-86.9949"/>
 </g>
 <!-- proc~showprogress -->
 <g id="proc~~conjugategradient~~CallsGraph_node4" class="node"><title>proc~showprogress</title>
@@ -973,98 +981,98 @@ public function conjugateGradient(A, b, x0, tol, maxIts) result(x)
 </a>
 </g>
 </g>
-<!-- proc~solverprogress&#45;&gt;proc~showprogress -->
-<g id="proc~~conjugategradient~~CallsGraph_edge8" class="edge"><title>proc~solverprogress&#45;&gt;proc~showprogress</title>
-<path fill="none" stroke="#000000" d="M220.224,-109.537C228.555,-108.029 237.392,-106.429 245.961,-104.878"/>
-<polygon fill="#000000" stroke="#000000" points="246.635,-108.313 255.852,-103.087 245.388,-101.425 246.635,-108.313"/>
-</g>
 <!-- proc~startreport&#45;&gt;proc~showprogress -->
-<g id="proc~~conjugategradient~~CallsGraph_edge9" class="edge"><title>proc~startreport&#45;&gt;proc~showprogress</title>
-<path fill="none" stroke="#000000" d="M211.005,-80.7939C221.689,-82.7282 233.858,-84.9312 245.553,-87.0483"/>
-<polygon fill="#000000" stroke="#000000" points="245.195,-90.5403 255.658,-88.8778 246.442,-83.6523 245.195,-90.5403"/>
+<g id="proc~~conjugategradient~~CallsGraph_edge8" class="edge"><title>proc~startreport&#45;&gt;proc~showprogress</title>
+<path fill="none" stroke="#000000" d="M211.005,-111.206C221.689,-109.272 233.858,-107.069 245.553,-104.952"/>
+<polygon fill="#000000" stroke="#000000" points="246.442,-108.348 255.658,-103.122 245.195,-101.46 246.442,-108.348"/>
 </g>
-<!-- proc~realtotime -->
-<g id="proc~~conjugategradient~~CallsGraph_node5" class="node"><title>proc~realtotime</title>
-<g id="a_proc~~conjugategradient~~CallsGraph_node5"><a xlink:href="../proc/realtotime.html" xlink:title="realToTime">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="439,-192 372,-192 372,-168 439,-168 439,-192"/>
-<text text-anchor="middle" x="405.5" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">realToTime</text>
-</a>
-</g>
-</g>
-<!-- proc~showprogress&#45;&gt;proc~realtotime -->
-<g id="proc~~conjugategradient~~CallsGraph_edge3" class="edge"><title>proc~showprogress&#45;&gt;proc~realtotime</title>
-<path fill="none" stroke="#000000" d="M310.405,-108.142C325.096,-121.236 349.567,-142.431 372,-159 373.412,-160.043 374.874,-161.091 376.361,-162.134"/>
-<polygon fill="#000000" stroke="#000000" points="374.736,-165.26 384.983,-167.952 378.652,-159.457 374.736,-165.26"/>
-</g>
-<!-- proc~colorize -->
-<g id="proc~~conjugategradient~~CallsGraph_node6" class="node"><title>proc~colorize</title>
-<g id="a_proc~~conjugategradient~~CallsGraph_node6"><a xlink:href="../proc/colorize.html" xlink:title="colorize">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="432.5,-150 378.5,-150 378.5,-126 432.5,-126 432.5,-150"/>
-<text text-anchor="middle" x="405.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">colorize</text>
-</a>
-</g>
-</g>
-<!-- proc~showprogress&#45;&gt;proc~colorize -->
-<g id="proc~~conjugategradient~~CallsGraph_edge4" class="edge"><title>proc~showprogress&#45;&gt;proc~colorize</title>
-<path fill="none" stroke="#000000" d="M327.805,-108.036C340.686,-113.068 355.731,-118.946 369.067,-124.156"/>
-<polygon fill="#000000" stroke="#000000" points="367.832,-127.432 378.42,-127.811 370.38,-120.912 367.832,-127.432"/>
-</g>
-<!-- proc~realtochar -->
-<g id="proc~~conjugategradient~~CallsGraph_node7" class="node"><title>proc~realtochar</title>
-<g id="a_proc~~conjugategradient~~CallsGraph_node7"><a xlink:href="../proc/realtochar.html" xlink:title="realToChar">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="439,-108 372,-108 372,-84 439,-84 439,-108"/>
-<text text-anchor="middle" x="405.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">realToChar</text>
-</a>
-</g>
-</g>
-<!-- proc~showprogress&#45;&gt;proc~realtochar -->
-<g id="proc~~conjugategradient~~CallsGraph_edge5" class="edge"><title>proc~showprogress&#45;&gt;proc~realtochar</title>
-<path fill="none" stroke="#000000" d="M336.114,-96C344.479,-96 353.356,-96 361.847,-96"/>
-<polygon fill="#000000" stroke="#000000" points="361.952,-99.5001 371.952,-96 361.952,-92.5001 361.952,-99.5001"/>
-</g>
-<!-- proc~colormap -->
-<g id="proc~~conjugategradient~~CallsGraph_node8" class="node"><title>proc~colormap</title>
-<g id="a_proc~~conjugategradient~~CallsGraph_node8"><a xlink:href="../proc/colormap.html" xlink:title="colorMap">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="434,-66 377,-66 377,-42 434,-42 434,-66"/>
-<text text-anchor="middle" x="405.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">colorMap</text>
-</a>
-</g>
-</g>
-<!-- proc~showprogress&#45;&gt;proc~colormap -->
-<g id="proc~~conjugategradient~~CallsGraph_edge6" class="edge"><title>proc~showprogress&#45;&gt;proc~colormap</title>
-<path fill="none" stroke="#000000" d="M327.805,-83.9645C340.165,-79.1354 354.518,-73.5277 367.442,-68.4785"/>
-<polygon fill="#000000" stroke="#000000" points="368.949,-71.6475 376.989,-64.7483 366.401,-65.1274 368.949,-71.6475"/>
+<!-- proc~solverprogress&#45;&gt;proc~showprogress -->
+<g id="proc~~conjugategradient~~CallsGraph_edge9" class="edge"><title>proc~solverprogress&#45;&gt;proc~showprogress</title>
+<path fill="none" stroke="#000000" d="M220.224,-82.4629C228.555,-83.9712 237.392,-85.5709 245.961,-87.1223"/>
+<polygon fill="#000000" stroke="#000000" points="245.388,-90.5753 255.852,-88.9128 246.635,-83.6873 245.388,-90.5753"/>
 </g>
 <!-- proc~walltime -->
-<g id="proc~~conjugategradient~~CallsGraph_node9" class="node"><title>proc~walltime</title>
-<g id="a_proc~~conjugategradient~~CallsGraph_node9"><a xlink:href="../proc/walltime.html" xlink:title="wallTime">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="433,-24 378,-24 378,-0 433,-0 433,-24"/>
-<text text-anchor="middle" x="405.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">wallTime</text>
+<g id="proc~~conjugategradient~~CallsGraph_node5" class="node"><title>proc~walltime</title>
+<g id="a_proc~~conjugategradient~~CallsGraph_node5"><a xlink:href="../proc/walltime.html" xlink:title="wallTime">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="433,-192 378,-192 378,-168 433,-168 433,-192"/>
+<text text-anchor="middle" x="405.5" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">wallTime</text>
 </a>
 </g>
 </g>
 <!-- proc~showprogress&#45;&gt;proc~walltime -->
-<g id="proc~~conjugategradient~~CallsGraph_edge7" class="edge"><title>proc~showprogress&#45;&gt;proc~walltime</title>
+<g id="proc~~conjugategradient~~CallsGraph_edge3" class="edge"><title>proc~showprogress&#45;&gt;proc~walltime</title>
+<path fill="none" stroke="#000000" d="M310.405,-108.142C325.096,-121.236 349.567,-142.431 372,-159 373.412,-160.043 374.874,-161.091 376.361,-162.134"/>
+<polygon fill="#000000" stroke="#000000" points="374.736,-165.26 384.983,-167.952 378.652,-159.457 374.736,-165.26"/>
+</g>
+<!-- proc~realtochar -->
+<g id="proc~~conjugategradient~~CallsGraph_node6" class="node"><title>proc~realtochar</title>
+<g id="a_proc~~conjugategradient~~CallsGraph_node6"><a xlink:href="../proc/realtochar.html" xlink:title="realToChar">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="439,-150 372,-150 372,-126 439,-126 439,-150"/>
+<text text-anchor="middle" x="405.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">realToChar</text>
+</a>
+</g>
+</g>
+<!-- proc~showprogress&#45;&gt;proc~realtochar -->
+<g id="proc~~conjugategradient~~CallsGraph_edge4" class="edge"><title>proc~showprogress&#45;&gt;proc~realtochar</title>
+<path fill="none" stroke="#000000" d="M327.805,-108.036C339.163,-112.473 352.203,-117.568 364.271,-122.283"/>
+<polygon fill="#000000" stroke="#000000" points="363.102,-125.584 373.69,-125.963 365.65,-119.064 363.102,-125.584"/>
+</g>
+<!-- proc~colormap -->
+<g id="proc~~conjugategradient~~CallsGraph_node7" class="node"><title>proc~colormap</title>
+<g id="a_proc~~conjugategradient~~CallsGraph_node7"><a xlink:href="../proc/colormap.html" xlink:title="colorMap">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="434,-108 377,-108 377,-84 434,-84 434,-108"/>
+<text text-anchor="middle" x="405.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">colorMap</text>
+</a>
+</g>
+</g>
+<!-- proc~showprogress&#45;&gt;proc~colormap -->
+<g id="proc~~conjugategradient~~CallsGraph_edge5" class="edge"><title>proc~showprogress&#45;&gt;proc~colormap</title>
+<path fill="none" stroke="#000000" d="M336.114,-96C345.989,-96 356.578,-96 366.403,-96"/>
+<polygon fill="#000000" stroke="#000000" points="366.694,-99.5001 376.694,-96 366.694,-92.5001 366.694,-99.5001"/>
+</g>
+<!-- proc~realtotime -->
+<g id="proc~~conjugategradient~~CallsGraph_node8" class="node"><title>proc~realtotime</title>
+<g id="a_proc~~conjugategradient~~CallsGraph_node8"><a xlink:href="../proc/realtotime.html" xlink:title="realToTime">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="439,-66 372,-66 372,-42 439,-42 439,-66"/>
+<text text-anchor="middle" x="405.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">realToTime</text>
+</a>
+</g>
+</g>
+<!-- proc~showprogress&#45;&gt;proc~realtotime -->
+<g id="proc~~conjugategradient~~CallsGraph_edge6" class="edge"><title>proc~showprogress&#45;&gt;proc~realtotime</title>
+<path fill="none" stroke="#000000" d="M327.805,-83.9645C339.163,-79.527 352.203,-74.4322 364.271,-69.7173"/>
+<polygon fill="#000000" stroke="#000000" points="365.65,-72.9365 373.69,-66.0373 363.102,-66.4164 365.65,-72.9365"/>
+</g>
+<!-- proc~colorize -->
+<g id="proc~~conjugategradient~~CallsGraph_node9" class="node"><title>proc~colorize</title>
+<g id="a_proc~~conjugategradient~~CallsGraph_node9"><a xlink:href="../proc/colorize.html" xlink:title="colorize">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="432.5,-24 378.5,-24 378.5,-0 432.5,-0 432.5,-24"/>
+<text text-anchor="middle" x="405.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">colorize</text>
+</a>
+</g>
+</g>
+<!-- proc~showprogress&#45;&gt;proc~colorize -->
+<g id="proc~~conjugategradient~~CallsGraph_edge7" class="edge"><title>proc~showprogress&#45;&gt;proc~colorize</title>
 <path fill="none" stroke="#000000" d="M310.405,-83.8583C325.096,-70.764 349.567,-49.5688 372,-33 373.412,-31.9573 374.874,-30.9088 376.361,-29.8664"/>
 <polygon fill="#000000" stroke="#000000" points="378.652,-32.5427 384.983,-24.0477 374.736,-26.7404 378.652,-32.5427"/>
 </g>
 <!-- proc~inttochar -->
 <g id="proc~~conjugategradient~~CallsGraph_node10" class="node"><title>proc~inttochar</title>
 <g id="a_proc~~conjugategradient~~CallsGraph_node10"><a xlink:href="../proc/inttochar.html" xlink:title="intToChar">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="535,-171 475,-171 475,-147 535,-147 535,-171"/>
-<text text-anchor="middle" x="505" y="-156.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">intToChar</text>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="535,-45 475,-45 475,-21 535,-21 535,-45"/>
+<text text-anchor="middle" x="505" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">intToChar</text>
 </a>
 </g>
 </g>
 <!-- proc~realtotime&#45;&gt;proc~inttochar -->
 <g id="proc~~conjugategradient~~CallsGraph_edge1" class="edge"><title>proc~realtotime&#45;&gt;proc~inttochar</title>
-<path fill="none" stroke="#000000" d="M439.237,-172.949C447.418,-171.187 456.276,-169.279 464.736,-167.457"/>
-<polygon fill="#000000" stroke="#000000" points="465.749,-170.819 474.788,-165.292 464.275,-163.976 465.749,-170.819"/>
+<path fill="none" stroke="#000000" d="M439.237,-46.9489C447.418,-45.1869 456.276,-43.2791 464.736,-41.4568"/>
+<polygon fill="#000000" stroke="#000000" points="465.749,-44.819 474.788,-39.2918 464.275,-37.9759 465.749,-44.819"/>
 </g>
 <!-- proc~colorize&#45;&gt;proc~inttochar -->
 <g id="proc~~conjugategradient~~CallsGraph_edge2" class="edge"><title>proc~colorize&#45;&gt;proc~inttochar</title>
-<path fill="none" stroke="#000000" d="M432.628,-143.628C442.46,-145.745 453.869,-148.203 464.642,-150.523"/>
-<polygon fill="#000000" stroke="#000000" points="464.191,-154.006 474.703,-152.69 465.665,-147.163 464.191,-154.006"/>
+<path fill="none" stroke="#000000" d="M432.628,-17.6276C442.46,-19.7452 453.869,-22.2025 464.642,-24.5228"/>
+<polygon fill="#000000" stroke="#000000" points="464.191,-28.0059 474.703,-26.69 465.665,-21.1628 464.191,-28.0059"/>
 </g>
 </g>
 </svg>
@@ -1374,9 +1382,13 @@ implementation in a submodule of an interface in a parent module.
   <div id="allprocs-1" class="panel-collapse collapse">
     <div class="list-group">
       
+      <a class="list-group-item" href="../interface/abs.html">abs</a>
+      
       <a class="list-group-item" href="../interface/abs_t.html">abs_t</a>
       
       <a class="list-group-item" href="../interface/acos_t.html">acos_t</a>
+      
+      <a class="list-group-item" href="../interface/ad_t.html">ad_t</a>
       
       <a class="list-group-item" href="../interface/add_t.html">add_t</a>
       
@@ -1426,7 +1438,7 @@ implementation in a submodule of an interface in a parent module.
       
       <a class="list-group-item" href="../proc/contourf.html">contourf</a>
       
-      <a class="list-group-item" href="../interface/cos.html">cos</a>
+      <a class="list-group-item" href="../proc/cos_a.html">cos_a</a>
       
       <a class="list-group-item" href="../interface/cos_t.html">cos_t</a>
       
@@ -1436,13 +1448,7 @@ implementation in a submodule of an interface in a parent module.
       
       <a class="list-group-item" href="../proc/dedup.html">deDup</a>
       
-      <a class="list-group-item" href="../interface/der.html">der</a>
-      
       <a class="list-group-item" href="../interface/dft.html">DFT</a>
-      
-      <a class="list-group-item" href="../interface/diff1.html">diff1</a>
-      
-      <a class="list-group-item" href="../interface/diff3.html">diff3</a>
       
       <a class="list-group-item" href="../interface/div_t.html">div_t</a>
       
@@ -1590,8 +1596,6 @@ implementation in a submodule of an interface in a parent module.
       
       <a class="list-group-item" href="../interface/gaussseidel_t.html">gaussSeidel_t</a>
       
-      <a class="list-group-item" href="../proc/get_adn.html">get_adN</a>
-      
       <a class="list-group-item" href="../proc/hist.html">hist</a>
       
       <a class="list-group-item" href="../interface/idft.html">iDFT</a>
@@ -1625,6 +1629,8 @@ implementation in a submodule of an interface in a parent module.
       <a class="list-group-item" href="../interface/log%7E2.html">log</a>
       
       <a class="list-group-item" href="../interface/log10.html">log10</a>
+      
+      <a class="list-group-item" href="../interface/log10%7E2.html">log10</a>
       
       <a class="list-group-item" href="../interface/log10_t.html">log10_t</a>
       
@@ -1704,9 +1710,13 @@ implementation in a submodule of an interface in a parent module.
       
       <a class="list-group-item" href="../proc/newvar.html">newVar</a>
       
+      <a class="list-group-item" href="../interface/nint.html">nint</a>
+      
       <a class="list-group-item" href="../interface/nodestack_t.html">nodeStack_t</a>
       
       <a class="list-group-item" href="../interface/norm2.html">norm2</a>
+      
+      <a class="list-group-item" href="../interface/norm2%7E2.html">norm2</a>
       
       <a class="list-group-item" href="../interface/operator%28%2A%29.html">operator(*)</a>
       
@@ -1742,6 +1752,10 @@ implementation in a submodule of an interface in a parent module.
       
       <a class="list-group-item" href="../interface/operator%28SLASH%29%7E2.html">operator(/)</a>
       
+      <a class="list-group-item" href="../interface/operator%28%3C%29.html">operator(<)</a>
+      
+      <a class="list-group-item" href="../interface/operator%28%3E%29.html">operator(>)</a>
+      
       <a class="list-group-item" href="../proc/plot.html">plot</a>
       
       <a class="list-group-item" href="../proc/plot3.html">plot3</a>
@@ -1766,8 +1780,6 @@ implementation in a submodule of an interface in a parent module.
       
       <a class="list-group-item" href="../interface/readstep.html">readStep</a>
       
-      <a class="list-group-item" href="../interface/real.html">real</a>
-      
       <a class="list-group-item" href="../interface/real_t.html">real_t</a>
       
       <a class="list-group-item" href="../proc/realtochar.html">realToChar</a>
@@ -1780,8 +1792,6 @@ implementation in a submodule of an interface in a parent module.
       
       <a class="list-group-item" href="../proc/scatter.html">scatter</a>
       
-      <a class="list-group-item" href="../proc/set_adn.html">set_adN</a>
-      
       <a class="list-group-item" href="../proc/setrandomseed.html">setRandomSeed</a>
       
       <a class="list-group-item" href="../proc/setup.html">setup</a>
@@ -1790,11 +1800,13 @@ implementation in a submodule of an interface in a parent module.
       
       <a class="list-group-item" href="../proc/showprogress.html">showProgress</a>
       
-      <a class="list-group-item" href="../interface/sin.html">sin</a>
+      <a class="list-group-item" href="../proc/sin_a.html">sin_a</a>
       
       <a class="list-group-item" href="../interface/sin_t.html">sin_t</a>
       
       <a class="list-group-item" href="../interface/solvelu.html">solveLU</a>
+      
+      <a class="list-group-item" href="../interface/solvelu%7E2.html">solveLU</a>
       
       <a class="list-group-item" href="../proc/solverprogress.html">solverProgress</a>
       
@@ -1830,9 +1842,13 @@ implementation in a submodule of an interface in a parent module.
       
       <a class="list-group-item" href="../proc/symmetricsuccessiveoverrelaxation.html">symmetricSuccessiveOverRelaxation</a>
       
+      <a class="list-group-item" href="../proc/tan_a.html">tan_a</a>
+      
       <a class="list-group-item" href="../interface/tan_t.html">tan_t</a>
       
       <a class="list-group-item" href="../interface/tdma.html">TDMA</a>
+      
+      <a class="list-group-item" href="../interface/tdma%7E2.html">TDMA</a>
       
       <a class="list-group-item" href="../proc/testbasic.html">testBasic</a>
       

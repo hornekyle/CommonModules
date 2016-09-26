@@ -118,18 +118,18 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
 	  data-placement="bottom" data-html="true"
-	  title="<p> 0.2% of total for procedures.</p>Including implementation: 30 statements,  0.8% of total for procedures.">6 statements</a>
+	  title="<p> 0.3% of total for procedures.</p>Including implementation: 88 statements,  2.4% of total for procedures.">10 statements</a>
      </li> 
      
      
-    <li><i class="fa fa-code"></i><a href="../src/tensor.f90"> Source File</a></li>
+    <li><i class="fa fa-code"></i><a href="../src/sparse.f90"> Source File</a></li>
      
   </ul>
   <ol class="breadcrumb in-well text-right">
   
-     <li><a href='../sourcefile/tensor.f90.html'>tensor.f90</a></li>
+     <li><a href='../sourcefile/sparse.f90.html'>sparse.f90</a></li>
   
-     <li><a href='../module/tensor_mod.html'>tensor_mod</a></li>
+     <li><a href='../module/sparse_mod.html'>sparse_mod</a></li>
   
      <li class="active">operator(.o.)</li>
   </ol>
@@ -173,13 +173,21 @@
   <div id="modprocs-0" class="panel-collapse collapse">
     <div class="list-group">
       
+      <a class="list-group-item" href="../interface/operator%28.o.%29%7E2.html#moduleprocedure-dot_uv">dot_uv</a>
+      
+      <a class="list-group-item" href="../interface/operator%28.o.%29%7E2.html#moduleprocedure-dot_vu">dot_vu</a>
+      
       <a class="list-group-item" href="../interface/operator%28.o.%29%7E2.html#moduleprocedure-dot_vv%7E2">dot_vv</a>
       
-      <a class="list-group-item" href="../interface/operator%28.o.%29%7E2.html#moduleprocedure-dot_vt">dot_vT</a>
+      <a class="list-group-item" href="../interface/operator%28.o.%29%7E2.html#moduleprocedure-dot_um">dot_um</a>
       
-      <a class="list-group-item" href="../interface/operator%28.o.%29%7E2.html#moduleprocedure-dot_tv">dot_Tv</a>
+      <a class="list-group-item" href="../interface/operator%28.o.%29%7E2.html#moduleprocedure-dot_mu">dot_mu</a>
       
-      <a class="list-group-item" href="../interface/operator%28.o.%29%7E2.html#moduleprocedure-dot_tt">dot_TT</a>
+      <a class="list-group-item" href="../interface/operator%28.o.%29%7E2.html#moduleprocedure-dot_vm">dot_vm</a>
+      
+      <a class="list-group-item" href="../interface/operator%28.o.%29%7E2.html#moduleprocedure-dot_mv">dot_mv</a>
+      
+      <a class="list-group-item" href="../interface/operator%28.o.%29%7E2.html#moduleprocedure-dot_mm">dot_mm</a>
       
     </div>
   </div>
@@ -195,9 +203,13 @@
   <div id="allprocs-0" class="panel-collapse collapse">
     <div class="list-group">
       
+      <a class="list-group-item" href="../interface/abs.html">abs</a>
+      
       <a class="list-group-item" href="../interface/abs_t.html">abs_t</a>
       
       <a class="list-group-item" href="../interface/acos_t.html">acos_t</a>
+      
+      <a class="list-group-item" href="../interface/ad_t.html">ad_t</a>
       
       <a class="list-group-item" href="../interface/add_t.html">add_t</a>
       
@@ -247,7 +259,7 @@
       
       <a class="list-group-item" href="../proc/contourf.html">contourf</a>
       
-      <a class="list-group-item" href="../interface/cos.html">cos</a>
+      <a class="list-group-item" href="../proc/cos_a.html">cos_a</a>
       
       <a class="list-group-item" href="../interface/cos_t.html">cos_t</a>
       
@@ -257,13 +269,7 @@
       
       <a class="list-group-item" href="../proc/dedup.html">deDup</a>
       
-      <a class="list-group-item" href="../interface/der.html">der</a>
-      
       <a class="list-group-item" href="../interface/dft.html">DFT</a>
-      
-      <a class="list-group-item" href="../interface/diff1.html">diff1</a>
-      
-      <a class="list-group-item" href="../interface/diff3.html">diff3</a>
       
       <a class="list-group-item" href="../interface/div_t.html">div_t</a>
       
@@ -411,8 +417,6 @@
       
       <a class="list-group-item" href="../interface/gaussseidel_t.html">gaussSeidel_t</a>
       
-      <a class="list-group-item" href="../proc/get_adn.html">get_adN</a>
-      
       <a class="list-group-item" href="../proc/hist.html">hist</a>
       
       <a class="list-group-item" href="../interface/idft.html">iDFT</a>
@@ -446,6 +450,8 @@
       <a class="list-group-item" href="../interface/log%7E2.html">log</a>
       
       <a class="list-group-item" href="../interface/log10.html">log10</a>
+      
+      <a class="list-group-item" href="../interface/log10%7E2.html">log10</a>
       
       <a class="list-group-item" href="../interface/log10_t.html">log10_t</a>
       
@@ -525,9 +531,13 @@
       
       <a class="list-group-item" href="../proc/newvar.html">newVar</a>
       
+      <a class="list-group-item" href="../interface/nint.html">nint</a>
+      
       <a class="list-group-item" href="../interface/nodestack_t.html">nodeStack_t</a>
       
       <a class="list-group-item" href="../interface/norm2.html">norm2</a>
+      
+      <a class="list-group-item" href="../interface/norm2%7E2.html">norm2</a>
       
       <a class="list-group-item" href="../interface/operator%28%2A%29.html">operator(*)</a>
       
@@ -563,6 +573,10 @@
       
       <a class="list-group-item" href="../interface/operator%28SLASH%29%7E2.html">operator(/)</a>
       
+      <a class="list-group-item" href="../interface/operator%28%3C%29.html">operator(<)</a>
+      
+      <a class="list-group-item" href="../interface/operator%28%3E%29.html">operator(>)</a>
+      
       <a class="list-group-item" href="../proc/plot.html">plot</a>
       
       <a class="list-group-item" href="../proc/plot3.html">plot3</a>
@@ -587,8 +601,6 @@
       
       <a class="list-group-item" href="../interface/readstep.html">readStep</a>
       
-      <a class="list-group-item" href="../interface/real.html">real</a>
-      
       <a class="list-group-item" href="../interface/real_t.html">real_t</a>
       
       <a class="list-group-item" href="../proc/realtochar.html">realToChar</a>
@@ -601,8 +613,6 @@
       
       <a class="list-group-item" href="../proc/scatter.html">scatter</a>
       
-      <a class="list-group-item" href="../proc/set_adn.html">set_adN</a>
-      
       <a class="list-group-item" href="../proc/setrandomseed.html">setRandomSeed</a>
       
       <a class="list-group-item" href="../proc/setup.html">setup</a>
@@ -611,11 +621,13 @@
       
       <a class="list-group-item" href="../proc/showprogress.html">showProgress</a>
       
-      <a class="list-group-item" href="../interface/sin.html">sin</a>
+      <a class="list-group-item" href="../proc/sin_a.html">sin_a</a>
       
       <a class="list-group-item" href="../interface/sin_t.html">sin_t</a>
       
       <a class="list-group-item" href="../interface/solvelu.html">solveLU</a>
+      
+      <a class="list-group-item" href="../interface/solvelu%7E2.html">solveLU</a>
       
       <a class="list-group-item" href="../proc/solverprogress.html">solverProgress</a>
       
@@ -651,9 +663,13 @@
       
       <a class="list-group-item" href="../proc/symmetricsuccessiveoverrelaxation.html">symmetricSuccessiveOverRelaxation</a>
       
+      <a class="list-group-item" href="../proc/tan_a.html">tan_a</a>
+      
       <a class="list-group-item" href="../interface/tan_t.html">tan_t</a>
       
       <a class="list-group-item" href="../interface/tdma.html">TDMA</a>
+      
+      <a class="list-group-item" href="../interface/tdma%7E2.html">TDMA</a>
       
       <a class="list-group-item" href="../proc/testbasic.html">testBasic</a>
       
@@ -818,10 +834,10 @@
     
     <div class="col-md-9" id='text'>
       <h2>public interface operator(.o.)</h2>
-	 <p>Dot product</p>
+	 
      
      
-    <br>
+    
 
      <section class="visible-xs visible-sm hidden-md">
        
@@ -849,13 +865,21 @@
   <div id="modprocs-1" class="panel-collapse collapse">
     <div class="list-group">
       
+      <a class="list-group-item" href="../interface/operator%28.o.%29%7E2.html#moduleprocedure-dot_uv">dot_uv</a>
+      
+      <a class="list-group-item" href="../interface/operator%28.o.%29%7E2.html#moduleprocedure-dot_vu">dot_vu</a>
+      
       <a class="list-group-item" href="../interface/operator%28.o.%29%7E2.html#moduleprocedure-dot_vv%7E2">dot_vv</a>
       
-      <a class="list-group-item" href="../interface/operator%28.o.%29%7E2.html#moduleprocedure-dot_vt">dot_vT</a>
+      <a class="list-group-item" href="../interface/operator%28.o.%29%7E2.html#moduleprocedure-dot_um">dot_um</a>
       
-      <a class="list-group-item" href="../interface/operator%28.o.%29%7E2.html#moduleprocedure-dot_tv">dot_Tv</a>
+      <a class="list-group-item" href="../interface/operator%28.o.%29%7E2.html#moduleprocedure-dot_mu">dot_mu</a>
       
-      <a class="list-group-item" href="../interface/operator%28.o.%29%7E2.html#moduleprocedure-dot_tt">dot_TT</a>
+      <a class="list-group-item" href="../interface/operator%28.o.%29%7E2.html#moduleprocedure-dot_vm">dot_vm</a>
+      
+      <a class="list-group-item" href="../interface/operator%28.o.%29%7E2.html#moduleprocedure-dot_mv">dot_mv</a>
+      
+      <a class="list-group-item" href="../interface/operator%28.o.%29%7E2.html#moduleprocedure-dot_mm">dot_mm</a>
       
     </div>
   </div>
@@ -875,8 +899,8 @@
 	 
     
   <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-dot_vv%7E2"></span><h3>
-private pure function dot_vv(u, v) result(o)
+  <div class="panel-heading codesum"><span class="anchor" id="proc-dot_uv"></span><h3>
+private function dot_uv(u, v) result(o)
     
     
 	 
@@ -884,10 +908,6 @@ private pure function dot_vv(u, v) result(o)
   <div class="panel-body">
        
     
-
-
-
-<p>Dot product of two vectors</p>
     
     <h4>Arguments</h4>
     
@@ -912,8 +932,8 @@ private pure function dot_vv(u, v) result(o)
   <td>intent(in),</td>
   <td></td>
   
-  <td>dimension(3)</td><td>::</td>
-  <td><strong>u</strong></td><td><p>First vector</p></td>
+  <td>dimension(:)</td><td>::</td>
+  <td><strong>u</strong></td><td></td>
   
 </tr>
 
@@ -923,12 +943,12 @@ private pure function dot_vv(u, v) result(o)
   
 <tr>
   
-  <td><span class="anchor" ></span>real(kind=wp),</td>
-  <td>intent(in),</td>
+  <td><span class="anchor" ></span>type(<a href='../type/spvec_t.html'>spvec_t</a>),</td>
+  <td>intent(in)</td>
   <td></td>
   
-  <td>dimension(3)</td><td>::</td>
-  <td><strong>v</strong></td><td><p>Second vector</p></td>
+  <td></td><td>::</td>
+  <td><strong>v</strong></td><td></td>
   
 </tr>
 
@@ -945,7 +965,7 @@ private pure function dot_vv(u, v) result(o)
   
      <h4>Return Value <small>real(kind=wp)
   </small></h4>
-  <p>Result</p>
+  
     
 
   </div>
@@ -954,8 +974,8 @@ private pure function dot_vv(u, v) result(o)
  	 
     
   <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-dot_vt"></span><h3>
-private pure function dot_vT(u, T) result(o)
+  <div class="panel-heading codesum"><span class="anchor" id="proc-dot_vu"></span><h3>
+private function dot_vu(v, u) result(o)
     
     
 	 
@@ -963,10 +983,156 @@ private pure function dot_vT(u, T) result(o)
   <div class="panel-body">
        
     
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
 
 
 
-<p>Dot product (left) of a vector and a tensor</p>
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/spvec_t.html'>spvec_t</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>v</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=wp),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(:)</td><td>::</td>
+  <td><strong>u</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real(kind=wp)
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+ 	 
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-dot_vv%7E2"></span><h3>
+private function dot_vv(u, v) result(o)
+    
+    
+	 
+</h3></div>
+  <div class="panel-body">
+       
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/spvec_t.html'>spvec_t</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>u</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/spvec_t.html'>spvec_t</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>v</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real(kind=wp)
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+ 	 
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-dot_um"></span><h3>
+private function dot_um(u, A) result(o)
+    
+    
+	 
+</h3></div>
+  <div class="panel-body">
+       
+    
     
     <h4>Arguments</h4>
     
@@ -991,8 +1157,8 @@ private pure function dot_vT(u, T) result(o)
   <td>intent(in),</td>
   <td></td>
   
-  <td>dimension(3)</td><td>::</td>
-  <td><strong>u</strong></td><td><p>Vector</p></td>
+  <td>dimension(:)</td><td>::</td>
+  <td><strong>u</strong></td><td></td>
   
 </tr>
 
@@ -1002,12 +1168,12 @@ private pure function dot_vT(u, T) result(o)
   
 <tr>
   
-  <td><span class="anchor" ></span>real(kind=wp),</td>
-  <td>intent(in),</td>
+  <td><span class="anchor" ></span>type(<a href='../type/sparse_t.html'>sparse_t</a>),</td>
+  <td>intent(in)</td>
   <td></td>
   
-  <td>dimension(3,3)</td><td>::</td>
-  <td><strong>T</strong></td><td><p>Tensor</p></td>
+  <td></td><td>::</td>
+  <td><strong>A</strong></td><td></td>
   
 </tr>
 
@@ -1023,8 +1189,8 @@ private pure function dot_vT(u, T) result(o)
   
   
      <h4>Return Value <small>real(kind=wp),
-  dimension(3)</small></h4>
-  <p>Result</p>
+  dimension(:), allocatable</small></h4>
+  
     
 
   </div>
@@ -1033,8 +1199,8 @@ private pure function dot_vT(u, T) result(o)
  	 
     
   <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-dot_tv"></span><h3>
-private pure function dot_Tv(T, v) result(o)
+  <div class="panel-heading codesum"><span class="anchor" id="proc-dot_mu"></span><h3>
+private function dot_mu(A, u) result(o)
     
     
 	 
@@ -1042,10 +1208,6 @@ private pure function dot_Tv(T, v) result(o)
   <div class="panel-body">
        
     
-
-
-
-<p>Dot product (right) of a tensor and a vector</p>
     
     <h4>Arguments</h4>
     
@@ -1066,12 +1228,12 @@ private pure function dot_Tv(T, v) result(o)
   
 <tr>
   
-  <td><span class="anchor" ></span>real(kind=wp),</td>
-  <td>intent(in),</td>
+  <td><span class="anchor" ></span>type(<a href='../type/sparse_t.html'>sparse_t</a>),</td>
+  <td>intent(in)</td>
   <td></td>
   
-  <td>dimension(3,3)</td><td>::</td>
-  <td><strong>T</strong></td><td><p>Tensor</p></td>
+  <td></td><td>::</td>
+  <td><strong>A</strong></td><td></td>
   
 </tr>
 
@@ -1085,8 +1247,8 @@ private pure function dot_Tv(T, v) result(o)
   <td>intent(in),</td>
   <td></td>
   
-  <td>dimension(3)</td><td>::</td>
-  <td><strong>v</strong></td><td><p>Vector</p></td>
+  <td>dimension(:)</td><td>::</td>
+  <td><strong>u</strong></td><td></td>
   
 </tr>
 
@@ -1102,8 +1264,8 @@ private pure function dot_Tv(T, v) result(o)
   
   
      <h4>Return Value <small>real(kind=wp),
-  dimension(3)</small></h4>
-  <p>Result</p>
+  dimension(:), allocatable</small></h4>
+  
     
 
   </div>
@@ -1112,8 +1274,8 @@ private pure function dot_Tv(T, v) result(o)
  	 
     
   <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-dot_tt"></span><h3>
-private pure function dot_TT(U, V) result(o)
+  <div class="panel-heading codesum"><span class="anchor" id="proc-dot_vm"></span><h3>
+private function dot_vm(v, A) result(o)
     
     
 	 
@@ -1121,10 +1283,6 @@ private pure function dot_TT(U, V) result(o)
   <div class="panel-body">
        
     
-
-
-
-<p>Dot product of two tensors</p>
     
     <h4>Arguments</h4>
     
@@ -1145,12 +1303,12 @@ private pure function dot_TT(U, V) result(o)
   
 <tr>
   
-  <td><span class="anchor" ></span>real(kind=wp),</td>
-  <td>intent(in),</td>
+  <td><span class="anchor" ></span>type(<a href='../type/spvec_t.html'>spvec_t</a>),</td>
+  <td>intent(in)</td>
   <td></td>
   
-  <td>dimension(3,3)</td><td>::</td>
-  <td><strong>U</strong></td><td><p>First tensor</p></td>
+  <td></td><td>::</td>
+  <td><strong>v</strong></td><td></td>
   
 </tr>
 
@@ -1160,12 +1318,12 @@ private pure function dot_TT(U, V) result(o)
   
 <tr>
   
-  <td><span class="anchor" ></span>real(kind=wp),</td>
-  <td>intent(in),</td>
+  <td><span class="anchor" ></span>type(<a href='../type/sparse_t.html'>sparse_t</a>),</td>
+  <td>intent(in)</td>
   <td></td>
   
-  <td>dimension(3,3)</td><td>::</td>
-  <td><strong>V</strong></td><td><p>Second tensor</p></td>
+  <td></td><td>::</td>
+  <td><strong>A</strong></td><td></td>
   
 </tr>
 
@@ -1180,9 +1338,159 @@ private pure function dot_TT(U, V) result(o)
   
   
   
-     <h4>Return Value <small>real(kind=wp),
-  dimension(3,3)</small></h4>
-  <p>Result</p>
+     <h4>Return Value <small>type(<a href='../type/spvec_t.html'>spvec_t</a>)
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+ 	 
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-dot_mv"></span><h3>
+private function dot_mv(A, v) result(o)
+    
+    
+	 
+</h3></div>
+  <div class="panel-body">
+       
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/sparse_t.html'>sparse_t</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>A</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/spvec_t.html'>spvec_t</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>v</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>type(<a href='../type/spvec_t.html'>spvec_t</a>)
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+ 	 
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-dot_mm"></span><h3>
+private function dot_mm(A, B) result(o)
+    
+    
+	 
+</h3></div>
+  <div class="panel-body">
+       
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/sparse_t.html'>sparse_t</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>A</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/sparse_t.html'>sparse_t</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>B</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>type(<a href='../type/sparse_t.html'>sparse_t</a>)
+  </small></h4>
+  
     
 
   </div>
@@ -1203,9 +1511,13 @@ private pure function dot_TT(U, V) result(o)
   <div id="allprocs-1" class="panel-collapse collapse">
     <div class="list-group">
       
+      <a class="list-group-item" href="../interface/abs.html">abs</a>
+      
       <a class="list-group-item" href="../interface/abs_t.html">abs_t</a>
       
       <a class="list-group-item" href="../interface/acos_t.html">acos_t</a>
+      
+      <a class="list-group-item" href="../interface/ad_t.html">ad_t</a>
       
       <a class="list-group-item" href="../interface/add_t.html">add_t</a>
       
@@ -1255,7 +1567,7 @@ private pure function dot_TT(U, V) result(o)
       
       <a class="list-group-item" href="../proc/contourf.html">contourf</a>
       
-      <a class="list-group-item" href="../interface/cos.html">cos</a>
+      <a class="list-group-item" href="../proc/cos_a.html">cos_a</a>
       
       <a class="list-group-item" href="../interface/cos_t.html">cos_t</a>
       
@@ -1265,13 +1577,7 @@ private pure function dot_TT(U, V) result(o)
       
       <a class="list-group-item" href="../proc/dedup.html">deDup</a>
       
-      <a class="list-group-item" href="../interface/der.html">der</a>
-      
       <a class="list-group-item" href="../interface/dft.html">DFT</a>
-      
-      <a class="list-group-item" href="../interface/diff1.html">diff1</a>
-      
-      <a class="list-group-item" href="../interface/diff3.html">diff3</a>
       
       <a class="list-group-item" href="../interface/div_t.html">div_t</a>
       
@@ -1419,8 +1725,6 @@ private pure function dot_TT(U, V) result(o)
       
       <a class="list-group-item" href="../interface/gaussseidel_t.html">gaussSeidel_t</a>
       
-      <a class="list-group-item" href="../proc/get_adn.html">get_adN</a>
-      
       <a class="list-group-item" href="../proc/hist.html">hist</a>
       
       <a class="list-group-item" href="../interface/idft.html">iDFT</a>
@@ -1454,6 +1758,8 @@ private pure function dot_TT(U, V) result(o)
       <a class="list-group-item" href="../interface/log%7E2.html">log</a>
       
       <a class="list-group-item" href="../interface/log10.html">log10</a>
+      
+      <a class="list-group-item" href="../interface/log10%7E2.html">log10</a>
       
       <a class="list-group-item" href="../interface/log10_t.html">log10_t</a>
       
@@ -1533,9 +1839,13 @@ private pure function dot_TT(U, V) result(o)
       
       <a class="list-group-item" href="../proc/newvar.html">newVar</a>
       
+      <a class="list-group-item" href="../interface/nint.html">nint</a>
+      
       <a class="list-group-item" href="../interface/nodestack_t.html">nodeStack_t</a>
       
       <a class="list-group-item" href="../interface/norm2.html">norm2</a>
+      
+      <a class="list-group-item" href="../interface/norm2%7E2.html">norm2</a>
       
       <a class="list-group-item" href="../interface/operator%28%2A%29.html">operator(*)</a>
       
@@ -1571,6 +1881,10 @@ private pure function dot_TT(U, V) result(o)
       
       <a class="list-group-item" href="../interface/operator%28SLASH%29%7E2.html">operator(/)</a>
       
+      <a class="list-group-item" href="../interface/operator%28%3C%29.html">operator(<)</a>
+      
+      <a class="list-group-item" href="../interface/operator%28%3E%29.html">operator(>)</a>
+      
       <a class="list-group-item" href="../proc/plot.html">plot</a>
       
       <a class="list-group-item" href="../proc/plot3.html">plot3</a>
@@ -1595,8 +1909,6 @@ private pure function dot_TT(U, V) result(o)
       
       <a class="list-group-item" href="../interface/readstep.html">readStep</a>
       
-      <a class="list-group-item" href="../interface/real.html">real</a>
-      
       <a class="list-group-item" href="../interface/real_t.html">real_t</a>
       
       <a class="list-group-item" href="../proc/realtochar.html">realToChar</a>
@@ -1609,8 +1921,6 @@ private pure function dot_TT(U, V) result(o)
       
       <a class="list-group-item" href="../proc/scatter.html">scatter</a>
       
-      <a class="list-group-item" href="../proc/set_adn.html">set_adN</a>
-      
       <a class="list-group-item" href="../proc/setrandomseed.html">setRandomSeed</a>
       
       <a class="list-group-item" href="../proc/setup.html">setup</a>
@@ -1619,11 +1929,13 @@ private pure function dot_TT(U, V) result(o)
       
       <a class="list-group-item" href="../proc/showprogress.html">showProgress</a>
       
-      <a class="list-group-item" href="../interface/sin.html">sin</a>
+      <a class="list-group-item" href="../proc/sin_a.html">sin_a</a>
       
       <a class="list-group-item" href="../interface/sin_t.html">sin_t</a>
       
       <a class="list-group-item" href="../interface/solvelu.html">solveLU</a>
+      
+      <a class="list-group-item" href="../interface/solvelu%7E2.html">solveLU</a>
       
       <a class="list-group-item" href="../proc/solverprogress.html">solverProgress</a>
       
@@ -1659,9 +1971,13 @@ private pure function dot_TT(U, V) result(o)
       
       <a class="list-group-item" href="../proc/symmetricsuccessiveoverrelaxation.html">symmetricSuccessiveOverRelaxation</a>
       
+      <a class="list-group-item" href="../proc/tan_a.html">tan_a</a>
+      
       <a class="list-group-item" href="../interface/tan_t.html">tan_t</a>
       
       <a class="list-group-item" href="../interface/tdma.html">TDMA</a>
+      
+      <a class="list-group-item" href="../interface/tdma%7E2.html">TDMA</a>
       
       <a class="list-group-item" href="../proc/testbasic.html">testBasic</a>
       

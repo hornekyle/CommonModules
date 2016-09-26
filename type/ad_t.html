@@ -10,7 +10,7 @@
     <meta name="author" content="Chris MacMackin" >
     <link rel="icon" href="../favicon.png">
 
-    <title>ad1_t &ndash; CommonModules </title>
+    <title>ad_t &ndash; CommonModules </title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -100,7 +100,7 @@
     
   
   <div class="row">
-    <h1>ad1_t
+    <h1>ad_t
     <small>Derived Type</small>
     
     </h1>
@@ -118,20 +118,20 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
 	  data-placement="bottom" data-html="true"
-	  title="<p> 0.9% of total for derived types.</p>Including implementation: 4 statements,  0.2% of total for derived types.">4 statements</a>
+	  title="<p> 2.6% of total for derived types.</p>Including implementation: 24 statements,  1.0% of total for derived types.">8 statements</a>
      </li> 
      
      
-    <li><i class="fa fa-code"></i><a href="../src/autoDiff.f90"> Source File</a></li>
+    <li><i class="fa fa-code"></i><a href="../src/autoDiffType.f90"> Source File</a></li>
      
   </ul>
   <ol class="breadcrumb in-well text-right">
   
-     <li><a href='../sourcefile/autodiff.f90.html'>autoDiff.f90</a></li>
+     <li><a href='../sourcefile/autodifftype.f90.html'>autoDiffType.f90</a></li>
   
-     <li><a href='../module/autodiff_mod.html'>autoDiff_mod</a></li>
+     <li><a href='../module/autodifftype_mod.html'>autoDiffType_mod</a></li>
   
-     <li class="active">ad1_t</li>
+     <li class="active">ad_t</li>
   </ol>
 </div>
 </div>
@@ -151,15 +151,13 @@
   
 
 
+
+
 <div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-0">Variables</a></h3></div>
-  <div id="vars-0" class="panel-collapse collapse">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#cons-0">Constructor</a></h3></div>
+  <div id="cons-0" class="panel-collapse collapse">
     <div class="list-group">
-      
-      <a class="list-group-item" href="../type/ad1_t.html#variable-x%7E2">x</a>
-      
-      <a class="list-group-item" href="../type/ad1_t.html#variable-d%7E2">d</a>
-      
+      <a class="list-group-item" href="../type/ad_t.html#interface-ad_t">ad_t</a>
     </div>
   </div>
 </div>
@@ -178,7 +176,20 @@
 
 
 
-
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#boundprocs-0">Type-Bound Procedures</a></h3></div>
+  <div id="boundprocs-0" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../type/ad_t.html#boundprocedure-val">val</a>
+      
+      <a class="list-group-item" href="../type/ad_t.html#boundprocedure-der">der</a>
+      
+      <a class="list-group-item" href="../type/ad_t.html#boundprocedure-grad%7E2">grad</a>
+      
+    </div>
+  </div>
+</div>
 
 
 
@@ -195,9 +206,7 @@
       
       <a class="list-group-item" href="../type/acos_t.html">acos_t</a>
       
-      <a class="list-group-item" href="../type/ad1_t.html">ad1_t</a>
-      
-      <a class="list-group-item" href="../type/ad3_t.html">ad3_t</a>
+      <a class="list-group-item" href="../type/ad_t.html">ad_t</a>
       
       <a class="list-group-item" href="../type/add_t.html">add_t</a>
       
@@ -249,9 +258,9 @@
       
       <a class="list-group-item" href="../type/neg_t.html">neg_t</a>
       
-      <a class="list-group-item" href="../type/node_t.html">node_t</a>
-      
       <a class="list-group-item" href="../type/node_t%7E2.html">node_t</a>
+      
+      <a class="list-group-item" href="../type/node_t.html">node_t</a>
       
       <a class="list-group-item" href="../type/nodestack_t.html">nodeStack_t</a>
       
@@ -301,7 +310,7 @@
     </div>
     
     <div class="col-md-9" id='text'>
-      <h2>type, public :: ad1_t</h2>
+      <h2>type, public :: ad_t</h2>
     
     
     
@@ -311,15 +320,13 @@
       
 
 
+
+
 <div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-1">Variables</a></h3></div>
-  <div id="vars-1" class="panel-collapse collapse">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#cons-1">Constructor</a></h3></div>
+  <div id="cons-1" class="panel-collapse collapse">
     <div class="list-group">
-      
-      <a class="list-group-item" href="../type/ad1_t.html#variable-x%7E2">x</a>
-      
-      <a class="list-group-item" href="../type/ad1_t.html#variable-d%7E2">d</a>
-      
+      <a class="list-group-item" href="../type/ad_t.html#interface-ad_t">ad_t</a>
     </div>
   </div>
 </div>
@@ -338,7 +345,20 @@
 
 
 
-
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#boundprocs-1">Type-Bound Procedures</a></h3></div>
+  <div id="boundprocs-1" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../type/ad_t.html#boundprocedure-val">val</a>
+      
+      <a class="list-group-item" href="../type/ad_t.html#boundprocedure-der">der</a>
+      
+      <a class="list-group-item" href="../type/ad_t.html#boundprocedure-grad%7E2">grad</a>
+      
+    </div>
+  </div>
+</div>
 
 
 
@@ -347,13 +367,40 @@
     <br class="visible-xs visible-sm hidden-md">
 
     
-    <section>
-    <h2>Components</h2>
     
+    
+	 <section>
+	 <h2>Constructor</h2>
+	   
+	   
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="interface-ad_t"></span><h3>public interface <a href='../interface/ad_t.html'>ad_t</a>
+    
+  </h3></div>
+  
+  <ul class="list-group">
+  
+  
+  
+    <li class="list-group-item">
+    
+    
+    <h3>
+private elemental function newAD_valIdx(value, N, idx) result(self)
+    
+    
+	 
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
 <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Visibility</th>
-
-<th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
 
 
 
@@ -365,11 +412,12 @@
   
 <tr>
   
-  <td><span class="anchor" id="variable-x%7E2"></span>real(kind=wp),</td>
+  <td><span class="anchor" ></span>real(kind=wp),</td>
+  <td>intent(in)</td>
+  <td></td>
   
-  <td>public</td>
   <td></td><td>::</td>
-  <td><strong>x</strong></td><td> =</td><td>0.0_wp</td><td></td>
+  <td><strong>value</strong></td><td></td>
   
 </tr>
 
@@ -379,25 +427,364 @@
   
 <tr>
   
-  <td><span class="anchor" id="variable-d%7E2"></span>real(kind=wp),</td>
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
   
-  <td>public,</td>
-  <td>dimension(Sl)</td><td>::</td>
-  <td><strong>d</strong></td><td> =</td><td>0.0_wp</td><td></td>
+  <td></td><td>::</td>
+  <td><strong>N</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>idx</strong></td><td></td>
   
 </tr>
 
 </tbody>
 </table>
 
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>type(<a href='../type/ad_t.html'>ad_t</a>)
+  </small></h4>
+  
+    
+
+    </li>
+  
+    <li class="list-group-item">
+    
+    
+    <h3>
+private pure function newAD_valGrad(value, grad) result(self)
+    
+    
+	 
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=wp),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>value</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=wp),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(:)</td><td>::</td>
+  <td><strong>grad</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>type(<a href='../type/ad_t.html'>ad_t</a>)
+  </small></h4>
+  
+    
+
+    </li>
+  
+  
+  </ul>
+</div>
+
+	   
+	 </section>
+	 <br>
+    
+    
+    
+    
+     
+    <section>
+    <h2>Type-Bound Procedures</h2>
+    
+	   
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-val"></span><h3>procedure, public :: <strong>val</strong>  
+    
+  </h3></div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+         
+    
+    <h3>
+private pure function val(self) result(o)
+    
+    
+	 
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/ad_t.html'>ad_t</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>self</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real(kind=wp)
+  </small></h4>
+  
+    
+
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+	   
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-der"></span><h3>procedure, public :: <strong>der</strong>  
+    
+  </h3></div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+         
+    
+    <h3>
+private pure function der(self, idx) result(o)
+    
+    
+	 
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/ad_t.html'>ad_t</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>self</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>idx</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real(kind=wp)
+  </small></h4>
+  
+    
+
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+	   
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-grad%7E2"></span><h3>procedure, public :: <strong>grad</strong>  
+    
+  </h3></div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+         
+    
+    <h3>
+private pure function grad(self) result(o)
+    
+    
+	 
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/ad_t.html'>ad_t</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>self</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real(kind=wp),
+  dimension(:), allocatable</small></h4>
+  
+    
+
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
     </section>
-    <br>
-    
-    
-    
-    
-    
-    
     
     
     
@@ -418,9 +805,7 @@
       
       <a class="list-group-item" href="../type/acos_t.html">acos_t</a>
       
-      <a class="list-group-item" href="../type/ad1_t.html">ad1_t</a>
-      
-      <a class="list-group-item" href="../type/ad3_t.html">ad3_t</a>
+      <a class="list-group-item" href="../type/ad_t.html">ad_t</a>
       
       <a class="list-group-item" href="../type/add_t.html">add_t</a>
       
@@ -472,9 +857,9 @@
       
       <a class="list-group-item" href="../type/neg_t.html">neg_t</a>
       
-      <a class="list-group-item" href="../type/node_t.html">node_t</a>
-      
       <a class="list-group-item" href="../type/node_t%7E2.html">node_t</a>
+      
+      <a class="list-group-item" href="../type/node_t.html">node_t</a>
       
       <a class="list-group-item" href="../type/nodestack_t.html">nodeStack_t</a>
       

@@ -10,7 +10,7 @@
     <meta name="author" content="Chris MacMackin" >
     <link rel="icon" href="../favicon.png">
 
-    <title>set_adN &ndash; CommonModules</title>
+    <title>norm2 &ndash; CommonModules</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -100,8 +100,8 @@
     
   
   <div class="row">
-    <h1>set_adN
-      <small>Subroutine</small>
+    <h1>norm2
+	 <small>Interface</small>
     
     </h1>
     
@@ -118,20 +118,20 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
 	  data-placement="bottom" data-html="true"
-	  title=" 0.6% of total for procedures.">22 statements</a>
+	  title="<p> 0.1% of total for procedures.</p>Including implementation: 8 statements,  0.2% of total for procedures.">3 statements</a>
      </li> 
      
      
-    <li><i class="fa fa-code"></i><a href="../src/autoDiff.f90"> Source File</a></li>
+    <li><i class="fa fa-code"></i><a href="../src/quaternion.f90"> Source File</a></li>
      
   </ul>
   <ol class="breadcrumb in-well text-right">
   
-     <li><a href='../sourcefile/autodiff.f90.html'>autoDiff.f90</a></li>
+     <li><a href='../sourcefile/quaternion.f90.html'>quaternion.f90</a></li>
   
-     <li><a href='../module/autodiff_mod.html'>autoDiff_mod</a></li>
+     <li><a href='../module/quaternion_mod.html'>quaternion_mod</a></li>
   
-     <li class="active">set_adN</li>
+     <li class="active">norm2</li>
   </ol>
 </div>
 </div>
@@ -146,7 +146,7 @@
   
   <div class="row">
     <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
-    
+      
 <div id="sidebar">
   
 
@@ -168,13 +168,17 @@
 
 
 
-
 <div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
-  <div class="list-group">
-    <a class="list-group-item" href="../proc/set_adn.html#src">set_adN</a>
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#modprocs-0">Module Procedures</a></h3></div>
+  <div id="modprocs-0" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../interface/norm2%7E2.html#moduleprocedure-norm2_q">norm2_q</a>
+      
+    </div>
   </div>
 </div>
+
 
 
   <hr>
@@ -185,9 +189,13 @@
   <div id="allprocs-0" class="panel-collapse collapse">
     <div class="list-group">
       
+      <a class="list-group-item" href="../interface/abs.html">abs</a>
+      
       <a class="list-group-item" href="../interface/abs_t.html">abs_t</a>
       
       <a class="list-group-item" href="../interface/acos_t.html">acos_t</a>
+      
+      <a class="list-group-item" href="../interface/ad_t.html">ad_t</a>
       
       <a class="list-group-item" href="../interface/add_t.html">add_t</a>
       
@@ -237,7 +245,7 @@
       
       <a class="list-group-item" href="../proc/contourf.html">contourf</a>
       
-      <a class="list-group-item" href="../interface/cos.html">cos</a>
+      <a class="list-group-item" href="../proc/cos_a.html">cos_a</a>
       
       <a class="list-group-item" href="../interface/cos_t.html">cos_t</a>
       
@@ -247,13 +255,7 @@
       
       <a class="list-group-item" href="../proc/dedup.html">deDup</a>
       
-      <a class="list-group-item" href="../interface/der.html">der</a>
-      
       <a class="list-group-item" href="../interface/dft.html">DFT</a>
-      
-      <a class="list-group-item" href="../interface/diff1.html">diff1</a>
-      
-      <a class="list-group-item" href="../interface/diff3.html">diff3</a>
       
       <a class="list-group-item" href="../interface/div_t.html">div_t</a>
       
@@ -401,8 +403,6 @@
       
       <a class="list-group-item" href="../interface/gaussseidel_t.html">gaussSeidel_t</a>
       
-      <a class="list-group-item" href="../proc/get_adn.html">get_adN</a>
-      
       <a class="list-group-item" href="../proc/hist.html">hist</a>
       
       <a class="list-group-item" href="../interface/idft.html">iDFT</a>
@@ -436,6 +436,8 @@
       <a class="list-group-item" href="../interface/log%7E2.html">log</a>
       
       <a class="list-group-item" href="../interface/log10.html">log10</a>
+      
+      <a class="list-group-item" href="../interface/log10%7E2.html">log10</a>
       
       <a class="list-group-item" href="../interface/log10_t.html">log10_t</a>
       
@@ -515,9 +517,13 @@
       
       <a class="list-group-item" href="../proc/newvar.html">newVar</a>
       
+      <a class="list-group-item" href="../interface/nint.html">nint</a>
+      
       <a class="list-group-item" href="../interface/nodestack_t.html">nodeStack_t</a>
       
       <a class="list-group-item" href="../interface/norm2.html">norm2</a>
+      
+      <a class="list-group-item" href="../interface/norm2%7E2.html">norm2</a>
       
       <a class="list-group-item" href="../interface/operator%28%2A%29.html">operator(*)</a>
       
@@ -553,6 +559,10 @@
       
       <a class="list-group-item" href="../interface/operator%28SLASH%29%7E2.html">operator(/)</a>
       
+      <a class="list-group-item" href="../interface/operator%28%3C%29.html">operator(<)</a>
+      
+      <a class="list-group-item" href="../interface/operator%28%3E%29.html">operator(>)</a>
+      
       <a class="list-group-item" href="../proc/plot.html">plot</a>
       
       <a class="list-group-item" href="../proc/plot3.html">plot3</a>
@@ -577,8 +587,6 @@
       
       <a class="list-group-item" href="../interface/readstep.html">readStep</a>
       
-      <a class="list-group-item" href="../interface/real.html">real</a>
-      
       <a class="list-group-item" href="../interface/real_t.html">real_t</a>
       
       <a class="list-group-item" href="../proc/realtochar.html">realToChar</a>
@@ -591,8 +599,6 @@
       
       <a class="list-group-item" href="../proc/scatter.html">scatter</a>
       
-      <a class="list-group-item" href="../proc/set_adn.html">set_adN</a>
-      
       <a class="list-group-item" href="../proc/setrandomseed.html">setRandomSeed</a>
       
       <a class="list-group-item" href="../proc/setup.html">setup</a>
@@ -601,11 +607,13 @@
       
       <a class="list-group-item" href="../proc/showprogress.html">showProgress</a>
       
-      <a class="list-group-item" href="../interface/sin.html">sin</a>
+      <a class="list-group-item" href="../proc/sin_a.html">sin_a</a>
       
       <a class="list-group-item" href="../interface/sin_t.html">sin_t</a>
       
       <a class="list-group-item" href="../interface/solvelu.html">solveLU</a>
+      
+      <a class="list-group-item" href="../interface/solvelu%7E2.html">solveLU</a>
       
       <a class="list-group-item" href="../proc/solverprogress.html">solverProgress</a>
       
@@ -641,9 +649,13 @@
       
       <a class="list-group-item" href="../proc/symmetricsuccessiveoverrelaxation.html">symmetricSuccessiveOverRelaxation</a>
       
+      <a class="list-group-item" href="../proc/tan_a.html">tan_a</a>
+      
       <a class="list-group-item" href="../interface/tan_t.html">tan_t</a>
       
       <a class="list-group-item" href="../interface/tdma.html">TDMA</a>
+      
+      <a class="list-group-item" href="../interface/tdma%7E2.html">TDMA</a>
       
       <a class="list-group-item" href="../proc/testbasic.html">testBasic</a>
       
@@ -807,102 +819,14 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>
-public subroutine set_adN(iNl, iNi, iNj, iNf)
-    
-    
+      <h2>public interface norm2</h2>
 	 
-</h2>
-    
-  
-
-
-    
-
-    <h3>Arguments</h3>
-    
-      
-<table class="table table-striped varlist">
-<thead><tr><th>Type</th>
-<th>Intent</th><th>Optional</th>
-<th>Attributes</th><th></th><th>Name</th><th></th></thead>
-
-
-
-<tbody>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" id="variable-inl"></span>integer,</td>
-  <td>intent(in),</td>
-  <td>optional</td>
-  
-  <td></td><td>::</td>
-  <td><strong>iNl</strong></td><td></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" id="variable-ini"></span>integer,</td>
-  <td>intent(in),</td>
-  <td>optional</td>
-  
-  <td></td><td>::</td>
-  <td><strong>iNi</strong></td><td></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" id="variable-inj"></span>integer,</td>
-  <td>intent(in),</td>
-  <td>optional</td>
-  
-  <td></td><td>::</td>
-  <td><strong>iNj</strong></td><td></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" id="variable-inf"></span>integer,</td>
-  <td>intent(in),</td>
-  <td>optional</td>
-  
-  <td></td><td>::</td>
-  <td><strong>iNf</strong></td><td></td>
-  
-</tr>
-
-</tbody>
-</table>
-
-    
-    
-    
      
-    <br>
+     
+    
 
-    <section class="visible-xs visible-sm hidden-md">
-      
-
+     <section class="visible-xs visible-sm hidden-md">
+       
 
 
 
@@ -923,71 +847,96 @@ public subroutine set_adN(iNl, iNi, iNj, iNf)
 
 
 <div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
-  <div class="list-group">
-    <a class="list-group-item" href="../proc/set_adn.html#src">set_adN</a>
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#modprocs-1">Module Procedures</a></h3></div>
+  <div id="modprocs-1" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../interface/norm2%7E2.html#moduleprocedure-norm2_q">norm2_q</a>
+      
+    </div>
   </div>
 </div>
 
 
-    </section>
-    <br class="visible-xs visible-sm hidden-md">
 
+     </section>
+     <br class="visible-xs visible-sm hidden-md">
+     
+	
+
+	
+
+	
+	 <h2>Module Procedures</h2>
+	 
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-norm2_q"></span><h3>
+private elemental function norm2_q(q) result(o)
+    
+    
+	 
+</h3></div>
+  <div class="panel-body">
+       
     
 
+
+
+<p>Return the magnitude of the quaternion</p>
     
+    <h4>Arguments</h4>
     
-    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/quat_t.html'>quat_t</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>q</strong></td><td><p>The quaternion of interest</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
     
     
 
-    
-    
-    
-    
+  
+  
+  
+  
+     <h4>Return Value <small>real(kind=wp)
+  </small></h4>
+  
     
 
-
-    
-    
-    
-    <section>
-    <h2><span class="anchor" id="src"></span>Source Code</h2>
-    <div class="highlight"><pre><span></span>	<span class="k">subroutine </span><span class="n">set_adN</span><span class="p">(</span><span class="n">iNl</span><span class="p">,</span><span class="n">iNi</span><span class="p">,</span><span class="n">iNj</span><span class="p">,</span><span class="n">iNf</span><span class="p">)</span>
-		<span class="kt">integer</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="k">optional</span><span class="kd">::</span><span class="n">iNl</span>
-		<span class="kt">integer</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="k">optional</span><span class="kd">::</span><span class="n">iNi</span>
-		<span class="kt">integer</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="k">optional</span><span class="kd">::</span><span class="n">iNj</span>
-		<span class="kt">integer</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="k">optional</span><span class="kd">::</span><span class="n">iNf</span>
-		
-		<span class="k">if</span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">iNl</span><span class="p">))</span> <span class="k">call </span><span class="n">guardedSet</span><span class="p">(</span><span class="n">iNl</span><span class="p">,</span><span class="n">Nl</span><span class="p">,</span><span class="n">Sl</span><span class="p">)</span>
-		<span class="k">if</span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">iNi</span><span class="p">))</span> <span class="k">call </span><span class="n">guardedSet</span><span class="p">(</span><span class="n">iNi</span><span class="p">,</span><span class="n">Ni</span><span class="p">,</span><span class="n">Si</span><span class="p">)</span>
-		<span class="k">if</span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">iNj</span><span class="p">))</span> <span class="k">call </span><span class="n">guardedSet</span><span class="p">(</span><span class="n">iNj</span><span class="p">,</span><span class="n">Nj</span><span class="p">,</span><span class="n">Sj</span><span class="p">)</span>
-		<span class="k">if</span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">iNf</span><span class="p">))</span> <span class="k">call </span><span class="n">guardedSet</span><span class="p">(</span><span class="n">iNf</span><span class="p">,</span><span class="n">Nf</span><span class="p">,</span><span class="n">Sf</span><span class="p">)</span>
-		
-	<span class="k">contains</span>
-<span class="k">		</span>
-<span class="k">		subroutine </span><span class="n">guardedSet</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="n">d</span><span class="p">,</span><span class="n">l</span><span class="p">)</span>
-			<span class="kt">integer</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span><span class="n">s</span>
-			<span class="kt">integer</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span><span class="kd">::</span><span class="n">d</span>
-			<span class="kt">integer</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span><span class="n">l</span>
-			
-			<span class="k">if</span><span class="p">(</span><span class="n">s</span><span class="o">&lt;=</span><span class="n">l</span><span class="p">)</span> <span class="k">then</span>
-<span class="k">				</span><span class="n">d</span>  <span class="o">=</span> <span class="n">s</span>
-			<span class="k">else</span>
-<span class="k">				write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span> <span class="s1">&#39;Cannot set ad3_t size:&#39;</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="s1">&#39;&gt;&#39;</span><span class="p">,</span><span class="n">l</span>
-				<span class="k">stop </span><span class="mi">1</span>
-			<span class="k">end if</span>
-<span class="k">		end subroutine </span><span class="n">guardedSet</span>
-		
-	<span class="k">end subroutine </span><span class="n">set_adN</span>
-</pre></div>
-
-    </section>
-    <br>
-    
-    
-    </div>
   </div>
+  </div>
+
+ 	 
+  	 
+
+ </div>
+</div>
 
   <section class="visible-xs visible-sm hidden-md">
     <hr>
@@ -998,9 +947,13 @@ public subroutine set_adN(iNl, iNi, iNj, iNf)
   <div id="allprocs-1" class="panel-collapse collapse">
     <div class="list-group">
       
+      <a class="list-group-item" href="../interface/abs.html">abs</a>
+      
       <a class="list-group-item" href="../interface/abs_t.html">abs_t</a>
       
       <a class="list-group-item" href="../interface/acos_t.html">acos_t</a>
+      
+      <a class="list-group-item" href="../interface/ad_t.html">ad_t</a>
       
       <a class="list-group-item" href="../interface/add_t.html">add_t</a>
       
@@ -1050,7 +1003,7 @@ public subroutine set_adN(iNl, iNi, iNj, iNf)
       
       <a class="list-group-item" href="../proc/contourf.html">contourf</a>
       
-      <a class="list-group-item" href="../interface/cos.html">cos</a>
+      <a class="list-group-item" href="../proc/cos_a.html">cos_a</a>
       
       <a class="list-group-item" href="../interface/cos_t.html">cos_t</a>
       
@@ -1060,13 +1013,7 @@ public subroutine set_adN(iNl, iNi, iNj, iNf)
       
       <a class="list-group-item" href="../proc/dedup.html">deDup</a>
       
-      <a class="list-group-item" href="../interface/der.html">der</a>
-      
       <a class="list-group-item" href="../interface/dft.html">DFT</a>
-      
-      <a class="list-group-item" href="../interface/diff1.html">diff1</a>
-      
-      <a class="list-group-item" href="../interface/diff3.html">diff3</a>
       
       <a class="list-group-item" href="../interface/div_t.html">div_t</a>
       
@@ -1214,8 +1161,6 @@ public subroutine set_adN(iNl, iNi, iNj, iNf)
       
       <a class="list-group-item" href="../interface/gaussseidel_t.html">gaussSeidel_t</a>
       
-      <a class="list-group-item" href="../proc/get_adn.html">get_adN</a>
-      
       <a class="list-group-item" href="../proc/hist.html">hist</a>
       
       <a class="list-group-item" href="../interface/idft.html">iDFT</a>
@@ -1249,6 +1194,8 @@ public subroutine set_adN(iNl, iNi, iNj, iNf)
       <a class="list-group-item" href="../interface/log%7E2.html">log</a>
       
       <a class="list-group-item" href="../interface/log10.html">log10</a>
+      
+      <a class="list-group-item" href="../interface/log10%7E2.html">log10</a>
       
       <a class="list-group-item" href="../interface/log10_t.html">log10_t</a>
       
@@ -1328,9 +1275,13 @@ public subroutine set_adN(iNl, iNi, iNj, iNf)
       
       <a class="list-group-item" href="../proc/newvar.html">newVar</a>
       
+      <a class="list-group-item" href="../interface/nint.html">nint</a>
+      
       <a class="list-group-item" href="../interface/nodestack_t.html">nodeStack_t</a>
       
       <a class="list-group-item" href="../interface/norm2.html">norm2</a>
+      
+      <a class="list-group-item" href="../interface/norm2%7E2.html">norm2</a>
       
       <a class="list-group-item" href="../interface/operator%28%2A%29.html">operator(*)</a>
       
@@ -1366,6 +1317,10 @@ public subroutine set_adN(iNl, iNi, iNj, iNf)
       
       <a class="list-group-item" href="../interface/operator%28SLASH%29%7E2.html">operator(/)</a>
       
+      <a class="list-group-item" href="../interface/operator%28%3C%29.html">operator(<)</a>
+      
+      <a class="list-group-item" href="../interface/operator%28%3E%29.html">operator(>)</a>
+      
       <a class="list-group-item" href="../proc/plot.html">plot</a>
       
       <a class="list-group-item" href="../proc/plot3.html">plot3</a>
@@ -1390,8 +1345,6 @@ public subroutine set_adN(iNl, iNi, iNj, iNf)
       
       <a class="list-group-item" href="../interface/readstep.html">readStep</a>
       
-      <a class="list-group-item" href="../interface/real.html">real</a>
-      
       <a class="list-group-item" href="../interface/real_t.html">real_t</a>
       
       <a class="list-group-item" href="../proc/realtochar.html">realToChar</a>
@@ -1404,8 +1357,6 @@ public subroutine set_adN(iNl, iNi, iNj, iNf)
       
       <a class="list-group-item" href="../proc/scatter.html">scatter</a>
       
-      <a class="list-group-item" href="../proc/set_adn.html">set_adN</a>
-      
       <a class="list-group-item" href="../proc/setrandomseed.html">setRandomSeed</a>
       
       <a class="list-group-item" href="../proc/setup.html">setup</a>
@@ -1414,11 +1365,13 @@ public subroutine set_adN(iNl, iNi, iNj, iNf)
       
       <a class="list-group-item" href="../proc/showprogress.html">showProgress</a>
       
-      <a class="list-group-item" href="../interface/sin.html">sin</a>
+      <a class="list-group-item" href="../proc/sin_a.html">sin_a</a>
       
       <a class="list-group-item" href="../interface/sin_t.html">sin_t</a>
       
       <a class="list-group-item" href="../interface/solvelu.html">solveLU</a>
+      
+      <a class="list-group-item" href="../interface/solvelu%7E2.html">solveLU</a>
       
       <a class="list-group-item" href="../proc/solverprogress.html">solverProgress</a>
       
@@ -1454,9 +1407,13 @@ public subroutine set_adN(iNl, iNi, iNj, iNf)
       
       <a class="list-group-item" href="../proc/symmetricsuccessiveoverrelaxation.html">symmetricSuccessiveOverRelaxation</a>
       
+      <a class="list-group-item" href="../proc/tan_a.html">tan_a</a>
+      
       <a class="list-group-item" href="../interface/tan_t.html">tan_t</a>
       
       <a class="list-group-item" href="../interface/tdma.html">TDMA</a>
+      
+      <a class="list-group-item" href="../interface/tdma%7E2.html">TDMA</a>
       
       <a class="list-group-item" href="../proc/testbasic.html">testBasic</a>
       

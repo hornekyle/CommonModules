@@ -515,7 +515,6 @@ contains
 		end do
 	end function applyLU
 
-
 	function applyLU_z(LU,p,b) result(x)
 		complex(wp),dimension(:,:),intent(in)::LU
 		integer,dimension(:),intent(in)::p

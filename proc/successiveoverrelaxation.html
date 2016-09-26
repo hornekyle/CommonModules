@@ -185,9 +185,13 @@
   <div id="allprocs-0" class="panel-collapse collapse">
     <div class="list-group">
       
+      <a class="list-group-item" href="../interface/abs.html">abs</a>
+      
       <a class="list-group-item" href="../interface/abs_t.html">abs_t</a>
       
       <a class="list-group-item" href="../interface/acos_t.html">acos_t</a>
+      
+      <a class="list-group-item" href="../interface/ad_t.html">ad_t</a>
       
       <a class="list-group-item" href="../interface/add_t.html">add_t</a>
       
@@ -237,7 +241,7 @@
       
       <a class="list-group-item" href="../proc/contourf.html">contourf</a>
       
-      <a class="list-group-item" href="../interface/cos.html">cos</a>
+      <a class="list-group-item" href="../proc/cos_a.html">cos_a</a>
       
       <a class="list-group-item" href="../interface/cos_t.html">cos_t</a>
       
@@ -247,13 +251,7 @@
       
       <a class="list-group-item" href="../proc/dedup.html">deDup</a>
       
-      <a class="list-group-item" href="../interface/der.html">der</a>
-      
       <a class="list-group-item" href="../interface/dft.html">DFT</a>
-      
-      <a class="list-group-item" href="../interface/diff1.html">diff1</a>
-      
-      <a class="list-group-item" href="../interface/diff3.html">diff3</a>
       
       <a class="list-group-item" href="../interface/div_t.html">div_t</a>
       
@@ -401,8 +399,6 @@
       
       <a class="list-group-item" href="../interface/gaussseidel_t.html">gaussSeidel_t</a>
       
-      <a class="list-group-item" href="../proc/get_adn.html">get_adN</a>
-      
       <a class="list-group-item" href="../proc/hist.html">hist</a>
       
       <a class="list-group-item" href="../interface/idft.html">iDFT</a>
@@ -436,6 +432,8 @@
       <a class="list-group-item" href="../interface/log%7E2.html">log</a>
       
       <a class="list-group-item" href="../interface/log10.html">log10</a>
+      
+      <a class="list-group-item" href="../interface/log10%7E2.html">log10</a>
       
       <a class="list-group-item" href="../interface/log10_t.html">log10_t</a>
       
@@ -515,9 +513,13 @@
       
       <a class="list-group-item" href="../proc/newvar.html">newVar</a>
       
+      <a class="list-group-item" href="../interface/nint.html">nint</a>
+      
       <a class="list-group-item" href="../interface/nodestack_t.html">nodeStack_t</a>
       
       <a class="list-group-item" href="../interface/norm2.html">norm2</a>
+      
+      <a class="list-group-item" href="../interface/norm2%7E2.html">norm2</a>
       
       <a class="list-group-item" href="../interface/operator%28%2A%29.html">operator(*)</a>
       
@@ -553,6 +555,10 @@
       
       <a class="list-group-item" href="../interface/operator%28SLASH%29%7E2.html">operator(/)</a>
       
+      <a class="list-group-item" href="../interface/operator%28%3C%29.html">operator(<)</a>
+      
+      <a class="list-group-item" href="../interface/operator%28%3E%29.html">operator(>)</a>
+      
       <a class="list-group-item" href="../proc/plot.html">plot</a>
       
       <a class="list-group-item" href="../proc/plot3.html">plot3</a>
@@ -577,8 +583,6 @@
       
       <a class="list-group-item" href="../interface/readstep.html">readStep</a>
       
-      <a class="list-group-item" href="../interface/real.html">real</a>
-      
       <a class="list-group-item" href="../interface/real_t.html">real_t</a>
       
       <a class="list-group-item" href="../proc/realtochar.html">realToChar</a>
@@ -591,8 +595,6 @@
       
       <a class="list-group-item" href="../proc/scatter.html">scatter</a>
       
-      <a class="list-group-item" href="../proc/set_adn.html">set_adN</a>
-      
       <a class="list-group-item" href="../proc/setrandomseed.html">setRandomSeed</a>
       
       <a class="list-group-item" href="../proc/setup.html">setup</a>
@@ -601,11 +603,13 @@
       
       <a class="list-group-item" href="../proc/showprogress.html">showProgress</a>
       
-      <a class="list-group-item" href="../interface/sin.html">sin</a>
+      <a class="list-group-item" href="../proc/sin_a.html">sin_a</a>
       
       <a class="list-group-item" href="../interface/sin_t.html">sin_t</a>
       
       <a class="list-group-item" href="../interface/solvelu.html">solveLU</a>
+      
+      <a class="list-group-item" href="../interface/solvelu%7E2.html">solveLU</a>
       
       <a class="list-group-item" href="../proc/solverprogress.html">solverProgress</a>
       
@@ -641,9 +645,13 @@
       
       <a class="list-group-item" href="../proc/symmetricsuccessiveoverrelaxation.html">symmetricSuccessiveOverRelaxation</a>
       
+      <a class="list-group-item" href="../proc/tan_a.html">tan_a</a>
+      
       <a class="list-group-item" href="../interface/tan_t.html">tan_t</a>
       
       <a class="list-group-item" href="../interface/tdma.html">TDMA</a>
+      
+      <a class="list-group-item" href="../interface/tdma%7E2.html">TDMA</a>
       
       <a class="list-group-item" href="../proc/testbasic.html">testBasic</a>
       
@@ -852,7 +860,7 @@ public function successiveOverRelaxation(A, b, w, x0, tol, maxIts) result(x)
   
 <tr>
   
-  <td><span class="anchor" id="variable-b%7E14"></span>real(kind=wp),</td>
+  <td><span class="anchor" id="variable-b%7E9"></span>real(kind=wp),</td>
   <td>intent(in),</td>
   <td></td>
   
@@ -931,7 +939,7 @@ public function successiveOverRelaxation(A, b, w, x0, tol, maxIts) result(x)
     
     
     
-	 <h3>Return Value <small><span class="anchor" id="variable-x%7E15"></span>real(kind=wp),
+	 <h3>Return Value <small><span class="anchor" id="variable-x%7E11"></span>real(kind=wp),
   dimension(:),allocatable</small></h3>
     
     
@@ -954,31 +962,31 @@ public function successiveOverRelaxation(A, b, w, x0, tol, maxIts) result(x)
 <polygon fill="none" stroke="black" points="138,-108 0,-108 0,-84 138,-84 138,-108"/>
 <text text-anchor="middle" x="69" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50">successiveOverRelaxation</text>
 </g>
-<!-- proc~solverprogress -->
-<g id="proc~~successiveoverrelaxation~~CallsGraph_node2" class="node"><title>proc~solverprogress</title>
-<g id="a_proc~~successiveoverrelaxation~~CallsGraph_node2"><a xlink:href="../proc/solverprogress.html" xlink:title="solverProgress">
-<polygon fill="#d9534f" stroke="#d9534f" points="258,-129 174,-129 174,-105 258,-105 258,-129"/>
-<text text-anchor="middle" x="216" y="-114.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">solverProgress</text>
-</a>
-</g>
-</g>
-<!-- proc~successiveoverrelaxation&#45;&gt;proc~solverprogress -->
-<g id="proc~~successiveoverrelaxation~~CallsGraph_edge10" class="edge"><title>proc~successiveoverrelaxation&#45;&gt;proc~solverprogress</title>
-<path fill="none" stroke="#000000" d="M138.254,-105.885C146.923,-107.141 155.673,-108.408 164.006,-109.615"/>
-<polygon fill="#000000" stroke="#000000" points="163.532,-113.082 173.93,-111.052 164.535,-106.155 163.532,-113.082"/>
-</g>
 <!-- proc~startreport -->
-<g id="proc~~successiveoverrelaxation~~CallsGraph_node3" class="node"><title>proc~startreport</title>
-<g id="a_proc~~successiveoverrelaxation~~CallsGraph_node3"><a xlink:href="../proc/startreport.html" xlink:title="startReport">
-<polygon fill="#d9534f" stroke="#d9534f" points="249,-87 183,-87 183,-63 249,-63 249,-87"/>
-<text text-anchor="middle" x="216" y="-72.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">startReport</text>
+<g id="proc~~successiveoverrelaxation~~CallsGraph_node2" class="node"><title>proc~startreport</title>
+<g id="a_proc~~successiveoverrelaxation~~CallsGraph_node2"><a xlink:href="../proc/startreport.html" xlink:title="startReport">
+<polygon fill="#d9534f" stroke="#d9534f" points="249,-129 183,-129 183,-105 249,-105 249,-129"/>
+<text text-anchor="middle" x="216" y="-114.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">startReport</text>
 </a>
 </g>
 </g>
 <!-- proc~successiveoverrelaxation&#45;&gt;proc~startreport -->
-<g id="proc~~successiveoverrelaxation~~CallsGraph_edge11" class="edge"><title>proc~successiveoverrelaxation&#45;&gt;proc~startreport</title>
-<path fill="none" stroke="#000000" d="M138.254,-86.1149C150.055,-84.4058 162.006,-82.6749 172.852,-81.1042"/>
-<polygon fill="#000000" stroke="#000000" points="173.475,-84.5505 182.87,-79.6533 172.472,-77.6228 173.475,-84.5505"/>
+<g id="proc~~successiveoverrelaxation~~CallsGraph_edge10" class="edge"><title>proc~successiveoverrelaxation&#45;&gt;proc~startreport</title>
+<path fill="none" stroke="#000000" d="M138.254,-105.885C150.055,-107.594 162.006,-109.325 172.852,-110.896"/>
+<polygon fill="#000000" stroke="#000000" points="172.472,-114.377 182.87,-112.347 173.475,-107.449 172.472,-114.377"/>
+</g>
+<!-- proc~solverprogress -->
+<g id="proc~~successiveoverrelaxation~~CallsGraph_node3" class="node"><title>proc~solverprogress</title>
+<g id="a_proc~~successiveoverrelaxation~~CallsGraph_node3"><a xlink:href="../proc/solverprogress.html" xlink:title="solverProgress">
+<polygon fill="#d9534f" stroke="#d9534f" points="258,-87 174,-87 174,-63 258,-63 258,-87"/>
+<text text-anchor="middle" x="216" y="-72.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">solverProgress</text>
+</a>
+</g>
+</g>
+<!-- proc~successiveoverrelaxation&#45;&gt;proc~solverprogress -->
+<g id="proc~~successiveoverrelaxation~~CallsGraph_edge11" class="edge"><title>proc~successiveoverrelaxation&#45;&gt;proc~solverprogress</title>
+<path fill="none" stroke="#000000" d="M138.254,-86.1149C146.923,-84.8594 155.673,-83.5922 164.006,-82.3853"/>
+<polygon fill="#000000" stroke="#000000" points="164.535,-85.8453 173.93,-80.948 163.532,-78.9175 164.535,-85.8453"/>
 </g>
 <!-- proc~showprogress -->
 <g id="proc~~successiveoverrelaxation~~CallsGraph_node4" class="node"><title>proc~showprogress</title>
@@ -988,98 +996,98 @@ public function successiveOverRelaxation(A, b, w, x0, tol, maxIts) result(x)
 </a>
 </g>
 </g>
-<!-- proc~solverprogress&#45;&gt;proc~showprogress -->
-<g id="proc~~successiveoverrelaxation~~CallsGraph_edge8" class="edge"><title>proc~solverprogress&#45;&gt;proc~showprogress</title>
-<path fill="none" stroke="#000000" d="M258.224,-109.537C266.555,-108.029 275.392,-106.429 283.961,-104.878"/>
-<polygon fill="#000000" stroke="#000000" points="284.635,-108.313 293.852,-103.087 283.388,-101.425 284.635,-108.313"/>
-</g>
 <!-- proc~startreport&#45;&gt;proc~showprogress -->
-<g id="proc~~successiveoverrelaxation~~CallsGraph_edge9" class="edge"><title>proc~startreport&#45;&gt;proc~showprogress</title>
-<path fill="none" stroke="#000000" d="M249.005,-80.7939C259.689,-82.7282 271.858,-84.9312 283.553,-87.0483"/>
-<polygon fill="#000000" stroke="#000000" points="283.195,-90.5403 293.658,-88.8778 284.442,-83.6523 283.195,-90.5403"/>
+<g id="proc~~successiveoverrelaxation~~CallsGraph_edge8" class="edge"><title>proc~startreport&#45;&gt;proc~showprogress</title>
+<path fill="none" stroke="#000000" d="M249.005,-111.206C259.689,-109.272 271.858,-107.069 283.553,-104.952"/>
+<polygon fill="#000000" stroke="#000000" points="284.442,-108.348 293.658,-103.122 283.195,-101.46 284.442,-108.348"/>
 </g>
-<!-- proc~realtotime -->
-<g id="proc~~successiveoverrelaxation~~CallsGraph_node5" class="node"><title>proc~realtotime</title>
-<g id="a_proc~~successiveoverrelaxation~~CallsGraph_node5"><a xlink:href="../proc/realtotime.html" xlink:title="realToTime">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="477,-192 410,-192 410,-168 477,-168 477,-192"/>
-<text text-anchor="middle" x="443.5" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">realToTime</text>
-</a>
-</g>
-</g>
-<!-- proc~showprogress&#45;&gt;proc~realtotime -->
-<g id="proc~~successiveoverrelaxation~~CallsGraph_edge3" class="edge"><title>proc~showprogress&#45;&gt;proc~realtotime</title>
-<path fill="none" stroke="#000000" d="M348.405,-108.142C363.096,-121.236 387.567,-142.431 410,-159 411.412,-160.043 412.874,-161.091 414.361,-162.134"/>
-<polygon fill="#000000" stroke="#000000" points="412.736,-165.26 422.983,-167.952 416.652,-159.457 412.736,-165.26"/>
-</g>
-<!-- proc~colorize -->
-<g id="proc~~successiveoverrelaxation~~CallsGraph_node6" class="node"><title>proc~colorize</title>
-<g id="a_proc~~successiveoverrelaxation~~CallsGraph_node6"><a xlink:href="../proc/colorize.html" xlink:title="colorize">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="470.5,-150 416.5,-150 416.5,-126 470.5,-126 470.5,-150"/>
-<text text-anchor="middle" x="443.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">colorize</text>
-</a>
-</g>
-</g>
-<!-- proc~showprogress&#45;&gt;proc~colorize -->
-<g id="proc~~successiveoverrelaxation~~CallsGraph_edge4" class="edge"><title>proc~showprogress&#45;&gt;proc~colorize</title>
-<path fill="none" stroke="#000000" d="M365.805,-108.036C378.686,-113.068 393.731,-118.946 407.067,-124.156"/>
-<polygon fill="#000000" stroke="#000000" points="405.832,-127.432 416.42,-127.811 408.38,-120.912 405.832,-127.432"/>
-</g>
-<!-- proc~realtochar -->
-<g id="proc~~successiveoverrelaxation~~CallsGraph_node7" class="node"><title>proc~realtochar</title>
-<g id="a_proc~~successiveoverrelaxation~~CallsGraph_node7"><a xlink:href="../proc/realtochar.html" xlink:title="realToChar">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="477,-108 410,-108 410,-84 477,-84 477,-108"/>
-<text text-anchor="middle" x="443.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">realToChar</text>
-</a>
-</g>
-</g>
-<!-- proc~showprogress&#45;&gt;proc~realtochar -->
-<g id="proc~~successiveoverrelaxation~~CallsGraph_edge5" class="edge"><title>proc~showprogress&#45;&gt;proc~realtochar</title>
-<path fill="none" stroke="#000000" d="M374.114,-96C382.479,-96 391.356,-96 399.847,-96"/>
-<polygon fill="#000000" stroke="#000000" points="399.952,-99.5001 409.952,-96 399.952,-92.5001 399.952,-99.5001"/>
-</g>
-<!-- proc~colormap -->
-<g id="proc~~successiveoverrelaxation~~CallsGraph_node8" class="node"><title>proc~colormap</title>
-<g id="a_proc~~successiveoverrelaxation~~CallsGraph_node8"><a xlink:href="../proc/colormap.html" xlink:title="colorMap">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="472,-66 415,-66 415,-42 472,-42 472,-66"/>
-<text text-anchor="middle" x="443.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">colorMap</text>
-</a>
-</g>
-</g>
-<!-- proc~showprogress&#45;&gt;proc~colormap -->
-<g id="proc~~successiveoverrelaxation~~CallsGraph_edge6" class="edge"><title>proc~showprogress&#45;&gt;proc~colormap</title>
-<path fill="none" stroke="#000000" d="M365.805,-83.9645C378.165,-79.1354 392.518,-73.5277 405.442,-68.4785"/>
-<polygon fill="#000000" stroke="#000000" points="406.949,-71.6475 414.989,-64.7483 404.401,-65.1274 406.949,-71.6475"/>
+<!-- proc~solverprogress&#45;&gt;proc~showprogress -->
+<g id="proc~~successiveoverrelaxation~~CallsGraph_edge9" class="edge"><title>proc~solverprogress&#45;&gt;proc~showprogress</title>
+<path fill="none" stroke="#000000" d="M258.224,-82.4629C266.555,-83.9712 275.392,-85.5709 283.961,-87.1223"/>
+<polygon fill="#000000" stroke="#000000" points="283.388,-90.5753 293.852,-88.9128 284.635,-83.6873 283.388,-90.5753"/>
 </g>
 <!-- proc~walltime -->
-<g id="proc~~successiveoverrelaxation~~CallsGraph_node9" class="node"><title>proc~walltime</title>
-<g id="a_proc~~successiveoverrelaxation~~CallsGraph_node9"><a xlink:href="../proc/walltime.html" xlink:title="wallTime">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="471,-24 416,-24 416,-0 471,-0 471,-24"/>
-<text text-anchor="middle" x="443.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">wallTime</text>
+<g id="proc~~successiveoverrelaxation~~CallsGraph_node5" class="node"><title>proc~walltime</title>
+<g id="a_proc~~successiveoverrelaxation~~CallsGraph_node5"><a xlink:href="../proc/walltime.html" xlink:title="wallTime">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="471,-192 416,-192 416,-168 471,-168 471,-192"/>
+<text text-anchor="middle" x="443.5" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">wallTime</text>
 </a>
 </g>
 </g>
 <!-- proc~showprogress&#45;&gt;proc~walltime -->
-<g id="proc~~successiveoverrelaxation~~CallsGraph_edge7" class="edge"><title>proc~showprogress&#45;&gt;proc~walltime</title>
+<g id="proc~~successiveoverrelaxation~~CallsGraph_edge3" class="edge"><title>proc~showprogress&#45;&gt;proc~walltime</title>
+<path fill="none" stroke="#000000" d="M348.405,-108.142C363.096,-121.236 387.567,-142.431 410,-159 411.412,-160.043 412.874,-161.091 414.361,-162.134"/>
+<polygon fill="#000000" stroke="#000000" points="412.736,-165.26 422.983,-167.952 416.652,-159.457 412.736,-165.26"/>
+</g>
+<!-- proc~realtochar -->
+<g id="proc~~successiveoverrelaxation~~CallsGraph_node6" class="node"><title>proc~realtochar</title>
+<g id="a_proc~~successiveoverrelaxation~~CallsGraph_node6"><a xlink:href="../proc/realtochar.html" xlink:title="realToChar">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="477,-150 410,-150 410,-126 477,-126 477,-150"/>
+<text text-anchor="middle" x="443.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">realToChar</text>
+</a>
+</g>
+</g>
+<!-- proc~showprogress&#45;&gt;proc~realtochar -->
+<g id="proc~~successiveoverrelaxation~~CallsGraph_edge4" class="edge"><title>proc~showprogress&#45;&gt;proc~realtochar</title>
+<path fill="none" stroke="#000000" d="M365.805,-108.036C377.163,-112.473 390.203,-117.568 402.271,-122.283"/>
+<polygon fill="#000000" stroke="#000000" points="401.102,-125.584 411.69,-125.963 403.65,-119.064 401.102,-125.584"/>
+</g>
+<!-- proc~colormap -->
+<g id="proc~~successiveoverrelaxation~~CallsGraph_node7" class="node"><title>proc~colormap</title>
+<g id="a_proc~~successiveoverrelaxation~~CallsGraph_node7"><a xlink:href="../proc/colormap.html" xlink:title="colorMap">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="472,-108 415,-108 415,-84 472,-84 472,-108"/>
+<text text-anchor="middle" x="443.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">colorMap</text>
+</a>
+</g>
+</g>
+<!-- proc~showprogress&#45;&gt;proc~colormap -->
+<g id="proc~~successiveoverrelaxation~~CallsGraph_edge5" class="edge"><title>proc~showprogress&#45;&gt;proc~colormap</title>
+<path fill="none" stroke="#000000" d="M374.114,-96C383.989,-96 394.578,-96 404.403,-96"/>
+<polygon fill="#000000" stroke="#000000" points="404.694,-99.5001 414.694,-96 404.694,-92.5001 404.694,-99.5001"/>
+</g>
+<!-- proc~realtotime -->
+<g id="proc~~successiveoverrelaxation~~CallsGraph_node8" class="node"><title>proc~realtotime</title>
+<g id="a_proc~~successiveoverrelaxation~~CallsGraph_node8"><a xlink:href="../proc/realtotime.html" xlink:title="realToTime">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="477,-66 410,-66 410,-42 477,-42 477,-66"/>
+<text text-anchor="middle" x="443.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">realToTime</text>
+</a>
+</g>
+</g>
+<!-- proc~showprogress&#45;&gt;proc~realtotime -->
+<g id="proc~~successiveoverrelaxation~~CallsGraph_edge6" class="edge"><title>proc~showprogress&#45;&gt;proc~realtotime</title>
+<path fill="none" stroke="#000000" d="M365.805,-83.9645C377.163,-79.527 390.203,-74.4322 402.271,-69.7173"/>
+<polygon fill="#000000" stroke="#000000" points="403.65,-72.9365 411.69,-66.0373 401.102,-66.4164 403.65,-72.9365"/>
+</g>
+<!-- proc~colorize -->
+<g id="proc~~successiveoverrelaxation~~CallsGraph_node9" class="node"><title>proc~colorize</title>
+<g id="a_proc~~successiveoverrelaxation~~CallsGraph_node9"><a xlink:href="../proc/colorize.html" xlink:title="colorize">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="470.5,-24 416.5,-24 416.5,-0 470.5,-0 470.5,-24"/>
+<text text-anchor="middle" x="443.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">colorize</text>
+</a>
+</g>
+</g>
+<!-- proc~showprogress&#45;&gt;proc~colorize -->
+<g id="proc~~successiveoverrelaxation~~CallsGraph_edge7" class="edge"><title>proc~showprogress&#45;&gt;proc~colorize</title>
 <path fill="none" stroke="#000000" d="M348.405,-83.8583C363.096,-70.764 387.567,-49.5688 410,-33 411.412,-31.9573 412.874,-30.9088 414.361,-29.8664"/>
 <polygon fill="#000000" stroke="#000000" points="416.652,-32.5427 422.983,-24.0477 412.736,-26.7404 416.652,-32.5427"/>
 </g>
 <!-- proc~inttochar -->
 <g id="proc~~successiveoverrelaxation~~CallsGraph_node10" class="node"><title>proc~inttochar</title>
 <g id="a_proc~~successiveoverrelaxation~~CallsGraph_node10"><a xlink:href="../proc/inttochar.html" xlink:title="intToChar">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="573,-171 513,-171 513,-147 573,-147 573,-171"/>
-<text text-anchor="middle" x="543" y="-156.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">intToChar</text>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="573,-45 513,-45 513,-21 573,-21 573,-45"/>
+<text text-anchor="middle" x="543" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">intToChar</text>
 </a>
 </g>
 </g>
 <!-- proc~realtotime&#45;&gt;proc~inttochar -->
 <g id="proc~~successiveoverrelaxation~~CallsGraph_edge1" class="edge"><title>proc~realtotime&#45;&gt;proc~inttochar</title>
-<path fill="none" stroke="#000000" d="M477.237,-172.949C485.418,-171.187 494.276,-169.279 502.736,-167.457"/>
-<polygon fill="#000000" stroke="#000000" points="503.749,-170.819 512.788,-165.292 502.275,-163.976 503.749,-170.819"/>
+<path fill="none" stroke="#000000" d="M477.237,-46.9489C485.418,-45.1869 494.276,-43.2791 502.736,-41.4568"/>
+<polygon fill="#000000" stroke="#000000" points="503.749,-44.819 512.788,-39.2918 502.275,-37.9759 503.749,-44.819"/>
 </g>
 <!-- proc~colorize&#45;&gt;proc~inttochar -->
 <g id="proc~~successiveoverrelaxation~~CallsGraph_edge2" class="edge"><title>proc~colorize&#45;&gt;proc~inttochar</title>
-<path fill="none" stroke="#000000" d="M470.628,-143.628C480.46,-145.745 491.869,-148.203 502.642,-150.523"/>
-<polygon fill="#000000" stroke="#000000" points="502.191,-154.006 512.703,-152.69 503.665,-147.163 502.191,-154.006"/>
+<path fill="none" stroke="#000000" d="M470.628,-17.6276C480.46,-19.7452 491.869,-22.2025 502.642,-24.5228"/>
+<polygon fill="#000000" stroke="#000000" points="502.191,-28.0059 512.703,-26.69 503.665,-21.1628 502.191,-28.0059"/>
 </g>
 </g>
 </svg>
@@ -1382,9 +1390,13 @@ implementation in a submodule of an interface in a parent module.
   <div id="allprocs-1" class="panel-collapse collapse">
     <div class="list-group">
       
+      <a class="list-group-item" href="../interface/abs.html">abs</a>
+      
       <a class="list-group-item" href="../interface/abs_t.html">abs_t</a>
       
       <a class="list-group-item" href="../interface/acos_t.html">acos_t</a>
+      
+      <a class="list-group-item" href="../interface/ad_t.html">ad_t</a>
       
       <a class="list-group-item" href="../interface/add_t.html">add_t</a>
       
@@ -1434,7 +1446,7 @@ implementation in a submodule of an interface in a parent module.
       
       <a class="list-group-item" href="../proc/contourf.html">contourf</a>
       
-      <a class="list-group-item" href="../interface/cos.html">cos</a>
+      <a class="list-group-item" href="../proc/cos_a.html">cos_a</a>
       
       <a class="list-group-item" href="../interface/cos_t.html">cos_t</a>
       
@@ -1444,13 +1456,7 @@ implementation in a submodule of an interface in a parent module.
       
       <a class="list-group-item" href="../proc/dedup.html">deDup</a>
       
-      <a class="list-group-item" href="../interface/der.html">der</a>
-      
       <a class="list-group-item" href="../interface/dft.html">DFT</a>
-      
-      <a class="list-group-item" href="../interface/diff1.html">diff1</a>
-      
-      <a class="list-group-item" href="../interface/diff3.html">diff3</a>
       
       <a class="list-group-item" href="../interface/div_t.html">div_t</a>
       
@@ -1598,8 +1604,6 @@ implementation in a submodule of an interface in a parent module.
       
       <a class="list-group-item" href="../interface/gaussseidel_t.html">gaussSeidel_t</a>
       
-      <a class="list-group-item" href="../proc/get_adn.html">get_adN</a>
-      
       <a class="list-group-item" href="../proc/hist.html">hist</a>
       
       <a class="list-group-item" href="../interface/idft.html">iDFT</a>
@@ -1633,6 +1637,8 @@ implementation in a submodule of an interface in a parent module.
       <a class="list-group-item" href="../interface/log%7E2.html">log</a>
       
       <a class="list-group-item" href="../interface/log10.html">log10</a>
+      
+      <a class="list-group-item" href="../interface/log10%7E2.html">log10</a>
       
       <a class="list-group-item" href="../interface/log10_t.html">log10_t</a>
       
@@ -1712,9 +1718,13 @@ implementation in a submodule of an interface in a parent module.
       
       <a class="list-group-item" href="../proc/newvar.html">newVar</a>
       
+      <a class="list-group-item" href="../interface/nint.html">nint</a>
+      
       <a class="list-group-item" href="../interface/nodestack_t.html">nodeStack_t</a>
       
       <a class="list-group-item" href="../interface/norm2.html">norm2</a>
+      
+      <a class="list-group-item" href="../interface/norm2%7E2.html">norm2</a>
       
       <a class="list-group-item" href="../interface/operator%28%2A%29.html">operator(*)</a>
       
@@ -1750,6 +1760,10 @@ implementation in a submodule of an interface in a parent module.
       
       <a class="list-group-item" href="../interface/operator%28SLASH%29%7E2.html">operator(/)</a>
       
+      <a class="list-group-item" href="../interface/operator%28%3C%29.html">operator(<)</a>
+      
+      <a class="list-group-item" href="../interface/operator%28%3E%29.html">operator(>)</a>
+      
       <a class="list-group-item" href="../proc/plot.html">plot</a>
       
       <a class="list-group-item" href="../proc/plot3.html">plot3</a>
@@ -1774,8 +1788,6 @@ implementation in a submodule of an interface in a parent module.
       
       <a class="list-group-item" href="../interface/readstep.html">readStep</a>
       
-      <a class="list-group-item" href="../interface/real.html">real</a>
-      
       <a class="list-group-item" href="../interface/real_t.html">real_t</a>
       
       <a class="list-group-item" href="../proc/realtochar.html">realToChar</a>
@@ -1788,8 +1800,6 @@ implementation in a submodule of an interface in a parent module.
       
       <a class="list-group-item" href="../proc/scatter.html">scatter</a>
       
-      <a class="list-group-item" href="../proc/set_adn.html">set_adN</a>
-      
       <a class="list-group-item" href="../proc/setrandomseed.html">setRandomSeed</a>
       
       <a class="list-group-item" href="../proc/setup.html">setup</a>
@@ -1798,11 +1808,13 @@ implementation in a submodule of an interface in a parent module.
       
       <a class="list-group-item" href="../proc/showprogress.html">showProgress</a>
       
-      <a class="list-group-item" href="../interface/sin.html">sin</a>
+      <a class="list-group-item" href="../proc/sin_a.html">sin_a</a>
       
       <a class="list-group-item" href="../interface/sin_t.html">sin_t</a>
       
       <a class="list-group-item" href="../interface/solvelu.html">solveLU</a>
+      
+      <a class="list-group-item" href="../interface/solvelu%7E2.html">solveLU</a>
       
       <a class="list-group-item" href="../proc/solverprogress.html">solverProgress</a>
       
@@ -1838,9 +1850,13 @@ implementation in a submodule of an interface in a parent module.
       
       <a class="list-group-item" href="../proc/symmetricsuccessiveoverrelaxation.html">symmetricSuccessiveOverRelaxation</a>
       
+      <a class="list-group-item" href="../proc/tan_a.html">tan_a</a>
+      
       <a class="list-group-item" href="../interface/tan_t.html">tan_t</a>
       
       <a class="list-group-item" href="../interface/tdma.html">TDMA</a>
+      
+      <a class="list-group-item" href="../interface/tdma%7E2.html">TDMA</a>
       
       <a class="list-group-item" href="../proc/testbasic.html">testBasic</a>
       

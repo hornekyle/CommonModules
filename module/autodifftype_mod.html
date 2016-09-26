@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	 
+	 <meta name="description" content="Common modules for using in other programs">
+    
+    <meta name="author" content="Chris MacMackin" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>autoDiffType_mod &ndash; CommonModules</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+    
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+
+    
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">CommonModules </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+				
+            <li><a href='../page/index.html'>Instructions</a></li>
+	    
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+              data-toggle="dropdown" role="button"
+              aria-haspopup="true"
+		 aria-expanded="false">Contents <span class="caret"></span></a>
+	      <ul class="dropdown-menu">
+              
+            <li><a href="../lists/files.html">Source Files</a></li>
+				
+				
+            <li><a href="../lists/modules.html">Modules</a></li>
+				
+            
+                                
+            <li><a href="../lists/procedures.html">Procedures</a></li>
+				
+								
+            <li><a href="../lists/types.html">Derived Types</a></li>
+				
+				
+            <li><a href="../lists/programs.html">Programs</a></li>
+				
+            </ul>
+            </li>
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
+
+                             
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/programs.html">Programs</a></li>
+
+          </ul>
+        
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    
+  
+  <div class="row">
+    <h1>autoDiffType_mod 
+    <small>Module</small>
+    
+    </h1>
+    
+<div class="row">
+  <div class="col-lg-12">
+<div class="well well-sm">
+  <ul class="list-inline" style="margin-bottom:0px;display:inline">
+     
+     
+     
+     
+    
+    
+     <li><i class="fa fa-list-ol"></i>
+       <a data-toggle="tooltip"
+	  data-placement="bottom" data-html="true"
+	  title=" 0.9% of total for modules and submodules.">63 statements</a>
+     </li> 
+     
+     
+    <li><i class="fa fa-code"></i><a href="../src/autoDiffType.f90"> Source File</a></li>
+     
+  </ul>
+  <ol class="breadcrumb in-well text-right">
+  
+     <li><a href='../sourcefile/autodifftype.f90.html'>autoDiffType.f90</a></li>
+  
+     <li class="active">autoDiffType_mod</li>
+  </ol>
+</div>
+</div>
+</div>
+<script>
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+    
+<div id="sidebar">
+  
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#inters-0">Interfaces</a></h3></div>
+  <div id="inters-0" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/autodifftype_mod.html#interface-ad_t">ad_t</a>
+      
+      <a class="list-group-item" href="../module/autodifftype_mod.html#interface-nint">nint</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#types-0">Derived Types</a></h3></div>
+  <div id="types-0" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/autodifftype_mod.html#type-ad_t">ad_t</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  <hr>
+  
+
+<div class="panel panel-default">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#allmods-0">All Modules</a></h3></div>
+  <div id="allmods-0" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/array_mod.html">array_mod</a>
+      
+      <a class="list-group-item" href="../module/autodiff_mod.html">autoDiff_mod</a>
+      
+      <a class="list-group-item" href="../module/autodiffarray_mod.html">autoDiffArray_mod</a>
+      
+      <a class="list-group-item" href="../module/autodiffexponential_mod.html">autoDiffExponential_mod</a>
+      
+      <a class="list-group-item" href="../module/autodiffoperator_mod.html">autoDiffOperator_mod</a>
+      
+      <a class="list-group-item" href="../module/autodifftrigonometric_mod.html">autoDiffTrigonometric_mod</a>
+      
+      <a class="list-group-item" href="../module/autodifftype_mod.html">autoDiffType_mod</a>
+      
+      <a class="list-group-item" href="../module/basicsolvers_mod.html">basicSolvers_mod</a>
+      
+      <a class="list-group-item" href="../module/config_mod.html">config_mod</a>
+      
+      <a class="list-group-item" href="../module/expression_mod.html">expression_mod</a>
+      
+      <a class="list-group-item" href="../module/fourier_mod.html">fourier_mod</a>
+      
+      <a class="list-group-item" href="../module/iterate_mod.html">iterate_mod</a>
+      
+      <a class="list-group-item" href="../module/kinds_mod.html">kinds_mod</a>
+      
+      <a class="list-group-item" href="../module/matio_mod.html">matIO_mod</a>
+      
+      <a class="list-group-item" href="../module/mesh_mod.html">mesh_mod</a>
+      
+      <a class="list-group-item" href="../module/netcdf_mod.html">netCDF_mod</a>
+      
+      <a class="list-group-item" href="../module/node_mod.html">node_mod</a>
+      
+      <a class="list-group-item" href="../module/objective_mod.html">objective_mod</a>
+      
+      <a class="list-group-item" href="../module/optimize_mod.html">optimize_mod</a>
+      
+      <a class="list-group-item" href="../module/plplotlib_mod.html">plplotlib_mod</a>
+      
+      <a class="list-group-item" href="../module/quaternion_mod.html">quaternion_mod</a>
+      
+      <a class="list-group-item" href="../module/solvers_mod.html">solvers_mod</a>
+      
+      <a class="list-group-item" href="../module/sparse_mod.html">sparse_mod</a>
+      
+      <a class="list-group-item" href="../module/spline_mod.html">spline_mod</a>
+      
+      <a class="list-group-item" href="../module/stats_mod.html">stats_mod</a>
+      
+      <a class="list-group-item" href="../module/tensor_mod.html">tensor_mod</a>
+      
+      <a class="list-group-item" href="../module/text_mod.html">text_mod</a>
+      
+      <a class="list-group-item" href="../module/time_mod.html">time_mod</a>
+      
+      <a class="list-group-item" href="../module/treeexponential_mod.html">treeExponential_mod</a>
+      
+      <a class="list-group-item" href="../module/treeoperator_mod.html">treeOperator_mod</a>
+      
+      <a class="list-group-item" href="../module/treetrigonometric_mod.html">treeTrigonometric_mod</a>
+      
+      <a class="list-group-item" href="../module/treevalue_mod.html">treeValue_mod</a>
+      
+      <a class="list-group-item" href="../module/vtkio_mod.html">vtkIO_mod</a>
+      
+    </div>
+  </div>
+</div>
+
+
+</div>  
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+      
+    
+  
+    <ul class="list-inline">
+      <li><h4>Uses:</h4></li>
+      
+      <li><a href='../module/kinds_mod.html'>kinds_mod</a></li>
+      
+    </ul>
+    
+                <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.38.0 (20140413.2041)
+ -->
+<!-- Title: module~~autodifftype_mod~~UsesGraph Pages: 1 -->
+<svg id="moduleautodifftype_modUsesGraph" width="208pt" height="32pt"
+ viewBox="0.00 0.00 208.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="module~~autodifftype_mod~~UsesGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>module~~autodifftype_mod~~UsesGraph</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-28 204,-28 204,4 -4,4"/>
+<!-- module~autodifftype_mod -->
+<g id="module~~autodifftype_mod~~UsesGraph_node1" class="node"><title>module~autodifftype_mod</title>
+<polygon fill="none" stroke="black" points="200,-24 100,-24 100,-0 200,-0 200,-24"/>
+<text text-anchor="middle" x="150" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">autoDiffType_mod</text>
+</g>
+<!-- module~kinds_mod -->
+<g id="module~~autodifftype_mod~~UsesGraph_node2" class="node"><title>module~kinds_mod</title>
+<g id="a_module~~autodifftype_mod~~UsesGraph_node2"><a xlink:href="../module/kinds_mod.html" xlink:title="kinds_mod">
+<polygon fill="#337ab7" stroke="#337ab7" points="64,-24 0,-24 0,-0 64,-0 64,-24"/>
+<text text-anchor="middle" x="32" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">kinds_mod</text>
+</a>
+</g>
+</g>
+<!-- module~kinds_mod&#45;&gt;module~autodifftype_mod -->
+<g id="module~~autodifftype_mod~~UsesGraph_edge1" class="edge"><title>module~kinds_mod&#45;&gt;module~autodifftype_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M64.0859,-12C72.0825,-12 80.9562,-12 89.8656,-12"/>
+<polygon fill="#000000" stroke="#000000" points="89.8949,-15.5001 99.8949,-12 89.8949,-8.5001 89.8949,-15.5001"/>
+</g>
+</g>
+</svg>
+</div>
+                <div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div>
+                <div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                      </div>
+                      <div class="modal-body">
+                        
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.38.0 (20140413.2041)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="490pt" height="32pt"
+ viewBox="0.00 0.00 489.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-28 485.5,-28 485.5,4 -4,4"/>
+<!-- Module -->
+<g id="node1" class="node"><title>Module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-24 0,-24 0,-0 54,-0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Module</text>
+</g>
+<!-- Submodule -->
+<g id="node2" class="node"><title>Submodule</title>
+<polygon fill="#5bc0de" stroke="#5bc0de" points="139.5,-24 72.5,-24 72.5,-0 139.5,-0 139.5,-24"/>
+<text text-anchor="middle" x="106" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Submodule</text>
+</g>
+<!-- Subroutine -->
+<g id="node3" class="node"><title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="222,-24 158,-24 158,-0 222,-0 222,-24"/>
+<text text-anchor="middle" x="190" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node4" class="node"><title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="294,-24 240,-24 240,-0 294,-0 294,-24"/>
+<text text-anchor="middle" x="267" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node"><title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="366,-24 312,-24 312,-0 366,-0 366,-24"/>
+<text text-anchor="middle" x="339" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node"><title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="481.5,-24 384.5,-24 384.5,-0 481.5,-0 481.5,-24"/>
+<text text-anchor="middle" x="433" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+
+<p>Solid arrows point from a parent (sub)module to the submodule which is
+descended from it. Dashed arrows point from a module being used to the
+module or program unit using it.
+</p>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+    
+
+    
+    <p></p><div class="alert alert-success" role="alert"><h4>Todo</h4><p>Add second type for complex numbers</p></div>
+    
+    
+    <h3>Used By</h3>
+    
+                <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.38.0 (20140413.2041)
+ -->
+<!-- Title: module~~autodifftype_mod~~UsedByGraph Pages: 1 -->
+<svg id="moduleautodifftype_modUsedByGraph" width="641pt" height="143pt"
+ viewBox="0.00 0.00 641.00 142.86" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="module~~autodifftype_mod~~UsedByGraph" class="graph" transform="scale(0.927641 0.927641) rotate(0) translate(4 150)">
+<title>module~~autodifftype_mod~~UsedByGraph</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-150 687,-150 687,4 -4,4"/>
+<!-- module~autodifftype_mod -->
+<g id="module~~autodifftype_mod~~UsedByGraph_node1" class="node"><title>module~autodifftype_mod</title>
+<polygon fill="none" stroke="black" points="100,-84 0,-84 0,-60 100,-60 100,-84"/>
+<text text-anchor="middle" x="50" y="-69.6" font-family="Helvetica,sans-Serif" font-size="10.50">autoDiffType_mod</text>
+</g>
+<!-- module~autodiffexponential_mod -->
+<g id="module~~autodifftype_mod~~UsedByGraph_node2" class="node"><title>module~autodiffexponential_mod</title>
+<g id="a_module~~autodifftype_mod~~UsedByGraph_node2"><a xlink:href="../module/autodiffexponential_mod.html" xlink:title="autoDiffExponential_mod">
+<polygon fill="#337ab7" stroke="#337ab7" points="446,-146 314,-146 314,-122 446,-122 446,-146"/>
+<text text-anchor="middle" x="380" y="-131.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">autoDiffExponential_mod</text>
+</a>
+</g>
+</g>
+<!-- module~autodifftype_mod&#45;&gt;module~autodiffexponential_mod -->
+<g id="module~~autodifftype_mod~~UsedByGraph_edge7" class="edge"><title>module~autodifftype_mod&#45;&gt;module~autodiffexponential_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M208,-133C239.082,-136.992 273.604,-137.862 303.445,-137.506"/>
+<polygon fill="#000000" stroke="#000000" points="303.852,-141 313.792,-137.332 303.734,-134.001 303.852,-141"/>
+</g>
+<!-- module~autodiffarray_mod -->
+<g id="module~~autodifftype_mod~~UsedByGraph_node3" class="node"><title>module~autodiffarray_mod</title>
+<g id="a_module~~autodifftype_mod~~UsedByGraph_node3"><a xlink:href="../module/autodiffarray_mod.html" xlink:title="autoDiffArray_mod">
+<polygon fill="#337ab7" stroke="#337ab7" points="431,-104 329,-104 329,-80 431,-80 431,-104"/>
+<text text-anchor="middle" x="380" y="-89.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">autoDiffArray_mod</text>
+</a>
+</g>
+</g>
+<!-- module~autodifftype_mod&#45;&gt;module~autodiffarray_mod -->
+<g id="module~~autodifftype_mod~~UsedByGraph_edge8" class="edge"><title>module~autodifftype_mod&#45;&gt;module~autodiffarray_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M72.16,-84.2483C101.187,-100.115 155.518,-126.516 206,-133"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M208,-133C231.758,-136.052 290.64,-119.957 332.66,-107.042"/>
+<polygon fill="#000000" stroke="#000000" points="333.904,-110.32 342.414,-104.009 331.825,-103.636 333.904,-110.32"/>
+</g>
+<!-- module~autodiffoperator_mod -->
+<g id="module~~autodifftype_mod~~UsedByGraph_node4" class="node"><title>module~autodiffoperator_mod</title>
+<g id="a_module~~autodifftype_mod~~UsedByGraph_node4"><a xlink:href="../module/autodiffoperator_mod.html" xlink:title="autoDiffOperator_mod">
+<polygon fill="#337ab7" stroke="#337ab7" points="266.5,-104 147.5,-104 147.5,-80 266.5,-80 266.5,-104"/>
+<text text-anchor="middle" x="207" y="-89.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">autoDiffOperator_mod</text>
+</a>
+</g>
+</g>
+<!-- module~autodifftype_mod&#45;&gt;module~autodiffoperator_mod -->
+<g id="module~~autodifftype_mod~~UsedByGraph_edge9" class="edge"><title>module~autodifftype_mod&#45;&gt;module~autodiffoperator_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M100.043,-78.3281C111.87,-79.8542 124.724,-81.5128 137.268,-83.1313"/>
+<polygon fill="#000000" stroke="#000000" points="136.87,-86.6089 147.235,-84.4175 137.766,-79.6664 136.87,-86.6089"/>
+</g>
+<!-- module~autodiff_mod -->
+<g id="module~~autodifftype_mod~~UsedByGraph_node5" class="node"><title>module~autodiff_mod</title>
+<g id="a_module~~autodifftype_mod~~UsedByGraph_node5"><a xlink:href="../module/autodiff_mod.html" xlink:title="autoDiff_mod">
+<polygon fill="#337ab7" stroke="#337ab7" points="558,-104 482,-104 482,-80 558,-80 558,-104"/>
+<text text-anchor="middle" x="520" y="-89.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">autoDiff_mod</text>
+</a>
+</g>
+</g>
+<!-- module~autodifftype_mod&#45;&gt;module~autodiff_mod -->
+<g id="module~~autodifftype_mod~~UsedByGraph_edge10" class="edge"><title>module~autodifftype_mod&#45;&gt;module~autodiff_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M100.14,-62.9206C164.494,-52.4191 280.692,-38.2315 379,-52"/>
+</g>
+<!-- module~autodifftrigonometric_mod -->
+<g id="module~~autodifftype_mod~~UsedByGraph_node6" class="node"><title>module~autodifftrigonometric_mod</title>
+<g id="a_module~~autodifftype_mod~~UsedByGraph_node6"><a xlink:href="../module/autodifftrigonometric_mod.html" xlink:title="autoDiffTrigonometric_mod">
+<polygon fill="#337ab7" stroke="#337ab7" points="278,-24 136,-24 136,-0 278,-0 278,-24"/>
+<text text-anchor="middle" x="207" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">autoDiffTrigonometric_mod</text>
+</a>
+</g>
+</g>
+<!-- module~autodifftype_mod&#45;&gt;module~autodifftrigonometric_mod -->
+<g id="module~~autodifftype_mod~~UsedByGraph_edge11" class="edge"><title>module~autodifftype_mod&#45;&gt;module~autodifftrigonometric_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M80.825,-59.8595C97.0945,-53.29 117.612,-45.0913 136,-38 144.883,-34.5744 154.43,-30.9746 163.529,-27.5824"/>
+<polygon fill="#000000" stroke="#000000" points="165.017,-30.7632 173.174,-24.0011 162.581,-24.201 165.017,-30.7632"/>
+</g>
+<!-- module~autodiffexponential_mod&#45;&gt;module~autodiff_mod -->
+<g id="module~~autodifftype_mod~~UsedByGraph_edge1" class="edge"><title>module~autodiffexponential_mod&#45;&gt;module~autodiff_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M420.545,-121.964C436.657,-117.061 455.407,-111.354 472.195,-106.245"/>
+<polygon fill="#000000" stroke="#000000" points="473.271,-109.576 481.819,-103.316 471.233,-102.879 473.271,-109.576"/>
+</g>
+<!-- module~autodiffarray_mod&#45;&gt;module~autodiff_mod -->
+<g id="module~~autodifftype_mod~~UsedByGraph_edge2" class="edge"><title>module~autodiffarray_mod&#45;&gt;module~autodiff_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M431.212,-92C444.346,-92 458.465,-92 471.456,-92"/>
+<polygon fill="#000000" stroke="#000000" points="471.593,-95.5001 481.593,-92 471.593,-88.5001 471.593,-95.5001"/>
+</g>
+<!-- module~autodiffoperator_mod&#45;&gt;module~autodiffarray_mod -->
+<g id="module~~autodifftype_mod~~UsedByGraph_edge3" class="edge"><title>module~autodiffoperator_mod&#45;&gt;module~autodiffarray_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M266.848,-92C283.57,-92 301.802,-92 318.612,-92"/>
+<polygon fill="#000000" stroke="#000000" points="318.87,-95.5001 328.87,-92 318.87,-88.5001 318.87,-95.5001"/>
+</g>
+<!-- module~autodiffoperator_mod&#45;&gt;module~autodiff_mod -->
+<g id="module~~autodifftype_mod~~UsedByGraph_edge4" class="edge"><title>module~autodiffoperator_mod&#45;&gt;module~autodiff_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M245.359,-79.9267C287.528,-66.8937 353.561,-48.4372 379,-52"/>
+</g>
+<!-- program~testautodiff_prg -->
+<g id="module~~autodifftype_mod~~UsedByGraph_node7" class="node"><title>program~testautodiff_prg</title>
+<g id="a_module~~autodifftype_mod~~UsedByGraph_node7"><a xlink:href="../program/testautodiff_prg.html" xlink:title="testAutoDiff_prg">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="683,-104 594,-104 594,-80 683,-80 683,-104"/>
+<text text-anchor="middle" x="638.5" y="-89.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">testAutoDiff_prg</text>
+</a>
+</g>
+</g>
+<!-- module~autodiff_mod&#45;&gt;program~testautodiff_prg -->
+<g id="module~~autodifftype_mod~~UsedByGraph_edge5" class="edge"><title>module~autodiff_mod&#45;&gt;program~testautodiff_prg</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M558.182,-92C566.318,-92 575.089,-92 583.727,-92"/>
+<polygon fill="#000000" stroke="#000000" points="583.761,-95.5001 593.761,-92 583.761,-88.5001 583.761,-95.5001"/>
+</g>
+<!-- module~autodifftrigonometric_mod&#45;&gt;module~autodiff_mod -->
+<g id="module~~autodifftype_mod~~UsedByGraph_edge6" class="edge"><title>module~autodifftrigonometric_mod&#45;&gt;module~autodiff_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M249.764,-24.0089C284.142,-33.3501 334.313,-45.7413 379,-52"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M381,-52C414.222,-56.6529 450.623,-67.4561 477.695,-76.6636"/>
+<polygon fill="#000000" stroke="#000000" points="476.628,-79.9982 487.223,-79.9693 478.923,-73.3849 476.628,-79.9982"/>
+</g>
+</g>
+</svg>
+</div>
+                <script>var panmoduleautodifftype_modUsedByGraph = svgPanZoom('#moduleautodifftype_modUsedByGraph', {
+                    zoomEnabled: true,
+                    controlIconsEnabled: true,
+                    fit: true,
+                    center: true,});
+                    </script>
+                <div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div>
+                <div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                      </div>
+                      <div class="modal-body">
+                        
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.38.0 (20140413.2041)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="490pt" height="32pt"
+ viewBox="0.00 0.00 489.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-28 485.5,-28 485.5,4 -4,4"/>
+<!-- Module -->
+<g id="node1" class="node"><title>Module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-24 0,-24 0,-0 54,-0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Module</text>
+</g>
+<!-- Submodule -->
+<g id="node2" class="node"><title>Submodule</title>
+<polygon fill="#5bc0de" stroke="#5bc0de" points="139.5,-24 72.5,-24 72.5,-0 139.5,-0 139.5,-24"/>
+<text text-anchor="middle" x="106" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Submodule</text>
+</g>
+<!-- Subroutine -->
+<g id="node3" class="node"><title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="222,-24 158,-24 158,-0 222,-0 222,-24"/>
+<text text-anchor="middle" x="190" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node4" class="node"><title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="294,-24 240,-24 240,-0 294,-0 294,-24"/>
+<text text-anchor="middle" x="267" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node"><title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="366,-24 312,-24 312,-0 366,-0 366,-24"/>
+<text text-anchor="middle" x="339" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node"><title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="481.5,-24 384.5,-24 384.5,-0 481.5,-0 481.5,-24"/>
+<text text-anchor="middle" x="433" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+
+<p>Solid arrows point from a parent (sub)module to the submodule which is
+descended from it. Dashed arrows point from a module being used to the
+module or program unit using it.
+</p>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+    <br>
+    
+
+    <section class="visible-xs visible-sm hidden-md">
+      
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#inters-1">Interfaces</a></h3></div>
+  <div id="inters-1" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/autodifftype_mod.html#interface-ad_t">ad_t</a>
+      
+      <a class="list-group-item" href="../module/autodifftype_mod.html#interface-nint">nint</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#types-1">Derived Types</a></h3></div>
+  <div id="types-1" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/autodifftype_mod.html#type-ad_t">ad_t</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    </section>
+    <br class="visible-xs visible-sm hidden-md">
+
+    
+
+    
+    
+    
+    
+    
+    <section>
+	 <h2>Interfaces</h2>
+	 
+	   
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="interface-ad_t"></span><h3>public interface <a href='../interface/ad_t.html'>ad_t</a>
+    
+  </h3></div>
+  
+  <ul class="list-group">
+  
+  
+  
+    <li class="list-group-item">
+    
+    
+    <h3>
+private elemental function newAD_valIdx(value, N, idx) result(self)
+    
+    
+	 
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=wp),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>value</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>N</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>idx</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>type(<a href='../type/ad_t.html'>ad_t</a>)
+  </small></h4>
+  
+    
+
+    </li>
+  
+    <li class="list-group-item">
+    
+    
+    <h3>
+private pure function newAD_valGrad(value, grad) result(self)
+    
+    
+	 
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=wp),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>value</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=wp),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(:)</td><td>::</td>
+  <td><strong>grad</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>type(<a href='../type/ad_t.html'>ad_t</a>)
+  </small></h4>
+  
+    
+
+    </li>
+  
+  
+  </ul>
+</div>
+
+    
+	   
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="interface-nint"></span><h3>public interface <a href='../interface/nint.html'>nint</a>
+    
+  </h3></div>
+  
+  <ul class="list-group">
+  
+  
+  
+    <li class="list-group-item">
+    
+    
+    <h3>
+private elemental function nint_a(u) result(o)
+    
+    
+	 
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/ad_t.html'>ad_t</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>u</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>integer
+  </small></h4>
+  
+    
+
+    </li>
+  
+  
+  </ul>
+</div>
+
+    
+    </section>
+	<br>
+    
+
+    
+    
+    
+    <section>
+     <h2>Derived Types</h2>
+	 
+	   
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="type-ad_t"></span><h3>type, public :: <a href='../type/ad_t.html'>ad_t</a>
+    
+  </h3></div>
+  <div class="panel-body">
+    
+     
+     
+     <h4>Constructor</h4>
+       
+         
+       
+       <table class="table table-striped varlist">
+      <tbody>
+        
+             
+             
+             
+             <tr><td>private elemental function <strong>newAD_valIdx</strong>(value, N, idx)</td><td></td></tr>
+             
+             
+             <tr><td>private pure function <strong>newAD_valGrad</strong>(value, grad)</td><td></td></tr>
+             
+        
+       </tbody>
+       </table>
+     
+          
+     
+     <h4>Type-Bound Procedures</h4>
+      <table class="table table-striped varlist">
+      <tbody>
+      
+       <tr><td>procedure, public :: <strong><a href='../type/ad_t.html#boundprocedure-val'>val</a></strong>  </td>
+       <td></td></tr>
+      
+       <tr><td>procedure, public :: <strong><a href='../type/ad_t.html#boundprocedure-der'>der</a></strong>  </td>
+       <td></td></tr>
+      
+       <tr><td>procedure, public :: <strong><a href='../type/ad_t.html#boundprocedure-grad%7E2'>grad</a></strong>  </td>
+       <td></td></tr>
+      
+       </tbody>
+       </table>
+     
+  </div>
+</div>
+
+     
+    </section>
+	<br>
+    
+    
+    
+
+    
+    
+    
+    </div>
+  </div>
+
+  <section class="visible-xs visible-sm hidden-md">
+    <hr>
+    
+
+<div class="panel panel-default">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#allmods-1">All Modules</a></h3></div>
+  <div id="allmods-1" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/array_mod.html">array_mod</a>
+      
+      <a class="list-group-item" href="../module/autodiff_mod.html">autoDiff_mod</a>
+      
+      <a class="list-group-item" href="../module/autodiffarray_mod.html">autoDiffArray_mod</a>
+      
+      <a class="list-group-item" href="../module/autodiffexponential_mod.html">autoDiffExponential_mod</a>
+      
+      <a class="list-group-item" href="../module/autodiffoperator_mod.html">autoDiffOperator_mod</a>
+      
+      <a class="list-group-item" href="../module/autodifftrigonometric_mod.html">autoDiffTrigonometric_mod</a>
+      
+      <a class="list-group-item" href="../module/autodifftype_mod.html">autoDiffType_mod</a>
+      
+      <a class="list-group-item" href="../module/basicsolvers_mod.html">basicSolvers_mod</a>
+      
+      <a class="list-group-item" href="../module/config_mod.html">config_mod</a>
+      
+      <a class="list-group-item" href="../module/expression_mod.html">expression_mod</a>
+      
+      <a class="list-group-item" href="../module/fourier_mod.html">fourier_mod</a>
+      
+      <a class="list-group-item" href="../module/iterate_mod.html">iterate_mod</a>
+      
+      <a class="list-group-item" href="../module/kinds_mod.html">kinds_mod</a>
+      
+      <a class="list-group-item" href="../module/matio_mod.html">matIO_mod</a>
+      
+      <a class="list-group-item" href="../module/mesh_mod.html">mesh_mod</a>
+      
+      <a class="list-group-item" href="../module/netcdf_mod.html">netCDF_mod</a>
+      
+      <a class="list-group-item" href="../module/node_mod.html">node_mod</a>
+      
+      <a class="list-group-item" href="../module/objective_mod.html">objective_mod</a>
+      
+      <a class="list-group-item" href="../module/optimize_mod.html">optimize_mod</a>
+      
+      <a class="list-group-item" href="../module/plplotlib_mod.html">plplotlib_mod</a>
+      
+      <a class="list-group-item" href="../module/quaternion_mod.html">quaternion_mod</a>
+      
+      <a class="list-group-item" href="../module/solvers_mod.html">solvers_mod</a>
+      
+      <a class="list-group-item" href="../module/sparse_mod.html">sparse_mod</a>
+      
+      <a class="list-group-item" href="../module/spline_mod.html">spline_mod</a>
+      
+      <a class="list-group-item" href="../module/stats_mod.html">stats_mod</a>
+      
+      <a class="list-group-item" href="../module/tensor_mod.html">tensor_mod</a>
+      
+      <a class="list-group-item" href="../module/text_mod.html">text_mod</a>
+      
+      <a class="list-group-item" href="../module/time_mod.html">time_mod</a>
+      
+      <a class="list-group-item" href="../module/treeexponential_mod.html">treeExponential_mod</a>
+      
+      <a class="list-group-item" href="../module/treeoperator_mod.html">treeOperator_mod</a>
+      
+      <a class="list-group-item" href="../module/treetrigonometric_mod.html">treeTrigonometric_mod</a>
+      
+      <a class="list-group-item" href="../module/treevalue_mod.html">treeValue_mod</a>
+      
+      <a class="list-group-item" href="../module/vtkio_mod.html">vtkIO_mod</a>
+      
+    </div>
+  </div>
+</div>
+
+
+  </section>
+  
+    <hr>    
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-md-4"><p>&copy; 2016 </p></div>
+        <div class="col-xs-6 col-md-4 col-md-push-4">
+          <p class="text-right">
+            Documentation generated by 
+            <a href="https://github.com/cmacmackin/ford">FORD</a>
+            
+          </p>
+        </div>
+        <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> CommonModules was developed by Kyle Horne</p></div>
+      </div>
+      <br>
+      </div> <!-- /container -->    
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+-->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- MathJax JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js'],
+        'HTML-CSS': { 
+           styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: '#000000 ! important'} }
+        }
+      });
+    </script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  </body>
+</html>

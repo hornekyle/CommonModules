@@ -10,7 +10,7 @@
     <meta name="author" content="Chris MacMackin" >
     <link rel="icon" href="../favicon.png">
 
-    <title>diff1 &ndash; CommonModules</title>
+    <title>TDMA &ndash; CommonModules</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -100,7 +100,7 @@
     
   
   <div class="row">
-    <h1>diff1
+    <h1>TDMA
 	 <small>Interface</small>
     
     </h1>
@@ -118,20 +118,20 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
 	  data-placement="bottom" data-html="true"
-	  title="<p> 0.1% of total for procedures.</p>Including implementation: 11 statements,  0.3% of total for procedures.">3 statements</a>
+	  title="<p> 0.1% of total for procedures.</p>Including implementation: 62 statements,  1.7% of total for procedures.">4 statements</a>
      </li> 
      
      
-    <li><i class="fa fa-code"></i><a href="../src/autoDiff.f90"> Source File</a></li>
+    <li><i class="fa fa-code"></i><a href="../src/autoDiffArray.f90"> Source File</a></li>
      
   </ul>
   <ol class="breadcrumb in-well text-right">
   
-     <li><a href='../sourcefile/autodiff.f90.html'>autoDiff.f90</a></li>
+     <li><a href='../sourcefile/autodiffarray.f90.html'>autoDiffArray.f90</a></li>
   
-     <li><a href='../module/autodiff_mod.html'>autoDiff_mod</a></li>
+     <li><a href='../module/autodiffarray_mod.html'>autoDiffArray_mod</a></li>
   
-     <li class="active">diff1</li>
+     <li class="active">TDMA</li>
   </ol>
 </div>
 </div>
@@ -173,7 +173,9 @@
   <div id="modprocs-0" class="panel-collapse collapse">
     <div class="list-group">
       
-      <a class="list-group-item" href="../interface/diff1.html#moduleprocedure-diff_1s">diff_1s</a>
+      <a class="list-group-item" href="../interface/tdma%7E2.html#moduleprocedure-tdma_sa">TDMA_sA</a>
+      
+      <a class="list-group-item" href="../interface/tdma%7E2.html#moduleprocedure-tdma_ma">TDMA_mA</a>
       
     </div>
   </div>
@@ -189,9 +191,13 @@
   <div id="allprocs-0" class="panel-collapse collapse">
     <div class="list-group">
       
+      <a class="list-group-item" href="../interface/abs.html">abs</a>
+      
       <a class="list-group-item" href="../interface/abs_t.html">abs_t</a>
       
       <a class="list-group-item" href="../interface/acos_t.html">acos_t</a>
+      
+      <a class="list-group-item" href="../interface/ad_t.html">ad_t</a>
       
       <a class="list-group-item" href="../interface/add_t.html">add_t</a>
       
@@ -241,7 +247,7 @@
       
       <a class="list-group-item" href="../proc/contourf.html">contourf</a>
       
-      <a class="list-group-item" href="../interface/cos.html">cos</a>
+      <a class="list-group-item" href="../proc/cos_a.html">cos_a</a>
       
       <a class="list-group-item" href="../interface/cos_t.html">cos_t</a>
       
@@ -251,13 +257,7 @@
       
       <a class="list-group-item" href="../proc/dedup.html">deDup</a>
       
-      <a class="list-group-item" href="../interface/der.html">der</a>
-      
       <a class="list-group-item" href="../interface/dft.html">DFT</a>
-      
-      <a class="list-group-item" href="../interface/diff1.html">diff1</a>
-      
-      <a class="list-group-item" href="../interface/diff3.html">diff3</a>
       
       <a class="list-group-item" href="../interface/div_t.html">div_t</a>
       
@@ -405,8 +405,6 @@
       
       <a class="list-group-item" href="../interface/gaussseidel_t.html">gaussSeidel_t</a>
       
-      <a class="list-group-item" href="../proc/get_adn.html">get_adN</a>
-      
       <a class="list-group-item" href="../proc/hist.html">hist</a>
       
       <a class="list-group-item" href="../interface/idft.html">iDFT</a>
@@ -440,6 +438,8 @@
       <a class="list-group-item" href="../interface/log%7E2.html">log</a>
       
       <a class="list-group-item" href="../interface/log10.html">log10</a>
+      
+      <a class="list-group-item" href="../interface/log10%7E2.html">log10</a>
       
       <a class="list-group-item" href="../interface/log10_t.html">log10_t</a>
       
@@ -519,9 +519,13 @@
       
       <a class="list-group-item" href="../proc/newvar.html">newVar</a>
       
+      <a class="list-group-item" href="../interface/nint.html">nint</a>
+      
       <a class="list-group-item" href="../interface/nodestack_t.html">nodeStack_t</a>
       
       <a class="list-group-item" href="../interface/norm2.html">norm2</a>
+      
+      <a class="list-group-item" href="../interface/norm2%7E2.html">norm2</a>
       
       <a class="list-group-item" href="../interface/operator%28%2A%29.html">operator(*)</a>
       
@@ -557,6 +561,10 @@
       
       <a class="list-group-item" href="../interface/operator%28SLASH%29%7E2.html">operator(/)</a>
       
+      <a class="list-group-item" href="../interface/operator%28%3C%29.html">operator(<)</a>
+      
+      <a class="list-group-item" href="../interface/operator%28%3E%29.html">operator(>)</a>
+      
       <a class="list-group-item" href="../proc/plot.html">plot</a>
       
       <a class="list-group-item" href="../proc/plot3.html">plot3</a>
@@ -581,8 +589,6 @@
       
       <a class="list-group-item" href="../interface/readstep.html">readStep</a>
       
-      <a class="list-group-item" href="../interface/real.html">real</a>
-      
       <a class="list-group-item" href="../interface/real_t.html">real_t</a>
       
       <a class="list-group-item" href="../proc/realtochar.html">realToChar</a>
@@ -595,8 +601,6 @@
       
       <a class="list-group-item" href="../proc/scatter.html">scatter</a>
       
-      <a class="list-group-item" href="../proc/set_adn.html">set_adN</a>
-      
       <a class="list-group-item" href="../proc/setrandomseed.html">setRandomSeed</a>
       
       <a class="list-group-item" href="../proc/setup.html">setup</a>
@@ -605,11 +609,13 @@
       
       <a class="list-group-item" href="../proc/showprogress.html">showProgress</a>
       
-      <a class="list-group-item" href="../interface/sin.html">sin</a>
+      <a class="list-group-item" href="../proc/sin_a.html">sin_a</a>
       
       <a class="list-group-item" href="../interface/sin_t.html">sin_t</a>
       
       <a class="list-group-item" href="../interface/solvelu.html">solveLU</a>
+      
+      <a class="list-group-item" href="../interface/solvelu%7E2.html">solveLU</a>
       
       <a class="list-group-item" href="../proc/solverprogress.html">solverProgress</a>
       
@@ -645,9 +651,13 @@
       
       <a class="list-group-item" href="../proc/symmetricsuccessiveoverrelaxation.html">symmetricSuccessiveOverRelaxation</a>
       
+      <a class="list-group-item" href="../proc/tan_a.html">tan_a</a>
+      
       <a class="list-group-item" href="../interface/tan_t.html">tan_t</a>
       
       <a class="list-group-item" href="../interface/tdma.html">TDMA</a>
+      
+      <a class="list-group-item" href="../interface/tdma%7E2.html">TDMA</a>
       
       <a class="list-group-item" href="../proc/testbasic.html">testBasic</a>
       
@@ -811,126 +821,11 @@
     </div>
     
     <div class="col-md-9" id='text'>
-      <h2>public interface diff1</h2>
+      <h2>public interface TDMA</h2>
 	 
      
      
-     <h3>Called By</h3>
-     
-                <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
- "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- Generated by graphviz version 2.38.0 (20140413.2041)
- -->
-<!-- Title: interface~~diff1~~CalledByGraph Pages: 1 -->
-<svg id="interfacediff1CalledByGraph" width="277pt" height="32pt"
- viewBox="0.00 0.00 277.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="interface~~diff1~~CalledByGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
-<title>interface~~diff1~~CalledByGraph</title>
-<polygon fill="white" stroke="none" points="-4,4 -4,-28 273,-28 273,4 -4,4"/>
-<!-- interface~diff1 -->
-<g id="interface~~diff1~~CalledByGraph_node1" class="node"><title>interface~diff1</title>
-<polygon fill="none" stroke="black" points="269,-24 215,-24 215,-0 269,-0 269,-24"/>
-<text text-anchor="middle" x="242" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">diff1</text>
-</g>
-<!-- proc~testdiff -->
-<g id="interface~~diff1~~CalledByGraph_node2" class="node"><title>proc~testdiff</title>
-<g id="a_interface~~diff1~~CalledByGraph_node2"><a xlink:href="../proc/testdiff.html" xlink:title="testDiff">
-<polygon fill="#d9534f" stroke="#d9534f" points="179,-24 125,-24 125,-0 179,-0 179,-24"/>
-<text text-anchor="middle" x="152" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">testDiff</text>
-</a>
-</g>
-</g>
-<!-- proc~testdiff&#45;&gt;interface~diff1 -->
-<g id="interface~~diff1~~CalledByGraph_edge2" class="edge"><title>proc~testdiff&#45;&gt;interface~diff1</title>
-<path fill="none" stroke="#000000" d="M179.403,-12C187.393,-12 196.311,-12 204.824,-12"/>
-<polygon fill="#000000" stroke="#000000" points="204.919,-15.5001 214.919,-12 204.919,-8.5001 204.919,-15.5001"/>
-</g>
-<!-- program~testautodiff_prg -->
-<g id="interface~~diff1~~CalledByGraph_node3" class="node"><title>program~testautodiff_prg</title>
-<g id="a_interface~~diff1~~CalledByGraph_node3"><a xlink:href="../program/testautodiff_prg.html" xlink:title="testAutoDiff_prg">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="89,-24 7.10543e-15,-24 7.10543e-15,-0 89,-0 89,-24"/>
-<text text-anchor="middle" x="44.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">testAutoDiff_prg</text>
-</a>
-</g>
-</g>
-<!-- program~testautodiff_prg&#45;&gt;proc~testdiff -->
-<g id="interface~~diff1~~CalledByGraph_edge1" class="edge"><title>program~testautodiff_prg&#45;&gt;proc~testdiff</title>
-<path fill="none" stroke="#000000" d="M89.02,-12C97.5606,-12 106.434,-12 114.708,-12"/>
-<polygon fill="#000000" stroke="#000000" points="114.796,-15.5001 124.796,-12 114.796,-8.5001 114.796,-15.5001"/>
-</g>
-</g>
-</svg>
-</div>
-                <div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div>
-                <div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog">
-                  <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
-                      </div>
-                      <div class="modal-body">
-                        
-<p>Nodes of different colours represent the following: </p>
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
- "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- Generated by graphviz version 2.38.0 (20140413.2041)
- -->
-<!-- Title: Graph Key Pages: 1 -->
-<svg width="560pt" height="32pt"
- viewBox="0.00 0.00 559.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
-<title>Graph Key</title>
-<polygon fill="white" stroke="none" points="-4,4 -4,-28 555.5,-28 555.5,4 -4,4"/>
-<!-- Subroutine -->
-<g id="node1" class="node"><title>Subroutine</title>
-<polygon fill="#d9534f" stroke="#d9534f" points="64,-24 0,-24 0,-0 64,-0 64,-24"/>
-<text text-anchor="middle" x="32" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
-</g>
-<!-- Function -->
-<g id="node2" class="node"><title>Function</title>
-<polygon fill="#d94e8f" stroke="#d94e8f" points="136,-24 82,-24 82,-0 136,-0 136,-24"/>
-<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
-</g>
-<!-- Interface -->
-<g id="node3" class="node"><title>Interface</title>
-<polygon fill="#a7506f" stroke="#a7506f" points="209.5,-24 154.5,-24 154.5,-0 209.5,-0 209.5,-24"/>
-<text text-anchor="middle" x="182" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
-</g>
-<!-- Unknown Procedure Type -->
-<g id="node4" class="node"><title>Unknown Procedure Type</title>
-<polygon fill="#777777" stroke="#777777" points="364,-24 228,-24 228,-0 364,-0 364,-24"/>
-<text text-anchor="middle" x="296" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
-</g>
-<!-- Program -->
-<g id="node5" class="node"><title>Program</title>
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="436,-24 382,-24 382,-0 436,-0 436,-24"/>
-<text text-anchor="middle" x="409" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
-</g>
-<!-- This Page&#39;s Entity -->
-<g id="node6" class="node"><title>This Page&#39;s Entity</title>
-<polygon fill="none" stroke="black" points="551.5,-24 454.5,-24 454.5,-0 551.5,-0 551.5,-24"/>
-<text text-anchor="middle" x="503" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
-</g>
-</g>
-</svg>
-
-
-<p>Solid arrows point from a procedure to one which it calls. Dashed 
-arrows point from an interface to procedures which implement that interface.
-This could include the module procedures in a generic interface or the
-implementation in a submodule of an interface in a parent module.
-</p>
-
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-     
-    <br>
+    
 
      <section class="visible-xs visible-sm hidden-md">
        
@@ -958,7 +853,9 @@ implementation in a submodule of an interface in a parent module.
   <div id="modprocs-1" class="panel-collapse collapse">
     <div class="list-group">
       
-      <a class="list-group-item" href="../interface/diff1.html#moduleprocedure-diff_1s">diff_1s</a>
+      <a class="list-group-item" href="../interface/tdma%7E2.html#moduleprocedure-tdma_sa">TDMA_sA</a>
+      
+      <a class="list-group-item" href="../interface/tdma%7E2.html#moduleprocedure-tdma_ma">TDMA_mA</a>
       
     </div>
   </div>
@@ -978,8 +875,8 @@ implementation in a submodule of an interface in a parent module.
 	 
     
   <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-diff_1s"></span><h3>
-private pure function diff_1s(v, di) result(o)
+  <div class="panel-heading codesum"><span class="anchor" id="proc-tdma_sa"></span><h3>
+private function TDMA_sA(A, b) result(x)
     
     
 	 
@@ -987,6 +884,11 @@ private pure function diff_1s(v, di) result(o)
   <div class="panel-body">
        
     
+
+
+
+<p>Solve a tridiagonal linear algebra problem \( [A]\{x\}=\{b\} \)
+ </p>
     
     <h4>Arguments</h4>
     
@@ -1007,12 +909,12 @@ private pure function diff_1s(v, di) result(o)
   
 <tr>
   
-  <td><span class="anchor" ></span>real(kind=wp),</td>
-  <td>intent(in)</td>
+  <td><span class="anchor" ></span>type(<a href='../type/ad_t.html'>ad_t</a>),</td>
+  <td>intent(in),</td>
   <td></td>
   
-  <td></td><td>::</td>
-  <td><strong>v</strong></td><td></td>
+  <td>dimension(:,:)</td><td>::</td>
+  <td><strong>A</strong></td><td><p>Coefficient matrix with the diagonals in columns \( [A] \)</p></td>
   
 </tr>
 
@@ -1022,12 +924,12 @@ private pure function diff_1s(v, di) result(o)
   
 <tr>
   
-  <td><span class="anchor" ></span>integer,</td>
-  <td>intent(in)</td>
+  <td><span class="anchor" ></span>type(<a href='../type/ad_t.html'>ad_t</a>),</td>
+  <td>intent(in),</td>
   <td></td>
   
-  <td></td><td>::</td>
-  <td><strong>di</strong></td><td></td>
+  <td>dimension(:)</td><td>::</td>
+  <td><strong>b</strong></td><td><p>Right-hand-side of the system \( \{b\} \)</p></td>
   
 </tr>
 
@@ -1042,9 +944,89 @@ private pure function diff_1s(v, di) result(o)
   
   
   
-     <h4>Return Value <small>type(<a href='../type/ad1_t.html'>ad1_t</a>)
-  </small></h4>
+     <h4>Return Value <small>type(<a href='../type/ad_t.html'>ad_t</a>),
+  dimension(:), allocatable</small></h4>
+  <p>Problem solution \( \{x\} \)</p>
+    
+
+  </div>
+  </div>
+
+ 	 
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-tdma_ma"></span><h3>
+private function TDMA_mA(A, b) result(x)
+    
+    
+	 
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+<p>Solve a tridiagonal linear algebra problem \( [A]\{x\}=\{b\} \)
+ </p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
   
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/ad_t.html'>ad_t</a>),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(:,:)</td><td>::</td>
+  <td><strong>A</strong></td><td><p>Coefficient matrix with the diagonals in columns \( [A] \)</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/ad_t.html'>ad_t</a>),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(:,:)</td><td>::</td>
+  <td><strong>b</strong></td><td><p>Right-hand-side of the system \( \{b\} \)</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>type(<a href='../type/ad_t.html'>ad_t</a>),
+  dimension(:,:), allocatable</small></h4>
+  <p>Problem solution \( \{x\} \)</p>
     
 
   </div>
@@ -1065,9 +1047,13 @@ private pure function diff_1s(v, di) result(o)
   <div id="allprocs-1" class="panel-collapse collapse">
     <div class="list-group">
       
+      <a class="list-group-item" href="../interface/abs.html">abs</a>
+      
       <a class="list-group-item" href="../interface/abs_t.html">abs_t</a>
       
       <a class="list-group-item" href="../interface/acos_t.html">acos_t</a>
+      
+      <a class="list-group-item" href="../interface/ad_t.html">ad_t</a>
       
       <a class="list-group-item" href="../interface/add_t.html">add_t</a>
       
@@ -1117,7 +1103,7 @@ private pure function diff_1s(v, di) result(o)
       
       <a class="list-group-item" href="../proc/contourf.html">contourf</a>
       
-      <a class="list-group-item" href="../interface/cos.html">cos</a>
+      <a class="list-group-item" href="../proc/cos_a.html">cos_a</a>
       
       <a class="list-group-item" href="../interface/cos_t.html">cos_t</a>
       
@@ -1127,13 +1113,7 @@ private pure function diff_1s(v, di) result(o)
       
       <a class="list-group-item" href="../proc/dedup.html">deDup</a>
       
-      <a class="list-group-item" href="../interface/der.html">der</a>
-      
       <a class="list-group-item" href="../interface/dft.html">DFT</a>
-      
-      <a class="list-group-item" href="../interface/diff1.html">diff1</a>
-      
-      <a class="list-group-item" href="../interface/diff3.html">diff3</a>
       
       <a class="list-group-item" href="../interface/div_t.html">div_t</a>
       
@@ -1281,8 +1261,6 @@ private pure function diff_1s(v, di) result(o)
       
       <a class="list-group-item" href="../interface/gaussseidel_t.html">gaussSeidel_t</a>
       
-      <a class="list-group-item" href="../proc/get_adn.html">get_adN</a>
-      
       <a class="list-group-item" href="../proc/hist.html">hist</a>
       
       <a class="list-group-item" href="../interface/idft.html">iDFT</a>
@@ -1316,6 +1294,8 @@ private pure function diff_1s(v, di) result(o)
       <a class="list-group-item" href="../interface/log%7E2.html">log</a>
       
       <a class="list-group-item" href="../interface/log10.html">log10</a>
+      
+      <a class="list-group-item" href="../interface/log10%7E2.html">log10</a>
       
       <a class="list-group-item" href="../interface/log10_t.html">log10_t</a>
       
@@ -1395,9 +1375,13 @@ private pure function diff_1s(v, di) result(o)
       
       <a class="list-group-item" href="../proc/newvar.html">newVar</a>
       
+      <a class="list-group-item" href="../interface/nint.html">nint</a>
+      
       <a class="list-group-item" href="../interface/nodestack_t.html">nodeStack_t</a>
       
       <a class="list-group-item" href="../interface/norm2.html">norm2</a>
+      
+      <a class="list-group-item" href="../interface/norm2%7E2.html">norm2</a>
       
       <a class="list-group-item" href="../interface/operator%28%2A%29.html">operator(*)</a>
       
@@ -1433,6 +1417,10 @@ private pure function diff_1s(v, di) result(o)
       
       <a class="list-group-item" href="../interface/operator%28SLASH%29%7E2.html">operator(/)</a>
       
+      <a class="list-group-item" href="../interface/operator%28%3C%29.html">operator(<)</a>
+      
+      <a class="list-group-item" href="../interface/operator%28%3E%29.html">operator(>)</a>
+      
       <a class="list-group-item" href="../proc/plot.html">plot</a>
       
       <a class="list-group-item" href="../proc/plot3.html">plot3</a>
@@ -1457,8 +1445,6 @@ private pure function diff_1s(v, di) result(o)
       
       <a class="list-group-item" href="../interface/readstep.html">readStep</a>
       
-      <a class="list-group-item" href="../interface/real.html">real</a>
-      
       <a class="list-group-item" href="../interface/real_t.html">real_t</a>
       
       <a class="list-group-item" href="../proc/realtochar.html">realToChar</a>
@@ -1471,8 +1457,6 @@ private pure function diff_1s(v, di) result(o)
       
       <a class="list-group-item" href="../proc/scatter.html">scatter</a>
       
-      <a class="list-group-item" href="../proc/set_adn.html">set_adN</a>
-      
       <a class="list-group-item" href="../proc/setrandomseed.html">setRandomSeed</a>
       
       <a class="list-group-item" href="../proc/setup.html">setup</a>
@@ -1481,11 +1465,13 @@ private pure function diff_1s(v, di) result(o)
       
       <a class="list-group-item" href="../proc/showprogress.html">showProgress</a>
       
-      <a class="list-group-item" href="../interface/sin.html">sin</a>
+      <a class="list-group-item" href="../proc/sin_a.html">sin_a</a>
       
       <a class="list-group-item" href="../interface/sin_t.html">sin_t</a>
       
       <a class="list-group-item" href="../interface/solvelu.html">solveLU</a>
+      
+      <a class="list-group-item" href="../interface/solvelu%7E2.html">solveLU</a>
       
       <a class="list-group-item" href="../proc/solverprogress.html">solverProgress</a>
       
@@ -1521,9 +1507,13 @@ private pure function diff_1s(v, di) result(o)
       
       <a class="list-group-item" href="../proc/symmetricsuccessiveoverrelaxation.html">symmetricSuccessiveOverRelaxation</a>
       
+      <a class="list-group-item" href="../proc/tan_a.html">tan_a</a>
+      
       <a class="list-group-item" href="../interface/tan_t.html">tan_t</a>
       
       <a class="list-group-item" href="../interface/tdma.html">TDMA</a>
+      
+      <a class="list-group-item" href="../interface/tdma%7E2.html">TDMA</a>
       
       <a class="list-group-item" href="../proc/testbasic.html">testBasic</a>
       

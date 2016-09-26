@@ -1,5 +1,7 @@
 program testAutoDiff_prg
 	!! Test program for autoDiff_mod
+	!! @todo
+	!! Needs serious improvements
 	use kinds_mod
 	use autoDiff_mod
 	implicit none
@@ -9,9 +11,9 @@ program testAutoDiff_prg
 contains
 
 	subroutine testDiff
-		type(ad1_t)::x
+		type(ad_t)::x
 		
-		x = diff1(1.0_wp,1)
+		x = ad_t(1.0_wp,1,1)
 	end subroutine testDiff
 
 end program testAutoDiff_prg 

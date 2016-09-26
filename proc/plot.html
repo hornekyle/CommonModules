@@ -118,7 +118,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
 	  data-placement="bottom" data-html="true"
-	  title=" 0.9% of total for procedures.">35 statements</a>
+	  title=" 1.0% of total for procedures.">35 statements</a>
      </li> 
      
      
@@ -185,9 +185,13 @@
   <div id="allprocs-0" class="panel-collapse collapse">
     <div class="list-group">
       
+      <a class="list-group-item" href="../interface/abs.html">abs</a>
+      
       <a class="list-group-item" href="../interface/abs_t.html">abs_t</a>
       
       <a class="list-group-item" href="../interface/acos_t.html">acos_t</a>
+      
+      <a class="list-group-item" href="../interface/ad_t.html">ad_t</a>
       
       <a class="list-group-item" href="../interface/add_t.html">add_t</a>
       
@@ -237,7 +241,7 @@
       
       <a class="list-group-item" href="../proc/contourf.html">contourf</a>
       
-      <a class="list-group-item" href="../interface/cos.html">cos</a>
+      <a class="list-group-item" href="../proc/cos_a.html">cos_a</a>
       
       <a class="list-group-item" href="../interface/cos_t.html">cos_t</a>
       
@@ -247,13 +251,7 @@
       
       <a class="list-group-item" href="../proc/dedup.html">deDup</a>
       
-      <a class="list-group-item" href="../interface/der.html">der</a>
-      
       <a class="list-group-item" href="../interface/dft.html">DFT</a>
-      
-      <a class="list-group-item" href="../interface/diff1.html">diff1</a>
-      
-      <a class="list-group-item" href="../interface/diff3.html">diff3</a>
       
       <a class="list-group-item" href="../interface/div_t.html">div_t</a>
       
@@ -401,8 +399,6 @@
       
       <a class="list-group-item" href="../interface/gaussseidel_t.html">gaussSeidel_t</a>
       
-      <a class="list-group-item" href="../proc/get_adn.html">get_adN</a>
-      
       <a class="list-group-item" href="../proc/hist.html">hist</a>
       
       <a class="list-group-item" href="../interface/idft.html">iDFT</a>
@@ -436,6 +432,8 @@
       <a class="list-group-item" href="../interface/log%7E2.html">log</a>
       
       <a class="list-group-item" href="../interface/log10.html">log10</a>
+      
+      <a class="list-group-item" href="../interface/log10%7E2.html">log10</a>
       
       <a class="list-group-item" href="../interface/log10_t.html">log10_t</a>
       
@@ -515,9 +513,13 @@
       
       <a class="list-group-item" href="../proc/newvar.html">newVar</a>
       
+      <a class="list-group-item" href="../interface/nint.html">nint</a>
+      
       <a class="list-group-item" href="../interface/nodestack_t.html">nodeStack_t</a>
       
       <a class="list-group-item" href="../interface/norm2.html">norm2</a>
+      
+      <a class="list-group-item" href="../interface/norm2%7E2.html">norm2</a>
       
       <a class="list-group-item" href="../interface/operator%28%2A%29.html">operator(*)</a>
       
@@ -553,6 +555,10 @@
       
       <a class="list-group-item" href="../interface/operator%28SLASH%29%7E2.html">operator(/)</a>
       
+      <a class="list-group-item" href="../interface/operator%28%3C%29.html">operator(<)</a>
+      
+      <a class="list-group-item" href="../interface/operator%28%3E%29.html">operator(>)</a>
+      
       <a class="list-group-item" href="../proc/plot.html">plot</a>
       
       <a class="list-group-item" href="../proc/plot3.html">plot3</a>
@@ -577,8 +583,6 @@
       
       <a class="list-group-item" href="../interface/readstep.html">readStep</a>
       
-      <a class="list-group-item" href="../interface/real.html">real</a>
-      
       <a class="list-group-item" href="../interface/real_t.html">real_t</a>
       
       <a class="list-group-item" href="../proc/realtochar.html">realToChar</a>
@@ -591,8 +595,6 @@
       
       <a class="list-group-item" href="../proc/scatter.html">scatter</a>
       
-      <a class="list-group-item" href="../proc/set_adn.html">set_adN</a>
-      
       <a class="list-group-item" href="../proc/setrandomseed.html">setRandomSeed</a>
       
       <a class="list-group-item" href="../proc/setup.html">setup</a>
@@ -601,11 +603,13 @@
       
       <a class="list-group-item" href="../proc/showprogress.html">showProgress</a>
       
-      <a class="list-group-item" href="../interface/sin.html">sin</a>
+      <a class="list-group-item" href="../proc/sin_a.html">sin_a</a>
       
       <a class="list-group-item" href="../interface/sin_t.html">sin_t</a>
       
       <a class="list-group-item" href="../interface/solvelu.html">solveLU</a>
+      
+      <a class="list-group-item" href="../interface/solvelu%7E2.html">solveLU</a>
       
       <a class="list-group-item" href="../proc/solverprogress.html">solverProgress</a>
       
@@ -641,9 +645,13 @@
       
       <a class="list-group-item" href="../proc/symmetricsuccessiveoverrelaxation.html">symmetricSuccessiveOverRelaxation</a>
       
+      <a class="list-group-item" href="../proc/tan_a.html">tan_a</a>
+      
       <a class="list-group-item" href="../interface/tan_t.html">tan_t</a>
       
       <a class="list-group-item" href="../interface/tdma.html">TDMA</a>
+      
+      <a class="list-group-item" href="../interface/tdma%7E2.html">TDMA</a>
       
       <a class="list-group-item" href="../proc/testbasic.html">testBasic</a>
       
@@ -839,7 +847,7 @@ public subroutine plot(x, y, lineColor, lineStyle, lineWidth, markColor, markSty
   
 <tr>
   
-  <td><span class="anchor" id="variable-x%7E23"></span>real(kind=wp),</td>
+  <td><span class="anchor" id="variable-x%7E21"></span>real(kind=wp),</td>
   <td>intent(in),</td>
   <td></td>
   
@@ -854,7 +862,7 @@ public subroutine plot(x, y, lineColor, lineStyle, lineWidth, markColor, markSty
   
 <tr>
   
-  <td><span class="anchor" id="variable-y%7E7"></span>real(kind=wp),</td>
+  <td><span class="anchor" id="variable-y%7E5"></span>real(kind=wp),</td>
   <td>intent(in),</td>
   <td></td>
   
@@ -977,23 +985,23 @@ public subroutine plot(x, y, lineColor, lineStyle, lineWidth, markColor, markSty
 <polygon fill="none" stroke="black" points="54,-66 0,-66 0,-42 54,-42 54,-66"/>
 <text text-anchor="middle" x="27" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50">plot</text>
 </g>
-<!-- plptex -->
-<g id="proc~~plot~~CallsGraph_node2" class="node"><title>plptex</title>
+<!-- plline -->
+<g id="proc~~plot~~CallsGraph_node2" class="node"><title>plline</title>
 <polygon fill="#777777" stroke="#777777" points="144,-108 90,-108 90,-84 144,-84 144,-108"/>
-<text text-anchor="middle" x="117" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">plptex</text>
+<text text-anchor="middle" x="117" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">plline</text>
 </g>
-<!-- proc~plot&#45;&gt;plptex -->
-<g id="proc~~plot~~CallsGraph_edge1" class="edge"><title>proc~plot&#45;&gt;plptex</title>
+<!-- proc~plot&#45;&gt;plline -->
+<g id="proc~~plot~~CallsGraph_edge1" class="edge"><title>proc~plot&#45;&gt;plline</title>
 <path fill="none" stroke="#000000" d="M53.4532,-66.1481C62.2096,-70.3273 72.1654,-75.0789 81.5185,-79.5429"/>
 <polygon fill="#000000" stroke="#000000" points="80.0716,-82.7305 90.604,-83.8792 83.0867,-76.4131 80.0716,-82.7305"/>
 </g>
-<!-- plline -->
-<g id="proc~~plot~~CallsGraph_node3" class="node"><title>plline</title>
+<!-- plptex -->
+<g id="proc~~plot~~CallsGraph_node3" class="node"><title>plptex</title>
 <polygon fill="#777777" stroke="#777777" points="144,-66 90,-66 90,-42 144,-42 144,-66"/>
-<text text-anchor="middle" x="117" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">plline</text>
+<text text-anchor="middle" x="117" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">plptex</text>
 </g>
-<!-- proc~plot&#45;&gt;plline -->
-<g id="proc~~plot~~CallsGraph_edge2" class="edge"><title>proc~plot&#45;&gt;plline</title>
+<!-- proc~plot&#45;&gt;plptex -->
+<g id="proc~~plot~~CallsGraph_edge2" class="edge"><title>proc~plot&#45;&gt;plptex</title>
 <path fill="none" stroke="#000000" d="M54.4029,-54C62.3932,-54 71.3106,-54 79.8241,-54"/>
 <polygon fill="#000000" stroke="#000000" points="79.919,-57.5001 89.919,-54 79.919,-50.5001 79.919,-57.5001"/>
 </g>
@@ -1097,160 +1105,160 @@ implementation in a submodule of an interface in a parent module.
 <polygon fill="none" stroke="black" points="410,-255 356,-255 356,-231 410,-231 410,-255"/>
 <text text-anchor="middle" x="383" y="-240.6" font-family="Helvetica,sans-Serif" font-size="10.50">plot</text>
 </g>
-<!-- proc~dofillbetween -->
-<g id="proc~~plot~~CalledByGraph_node2" class="node"><title>proc~dofillbetween</title>
-<g id="a_proc~~plot~~CalledByGraph_node2"><a xlink:href="../proc/dofillbetween.html" xlink:title="doFillBetween">
-<polygon fill="#d9534f" stroke="#d9534f" points="314,-486 235,-486 235,-462 314,-462 314,-486"/>
-<text text-anchor="middle" x="274.5" y="-471.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">doFillBetween</text>
-</a>
-</g>
-</g>
-<!-- proc~dofillbetween&#45;&gt;proc~plot -->
-<g id="proc~~plot~~CalledByGraph_edge12" class="edge"><title>proc~dofillbetween&#45;&gt;proc~plot</title>
-<path fill="none" stroke="#000000" d="M309.289,-461.952C313.283,-459.462 316.998,-456.503 320,-453 367.581,-397.472 378.663,-306.821 381.232,-265.184"/>
-<polygon fill="#000000" stroke="#000000" points="384.735,-265.197 381.745,-255.033 377.744,-264.843 384.735,-265.197"/>
-</g>
-<!-- proc~makelogo -->
-<g id="proc~~plot~~CalledByGraph_node3" class="node"><title>proc~makelogo</title>
-<g id="a_proc~~plot~~CalledByGraph_node3"><a xlink:href="../proc/makelogo.html" xlink:title="makeLogo">
-<polygon fill="#d9534f" stroke="#d9534f" points="306,-276 243,-276 243,-252 306,-252 306,-276"/>
-<text text-anchor="middle" x="274.5" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">makeLogo</text>
-</a>
-</g>
-</g>
-<!-- proc~makelogo&#45;&gt;proc~plot -->
-<g id="proc~~plot~~CalledByGraph_edge13" class="edge"><title>proc~makelogo&#45;&gt;proc~plot</title>
-<path fill="none" stroke="#000000" d="M306.019,-257.982C318.435,-255.534 332.881,-252.686 345.822,-250.134"/>
-<polygon fill="#000000" stroke="#000000" points="346.677,-253.533 355.811,-248.164 345.323,-246.665 346.677,-253.533"/>
-</g>
-<!-- proc~testsplinex -->
-<g id="proc~~plot~~CalledByGraph_node4" class="node"><title>proc~testsplinex</title>
-<g id="a_proc~~plot~~CalledByGraph_node4"><a xlink:href="../proc/testsplinex.html" xlink:title="testSplineX">
-<polygon fill="#d9534f" stroke="#d9534f" points="307.5,-234 241.5,-234 241.5,-210 307.5,-210 307.5,-234"/>
-<text text-anchor="middle" x="274.5" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">testSplineX</text>
-</a>
-</g>
-</g>
-<!-- proc~testsplinex&#45;&gt;proc~plot -->
-<g id="proc~~plot~~CalledByGraph_edge14" class="edge"><title>proc~testsplinex&#45;&gt;proc~plot</title>
-<path fill="none" stroke="#000000" d="M307.743,-228.358C319.796,-230.734 333.559,-233.448 345.935,-235.889"/>
-<polygon fill="#000000" stroke="#000000" points="345.448,-239.36 355.937,-237.861 346.803,-232.492 345.448,-239.36"/>
-</g>
-<!-- program~animate_prg -->
-<g id="proc~~plot~~CalledByGraph_node5" class="node"><title>program~animate_prg</title>
-<g id="a_proc~~plot~~CalledByGraph_node5"><a xlink:href="../program/animate_prg.html" xlink:title="animate_prg">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="311,-192 238,-192 238,-168 311,-168 311,-192"/>
-<text text-anchor="middle" x="274.5" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">animate_prg</text>
-</a>
-</g>
-</g>
-<!-- program~animate_prg&#45;&gt;proc~plot -->
-<g id="proc~~plot~~CalledByGraph_edge15" class="edge"><title>program~animate_prg&#45;&gt;proc~plot</title>
-<path fill="none" stroke="#000000" d="M302.668,-192.003C308.473,-194.793 314.508,-197.869 320,-201 332.655,-208.215 346.109,-217.16 357.239,-224.939"/>
-<polygon fill="#000000" stroke="#000000" points="355.425,-227.943 365.607,-230.871 359.474,-222.232 355.425,-227.943"/>
-</g>
-<!-- proc~testsolvers -->
-<g id="proc~~plot~~CalledByGraph_node6" class="node"><title>proc~testsolvers</title>
-<g id="a_proc~~plot~~CalledByGraph_node6"><a xlink:href="../proc/testsolvers.html" xlink:title="testSolvers">
-<polygon fill="#d9534f" stroke="#d9534f" points="307,-150 242,-150 242,-126 307,-126 307,-150"/>
-<text text-anchor="middle" x="274.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">testSolvers</text>
-</a>
-</g>
-</g>
-<!-- proc~testsolvers&#45;&gt;proc~plot -->
-<g id="proc~~plot~~CalledByGraph_edge16" class="edge"><title>proc~testsolvers&#45;&gt;proc~plot</title>
-<path fill="none" stroke="#000000" d="M306.384,-150.107C311.188,-152.671 315.908,-155.637 320,-159 341.583,-176.739 359.652,-203.567 370.614,-222.11"/>
-<polygon fill="#000000" stroke="#000000" points="367.674,-224.019 375.68,-230.959 373.749,-220.541 367.674,-224.019"/>
-</g>
-<!-- proc~dolegend -->
-<g id="proc~~plot~~CalledByGraph_node7" class="node"><title>proc~dolegend</title>
-<g id="a_proc~~plot~~CalledByGraph_node7"><a xlink:href="../proc/dolegend.html" xlink:title="doLegend">
-<polygon fill="#d9534f" stroke="#d9534f" points="305,-444 244,-444 244,-420 305,-420 305,-444"/>
-<text text-anchor="middle" x="274.5" y="-429.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">doLegend</text>
-</a>
-</g>
-</g>
-<!-- proc~dolegend&#45;&gt;proc~plot -->
-<g id="proc~~plot~~CalledByGraph_edge17" class="edge"><title>proc~dolegend&#45;&gt;proc~plot</title>
-<path fill="none" stroke="#000000" d="M305.44,-421.834C310.803,-418.977 315.96,-415.409 320,-411 358.661,-368.804 373.78,-300.428 379.223,-265.338"/>
-<polygon fill="#000000" stroke="#000000" points="382.723,-265.584 380.668,-255.191 375.793,-264.597 382.723,-265.584"/>
-</g>
-<!-- program~basic_prg -->
-<g id="proc~~plot~~CalledByGraph_node8" class="node"><title>program~basic_prg</title>
-<g id="a_proc~~plot~~CalledByGraph_node8"><a xlink:href="../program/basic_prg.html" xlink:title="basic_prg">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="304,-66 245,-66 245,-42 304,-42 304,-66"/>
-<text text-anchor="middle" x="274.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">basic_prg</text>
-</a>
-</g>
-</g>
-<!-- program~basic_prg&#45;&gt;proc~plot -->
-<g id="proc~~plot~~CalledByGraph_edge18" class="edge"><title>program~basic_prg&#45;&gt;proc~plot</title>
-<path fill="none" stroke="#000000" d="M304.058,-63.4466C309.91,-66.4174 315.614,-70.213 320,-75 358.661,-117.196 373.78,-185.572 379.223,-220.662"/>
-<polygon fill="#000000" stroke="#000000" points="375.793,-221.403 380.668,-230.809 382.723,-220.416 375.793,-221.403"/>
-</g>
 <!-- proc~doerror -->
-<g id="proc~~plot~~CalledByGraph_node9" class="node"><title>proc~doerror</title>
-<g id="a_proc~~plot~~CalledByGraph_node9"><a xlink:href="../proc/doerror.html" xlink:title="doError">
-<polygon fill="#d9534f" stroke="#d9534f" points="301.5,-402 247.5,-402 247.5,-378 301.5,-378 301.5,-402"/>
-<text text-anchor="middle" x="274.5" y="-387.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">doError</text>
+<g id="proc~~plot~~CalledByGraph_node2" class="node"><title>proc~doerror</title>
+<g id="a_proc~~plot~~CalledByGraph_node2"><a xlink:href="../proc/doerror.html" xlink:title="doError">
+<polygon fill="#d9534f" stroke="#d9534f" points="301.5,-486 247.5,-486 247.5,-462 301.5,-462 301.5,-486"/>
+<text text-anchor="middle" x="274.5" y="-471.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">doError</text>
 </a>
 </g>
 </g>
 <!-- proc~doerror&#45;&gt;proc~plot -->
-<g id="proc~~plot~~CalledByGraph_edge19" class="edge"><title>proc~doerror&#45;&gt;proc~plot</title>
-<path fill="none" stroke="#000000" d="M301.843,-381.114C308.335,-378.023 314.885,-374.032 320,-369 349.919,-339.567 367.636,-292.742 376.032,-265.225"/>
-<polygon fill="#000000" stroke="#000000" points="379.465,-265.953 378.89,-255.374 372.742,-264.003 379.465,-265.953"/>
+<g id="proc~~plot~~CalledByGraph_edge12" class="edge"><title>proc~doerror&#45;&gt;proc~plot</title>
+<path fill="none" stroke="#000000" d="M301.52,-466.114C308.322,-462.974 315.108,-458.709 320,-453 367.581,-397.472 378.663,-306.821 381.232,-265.184"/>
+<polygon fill="#000000" stroke="#000000" points="384.735,-265.197 381.745,-255.033 377.744,-264.843 384.735,-265.197"/>
 </g>
 <!-- proc~testbasicsolvers -->
-<g id="proc~~plot~~CalledByGraph_node10" class="node"><title>proc~testbasicsolvers</title>
-<g id="a_proc~~plot~~CalledByGraph_node10"><a xlink:href="../proc/testbasicsolvers.html" xlink:title="testBasicSolvers">
-<polygon fill="#d9534f" stroke="#d9534f" points="320,-108 229,-108 229,-84 320,-84 320,-108"/>
-<text text-anchor="middle" x="274.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">testBasicSolvers</text>
+<g id="proc~~plot~~CalledByGraph_node3" class="node"><title>proc~testbasicsolvers</title>
+<g id="a_proc~~plot~~CalledByGraph_node3"><a xlink:href="../proc/testbasicsolvers.html" xlink:title="testBasicSolvers">
+<polygon fill="#d9534f" stroke="#d9534f" points="320,-276 229,-276 229,-252 320,-252 320,-276"/>
+<text text-anchor="middle" x="274.5" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">testBasicSolvers</text>
 </a>
 </g>
 </g>
 <!-- proc~testbasicsolvers&#45;&gt;proc~plot -->
-<g id="proc~~plot~~CalledByGraph_edge20" class="edge"><title>proc~testbasicsolvers&#45;&gt;proc~plot</title>
-<path fill="none" stroke="#000000" d="M307.844,-108.019C312.252,-110.547 316.468,-113.525 320,-117 349.919,-146.433 367.636,-193.258 376.032,-220.775"/>
-<polygon fill="#000000" stroke="#000000" points="372.742,-221.997 378.89,-230.626 379.465,-220.047 372.742,-221.997"/>
+<g id="proc~~plot~~CalledByGraph_edge13" class="edge"><title>proc~testbasicsolvers&#45;&gt;proc~plot</title>
+<path fill="none" stroke="#000000" d="M320.049,-255.216C328.625,-253.525 337.511,-251.772 345.784,-250.141"/>
+<polygon fill="#000000" stroke="#000000" points="346.732,-253.522 355.866,-248.153 345.378,-246.654 346.732,-253.522"/>
 </g>
 <!-- proc~dologplot -->
-<g id="proc~~plot~~CalledByGraph_node11" class="node"><title>proc~dologplot</title>
-<g id="a_proc~~plot~~CalledByGraph_node11"><a xlink:href="../proc/dologplot.html" xlink:title="doLogPlot">
-<polygon fill="#d9534f" stroke="#d9534f" points="305,-360 244,-360 244,-336 305,-336 305,-360"/>
-<text text-anchor="middle" x="274.5" y="-345.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">doLogPlot</text>
+<g id="proc~~plot~~CalledByGraph_node4" class="node"><title>proc~dologplot</title>
+<g id="a_proc~~plot~~CalledByGraph_node4"><a xlink:href="../proc/dologplot.html" xlink:title="doLogPlot">
+<polygon fill="#d9534f" stroke="#d9534f" points="305,-444 244,-444 244,-420 305,-420 305,-444"/>
+<text text-anchor="middle" x="274.5" y="-429.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">doLogPlot</text>
 </a>
 </g>
 </g>
 <!-- proc~dologplot&#45;&gt;proc~plot -->
-<g id="proc~~plot~~CalledByGraph_edge21" class="edge"><title>proc~dologplot&#45;&gt;proc~plot</title>
+<g id="proc~~plot~~CalledByGraph_edge14" class="edge"><title>proc~dologplot&#45;&gt;proc~plot</title>
+<path fill="none" stroke="#000000" d="M305.44,-421.834C310.803,-418.977 315.96,-415.409 320,-411 358.661,-368.804 373.78,-300.428 379.223,-265.338"/>
+<polygon fill="#000000" stroke="#000000" points="382.723,-265.584 380.668,-255.191 375.793,-264.597 382.723,-265.584"/>
+</g>
+<!-- program~basic_prg -->
+<g id="proc~~plot~~CalledByGraph_node5" class="node"><title>program~basic_prg</title>
+<g id="a_proc~~plot~~CalledByGraph_node5"><a xlink:href="../program/basic_prg.html" xlink:title="basic_prg">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="304,-192 245,-192 245,-168 304,-168 304,-192"/>
+<text text-anchor="middle" x="274.5" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">basic_prg</text>
+</a>
+</g>
+</g>
+<!-- program~basic_prg&#45;&gt;proc~plot -->
+<g id="proc~~plot~~CalledByGraph_edge15" class="edge"><title>program~basic_prg&#45;&gt;proc~plot</title>
+<path fill="none" stroke="#000000" d="M302.668,-192.003C308.473,-194.793 314.508,-197.869 320,-201 332.655,-208.215 346.109,-217.16 357.239,-224.939"/>
+<polygon fill="#000000" stroke="#000000" points="355.425,-227.943 365.607,-230.871 359.474,-222.232 355.425,-227.943"/>
+</g>
+<!-- proc~makelogo -->
+<g id="proc~~plot~~CalledByGraph_node6" class="node"><title>proc~makelogo</title>
+<g id="a_proc~~plot~~CalledByGraph_node6"><a xlink:href="../proc/makelogo.html" xlink:title="makeLogo">
+<polygon fill="#d9534f" stroke="#d9534f" points="306,-150 243,-150 243,-126 306,-126 306,-150"/>
+<text text-anchor="middle" x="274.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">makeLogo</text>
+</a>
+</g>
+</g>
+<!-- proc~makelogo&#45;&gt;proc~plot -->
+<g id="proc~~plot~~CalledByGraph_edge16" class="edge"><title>proc~makelogo&#45;&gt;proc~plot</title>
+<path fill="none" stroke="#000000" d="M306.384,-150.107C311.188,-152.671 315.908,-155.637 320,-159 341.583,-176.739 359.652,-203.567 370.614,-222.11"/>
+<polygon fill="#000000" stroke="#000000" points="367.674,-224.019 375.68,-230.959 373.749,-220.541 367.674,-224.019"/>
+</g>
+<!-- proc~dofillbetween -->
+<g id="proc~~plot~~CalledByGraph_node7" class="node"><title>proc~dofillbetween</title>
+<g id="a_proc~~plot~~CalledByGraph_node7"><a xlink:href="../proc/dofillbetween.html" xlink:title="doFillBetween">
+<polygon fill="#d9534f" stroke="#d9534f" points="314,-402 235,-402 235,-378 314,-378 314,-402"/>
+<text text-anchor="middle" x="274.5" y="-387.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">doFillBetween</text>
+</a>
+</g>
+</g>
+<!-- proc~dofillbetween&#45;&gt;proc~plot -->
+<g id="proc~~plot~~CalledByGraph_edge17" class="edge"><title>proc~dofillbetween&#45;&gt;proc~plot</title>
+<path fill="none" stroke="#000000" d="M307.844,-377.981C312.252,-375.453 316.468,-372.475 320,-369 349.919,-339.567 367.636,-292.742 376.032,-265.225"/>
+<polygon fill="#000000" stroke="#000000" points="379.465,-265.953 378.89,-255.374 372.742,-264.003 379.465,-265.953"/>
+</g>
+<!-- proc~dolegend -->
+<g id="proc~~plot~~CalledByGraph_node8" class="node"><title>proc~dolegend</title>
+<g id="a_proc~~plot~~CalledByGraph_node8"><a xlink:href="../proc/dolegend.html" xlink:title="doLegend">
+<polygon fill="#d9534f" stroke="#d9534f" points="305,-360 244,-360 244,-336 305,-336 305,-360"/>
+<text text-anchor="middle" x="274.5" y="-345.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">doLegend</text>
+</a>
+</g>
+</g>
+<!-- proc~dolegend&#45;&gt;proc~plot -->
+<g id="proc~~plot~~CalledByGraph_edge18" class="edge"><title>proc~dolegend&#45;&gt;proc~plot</title>
 <path fill="none" stroke="#000000" d="M305.454,-336.384C310.577,-333.71 315.644,-330.58 320,-327 341.583,-309.261 359.652,-282.433 370.614,-263.89"/>
 <polygon fill="#000000" stroke="#000000" points="373.749,-265.459 375.68,-255.041 367.674,-261.981 373.749,-265.459"/>
 </g>
+<!-- proc~testsplinex -->
+<g id="proc~~plot~~CalledByGraph_node9" class="node"><title>proc~testsplinex</title>
+<g id="a_proc~~plot~~CalledByGraph_node9"><a xlink:href="../proc/testsplinex.html" xlink:title="testSplineX">
+<polygon fill="#d9534f" stroke="#d9534f" points="307.5,-108 241.5,-108 241.5,-84 307.5,-84 307.5,-108"/>
+<text text-anchor="middle" x="274.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">testSplineX</text>
+</a>
+</g>
+</g>
+<!-- proc~testsplinex&#45;&gt;proc~plot -->
+<g id="proc~~plot~~CalledByGraph_edge19" class="edge"><title>proc~testsplinex&#45;&gt;proc~plot</title>
+<path fill="none" stroke="#000000" d="M307.844,-108.019C312.252,-110.547 316.468,-113.525 320,-117 349.919,-146.433 367.636,-193.258 376.032,-220.775"/>
+<polygon fill="#000000" stroke="#000000" points="372.742,-221.997 378.89,-230.626 379.465,-220.047 372.742,-221.997"/>
+</g>
+<!-- proc~testsolvers -->
+<g id="proc~~plot~~CalledByGraph_node10" class="node"><title>proc~testsolvers</title>
+<g id="a_proc~~plot~~CalledByGraph_node10"><a xlink:href="../proc/testsolvers.html" xlink:title="testSolvers">
+<polygon fill="#d9534f" stroke="#d9534f" points="307,-234 242,-234 242,-210 307,-210 307,-234"/>
+<text text-anchor="middle" x="274.5" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">testSolvers</text>
+</a>
+</g>
+</g>
+<!-- proc~testsolvers&#45;&gt;proc~plot -->
+<g id="proc~~plot~~CalledByGraph_edge20" class="edge"><title>proc~testsolvers&#45;&gt;proc~plot</title>
+<path fill="none" stroke="#000000" d="M307.165,-228.244C319.237,-230.624 333.089,-233.356 345.569,-235.816"/>
+<polygon fill="#000000" stroke="#000000" points="345.171,-239.305 355.659,-237.806 346.525,-232.437 345.171,-239.305"/>
+</g>
 <!-- proc~doplot -->
-<g id="proc~~plot~~CalledByGraph_node12" class="node"><title>proc~doplot</title>
-<g id="a_proc~~plot~~CalledByGraph_node12"><a xlink:href="../proc/doplot.html" xlink:title="doPlot">
+<g id="proc~~plot~~CalledByGraph_node11" class="node"><title>proc~doplot</title>
+<g id="a_proc~~plot~~CalledByGraph_node11"><a xlink:href="../proc/doplot.html" xlink:title="doPlot">
 <polygon fill="#d9534f" stroke="#d9534f" points="301.5,-318 247.5,-318 247.5,-294 301.5,-294 301.5,-318"/>
 <text text-anchor="middle" x="274.5" y="-303.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">doPlot</text>
 </a>
 </g>
 </g>
 <!-- proc~doplot&#45;&gt;proc~plot -->
-<g id="proc~~plot~~CalledByGraph_edge22" class="edge"><title>proc~doplot&#45;&gt;proc~plot</title>
+<g id="proc~~plot~~CalledByGraph_edge21" class="edge"><title>proc~doplot&#45;&gt;proc~plot</title>
 <path fill="none" stroke="#000000" d="M301.728,-294.447C307.819,-291.539 314.211,-288.3 320,-285 332.655,-277.785 346.109,-268.84 357.239,-261.061"/>
 <polygon fill="#000000" stroke="#000000" points="359.474,-263.768 365.607,-255.129 355.425,-258.057 359.474,-263.768"/>
 </g>
 <!-- proc~dofunction -->
-<g id="proc~~plot~~CalledByGraph_node13" class="node"><title>proc~dofunction</title>
-<g id="a_proc~~plot~~CalledByGraph_node13"><a xlink:href="../proc/dofunction.html" xlink:title="doFunction">
-<polygon fill="#d9534f" stroke="#d9534f" points="307.5,-24 241.5,-24 241.5,-0 307.5,-0 307.5,-24"/>
-<text text-anchor="middle" x="274.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">doFunction</text>
+<g id="proc~~plot~~CalledByGraph_node12" class="node"><title>proc~dofunction</title>
+<g id="a_proc~~plot~~CalledByGraph_node12"><a xlink:href="../proc/dofunction.html" xlink:title="doFunction">
+<polygon fill="#d9534f" stroke="#d9534f" points="307.5,-66 241.5,-66 241.5,-42 307.5,-42 307.5,-66"/>
+<text text-anchor="middle" x="274.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">doFunction</text>
 </a>
 </g>
 </g>
 <!-- proc~dofunction&#45;&gt;proc~plot -->
-<g id="proc~~plot~~CalledByGraph_edge23" class="edge"><title>proc~dofunction&#45;&gt;proc~plot</title>
-<path fill="none" stroke="#000000" d="M307.947,-23.2355C312.449,-25.8865 316.665,-29.1078 320,-33 367.581,-88.5279 378.663,-179.179 381.232,-220.816"/>
+<g id="proc~~plot~~CalledByGraph_edge22" class="edge"><title>proc~dofunction&#45;&gt;proc~plot</title>
+<path fill="none" stroke="#000000" d="M307.723,-65.4341C312.253,-68.0595 316.537,-71.2208 320,-75 358.661,-117.196 373.78,-185.572 379.223,-220.662"/>
+<polygon fill="#000000" stroke="#000000" points="375.793,-221.403 380.668,-230.809 382.723,-220.416 375.793,-221.403"/>
+</g>
+<!-- program~animate_prg -->
+<g id="proc~~plot~~CalledByGraph_node13" class="node"><title>program~animate_prg</title>
+<g id="a_proc~~plot~~CalledByGraph_node13"><a xlink:href="../program/animate_prg.html" xlink:title="animate_prg">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="311,-24 238,-24 238,-0 311,-0 311,-24"/>
+<text text-anchor="middle" x="274.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">animate_prg</text>
+</a>
+</g>
+</g>
+<!-- program~animate_prg&#45;&gt;proc~plot -->
+<g id="proc~~plot~~CalledByGraph_edge23" class="edge"><title>program~animate_prg&#45;&gt;proc~plot</title>
+<path fill="none" stroke="#000000" d="M309.289,-24.048C313.283,-26.5375 316.998,-29.497 320,-33 367.581,-88.5279 378.663,-179.179 381.232,-220.816"/>
 <polygon fill="#000000" stroke="#000000" points="377.744,-221.157 381.745,-230.967 384.735,-220.803 377.744,-221.157"/>
 </g>
 <!-- program~examples_prg -->
@@ -1261,23 +1269,23 @@ implementation in a submodule of an interface in a parent module.
 </a>
 </g>
 </g>
-<!-- program~examples_prg&#45;&gt;proc~dofillbetween -->
-<g id="proc~~plot~~CalledByGraph_edge1" class="edge"><title>program~examples_prg&#45;&gt;proc~dofillbetween</title>
-<path fill="none" stroke="#000000" d="M164.468,-402.2C179.285,-415.73 204.639,-437.668 229,-453 231.293,-454.443 233.701,-455.851 236.161,-457.211"/>
-<polygon fill="#000000" stroke="#000000" points="234.69,-460.391 245.177,-461.896 237.917,-454.179 234.69,-460.391"/>
+<!-- program~examples_prg&#45;&gt;proc~doerror -->
+<g id="proc~~plot~~CalledByGraph_edge1" class="edge"><title>program~examples_prg&#45;&gt;proc~doerror</title>
+<path fill="none" stroke="#000000" d="M164.468,-402.2C179.285,-415.73 204.639,-437.668 229,-453 231.82,-454.775 234.813,-456.496 237.862,-458.139"/>
+<polygon fill="#000000" stroke="#000000" points="236.554,-461.401 247.055,-462.808 239.724,-455.159 236.554,-461.401"/>
 </g>
-<!-- program~examples_prg&#45;&gt;proc~dolegend -->
-<g id="proc~~plot~~CalledByGraph_edge5" class="edge"><title>program~examples_prg&#45;&gt;proc~dolegend</title>
+<!-- program~examples_prg&#45;&gt;proc~dologplot -->
+<g id="proc~~plot~~CalledByGraph_edge3" class="edge"><title>program~examples_prg&#45;&gt;proc~dologplot</title>
 <path fill="none" stroke="#000000" d="M186.46,-402.036C201.362,-407.166 218.817,-413.175 234.167,-418.459"/>
 <polygon fill="#000000" stroke="#000000" points="233.308,-421.865 243.903,-421.811 235.587,-415.246 233.308,-421.865"/>
 </g>
-<!-- program~examples_prg&#45;&gt;proc~doerror -->
-<g id="proc~~plot~~CalledByGraph_edge6" class="edge"><title>program~examples_prg&#45;&gt;proc~doerror</title>
-<path fill="none" stroke="#000000" d="M190.773,-390C205.683,-390 222.585,-390 237.208,-390"/>
-<polygon fill="#000000" stroke="#000000" points="237.391,-393.5 247.391,-390 237.391,-386.5 237.391,-393.5"/>
+<!-- program~examples_prg&#45;&gt;proc~dofillbetween -->
+<g id="proc~~plot~~CalledByGraph_edge5" class="edge"><title>program~examples_prg&#45;&gt;proc~dofillbetween</title>
+<path fill="none" stroke="#000000" d="M190.773,-390C201.546,-390 213.359,-390 224.601,-390"/>
+<polygon fill="#000000" stroke="#000000" points="224.718,-393.5 234.718,-390 224.718,-386.5 224.718,-393.5"/>
 </g>
-<!-- program~examples_prg&#45;&gt;proc~dologplot -->
-<g id="proc~~plot~~CalledByGraph_edge8" class="edge"><title>program~examples_prg&#45;&gt;proc~dologplot</title>
+<!-- program~examples_prg&#45;&gt;proc~dolegend -->
+<g id="proc~~plot~~CalledByGraph_edge6" class="edge"><title>program~examples_prg&#45;&gt;proc~dolegend</title>
 <path fill="none" stroke="#000000" d="M186.46,-377.964C201.362,-372.834 218.817,-366.825 234.167,-361.541"/>
 <polygon fill="#000000" stroke="#000000" points="235.587,-364.754 243.903,-358.189 233.308,-358.135 235.587,-364.754"/>
 </g>
@@ -1286,75 +1294,75 @@ implementation in a submodule of an interface in a parent module.
 <path fill="none" stroke="#000000" d="M164.468,-377.8C179.285,-364.27 204.639,-342.332 229,-327 231.82,-325.225 234.813,-323.504 237.862,-321.861"/>
 <polygon fill="#000000" stroke="#000000" points="239.724,-324.841 247.055,-317.192 236.554,-318.599 239.724,-324.841"/>
 </g>
+<!-- program~testsparse_prg -->
+<g id="proc~~plot~~CalledByGraph_node15" class="node"><title>program~testsparse_prg</title>
+<g id="a_proc~~plot~~CalledByGraph_node15"><a xlink:href="../program/testsparse_prg.html" xlink:title="testSparse_prg">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="193,-255 108,-255 108,-231 193,-231 193,-255"/>
+<text text-anchor="middle" x="150.5" y="-240.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">testSparse_prg</text>
+</a>
+</g>
+</g>
+<!-- program~testsparse_prg&#45;&gt;proc~testbasicsolvers -->
+<g id="proc~~plot~~CalledByGraph_edge2" class="edge"><title>program~testsparse_prg&#45;&gt;proc~testbasicsolvers</title>
+<path fill="none" stroke="#000000" d="M193.144,-250.168C201.38,-251.586 210.141,-253.094 218.736,-254.573"/>
+<polygon fill="#000000" stroke="#000000" points="218.258,-258.042 228.706,-256.29 219.445,-251.144 218.258,-258.042"/>
+</g>
+<!-- program~testsparse_prg&#45;&gt;proc~testsolvers -->
+<g id="proc~~plot~~CalledByGraph_edge8" class="edge"><title>program~testsparse_prg&#45;&gt;proc~testsolvers</title>
+<path fill="none" stroke="#000000" d="M193.144,-235.832C205.548,-233.697 219.142,-231.357 231.564,-229.218"/>
+<polygon fill="#000000" stroke="#000000" points="232.41,-232.624 241.671,-227.479 231.222,-225.726 232.41,-232.624"/>
+</g>
 <!-- program~logo_prg -->
-<g id="proc~~plot~~CalledByGraph_node15" class="node"><title>program~logo_prg</title>
-<g id="a_proc~~plot~~CalledByGraph_node15"><a xlink:href="../program/logo_prg.html" xlink:title="logo_prg">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="178,-276 123,-276 123,-252 178,-252 178,-276"/>
-<text text-anchor="middle" x="150.5" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">logo_prg</text>
+<g id="proc~~plot~~CalledByGraph_node16" class="node"><title>program~logo_prg</title>
+<g id="a_proc~~plot~~CalledByGraph_node16"><a xlink:href="../program/logo_prg.html" xlink:title="logo_prg">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="178,-150 123,-150 123,-126 178,-126 178,-150"/>
+<text text-anchor="middle" x="150.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">logo_prg</text>
 </a>
 </g>
 </g>
 <!-- program~logo_prg&#45;&gt;proc~makelogo -->
-<g id="proc~~plot~~CalledByGraph_edge2" class="edge"><title>program~logo_prg&#45;&gt;proc~makelogo</title>
-<path fill="none" stroke="#000000" d="M178.273,-264C194.222,-264 214.786,-264 232.72,-264"/>
-<polygon fill="#000000" stroke="#000000" points="232.921,-267.5 242.921,-264 232.921,-260.5 232.921,-267.5"/>
+<g id="proc~~plot~~CalledByGraph_edge4" class="edge"><title>program~logo_prg&#45;&gt;proc~makelogo</title>
+<path fill="none" stroke="#000000" d="M178.273,-138C194.222,-138 214.786,-138 232.72,-138"/>
+<polygon fill="#000000" stroke="#000000" points="232.921,-141.5 242.921,-138 232.921,-134.5 232.921,-141.5"/>
 </g>
 <!-- program~testspline_prg -->
-<g id="proc~~plot~~CalledByGraph_node16" class="node"><title>program~testspline_prg</title>
-<g id="a_proc~~plot~~CalledByGraph_node16"><a xlink:href="../program/testspline_prg.html" xlink:title="testSpline_prg">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="191,-234 110,-234 110,-210 191,-210 191,-234"/>
-<text text-anchor="middle" x="150.5" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">testSpline_prg</text>
+<g id="proc~~plot~~CalledByGraph_node17" class="node"><title>program~testspline_prg</title>
+<g id="a_proc~~plot~~CalledByGraph_node17"><a xlink:href="../program/testspline_prg.html" xlink:title="testSpline_prg">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="191,-108 110,-108 110,-84 191,-84 191,-108"/>
+<text text-anchor="middle" x="150.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">testSpline_prg</text>
 </a>
 </g>
 </g>
 <!-- program~testspline_prg&#45;&gt;proc~testsplinex -->
-<g id="proc~~plot~~CalledByGraph_edge3" class="edge"><title>program~testspline_prg&#45;&gt;proc~testsplinex</title>
-<path fill="none" stroke="#000000" d="M191.11,-222C203.957,-222 218.252,-222 231.282,-222"/>
-<polygon fill="#000000" stroke="#000000" points="231.407,-225.5 241.407,-222 231.407,-218.5 231.407,-225.5"/>
-</g>
-<!-- program~testsparse_prg -->
-<g id="proc~~plot~~CalledByGraph_node17" class="node"><title>program~testsparse_prg</title>
-<g id="a_proc~~plot~~CalledByGraph_node17"><a xlink:href="../program/testsparse_prg.html" xlink:title="testSparse_prg">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="193,-129 108,-129 108,-105 193,-105 193,-129"/>
-<text text-anchor="middle" x="150.5" y="-114.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">testSparse_prg</text>
-</a>
-</g>
-</g>
-<!-- program~testsparse_prg&#45;&gt;proc~testsolvers -->
-<g id="proc~~plot~~CalledByGraph_edge4" class="edge"><title>program~testsparse_prg&#45;&gt;proc~testsolvers</title>
-<path fill="none" stroke="#000000" d="M193.144,-124.168C205.548,-126.303 219.142,-128.643 231.564,-130.782"/>
-<polygon fill="#000000" stroke="#000000" points="231.222,-134.274 241.671,-132.521 232.41,-127.376 231.222,-134.274"/>
-</g>
-<!-- program~testsparse_prg&#45;&gt;proc~testbasicsolvers -->
-<g id="proc~~plot~~CalledByGraph_edge7" class="edge"><title>program~testsparse_prg&#45;&gt;proc~testbasicsolvers</title>
-<path fill="none" stroke="#000000" d="M193.144,-109.832C201.38,-108.414 210.141,-106.906 218.736,-105.427"/>
-<polygon fill="#000000" stroke="#000000" points="219.445,-108.856 228.706,-103.71 218.258,-101.958 219.445,-108.856"/>
+<g id="proc~~plot~~CalledByGraph_edge7" class="edge"><title>program~testspline_prg&#45;&gt;proc~testsplinex</title>
+<path fill="none" stroke="#000000" d="M191.11,-96C203.957,-96 218.252,-96 231.282,-96"/>
+<polygon fill="#000000" stroke="#000000" points="231.407,-99.5001 241.407,-96 231.407,-92.5001 231.407,-99.5001"/>
 </g>
 <!-- proc~testfunction -->
 <g id="proc~~plot~~CalledByGraph_node18" class="node"><title>proc~testfunction</title>
 <g id="a_proc~~plot~~CalledByGraph_node18"><a xlink:href="../proc/testfunction.html" xlink:title="testFunction">
-<polygon fill="#d9534f" stroke="#d9534f" points="186,-24 115,-24 115,-0 186,-0 186,-24"/>
-<text text-anchor="middle" x="150.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">testFunction</text>
+<polygon fill="#d9534f" stroke="#d9534f" points="186,-66 115,-66 115,-42 186,-42 186,-66"/>
+<text text-anchor="middle" x="150.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">testFunction</text>
 </a>
 </g>
 </g>
 <!-- proc~testfunction&#45;&gt;proc~dofunction -->
 <g id="proc~~plot~~CalledByGraph_edge11" class="edge"><title>proc~testfunction&#45;&gt;proc~dofunction</title>
-<path fill="none" stroke="#000000" d="M186.134,-12C200.079,-12 216.301,-12 230.954,-12"/>
-<polygon fill="#000000" stroke="#000000" points="231.291,-15.5001 241.291,-12 231.291,-8.5001 231.291,-15.5001"/>
+<path fill="none" stroke="#000000" d="M186.134,-54C200.079,-54 216.301,-54 230.954,-54"/>
+<polygon fill="#000000" stroke="#000000" points="231.291,-57.5001 241.291,-54 231.291,-50.5001 231.291,-57.5001"/>
 </g>
 <!-- program~testeval_prg -->
 <g id="proc~~plot~~CalledByGraph_node19" class="node"><title>program~testeval_prg</title>
 <g id="a_proc~~plot~~CalledByGraph_node19"><a xlink:href="../program/testeval_prg.html" xlink:title="testEval_prg">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="72,-24 0,-24 0,-0 72,-0 72,-24"/>
-<text text-anchor="middle" x="36" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">testEval_prg</text>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="72,-66 0,-66 0,-42 72,-42 72,-66"/>
+<text text-anchor="middle" x="36" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">testEval_prg</text>
 </a>
 </g>
 </g>
 <!-- program~testeval_prg&#45;&gt;proc~testfunction -->
 <g id="proc~~plot~~CalledByGraph_edge10" class="edge"><title>program~testeval_prg&#45;&gt;proc~testfunction</title>
-<path fill="none" stroke="#000000" d="M72.287,-12C82.5418,-12 93.8814,-12 104.641,-12"/>
-<polygon fill="#000000" stroke="#000000" points="104.724,-15.5001 114.724,-12 104.724,-8.5001 104.724,-15.5001"/>
+<path fill="none" stroke="#000000" d="M72.287,-54C82.5418,-54 93.8814,-54 104.641,-54"/>
+<polygon fill="#000000" stroke="#000000" points="104.724,-57.5001 114.724,-54 104.724,-50.5001 104.724,-57.5001"/>
 </g>
 </g>
 </svg>
@@ -1548,9 +1556,13 @@ implementation in a submodule of an interface in a parent module.
   <div id="allprocs-1" class="panel-collapse collapse">
     <div class="list-group">
       
+      <a class="list-group-item" href="../interface/abs.html">abs</a>
+      
       <a class="list-group-item" href="../interface/abs_t.html">abs_t</a>
       
       <a class="list-group-item" href="../interface/acos_t.html">acos_t</a>
+      
+      <a class="list-group-item" href="../interface/ad_t.html">ad_t</a>
       
       <a class="list-group-item" href="../interface/add_t.html">add_t</a>
       
@@ -1600,7 +1612,7 @@ implementation in a submodule of an interface in a parent module.
       
       <a class="list-group-item" href="../proc/contourf.html">contourf</a>
       
-      <a class="list-group-item" href="../interface/cos.html">cos</a>
+      <a class="list-group-item" href="../proc/cos_a.html">cos_a</a>
       
       <a class="list-group-item" href="../interface/cos_t.html">cos_t</a>
       
@@ -1610,13 +1622,7 @@ implementation in a submodule of an interface in a parent module.
       
       <a class="list-group-item" href="../proc/dedup.html">deDup</a>
       
-      <a class="list-group-item" href="../interface/der.html">der</a>
-      
       <a class="list-group-item" href="../interface/dft.html">DFT</a>
-      
-      <a class="list-group-item" href="../interface/diff1.html">diff1</a>
-      
-      <a class="list-group-item" href="../interface/diff3.html">diff3</a>
       
       <a class="list-group-item" href="../interface/div_t.html">div_t</a>
       
@@ -1764,8 +1770,6 @@ implementation in a submodule of an interface in a parent module.
       
       <a class="list-group-item" href="../interface/gaussseidel_t.html">gaussSeidel_t</a>
       
-      <a class="list-group-item" href="../proc/get_adn.html">get_adN</a>
-      
       <a class="list-group-item" href="../proc/hist.html">hist</a>
       
       <a class="list-group-item" href="../interface/idft.html">iDFT</a>
@@ -1799,6 +1803,8 @@ implementation in a submodule of an interface in a parent module.
       <a class="list-group-item" href="../interface/log%7E2.html">log</a>
       
       <a class="list-group-item" href="../interface/log10.html">log10</a>
+      
+      <a class="list-group-item" href="../interface/log10%7E2.html">log10</a>
       
       <a class="list-group-item" href="../interface/log10_t.html">log10_t</a>
       
@@ -1878,9 +1884,13 @@ implementation in a submodule of an interface in a parent module.
       
       <a class="list-group-item" href="../proc/newvar.html">newVar</a>
       
+      <a class="list-group-item" href="../interface/nint.html">nint</a>
+      
       <a class="list-group-item" href="../interface/nodestack_t.html">nodeStack_t</a>
       
       <a class="list-group-item" href="../interface/norm2.html">norm2</a>
+      
+      <a class="list-group-item" href="../interface/norm2%7E2.html">norm2</a>
       
       <a class="list-group-item" href="../interface/operator%28%2A%29.html">operator(*)</a>
       
@@ -1916,6 +1926,10 @@ implementation in a submodule of an interface in a parent module.
       
       <a class="list-group-item" href="../interface/operator%28SLASH%29%7E2.html">operator(/)</a>
       
+      <a class="list-group-item" href="../interface/operator%28%3C%29.html">operator(<)</a>
+      
+      <a class="list-group-item" href="../interface/operator%28%3E%29.html">operator(>)</a>
+      
       <a class="list-group-item" href="../proc/plot.html">plot</a>
       
       <a class="list-group-item" href="../proc/plot3.html">plot3</a>
@@ -1940,8 +1954,6 @@ implementation in a submodule of an interface in a parent module.
       
       <a class="list-group-item" href="../interface/readstep.html">readStep</a>
       
-      <a class="list-group-item" href="../interface/real.html">real</a>
-      
       <a class="list-group-item" href="../interface/real_t.html">real_t</a>
       
       <a class="list-group-item" href="../proc/realtochar.html">realToChar</a>
@@ -1954,8 +1966,6 @@ implementation in a submodule of an interface in a parent module.
       
       <a class="list-group-item" href="../proc/scatter.html">scatter</a>
       
-      <a class="list-group-item" href="../proc/set_adn.html">set_adN</a>
-      
       <a class="list-group-item" href="../proc/setrandomseed.html">setRandomSeed</a>
       
       <a class="list-group-item" href="../proc/setup.html">setup</a>
@@ -1964,11 +1974,13 @@ implementation in a submodule of an interface in a parent module.
       
       <a class="list-group-item" href="../proc/showprogress.html">showProgress</a>
       
-      <a class="list-group-item" href="../interface/sin.html">sin</a>
+      <a class="list-group-item" href="../proc/sin_a.html">sin_a</a>
       
       <a class="list-group-item" href="../interface/sin_t.html">sin_t</a>
       
       <a class="list-group-item" href="../interface/solvelu.html">solveLU</a>
+      
+      <a class="list-group-item" href="../interface/solvelu%7E2.html">solveLU</a>
       
       <a class="list-group-item" href="../proc/solverprogress.html">solverProgress</a>
       
@@ -2004,9 +2016,13 @@ implementation in a submodule of an interface in a parent module.
       
       <a class="list-group-item" href="../proc/symmetricsuccessiveoverrelaxation.html">symmetricSuccessiveOverRelaxation</a>
       
+      <a class="list-group-item" href="../proc/tan_a.html">tan_a</a>
+      
       <a class="list-group-item" href="../interface/tan_t.html">tan_t</a>
       
       <a class="list-group-item" href="../interface/tdma.html">TDMA</a>
+      
+      <a class="list-group-item" href="../interface/tdma%7E2.html">TDMA</a>
       
       <a class="list-group-item" href="../proc/testbasic.html">testBasic</a>
       

@@ -185,9 +185,13 @@
   <div id="allprocs-0" class="panel-collapse collapse">
     <div class="list-group">
       
+      <a class="list-group-item" href="../interface/abs.html">abs</a>
+      
       <a class="list-group-item" href="../interface/abs_t.html">abs_t</a>
       
       <a class="list-group-item" href="../interface/acos_t.html">acos_t</a>
+      
+      <a class="list-group-item" href="../interface/ad_t.html">ad_t</a>
       
       <a class="list-group-item" href="../interface/add_t.html">add_t</a>
       
@@ -237,7 +241,7 @@
       
       <a class="list-group-item" href="../proc/contourf.html">contourf</a>
       
-      <a class="list-group-item" href="../interface/cos.html">cos</a>
+      <a class="list-group-item" href="../proc/cos_a.html">cos_a</a>
       
       <a class="list-group-item" href="../interface/cos_t.html">cos_t</a>
       
@@ -247,13 +251,7 @@
       
       <a class="list-group-item" href="../proc/dedup.html">deDup</a>
       
-      <a class="list-group-item" href="../interface/der.html">der</a>
-      
       <a class="list-group-item" href="../interface/dft.html">DFT</a>
-      
-      <a class="list-group-item" href="../interface/diff1.html">diff1</a>
-      
-      <a class="list-group-item" href="../interface/diff3.html">diff3</a>
       
       <a class="list-group-item" href="../interface/div_t.html">div_t</a>
       
@@ -401,8 +399,6 @@
       
       <a class="list-group-item" href="../interface/gaussseidel_t.html">gaussSeidel_t</a>
       
-      <a class="list-group-item" href="../proc/get_adn.html">get_adN</a>
-      
       <a class="list-group-item" href="../proc/hist.html">hist</a>
       
       <a class="list-group-item" href="../interface/idft.html">iDFT</a>
@@ -436,6 +432,8 @@
       <a class="list-group-item" href="../interface/log%7E2.html">log</a>
       
       <a class="list-group-item" href="../interface/log10.html">log10</a>
+      
+      <a class="list-group-item" href="../interface/log10%7E2.html">log10</a>
       
       <a class="list-group-item" href="../interface/log10_t.html">log10_t</a>
       
@@ -515,9 +513,13 @@
       
       <a class="list-group-item" href="../proc/newvar.html">newVar</a>
       
+      <a class="list-group-item" href="../interface/nint.html">nint</a>
+      
       <a class="list-group-item" href="../interface/nodestack_t.html">nodeStack_t</a>
       
       <a class="list-group-item" href="../interface/norm2.html">norm2</a>
+      
+      <a class="list-group-item" href="../interface/norm2%7E2.html">norm2</a>
       
       <a class="list-group-item" href="../interface/operator%28%2A%29.html">operator(*)</a>
       
@@ -553,6 +555,10 @@
       
       <a class="list-group-item" href="../interface/operator%28SLASH%29%7E2.html">operator(/)</a>
       
+      <a class="list-group-item" href="../interface/operator%28%3C%29.html">operator(<)</a>
+      
+      <a class="list-group-item" href="../interface/operator%28%3E%29.html">operator(>)</a>
+      
       <a class="list-group-item" href="../proc/plot.html">plot</a>
       
       <a class="list-group-item" href="../proc/plot3.html">plot3</a>
@@ -577,8 +583,6 @@
       
       <a class="list-group-item" href="../interface/readstep.html">readStep</a>
       
-      <a class="list-group-item" href="../interface/real.html">real</a>
-      
       <a class="list-group-item" href="../interface/real_t.html">real_t</a>
       
       <a class="list-group-item" href="../proc/realtochar.html">realToChar</a>
@@ -591,8 +595,6 @@
       
       <a class="list-group-item" href="../proc/scatter.html">scatter</a>
       
-      <a class="list-group-item" href="../proc/set_adn.html">set_adN</a>
-      
       <a class="list-group-item" href="../proc/setrandomseed.html">setRandomSeed</a>
       
       <a class="list-group-item" href="../proc/setup.html">setup</a>
@@ -601,11 +603,13 @@
       
       <a class="list-group-item" href="../proc/showprogress.html">showProgress</a>
       
-      <a class="list-group-item" href="../interface/sin.html">sin</a>
+      <a class="list-group-item" href="../proc/sin_a.html">sin_a</a>
       
       <a class="list-group-item" href="../interface/sin_t.html">sin_t</a>
       
       <a class="list-group-item" href="../interface/solvelu.html">solveLU</a>
+      
+      <a class="list-group-item" href="../interface/solvelu%7E2.html">solveLU</a>
       
       <a class="list-group-item" href="../proc/solverprogress.html">solverProgress</a>
       
@@ -641,9 +645,13 @@
       
       <a class="list-group-item" href="../proc/symmetricsuccessiveoverrelaxation.html">symmetricSuccessiveOverRelaxation</a>
       
+      <a class="list-group-item" href="../proc/tan_a.html">tan_a</a>
+      
       <a class="list-group-item" href="../interface/tan_t.html">tan_t</a>
       
       <a class="list-group-item" href="../interface/tdma.html">TDMA</a>
+      
+      <a class="list-group-item" href="../interface/tdma%7E2.html">TDMA</a>
       
       <a class="list-group-item" href="../proc/testbasic.html">testBasic</a>
       
@@ -869,7 +877,7 @@ public subroutine writeGrid(fn, vars, x, y, z)
   
 <tr>
   
-  <td><span class="anchor" id="variable-x%7E11"></span>real(kind=dp),</td>
+  <td><span class="anchor" id="variable-x%7E33"></span>real(kind=dp),</td>
   <td>intent(in),</td>
   <td>optional</td>
   
@@ -884,7 +892,7 @@ public subroutine writeGrid(fn, vars, x, y, z)
   
 <tr>
   
-  <td><span class="anchor" id="variable-y%7E5"></span>real(kind=dp),</td>
+  <td><span class="anchor" id="variable-y%7E17"></span>real(kind=dp),</td>
   <td>intent(in),</td>
   <td>optional</td>
   
@@ -899,7 +907,7 @@ public subroutine writeGrid(fn, vars, x, y, z)
   
 <tr>
   
-  <td><span class="anchor" id="variable-z%7E3"></span>real(kind=dp),</td>
+  <td><span class="anchor" id="variable-z%7E10"></span>real(kind=dp),</td>
   <td>intent(in),</td>
   <td>optional</td>
   
@@ -932,73 +940,73 @@ public subroutine writeGrid(fn, vars, x, y, z)
 <polygon fill="none" stroke="black" points="55,-150 0,-150 0,-126 55,-126 55,-150"/>
 <text text-anchor="middle" x="27.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50">writeGrid</text>
 </g>
-<!-- nf90_def_dim -->
-<g id="proc~~writegrid~~CallsGraph_node2" class="node"><title>nf90_def_dim</title>
-<polygon fill="#777777" stroke="#777777" points="169,-276 91,-276 91,-252 169,-252 169,-276"/>
-<text text-anchor="middle" x="130" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">nf90_def_dim</text>
+<!-- nf90_put_att -->
+<g id="proc~~writegrid~~CallsGraph_node2" class="node"><title>nf90_put_att</title>
+<polygon fill="#777777" stroke="#777777" points="166.5,-276 93.5,-276 93.5,-252 166.5,-252 166.5,-276"/>
+<text text-anchor="middle" x="130" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">nf90_put_att</text>
 </g>
-<!-- proc~writegrid&#45;&gt;nf90_def_dim -->
-<g id="proc~~writegrid~~CallsGraph_edge1" class="edge"><title>proc~writegrid&#45;&gt;nf90_def_dim</title>
+<!-- proc~writegrid&#45;&gt;nf90_put_att -->
+<g id="proc~~writegrid~~CallsGraph_edge1" class="edge"><title>proc~writegrid&#45;&gt;nf90_put_att</title>
 <path fill="none" stroke="#000000" d="M33.1838,-150.08C41.8578,-171.168 62.1981,-215.107 91,-243 92.0829,-244.049 93.2286,-245.062 94.4205,-246.038"/>
 <polygon fill="#000000" stroke="#000000" points="92.5976,-249.036 102.785,-251.945 96.6351,-243.317 92.5976,-249.036"/>
 </g>
-<!-- nf90_enddef -->
-<g id="proc~~writegrid~~CallsGraph_node3" class="node"><title>nf90_enddef</title>
-<polygon fill="#777777" stroke="#777777" points="166.5,-234 93.5,-234 93.5,-210 166.5,-210 166.5,-234"/>
-<text text-anchor="middle" x="130" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">nf90_enddef</text>
+<!-- nf90_def_var -->
+<g id="proc~~writegrid~~CallsGraph_node3" class="node"><title>nf90_def_var</title>
+<polygon fill="#777777" stroke="#777777" points="168,-234 92,-234 92,-210 168,-210 168,-234"/>
+<text text-anchor="middle" x="130" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">nf90_def_var</text>
 </g>
-<!-- proc~writegrid&#45;&gt;nf90_enddef -->
-<g id="proc~~writegrid~~CallsGraph_edge2" class="edge"><title>proc~writegrid&#45;&gt;nf90_enddef</title>
+<!-- proc~writegrid&#45;&gt;nf90_def_var -->
+<g id="proc~~writegrid~~CallsGraph_edge2" class="edge"><title>proc~writegrid&#45;&gt;nf90_def_var</title>
 <path fill="none" stroke="#000000" d="M38.6771,-150.168C50.3737,-163.669 70.5956,-185.581 91,-201 92.5786,-202.193 94.233,-203.362 95.931,-204.5"/>
 <polygon fill="#000000" stroke="#000000" points="94.2916,-207.601 104.636,-209.889 97.9766,-201.649 94.2916,-207.601"/>
 </g>
-<!-- nf90_create -->
-<g id="proc~~writegrid~~CallsGraph_node4" class="node"><title>nf90_create</title>
-<polygon fill="#777777" stroke="#777777" points="165,-192 95,-192 95,-168 165,-168 165,-192"/>
-<text text-anchor="middle" x="130" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">nf90_create</text>
+<!-- nf90_def_dim -->
+<g id="proc~~writegrid~~CallsGraph_node4" class="node"><title>nf90_def_dim</title>
+<polygon fill="#777777" stroke="#777777" points="169,-192 91,-192 91,-168 169,-168 169,-192"/>
+<text text-anchor="middle" x="130" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">nf90_def_dim</text>
 </g>
-<!-- proc~writegrid&#45;&gt;nf90_create -->
-<g id="proc~~writegrid~~CallsGraph_edge3" class="edge"><title>proc~writegrid&#45;&gt;nf90_create</title>
+<!-- proc~writegrid&#45;&gt;nf90_def_dim -->
+<g id="proc~~writegrid~~CallsGraph_edge3" class="edge"><title>proc~writegrid&#45;&gt;nf90_def_dim</title>
 <path fill="none" stroke="#000000" d="M55.1683,-149.145C66.089,-153.709 78.9314,-159.076 90.8167,-164.043"/>
 <polygon fill="#000000" stroke="#000000" points="89.5119,-167.291 100.088,-167.917 92.2111,-160.832 89.5119,-167.291"/>
 </g>
-<!-- nf90_def_var -->
-<g id="proc~~writegrid~~CallsGraph_node5" class="node"><title>nf90_def_var</title>
-<polygon fill="#777777" stroke="#777777" points="168,-150 92,-150 92,-126 168,-126 168,-150"/>
-<text text-anchor="middle" x="130" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">nf90_def_var</text>
+<!-- nf90_enddef -->
+<g id="proc~~writegrid~~CallsGraph_node5" class="node"><title>nf90_enddef</title>
+<polygon fill="#777777" stroke="#777777" points="166.5,-150 93.5,-150 93.5,-126 166.5,-126 166.5,-150"/>
+<text text-anchor="middle" x="130" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">nf90_enddef</text>
 </g>
-<!-- proc~writegrid&#45;&gt;nf90_def_var -->
-<g id="proc~~writegrid~~CallsGraph_edge4" class="edge"><title>proc~writegrid&#45;&gt;nf90_def_var</title>
-<path fill="none" stroke="#000000" d="M55.1683,-138C63.365,-138 72.6442,-138 81.7888,-138"/>
-<polygon fill="#000000" stroke="#000000" points="81.9912,-141.5 91.9912,-138 81.9911,-134.5 81.9912,-141.5"/>
+<!-- proc~writegrid&#45;&gt;nf90_enddef -->
+<g id="proc~~writegrid~~CallsGraph_edge4" class="edge"><title>proc~writegrid&#45;&gt;nf90_enddef</title>
+<path fill="none" stroke="#000000" d="M55.1683,-138C63.7947,-138 73.6203,-138 83.2259,-138"/>
+<polygon fill="#000000" stroke="#000000" points="83.4957,-141.5 93.4957,-138 83.4956,-134.5 83.4957,-141.5"/>
 </g>
-<!-- nf90_close -->
-<g id="proc~~writegrid~~CallsGraph_node6" class="node"><title>nf90_close</title>
-<polygon fill="#777777" stroke="#777777" points="162,-108 98,-108 98,-84 162,-84 162,-108"/>
-<text text-anchor="middle" x="130" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">nf90_close</text>
+<!-- nf90_put_var -->
+<g id="proc~~writegrid~~CallsGraph_node6" class="node"><title>nf90_put_var</title>
+<polygon fill="#777777" stroke="#777777" points="168,-108 92,-108 92,-84 168,-84 168,-108"/>
+<text text-anchor="middle" x="130" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">nf90_put_var</text>
 </g>
-<!-- proc~writegrid&#45;&gt;nf90_close -->
-<g id="proc~~writegrid~~CallsGraph_edge5" class="edge"><title>proc~writegrid&#45;&gt;nf90_close</title>
+<!-- proc~writegrid&#45;&gt;nf90_put_var -->
+<g id="proc~~writegrid~~CallsGraph_edge5" class="edge"><title>proc~writegrid&#45;&gt;nf90_put_var</title>
 <path fill="none" stroke="#000000" d="M55.1683,-126.855C66.089,-122.291 78.9314,-116.924 90.8167,-111.957"/>
 <polygon fill="#000000" stroke="#000000" points="92.2111,-115.168 100.088,-108.083 89.5119,-108.709 92.2111,-115.168"/>
 </g>
-<!-- nf90_put_var -->
-<g id="proc~~writegrid~~CallsGraph_node7" class="node"><title>nf90_put_var</title>
-<polygon fill="#777777" stroke="#777777" points="168,-66 92,-66 92,-42 168,-42 168,-66"/>
-<text text-anchor="middle" x="130" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">nf90_put_var</text>
+<!-- nf90_create -->
+<g id="proc~~writegrid~~CallsGraph_node7" class="node"><title>nf90_create</title>
+<polygon fill="#777777" stroke="#777777" points="165,-66 95,-66 95,-42 165,-42 165,-66"/>
+<text text-anchor="middle" x="130" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">nf90_create</text>
 </g>
-<!-- proc~writegrid&#45;&gt;nf90_put_var -->
-<g id="proc~~writegrid~~CallsGraph_edge6" class="edge"><title>proc~writegrid&#45;&gt;nf90_put_var</title>
+<!-- proc~writegrid&#45;&gt;nf90_create -->
+<g id="proc~~writegrid~~CallsGraph_edge6" class="edge"><title>proc~writegrid&#45;&gt;nf90_create</title>
 <path fill="none" stroke="#000000" d="M38.6771,-125.832C50.3737,-112.331 70.5956,-90.4191 91,-75 92.5786,-73.8071 94.233,-72.638 95.931,-71.5005"/>
 <polygon fill="#000000" stroke="#000000" points="97.9766,-74.3506 104.636,-66.1105 94.2916,-68.399 97.9766,-74.3506"/>
 </g>
-<!-- nf90_put_att -->
-<g id="proc~~writegrid~~CallsGraph_node8" class="node"><title>nf90_put_att</title>
-<polygon fill="#777777" stroke="#777777" points="166.5,-24 93.5,-24 93.5,-0 166.5,-0 166.5,-24"/>
-<text text-anchor="middle" x="130" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">nf90_put_att</text>
+<!-- nf90_close -->
+<g id="proc~~writegrid~~CallsGraph_node8" class="node"><title>nf90_close</title>
+<polygon fill="#777777" stroke="#777777" points="162,-24 98,-24 98,-0 162,-0 162,-24"/>
+<text text-anchor="middle" x="130" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">nf90_close</text>
 </g>
-<!-- proc~writegrid&#45;&gt;nf90_put_att -->
-<g id="proc~~writegrid~~CallsGraph_edge7" class="edge"><title>proc~writegrid&#45;&gt;nf90_put_att</title>
+<!-- proc~writegrid&#45;&gt;nf90_close -->
+<g id="proc~~writegrid~~CallsGraph_edge7" class="edge"><title>proc~writegrid&#45;&gt;nf90_close</title>
 <path fill="none" stroke="#000000" d="M33.1838,-125.92C41.8578,-104.832 62.1981,-60.8933 91,-33 92.0829,-31.9512 93.2286,-30.9382 94.4205,-29.9616"/>
 <polygon fill="#000000" stroke="#000000" points="96.6351,-32.6825 102.785,-24.0554 92.5976,-26.9643 96.6351,-32.6825"/>
 </g>
@@ -1323,9 +1331,13 @@ implementation in a submodule of an interface in a parent module.
   <div id="allprocs-1" class="panel-collapse collapse">
     <div class="list-group">
       
+      <a class="list-group-item" href="../interface/abs.html">abs</a>
+      
       <a class="list-group-item" href="../interface/abs_t.html">abs_t</a>
       
       <a class="list-group-item" href="../interface/acos_t.html">acos_t</a>
+      
+      <a class="list-group-item" href="../interface/ad_t.html">ad_t</a>
       
       <a class="list-group-item" href="../interface/add_t.html">add_t</a>
       
@@ -1375,7 +1387,7 @@ implementation in a submodule of an interface in a parent module.
       
       <a class="list-group-item" href="../proc/contourf.html">contourf</a>
       
-      <a class="list-group-item" href="../interface/cos.html">cos</a>
+      <a class="list-group-item" href="../proc/cos_a.html">cos_a</a>
       
       <a class="list-group-item" href="../interface/cos_t.html">cos_t</a>
       
@@ -1385,13 +1397,7 @@ implementation in a submodule of an interface in a parent module.
       
       <a class="list-group-item" href="../proc/dedup.html">deDup</a>
       
-      <a class="list-group-item" href="../interface/der.html">der</a>
-      
       <a class="list-group-item" href="../interface/dft.html">DFT</a>
-      
-      <a class="list-group-item" href="../interface/diff1.html">diff1</a>
-      
-      <a class="list-group-item" href="../interface/diff3.html">diff3</a>
       
       <a class="list-group-item" href="../interface/div_t.html">div_t</a>
       
@@ -1539,8 +1545,6 @@ implementation in a submodule of an interface in a parent module.
       
       <a class="list-group-item" href="../interface/gaussseidel_t.html">gaussSeidel_t</a>
       
-      <a class="list-group-item" href="../proc/get_adn.html">get_adN</a>
-      
       <a class="list-group-item" href="../proc/hist.html">hist</a>
       
       <a class="list-group-item" href="../interface/idft.html">iDFT</a>
@@ -1574,6 +1578,8 @@ implementation in a submodule of an interface in a parent module.
       <a class="list-group-item" href="../interface/log%7E2.html">log</a>
       
       <a class="list-group-item" href="../interface/log10.html">log10</a>
+      
+      <a class="list-group-item" href="../interface/log10%7E2.html">log10</a>
       
       <a class="list-group-item" href="../interface/log10_t.html">log10_t</a>
       
@@ -1653,9 +1659,13 @@ implementation in a submodule of an interface in a parent module.
       
       <a class="list-group-item" href="../proc/newvar.html">newVar</a>
       
+      <a class="list-group-item" href="../interface/nint.html">nint</a>
+      
       <a class="list-group-item" href="../interface/nodestack_t.html">nodeStack_t</a>
       
       <a class="list-group-item" href="../interface/norm2.html">norm2</a>
+      
+      <a class="list-group-item" href="../interface/norm2%7E2.html">norm2</a>
       
       <a class="list-group-item" href="../interface/operator%28%2A%29.html">operator(*)</a>
       
@@ -1691,6 +1701,10 @@ implementation in a submodule of an interface in a parent module.
       
       <a class="list-group-item" href="../interface/operator%28SLASH%29%7E2.html">operator(/)</a>
       
+      <a class="list-group-item" href="../interface/operator%28%3C%29.html">operator(<)</a>
+      
+      <a class="list-group-item" href="../interface/operator%28%3E%29.html">operator(>)</a>
+      
       <a class="list-group-item" href="../proc/plot.html">plot</a>
       
       <a class="list-group-item" href="../proc/plot3.html">plot3</a>
@@ -1715,8 +1729,6 @@ implementation in a submodule of an interface in a parent module.
       
       <a class="list-group-item" href="../interface/readstep.html">readStep</a>
       
-      <a class="list-group-item" href="../interface/real.html">real</a>
-      
       <a class="list-group-item" href="../interface/real_t.html">real_t</a>
       
       <a class="list-group-item" href="../proc/realtochar.html">realToChar</a>
@@ -1729,8 +1741,6 @@ implementation in a submodule of an interface in a parent module.
       
       <a class="list-group-item" href="../proc/scatter.html">scatter</a>
       
-      <a class="list-group-item" href="../proc/set_adn.html">set_adN</a>
-      
       <a class="list-group-item" href="../proc/setrandomseed.html">setRandomSeed</a>
       
       <a class="list-group-item" href="../proc/setup.html">setup</a>
@@ -1739,11 +1749,13 @@ implementation in a submodule of an interface in a parent module.
       
       <a class="list-group-item" href="../proc/showprogress.html">showProgress</a>
       
-      <a class="list-group-item" href="../interface/sin.html">sin</a>
+      <a class="list-group-item" href="../proc/sin_a.html">sin_a</a>
       
       <a class="list-group-item" href="../interface/sin_t.html">sin_t</a>
       
       <a class="list-group-item" href="../interface/solvelu.html">solveLU</a>
+      
+      <a class="list-group-item" href="../interface/solvelu%7E2.html">solveLU</a>
       
       <a class="list-group-item" href="../proc/solverprogress.html">solverProgress</a>
       
@@ -1779,9 +1791,13 @@ implementation in a submodule of an interface in a parent module.
       
       <a class="list-group-item" href="../proc/symmetricsuccessiveoverrelaxation.html">symmetricSuccessiveOverRelaxation</a>
       
+      <a class="list-group-item" href="../proc/tan_a.html">tan_a</a>
+      
       <a class="list-group-item" href="../interface/tan_t.html">tan_t</a>
       
       <a class="list-group-item" href="../interface/tdma.html">TDMA</a>
+      
+      <a class="list-group-item" href="../interface/tdma%7E2.html">TDMA</a>
       
       <a class="list-group-item" href="../proc/testbasic.html">testBasic</a>
       

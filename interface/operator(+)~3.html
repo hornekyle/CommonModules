@@ -118,18 +118,18 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
 	  data-placement="bottom" data-html="true"
-	  title="<p> 0.1% of total for procedures.</p>Including implementation: 39 statements,  1.1% of total for procedures.">5 statements</a>
+	  title="<p> 0.2% of total for procedures.</p>Including implementation: 42 statements,  1.1% of total for procedures.">7 statements</a>
      </li> 
      
      
-    <li><i class="fa fa-code"></i><a href="../src/sparse.f90"> Source File</a></li>
+    <li><i class="fa fa-code"></i><a href="../src/quaternion.f90"> Source File</a></li>
      
   </ul>
   <ol class="breadcrumb in-well text-right">
   
-     <li><a href='../sourcefile/sparse.f90.html'>sparse.f90</a></li>
+     <li><a href='../sourcefile/quaternion.f90.html'>quaternion.f90</a></li>
   
-     <li><a href='../module/sparse_mod.html'>sparse_mod</a></li>
+     <li><a href='../module/quaternion_mod.html'>quaternion_mod</a></li>
   
      <li class="active">operator(+)</li>
   </ol>
@@ -173,11 +173,15 @@
   <div id="modprocs-0" class="panel-collapse collapse">
     <div class="list-group">
       
-      <a class="list-group-item" href="../interface/operator%28%2B%29%7E3.html#moduleprocedure-add_uv">add_uv</a>
+      <a class="list-group-item" href="../interface/operator%28%2B%29%7E3.html#moduleprocedure-add_rq">add_rq</a>
       
-      <a class="list-group-item" href="../interface/operator%28%2B%29%7E3.html#moduleprocedure-add_vu">add_vu</a>
+      <a class="list-group-item" href="../interface/operator%28%2B%29%7E3.html#moduleprocedure-add_qr">add_qr</a>
       
-      <a class="list-group-item" href="../interface/operator%28%2B%29%7E3.html#moduleprocedure-add_vv">add_vv</a>
+      <a class="list-group-item" href="../interface/operator%28%2B%29%7E3.html#moduleprocedure-add_vq">add_vq</a>
+      
+      <a class="list-group-item" href="../interface/operator%28%2B%29%7E3.html#moduleprocedure-add_qv">add_qv</a>
+      
+      <a class="list-group-item" href="../interface/operator%28%2B%29%7E3.html#moduleprocedure-add_qq">add_qq</a>
       
     </div>
   </div>
@@ -193,9 +197,13 @@
   <div id="allprocs-0" class="panel-collapse collapse">
     <div class="list-group">
       
+      <a class="list-group-item" href="../interface/abs.html">abs</a>
+      
       <a class="list-group-item" href="../interface/abs_t.html">abs_t</a>
       
       <a class="list-group-item" href="../interface/acos_t.html">acos_t</a>
+      
+      <a class="list-group-item" href="../interface/ad_t.html">ad_t</a>
       
       <a class="list-group-item" href="../interface/add_t.html">add_t</a>
       
@@ -245,7 +253,7 @@
       
       <a class="list-group-item" href="../proc/contourf.html">contourf</a>
       
-      <a class="list-group-item" href="../interface/cos.html">cos</a>
+      <a class="list-group-item" href="../proc/cos_a.html">cos_a</a>
       
       <a class="list-group-item" href="../interface/cos_t.html">cos_t</a>
       
@@ -255,13 +263,7 @@
       
       <a class="list-group-item" href="../proc/dedup.html">deDup</a>
       
-      <a class="list-group-item" href="../interface/der.html">der</a>
-      
       <a class="list-group-item" href="../interface/dft.html">DFT</a>
-      
-      <a class="list-group-item" href="../interface/diff1.html">diff1</a>
-      
-      <a class="list-group-item" href="../interface/diff3.html">diff3</a>
       
       <a class="list-group-item" href="../interface/div_t.html">div_t</a>
       
@@ -409,8 +411,6 @@
       
       <a class="list-group-item" href="../interface/gaussseidel_t.html">gaussSeidel_t</a>
       
-      <a class="list-group-item" href="../proc/get_adn.html">get_adN</a>
-      
       <a class="list-group-item" href="../proc/hist.html">hist</a>
       
       <a class="list-group-item" href="../interface/idft.html">iDFT</a>
@@ -444,6 +444,8 @@
       <a class="list-group-item" href="../interface/log%7E2.html">log</a>
       
       <a class="list-group-item" href="../interface/log10.html">log10</a>
+      
+      <a class="list-group-item" href="../interface/log10%7E2.html">log10</a>
       
       <a class="list-group-item" href="../interface/log10_t.html">log10_t</a>
       
@@ -523,9 +525,13 @@
       
       <a class="list-group-item" href="../proc/newvar.html">newVar</a>
       
+      <a class="list-group-item" href="../interface/nint.html">nint</a>
+      
       <a class="list-group-item" href="../interface/nodestack_t.html">nodeStack_t</a>
       
       <a class="list-group-item" href="../interface/norm2.html">norm2</a>
+      
+      <a class="list-group-item" href="../interface/norm2%7E2.html">norm2</a>
       
       <a class="list-group-item" href="../interface/operator%28%2A%29.html">operator(*)</a>
       
@@ -561,6 +567,10 @@
       
       <a class="list-group-item" href="../interface/operator%28SLASH%29%7E2.html">operator(/)</a>
       
+      <a class="list-group-item" href="../interface/operator%28%3C%29.html">operator(<)</a>
+      
+      <a class="list-group-item" href="../interface/operator%28%3E%29.html">operator(>)</a>
+      
       <a class="list-group-item" href="../proc/plot.html">plot</a>
       
       <a class="list-group-item" href="../proc/plot3.html">plot3</a>
@@ -585,8 +595,6 @@
       
       <a class="list-group-item" href="../interface/readstep.html">readStep</a>
       
-      <a class="list-group-item" href="../interface/real.html">real</a>
-      
       <a class="list-group-item" href="../interface/real_t.html">real_t</a>
       
       <a class="list-group-item" href="../proc/realtochar.html">realToChar</a>
@@ -599,8 +607,6 @@
       
       <a class="list-group-item" href="../proc/scatter.html">scatter</a>
       
-      <a class="list-group-item" href="../proc/set_adn.html">set_adN</a>
-      
       <a class="list-group-item" href="../proc/setrandomseed.html">setRandomSeed</a>
       
       <a class="list-group-item" href="../proc/setup.html">setup</a>
@@ -609,11 +615,13 @@
       
       <a class="list-group-item" href="../proc/showprogress.html">showProgress</a>
       
-      <a class="list-group-item" href="../interface/sin.html">sin</a>
+      <a class="list-group-item" href="../proc/sin_a.html">sin_a</a>
       
       <a class="list-group-item" href="../interface/sin_t.html">sin_t</a>
       
       <a class="list-group-item" href="../interface/solvelu.html">solveLU</a>
+      
+      <a class="list-group-item" href="../interface/solvelu%7E2.html">solveLU</a>
       
       <a class="list-group-item" href="../proc/solverprogress.html">solverProgress</a>
       
@@ -649,9 +657,13 @@
       
       <a class="list-group-item" href="../proc/symmetricsuccessiveoverrelaxation.html">symmetricSuccessiveOverRelaxation</a>
       
+      <a class="list-group-item" href="../proc/tan_a.html">tan_a</a>
+      
       <a class="list-group-item" href="../interface/tan_t.html">tan_t</a>
       
       <a class="list-group-item" href="../interface/tdma.html">TDMA</a>
+      
+      <a class="list-group-item" href="../interface/tdma%7E2.html">TDMA</a>
       
       <a class="list-group-item" href="../proc/testbasic.html">testBasic</a>
       
@@ -847,11 +859,15 @@
   <div id="modprocs-1" class="panel-collapse collapse">
     <div class="list-group">
       
-      <a class="list-group-item" href="../interface/operator%28%2B%29%7E3.html#moduleprocedure-add_uv">add_uv</a>
+      <a class="list-group-item" href="../interface/operator%28%2B%29%7E3.html#moduleprocedure-add_rq">add_rq</a>
       
-      <a class="list-group-item" href="../interface/operator%28%2B%29%7E3.html#moduleprocedure-add_vu">add_vu</a>
+      <a class="list-group-item" href="../interface/operator%28%2B%29%7E3.html#moduleprocedure-add_qr">add_qr</a>
       
-      <a class="list-group-item" href="../interface/operator%28%2B%29%7E3.html#moduleprocedure-add_vv">add_vv</a>
+      <a class="list-group-item" href="../interface/operator%28%2B%29%7E3.html#moduleprocedure-add_vq">add_vq</a>
+      
+      <a class="list-group-item" href="../interface/operator%28%2B%29%7E3.html#moduleprocedure-add_qv">add_qv</a>
+      
+      <a class="list-group-item" href="../interface/operator%28%2B%29%7E3.html#moduleprocedure-add_qq">add_qq</a>
       
     </div>
   </div>
@@ -871,8 +887,158 @@
 	 
     
   <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-add_uv"></span><h3>
-private function add_uv(u, v) result(o)
+  <div class="panel-heading codesum"><span class="anchor" id="proc-add_rq"></span><h3>
+private elemental function add_rq(r, q) result(o)
+    
+    
+	 
+</h3></div>
+  <div class="panel-body">
+       
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=wp),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>r</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/quat_t.html'>quat_t</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>q</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>type(<a href='../type/quat_t.html'>quat_t</a>)
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+ 	 
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-add_qr"></span><h3>
+private elemental function add_qr(q, r) result(o)
+    
+    
+	 
+</h3></div>
+  <div class="panel-body">
+       
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/quat_t.html'>quat_t</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>q</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=wp),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>r</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>type(<a href='../type/quat_t.html'>quat_t</a>)
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+ 	 
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-add_vq"></span><h3>
+private pure function add_vq(v, q) result(o)
     
     
 	 
@@ -904,8 +1070,8 @@ private function add_uv(u, v) result(o)
   <td>intent(in),</td>
   <td></td>
   
-  <td>dimension(:)</td><td>::</td>
-  <td><strong>u</strong></td><td></td>
+  <td>dimension(3)</td><td>::</td>
+  <td><strong>v</strong></td><td></td>
   
 </tr>
 
@@ -915,12 +1081,12 @@ private function add_uv(u, v) result(o)
   
 <tr>
   
-  <td><span class="anchor" ></span>type(<a href='../type/spvec_t.html'>spvec_t</a>),</td>
+  <td><span class="anchor" ></span>type(<a href='../type/quat_t.html'>quat_t</a>),</td>
   <td>intent(in)</td>
   <td></td>
   
   <td></td><td>::</td>
-  <td><strong>v</strong></td><td></td>
+  <td><strong>q</strong></td><td></td>
   
 </tr>
 
@@ -935,8 +1101,8 @@ private function add_uv(u, v) result(o)
   
   
   
-     <h4>Return Value <small>real(kind=wp),
-  dimension(:), allocatable</small></h4>
+     <h4>Return Value <small>type(<a href='../type/quat_t.html'>quat_t</a>)
+  </small></h4>
   
     
 
@@ -946,8 +1112,8 @@ private function add_uv(u, v) result(o)
  	 
     
   <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-add_vu"></span><h3>
-private function add_vu(v, u) result(o)
+  <div class="panel-heading codesum"><span class="anchor" id="proc-add_qv"></span><h3>
+private pure function add_qv(q, v) result(o)
     
     
 	 
@@ -975,12 +1141,12 @@ private function add_vu(v, u) result(o)
   
 <tr>
   
-  <td><span class="anchor" ></span>type(<a href='../type/spvec_t.html'>spvec_t</a>),</td>
+  <td><span class="anchor" ></span>type(<a href='../type/quat_t.html'>quat_t</a>),</td>
   <td>intent(in)</td>
   <td></td>
   
   <td></td><td>::</td>
-  <td><strong>v</strong></td><td></td>
+  <td><strong>q</strong></td><td></td>
   
 </tr>
 
@@ -994,8 +1160,8 @@ private function add_vu(v, u) result(o)
   <td>intent(in),</td>
   <td></td>
   
-  <td>dimension(:)</td><td>::</td>
-  <td><strong>u</strong></td><td></td>
+  <td>dimension(3)</td><td>::</td>
+  <td><strong>v</strong></td><td></td>
   
 </tr>
 
@@ -1010,8 +1176,8 @@ private function add_vu(v, u) result(o)
   
   
   
-     <h4>Return Value <small>real(kind=wp),
-  dimension(:), allocatable</small></h4>
+     <h4>Return Value <small>type(<a href='../type/quat_t.html'>quat_t</a>)
+  </small></h4>
   
     
 
@@ -1021,8 +1187,8 @@ private function add_vu(v, u) result(o)
  	 
     
   <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-add_vv"></span><h3>
-private function add_vv(u, v) result(o)
+  <div class="panel-heading codesum"><span class="anchor" id="proc-add_qq"></span><h3>
+private elemental function add_qq(u, v) result(o)
     
     
 	 
@@ -1050,7 +1216,7 @@ private function add_vv(u, v) result(o)
   
 <tr>
   
-  <td><span class="anchor" ></span>type(<a href='../type/spvec_t.html'>spvec_t</a>),</td>
+  <td><span class="anchor" ></span>type(<a href='../type/quat_t.html'>quat_t</a>),</td>
   <td>intent(in)</td>
   <td></td>
   
@@ -1065,7 +1231,7 @@ private function add_vv(u, v) result(o)
   
 <tr>
   
-  <td><span class="anchor" ></span>type(<a href='../type/spvec_t.html'>spvec_t</a>),</td>
+  <td><span class="anchor" ></span>type(<a href='../type/quat_t.html'>quat_t</a>),</td>
   <td>intent(in)</td>
   <td></td>
   
@@ -1085,7 +1251,7 @@ private function add_vv(u, v) result(o)
   
   
   
-     <h4>Return Value <small>type(<a href='../type/spvec_t.html'>spvec_t</a>)
+     <h4>Return Value <small>type(<a href='../type/quat_t.html'>quat_t</a>)
   </small></h4>
   
     
@@ -1108,9 +1274,13 @@ private function add_vv(u, v) result(o)
   <div id="allprocs-1" class="panel-collapse collapse">
     <div class="list-group">
       
+      <a class="list-group-item" href="../interface/abs.html">abs</a>
+      
       <a class="list-group-item" href="../interface/abs_t.html">abs_t</a>
       
       <a class="list-group-item" href="../interface/acos_t.html">acos_t</a>
+      
+      <a class="list-group-item" href="../interface/ad_t.html">ad_t</a>
       
       <a class="list-group-item" href="../interface/add_t.html">add_t</a>
       
@@ -1160,7 +1330,7 @@ private function add_vv(u, v) result(o)
       
       <a class="list-group-item" href="../proc/contourf.html">contourf</a>
       
-      <a class="list-group-item" href="../interface/cos.html">cos</a>
+      <a class="list-group-item" href="../proc/cos_a.html">cos_a</a>
       
       <a class="list-group-item" href="../interface/cos_t.html">cos_t</a>
       
@@ -1170,13 +1340,7 @@ private function add_vv(u, v) result(o)
       
       <a class="list-group-item" href="../proc/dedup.html">deDup</a>
       
-      <a class="list-group-item" href="../interface/der.html">der</a>
-      
       <a class="list-group-item" href="../interface/dft.html">DFT</a>
-      
-      <a class="list-group-item" href="../interface/diff1.html">diff1</a>
-      
-      <a class="list-group-item" href="../interface/diff3.html">diff3</a>
       
       <a class="list-group-item" href="../interface/div_t.html">div_t</a>
       
@@ -1324,8 +1488,6 @@ private function add_vv(u, v) result(o)
       
       <a class="list-group-item" href="../interface/gaussseidel_t.html">gaussSeidel_t</a>
       
-      <a class="list-group-item" href="../proc/get_adn.html">get_adN</a>
-      
       <a class="list-group-item" href="../proc/hist.html">hist</a>
       
       <a class="list-group-item" href="../interface/idft.html">iDFT</a>
@@ -1359,6 +1521,8 @@ private function add_vv(u, v) result(o)
       <a class="list-group-item" href="../interface/log%7E2.html">log</a>
       
       <a class="list-group-item" href="../interface/log10.html">log10</a>
+      
+      <a class="list-group-item" href="../interface/log10%7E2.html">log10</a>
       
       <a class="list-group-item" href="../interface/log10_t.html">log10_t</a>
       
@@ -1438,9 +1602,13 @@ private function add_vv(u, v) result(o)
       
       <a class="list-group-item" href="../proc/newvar.html">newVar</a>
       
+      <a class="list-group-item" href="../interface/nint.html">nint</a>
+      
       <a class="list-group-item" href="../interface/nodestack_t.html">nodeStack_t</a>
       
       <a class="list-group-item" href="../interface/norm2.html">norm2</a>
+      
+      <a class="list-group-item" href="../interface/norm2%7E2.html">norm2</a>
       
       <a class="list-group-item" href="../interface/operator%28%2A%29.html">operator(*)</a>
       
@@ -1476,6 +1644,10 @@ private function add_vv(u, v) result(o)
       
       <a class="list-group-item" href="../interface/operator%28SLASH%29%7E2.html">operator(/)</a>
       
+      <a class="list-group-item" href="../interface/operator%28%3C%29.html">operator(<)</a>
+      
+      <a class="list-group-item" href="../interface/operator%28%3E%29.html">operator(>)</a>
+      
       <a class="list-group-item" href="../proc/plot.html">plot</a>
       
       <a class="list-group-item" href="../proc/plot3.html">plot3</a>
@@ -1500,8 +1672,6 @@ private function add_vv(u, v) result(o)
       
       <a class="list-group-item" href="../interface/readstep.html">readStep</a>
       
-      <a class="list-group-item" href="../interface/real.html">real</a>
-      
       <a class="list-group-item" href="../interface/real_t.html">real_t</a>
       
       <a class="list-group-item" href="../proc/realtochar.html">realToChar</a>
@@ -1514,8 +1684,6 @@ private function add_vv(u, v) result(o)
       
       <a class="list-group-item" href="../proc/scatter.html">scatter</a>
       
-      <a class="list-group-item" href="../proc/set_adn.html">set_adN</a>
-      
       <a class="list-group-item" href="../proc/setrandomseed.html">setRandomSeed</a>
       
       <a class="list-group-item" href="../proc/setup.html">setup</a>
@@ -1524,11 +1692,13 @@ private function add_vv(u, v) result(o)
       
       <a class="list-group-item" href="../proc/showprogress.html">showProgress</a>
       
-      <a class="list-group-item" href="../interface/sin.html">sin</a>
+      <a class="list-group-item" href="../proc/sin_a.html">sin_a</a>
       
       <a class="list-group-item" href="../interface/sin_t.html">sin_t</a>
       
       <a class="list-group-item" href="../interface/solvelu.html">solveLU</a>
+      
+      <a class="list-group-item" href="../interface/solvelu%7E2.html">solveLU</a>
       
       <a class="list-group-item" href="../proc/solverprogress.html">solverProgress</a>
       
@@ -1564,9 +1734,13 @@ private function add_vv(u, v) result(o)
       
       <a class="list-group-item" href="../proc/symmetricsuccessiveoverrelaxation.html">symmetricSuccessiveOverRelaxation</a>
       
+      <a class="list-group-item" href="../proc/tan_a.html">tan_a</a>
+      
       <a class="list-group-item" href="../interface/tan_t.html">tan_t</a>
       
       <a class="list-group-item" href="../interface/tdma.html">TDMA</a>
+      
+      <a class="list-group-item" href="../interface/tdma%7E2.html">TDMA</a>
       
       <a class="list-group-item" href="../proc/testbasic.html">testBasic</a>
       
