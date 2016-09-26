@@ -51,6 +51,12 @@ module autoDiffOperator_mod
 	end interface
 	public::operator(**)
 	
+	! Square Root
+	interface sqrt
+		module procedure sqrt_a
+	end interface
+	public::sqrt
+	
 contains
 
 	!==============!
@@ -228,5 +234,16 @@ contains
 		
 		o = ad_t( val , grad )
 	end function pow_aa
+
+	!===============!
+	!= Square Root =!
+	!===============!
+
+	elemental function sqrt_a(u) result(o)
+		type(ad_t),intent(in)::u
+		type(ad_t)::o
+		
+		o = ad_t( sqrt(u%val()) , u%grad()/( 2.0_wp*sqrt(u%val()) ) )
+	end function sqrt_a
 
 end module autoDiffOperator_mod 
