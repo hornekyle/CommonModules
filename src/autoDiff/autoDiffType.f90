@@ -1,4 +1,6 @@
 module autoDiffType_mod
+	!! @todo
+	!! Add second type for complex numbers
 	use kinds_mod
 	implicit none
 	private
