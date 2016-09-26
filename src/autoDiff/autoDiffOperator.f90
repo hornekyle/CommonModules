@@ -10,6 +10,20 @@ module autoDiffOperator_mod
 	end interface
 	public::assignment(=)
 	
+	! Greater-Than
+	interface operator(>)
+		module procedure greater_ra
+		module procedure greater_ar
+	end interface
+	public::operator(>)
+	
+	! Less-Than
+	interface operator(<)
+		module procedure less_ra
+		module procedure less_ar
+	end interface
+	public::operator(<)
+	
 	! Addition
 	interface operator(+)
 		module procedure add_ra
@@ -46,6 +60,7 @@ module autoDiffOperator_mod
 	! Power
 	interface operator(**)
 		module procedure pow_ra
+		module procedure pow_ai
 		module procedure pow_ar
 		module procedure pow_aa
 	end interface
@@ -56,6 +71,12 @@ module autoDiffOperator_mod
 		module procedure sqrt_a
 	end interface
 	public::sqrt
+	
+	! Absolute Value
+	interface abs
+		module procedure abs_a
+	end interface
+	public::abs
 	
 contains
 
@@ -69,6 +90,46 @@ contains
 		
 		u = v%val()
 	end subroutine assign_ra
+
+	!================!
+	!= Greater-Than =!
+	!================!
+
+	function greater_ar(u,v) result(o)
+		type(ad_t),intent(in)::u
+		real(wp),intent(in)::v
+		logical::o
+		
+		o = u%val()>v
+	end function greater_ar
+
+	function greater_ra(u,v) result(o)
+		real(wp),intent(in)::u
+		type(ad_t),intent(in)::v
+		logical::o
+		
+		o = u>v%val()
+	end function greater_ra
+
+	!=============!
+	!= Less-Than =!
+	!=============!
+
+	function less_ar(u,v) result(o)
+		type(ad_t),intent(in)::u
+		real(wp),intent(in)::v
+		logical::o
+		
+		o = u%val()<v
+	end function less_ar
+
+	function less_ra(u,v) result(o)
+		real(wp),intent(in)::u
+		type(ad_t),intent(in)::v
+		logical::o
+		
+		o = u<v%val()
+	end function less_ra
 
 	!============!
 	!= Addition =!
@@ -201,11 +262,25 @@ contains
 		real(wp)::val
 		real(wp),dimension(:),allocatable::grad
 		
-		val = u**v%val()
-		grad  = u**v%val()*( log(u)*v%grad() )
+		val  = u**v%val()
+		grad = u**v%val()*( log(u)*v%grad() )
 		
 		o = ad_t( val , grad )
 	end function pow_ra
+
+	elemental function pow_ai(u,v) result(o)
+		type(ad_t),intent(in)::u
+		integer,intent(in)::v
+		type(ad_t)::o
+		
+		real(wp)::val
+		real(wp),dimension(:),allocatable::grad
+		
+		val  = u%val()**v
+		grad = u%val()**v*( real(v,wp)*u%grad()/u%val() )
+		
+		o = ad_t( val , grad )
+	end function pow_ai
 
 	elemental function pow_ar(u,v) result(o)
 		type(ad_t),intent(in)::u
@@ -215,8 +290,8 @@ contains
 		real(wp)::val
 		real(wp),dimension(:),allocatable::grad
 		
-		val = u%val()**v
-		grad  = u%val()**v*( v*u%grad()/u%val() )
+		val  = u%val()**v
+		grad = u%val()**v*( v*u%grad()/u%val() )
 		
 		o = ad_t( val , grad )
 	end function pow_ar
@@ -245,5 +320,16 @@ contains
 		
 		o = ad_t( sqrt(u%val()) , u%grad()/( 2.0_wp*sqrt(u%val()) ) )
 	end function sqrt_a
+
+	!==================!
+	!= Absolute Value =!
+	!==================!
+
+	elemental function abs_a(u) result(o)
+		type(ad_t),intent(in)::u
+		type(ad_t)::o
+		
+		o = ad_t( abs(u%val()) , u%val()/abs(u%val())*u%grad() )
+	end function abs_a
 
 end module autoDiffOperator_mod 

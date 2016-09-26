@@ -19,7 +19,12 @@ module autoDiffType_mod
 		module procedure newAD_valGrad
 	end interface
 	
+	interface nint
+		module procedure nint_a
+	end interface
+	
 	public::ad_t
+	public::nint
 	
 contains
 	
@@ -27,7 +32,7 @@ contains
 	!= Constructors =!
 	!================!
 
-	pure function newAD_valIdx(value,N,idx) result(self)
+	elemental function newAD_valIdx(value,N,idx) result(self)
 		real(wp),intent(in)::value
 		integer,intent(in)::N
 		integer,intent(in),optional::idx
@@ -77,4 +82,14 @@ contains
 		o = self%d
 	end function grad
 
+	!=============!
+	!= Utilities =!
+	!=============!
+
+	elemental function nint_a(u) result(o)
+		type(ad_t),intent(in)::u
+		integer::o
+		
+		o = nint(u%val())
+	end function nint_a
 end module autoDiffType_mod

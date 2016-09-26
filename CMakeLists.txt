@@ -140,6 +140,7 @@ endif(PLPLOT_FOUND)
 
 # Add target
 add_library(CommonModules SHARED ${modules_src})
+export(TARGETS CommonModules FILE CommonModules.cmake)
 
 # Linking directives
 if(FFTW3_FOUND)

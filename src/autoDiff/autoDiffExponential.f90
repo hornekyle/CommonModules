@@ -10,18 +10,18 @@
 	interface exp
 		module procedure exp_a
 	end interface
-	public::exp_a
+	public::exp
 	
 	! Logarithm
 	interface log
 		module procedure log_a
 	end interface
-	public::log_a
+	public::log
 	
 	interface log10
 		module procedure log10_a
 	end interface
-	public::log10_a
+	public::log10
 	
 contains
 
@@ -29,7 +29,7 @@ contains
 	!= Exponential =!
 	!===============!
 
-	function exp_a(u) result(o)
+	elemental function exp_a(u) result(o)
 		type(ad_t),intent(in)::u
 		type(ad_t)::o
 		
@@ -40,14 +40,14 @@ contains
 	!= Logarithm =!
 	!=============!
 
-	function log_a(u) result(o)
+	elemental function log_a(u) result(o)
 		type(ad_t),intent(in)::u
 		type(ad_t)::o
 		
 		o = ad_t( log(u%val()) , u%grad()/u%val() )
 	end function log_a
 
-	function log10_a(u) result(o)
+	elemental function log10_a(u) result(o)
 		type(ad_t),intent(in)::u
 		type(ad_t)::o
 		
