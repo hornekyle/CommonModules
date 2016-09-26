@@ -1,6 +1,7 @@
 module autoDiff_mod
 	!! Module implementing automatic differentiation
 	!! @todo
+	!! Move to allocatable components
 	!! Split into managable sizes
 	!! Full documentation must be written  
 	!! Truly rigourous testing of this module is needed  
