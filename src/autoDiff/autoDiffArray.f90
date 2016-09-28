@@ -80,7 +80,8 @@ contains
 		o = ad_t( 0.0_wp , size(u(1)%grad()) )
 		
 		do i=1,N(1)
-			o = o+u(i)
+			o%x = o%x+u(i)%x
+			o%d = o%d+u(i)%d
 		end do
 	end function sum_a1
 
@@ -97,7 +98,8 @@ contains
 		
 		do j=1,N(2)
 			do i=1,N(1)
-				o = o+u(i,j)
+				o%x = o%x+u(i,j)%x
+				o%d = o%d+u(i,j)%d
 			end do
 		end do
 	end function sum_a2
@@ -116,7 +118,8 @@ contains
 		do k=1,N(3)
 			do j=1,N(2)
 				do i=1,N(1)
-					o = o+u(i,j,k)
+					o%x = o%x+u(i,j,k)%x
+					o%d = o%d+u(i,j,k)%d
 				end do
 			end do
 		end do

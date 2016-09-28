@@ -6,8 +6,8 @@ module autoDiffType_mod
 	private
 	
 	type::ad_t
-		real(wp),private::x
-		real(wp),dimension(:),allocatable,private::d
+		real(wp)::x
+		real(wp),dimension(:),allocatable::d
 	contains
 		procedure::val
 		procedure::der
@@ -60,14 +60,14 @@ contains
 	!= ad_t Routines =!
 	!=================!
 
-	pure function val(self) result(o)
+	elemental function val(self) result(o)
 		class(ad_t),intent(in)::self
 		real(wp)::o
 		
 		o = self%x
 	end function val
 
-	pure function der(self,idx) result(o)
+	elemental function der(self,idx) result(o)
 		class(ad_t),intent(in)::self
 		integer,intent(in)::idx
 		real(wp)::o

@@ -33,7 +33,7 @@ contains
 		type(ad_t),intent(in)::u
 		type(ad_t)::o
 		
-		o = ad_t( exp(u%val()) , exp(u%val())*u%grad() )
+		o = ad_t( exp(u%x) , exp(u%x)*u%d )
 	end function exp_a
 
 	!=============!
@@ -44,14 +44,14 @@ contains
 		type(ad_t),intent(in)::u
 		type(ad_t)::o
 		
-		o = ad_t( log(u%val()) , u%grad()/u%val() )
+		o = ad_t( log(u%x) , u%d/u%x )
 	end function log_a
 
 	elemental function log10_a(u) result(o)
 		type(ad_t),intent(in)::u
 		type(ad_t)::o
 		
-		o = ad_t( log(u%val())/log10(E) , (u%grad()/u%val())/log10(E) )
+		o = ad_t( log(u%x)/log10(E) , (u%d/u%x)/log10(E) )
 	end function log10_a
 
 end module autoDiffExponential_mod

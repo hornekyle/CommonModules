@@ -34,7 +34,7 @@ contains
 		type(ad_t),intent(in)::u
 		type(ad_t)::o
 		
-		o = ad_t( sin(u%val()) , cos(u%val())*u%grad() )
+		o = ad_t( sin(u%x) , cos(u%x)*u%d )
 	end function sin_a
 
 	!==========!
@@ -45,7 +45,7 @@ contains
 		type(ad_t),intent(in)::u
 		type(ad_t)::o
 		
-		o = ad_t( cos(u%val()) , -sin(u%val())*u%grad() )
+		o = ad_t( cos(u%x) , -sin(u%x)*u%d )
 	end function cos_a
 
 	!===========!
@@ -56,7 +56,7 @@ contains
 		type(ad_t),intent(in)::u
 		type(ad_t)::o
 		
-		o = ad_t( tan(u%val()) , (tan(u%val())**2+1.0_wp)*u%grad() )
+		o = ad_t( tan(u%x) , (tan(u%x)**2+1.0_wp)*u%d )
 	end function tan_a
 
 end module autoDiffTrigonometric_mod 
