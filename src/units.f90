@@ -1,0 +1,378 @@
+module units_mod
+	use kinds_mod
+	use text_mod
+	implicit none
+	private
+	
+	!===================!
+	!= Size Parameters =!
+	!===================!
+	
+	integer,parameter::UL_COUNT = 6
+	integer,parameter::UM_COUNT = 4
+	integer,parameter::UC_COUNT = 3
+	integer,parameter::UT_COUNT = 2
+		
+	!==================================!
+	!= quantity_t Type and Interfaces =!
+	!==================================!
+	
+	type::quantity_t
+		real(wp)::value = 0.0_wp
+		
+		integer,dimension(UL_COUNT)::length = 0
+		integer,dimension(UM_COUNT)::mass   = 0
+		integer,dimension(UC_COUNT)::time   = 0
+		integer,dimension(UT_COUNT)::temp   = 0
+	contains
+		procedure::getDims
+		procedure::getScale
+		procedure::getBase
+		procedure::getChar
+		procedure::convert
+	end type
+	
+	interface quantity_t
+		module procedure newQuantity
+	end interface
+	
+	public::quantity_t
+	
+	!===================!
+	!= Unit Parameters =!
+	!===================!
+	
+	! Length
+	character(2),dimension(UL_COUNT)::UL_NAMES = &
+		& ['m ','cm','mm','yd','ft','in']
+	real(wp),dimension(UL_COUNT)::UL_SCALES = &
+		& [1.0_wp,1.0E-2_wp,1.0E-3_wp,0.9144_wp,0.3048_wp,0.0254_wp]
+	
+	! Mass
+	character(4),dimension(UM_COUNT)::UM_NAMES = &
+		& ['kg  ','g   ','slug','lbm ']
+	real(wp),dimension(UM_COUNT)::UM_SCALES = &
+		& [1.0_wp,1.0E-3_wp,14.5939029372_wp,0.45359237_wp]
+	
+	! Time (chronos)
+	character(3),dimension(UC_COUNT)::UC_NAMES = &
+		& ['s  ','min','hr ']
+	real(wp),dimension(UC_COUNT)::UC_SCALES = &
+		& [1.0_wp,60.0_wp,3600.0_wp]
+	
+	! Temperature 
+	character(1),dimension(UT_COUNT)::UT_NAMES = &
+		& ['K','R']
+	real(wp),dimension(UT_COUNT)::UT_SCALES = &
+		& [1.0_wp,0.55555555556_wp]
+	
+	!=============!
+	!= Overloads =!
+	!=============!
+	
+	! Addition
+	interface operator(+)
+		module procedure add_qq
+	end interface
+	public::operator(+)
+	
+	! Subtraction
+	interface operator(-)
+		module procedure sub_qq
+	end interface
+	public::operator(-)
+	
+	! Multiplication
+	interface operator(*)
+		module procedure mul_rq
+		module procedure mul_qr
+		module procedure mul_qq
+	end interface
+	public::operator(*)
+	
+	! Division
+	interface operator(/)
+		module procedure div_rq
+		module procedure div_qr
+		module procedure div_qq
+	end interface
+	public::operator(/)
+	
+	! Power
+	interface operator(**)
+		module procedure pow_qi
+	end interface
+	public::operator(**)
+	
+	! Sqrt
+	interface sqrt
+		module procedure sqrt_q
+	end interface
+	public::sqrt
+	
+contains
+
+	!================!
+	!= Constructors =!
+	!================!
+
+	elemental function newQuantity(value,unit) result(self)
+		real(wp),intent(in)::value
+		character(*),intent(in)::unit
+		type(quantity_t)::self
+		
+		self%value = value
+		where(UL_NAMES==unit) self%length = 1
+		where(UM_NAMES==unit) self%mass   = 1
+		where(UC_NAMES==unit) self%time   = 1
+		where(UT_NAMES==unit) self%temp   = 1
+		
+		if( sum( self%getDims() )>0 ) return
+		
+		select case(unit)
+		case('Pa')
+			self%length(1) = -1
+			self%mass(1)   =  1
+			self%time(1)   = -2
+		case('psi')
+			self%length(5) =  1
+			self%length(6) = -2
+			self%mass(3)   =  1
+			self%time(1)   = -2
+		end select
+	end function newQuantity
+
+	!=======================!
+	!= quantity_t Routines =!
+	!=======================!
+
+	pure function getDims(self) result(o)
+		class(quantity_t),intent(in)::self
+		integer,dimension(4)::o
+		
+		o(1) = sum(self%length)
+		o(2) = sum(self%mass)
+		o(3) = sum(self%time)
+		o(4) = sum(self%temp)
+	end function getDims
+
+	elemental function getScale(self) result(o)
+		class(quantity_t),intent(in)::self
+		real(wp)::o
+		
+		real(wp),dimension(4)::scales
+		
+		scales(1) = product(UL_SCALES**self%length)
+		scales(2) = product(UM_SCALES**self%mass)
+		scales(3) = product(UC_SCALES**self%time)
+		scales(4) = product(UT_SCALES**self%temp)
+		
+		o = product(scales)
+	end function getScale
+
+	elemental function getBase(self) result(o)
+		class(quantity_t),intent(in)::self
+		type(quantity_t)::o
+		
+		integer,dimension(4)::dims
+		
+		dims = self%getDims()
+		
+		o%value = self%getScale()*self%value
+		o%length(1) = dims(1)
+		o%mass(1)   = dims(2)
+		o%time(1)   = dims(3)
+		o%temp(1)   = dims(4)
+	end function getBase
+
+	elemental function getChar(self) result(o)
+		class(quantity_t),intent(in)::self
+		character(:),allocatable::o
+		
+		integer::k
+		
+		allocate(o,source='')
+		
+		do k=1,UL_COUNT
+			if(self%length(k)==0) cycle
+			o = o//trim(UL_NAMES(k))//'^('//intToChar(self%length(k))//') '
+		end do
+		
+		do k=1,UM_COUNT
+			if(self%mass(k)==0) cycle
+			o = o//trim(UM_NAMES(k))//'^('//intToChar(self%mass(k))//') '
+		end do
+		
+		do k=1,UC_COUNT
+			if(self%time(k)==0) cycle
+			o = o//trim(UC_NAMES(k))//'^('//intToChar(self%time(k))//') '
+		end do
+		
+		do k=1,UT_COUNT
+			if(self%temp(k)==0) cycle
+			o = o//trim(UT_NAMES(k))//'^('//intToChar(self%temp(k))//') '
+		end do
+	end function getChar
+
+	elemental function convert(self,u) result(o)
+		class(quantity_t),intent(in)::self
+		type(quantity_t),intent(in)::u
+		type(quantity_t)::o
+		
+		o%value  = ( self%getScale()/u%getScale() )*self%value
+		o%length = u%length
+		o%mass   = u%mass
+		o%time   = u%time
+		o%temp   = u%temp
+	end function convert
+
+	!=============!
+	!= Operators =!
+	!=============!
+
+	elemental function add_qq(u,v) result(o)
+		type(quantity_t),intent(in)::u
+		type(quantity_t),intent(in)::v
+		type(quantity_t)::o
+		
+		integer,dimension(4)::uD,vD
+		real(wp)::uS,vS
+		
+		uD = u%getDims()
+		vD = v%getDims()
+		if( .not. all(uD==vD) ) return
+		
+		uS = u%getScale()
+		vS = v%getScale()
+		
+		o%value  = u%value+(vS/uS)*v%value
+		o%length = u%length
+		o%mass   = u%mass
+		o%time   = u%time
+		o%temp   = u%temp
+	end function add_qq
+
+	elemental function sub_qq(u,v) result(o)
+		type(quantity_t),intent(in)::u
+		type(quantity_t),intent(in)::v
+		type(quantity_t)::o
+		
+		integer,dimension(4)::uD,vD
+		real(wp)::uS,vS
+		
+		uD = u%getDims()
+		vD = v%getDims()
+		if( .not. all(uD==vD) ) return
+		
+		uS = u%getScale()
+		vS = v%getScale()
+		
+		o%value  = u%value-(vS/uS)*v%value
+		o%length = u%length
+		o%mass   = u%mass
+		o%time   = u%time
+		o%temp   = u%temp
+	end function sub_qq
+
+	elemental function mul_rq(u,v) result(o)
+		real(wp),intent(in)::u
+		type(quantity_t),intent(in)::v
+		type(quantity_t)::o
+		
+		o%value  = u*v%value
+		o%length = v%length
+		o%mass   = v%mass
+		o%time   = v%time
+		o%temp   = v%temp
+	end function mul_rq
+
+	elemental function mul_qr(u,v) result(o)
+		type(quantity_t),intent(in)::u
+		real(wp),intent(in)::v
+		type(quantity_t)::o
+		
+		o%value  = u%value*v
+		o%length = u%length
+		o%mass   = u%mass
+		o%time   = u%time
+		o%temp   = u%temp
+	end function mul_qr
+
+	elemental function mul_qq(u,v) result(o)
+		type(quantity_t),intent(in)::u
+		type(quantity_t),intent(in)::v
+		type(quantity_t)::o
+		
+		o%value  = u%value*v%value
+		o%length = u%length+v%length
+		o%mass   = u%mass+v%mass
+		o%time   = u%time+v%time
+		o%temp   = u%temp+v%temp
+	end function mul_qq
+
+	elemental function div_rq(u,v) result(o)
+		real(wp),intent(in)::u
+		type(quantity_t),intent(in)::v
+		type(quantity_t)::o
+		
+		o%value  = u/v%value
+		o%length = -v%length
+		o%mass   = -v%mass
+		o%time   = -v%time
+		o%temp   = -v%temp
+	end function div_rq
+
+	elemental function div_qr(u,v) result(o)
+		type(quantity_t),intent(in)::u
+		real(wp),intent(in)::v
+		type(quantity_t)::o
+		
+		o%value  = u%value/v
+		o%length = u%length
+		o%mass   = u%mass
+		o%time   = u%time
+		o%temp   = u%temp
+	end function div_qr
+
+	elemental function div_qq(u,v) result(o)
+		type(quantity_t),intent(in)::u
+		type(quantity_t),intent(in)::v
+		type(quantity_t)::o
+		
+		o%value  = u%value/v%value
+		o%length = u%length-v%length
+		o%mass   = u%mass-v%mass
+		o%time   = u%time-v%time
+		o%temp   = u%temp-v%temp
+	end function div_qq
+
+	elemental function pow_qi(u,p) result(o)
+		type(quantity_t),intent(in)::u
+		integer,intent(in)::p
+		type(quantity_t)::o
+		
+		o%value  = u%value**p
+		o%length = u%length*p
+		o%mass   = u%mass*p
+		o%time   = u%time*p
+		o%temp   = u%temp*p
+	end function pow_qi
+
+	elemental function sqrt_q(u) result(o)
+		!! Only works for even powers
+		!! Always converts to SI
+		type(quantity_t),intent(in)::u
+		type(quantity_t)::o
+		
+		type(quantity_t)::b
+		
+		b = u%getBase()
+		
+		o%value  = sqrt(b%value)
+		o%length = b%length/2
+		o%mass   = b%mass/2
+		o%time   = b%time/2
+		o%temp   = b%temp/2
+	end function sqrt_q
+
+end module units_mod

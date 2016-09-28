@@ -102,6 +102,7 @@ set(modules_src
 	"src/spline.f90"
 	"src/stats.f90"
 	"src/time.f90"
+	"src/units.f90"
 	"src/autoDiff/autoDiff.f90"
 	"src/autoDiff/autoDiffArray.f90"
 	"src/autoDiff/autoDiffExponential.f90"
@@ -170,7 +171,7 @@ function(addTest name)
 endfunction(addTest)
 
 addTest("testArray")
-# addTest("testAutoDiff")
+addTest("testAutoDiff")
 addTest("testConfig")
 addTest("testIterate")
 addTest("testKinds")
@@ -180,6 +181,7 @@ addTest("testStats")
 addTest("testTensor")
 addTest("testText")
 addTest("testTime")
+addTest("testUnits")
 addTest("testVtkIO")
 
 add_dependencies(testConfig symlinks)
