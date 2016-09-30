@@ -93,17 +93,7 @@ contains
 		
 		if( sum( self%getDims() )>0 ) return
 		
-		select case(unit)
-		case('Pa')
-			self%length(1) = -1
-			self%mass(1)   =  1
-			self%time(1)   = -2
-		case('psi')
-			self%length(5) =  1
-			self%length(6) = -2
-			self%mass(3)   =  1
-			self%time(1)   = -2
-		end select
+		
 	end function newQuantity
 
 	!=======================!

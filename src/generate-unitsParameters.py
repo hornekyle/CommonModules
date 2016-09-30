@@ -11,7 +11,6 @@ Length['cm'] = 1.0E-2
 Length['mm'] = 1.0E-3
 Length['um'] = 1.0E-6
 Length['nm'] = 1.0E-9
-Length['A' ] = 1.0E-10
 Length['km'] = 1.0E3
 Length['AU'] = 1.4960E11
 Length['ly'] = 9.4607E15
@@ -61,11 +60,34 @@ Temp[' K'] = 1.0
 
 Temp[' R'] = 0.5555555555555556
 
-def getCode(D,pre):
+#===================#
+#= Composite Units =#
+#===================#
+
+Comp = {}
+
+Comp['N'  ] = {'kg':1,'m':1,'s':-2}
+Comp['lbf'] = {'slug':1,'ft':1,'s':-2}
+
+Comp['Pa' ] = {'kg':1,'m':-1,'s':-2}
+Comp['psi'] = {'slug':1,'ft':1,'in':-2,'s':-2}
+
+Comp['kph'] = {'km':1,'hr':-1}
+Comp['mph'] = {'mi':1,'hr':-1}
+
+Comp['J'  ] = {'kg':1,'m':2,'s':-2}
+Comp['W'  ] = {'kg':1,'m':2,'s':-3}
+
+#===================#
+#= Code Generators =#
+#===================#
+
+def getParameters(D,pre):
 	N = len(D)
 	lines = []
 	
 	lines.append('\tinteger,parameter::%(pre)s_COUNT = %(count)d'%{'pre':pre,'count':N})
+	
 	lines.append('\tcharacter(10),dimension(%(pre)s_COUNT)::%(pre)s_NAMES = [character(10):: &'%{'pre':pre})
 	buf = '\t\t&'
 	keys = sorted(D.keys())
@@ -77,7 +99,9 @@ def getCode(D,pre):
 			buf = '%s & \n\t\t&'%buf
 		if k==len(keys)-1:
 			buf = '%s &'%buf
-	lines.append(buf)
+	BS = buf.split('\n')
+	for b in BS:
+		lines.append(b)
 	lines.append('\t\t& ]')
 	
 	lines.append('\treal(wp),dimension(%(pre)s_COUNT)::%(pre)s_SCALES = [real(wp):: &'%{'pre':pre})
@@ -108,16 +132,18 @@ head.append('\tuse kinds_mod')
 head.append('\timplicit none')
 head.append('\t')
 
-L = getCode(Length,'UL')+['\t']
-M = getCode(Mass,'UM')+['\t']
-t = getCode(Time,'UC')+['\t']
-T = getCode(Temp,'UT')
-body = L+M+t+T
+L = getParameters(Length,'UL')+['\t']
+M = getParameters(Mass,'UM')+['\t']
+t = getParameters(Time,'UC')+['\t']
+T = getParameters(Temp,'UT')
+declarations = L+M+t+T
+
+contains = ['\n','contains','\n']
 
 foot = []
 foot.append('end module unitsParameters_mod')
 
-full = head+body+foot
+full = head+declarations+contains+foot
 
 #==============#
 #= Write File =#
