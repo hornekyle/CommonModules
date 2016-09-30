@@ -93,6 +93,8 @@ add_custom_target(symlinks
 #= Create Library Target =#
 #=========================#
 
+add_custom_command(OUTPUT "unitsParameters.f90" COMMAND "${CMAKE_SOURCE_DIR}/src/generate-unitsParameters.py")
+
 # Source Files
 set(modules_src
 	"src/array.f90"
@@ -103,6 +105,7 @@ set(modules_src
 	"src/stats.f90"
 	"src/time.f90"
 	"src/units.f90"
+	"unitsParameters.f90"
 	"src/autoDiff/autoDiff.f90"
 	"src/autoDiff/autoDiffArray.f90"
 	"src/autoDiff/autoDiffExponential.f90"

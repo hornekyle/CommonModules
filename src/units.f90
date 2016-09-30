@@ -1,17 +1,9 @@
 module units_mod
 	use kinds_mod
 	use text_mod
+	use unitsParameters_mod
 	implicit none
 	private
-	
-	!===================!
-	!= Size Parameters =!
-	!===================!
-	
-	integer,parameter::UL_COUNT = 6
-	integer,parameter::UM_COUNT = 4
-	integer,parameter::UC_COUNT = 3
-	integer,parameter::UT_COUNT = 2
 		
 	!==================================!
 	!= quantity_t Type and Interfaces =!
@@ -37,34 +29,6 @@ module units_mod
 	end interface
 	
 	public::quantity_t
-	
-	!===================!
-	!= Unit Parameters =!
-	!===================!
-	
-	! Length
-	character(2),dimension(UL_COUNT)::UL_NAMES = &
-		& ['m ','cm','mm','yd','ft','in']
-	real(wp),dimension(UL_COUNT)::UL_SCALES = &
-		& [1.0_wp,1.0E-2_wp,1.0E-3_wp,0.9144_wp,0.3048_wp,0.0254_wp]
-	
-	! Mass
-	character(4),dimension(UM_COUNT)::UM_NAMES = &
-		& ['kg  ','g   ','slug','lbm ']
-	real(wp),dimension(UM_COUNT)::UM_SCALES = &
-		& [1.0_wp,1.0E-3_wp,14.5939029372_wp,0.45359237_wp]
-	
-	! Time (chronos)
-	character(3),dimension(UC_COUNT)::UC_NAMES = &
-		& ['s  ','min','hr ']
-	real(wp),dimension(UC_COUNT)::UC_SCALES = &
-		& [1.0_wp,60.0_wp,3600.0_wp]
-	
-	! Temperature 
-	character(1),dimension(UT_COUNT)::UT_NAMES = &
-		& ['K','R']
-	real(wp),dimension(UT_COUNT)::UT_SCALES = &
-		& [1.0_wp,0.55555555556_wp]
 	
 	!=============!
 	!= Overloads =!
