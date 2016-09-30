@@ -2,8 +2,10 @@ module plplotlib_mod
 	!! Wrapper module for plplot to give it a more matplotlib like personality
 	use kinds_mod, only: wp
 	use plplotlibBase_mod
+	use plplotlibFigure_mod
 	use plplotlib1D_mod
 	use plplotlib2D_mod
+	use plplotlib3D_mod
 	implicit none
 	private
 	

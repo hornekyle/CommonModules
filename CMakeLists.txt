@@ -142,8 +142,10 @@ if(PLPLOT_FOUND)
 	set(modules_src ${modules_src}
 		"src/plplotlib/plplotlib.f90"
 		"src/plplotlib/plplotlibBase.f90"
+		"src/plplotlib/plplotlibFigure.f90"
 		"src/plplotlib/plplotlib1D.f90"
-		"src/plplotlib/plplotlib2D.f90")
+		"src/plplotlib/plplotlib2D.f90"
+		"src/plplotlib/plplotlib3D.f90")
 endif(PLPLOT_FOUND)
 
 # Add target
