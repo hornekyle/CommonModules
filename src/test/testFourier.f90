@@ -3,7 +3,7 @@ program testFourier_prg
 	!! @todo
 	!! Add tests for 2d transforms  
 	!! Add tests for 2d inverse transforms
-	use kinds_mod
+	use constants_mod
 	use fourier_mod
 	implicit none
 	

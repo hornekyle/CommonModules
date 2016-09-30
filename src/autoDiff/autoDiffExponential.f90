@@ -1,6 +1,7 @@
  module autoDiffExponential_mod
 	!! @todo
 	!! Add cosh and sinh
+	use constants_mod
 	use autoDiffType_mod
 	implicit none
 	private

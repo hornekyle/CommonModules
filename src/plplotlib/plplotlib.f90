@@ -1,6 +1,5 @@
 module plplotlib_mod
 	!! Wrapper module for plplot to give it a more matplotlib like personality
-	use kinds_mod, only: wp
 	use plplotlibBase_mod
 	use plplotlibFigure_mod
 	use plplotlib1D_mod
@@ -28,5 +27,8 @@ module plplotlib_mod
 	public::fillBetween,fillBetweenx
 	public::quiver
 	public::surface,wireframe
+	
+	! Kinds
+	public::wp
 	
 end module plplotlib_mod

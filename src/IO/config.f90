@@ -4,7 +4,6 @@ module config_mod
 	!! @todo
 	!! Change string to character
 	!! Change pair_t component names to data_[type]
-	use kinds_mod
 	use text_mod
 	implicit none
 	private

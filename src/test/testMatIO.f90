@@ -12,11 +12,11 @@ contains
 		!! Verify operation of writeMat
 		integer,parameter::N = 5
 		integer,parameter::M = 4
-		real(wp),dimension(N,M)::A
+		real(dp),dimension(N,M)::A
 		
 		integer::i,j
 		
-		forall(i=1:N,j=1:M) A(i,j) = real(i+j,wp)
+		forall(i=1:N,j=1:M) A(i,j) = real(i+j,dp)
 		
 		call writeMat('data.mat','A',A,.true.)
 	end subroutine testWriteMat

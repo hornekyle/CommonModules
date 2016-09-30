@@ -2,7 +2,6 @@ module quaternion_mod
 	!! Module for working with quaternions
 	!! @todo
 	!! Add documentation
-	use kinds_mod
 	use tensor_mod
 	implicit none
 	private

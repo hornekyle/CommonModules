@@ -1,6 +1,5 @@
 module plplotlibBase_mod
 	!! Wrapper module for plplot to give it a more matplotlib like personality
-	use kinds_mod, only: wp
 	use plplot
 	use array_mod
 	implicit none

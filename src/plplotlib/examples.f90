@@ -1,6 +1,6 @@
 program examples_prg
 	!! A collection of example plots
-	use kinds_mod
+	use constants_mod
 	use array_mod
 	use plplotlib_mod
 	implicit none

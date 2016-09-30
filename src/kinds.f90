@@ -1,8 +1,5 @@
 module kinds_mod
-	!! Module to manage real kinds and basic constants
-	!!
-	!! @todo
-	!! Move constants to their own module
+	!! Module to manage real kinds
 	implicit none
 	
 	!==============!
@@ -24,24 +21,13 @@ module kinds_mod
 	integer,parameter::wp = dp
 		!! Set working precision to double
 	
-	!==================!
-	!= Math Constants =!
-	!==================!
-	
-	real(wp),parameter::PI = 4.0_wp*atan(1.0_wp)
-		!! Archimedes' constant
-	real(wp),parameter::E  = exp(1.0_wp)
-		!! Euler's constant
-	
 	!===========!
 	!= Exports =!
 	!===========!
 	
 	public::sp,dp,ep,qp,wp
-	public::PI,E
 	
 	public::printTypes
-	public::arg
 	
 contains
 
@@ -53,14 +39,6 @@ contains
 		write(*,*) 'qp: ',qp
 		write(*,*) 'wp: ',wp
 	end subroutine printTypes
-
-	elemental function arg(z) result(v)
-		!! Compute the argument of a complex number
-		complex(wp),intent(in)::z
-		real(wp)::v
-		
-		v = atan2(aimag(z),real(z))
-	end function arg
 
 end module kinds_mod
  

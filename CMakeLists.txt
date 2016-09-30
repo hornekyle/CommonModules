@@ -101,6 +101,7 @@ add_custom_command(OUTPUT "${CMAKE_BINARY_DIR}/src-gen/unitsParameters.f90"
 # Source Files
 set(modules_src
 	"src/array.f90"
+	"src/constants.f90"
 	"src/iterate.f90"
 	"src/kinds.f90"
 	"src/optimize.f90"
@@ -185,6 +186,7 @@ endfunction(addTest)
 addTest("testArray")
 addTest("testAutoDiff")
 addTest("testConfig")
+addTest("testConstants")
 addTest("testIterate")
 addTest("testKinds")
 addTest("testMatIO")

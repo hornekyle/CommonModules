@@ -1,6 +1,6 @@
 program animate_prg
 	!! Create a series of plots for an animation
-	use kinds_mod
+	use constants_mod
 	use array_mod
 	use plplotlib_mod
 	implicit none

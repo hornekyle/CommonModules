@@ -1,6 +1,6 @@
 program testEval_prg
 	!! Test program for eval_mod
-	use kinds_mod
+	use constants_mod
 	use expression_mod
 	use array_mod
 	use plplotlib_mod

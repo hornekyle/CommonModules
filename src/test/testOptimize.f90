@@ -1,8 +1,5 @@
 module objective_mod
 	use optimize_mod
-	use array_mod
-	use plplotlib_mod
-	use text_mod
 	implicit none
 	
 	integer::kLog = 1
@@ -51,9 +48,10 @@ program testOptimize_prg
 	!! Test program for Optimize_mod
 	!! @todo
 	!! Finish tests
-	use kinds_mod
-	use optimize_mod
 	use objective_mod
+	use array_mod
+	use plplotlib_mod
+	use text_mod
 	implicit none
 	
 	call testObjective

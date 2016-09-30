@@ -1,6 +1,6 @@
 module fourier_mod
 	!! Module for simplified access to the FFTW3 library
-	use kinds_mod
+	use constants_mod
 	use iso_c_binding
 	use fftw3_mod
 	implicit none

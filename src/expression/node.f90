@@ -1,5 +1,4 @@
 module node_mod
-	use kinds_mod
 	use text_mod
 	implicit none
 	public
