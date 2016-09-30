@@ -1,7 +1,6 @@
 module autoDiffTrigonometric_mod
 	!! @todo
 	!! Add inverse operators
-	use kinds_mod
 	use autoDiffType_mod
 	implicit none
 	private

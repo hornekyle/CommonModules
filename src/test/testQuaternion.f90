@@ -2,7 +2,6 @@ program testQuaternion_prg
 	!! Test program for quaternion_mod
 	!! @todo
 	!! Add real tests
-	use kinds_mod
 	use quaternion_mod
 	implicit none
 	

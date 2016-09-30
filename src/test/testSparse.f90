@@ -1,5 +1,4 @@
 program testSparse_prg
-	use kinds_mod
 	use sparse_mod
 	use basicSolvers_mod
 	use solvers_mod

@@ -3,7 +3,6 @@ module plplotlibBase_mod
 	use kinds_mod, only: wp
 	use plplot
 	use array_mod
-	use text_mod
 	implicit none
 	public
 	

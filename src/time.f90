@@ -9,6 +9,9 @@ module time_mod
 	public::wallTime
 	public::wait
 	
+	! Types
+	public::wp
+	
 contains
 
 	function cpuTime() result(o)

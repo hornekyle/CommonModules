@@ -1,6 +1,5 @@
 module spline_mod
 	!! Module to construct and evaluate splines of multivariate datasets
-	use kinds_mod
 	use array_mod
 	implicit none
 	private
@@ -78,6 +77,9 @@ module spline_mod
 	public::spline_t
 	public::linearSpline_t
 	public::cubicSpline_t
+	
+	! Types
+	public::wp
 	
 contains
 

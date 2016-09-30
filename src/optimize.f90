@@ -1,6 +1,5 @@
 module optimize_mod
 	!! Module for minimization of 1D and N-D problems
-	use kinds_mod
 	use array_mod
 	implicit none
 	private
@@ -98,6 +97,9 @@ module optimize_mod
 	public::objN_t
 	
 	public::lineSearch_t
+	
+	! Types
+	public::wp
 	
 contains
 

@@ -35,14 +35,14 @@ of the discrete indexed colors. For example: `color='  0.534 '` This can
 easily be automated through the use of internal files.
 
 @note
-[[plplotlib_mod:box]]
-[[plplotlib_mod:labels]]
-[[plplotlib_mod:ticks]]
-[[plplotlib_mod:title]]
-[[plplotlib_mod:xlabel]]
-[[plplotlib_mod:xticks]]
-[[plplotlib_mod:ylabel]]
-[[plplotlib_mod:yticks]]
+[[plplotlibFigure_mod:box]]
+[[plplotlibFigure_mod:labels]]
+[[plplotlibFigure_mod:ticks]]
+[[plplotlibFigure_mod:title]]
+[[plplotlibFigure_mod:xlabel]]
+[[plplotlibFigure_mod:xticks]]
+[[plplotlibFigure_mod:ylabel]]
+[[plplotlibFigure_mod:yticks]]
 
 ### `lineColor`
 
@@ -67,14 +67,14 @@ of the discrete indexed colors. For example: `lineColor='  0.534 '` This can
 easily be automated through the use of internal files.
 
 @note
-[[plplotlib_mod:hist]]
-[[plplotlib_mod:bar]]
-[[plplotlib_mod:barh]]
-[[plplotlib_mod:plot]]
-[[plplotlib_mod:plot3]]
-[[plplotlib_mod:contour]]
-[[plplotlib_mod:wireframe]]
-[[plplotlib_mod:quiver]]
+[[plplotlib1D_mod:hist]]
+[[plplotlib1D_mod:bar]]
+[[plplotlib1D_mod:barh]]
+[[plplotlib1D_mod:plot]]
+[[plplotlib2D_mod:contour]]
+[[plplotlib2D_mod:quiver]]
+[[plplotlib3D_mod:plot3]]
+[[plplotlib3D_mod:wireframe]]
 
 ### `lineStyle`
 
@@ -86,11 +86,11 @@ a `character` value. Accepted values are the following:
 	* ':'  :: Dotted line
 
 @note
-[[plplotlib_mod:plot]]
-[[plplotlib_mod:plot3]]
-[[plplotlib_mod:contour]]
-[[plplotlib_mod:surface]]
-[[plplotlib_mod:quiver]]
+[[plplotlib1D_mod:plot]]
+[[plplotlib2D_mod:contour]]
+[[plplotlib2D_mod:quiver]]
+[[plplotlib3D_mod:plot3]]
+[[plplotlib3D_mod:surface]]
 
 ### `lineWidth`
 
@@ -100,18 +100,18 @@ argument, with a `real` number multiple of the default line width. For example,
 normal.
 
 @note
-[[plplotlib_mod:ticks]]
-[[plplotlib_mod:xticks]]
-[[plplotlib_mod:yticks]]
-[[plplotlib_mod:hist]]
-[[plplotlib_mod:plot]]
-[[plplotlib_mod:plot3]]
-[[plplotlib_mod:contour]]
-[[plplotlib_mod:quiver]]
-[[plplotlib_mod:bar]]
-[[plplotlib_mod:barh]]
-[[plplotlib_mod:fillBetween]]
-[[plplotlib_mod:fillBetweenx]]
+[[plplotlibFigure_mod:ticks]]
+[[plplotlibFigure_mod:xticks]]
+[[plplotlibFigure_mod:yticks]]
+[[plplotlib1D_mod:plot]]
+[[plplotlib1D_mod:fillBetween]]
+[[plplotlib1D_mod:fillBetweenx]]
+[[plplotlib1D_mod:hist]]
+[[plplotlib1D_mod:bar]]
+[[plplotlib1D_mod:barh]]
+[[plplotlib2D_mod:contour]]
+[[plplotlib2D_mod:quiver]]
+[[plplotlib3D_mod:plot3]]
 
 ### `markColor`
 
@@ -133,9 +133,9 @@ Unlike line colors, marks cannot use the continuous colormap and are thus
 restricted to the indexed colors.
 
 @note
-[[plplotlib_mod:scatter]]
-[[plplotlib_mod:plot]]
-[[plplotlib_mod:plot3]]
+[[plplotlib1D_mod:plot]]
+[[plplotlib1D_mod:scatter]]
+[[plplotlib3D_mod:plot3]]
 
 ### `markStyle`
 
@@ -150,9 +150,9 @@ restricted to the indexed colors.
 	* '>' :: Right triangle
 
 @note
-[[plplotlib_mod:scatter]]
-[[plplotlib_mod:plot]]
-[[plplotlib_mod:plot3]]
+[[plplotlib1D_mod:plot]]
+[[plplotlib1D_mod:scatter]]
+[[plplotlib3D_mod:plot3]]
 
 ### `markSize`
 
@@ -161,6 +161,6 @@ a `real` value multiple of the default maker size. For example, `markSize=1.5_wp
 will scale up the markers by 50% from the default size.
 
 @note
-[[plplotlib_mod:scatter]]
-[[plplotlib_mod:plot]]
-[[plplotlib_mod:plot3]]
+[[plplotlib1D_mod:plot]]
+[[plplotlib1D_mod:scatter]]
+[[plplotlib3D_mod:plot3]]

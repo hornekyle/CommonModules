@@ -1,7 +1,6 @@
 module text_mod
 	!! Text processing module
 	use iso_fortran_env
-	use kinds_mod
 	use time_mod
 	implicit none
 	private
@@ -57,6 +56,9 @@ module text_mod
 	public::colorMap
 	
 	public::showProgress
+	
+	! Kinds
+	public::wp
 	
 contains
 

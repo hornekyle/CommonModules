@@ -1,7 +1,7 @@
 module treeValue_mod
-	use kinds_mod
 	use node_mod
 	implicit none
+	public
 	
 	!========================================!
 	!= Evaluation Tree Types and Interfaces =!

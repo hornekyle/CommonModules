@@ -1,6 +1,5 @@
 program testVtkIO_prg
 	!! Test program for vtkIO_mod
-	use kinds_mod
 	use vtkIO_mod
 	use array_mod
 	implicit none

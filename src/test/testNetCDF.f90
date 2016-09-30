@@ -1,6 +1,5 @@
 program testNetCDF_prg
 	!! Test program for netCFD_mod
-	use kinds_mod
 	use netCDF_mod
 	use array_mod
 	implicit none

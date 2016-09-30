@@ -25,6 +25,9 @@ module netCDF_mod
 	public::writeGrid
 	public::writeStep
 	
+	! Kinds
+	public::wp
+	
 contains
 
 	!==================!

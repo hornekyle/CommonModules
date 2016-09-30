@@ -63,6 +63,9 @@ module array_mod
 	public::linearInterp
 	public::findInterval
 	
+	! Types
+	public::wp
+	
 contains
 
 	!====================!

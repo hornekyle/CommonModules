@@ -26,6 +26,8 @@ module autoDiffType_mod
 	public::ad_t
 	public::nint
 	
+	public::wp,E
+	
 contains
 	
 	!================!

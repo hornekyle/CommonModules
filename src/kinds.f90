@@ -1,5 +1,8 @@
 module kinds_mod
 	!! Module to manage real kinds and basic constants
+	!!
+	!! @todo
+	!! Move constants to their own module
 	implicit none
 	
 	!==============!

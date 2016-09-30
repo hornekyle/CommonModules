@@ -2,7 +2,6 @@ program testAutoDiff_prg
 	!! Test program for autoDiff_mod
 	!! @todo
 	!! Needs serious improvements
-	use kinds_mod
 	use autoDiff_mod
 	implicit none
 	

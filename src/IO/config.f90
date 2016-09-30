@@ -84,6 +84,9 @@ module config_mod
 	
 	public::config_t
 	
+	! Kinds
+	public::wp
+	
 contains
 
 	!=======================!

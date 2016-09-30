@@ -47,7 +47,7 @@ call setup(device='svgqt',figSize=[800,600])
 ~~~
 
 @note
-[[plplotlib_mod:setup]]
+[[plplotlibBase_mod:setup]]
 
 ### `figure`
 
@@ -83,7 +83,7 @@ for the plotting region, which is useful if the horizontal and vertical
 axes share the same units and should be scaled equally.
 
 @note
-[[plplotlib_mod:subplot]]
+[[plplotlibFigure_mod:subplot]]
 
 ### `xylim`
 
@@ -105,9 +105,9 @@ There are two other variants of this routine which set only the horizontal
 or vertical ranges of the plot.
 
 @note
-[[plplotlib_mod:xylim]]
-[[plplotlib_mod:xlim]]
-[[plplotlib_mod:ylim]]
+[[plplotlibFigure_mod:xylim]]
+[[plplotlibFigure_mod:xlim]]
+[[plplotlibFigure_mod:ylim]]
 
 ### `plot`
 
@@ -127,7 +127,7 @@ call plot(x,y)
 ~~~
 
 @note
-[[plplotlib_mod:plot]]
+[[plplotlib1D_mod:plot]]
 
 ### `ticks`
 
@@ -146,9 +146,9 @@ Additional routines exist to control the drawing of ticks on the horizontal
 and vertical axes separately.
 
 @note
-[[plplotlib_mod:ticks]]
-[[plplotlib_mod:xticks]]
-[[plplotlib_mod:yticks]]
+[[plplotlibFigure_mod:ticks]]
+[[plplotlibFigure_mod:xticks]]
+[[plplotlibFigure_mod:yticks]]
 
 ### `labels`
 
@@ -165,7 +165,7 @@ Additional routines exist to control the drawing of labels on the horizontal
 and vertical axes, and the plot title, separately.
 
 @note
-[[plplotlib_mod:labels]]
-[[plplotlib_mod:xlabel]]
-[[plplotlib_mod:ylabel]]
-[[plplotlib_mod:title]]
+[[plplotlibFigure_mod:labels]]
+[[plplotlibFigure_mod:xlabel]]
+[[plplotlibFigure_mod:ylabel]]
+[[plplotlibFigure_mod:title]]

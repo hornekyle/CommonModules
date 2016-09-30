@@ -2,7 +2,6 @@ module expression_mod
 	!! Module for dynamic evaluation of function expressions
 	!! @todo
 	!! Add ability to take derivative
-	use kinds_mod
 	use node_mod
 	use treeValue_mod
 	use treeOperator_mod

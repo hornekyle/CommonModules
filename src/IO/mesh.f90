@@ -133,7 +133,10 @@ module mesh_mod
 	public::element_t
 	public::group_t
 	public::mesh_t
-
+	
+	! Kinds
+	public::wp
+	
 contains
 
 	subroutine readGmsh(self,fn)

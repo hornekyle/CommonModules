@@ -2,6 +2,7 @@ module node_mod
 	use kinds_mod
 	use text_mod
 	implicit none
+	public
 	
 	!==============================!
 	!= node_t Type and Interfaces =!

@@ -2,7 +2,6 @@ program testConfig_prg
 	!! Test program for config_mod
 	!! @todo
 	!! Add tests for each datatype
-	use kinds_mod
 	use config_mod
 	use text_mod
 	implicit none

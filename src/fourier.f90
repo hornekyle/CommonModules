@@ -54,6 +54,9 @@ module fourier_mod
 	public::FFT,iFFT
 	public::DFT,iDFT
 	
+	! Types
+	public::wp
+	
 contains
 
 	!=============!

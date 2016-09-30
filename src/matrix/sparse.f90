@@ -103,6 +103,9 @@ module sparse_mod
 	public::maxval
 	public::transpose
 	
+	! Kinds
+	public::wp
+	
 contains
 
 	!===========!

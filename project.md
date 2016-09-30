@@ -3,6 +3,7 @@ summary: Common modules for using in other programs
 author: Kyle Horne
 email: kyle.horne@gmail.com
 src_dir: src
+src_dir: src-gen
 page_dir: pages
 media_dir: media
 output_dir: doc

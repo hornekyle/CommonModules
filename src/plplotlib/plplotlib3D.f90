@@ -1,8 +1,5 @@
 module plplotlib3D_mod
 	!! Wrapper module for plplot to give it a more matplotlib like personality
-	use kinds_mod, only: wp
-	use plplot
-	use array_mod
 	use plplotlibBase_mod
 	implicit none
 	public

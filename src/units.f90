@@ -1,5 +1,4 @@
 module units_mod
-	use kinds_mod
 	use text_mod
 	use unitsParameters_mod
 	implicit none
@@ -73,6 +72,13 @@ module units_mod
 		module procedure sqrt_q
 	end interface
 	public::sqrt
+	
+	!=================!
+	!= Other Exports =!
+	!=================!
+	
+	! Types
+	public::wp
 	
 contains
 

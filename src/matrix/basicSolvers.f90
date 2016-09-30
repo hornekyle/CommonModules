@@ -1,6 +1,5 @@
 module basicSolvers_mod
 	!! Module for solving sparse linear systems
-	use kinds_mod
 	use sparse_mod
 	use text_mod
 	implicit none
@@ -10,6 +9,9 @@ module basicSolvers_mod
 	integer,parameter::SO_FANCY  = 3
 	
 	integer::SO_TYPE = SO_FANCY
+	
+	! Kinds
+	public::wp
 	
 contains
 

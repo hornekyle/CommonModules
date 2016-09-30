@@ -1,5 +1,4 @@
 module solvers_mod
-	use kinds_mod
 	use time_mod
 	use text_mod
 	use sparse_mod
@@ -141,6 +140,9 @@ module solvers_mod
 	public::SOR_t
 	public::conjugateGradient_t
 	public::biCGSTAB_t
+	
+	! Kinds
+	public::wp
 	
 contains
 

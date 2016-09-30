@@ -51,6 +51,9 @@ module tensor_mod
 	public::operator(.d.)
 	public::operator(.oo.)
 	
+	! Kinds
+	public::wp
+	
 contains
 
 	!================!

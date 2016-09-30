@@ -1,5 +1,4 @@
 module objective_mod
-	use kinds_mod
 	use optimize_mod
 	use array_mod
 	use plplotlib_mod

@@ -1,6 +1,5 @@
 program testSpline_prg
 	!! Test program for Spline_mod
-	use kinds_mod
 	use spline_mod
 	use plplotlib_mod
 	use array_mod

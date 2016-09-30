@@ -1,6 +1,5 @@
 program testTime_prg
 	!! Test program for time_mod
-	use kinds_mod
 	use time_mod
 	implicit none
 	

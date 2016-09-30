@@ -1,6 +1,5 @@
 program testText_prg
 	!! Test program for text_mod
-	use kinds_mod
 	use text_mod
 	implicit none
 	

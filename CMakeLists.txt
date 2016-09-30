@@ -14,7 +14,7 @@ find_program(EXECUTABLE_GMSH "gmsh")
 
 file(MAKE_DIRECTORY "${CMAKE_BINARY_DIR}/media")
 file(MAKE_DIRECTORY "${CMAKE_BINARY_DIR}/test_files")
-
+file(MAKE_DIRECTORY "${CMAKE_BINARY_DIR}/src-gen")
 file(MAKE_DIRECTORY "${CMAKE_BINARY_DIR}/modules")
 set(CMAKE_Fortran_MODULE_DIRECTORY "${CMAKE_BINARY_DIR}/modules")
 include_directories("${CMAKE_BINARY_DIR}/modules")
@@ -93,7 +93,10 @@ add_custom_target(symlinks
 #= Create Library Target =#
 #=========================#
 
-add_custom_command(OUTPUT "unitsParameters.f90" COMMAND "${CMAKE_SOURCE_DIR}/src/generate-unitsParameters.py")
+add_custom_command(OUTPUT "${CMAKE_BINARY_DIR}/src-gen/unitsParameters.f90" 
+	COMMAND "${CMAKE_SOURCE_DIR}/src/generate-unitsParameters.py"
+	WORKING_DIRECTORY "${CMAKE_BINARY_DIR}/src-gen"
+	DEPENDS "${CMAKE_SOURCE_DIR}/src/generate-unitsParameters.py")
 
 # Source Files
 set(modules_src
@@ -105,7 +108,7 @@ set(modules_src
 	"src/stats.f90"
 	"src/time.f90"
 	"src/units.f90"
-	"unitsParameters.f90"
+	"${CMAKE_BINARY_DIR}/src-gen/unitsParameters.f90"
 	"src/autoDiff/autoDiff.f90"
 	"src/autoDiff/autoDiffArray.f90"
 	"src/autoDiff/autoDiffExponential.f90"

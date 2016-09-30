@@ -2,7 +2,6 @@ program testUnits_prg
 	!! Test program for units_mod
 	!! @todo
 	!! Needs serious improvements
-	use kinds_mod, only: wp
 	use units_mod
 	implicit none
 	

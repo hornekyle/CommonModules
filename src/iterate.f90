@@ -26,6 +26,9 @@ module iterate_mod
 	public::iterator_t
 	public::newIterator
 	
+	! Types
+	public::wp
+	
 contains
 
 	function newIterator(N,lB,hB) result(o)

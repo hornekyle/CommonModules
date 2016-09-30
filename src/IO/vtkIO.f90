@@ -38,6 +38,9 @@ module vtkIO_mod
 	public::writeVectorVTK
 	public::writeScalarVTK
 	
+	! Kinds
+	public::wp
+	
 contains
 
 	subroutine writeHeaderVTK(u,title)

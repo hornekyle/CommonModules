@@ -1,6 +1,5 @@
 program testMesh_prg
 	!! Test program for mesh_mod
-	use kinds_mod
 	use mesh_mod
 	implicit none
 	

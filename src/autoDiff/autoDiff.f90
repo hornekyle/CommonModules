@@ -1,5 +1,4 @@
 module autoDiff_mod
-	use kinds_mod
 	use autoDiffType_mod
 	
 	use autoDiffOperator_mod

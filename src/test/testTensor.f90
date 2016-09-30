@@ -1,6 +1,5 @@
 program testTensor_prg
 	!! Test program for Tensor_mod
-	use kinds_mod
 	use tensor_mod
 	implicit none
 	

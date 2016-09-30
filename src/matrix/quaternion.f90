@@ -99,6 +99,9 @@ module quaternion_mod
 	public::operator(*)
 	public::operator(/)
 	
+	! Kinds
+	public::wp
+	
 contains
 
 	!==================!

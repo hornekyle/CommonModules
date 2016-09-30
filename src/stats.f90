@@ -32,6 +32,9 @@ module stats_mod
 	public::mean
 	public::stDev
 	
+	! Types
+	public::wp
+	
 contains
 
 	!========================!

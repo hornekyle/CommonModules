@@ -2,7 +2,6 @@ program basic_prg
 	!! Create a basic plot
 	!!
 	!! ![plot](|media|/basic-1.svg)
-	use kinds_mod
 	use array_mod
 	use plplotlib_mod
 	implicit none

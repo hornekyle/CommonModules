@@ -1,6 +1,5 @@
 program testIterate_prg
 	!! Test program for iterate_mod
-	use kinds_mod
 	use iterate_mod
 	use text_mod
 	use time_mod

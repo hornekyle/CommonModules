@@ -1,6 +1,5 @@
 program testStats_prg
 	!! Test program for stats_mod
-	use kinds_mod
 	use stats_mod
 	implicit none
 	
