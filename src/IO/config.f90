@@ -90,14 +90,15 @@ contains
 	!= pair_t Constructors =!
 	!=======================!
 
-	function newPair(b) result(self)
+	function newPair(b,s) result(self)
 		!! Constructor for pair_t
 		character(*),intent(inout)::b
+		character(*),intent(in)::s
 		type(pair_t)::self
 		
 		character(1024)::v
 		
-		self%key   = trim(adjustl(b(1:index(b,'=')-1)))
+		self%key   = s//trim(adjustl(b(1:index(b,'=')-1)))
 		v       = adjustl(b(index(b,'=')+1:len(b)))
 		self%ptype = parseType(trim(v))
 		
@@ -226,12 +227,14 @@ contains
 		character(strLong)::buf
 		type(node_t),target::head
 		type(node_t),pointer::cur,next,tail
+		character(:),allocatable::section
 		integer::N,k
 		
 		self%fn = fn
 		
 		open(100,file=fn,status='old',iostat=ios)
 		if(ios/=0) call doError('Cannot open file: '//fn)
+		section = ''
 		
 		! Read pairs into linked list
 		N    =  0
@@ -244,7 +247,11 @@ contains
 				allocate(tail%next)
 				
 				tail     => tail%next
-				tail%obj =  pair_t(buf)
+				tail%obj =  pair_t(buf,section)
+			end if
+			if(buf(1:1)=='[' .and. index(buf,']')>0) then
+				k = index(buf,']')
+				section = trim(buf(2:k-1))//'.'
 			end if
 			read(100,fmtLong,iostat=ios) buf
 		end do

@@ -4,6 +4,7 @@ program testConfig_prg
 	!! Add tests for each datatype
 	use kinds_mod
 	use config_mod
+	use text_mod
 	implicit none
 	
 	call testNewConfig
@@ -24,6 +25,7 @@ contains
 		character(:),allocatable::tString
 		
 		cfg = config_t('./input/testConfig.cfg')
+		call cfg%writeContents(stdout)
 		
 		results(1) = allocated(cfg%pairs)
 		
