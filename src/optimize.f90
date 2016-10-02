@@ -82,6 +82,7 @@ module optimize_mod
 	contains
 		procedure::parentX
 		procedure::eval => eval_lineSearch
+		procedure::der1 => der1_lineSearch
 	end type
 	
 	interface lineSearch_t
@@ -572,5 +573,13 @@ contains
 		
 		o = self%parent%eval(self%parentX(x))
 	end function eval_lineSearch
+
+	function der1_lineSearch(self,x) result(o)
+		class(lineSearch_t),intent(in)::self
+		real(wp),intent(in)::x
+		real(wp)::o
+		
+		o = dot_product(self%parent%grad(self%parentX(x)),self%n0)
+	end function der1_lineSearch
 
 end module optimize_mod

@@ -66,17 +66,20 @@ Temp[' R'] = 0.5555555555555556
 
 Comp = {}
 
-Comp['N'  ] = {'kg':1,'m':1,'s':-2}
-Comp['lbf'] = {'slug':1,'ft':1,'s':-2}
+Comp['N'  ] = {' kg':1,' m':1,' s':-2}
+Comp['lbf'] = {'slug':1,'ft':1,' s':-2}
 
-Comp['Pa' ] = {'kg':1,'m':-1,'s':-2}
-Comp['psi'] = {'slug':1,'ft':1,'in':-2,'s':-2}
+Comp['Pa' ] = {' kg':1,' m':-1,' s':-2}
+Comp['psi'] = {'slug':1,'ft':1,'in':-2,' s':-2}
 
 Comp['kph'] = {'km':1,'hr':-1}
 Comp['mph'] = {'mi':1,'hr':-1}
 
-Comp['J'  ] = {'kg':1,'m':2,'s':-2}
-Comp['W'  ] = {'kg':1,'m':2,'s':-3}
+Comp['J'  ] = {' kg':1,' m':2,' s':-2}
+Comp['btu'] = {' kg':1,' m':2,' s':-2,'_scale':1055.06}
+
+Comp['W'  ] = {' kg':1,' m':2,' s':-3}
+Comp['hp' ] = {' kg':1,' m':2,' s':-3,'_scale':745.7}
 
 #===================#
 #= Code Generators =#

@@ -1,5 +1,6 @@
 module objective_mod
 	use optimize_mod
+	use autoDiff_mod
 	implicit none
 	
 	integer::kLog = 1
@@ -16,6 +17,14 @@ module objective_mod
 		real(wp),dimension(2)::s0 = [1.0_wp,2.0_wp]
 	contains
 		procedure::eval => eval_testN
+	end type
+	
+	type,extends(objN_t)::testNa_t
+		real(wp),dimension(2)::c0 = [2.0_wp,3.0_wp]
+		real(wp),dimension(2)::s0 = [1.0_wp,2.0_wp]
+	contains
+		procedure::eval => eval_testNa
+		procedure::grad => grad_testNa
 	end type
 	
 contains
@@ -41,6 +50,42 @@ contains
 		
 		o = norm2( (x(1:2)-self%c0)*self%s0 )**2-1.0_wp
 	end function eval_testN
+
+	function eval_testNa(self,x) result(o)
+		class(testNa_t),intent(in)::self
+		real(wp),dimension(:),intent(in)::x
+			!! Must be dimension(2)
+		real(wp)::o
+		
+		if( kLog<=size(xLog,1) ) then
+			xLog(kLog,1:2) = x(1:2)
+			kLog = kLog+1
+		end if
+		
+		o = norm2( (x(1:2)-self%c0)*self%s0 )**2-1.0_wp
+	end function eval_testNa
+
+	function grad_testNa(self,x) result(o)
+		class(testNa_t),intent(in)::self
+		real(wp),dimension(:),intent(in)::x
+			!! Must be dimension(2)
+		real(wp),dimension(:),allocatable::o
+		
+		type(ad_t),dimension(2)::ax
+		type(ad_t)::ao
+		
+		if( kLog<=size(xLog,1) ) then
+			xLog(kLog,1:2) = x(1:2)
+			kLog = kLog+1
+		end if
+		
+		ax(1) = ad_t( x(1) , 2 , 1 )
+		ax(2) = ad_t( x(2) , 2 , 2 )
+		
+		ao = norm2( (ax(1:2)-self%c0)*self%s0 )**2-1.0_wp
+		
+		o = ao%grad()
+	end function grad_testNa
 
 end module objective_mod
 
@@ -72,7 +117,7 @@ contains
 	end subroutine testObjective
 
 	subroutine testObjectiveN
-		type(testN_t)::test
+		type(testNa_t)::test
 		real(wp),dimension(:),allocatable::xSD,xMN,xNM
 		
 		xSD = test%steepestDescent([5.0_wp,5.0_wp])
@@ -84,7 +129,7 @@ contains
 	end subroutine testObjectiveN
 
 	subroutine testPlot
-		type(testN_t)::test
+		type(testNa_t)::test
 		real(wp),dimension(:),allocatable::x,y
 		real(wp),dimension(:,:),allocatable::f
 		integer::N,i,j
@@ -113,7 +158,7 @@ contains
 		call plot(xLog(:kLog-1,1),xLog(:kLog-1,2),lineStyle='-',markStyle='x',markColor='k')
 		call colorbar2(f,30)
 		call ticks()
-		call labels('x','y','Steepest Descent ['//intToChar(kLog-1)//']')
+		call labels('x','y','Steepest Descent F['//intToChar(kLog-1)//']')
 		
 		kLog = 1
 		xm = test%minNewton([5.0_wp,5.0_wp])
@@ -124,7 +169,7 @@ contains
 		call plot(xLog(:kLog-1,1),xLog(:kLog-1,2),lineStyle='-',markStyle='x',markColor='k')
 		call colorbar2(f,30)
 		call ticks()
-		call labels('x','y','Newton-Raphson ['//intToChar(kLog-1)//']')
+		call labels('x','y','Newton-Raphson G['//intToChar(kLog-1)//']')
 		
 		kLog = 1
 		xm = test%nelderMead([5.0_wp,5.0_wp])
@@ -135,7 +180,7 @@ contains
 		call plot(xLog(:kLog-1,1),xLog(:kLog-1,2),lineStyle='-',markStyle='x',markColor='k')
 		call colorbar2(f,30)
 		call ticks()
-		call labels('x','y','Nelder-Mead Simplex ['//intToChar(kLog-1)//']')
+		call labels('x','y','Nelder-Mead Simplex F['//intToChar(kLog-1)//']')
 		
 		call show()
 		
