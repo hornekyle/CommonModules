@@ -125,6 +125,33 @@ def getParameters(D,pre):
 	
 	return lines
 
+def getAliasSubroutine(D):
+	lines = []
+	lines.append('\tpure subroutine getAliasUnits(alias,names,powers,scale)')
+	lines.append('\t\tcharacter(*),intent(in)::alias')
+	lines.append('\t\tcharacter(10),dimension(:),allocatable,intent(inout)::names')
+	lines.append('\t\tinteger,dimension(:),allocatable,intent(inout)::powers')
+	lines.append('\t\treal(wp),intent(out)::scale')
+	lines.append('\t\t')
+	lines.append('\t\tif(allocated(names)) deallocate(names)')
+	lines.append('\t\tif(allocated(powers)) deallocate(powers)')
+	lines.append('\t\tscale = 1.0_wp')
+	lines.append('\t\t')
+	lines.append('\t\tselect case(alias)')
+	for k in sorted(D.keys()):
+		lines.append('\t\tcase(\'%s\')'%k)
+		units = [ d.lstrip() for d in sorted(D[k].keys()) if d!='_scale' ]
+		names = '\', \''.join(units)
+		ints  = [ '%d'%D[k][d] for d in sorted(D[k].keys()) if d!='_scale' ]
+		powers = ', '.join(ints)
+		lines.append('\t\t\tnames = [character(10)::\'%s\']'%names)
+		lines.append('\t\t\tpowers = [%s]'%powers)
+		if '_scale' in D[k].keys():
+			lines.append('\t\tscale = %e'%D[k]['_scale'])
+	lines.append('\t\tend select')
+	lines.append('\tend subroutine getAliasUnits')
+	return lines
+
 #===================#
 #= Assemble Module =#
 #===================#
@@ -142,12 +169,15 @@ t = getParameters(Time,'UC')+['\t']
 T = getParameters(Temp,'UT')
 declarations = L+M+t+T
 
-contains = ['\n','contains','\n']
+contains = ['','contains','']
+
+routines = getAliasSubroutine(Comp)
 
 foot = []
+foot.append('')
 foot.append('end module unitsParameters_mod')
 
-full = head+declarations+contains+foot
+full = head+declarations+contains+routines+foot
 
 #==============#
 #= Write File =#

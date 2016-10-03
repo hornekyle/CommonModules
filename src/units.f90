@@ -1,6 +1,9 @@
 module units_mod
 	use text_mod
 	use unitsParameters_mod
+	use ieee_arithmetic
+	use ieee_exceptions
+	use ieee_features
 	implicit none
 	private
 		
@@ -24,7 +27,8 @@ module units_mod
 	end type
 	
 	interface quantity_t
-		module procedure newQuantity
+		module procedure newQuantity_basic
+		module procedure newQuantity_list
 	end interface
 	
 	public::quantity_t
@@ -86,10 +90,14 @@ contains
 	!= Constructors =!
 	!================!
 
-	elemental function newQuantity(value,unit) result(self)
+	elemental function newQuantity_basic(value,unit) result(self)
 		real(wp),intent(in)::value
 		character(*),intent(in)::unit
 		type(quantity_t)::self
+		
+		character(10),dimension(:),allocatable::names
+		integer,dimension(:),allocatable::powers
+		real(wp)::sca
 		
 		self%value = value
 		where(UL_NAMES==unit) self%length = 1
@@ -99,8 +107,27 @@ contains
 		
 		if( sum( self%getDims() )>0 ) return
 		
+		call getAliasUnits(unit,names,powers,sca)
 		
-	end function newQuantity
+		self = newQuantity_list(value*sca,names,powers)
+	end function newQuantity_basic
+
+	pure function newQuantity_list(value,names,powers) result(self)
+		real(wp),intent(in)::value
+		character(*),dimension(:),intent(in)::names
+		integer,dimension(:),intent(in)::powers
+		type(quantity_t)::self
+		
+		integer::k
+		
+		self%value = value
+		do k=1,size(names)
+			where(UL_NAMES==names(k)) self%length = self%length+powers(k)
+			where(UM_NAMES==names(k)) self%mass   = self%mass+powers(k)
+			where(UC_NAMES==names(k)) self%time   = self%time+powers(k)
+			where(UT_NAMES==names(k)) self%temp   = self%temp+powers(k)
+		end do
+	end function newQuantity_list
 
 	!=======================!
 	!= quantity_t Routines =!
@@ -200,7 +227,9 @@ contains
 		
 		uD = u%getDims()
 		vD = v%getDims()
-		if( .not. all(uD==vD) ) return
+		if( .not. all(uD==vD) ) then
+			call ieee_set_flag(IEEE_INVALID,.true.)
+		end if
 		
 		uS = u%getScale()
 		vS = v%getScale()
