@@ -24,6 +24,7 @@ module units_mod
 		procedure::getBase
 		procedure::getChar
 		procedure::convert
+		procedure::inUnits
 	end type
 	
 	interface quantity_t
@@ -212,6 +213,14 @@ contains
 		o%time   = u%time
 		o%temp   = u%temp
 	end function convert
+
+	elemental function inUnits(self,u) result(o)
+		class(quantity_t),intent(in)::self
+		type(quantity_t),intent(in)::u
+		real(wp)::o
+		
+		o = ( self%getScale()/u%getScale() )*self%value
+	end function inUnits
 
 	!=============!
 	!= Operators =!
