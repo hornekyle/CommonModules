@@ -9,19 +9,19 @@ module autoDiffTrigonometric_mod
 	interface sin
 		module procedure sin_a
 	end interface
-	public::sin_a
+	public::sin
 	
 	! Cosine
 	interface cos
 		module procedure cos_a
 	end interface
-	public::cos_a
+	public::cos
 	
 	! Tangent
 	interface tan
 		module procedure tan_a
 	end interface
-	public::tan_a
+	public::tan
 	
 contains
 
