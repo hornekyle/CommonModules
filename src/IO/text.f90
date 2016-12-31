@@ -21,9 +21,9 @@ module text_mod
 	integer,parameter::strShort = 32
 		!! Length for short characters
 	
-	character(:),parameter::fmtLong = '(1A128)'
+	character(7),parameter::fmtLong = '(1A128)'
 		!! Format for long characters
-	character(:),parameter::fmtShort = '(1A32)'
+	character(6),parameter::fmtShort = '(1A32)'
 		!! Format for short characters
 	
 	!===========!
