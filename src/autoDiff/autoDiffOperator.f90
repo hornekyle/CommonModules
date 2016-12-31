@@ -295,7 +295,7 @@ contains
 		real(wp),dimension(:),allocatable::grad
 		
 		val  = u%x**v
-		grad = u%x**v*( real(v,wp)*u%d/u%x )
+		grad = u%x**(v-1)*( real(v,wp)*u%d )
 		
 		o = ad_t( val , grad )
 	end function pow_ai
@@ -309,7 +309,8 @@ contains
 		real(wp),dimension(:),allocatable::grad
 		
 		val  = u%x**v
-		grad = u%x**v*( v*u%d/u%x )
+! 		grad = u%x**v*( v*u%d/u%x )
+		grad = u%x**(v-1.0_wp)*( v*u%d )
 		
 		o = ad_t( val , grad )
 	end function pow_ar
@@ -322,7 +323,7 @@ contains
 		real(wp)::val
 		real(wp),dimension(:),allocatable::grad
 		
-		val = u%x**v%x
+		val   = u%x**v%x
 		grad  = u%x**v%x*( log(u%x)*v%d+v%x*u%d/u%x )
 		
 		o = ad_t( val , grad )

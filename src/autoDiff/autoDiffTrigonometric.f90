@@ -23,13 +23,18 @@ module autoDiffTrigonometric_mod
 	end interface
 	public::tan
 	
+	interface atan
+		module procedure atan_a
+	end interface
+	public::atan
+	
 contains
 
 	!========!
 	!= Sine =!
 	!========!
 
-	function sin_a(u) result(o)
+	elemental function sin_a(u) result(o)
 		type(ad_t),intent(in)::u
 		type(ad_t)::o
 		
@@ -40,7 +45,7 @@ contains
 	!= Cosine =!
 	!==========!
 
-	function cos_a(u) result(o)
+	elemental function cos_a(u) result(o)
 		type(ad_t),intent(in)::u
 		type(ad_t)::o
 		
@@ -51,11 +56,18 @@ contains
 	!= Tangent =!
 	!===========!
 
-	function tan_a(u) result(o)
+	elemental function tan_a(u) result(o)
 		type(ad_t),intent(in)::u
 		type(ad_t)::o
 		
 		o = ad_t( tan(u%x) , (tan(u%x)**2+1.0_wp)*u%d )
 	end function tan_a
+	
+	elemental function atan_a(u) result(o)
+		type(ad_t),intent(in)::u
+		type(ad_t)::o
+		
+		o = ad_t( atan(u%x) , u%d*(1.0_wp+u%x**2)**(-1) )
+	end function atan_a
 
 end module autoDiffTrigonometric_mod 
