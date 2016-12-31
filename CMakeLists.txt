@@ -19,6 +19,10 @@ file(MAKE_DIRECTORY "${CMAKE_BINARY_DIR}/modules")
 set(CMAKE_Fortran_MODULE_DIRECTORY "${CMAKE_BINARY_DIR}/modules")
 include_directories("${CMAKE_BINARY_DIR}/modules")
 
+set(ENABLE_PLPLOT TRUE CACHE BOOL "Use PlPlot Library")
+set(ENABLE_FFTW3 TRUE CACHE BOOL "Use FFTW Library")
+set(ENABLE_NETCDF TRUE CACHE BOOL "Use NetCDF Library")
+
 #=====================#
 #= Set Default Flags =#
 #=====================#
@@ -69,14 +73,30 @@ function(finder name lib)
 endfunction(finder)
 
 include(FindPkgConfig)
-pkg_search_module(PLPLOT QUIET plplot-f95 plplotd-f95)
-include_directories(${PLPLOT_INCLUDE_DIRS})
-link_directories(${PLPLOT_LIBRARY_DIRS})
 
-finder(NETCDF "netcdff" "netcdf.mod")
-finder(FFTW3 "fftw3" "fftw3.f03")
-# finder(LAPACK "lapack")
-# finder(UMFPACK "umfpack")
+
+if(ENABLE_PLPLOT)
+	pkg_search_module(PLPLOT QUIET plplot-f95 plplotd-f95)
+	include_directories(${PLPLOT_INCLUDE_DIRS})
+	link_directories(${PLPLOT_LIBRARY_DIRS})
+else(ENABLE_PLPLOT)
+	unset(PLPLOT_INCLUDE_DIRS CACHE)
+	unset(PLPLOT_LIBRARY_DIRS CACHE)
+endif(ENABLE_PLPLOT)
+
+if(ENABLE_NETCDF)
+	finder(NETCDF "netcdff" "netcdf.mod")
+else(ENABLE_NETCDF)
+	unset(NETCDF_LIBRARY CACHE)
+	unset(NETCDF_INCLUDE CACHE)
+endif(ENABLE_NETCDF)
+
+if(ENABLE_FFTW3)
+	finder(FFTW3 "fftw3" "fftw3.f03")
+else(ENABLE_FFTW3)
+	unset(FFTW3_LIBRARY CACHE)
+	unset(FFTW3_INCLUDE CACHE)
+endif(ENABLE_FFTW3)
 
 #=========================#
 #= Create Symlink Target =#
@@ -134,15 +154,15 @@ set(modules_src
 	"src/matrix/tensor.f90")
 
 # Conditional source files
-if(FFTW3_FOUND)
+if(ENABLE_FFTW3)
 	set(modules_src ${modules_src} "src/fftw3.f90" "src/fourier.f90")
-endif(FFTW3_FOUND)
+endif(ENABLE_FFTW3)
 
-if(NETCDF_FOUND)
+if(ENABLE_NETCDF)
 	set(modules_src ${modules_src} "src/IO/netCDF.f90")
-endif(NETCDF_FOUND)
+endif(ENABLE_NETCDF)
 
-if(PLPLOT_FOUND)
+if(ENABLE_PLPLOT)
 	set(modules_src ${modules_src}
 		"src/plplotlib/plplotlib.f90"
 		"src/plplotlib/plplotlibBase.f90"
@@ -150,24 +170,24 @@ if(PLPLOT_FOUND)
 		"src/plplotlib/plplotlib1D.f90"
 		"src/plplotlib/plplotlib2D.f90"
 		"src/plplotlib/plplotlib3D.f90")
-endif(PLPLOT_FOUND)
+endif(ENABLE_PLPLOT)
 
 # Add target
 add_library(CommonModules SHARED ${modules_src})
 export(TARGETS CommonModules FILE CommonModules.cmake)
 
 # Linking directives
-if(FFTW3_FOUND)
+if(ENABLE_FFTW3)
 	target_link_libraries(CommonModules ${FFTW3_LIBRARY})
-endif(FFTW3_FOUND)
+endif(ENABLE_FFTW3)
 
-if(NETCDF_FOUND)
+if(ENABLE_NETCDF)
 	target_link_libraries(CommonModules ${NETCDF_LIBRARY})
-endif(NETCDF_FOUND)
+endif(ENABLE_NETCDF)
 
-if(PLPLOT_FOUND)
+if(ENABLE_PLPLOT)
 	target_link_libraries(CommonModules ${PLPLOT_LIBRARIES})
-endif(PLPLOT_FOUND)
+endif(ENABLE_PLPLOT)
 
 
 #=======================#
@@ -200,17 +220,17 @@ addTest("testVtkIO")
 
 add_dependencies(testConfig symlinks)
 
-if(FFTW3_FOUND)
+if(ENABLE_FFTW3)
 	addTest("testFourier")
 	target_link_libraries(testFourier ${FFTW3_LIBRARY})
-endif(FFTW3_FOUND)
+endif(ENABLE_FFTW3)
 
-if(NETCDF_FOUND)
+if(ENABLE_NETCDF)
 	addTest("testNetCDF")
 	target_link_libraries(testNetCDF ${NETCDF_LIBRARY})
-endif(NETCDF_FOUND)
+endif(ENABLE_NETCDF)
 
-if(PLPLOT_FOUND)
+if(ENABLE_PLPLOT)
 	addTest("testExpression")
 	addTest("testOptimize")
 	addTest("testSparse")
@@ -220,7 +240,7 @@ if(PLPLOT_FOUND)
 	target_link_libraries(testOptimize   ${PLPLOT_LIBRARIES})
 	target_link_libraries(testSparse     ${PLPLOT_LIBRARIES})
 	target_link_libraries(testSpline     ${PLPLOT_LIBRARIES})
-endif(PLPLOT_FOUND)
+endif(ENABLE_PLPLOT)
 
 if(EXECUTABLE_GMSH)
 	addTest("testMesh")
@@ -231,7 +251,7 @@ endif(EXECUTABLE_GMSH)
 #= Create PlPlotLib Targets =#
 #============================#
 
-if(PLPLOT_FOUND)
+if(ENABLE_PLPLOT)
 	function(addExample name)
 		add_executable(${name} "src/plplotlib/${name}.f90")
 		target_link_libraries(${name} CommonModules)
@@ -243,7 +263,7 @@ if(PLPLOT_FOUND)
 	addExample("basic")
 	addExample("animate")
 	addExample("examples")
-endif(PLPLOT_FOUND)
+endif(ENABLE_PLPLOT)
 
 #======================#
 #= Create FORD Target =#
@@ -257,7 +277,7 @@ add_custom_command(OUTPUT "docs/index.html"
 	WORKING_DIRECTORY "${CMAKE_BINARY_DIR}")
 add_custom_target(doc DEPENDS "docs/index.html")
 
-set(HAVE_RUN "1" CACHE STRING "Indicate if first run of CMake" FORCE)
+set(HAVE_RUN TRUE CACHE BOOL "Indicate if first run of CMake" FORCE)
 
 #========================#
 #= Create Install Files =#
