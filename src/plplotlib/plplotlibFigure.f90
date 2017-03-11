@@ -352,14 +352,15 @@ contains
 		
 		real(pp)::fill_width
 		real(pp)::cont_width
+		real(pp)::x,y,xlen,ylen
+		integer::bg_color,bb_color,bb_style
+		real(pp)::low_cap_color, high_cap_color
 		integer::cont_color
 		real(pp)::colorbar_width
 		real(pp)::colorbar_height
 		integer::k
 		
-		values = reshape( &
-			& real([( real(k-1,wp)/real(N-1,wp)*(maxval(z)-minval(z))+minval(z) ,k=1,N)],pp), &
-			& [N,1])
+		values = reshape( mixval(z) ,[1,2])
 		
 		fill_width = 2.0_pp
 		cont_width = 0.0_pp
@@ -368,13 +369,24 @@ contains
 		if(present(leftLabel )) labels(1) = leftLabel
 		if(present(rightLabel)) labels(2) = rightLabel
 		
-		call plcolorbar(colorbar_width,colorbar_height,&
-			& ior(PL_COLORBAR_GRADIENT,PL_COLORBAR_SHADE_LABEL),PL_POSITION_TOP,&
-			& 0.0_pp,0.01_pp,0.75_pp,0.05_pp,&
-			& 0,1,1,0.0_pp,0.0_pp, &
-			& cont_color,cont_width, &
-			& [PL_COLORBAR_LABEL_LEFT,PL_COLORBAR_LABEL_RIGHT],labels, &
-			& ['bcvmt'],[0.0_pp],[0],[size(values)],values)
+		x = 0.0_pp
+		y = 0.01_pp
+		xlen = 0.75_pp
+		ylen = 0.05_pp
+		bg_color = 0
+		bb_color = 1
+		bb_style = 1
+		low_cap_color = minval(values)
+		high_cap_color = maxval(values)
+		
+		call plcolorbar( &
+			colorbar_width, colorbar_height, &
+			ior(PL_COLORBAR_GRADIENT,PL_COLORBAR_SHADE_LABEL), PL_POSITION_TOP, x, y, &
+			xlen, ylen, bg_color, bb_color, bb_style, &
+			low_cap_color, high_cap_color, &
+			cont_color, cont_width, &
+			[PL_COLORBAR_LABEL_LEFT,PL_COLORBAR_LABEL_RIGHT], labels, &
+			['bcvmt'], [0.0_pp], [0], [size(values)], values )
 	end subroutine colorbar
 
 	subroutine colorbar2(z,N,leftLabel,rightLabel)
@@ -464,10 +476,10 @@ contains
 		call doBoxes()
 		call doLines()
 		call doMarkers()
-		
-		call pllegend(width,height,opt,cornerl,xoff,yoff,plotWidth, &
+	
+		call pllegend(width,height,opt,cornerl,xoff,yoff,plotWidth, & 
 			& bg_color,bb_color,bb_style, &
-			& lnrow,lncol,size(series,1),opts,text_offset, &
+			& lnrow,lncol,opts,text_offset, &
 			& text_scale,text_spacing,text_justification,text_colors,series(:,1), &
 			& box_colors,box_patterns,box_scales,box_line_widths, &
 			& line_colors,line_styles,lwidths, &

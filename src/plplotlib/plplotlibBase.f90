@@ -298,6 +298,7 @@ contains
 			!! Size of figures to produce in pixels
 		
 		character(64)::bufx,bufy
+		integer::ierr
 		
 		if(present(device)) then
 			call plsdev(device)
@@ -330,9 +331,9 @@ contains
 		if(present(figSize)) then
 			write(bufx,*) figSize(1)
 			write(bufy,*) figSize(2)
-			call plsetopt('geometry',trim(adjustl(bufx))//'x'//trim(adjustl(bufy)))
+			ierr = plsetopt('geometry',trim(adjustl(bufx))//'x'//trim(adjustl(bufy)))
 		else
-			call plsetopt('geometry','640x480')
+			ierr = plsetopt('geometry','640x480')
 		end if
 		
 		call plinit()
@@ -390,17 +391,17 @@ contains
 			call plscmap1n(256)
 			call plscmap1l(.false.,i,h,s,v)
 		case('Gray')
-			call plspal1('cmap1_gray.pal',1)
+			call plspal1('cmap1_gray.pal',.true.)
 		case('BlueYellow')
-			call plspal1('cmap1_blue_yellow.pal',1)
+			call plspal1('cmap1_blue_yellow.pal',.true.)
 		case('BlueRed')
-			call plspal1('cmap1_blue_red.pal',1)
+			call plspal1('cmap1_blue_red.pal',.true.)
 		case('Radar')
-			call plspal1('cmap1_radar.pal',1)
+			call plspal1('cmap1_radar.pal',.true.)
 		case('HighFreq')
-			call plspal1('cmap1_highfreq.pal',1)
+			call plspal1('cmap1_highfreq.pal',.true.)
 		case('LowFreq')
-			call plspal1('cmap1_lowfreq.pal',1)
+			call plspal1('cmap1_lowfreq.pal',.true.)
 		end select
 	end subroutine setColormap
 

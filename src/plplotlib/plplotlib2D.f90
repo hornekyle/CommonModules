@@ -44,7 +44,7 @@ contains
 		if(present(lineStyle)) call setLineStyle(lineStyle)
 		if(present(lineWidth)) call setLineWidth(lineWidth)
 		
-		call plcont(zl,edge,xl,yl)
+		call plcont(zl, 1, size(zl,1), 1, size(zl,2) , edge, xl, yl)
 		call resetPen()
 	end subroutine contour
 
@@ -82,8 +82,8 @@ contains
 		cont_width = -1.0_pp
 		cont_color = -1
 		
-		call plshades(zl,defined,minval(xl),maxval(xl),minval(yl),maxval(yl), &
-			& edge,fill_width,cont_color,cont_width)
+		call plshades(z,minval(xl),maxval(xl),minval(yl),maxval(yl), &
+			&         edge,fill_width,cont_color,cont_width,.true.)
 		call resetPen()
 	end subroutine contourf
 
