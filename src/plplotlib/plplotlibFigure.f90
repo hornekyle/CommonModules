@@ -358,7 +358,6 @@ contains
 		integer::cont_color
 		real(pp)::colorbar_width
 		real(pp)::colorbar_height
-		integer::k
 		
 		values = reshape( mixval(z) ,[1,2])
 		

@@ -82,10 +82,12 @@ contains
 	end function newImag
 
 	function evalR_imag(self,args) result(o)
+		use ieee_arithmetic
 		class(imag_t),intent(in)::self
 		real(wp),dimension(:),intent(in)::args
 		real(wp)::o
 		
+		o = ieee_value(0.0_wp,IEEE_QUIET_NAN)
 		stop 'Imaginary number encountered in real evaluation'
 	end function evalR_imag
 

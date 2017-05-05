@@ -114,10 +114,12 @@ contains
 	end function evalR_log10
 
 	function evalZ_log10(self,args) result(o)
+		use ieee_arithmetic
 		class(log10_t),intent(in)::self
 		complex(wp),dimension(:),intent(in)::args
 		complex(wp)::o
 		
+		o = ieee_value(0.0_wp,IEEE_QUIET_NAN)
 		stop 'Log of complex argument not supported'
 	end function evalZ_log10
 

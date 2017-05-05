@@ -64,7 +64,6 @@ contains
 		
 		real(pp),dimension(:),allocatable::edge
 		
-		character(1)::defined
 		real(pp)::fill_width
 		real(pp)::cont_width
 		integer::cont_color
