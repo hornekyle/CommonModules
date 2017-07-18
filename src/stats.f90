@@ -28,6 +28,7 @@ module stats_mod
 	
 	public::randomUniform
 	public::randomNormal
+	public::randomInteger
 	
 	public::mean
 	public::stDev
@@ -108,6 +109,20 @@ contains
 		end do
 	end function randomNormal_a1
 
+	function randomInteger(N) result(o)
+		!! Return a random integer \(i\in[1,N]\)
+		integer,intent(in)::N
+			!! Upper limit of range
+		integer::o
+			!! Random integer
+		
+		real(wp)::x
+		
+		x = (randomUniform()+1.0_wp)/2.0_wp
+		
+		o = floor(x*real(N,wp)+1.0_wp)
+	end function randomInteger
+	
 	!================================!
 	!= Population Property Routines =!
 	!================================!

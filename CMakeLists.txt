@@ -157,7 +157,9 @@ set(modules_src
 	"src/matrix/quaternion.f90"
 	"src/matrix/solvers.f90"
 	"src/matrix/sparse.f90"
-	"src/matrix/tensor.f90")
+	"src/matrix/tensor.f90"
+	"src/matrix/basicSolversZ.f90"
+	"src/matrix/sparseZ.f90")
 
 # Conditional source files
 if(ENABLE_FFTW3)
