@@ -74,6 +74,15 @@ module sparseZ_mod
 		module procedure transpose_m
 	end interface
 	
+	
+	interface spvecZ_t
+		module procedure newSpvecZ
+	end interface
+	
+	interface sparseZ_t
+		module procedure newSparseZ
+	end interface
+	
 	!===========!
 	!= Exports =!
 	!===========!

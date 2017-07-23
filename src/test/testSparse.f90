@@ -22,7 +22,7 @@ contains
 		N = 3
 		M = 5
 		
-		A = newSparse(N,M)
+		A = sparse_t(N,M)
 	end subroutine testNewSparse
 
 	subroutine testSpvec
@@ -63,7 +63,7 @@ contains
 		allocate(x(0:N+1))
 		x  = linspace(0.0_wp,1.0_wp,N+2)
 		q  = [( q0     , i=1,N )]
-		A  = newSparse(N,N)
+		A  = sparse_t(N,N)
 		
 		allocate(T1(0:N+1))
 		allocate(T2(0:N+1))
@@ -138,7 +138,7 @@ contains
 		allocate(x(0:N+1))
 		x  = linspace(0.0_wp,1.0_wp,N+2)
 		q  = [( q0     , i=1,N )]
-		A  = newSparse(N,N)
+		A  = sparse_t(N,N)
 		
 		allocate(T1(0:N+1))
 		

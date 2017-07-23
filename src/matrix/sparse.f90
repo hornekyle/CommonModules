@@ -84,15 +84,20 @@ module sparse_mod
 		module procedure transpose_m
 	end interface
 	
+	interface spvec_t
+		module procedure newSpvec
+	end interface
+	
+	interface sparse_t
+		module procedure newSparse
+	end interface
+	
 	!===========!
 	!= Exports =!
 	!===========!
 	
 	public::spvec_t
 	public::sparse_t
-	
-	public::newSpvec
-	public::newSparse
 	
 	public::operator(+)
 	public::operator(*)
