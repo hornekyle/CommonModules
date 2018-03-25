@@ -62,7 +62,7 @@ module text_mod
 	
 contains
 
-	function removeSpaces(s) result(o)
+	pure function removeSpaces(s) result(o)
 		!! Remove all spaces from a string
 		character(*),intent(in)::s
 			!! String to remove spaces from
@@ -86,7 +86,7 @@ contains
 		end do
 	end function removeSpaces
 
-	function startsWith(text,str) result(o)
+	pure function startsWith(text,str) result(o)
 		!! Test if text starts with str
 		character(*),intent(in)::text
 			!! Text to search
@@ -106,7 +106,7 @@ contains
 		
 	end function startsWith
 
-	function endsWith(text,str) result(o)
+	pure function endsWith(text,str) result(o)
 		!! Test if text ends with str
 		character(*),intent(in)::text
 			!! Text to search
@@ -126,7 +126,7 @@ contains
 		
 	end function endsWith
 
-	elemental function intToChar(a,f,l) result(o)
+	pure function intToChar(a,f,l) result(o)
 		!! Create a string from an integer
 		integer,intent(in)::a
 			!! Integer value to convert
@@ -156,7 +156,7 @@ contains
 		end if
 	end function intToChar
 
-	elemental function realToChar(a,f,l) result(o)
+	pure function realToChar(a,f,l) result(o)
 		!! Create a string from a real number
 		real(wp),intent(in)::a
 			!! Real value to convert
@@ -186,7 +186,7 @@ contains
 		end if
 	end function realToChar
 
-	elemental function realToTime(a) result(o)
+	pure function realToTime(a) result(o)
 		!! Convert a real number to a string
 		real(wp),intent(in)::a
 			!! Time span in seconds
@@ -224,7 +224,7 @@ contains
 		o = o//'s'
 	end function realToTime
 
-	function charToArray(c) result(o)
+	pure function charToArray(c) result(o)
 		!! Convert a character into an array of character(1)
 		character(*),intent(in)::c
 			!! Character to convert
@@ -236,7 +236,7 @@ contains
 		o = [character(1)::( c(k:k) , k=1,len(c) )]
 	end function charToArray
 
-	function arrayToChar(a) result(o)
+	pure function arrayToChar(a) result(o)
 		!! Convert an array of character(1) into a character
 		character(1),dimension(:),intent(in)::a
 			!! Array to convert

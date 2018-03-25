@@ -173,7 +173,7 @@ contains
 		o%temp(1)   = dims(4)
 	end function getBase
 
-	elemental function getChar(self) result(o)
+	pure function getChar(self) result(o)
 		class(quantity_t),intent(in)::self
 		character(:),allocatable::o
 		
