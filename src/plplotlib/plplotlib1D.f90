@@ -52,7 +52,7 @@ contains
 			code = getSymbolCode(markStyle)
 			if(markStyle/='') then
 				do k=1,size(x)
-					call plptex(xl(k),yl(k),0.0_pp,0.0_pp,0.5_pp,code)
+					call plptex(xl(k),yl(k),0.0_pp,0.0_pp,0.40_pp,code)
 				end do
 			end if
 		end if
