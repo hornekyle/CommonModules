@@ -25,9 +25,9 @@ contains
 		call subplot(1,1,1)
 		call xylim(mixval(x),mixval([y1,y2,y3])*1.1_wp)
 		
-		call plot(x,y1,lineColor='b',lineWidth=10.0_wp)
-		call plot(x,y2,lineColor='r',lineWidth=10.0_wp)
-		call plot(x,y3,lineColor='c',lineWidth=10.0_wp)
+		call plot(x,y1,lineColor='C0',lineWidth=10.0_wp)
+		call plot(x,y2,lineColor='C1',lineWidth=10.0_wp)
+		call plot(x,y3,lineColor='C2',lineWidth=10.0_wp)
 		
 		call ticks(lineWidth=5.0_wp)
 		call labels('','','')

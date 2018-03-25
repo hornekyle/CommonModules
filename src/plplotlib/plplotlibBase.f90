@@ -263,6 +263,26 @@ contains
 			code = 2
 		case('bg')
 			code = 1
+		case('C0')
+			code = 9
+		case('C1')
+			code = 10
+		case('C2')
+			code = 11
+		case('C3')
+			code = 12
+		case('C4')
+			code = 13
+		case('C5')
+			code = 14
+		case('C6')
+			code = 15
+		case('C7')
+			code = 16
+		case('C8')
+			code = 17
+		case('C9')
+			code = 18
 		case default
 			code = 2
 		end select
@@ -322,7 +342,7 @@ contains
 		if(present(colormap)) then
 			call setColormap(colormap)
 		else
-			call setColormap('CoolWarm')
+			call setColormap('Viridis')
 		end if
 		
 		call plfontld(0)
@@ -355,22 +375,45 @@ contains
 
 	subroutine setIndexedColors
 		!! Setup the indexed colors
-		integer,dimension(8,3)::rgb
-		real(plflt),dimension(8)::a
+		integer,dimension(18,3)::rgb
+		real(plflt),dimension(18)::a
 		
-		rgb(getColorCode('w')+1,:) = [255,255,255] ! White
-		rgb(getColorCode('k')+1,:) = [  0,  0,  0] ! Black
-		rgb(getColorCode('r')+1,:) = [255,  0,  0] ! Red
-		rgb(getColorCode('g')+1,:) = [  0,255,  0] ! Green
-		rgb(getColorCode('b')+1,:) = [  0,  0,255] ! Blue
-		rgb(getColorCode('c')+1,:) = [  0,255,255] ! Cyan
-		rgb(getColorCode('m')+1,:) = [255,  0,255] ! Magenta
-		rgb(getColorCode('y')+1,:) = [255,255,  0] ! Yellow
+		rgb(getColorCode('w' )+1,:) = [255,255,255] ! White
+		rgb(getColorCode('k' )+1,:) = [  0,  0,  0] ! Black
+		rgb(getColorCode('r' )+1,:) = [255,  0,  0] ! Red
+		rgb(getColorCode('g' )+1,:) = [  0,255,  0] ! Green
+		rgb(getColorCode('b' )+1,:) = [  0,  0,255] ! Blue
+		rgb(getColorCode('c' )+1,:) = [  0,255,255] ! Cyan
+		rgb(getColorCode('m' )+1,:) = [255,  0,255] ! Magenta
+		rgb(getColorCode('y' )+1,:) = [255,255,  0] ! Yellow
+		
+		rgb(getColorCode('C0')+1,:) = hexToRGB('1f77b4') ! C0
+		rgb(getColorCode('C1')+1,:) = hexToRGB('ff7f0e') ! C1
+		rgb(getColorCode('C2')+1,:) = hexToRGB('2ca02c') ! C2
+		rgb(getColorCode('C3')+1,:) = hexToRGB('d62728') ! C3
+		rgb(getColorCode('C4')+1,:) = hexToRGB('9647bd') ! C4
+		rgb(getColorCode('C5')+1,:) = hexToRGB('8c564b') ! C5
+		rgb(getColorCode('C6')+1,:) = hexToRGB('e377c2') ! C6
+		rgb(getColorCode('C7')+1,:) = hexToRGB('7f7f7f') ! C7
+		rgb(getColorCode('C8')+1,:) = hexToRGB('bcbd22') ! C8
+		rgb(getColorCode('C9')+1,:) = hexToRGB('17becf') ! C9
 		
 		a = 1.0_plflt
 		if(transparentBackground) a(1) = 0.0_wp
 		
 		call plscmap0a(rgb(:,1),rgb(:,2),rgb(:,3),a)
+		
+	contains
+		
+		function hexToRGB(h) result(o)
+			character(6),intent(in)::h
+			integer,dimension(3)::o
+			
+			read(h(1:2),'(1Z2)') o(1)
+			read(h(3:4),'(1Z2)') o(2)
+			read(h(5:6),'(1Z2)') o(3)
+		end function hexToRGB
+		
 	end subroutine setIndexedColors
 
 	subroutine setColormap(colormap)
@@ -378,9 +421,19 @@ contains
 		character(*),intent(in)::colormap
 			!! Name of colormap to use
 		
-		real(pp),dimension(:),allocatable::i,h,s,v
+		real(pp),dimension(:),allocatable::i
+		real(pp),dimension(:),allocatable::h,s,v
+		real(pp),dimension(:),allocatable::r,g,b
 		
 		select case(colormap)
+		case('Viridis')
+			r = [0.267004, 0.231674, 0.129933, 0.344074, 0.993248]
+			g = [0.004874, 0.318106, 0.559582, 0.780029, 0.906157]
+			b = [0.329415, 0.544834, 0.551864, 0.397381, 0.143936]
+			i = [0.      , 0.24705882, 0.49411765, 0.74117647, 1.0]
+			
+			call plscmap1n(256)
+			call plscmap1l(.true.,i,r,g,b)
 		case('CoolWarm')
 			h = [240.0,195.0,45.0,0.0]
 			

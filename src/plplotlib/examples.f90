@@ -35,11 +35,11 @@ contains
 		call subplot(1,1,1)
 		call xylim(mixval(x),mixval(y))
 		
-		call plot(x,y,lineColor='red',lineWidth=2.0_wp, &
-			& markStyle='.',markColor='cyan',markSize=2.0_wp)
+		call plot(x,y,lineColor='C1',lineWidth=2.0_wp, &
+			& markStyle='.',markColor='C9',markSize=2.0_wp)
 		
-		call plot(x,-1.0_wp-y,lineColor='blue',lineStyle=':',lineWidth=2.0_wp, &
-			& markStyle='+',markColor='green',markSize=1.0_wp)
+		call plot(x,-1.0_wp-y,lineColor='C0',lineStyle=':',lineWidth=2.0_wp, &
+			& markStyle='+',markColor='C2',markSize=1.0_wp)
 		
 !~ 		call ticks()
 		call xticks(primary=.true.,secondary=.false.)
@@ -75,7 +75,7 @@ contains
 		
 		call subplot(2,2,3)
 		call xylim([0.0_wp,1.0_wp],[0.0_wp,1.0_wp])
-		call scatter(x,y,s=(4.0_wp*z+1.0_wp),markColor='blue')
+		call scatter(x,y,s=(4.0_wp*z+1.0_wp),markColor='C0')
 		call ticks()
 		call labels('x','y','')
 		
@@ -123,16 +123,16 @@ contains
 		call subplot(1,1,1)
 		call xylim(mixval(x),mixval(y))
 		
-		call plot(x,y,lineColor='red',lineWidth=2.0_wp, &
-			& markStyle='.',markColor='cyan',markSize=2.0_wp)
+		call plot(x,y,lineColor='C1',lineWidth=2.0_wp, &
+			& markStyle='.',markColor='C9',markSize=2.0_wp)
 		
-		call plot(x,-1.0_wp-y,lineColor='blue',lineStyle=':',lineWidth=2.0_wp, &
-			& markStyle='+',markColor='green',markSize=1.0_wp)
+		call plot(x,-1.0_wp-y,lineColor='C0',lineStyle=':',lineWidth=2.0_wp, &
+			& markStyle='+',markColor='C2',markSize=1.0_wp)
 		
 		! [name,textColor,lineStyle,lineColor,markStyle,markColor]
-		series(1,:) = [character(32)::'f(x)=x#u2#d-1','','-','r','.','c','']
-		series(2,:) = [character(32)::'g(x)=-x#u2#d','',':','b','+','g','']
-		series(3,:) = [character(32)::'Box','','','','','','r']
+		series(1,:) = [character(32)::'f(x)=x#u2#d-1','','-','C1','.','C9','']
+		series(2,:) = [character(32)::'g(x)=-x#u2#d','',':','C0','+','C2','']
+		series(3,:) = [character(32)::'Box','','','','','','C1']
 		
 		call legend('center left',series)
 		call ticks()
@@ -182,7 +182,7 @@ contains
 		
 		call subplot(1,2,2)
 		call xylim(mixval(y)+[ 0.0_wp,0.1_wp],mixval(x)+[-0.1_wp,0.1_wp])
-		call barh(x,y,fillColor='r',relWidth=1.0_wp)
+		call barh(x,y,fillColor='C1',relWidth=1.0_wp)
 		call ticks()
 		call labels('x','y','')
 	end subroutine doBar
@@ -199,7 +199,7 @@ contains
 		call figure()
 		call subplot(1,1,1)
 		call xylim(mixval(x),mixval([y1,y2]))
-		call fillBetween(x,y1,y2,fillColor='c',fillPattern='#',lineWidth=2.0_wp)
+		call fillBetween(x,y1,y2,fillColor='C0',fillPattern='#',lineWidth=2.0_wp)
 		call plot(x,y1,lineColor='k',lineWidth=3.0_wp)
 		call plot(x,y2,lineColor='k',lineWidth=3.0_wp)
 		call ticks(color='b',lineWidth=3.0_wp)
@@ -284,8 +284,8 @@ contains
 		call figure()
 		call subplot(1,1,1)
 		call xylim(mixval([x-xe,x+xe])+[-0.5_wp,0.5_wp],mixval([y-ye,y+ye])+[-0.2_wp,0.2_wp])
-		call errorbar(x,y,xerr=xe,yerr=ye,lineColor='b',lineWidth=1.0_wp)
-		call plot(x,y,lineStyle='',markStyle='s',markColor='r',markSize=1.5_wp)
+		call errorbar(x,y,xerr=xe,yerr=ye,lineColor='C0',lineWidth=1.0_wp)
+		call plot(x,y,lineStyle='',markStyle='s',markColor='C1',markSize=1.5_wp)
 		call ticks()
 		call labels('x','y','')
 	end subroutine doError
@@ -303,7 +303,7 @@ contains
 		call figure()
 		call subplot(1,1,1)
 		call xylim(mixval(x),mixval(yl))
-		call plot(x,yl,lineColor='r',lineWidth=2.0_wp)
+		call plot(x,yl,lineColor='C1',lineWidth=2.0_wp)
 		call ticks(logy=.true.)
 		call labels('x [linear]','y [log]','exp(-x#u2#d)')
 	end subroutine doLogPlot

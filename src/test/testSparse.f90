@@ -111,9 +111,9 @@ contains
 		call figure()
 		call subplot(1,1,1)
 		call xylim(mixval(x),mixval(T1)+[0.0_wp,0.05_wp]*span(T1))
-		call plot(x(::s),T1(::s),lineStyle='-',lineColor='r',markStyle='x',markColor='r')
-		call plot(x(::s),T2(::s),lineStyle='-',lineColor='b',markStyle='o',markColor='b')
-		call plot(x(::s),T3(::s),lineStyle='-',lineColor='c',markStyle='s',markColor='c')
+		call plot(x(::s),T1(::s),lineStyle='-',lineColor='C1',markStyle='x',markColor='C1')
+		call plot(x(::s),T2(::s),lineStyle='-',lineColor='C0',markStyle='o',markColor='C0')
+		call plot(x(::s),T3(::s),lineStyle='-',lineColor='C2',markStyle='s',markColor='C2')
 		call ticks()
 		call labels('Position #fix#fn','Temperature #fiT#fn','1D Heat Conduction with Generation')
 		
@@ -198,7 +198,7 @@ contains
 		call figure()
 		call subplot(1,1,1)
 		call xylim(mixval(x),mixval(T1)+[0.0_wp,0.05_wp]*span(T1))
-		call plot(x(::s),T1(::s),lineStyle='-',lineColor='k',markStyle='x',markColor='r')
+		call plot(x(::s),T1(::s),lineStyle='-',lineColor='k',markStyle='x',markColor='C1')
 		call ticks()
 		call labels('Position #fix#fn','Temperature #fiT#fn','1D Heat Conduction with Generation')
 		

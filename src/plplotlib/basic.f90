@@ -15,7 +15,7 @@ program basic_prg
 	call figure()
 	call subplot(1,1,1)
 	call xylim(mixval(x),mixval(y))
-	call plot(x,y,lineColor='r',lineWidth=2.0_wp)
+	call plot(x,y,lineColor='C0',lineWidth=2.0_wp)
 	call ticks()
 	call labels('#fix#fn','#fiy#fn','Plot')
 	call show()

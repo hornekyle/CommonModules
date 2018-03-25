@@ -53,10 +53,10 @@ contains
 		call subplot(1,1,1)
 		call xylim(mixval(xt(:,1)),mixval(xt(:,2)))
 		
-		call plot(xt(:,1),xt(:,2),lineStyle='-' ,lineColor='r',lineWidth=2.0_wp)
-		call plot(xl(:,1),xl(:,2),lineStyle=':' ,lineColor='m',lineWidth=2.0_wp)
-		call plot(xf(:,1),xf(:,2),lineStyle='-' ,lineColor='b',lineWidth=2.0_wp)
-		call plot(xc(:,1),xc(:,2),lineStyle='--',lineColor='c',lineWidth=2.0_wp)
+		call plot(xt(:,1),xt(:,2),lineStyle='-' ,lineColor='C1',lineWidth=2.0_wp)
+		call plot(xl(:,1),xl(:,2),lineStyle=':' ,lineColor='C3',lineWidth=2.0_wp)
+		call plot(xf(:,1),xf(:,2),lineStyle='-' ,lineColor='C0',lineWidth=2.0_wp)
+		call plot(xc(:,1),xc(:,2),lineStyle='--',lineColor='C2',lineWidth=2.0_wp)
 		call plot(x0(:,1),x0(:,2),lineStyle=''  ,markStyle='x',markColor='k')
 		
 		call ticks()
@@ -66,10 +66,10 @@ contains
 		call subplot(1,1,1)
 		call xylim(mixval(xt(:,1)),[-2.0_wp,2.0_wp])
 		
-		call plot(xl(:,1),xl(:,2)-xt(:,2),lineStyle=':' ,lineColor='m',lineWidth=2.0_wp)
-		call plot(xt(:,1),xt(:,2)-xt(:,2),lineStyle='-' ,lineColor='r',lineWidth=2.0_wp)
-		call plot(xf(:,1),xf(:,2)-xt(:,2),lineStyle='-' ,lineColor='b',lineWidth=2.0_wp)
-		call plot(xc(:,1),xc(:,2)-xt(:,2),lineStyle='--',lineColor='c',lineWidth=2.0_wp)
+		call plot(xl(:,1),xl(:,2)-xt(:,2),lineStyle=':' ,lineColor='C1',lineWidth=2.0_wp)
+		call plot(xt(:,1),xt(:,2)-xt(:,2),lineStyle='-' ,lineColor='C3',lineWidth=2.0_wp)
+		call plot(xf(:,1),xf(:,2)-xt(:,2),lineStyle='-' ,lineColor='C0',lineWidth=2.0_wp)
+		call plot(xc(:,1),xc(:,2)-xt(:,2),lineStyle='--',lineColor='C2',lineWidth=2.0_wp)
 		call plot(x0(:,1),x0(:,2)-x0(:,2),lineStyle=''  ,markStyle='x',markColor='k')
 		
 		call ticks()

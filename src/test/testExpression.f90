@@ -59,7 +59,7 @@ contains
 		call figure()
 		call subplot(1,1,1,aspect=span(y)/span(x))
 		call xylim(mixval(x),mixval(y)+0.05_wp*[-1.0_wp,1.0_wp*span(y)])
-		call plot(x,y,lineColor='r',lineWidth=2.0_wp)
+		call plot(x,y,lineColor='C0',lineWidth=2.0_wp)
 		call ticks()
 		call labels('x','y',s)
 		
