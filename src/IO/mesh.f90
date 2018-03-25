@@ -82,6 +82,9 @@ module mesh_mod
 			!! Nodes of the element
 		integer,dimension(:),allocatable::elements
 			!! Elements connected to this one by at least one node
+	contains
+		procedure::N  => shapeFunctions
+		procedure::vN => shapeFunctionsGradients
 	end type
 	
 	type::group_t
@@ -138,6 +141,28 @@ module mesh_mod
 	public::wp
 	
 contains
+
+	function shapeFunctions(self,xi) result(N)
+		class(element_t),intent(in)::self
+		real(wp),dimension(:),intent(in)::xi
+		real(wp),dimension(:),allocatable::N
+		
+		select case(self%etype)
+		case default
+			N = [real(wp)::]
+		end select
+	end function shapeFunctions
+
+	function shapeFunctionsGradients(self,xi) result(vN)
+		class(element_t),intent(in)::self
+		real(wp),dimension(:),intent(in)::xi
+		real(wp),dimension(:,:),allocatable::vN
+		
+		select case(self%etype)
+		case default
+			vN = reshape([real(wp)::],[0,0])
+		end select
+	end function shapeFunctionsGradients
 
 	subroutine readGmsh(self,fn)
 		!! Read a gmsh .msh file into memory
