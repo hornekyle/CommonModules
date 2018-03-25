@@ -57,11 +57,11 @@ module mesh_mod
 			!! Node group
 			!!
 			!! Groups are derived from elements the node belongs to.
-			!! The group with lowest dimenionality takes precidence.
+			!! The group with lowest dimension takes precedence.
 		integer,dimension(:),allocatable::nodes
-			!! Indicies of nodes connected to this one
+			!! Indices of nodes connected to this one
 		integer,dimension(:),allocatable::elements
-			!! Indicies of elements this node occures in
+			!! Indices of elements this node occurs in
 	end type
 	
 	type::element_t
@@ -75,7 +75,7 @@ module mesh_mod
 		integer::ecolor
 			!! Element color
 			!!
-			!! The element color can be used for parallel caculations
+			!! The element color can be used for parallel calculations
 			!! without race conditions, comparable to red-black versions
 			!! of the Gauss-Seidel algorithm.
 		integer,dimension(:),allocatable::nodes
@@ -89,7 +89,7 @@ module mesh_mod
 		integer::gidx
 			!! Group index
 		integer::gdim
-			!! Group dimensionality \(d\)
+			!! Group dimension \(d\)
 			!!
 			!! \(d \in {1,2}\)
 		character(128)::gname

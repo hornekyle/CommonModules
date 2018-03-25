@@ -10,6 +10,7 @@ output_dir: doc
 exclude: fftw3.f90
 source: true
 display: public
+display: private
 graph: true
 search: true
 
