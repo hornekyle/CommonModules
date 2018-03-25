@@ -232,7 +232,7 @@ contains
 	subroutine doSurface
 		!! ![surface](|media|/example-9.svg)
 		
-		integer,parameter::N = 24
+		integer,parameter::N = 50
 		real(wp),dimension(N)::x,y
 		real(wp),dimension(N,N)::z
 		integer::i,j

@@ -280,6 +280,7 @@ endif(ENABLE_PLPLOT)
 add_custom_command(OUTPUT "docs/index.html"
 	COMMAND basic
 	COMMAND examples
+	COMMAND logo
 	COMMAND ${EXECUTABLE_FORD} "${CMAKE_BINARY_DIR}/project.md"
 	DEPENDS logo basic examples symlinks
 	WORKING_DIRECTORY "${CMAKE_BINARY_DIR}")

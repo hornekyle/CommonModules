@@ -13,6 +13,7 @@ display: public
 display: private
 graph: true
 search: true
+favicon: logo-1.png
 
 This project contains numerous modules for use in other projects with the specific intent of speeding up development of new simulations.
 The various routines and types are grouped according to task or data type, depending on the module.

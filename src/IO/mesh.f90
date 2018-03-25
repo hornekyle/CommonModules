@@ -148,6 +148,12 @@ contains
 		real(wp),dimension(:),allocatable::N
 		
 		select case(self%etype)
+		case(ET_POINT_1)
+			N = [1.0_wp]
+		case(ET_EDGE_1)
+			N = [1.0_wp-xi(1),xi(1)]
+		case(ET_TRIANGLE_1)
+			N = [1.0_wp-sum(xi),xi(1),xi(2)]
 		case default
 			N = [real(wp)::]
 		end select
@@ -159,6 +165,15 @@ contains
 		real(wp),dimension(:,:),allocatable::vN
 		
 		select case(self%etype)
+		case(ET_POINT_1)
+			vN = reshape([0.0_wp],[1,1])
+		case(ET_EDGE_1)
+			vN = reshape([-1.0_wp,1.0_wp],[1,2])
+		case(ET_TRIANGLE_1)
+			vN = reshape([ &
+				& -1.0_wp,-1.0_wp, &
+				&  1.0_wp, 0.0_wp, &
+				&  0.0_wp, 1.0_wp], [2,3])
 		case default
 			vN = reshape([real(wp)::],[0,0])
 		end select
