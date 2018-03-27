@@ -113,6 +113,7 @@ module mesh_mod
 		type(group_t),dimension(:),allocatable::groups
 			!! All groups in the mesh
 	contains
+		procedure::jacobian
 		procedure::readGmsh
 		procedure::writeVTK
 		procedure::appendScalarVTK
@@ -141,6 +142,26 @@ module mesh_mod
 	public::wp
 	
 contains
+
+	function jacobian(self,ek,xi) result(J)
+		class(mesh_t),intent(in)::self
+		integer,intent(in)::ek
+		real(wp),dimension(:),intent(in)::xi
+		real(wp),dimension(:,:),allocatable::J
+		
+		real(wp),dimension(:,:),allocatable::xy
+		real(wp),dimension(:,:),allocatable::vN
+		type(element_t)::e
+		integer::k
+		
+		e = self%elements(ek)
+		
+		allocate(xy(2,size(e%nodes)))
+		forall(k=1:2) xy(k,:) = self%nodes(e%nodes)%x(k)
+		vN = e%vN(xi)
+		
+		J = matmul(xy,transpose(vN))
+	end function jacobian
 
 	function shapeFunctions(self,xi) result(N)
 		class(element_t),intent(in)::self
