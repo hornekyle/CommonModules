@@ -163,38 +163,60 @@ contains
 		J = matmul(xy,transpose(vN))
 	end function jacobian
 
-	function shapeFunctions(self,xi) result(N)
+	function shapeFunctions(self,vxi) result(N)
 		class(element_t),intent(in)::self
-		real(wp),dimension(:),intent(in)::xi
+		real(wp),dimension(:),intent(in)::vxi
 		real(wp),dimension(:),allocatable::N
+		real(wp)::xi,eh,zh
 		
 		select case(self%etype)
 		case(ET_POINT_1)
 			N = [1.0_wp]
 		case(ET_EDGE_1)
-			N = [1.0_wp-xi(1),xi(1)]
+			xi = vxi(1)
+			N = [1.0_wp-xi,xi]
+		case(ET_EDGE_2)
+			xi = vxi(1)
+			N = [(xi-1.0_wp)*(2.0_wp*xi-1.0_wp),4.0_wp*xi*(1.0_wp-xi),xi*(2.0_wp*xi-1.0_wp)]
 		case(ET_TRIANGLE_1)
-			N = [1.0_wp-sum(xi),xi(1),xi(2)]
+			xi = vxi(1)
+			eh = vxi(2)
+			zh = 1.0_wp-xi-eh
+			N = [zh,xi,eh]
+		case(ET_TRIANGLE_2)
+			xi = vxi(1)
+			eh = vxi(2)
+			zh = 1.0_wp-xi-eh
+			N = [xi*(2.0_wp*xi-1.0_wp), eh*(2.0_wp*eh-1.0_wp), &
+			  &  zh*(2.0_wp*zh-1.0_wp),4.0_wp*xi*eh, &
+			  &  4.0_wp*eh*zh, 4.0_wp*zh*xi]
 		case default
 			N = [real(wp)::]
 		end select
 	end function shapeFunctions
 
-	function shapeFunctionsGradients(self,xi) result(vN)
+	function shapeFunctionsGradients(self,vxi) result(vN)
 		class(element_t),intent(in)::self
-		real(wp),dimension(:),intent(in)::xi
+		real(wp),dimension(:),intent(in)::vxi
 		real(wp),dimension(:,:),allocatable::vN
+		real(wp)::xi
 		
 		select case(self%etype)
 		case(ET_POINT_1)
 			vN = reshape([0.0_wp],[1,1])
 		case(ET_EDGE_1)
 			vN = reshape([-1.0_wp,1.0_wp],[1,2])
+		case(ET_EDGE_2)
+			xi = vxi(1)
+			vN = reshape([4.0_wp*xi-3.0_wp,4.0_wp-8.0_wp*xi,4.0_wp*xi-1.0_wp],[1,3])
 		case(ET_TRIANGLE_1)
 			vN = reshape([ &
 				& -1.0_wp,-1.0_wp, &
 				&  1.0_wp, 0.0_wp, &
 				&  0.0_wp, 1.0_wp], [2,3])
+		case(ET_TRIANGLE_2)
+			vN = reshape([0.0_wp,0.0_wp,0.0_wp,0.0_wp,0.0_wp,0.0_wp, &
+			   &          0.0_wp,0.0_wp,0.0_wp,0.0_wp,0.0_wp,0.0_wp ],[2,6]) ! FIXME
 		case default
 			vN = reshape([real(wp)::],[0,0])
 		end select

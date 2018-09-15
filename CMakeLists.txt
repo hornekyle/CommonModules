@@ -76,7 +76,7 @@ include(FindPkgConfig)
 
 
 if(ENABLE_PLPLOT)
-	pkg_search_module(PLPLOT QUIET plplot-f95 plplotd-f95)
+	pkg_search_module(PLPLOT QUIET plplot-fortran)
 	include_directories(${PLPLOT_INCLUDE_DIRS})
 	link_directories(${PLPLOT_LIBRARY_DIRS})
 else(ENABLE_PLPLOT)

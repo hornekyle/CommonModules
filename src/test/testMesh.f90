@@ -20,7 +20,7 @@ contains
 	subroutine testReadGmsh
 		!! Verify operation of readGmsh
 		
-		call execute_command_line('gmsh -2 ./input/square.geo -o square.msh')
+		call execute_command_line('gmsh -2 ./input/square.geo -o square.msh -format msh2')
 		call m%readGmsh('square.msh')
 	end subroutine testReadGmsh
 
@@ -72,9 +72,6 @@ contains
 		
 		call ticks()
 		call labels('x','y','')
-		
-		
 	end subroutine testShapeFunctions
-
 
 end program testMesh_prg

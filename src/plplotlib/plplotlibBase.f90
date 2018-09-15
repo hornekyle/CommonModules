@@ -8,7 +8,7 @@ module plplotlibBase_mod
 	integer,parameter::pp = plflt
 	integer,parameter::pi = kind(1)
 	
-	character(*),parameter::default_dev = 'svgqt'
+	character(*),parameter::default_dev = 'svgcairo'
 		!! Default output device
 	
 	!=================!

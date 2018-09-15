@@ -143,11 +143,11 @@ contains
 		
 		do j=1,N
 			do i=1,N
-				f(i,j) = test%eval([ x(i) , y(j) ])
+				f(i,j) = -test%eval([ x(i) , y(j) ])
 			end do
 		end do
 		
-		call setup(fileName='testsOptimize-%n.svg',figSize=[400,350])
+		call setup(device='pngcairo',fileName='testsOptimize-%n.png',figSize=[400,350])
 		
 		kLog = 1
 		xm = test%steepestDescent([5.0_wp,5.0_wp])
