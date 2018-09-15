@@ -22,5 +22,6 @@ The various routines and types are grouped according to task or data type, depen
 
 * Clean up the documentation of interfaces and their implementations
 * Add rigorous tests for new modules
+* Add ODE system solvers
 
 @endtodo

@@ -285,8 +285,8 @@ contains
 			real(wp),dimension(2,2)::o
 			
 			o(1,1) = (1.0_wp+2.0_wp*xi)*(1.0_wp-xi)**2
-			o(2,1) = xi*(1.0_wp-xi)**2
 			o(1,2) = (3.0_wp-2.0_wp*xi)*xi**2
+			o(2,1) = xi*(1.0_wp-xi)**2
 			o(2,2) = (xi-1.0_wp)*xi**2
 		end function H
 	
