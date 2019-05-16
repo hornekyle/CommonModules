@@ -681,4 +681,6 @@ contains
 	
 	end function findInterval
 
+	! FIXME: Add polyfit, polyval and polyder
+
 end module array_mod
