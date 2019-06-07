@@ -218,7 +218,7 @@ contains
 			xi = vxi(1)
 			eh = vxi(2)
 			vN = reshape([4.0_wp*xi-1.0_wp,0.0_wp,4.0_wp*eh+4.0_wp*xi-3.0_wp,4.0_wp*eh,-4.0_wp*eh,-4.0_wp*eh-8.0_wp*xi+4.0_wp, &
-			   &          0.0_wp,4.0_wp*eh-1.0_wp,4.0_wp*eh+4.0_wp*xi-3,4.0_wp*xi,-8.0_wp*eh-4.0_wp*xi+4.0_wp,-4.0_wp*xi],[2,6]) ! FIXME
+			   &          0.0_wp,4.0_wp*eh-1.0_wp,4.0_wp*eh+4.0_wp*xi-3,4.0_wp*xi,-8.0_wp*eh-4.0_wp*xi+4.0_wp,-4.0_wp*xi],[2,6])
 		case default
 			vN = reshape([real(wp)::],[0,0])
 		end select
