@@ -1,7 +1,10 @@
 // Gmsh
 
+Mesh.ElementOrder = 2;
+
 L = 1.0;
-h = 2.0*L/4.0;
+N = 3.0;
+h = 2.0*L/N;
 
 Point(1) = {-L,-L, 0,h};
 Point(2) = { L,-L, 0,h};

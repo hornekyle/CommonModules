@@ -1,8 +1,81 @@
+module plotMesh_mod
+	use mesh_mod
+	use plplotlib_mod
+	use array_mod
+	
+contains
+
+	recursive subroutine fillTriangle(e,xy,f,fR,vxi,depth)
+		type(element_t),intent(in)::e
+		real(wp),dimension(:,:),intent(in)::xy
+		real(wp),dimension(:),intent(in)::f
+		real(wp),dimension(2),intent(in)::fR
+		real(wp),dimension(2,3),intent(in),optional::vxi
+		integer,intent(in),optional::depth
+		
+		real(wp),dimension(:),allocatable::N
+		real(wp),dimension(2,3)::lxi
+		real(wp),dimension(3)::lx,ly,lf
+		integer::ldepth
+		integer::k
+		
+		if(present(vxi)) then
+			lxi = vxi
+		else
+			lxi = transpose(reshape([0.0_wp,1.0_wp,0.0_wp,0.0_wp,0.0_wp,1.0_wp],[3,2]))
+		end if
+		
+		if(present(depth)) then
+			ldepth = depth
+		else
+			ldepth = 1
+		end if
+		
+		do k=1,3
+			N = e%N(lxi(:,k))
+			lx(k) = dot_product(N,xy(1,:))
+			ly(k) = dot_product(N,xy(2,:))
+			lf(k) = dot_product(N,f)
+		end do
+		
+		if(span(lf)<span(fR)/50.0_wp .or. ldepth>=5) then
+			call fill(lx,ly,sum(lf)/real(size(lf),wp),fR)
+		else
+			call doTesselate()
+		end if
+	
+	contains
+	
+		recursive subroutine doTesselate()
+			real(wp),dimension(2,3)::mxi,txi
+			
+			mxi(:,1) = (lxi(:,1)+lxi(:,2))/2.0_wp
+			mxi(:,2) = (lxi(:,2)+lxi(:,3))/2.0_wp
+			mxi(:,3) = (lxi(:,3)+lxi(:,1))/2.0_wp
+			
+			txi = reshape([lxi(:,1),mxi(:,1),mxi(:,3)],[2,3])
+			call fillTriangle(e,xy,f,fR,txi,ldepth+1)
+			
+			txi = reshape([mxi(:,1),lxi(:,2),mxi(:,2)],[2,3])
+			call fillTriangle(e,xy,f,fR,txi,ldepth+1)
+			
+			txi = reshape([mxi(:,3),mxi(:,2),lxi(:,3)],[2,3])
+			call fillTriangle(e,xy,f,fR,txi,ldepth+1)
+			
+			txi = reshape([mxi(:,1),mxi(:,2),mxi(:,3)],[2,3])
+			call fillTriangle(e,xy,f,fR,txi,ldepth+1)
+		end subroutine doTesselate
+	
+	end subroutine fillTriangle
+
+end module plotMesh_mod
+
 program testMesh_prg
 	!! Test program for mesh_mod
 	use mesh_mod
 	use plplotlib_mod
 	use array_mod
+	use plotMesh_mod
 	implicit none
 	
 	type(mesh_t)::m
@@ -47,8 +120,8 @@ contains
 		real(wp),dimension(:),allocatable::x,y
 		real(wp),dimension(:),allocatable::ex,ey
 		real(wp),dimension(:),allocatable::lx,ly
+		real(wp),dimension(:,:),allocatable::lxy
 		type(element_t)::e
-		real(wp)::f
 		integer::k
 		
 		x = m%nodes(:)%x(1)
@@ -60,20 +133,16 @@ contains
 		
 		do k=1,size(m%elements)
 			e = m%elements(k)
-			if(e%etype/=ET_TRIANGLE_1) cycle
+			if(.not.any(e%etype==[ET_TRIANGLE_1,ET_TRIANGLE_2])) cycle
 			ex = m%nodes(e%nodes)%x(1)
 			ey = m%nodes(e%nodes)%x(2)
-			
-			! Rudimentary fill of triangle; needs improvement
-			lx = ex([1,2,3])
-			ly = ey([1,2,3])
-			f = exampleFunction(sum(lx)/3.0_wp,sum(ly)/3.0_wp)
-			call fill(lx,ly,f,[-1.0_wp,1.0_wp])
+			lxy = transpose(reshape([ex,ey],[size(ex),2]))
+			call fillTriangle(e,lxy,exampleFunction(ex,ey),[-1.0_wp,1.0_wp])
 		end do
 		
 		do k=1,size(m%elements)
 			e = m%elements(k)
-			if(e%etype/=ET_TRIANGLE_1) cycle
+			if(.not.any(e%etype==[ET_TRIANGLE_1,ET_TRIANGLE_2])) cycle
 			ex = m%nodes(e%nodes)%x(1)
 			ey = m%nodes(e%nodes)%x(2)
 			
@@ -81,7 +150,7 @@ contains
 			ly = ey([1,2,3,1])
 			call plot(lx,ly,lineStyle='-',lineColor='k',lineWidth=2.0_wp)
 		end do
-		call plot(x,y,lineStyle='',markStyle='s',markColor='C1',markSize=8.0_wp)
+		call plot(x,y,lineStyle='',markStyle='s',markColor='C1',markSize=4.0_wp)
 		
 		call ticks()
 		call labels('x','y','')
