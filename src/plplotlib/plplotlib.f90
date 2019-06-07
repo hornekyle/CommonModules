@@ -25,7 +25,7 @@ module plplotlib_mod
 	public::bar,barh
 	public::hist
 	public::fillBetween,fillBetweenx
-	public::quiver
+	public::quiver,fill
 	public::surface,wireframe
 	
 	! Kinds

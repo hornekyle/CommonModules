@@ -48,6 +48,7 @@ contains
 		real(wp),dimension(:),allocatable::ex,ey
 		real(wp),dimension(:),allocatable::lx,ly
 		type(element_t)::e
+		real(wp)::f
 		integer::k
 		
 		x = m%nodes(:)%x(1)
@@ -63,15 +64,34 @@ contains
 			ex = m%nodes(e%nodes)%x(1)
 			ey = m%nodes(e%nodes)%x(2)
 			
+			! Rudimentary fill of triangle; needs improvement
+			lx = ex([1,2,3])
+			ly = ey([1,2,3])
+			f = exampleFunction(sum(lx)/3.0_wp,sum(ly)/3.0_wp)
+			call fill(lx,ly,f,[-1.0_wp,1.0_wp])
+		end do
+		do k=1,size(m%elements)
+			e = m%elements(k)
+			if(e%etype/=ET_TRIANGLE_1) cycle
+			ex = m%nodes(e%nodes)%x(1)
+			ey = m%nodes(e%nodes)%x(2)
+			
 			lx = ex([1,2,3,1])
 			ly = ey([1,2,3,1])
-			
-			call plot(lx,ly,lineStyle='-',lineColor='C0',lineWidth=2.0_wp)
+			call plot(lx,ly,lineStyle='-',lineColor='k',lineWidth=2.0_wp)
 		end do
-		call plot(x,y,lineStyle='',markStyle='.',markColor='k',markSize=4.0_wp)
+		call plot(x,y,lineStyle='',markStyle='s',markColor='C1',markSize=8.0_wp)
 		
 		call ticks()
 		call labels('x','y','')
+		call colorbar(reshape([-1.0_wp,1.0_wp],[2,1]),10,'','')
 	end subroutine testShapeFunctions
+
+	elemental function exampleFunction(x,y) result(o)
+		real(wp),intent(in)::x,y
+		real(wp)::o
+		
+		o = x*y
+	end function exampleFunction
 
 end program testMesh_prg

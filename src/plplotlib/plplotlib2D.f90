@@ -164,4 +164,31 @@ contains
 		call resetPen()
 	end subroutine quiver
 
+	subroutine fill(x,y,c,cR)
+		!! Fill a polygon
+		real(wp),dimension(:),intent(in)::x
+			!! x-positions of vectors
+		real(wp),dimension(:),intent(in)::y
+			!! y-positions of vectors
+		real(wp),intent(in)::c
+			!! Color values for vectors
+		real(wp),dimension(2),intent(in)::cR
+			!! Range of color variable
+		
+		real(pp),dimension(:),allocatable::xl,yl
+		real(pp)::clr
+		
+		xl = localize(x)
+		yl = localize(y)
+		
+		clr = real( (c-cR(1))/(cR(2)-cR(1)) ,pp)
+		clr = max(clr,0.0_pp)
+		clr = min(clr,1.0_pp)
+		call plcol1( clr )
+		
+		call plfill(xl,yl)
+		
+		call resetPen()
+	end subroutine fill
+
 end module plplotlib2D_mod
