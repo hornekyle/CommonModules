@@ -199,7 +199,7 @@ contains
 		class(element_t),intent(in)::self
 		real(wp),dimension(:),intent(in)::vxi
 		real(wp),dimension(:,:),allocatable::vN
-		real(wp)::xi
+		real(wp)::xi,eh
 		
 		select case(self%etype)
 		case(ET_POINT_1)
@@ -215,8 +215,10 @@ contains
 				&  1.0_wp, 0.0_wp, &
 				&  0.0_wp, 1.0_wp], [2,3])
 		case(ET_TRIANGLE_2)
-			vN = reshape([0.0_wp,0.0_wp,0.0_wp,0.0_wp,0.0_wp,0.0_wp, &
-			   &          0.0_wp,0.0_wp,0.0_wp,0.0_wp,0.0_wp,0.0_wp ],[2,6]) ! FIXME
+			xi = vxi(1)
+			eh = vxi(2)
+			vN = reshape([4.0_wp*xi-1.0_wp,0.0_wp,4.0_wp*eh+4.0_wp*xi-3.0_wp,4.0_wp*eh,-4.0_wp*eh,-4.0_wp*eh-8.0_wp*xi+4.0_wp, &
+			   &          0.0_wp,4.0_wp*eh-1.0_wp,4.0_wp*eh+4.0_wp*xi-3,4.0_wp*xi,-8.0_wp*eh-4.0_wp*xi+4.0_wp,-4.0_wp*xi],[2,6]) ! FIXME
 		case default
 			vN = reshape([real(wp)::],[0,0])
 		end select

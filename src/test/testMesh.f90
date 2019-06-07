@@ -70,6 +70,7 @@ contains
 			f = exampleFunction(sum(lx)/3.0_wp,sum(ly)/3.0_wp)
 			call fill(lx,ly,f,[-1.0_wp,1.0_wp])
 		end do
+		
 		do k=1,size(m%elements)
 			e = m%elements(k)
 			if(e%etype/=ET_TRIANGLE_1) cycle
