@@ -5,7 +5,7 @@ program logo_prg
 	use plplotlib_mod
 	implicit none
 	
-	call setup(device='pngqt',fileName='logo-%n.png',figSize=[128,128]) 
+	call setup(device='png',fileName='logo-%n.png',figSize=[128,128]) 
 	call makeLogo
 	call show()
 	
