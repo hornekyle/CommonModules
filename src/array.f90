@@ -44,6 +44,11 @@ module array_mod
 		module procedure solveLU_mZ
 	end interface
 	
+	interface polyval
+		module procedure polyval_s
+		module procedure polyval_m
+	end interface
+	
 	!===========!
 	!= Exports =!
 	!===========!
@@ -62,6 +67,10 @@ module array_mod
 	
 	public::linearInterp
 	public::findInterval
+	
+	public::polyfit
+	public::polyval
+	public::polyder
 	
 	! Types
 	public::wp
@@ -681,6 +690,96 @@ contains
 	
 	end function findInterval
 
-	! FIXME: Add polyfit, polyval and polyder
+	!=====================!
+	!= Linear Regression =!
+	!=====================!
+
+	function polyfit(x,y,deg) result(p)
+		!! Compute polynomial coefficients
+		!!
+		!! Linear regression of vectors x and y using
+		!! a polynomial of given deg. Form linear system
+		!! [Q]{p} = {T}
+		!! And solve for {p}
+		real(wp),dimension(:),intent(in)::x
+			!! Independent variable
+		real(wp),dimension(:),intent(in)::y
+			!! Dependent variable
+		integer,intent(in)::deg
+			!! Polynomial degree
+		real(wp),dimension(deg+1)::p
+			!! Polynomial coefficients in increasing power order
+		
+		real(wp),dimension(deg+1,deg+1)::Q
+		real(wp),dimension(deg+1)::T
+		integer::i,j
+		
+		forall(i=1:deg+1,j=1:deg+1,j>=i)
+			Q(i,j) = sum(x**(i+j-2))
+		end forall
+		forall(i=1:deg+1,j=1:deg+1,i>j)
+			Q(i,j) = Q(j,i)
+		end forall
+		forall(i=1:deg+1)
+			T(i) = sum(y*x**(i-1))
+		end forall
+		
+		p = solveLU(Q,T)
+	end function polyfit
+
+	function polyval_s(p,x) result(y)
+		!! Evaluate polynomial over values
+		!!
+		!! Polynomial with coefficients p is evaluated
+		!! over the vector of independent variables x
+		real(wp),dimension(:),intent(in)::p
+			!! Polynomial coefficients in increasing power order
+		real(wp)::x
+			!! Independent variable values
+		real(wp)::y
+			!! Polynomial values at x
+		
+		integer::k
+		
+		y = 0.0_wp
+		do k=1,size(p)
+			y = y+p(k)*x**(k-1)
+		end do
+	end function polyval_s
+
+	function polyval_m(p,x) result(y)
+		!! Evaluate polynomial over values
+		!!
+		!! Polynomial with coefficients p is evaluated
+		!! over the vector of independent variables x
+		real(wp),dimension(:),intent(in)::p
+			!! Polynomial coefficients in increasing power order
+		real(wp),dimension(:),intent(in)::x
+			!! Independent variable values
+		real(wp),dimension(:),allocatable::y
+			!! Polynomial values at x
+		
+		integer::k
+		
+		y = [(0.0_wp, k=1,size(x))]
+		do k=1,size(p)
+			y = y+p(k)*x**(k-1)
+		end do
+	end function polyval_m
+
+	function polyder(p) result(d)
+		!! Compute coefficients for derivative polynomial
+		!!
+		!! For polynomial with coefficients p, compute the
+		!! coefficients of the derivative polynomial, d.
+		real(wp),dimension(:),intent(in)::p
+			!! Polynomial coefficients in increasing power order
+		real(wp),dimension(size(p)-1)::d
+			!! Derivative polynomial coefficients
+		
+		integer::k
+		
+		d = [(p(k)*real(k-1,wp),k=2,size(p))]
+	end function polyder
 
 end module array_mod

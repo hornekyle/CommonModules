@@ -17,6 +17,8 @@ program testArray_prg
 	call testTDMA
 	call testLU
 	
+	call testPoly
+	
 contains
 
 	subroutine testMixval
@@ -204,4 +206,30 @@ contains
 		end do
 	end subroutine testLU
 
+	subroutine testPoly
+		!! Test polyfit
+		
+		real(wp),dimension(:),allocatable::x,y,f
+		real(wp),dimension(:),allocatable::p,t,d,g
+		integer::N
+		
+		N = 10
+		x = linspace(0.0_wp,3.0_wp,N)
+		y = -1.0_wp+x**2
+		
+		p = polyfit(x,y,2)
+		t = [-1.0_wp,0.0_wp,1.0_wp]
+		write(*,*) t-p
+		if( norm2(t-p)>1.0E-10_wp ) stop 'polyfit Failed'
+		
+		f = polyval(p,x)
+		write(*,*) y-f
+		if( norm2(y-f)>1.0E-10_wp ) stop 'polyval Failed'
+		
+		d = polyder(p)
+		g = [0.0_wp,2.0_wp]
+		write(*,*) g-d
+		if( norm2(g-d)>1.0E-10_wp ) stop 'polyder Failed'
+	end subroutine testPoly
+	
 end program testArray_prg
