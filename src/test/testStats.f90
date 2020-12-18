@@ -1,5 +1,7 @@
 program testStats_prg
 	!! Test program for stats_mod
+	use array_mod
+	use constants_mod
 	use stats_mod
 	implicit none
 	
@@ -9,6 +11,8 @@ program testStats_prg
 	
 	call testMean
 	call testStDev
+	
+	call testKDE
 	
 contains
 
@@ -87,5 +91,18 @@ contains
 		
 		if( .not.all(results) ) error stop "Failed mean check"
 	end subroutine testStDev
+
+	subroutine testKDE
+		!! Test KDE to verify operation
+		
+		real(wp),dimension(:),allocatable::s,x,y,t
+		
+		x = linspace(-6.0_wp,6.0_wp,100)
+		s = randomNormal(1000*000)
+		y = KDE(s,x)
+		t = 1.0_wp/(2.0_wp*PI)*exp(-0.5_wp*x**2)
+		
+		if( norm2(t-y)>1.0_wp ) error stop "Failed KDE check"
+	end subroutine testKDE
 
 end program testStats_prg 

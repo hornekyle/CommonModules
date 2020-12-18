@@ -1,5 +1,6 @@
 module stats_mod
 	!! Basic probability and statistics module
+	use constants_mod
 	use kinds_mod
 	implicit none
 	private
@@ -32,6 +33,8 @@ module stats_mod
 	
 	public::mean
 	public::stDev
+	
+	public::KDE
 	
 	! Types
 	public::wp
@@ -146,5 +149,61 @@ contains
 		
 		o = sqrt(sum((d-sum(d)/real(size(d),wp))**2)/real(size(d)-1,wp))
 	end function stDev
+
+	!============================!
+	!= Kernel Density Estimator =!
+	!============================!
+
+	function KDE(sample,rng) result(p)
+		real(wp),dimension(:),intent(in)::sample
+			!! Set of samples for density estimation
+		real(wp),dimension(:),intent(in)::rng
+			!! Range over which to compute the density
+		real(wp),dimension(:),allocatable::p
+			!! Estimated density of samples over range
+		
+		real(wp),dimension(:),allocatable::x
+		integer::Ns,Nr,k
+		real(wp)::h
+		
+		Ns = size(sample)
+		Nr = size(rng)
+		
+		h  = bandwidth(sample)
+		allocate(p(Nr))
+		p = 0.0_wp
+		do k=1,Ns
+			x = (rng-sample(k))/h
+			p = p+(1.0_wp/(real(Ns,wp)*h))*kernel(x)
+		end do
+	
+	contains
+	
+		elemental function kernel(x) result(p)
+			real(wp),intent(in)::x
+				!! Independent variable
+			real(wp)::p
+				!! Kernel value
+			
+			real(wp)::m,s
+			
+			m = 0.0_wp
+			s = 1.0_wp
+			p = (1/sqrt(2*PI*s**2))*exp(-(x-m)**2/(2.0_wp*s**2))
+		end function kernel
+
+		function bandwidth(sample) result(h)
+			real(wp),dimension(:),intent(in)::sample
+				!! Sample data
+			real(wp)::h
+				!! Bandwidth
+			
+			integer::N
+			
+			N = size(sample)
+			h = 1.05_wp*stDev(sample)*real(N,wp)**(-1.0_wp/5.0_wp)
+		end function bandwidth
+	
+	end function KDE
 
 end module stats_mod
